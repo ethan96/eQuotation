@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>eQuotation - User Authentication</title>
+    <link rel="shortcut icon" href="@Url.Content("~/images/favicon.ico")" />
+    <link rel="stylesheet" type="text/css" href="../../../styles/global.css" />
+    <link rel="stylesheet" href="~/Styles/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link href="~/Styles/content.css" rel="stylesheet" />
+    @*<link href="~/Styles/site-bootsrap.css" rel="stylesheet" />*@
+    <script type="text/javascript" src="../../../Scripts/jquery/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../../../Scripts/block/jquery.blockUI.js"></script>
+    <script src="~/Scripts/purl/purl.js"></script>
+    <script src="~/Scripts/business/layout.js"></script>
+</head>
+<body style="background-color:#ccc;" class="flex-col">
+
+    <div id="home">
+        @Html.Partial("_login")
+    </div>
+
+    @*<div id="home">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="login">
+                <div class="authenticated">
+                    <div style="background-color: #eee; border: 1px solid #eee;">
+                        <label class="fullname"><i class="fa fa-user"></i> &nbsp;@ViewBag.FullName.ToUpper() </label>
+                    </div>
+                    <div class="logo" style="text-align: center; border-top: 1px solid #c3c3c3;"><img src="~/Images/component.jpg" /></div>
+                    <div><img src="~/Images/logo.gif" /></div>
+                </div>
+            </div>
+        }
+        else
+        {
+            @Html.Partial("_login")
+        }
+    </div>*@
+
+</body>
+</html>

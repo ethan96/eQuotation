@@ -1,0 +1,217 @@
+﻿@model eQuotation.ViewModels.QuoteForm.QuoteFormViewModel
+<div class="quoteItemInput" id="quoteItemInput" style="display:none;">
+    <div style="width:130px;">
+        Choose Parent Item :
+    </div>
+    <div style="width:150px;">
+        @Html.DropDownListFor(m=>m.currentPartentOption, Model.ParentItemOptions, new { @id = "ddlParentItem" })
+    </div>
+</div>
+<table class="tbQuoteItems" id="tbQuoteItems">
+    <thead>
+        <tr>
+            <th style="width:3%;">No.</th>
+            <th style="width:12%;">Part No.</th>
+            <th style="width:12%;">Description</th>
+            <th style="width:8%;">Extended Warranty</th>
+            <th style="width:8%;">List Price</th>
+            @*<th style="width:7%;">Default Disc.</th>*@
+            <th style="width:8%;">Unit Price</th>
+            @*<th style="width:8%;">Sales Disc.</th>*@
+            <th style="width:9%;">Quoting Price</th>
+            <th style="width:6%;">Quantity</th>
+            <th style="width:8%;">SPR No.</th>
+            <th style="width:8%;">Sub total</th>
+            @*<th style="width:6%;">NCNR</th>*@
+            <th style="width:4%;">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody class="QuoteItems-tbody" id="QuoteItems-tbody">
+            @for (int i = 0; i < Model.QuoteItems.Count; i++)
+            {
+                <tr data-lineNo="@Model.QuoteItems[i].LineNo" class="QuoteItems-row">
+                    <td style="width:3%;">
+                        @Html.TextBoxFor(mdl => Model.QuoteItems[i].LineNo, new { @readonly = "readonly", @style = "width:100%;text-align:center;" })
+                    </td>
+                    <td>
+                        @if (Model.QuoteItems[i].PartNo.IndexOf("-BTO") > -1)
+                        {
+                            <input type='button' class='itempos' id="txtPartNo-@Model.QuoteItems[i].LineNo" data-value='@Model.QuoteItems[i].LineNo' style='width:80%' value='@Model.QuoteItems[i].PartNo' onclick='PartInfo(this);' />
+                            @*<input type='button' class='reconfig' id="txtPartNo-@Model.QuoteItems[i].LineNo" data-value='@Model.QuoteItems[i].LineNo' style='width:20%' value='Reconfig' onclick='Modal_Configuration_List(true);;' />*@
+                            <a style='top:20%;position:relative;' data-value='@Model.QuoteItems[i].LineNo' onclick='javascript: Modal_Configuration_List(true, @Model.QuoteItems[i].LineNo);'><i class="fa fa-television fa-lg"></i></a>
+                        }
+                        else
+                        {
+                            <input type='button' class='itempos' id="txtPartNo-@Model.QuoteItems[i].LineNo" data-value='@Model.QuoteItems[i].LineNo' style='width:100%' value='@Model.QuoteItems[i].PartNo' onclick='PartInfo(this);' />
+                        }
+                        @Html.HiddenFor(mdl => Model.QuoteItems[i].PartNo)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(mdl => Model.QuoteItems[i].Description, new {@id = "txtDescription-" + Model.QuoteItems[i].LineNo, @style = "width:100%;", onchange = "updateItem('" + @Model.QuoteItems[i].LineNo + "');" })
+                    </td>
+                    <td>
+                        @if (@Model.QuoteItems[i].EWDrpIsEditable)
+                        {
+                            @Html.DropDownListFor(mdl => Model.QuoteItems[i].EWFlag, Model.QuoteItems[i].EWPartOptions, new { @id = "drpEWPart-" + Model.QuoteItems[i].LineNo, @style = "width:100%;", onchange = "updateEWPart('" + @Model.QuoteItems[i].LineNo + "');" })
+
+                        }
+                        else
+                        {
+                            @Html.HiddenFor(mdl=>mdl.QuoteItems[i].EWFlag)
+                        }
+                    </td>
+                    <td style="text-align:right">
+                        <span class='currency'>@Model.CurrencySign</span>
+                        @if (Model.QuoteItems[i].PartNo.IndexOf("-BTO") > -1)
+                        {
+                            @Html.DisplayFor(mdl => Model.QuoteItems[i].PostTaxBtoParentListPrice, "{0:F2}", new { @style = "top:20%;position:relative;" })
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(mdl => Model.QuoteItems[i].PostTaxListPrice, new { @style = "top:20%;position:relative;" })
+                        }
+                        @Html.HiddenFor(mdl => Model.QuoteItems[i].ListPrice)
+                    </td>
+                    <td style="text-align:center; display:none;">
+                        @{var discountRate = Decimal.Round(Model.QuoteItems[i].DefaultDiscountRate * 100, 2) + "%"; }
+                        @Html.DisplayFor(mdl => discountRate, new { @style = "top:20%;position:relative;" })
+                    </td>
+                    <td style="text-align:right">
+                        <span class='currency'>@Model.CurrencySign</span>
+                        @if (Model.QuoteItems[i].PartNo.IndexOf("-BTO") > -1)
+                        {
+                            @Html.DisplayFor(mdl => Model.QuoteItems[i].PostTaxBtoParentUnitPrice, "{0:F2}", new { @style = "top:20%;position:relative;" })
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(mdl => Model.QuoteItems[i].PostTaxUnitPrice, new { @style = "top:20%;position:relative;" })
+                        }
+                        @Html.HiddenFor(mdl => Model.QuoteItems[i].UnitPrice, new { @id = "txtPreTaxUnitPrice-" + Model.QuoteItems[i].LineNo })
+                        @*@Html.HiddenFor(mdl => Model.QuoteItems[i].PostTaxUnitPrice, new { @id = "txtPostTaxUnitPrice-" + Model.QuoteItems[i].LineNo })*@
+                    </td>
+                    <td style="text-align:center; display:none;">
+                        @{var salesDiscountRate = Decimal.Round(Model.QuoteItems[i].SalesDiscountRate * 100, 2);}
+                        @Html.TextBoxFor(mdl => salesDiscountRate, "{0:0}", new {@class= "txtSalesDiscount", @style = "width:40%;text-align:center;" })%
+                    </td>
+                    <td style="text-align:right">
+                        <span class='currency'>@Model.CurrencySign</span>
+                        @if (Model.QuoteItems[i].PartNo.IndexOf("-BTO") > -1)
+                        {
+                            @Html.DisplayFor(mdl => Model.QuoteItems[i].PostTaxBtoParentQuotingPrice, "{0:F2}", new { @style = "width:75%; text-align: right;"})
+                        }
+                        else
+                        {
+                            @Html.TextBoxFor(mdl => Model.QuoteItems[i].PostTaxQuotingPrice, "{0:F2}", new { @id = "txtPostTaxQuotingPrice-" + Model.QuoteItems[i].LineNo, @style = "width:75%; text-align: right;", onchange = "updateItem('" + @Model.QuoteItems[i].LineNo + "');" , @class= "txtPostTaxQuotingPrice" })
+                        }
+                        @Html.HiddenFor(mdl => Model.QuoteItems[i].QuotingPrice, new { @id = "txtPreTaxQuotingPrice-" + Model.QuoteItems[i].LineNo})
+                    </td>
+                    <td style="text-align:center">
+                        @if (Model.QuoteItems[i].IsEWPart)
+                        {
+                               @Html.TextBoxFor(mdl => Model.QuoteItems[i].Qty, new
+                               {
+                                   @id = "txtQty-" + Model.QuoteItems[i].LineNo,
+                                   @style = "width:60%;text-align:center;",
+                                   onchange = "updateItem('" + @Model.QuoteItems[i].LineNo + "');",
+                                   @readonly = "readonly"
+                               })
+                        }
+                        else
+                        {
+                               @Html.TextBoxFor(mdl => Model.QuoteItems[i].Qty, new
+                               {
+                                   @id = "txtQty-" + Model.QuoteItems[i].LineNo,
+                                   @style = "width:60%;text-align:center;",
+                                   onchange = "updateItem('" + @Model.QuoteItems[i].LineNo + "');"
+                               })
+                        }
+                        @Html.HiddenFor(mdl => Model.QuoteItems[i].CurrentQty)
+                    </td>
+                    <td style="text-align:center; white-space: nowrap;">
+                            @Html.TextBoxFor(mdl => Model.QuoteItems[i].SprNo, new { @id = "txtSPRNo-" + Model.QuoteItems[i].LineNo, @readonly = "readonly", @style = "width: 70px;" })
+                            <a style='top:20%;position:relative;' data-value='@Model.QuoteItems[i].LineNo' onclick='javascript: if("@Model.QuoteItems[i].IsEWPart.ToString()" != "True"){SPRNO(this)};'><i class="fa fa-external-link"></i></a>             
+                    </td>
+                    <td style="text-align:right">
+                        <span class='currency'>@Model.CurrencySign</span>
+                        @if (Model.QuoteItems[i].PartNo.IndexOf("-BTO") > -1)
+                        {
+                            @Html.DisplayFor(mdl => Model.QuoteItems[i].PostTaxBtoParentSubTotal, "{0:F2}", new { @style = "top:20%;position:relative;" })
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(mdl => Model.QuoteItems[i].PostTaxSubTotal, "{0:F2}", new { @style = "top:20%;position:relative;" })
+                        }
+                        @Html.HiddenFor(mdl => Model.QuoteItems[i].PreTaxSubTotal)
+                    </td>
+                    <td style="text-align:center; width:4%;">
+                        @if (!Model.QuoteItems[i].IsEWPart)
+                        {
+                            <a class='btn-del-item' style='color:darkred' data-lineNo='@Model.QuoteItems[i].LineNo' data-quoteid='@Model.QuoteItems[i].QuoteId' onclick='javascript: deleteItem(this);'><i class='fa fa-times-circle fa-lg'></i></a>
+                        }
+                    </td>
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].QuoteId)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].DMF_Flag)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].ItemType)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].HigherLevel)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].DeliveryPlant)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].RecyclingFee)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].Category)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].ClassABC)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].Rohs)
+                    @*@Html.HiddenFor(mdl => Model.QuoteItems[i].EWFlag)*@
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].RequiredDate)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].DueDate)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].SatisfyFlag)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].CanBeConfirmed)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].CusMaterial)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].Inventory)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].ModelNo)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].VirtualPartNo)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].Recfigid)
+                    @Html.HiddenFor(mdl => Model.QuoteItems[i].SequenceNo)
+                    @Html.HiddenFor(mdl=> Model.QuoteItems[i].IsEWPart)
+                </tr>
+            }
+        </tr>
+    </tbody>
+</table>
+<div class="quoteTotalPriceInfo" style="text-align:right;">
+    <table style="width:100%" class="stylenormal" align="center">
+        <tr>
+            <td align="right">
+                <b>Total</b>:
+            </td>
+            <td align="right" style="width:12%;"><span id="PreTaxTotalAmount">@Model.CurrencySign @Model.PreTaxTotalAmount.ToString("N")</span></td>
+        </tr>
+        <tr>
+            <td align="right">
+                <b>Tax(@((Model.Tax * 100).ToString("N")) %)</b>:
+            </td>
+            <td align="right" style="width:12%;">
+                <span id="TotalTaxAmount">@Model.CurrencySign @Model.TotalTaxAmount.ToString("N")</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <b>Total(Including Tax)</b>:
+            </td>
+            <td align="right" style="width:12%;font-weight: bold; color: #FF0000;">
+                <span id="PostTaxTotalAmount">@Model.CurrencySign @Model.PostTaxTotalAmount.ToString("N")</span>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    @{
+        var isReadOnly = false;
+        if (Model.QuoteApproval.QuoteApprovalList !=null && Model.QuoteApproval.QuoteApprovalList.Count()>0)
+        {
+            isReadOnly = true;
+        }
+    }
+    if ('@isReadOnly' == "True")
+    {
+        $('#quoteItemInput').hide();
+        $('#tbQuoteItems').attr("disabled", "disabled");;
+    }
+</script>

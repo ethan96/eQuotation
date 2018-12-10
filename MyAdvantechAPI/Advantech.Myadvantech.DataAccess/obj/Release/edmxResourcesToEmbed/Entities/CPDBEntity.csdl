@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CheckPointDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SO_HEADER">
+    <Key>
+      <PropertyRef Name="SO" />
+    </Key>
+    <Property Name="SO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ORDER_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SALES_ORG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIST_CHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIVISION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SalesGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SalesOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="INCO1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="INCO2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPTO_COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TAX_CLASS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TRIANGULAR_INDICATOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REQUIRE_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SHIP_CONDITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CUST_PO_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SHIP_CUST_PO_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PO_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PARTIAL_SHIPMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EARLY_SHIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TAXDEL_CTY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TAXDES_CTY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEST_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PAYTERM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_DATESpecified" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DISTRICT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ref_Doc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VERSION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="CheckPointDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SO_HEADER" EntityType="Self.SO_HEADER" />
+    <EntitySet Name="SO_DETAIL" EntityType="CheckPointDBModel.SO_DETAIL" />
+    <EntitySet Name="SO_PARTNERFUNC" EntityType="CheckPointDBModel.SO_PARTNERFUNC" />
+    <EntitySet Name="Ship_to_Information" EntityType="CheckPointDBModel.Ship_to_Information" />
+  </EntityContainer>
+  <EntityType Name="SO_DETAIL">
+    <Key>
+      <PropertyRef Name="SO" />
+      <PropertyRef Name="LINE_NO" />
+    </Key>
+    <Property Name="SO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PART_Dlv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HIGHER_LEVEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LINE_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DELIVERY_GROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PLANT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MATERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CUST_MATERIAL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DMF_FLAG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QTY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRICE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShipPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StorageLoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItCa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="POLineNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SO_PARTNERFUNC">
+    <Key>
+      <PropertyRef Name="SO" />
+      <PropertyRef Name="ROLE" />
+    </Key>
+    <Property Name="SO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROLE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Ship_to_Information">
+    <Key>
+      <PropertyRef Name="SO_Number" />
+    </Key>
+    <Property Name="SO_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_city" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_country_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_country_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_postal_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_stateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_telnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_faxnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_to_email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="contact_person_first" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="contact_person_last" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="contact_email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="contact_telnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

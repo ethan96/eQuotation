@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="eQuotationStaging" Class="Ling2SqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ACLSQL6\SQL2008R2;Initial Catalog=eQuotationStaging;Persist Security Info=True;User ID=b2bsa;Pooling=True;Asynchronous Processing=True;Connect Timeout=300" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EQ" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.QuotationMaster" Member="Quote_Masters">
+    <Type Name="Quote_Master">
+      <Column Name="quoteId" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customId" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="quoteToRowId" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="quoteToErpId" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="quoteToName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="office" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="currency" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="salesEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="salesRowId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="directPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="attentionRowId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="attentionEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="bankInfo" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="quoteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="deliveryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="expiredDate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="shipTerm" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="paymentTerm" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="freight" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="insurance" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="specialCharge" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tax" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="quoteNote" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="relatedInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="createdBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="createdDate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="preparedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="qstatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isShowListPrice" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isShowDiscount" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isShowDueDate" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isLumpSumOnly" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isRepeatedOrder" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ogroup" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DelDateFlag" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="org" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="siebelRBU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DIST_CHAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DIVISION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SALESGROUP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SALESOFFICE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DISTRICT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CARE_ON" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isExempt" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="INCO1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="INCO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PRINTOUT_FORMAT" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="OriginalQuoteID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DocReg" Type="System.Int64" DbType="BigInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DocType" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="reqDate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DOCSTATUS" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Partial" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IS_EARLYSHIP" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DocRealType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastUpdatedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PODate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="KEYPERSON" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EMPLOYEEID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isVirPartOnly" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SHIPCUSTPONO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TAXCLASS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TAXDEPCITY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TAXDSTCITY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TRIANGULARINDICATOR" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="quoteNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Revision_Number" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QuotationExtension" Member="Quote_Master_Extensions">
+    <Type Name="Quote_Master_Extension">
+      <Column Name="QuoteID" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EmailGreeting" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SpecialTandC" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SignatureRowID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Engineer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Engineer_Telephone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="QuoteSource" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ExpressCompany" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsShowTotal" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsShowFreight" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ApprovalFlowType" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastUpdatedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Warranty" Type="System.String" DbType="nvarchar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ABRQuoteType" Type="System.String" DbType="nchar(4)" CanBeNull="true" UpdateCheck="Never" />
+	  <Column Name="JPCustomerOffice" Type="System.String" DbType="nvarchar(100)" CanBeNull="true" UpdateCheck="Never" />
+	  <Column Name="CopyPurpose" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QuotationDetail" Member="QuoteItems">
+    <Type Name="QuoteItem">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="quoteId" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="line_No" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="partNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="qty" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="listPrice" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="unitPrice" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="newUnitPrice" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="itp" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="newItp" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RecyclingFee" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="deliveryPlant" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="category" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="classABC" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="rohs" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ewFlag" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="reqDate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dueDate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="satisfyFlag" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="canBeConfirmed" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="custMaterial" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="inventory" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="oType" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="modelNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="sprNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HigherLevel" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DMF_Flag" Type="System.String" DbType="NChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ItemType" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="VirtualPartNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DELIVERYGROUP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ShipPoint" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="StorageLoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RECFIGID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DisplayUnitPrice" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DisplayQty" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DisplayLineNo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SequenceNo" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

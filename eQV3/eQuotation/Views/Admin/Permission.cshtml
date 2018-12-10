@@ -1,0 +1,64 @@
+﻿@model eQuotation.Models.Admin.RolePermissionViewModel
+
+
+@if (Model != null)
+{
+    using (Ajax.BeginForm("SavePermission", "admin", null,
+        new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            UpdateTargetId = "div-permission",
+            InsertionMode = InsertionMode.Replace
+        }, new { @id = "form-permission" }))
+    {
+        @Html.HiddenFor(mdl => mdl.RoleId, new { @id="selectedRoleId" })
+
+        @*<div class="title">Role: @Model.RoleName</div>*@
+        <div class="remark">@Model.RoleDesc</div>
+        <div class="action">
+            <table id="tblRolePermission">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Category</th>
+                        <th>Permission</th>
+                        <th>Parent</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model.Actions)
+                    {
+                        <tr >
+                            <td><input type="checkbox" checked="@item.Value" id="@item.Key.Id" /></td>
+                            <td style="width:130px">@item.Key.Category</td>
+                            <td>@item.Key.Id</td>
+                            <td>@item.Key.Parent</td>
+                            <td>@item.Key.Description</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>        
+    }
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        //configure data-table
+        /* Init the table */
+        oTable = $('#tblRolePermission').dataTable({
+            "bLengthChange": true,
+            "bFilter": true,
+            "iDisplayLength": 1000,
+            "aoColumnDefs": [
+                { "bSortable": false, "aTargets": [0] },
+                { "bSortable": false, "aTargets": [4] }
+            ]
+        });
+
+    });
+
+</script>

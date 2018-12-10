@@ -1,0 +1,63 @@
+﻿@model eQuotation.Models.Admin.AppRoleViewModel
+
+@if (Model != null)
+{
+    using (Ajax.BeginForm("EditRole", "admin", null,
+        new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            OnBegin = "onEditRoleBegin",
+            OnSuccess = "onEditRoleSuccess"
+        }))
+    {
+    @Html.HiddenFor(mdl => mdl.Role.Id)
+    <div class="modal-action">
+        <ul>
+            <li><button type="submit" class="clear"><i class="fa fa-floppy-o"></i> Save</button></li>
+            <li><a id="close-editrole"><i class="fa fa-times"></i> Close</a></li>
+        </ul>
+    </div> 
+        
+    <div class="modal-content">
+        <div class="newrole">
+            <div><span>Region:</span></div>
+            <div>@Html.TextBoxFor(mdl => mdl.Role.Region, new { @disabled = "disabled" })</div>
+            <div><span>Sector:</span></div>
+            <div>@Html.TextBoxFor(mdl => mdl.Role.Sector)</div>
+            <div><span>Role Name:</span></div>
+            <div>@Html.TextBoxFor(mdl => mdl.Role.Name, new { @readonly = "readonly" })</div>
+            <div><span>Role Description:</span></div>
+            <div>@Html.TextAreaFor(mdl => mdl.Role.Description)</div>
+        </div>
+    </div>
+        @*<div class="button-group" style="margin-top:5px; float:right;">
+            <button type="submit" class="button button-dark icon approve">Save</button>
+            <a href="javascript:void(0);" class="button button-dark icon remove" id="close-editrole">Close</a>
+        </div>*@
+    }
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#close-editrole").on("click", function () {
+            $.modal.close();
+            $.blockUI();
+            $.get("/admin/rolemanager", function (data) {
+                $.pushHTML(data, function () { $("#wrapper-content").html(data); }); $.unblockUI();
+            })
+        });
+    });
+
+
+    function onEditRoleBegin(data) { $.blockUI(); }
+
+    function onEditRoleSuccess(data) {
+        $.pushHTML(data, function () {
+            if (data.succeed == true)
+                alert("Role description has been modified successfully.");
+        });
+        $.unblockUI();
+    }
+
+</script>

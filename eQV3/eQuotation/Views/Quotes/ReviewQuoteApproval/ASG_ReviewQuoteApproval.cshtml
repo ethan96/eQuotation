@@ -1,0 +1,128 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    .quote-approval-title {
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .quote-approval-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .content {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+
+    .quote-approval-image {
+        text-align: center;
+    }
+
+    .quote-approval-salesComment {
+    }
+
+    .stylenormal {
+        color: black;
+        font-size: 13.0pt;
+        text-decoration: none;
+        font-family: Microsoft JhengHei,Arial;
+        text-align: left;
+    }
+
+    .stylenormaleng {
+        color: black;
+        font-size: 12.0pt;
+        text-decoration: none;
+        font-family: Arial;
+        text-align: left;
+    }
+
+    .note {
+        padding-top: 50px;
+        padding-right: 18px;
+        padding-bottom: 10px;
+        padding-left: 18px;
+        font-family: Helvetica;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .approvalComment {
+        margin-top: 10px;
+    }
+</style>
+@{
+    var approveID = "";
+    if (Model.Approval != null) { approveID = Model.Approval.UID; }
+}
+
+@using (Ajax.BeginForm("ReviewQuoteApproval", "Quotes", new { approveID = approveID },
+                new AjaxOptions()
+                {
+                    HttpMethod = "POST",
+                    OnBegin = "onSubmitApplicationBegin",
+                    OnSuccess = "onSubmitApplicationSuccess"
+                }))
+{
+    <div class="main-content quote-approval">
+        @if (@Model.pagetype == "ReviewQuoteApproval")
+        {
+            <div class="titlebox topbox">
+                <h4>Review Quote Detail. QutoeNo: @Model.QuoteNo</h4>
+            </div>
+            <div class="actionbox" style="text-align:center; min-height: 90px;">
+                <ul>
+                    <li style="font-size:18px;"><button type="submit" name="submitButton" value="Approve"><i class="fa fa-check-square-o"></i>Approve</button></li>
+                    <li style="font-size:18px;"><button type="submit" name="submitButton" value="Reject"><i class="fa fa-times"></i>Reject</button></li>
+                </ul>
+                @Html.TextAreaFor(m => m.ApprovalComment, new { @class = "form-control approvalComment", @placeholder = "Enter your comments here..." })
+
+            </div>
+        }
+
+        <div class="content">
+            @if (Model.AdditionalApproversOption != null && @Model.pagetype == "ReviewQuoteApproval")
+            {
+                <div class="quote-add-approver">
+                    <div>Add following approvers:</div>
+                    @Html.DropDownListFor(m => m.AdditionalApprover, Model.AdditionalApproversOption, "Select Approver", new { @class = "form-control" })
+
+                </div>
+            }
+
+            <div class="quote-approval-title">
+                <h1>eQuotation Approval request for @Model.QuoteNo</h1>
+            </div>
+            <div class="quote-approval-header">
+                @*@Html.Partial("_ASG_QuoteHeader", @Model)*@
+                @Html.Partial("~/Views/Shared/QuoteHeader/_ASG_QuoteHeader.cshtml", @Model)
+            </div>
+            <div class="quote-approval-detail" id="quote-approval-detail">
+                @*@Html.Partial("_ASG_QuoteDetails", @Model)*@
+                @Html.Partial("~/Views/Shared/QuoteDetails/_ASG_QuoteDetails.cshtml", @Model)
+            </div>
+
+        </div>
+
+
+    </div>
+}
+
+
+<script type="text/javascript">
+
+    function onSubmitApplicationBegin() { $.blockUI(); }
+
+    function onSubmitApplicationSuccess(data) {
+        $.pushHTML(data, function () {
+            $.modal.close(); $("#wrapper-content").html(data);
+        });
+        $.unblockUI();
+    }
+
+</script>

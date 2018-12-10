@@ -1,0 +1,2 @@
+obj\Debug\NewSAPAccountFlow.g.xaml
+obj\Debug\NewSAPCustomerFlow_Activity1_BeforeInitializeComponentHelper.txt

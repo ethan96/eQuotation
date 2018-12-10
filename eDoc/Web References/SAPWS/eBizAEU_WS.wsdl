@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="eBizAEU" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="eBizAEU" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="eBizAEU">
+      <s:element name="HelloKitty">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloKittyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloKittyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrdTrkSpeedByMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VKORG" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATEB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATEE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MATNR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BSTNK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VBELN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strADONETXMLout" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrdTrkSpeedByMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOrdTrkSpeedByMailResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strADONETXMLout" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSAPOrderBillTo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Doc_Number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillToID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPReturnTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSAPOrderBillToResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSAPOrderBillToResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPReturnTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSAPCustomerContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSAPCustomerContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddSAPCustomerContactResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSAPCustomerContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSAPCustomerContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSAPCustomerContactResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSAPCustomerAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NameCO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaxJuriCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSAPCustomerAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSAPCustomerAddressResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMultiPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Products">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMultiPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMultiPriceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMultiPrice_Old_20110907">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Products">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMultiPrice_Old_20110907Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMultiPrice_Old_20110907Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMultiPrice_Old">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Products">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMultiPrice_OldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMultiPrice_OldResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMultiPrice2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Products">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="PricingDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMultiPrice2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMultiPrice2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloKittySoapIn">
+    <wsdl:part name="parameters" element="tns:HelloKitty" />
+  </wsdl:message>
+  <wsdl:message name="HelloKittySoapOut">
+    <wsdl:part name="parameters" element="tns:HelloKittyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrdTrkSpeedByMailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrdTrkSpeedByMail" />
+  </wsdl:message>
+  <wsdl:message name="GetOrdTrkSpeedByMailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrdTrkSpeedByMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSAPOrderBillToSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSAPOrderBillTo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSAPOrderBillToSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSAPOrderBillToResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSAPCustomerContactSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSAPCustomerContact" />
+  </wsdl:message>
+  <wsdl:message name="AddSAPCustomerContactSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSAPCustomerContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSAPCustomerContactSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSAPCustomerContact" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSAPCustomerContactSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSAPCustomerContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSAPCustomerAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSAPCustomerAddress" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSAPCustomerAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSAPCustomerAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMultiPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMultiPrice" />
+  </wsdl:message>
+  <wsdl:message name="GetMultiPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMultiPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMultiPrice_Old_20110907SoapIn">
+    <wsdl:part name="parameters" element="tns:GetMultiPrice_Old_20110907" />
+  </wsdl:message>
+  <wsdl:message name="GetMultiPrice_Old_20110907SoapOut">
+    <wsdl:part name="parameters" element="tns:GetMultiPrice_Old_20110907Response" />
+  </wsdl:message>
+  <wsdl:message name="GetMultiPrice_OldSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMultiPrice_Old" />
+  </wsdl:message>
+  <wsdl:message name="GetMultiPrice_OldSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMultiPrice_OldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMultiPrice2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetMultiPrice2" />
+  </wsdl:message>
+  <wsdl:message name="GetMultiPrice2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetMultiPrice2Response" />
+  </wsdl:message>
+  <wsdl:portType name="eBizAEU_WSSoap">
+    <wsdl:operation name="HelloKitty">
+      <wsdl:input message="tns:HelloKittySoapIn" />
+      <wsdl:output message="tns:HelloKittySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdTrkSpeedByMail">
+      <wsdl:input message="tns:GetOrdTrkSpeedByMailSoapIn" />
+      <wsdl:output message="tns:GetOrdTrkSpeedByMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSAPOrderBillTo">
+      <wsdl:input message="tns:UpdateSAPOrderBillToSoapIn" />
+      <wsdl:output message="tns:UpdateSAPOrderBillToSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSAPCustomerContact">
+      <wsdl:input message="tns:AddSAPCustomerContactSoapIn" />
+      <wsdl:output message="tns:AddSAPCustomerContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSAPCustomerContact">
+      <wsdl:input message="tns:UpdateSAPCustomerContactSoapIn" />
+      <wsdl:output message="tns:UpdateSAPCustomerContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSAPCustomerAddress">
+      <wsdl:input message="tns:UpdateSAPCustomerAddressSoapIn" />
+      <wsdl:output message="tns:UpdateSAPCustomerAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice">
+      <wsdl:input message="tns:GetMultiPriceSoapIn" />
+      <wsdl:output message="tns:GetMultiPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice_Old_20110907">
+      <wsdl:input message="tns:GetMultiPrice_Old_20110907SoapIn" />
+      <wsdl:output message="tns:GetMultiPrice_Old_20110907SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice_Old">
+      <wsdl:input message="tns:GetMultiPrice_OldSoapIn" />
+      <wsdl:output message="tns:GetMultiPrice_OldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice2">
+      <wsdl:input message="tns:GetMultiPrice2SoapIn" />
+      <wsdl:output message="tns:GetMultiPrice2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eBizAEU_WSSoap" type="tns:eBizAEU_WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloKitty">
+      <soap:operation soapAction="eBizAEU/HelloKitty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdTrkSpeedByMail">
+      <soap:operation soapAction="eBizAEU/GetOrdTrkSpeedByMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSAPOrderBillTo">
+      <soap:operation soapAction="eBizAEU/UpdateSAPOrderBillTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSAPCustomerContact">
+      <soap:operation soapAction="eBizAEU/AddSAPCustomerContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSAPCustomerContact">
+      <soap:operation soapAction="eBizAEU/UpdateSAPCustomerContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSAPCustomerAddress">
+      <soap:operation soapAction="eBizAEU/UpdateSAPCustomerAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice">
+      <soap:operation soapAction="eBizAEU/GetMultiPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice_Old_20110907">
+      <soap:operation soapAction="eBizAEU/GetMultiPrice_Old_20110907" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice_Old">
+      <soap:operation soapAction="eBizAEU/GetMultiPrice_Old" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice2">
+      <soap:operation soapAction="eBizAEU/GetMultiPrice2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eBizAEU_WSSoap12" type="tns:eBizAEU_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloKitty">
+      <soap12:operation soapAction="eBizAEU/HelloKitty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdTrkSpeedByMail">
+      <soap12:operation soapAction="eBizAEU/GetOrdTrkSpeedByMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSAPOrderBillTo">
+      <soap12:operation soapAction="eBizAEU/UpdateSAPOrderBillTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSAPCustomerContact">
+      <soap12:operation soapAction="eBizAEU/AddSAPCustomerContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSAPCustomerContact">
+      <soap12:operation soapAction="eBizAEU/UpdateSAPCustomerContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSAPCustomerAddress">
+      <soap12:operation soapAction="eBizAEU/UpdateSAPCustomerAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice">
+      <soap12:operation soapAction="eBizAEU/GetMultiPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice_Old_20110907">
+      <soap12:operation soapAction="eBizAEU/GetMultiPrice_Old_20110907" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice_Old">
+      <soap12:operation soapAction="eBizAEU/GetMultiPrice_Old" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultiPrice2">
+      <soap12:operation soapAction="eBizAEU/GetMultiPrice2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eBizAEU_WS">
+    <wsdl:port name="eBizAEU_WSSoap" binding="tns:eBizAEU_WSSoap">
+      <soap:address location="http://myadvan-global:9000/eBizAEU_WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eBizAEU_WSSoap12" binding="tns:eBizAEU_WSSoap12">
+      <soap12:address location="http://myadvan-global:9000/eBizAEU_WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

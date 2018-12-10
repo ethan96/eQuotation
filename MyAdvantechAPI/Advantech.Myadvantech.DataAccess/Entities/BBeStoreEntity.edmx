@@ -1,0 +1,955 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BBeStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="CartID" />
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SoldtoID" Type="int" />
+          <Property Name="BilltoID" Type="int" />
+          <Property Name="ShiptoID" Type="int" />
+          <Property Name="TotalAmount" Type="money" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastUpdateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProtectionStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesDivision" Type="varchar" MaxLength="50" />
+          <Property Name="LocalCurrency" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocalCurExchangeRate" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="MiniSiteID" Type="int" />
+        </EntityType>
+        <EntityType Name="CartContact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContactType" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AddressID" Type="nvarchar" MaxLength="100" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AttCompanyName" Type="nvarchar" MaxLength="100" />
+          <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelExt" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="1000" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+          <Property Name="State" Type="nvarchar" MaxLength="100" />
+          <Property Name="County" Type="nvarchar" MaxLength="100" />
+          <Property Name="Country" Type="nvarchar" MaxLength="100" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="LegalForm" Type="nvarchar" MaxLength="128" />
+          <Property Name="VATNumbe" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValidationStatus" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CartItem">
+          <Key>
+            <PropertyRef Name="CartID" />
+            <PropertyRef Name="ItemNo" />
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ItemNo" Type="int" Nullable="false" />
+          <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BTOConfigID" Type="nvarchar" MaxLength="100" />
+          <Property Name="SProductID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="DueDate" Type="datetime" Nullable="false" />
+          <Property Name="RequiredDate" Type="datetime" Nullable="false" />
+          <Property Name="AdjustedPrice" Type="money" Nullable="false" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
+          <Property Name="AutoOrderFlag" Type="bit" />
+          <Property Name="AutoOrderQty" Type="int" />
+          <Property Name="SupplierDueDate" Type="datetime" />
+          <Property Name="ItemType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerMessage" Type="nvarchar" MaxLength="2000" />
+          <Property Name="PackageID" Type="int" />
+          <Property Name="AffiliateID" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliveryPlant" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="PromotionStrategy" Type="int" />
+          <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PromotionMessage" Type="nvarchar" MaxLength="500" />
+          <Property Name="BundleID" Type="int" />
+          <Property Name="WarrantyItem" Type="int" />
+          <Property Name="RelatedItem" Type="int" />
+          <Property Name="RelatedType" Type="int" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="StoreID" />
+            <PropertyRef Name="CartID" />
+            <PropertyRef Name="OrderNo" />
+          </Key>
+          <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="OrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderType" Type="nvarchar" MaxLength="50" />
+          <Property Name="PurchaseNO" Type="nvarchar" MaxLength="50" />
+          <Property Name="PurchaseOrderFile" Type="nvarchar" MaxLength="200" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="PaymentType" Type="nvarchar" MaxLength="100" />
+          <Property Name="PartialFlag" Type="char" MaxLength="1" />
+          <Property Name="CombineOrderFlag" Type="char" MaxLength="1" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeliveryPlant" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShipVia" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderNote" Type="nvarchar" MaxLength="1000" />
+          <Property Name="OrderStatus" Type="nvarchar" MaxLength="1000" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="AutoOrderFlag" Type="char" MaxLength="1" />
+          <Property Name="PaymentID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResellerID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerComment" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ChannelID" Type="int" />
+          <Property Name="ChannelName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Courier" Type="nvarchar" MaxLength="100" />
+          <Property Name="CourierAccount" Type="nvarchar" MaxLength="100" />
+          <Property Name="CourierPhone" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShippingMethod" Type="nvarchar" MaxLength="500" />
+          <Property Name="ZM" Type="varchar" MaxLength="50" />
+          <Property Name="Z2" Type="varchar" MaxLength="50" />
+          <Property Name="SalesID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SAPSyncBy" Type="varchar" MaxLength="50" />
+          <Property Name="SAPSyncDate" Type="datetime" />
+          <Property Name="SAPSyncStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="TDSCost" Type="money" />
+          <Property Name="ShipmentTerm" Type="nvarchar" MaxLength="50" />
+          <Property Name="EarlyShipFlag" Type="bit" />
+          <Property Name="Freight" Type="money" />
+          <Property Name="Insurance" Type="money" />
+          <Property Name="Tax" Type="money" />
+          <Property Name="TaxRate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="RequiredDate" Type="datetime" />
+          <Property Name="ConfirmedDate" Type="datetime" />
+          <Property Name="ConfirmedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="TotalAmount" Type="money" />
+          <Property Name="VATAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="VATNumbe" Type="nvarchar" MaxLength="500" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="100" />
+          <Property Name="Source" Type="nvarchar" MaxLength="500" />
+          <Property Name="PromoteCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="TotalDiscount" Type="money" />
+          <Property Name="LocalCurrency" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocalCurExchangeRate" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="LastUpdateBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="FreightDiscount" Type="money" />
+          <Property Name="TaxDiscount" Type="money" />
+          <Property Name="ResellerCertificate" Type="nvarchar" MaxLength="200" />
+          <Property Name="DutyAndTax" Type="money" />
+          <Property Name="TaxAndFees" Type="money" />
+          <Property Name="VATTax" Type="money" />
+          <Property Name="OtherTaxAndFees" Type="money" />
+          <Property Name="Surcharge" Type="money" />
+          <Property Name="RegistrationNumber" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OrderSyncedRecords">
+          <Key>
+            <PropertyRef Name="OrderNo" />
+            <PropertyRef Name="StoreID" />
+            <PropertyRef Name="CartID" />
+          </Key>
+          <Property Name="OrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SalesOffice" Type="nvarchar" MaxLength="50" />
+          <Property Name="CashManagmentGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesDistrict" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="Division" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliveryPriority" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesAssistant" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMPCODE3" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingCondition" Type="nvarchar" MaxLength="50" />
+          <Property Name="Account" Type="nvarchar" MaxLength="50" />
+          <Property Name="Distribution_Channel" Type="nvarchar" MaxLength="50" />
+          <Property Name="EarlyShipping" Type="bit" />
+          <Property Name="PartialShipment" Type="bit" />
+          <Property Name="ReturnMessage" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="OrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PaymentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PaymentType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="500" />
+          <Property Name="StatusCode" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CCUser1" Type="nvarchar" MaxLength="50" />
+          <Property Name="CardHolderName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comment1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comment2" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionDesc" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="CCResultCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CCPNREF" Type="nvarchar" MaxLength="50" />
+          <Property Name="CCRESPMSG" Type="nvarchar" MaxLength="100" />
+          <Property Name="CCAuthCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CCAVSAddr" Type="nvarchar" MaxLength="10" />
+          <Property Name="CCAVSZIP" Type="nvarchar" MaxLength="10" />
+          <Property Name="CCIAVS" Type="nvarchar" MaxLength="10" />
+          <Property Name="CCPREFPSMSG" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CCPOSTFPSMSG" Type="nvarchar" MaxLength="100" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="1000" />
+          <Property Name="EncryptCardNumber" Type="varbinary" MaxLength="256" />
+          <Property Name="CardExpiredDate" Type="nvarchar" MaxLength="6" />
+          <Property Name="CardType" Type="nvarchar" MaxLength="50" />
+          <Property Name="SecurityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastFourDigit" Type="int" />
+          <Property Name="TranxType" Type="nvarchar" MaxLength="100" />
+          <Property Name="OriginalTranxID" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Cart_CartContact">
+          <End Role="CartContact" Type="Self.CartContact" Multiplicity="0..1" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CartContact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="SoldtoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_CartContact1">
+          <End Role="CartContact" Type="Self.CartContact" Multiplicity="0..1" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CartContact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="BilltoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_CartContact2">
+          <End Role="CartContact" Type="Self.CartContact" Multiplicity="0..1" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CartContact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="ShiptoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CartItem_Cart">
+          <End Role="Cart" Type="Self.Cart" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CartItem" Type="Self.CartItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cart">
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="CartItem">
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderMaster_CartMaster">
+          <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cart">
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderSyncedRecords_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderSyncedRecords" Type="Self.OrderSyncedRecords" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="StoreID" />
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="OrderNo" />
+            </Principal>
+            <Dependent Role="OrderSyncedRecords">
+              <PropertyRef Name="StoreID" />
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="OrderNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BBeStoreModelStoreContainer">
+          <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CartContact" EntityType="Self.CartContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CartItem" EntityType="Self.CartItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderSyncedRecords" EntityType="Self.OrderSyncedRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cart_CartContact" Association="Self.FK_Cart_CartContact">
+            <End Role="CartContact" EntitySet="CartContact" />
+            <End Role="Cart" EntitySet="Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_CartContact1" Association="Self.FK_Cart_CartContact1">
+            <End Role="CartContact" EntitySet="CartContact" />
+            <End Role="Cart" EntitySet="Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_CartContact2" Association="Self.FK_Cart_CartContact2">
+            <End Role="CartContact" EntitySet="CartContact" />
+            <End Role="Cart" EntitySet="Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CartItem_Cart" Association="Self.FK_CartItem_Cart">
+            <End Role="Cart" EntitySet="Cart" />
+            <End Role="CartItem" EntitySet="CartItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderMaster_CartMaster" Association="Self.FK_OrderMaster_CartMaster">
+            <End Role="Cart" EntitySet="Cart" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderSyncedRecords_Order" Association="Self.FK_OrderSyncedRecords_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderSyncedRecords" EntitySet="OrderSyncedRecords" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BBeStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="CartID" />
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="CartID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoldtoID" Type="Int32" />
+          <Property Name="BilltoID" Type="Int32" />
+          <Property Name="ShiptoID" Type="Int32" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProtectionStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesDivision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LocalCurrency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocalCurExchangeRate" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="MiniSiteID" Type="Int32" />
+          <NavigationProperty Name="CartItem" Relationship="Self.FK_CartItem_Cart" FromRole="Cart" ToRole="CartItem" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_OrderMaster_CartMaster" FromRole="Cart" ToRole="Order" />
+          <NavigationProperty Name="CartContact" Relationship="BBeStoreModel.FK_Cart_CartContact" FromRole="Cart" ToRole="CartContact" />
+          <NavigationProperty Name="CartContact1" Relationship="BBeStoreModel.FK_Cart_CartContact1" FromRole="Cart" ToRole="CartContact" />
+          <NavigationProperty Name="CartContact2" Relationship="BBeStoreModel.FK_Cart_CartContact2" FromRole="Cart" ToRole="CartContact" />
+        </EntityType>
+        <EntityType Name="CartItem">
+          <Key>
+            <PropertyRef Name="CartID" />
+            <PropertyRef Name="ItemNo" />
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="CartID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ItemNo" Type="Int32" Nullable="false" />
+          <Property Name="StoreID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BTOConfigID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SProductID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RequiredDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AdjustedPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="AutoOrderFlag" Type="Boolean" />
+          <Property Name="AutoOrderQty" Type="Int32" />
+          <Property Name="SupplierDueDate" Type="DateTime" Precision="3" />
+          <Property Name="ItemType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerMessage" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="PackageID" Type="Int32" />
+          <Property Name="AffiliateID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryPlant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PromotionStrategy" Type="Int32" />
+          <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PromotionMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BundleID" Type="Int32" />
+          <Property Name="WarrantyItem" Type="Int32" />
+          <Property Name="RelatedItem" Type="Int32" />
+          <Property Name="RelatedType" Type="Int32" />
+          <NavigationProperty Name="Cart" Relationship="Self.FK_CartItem_Cart" FromRole="CartItem" ToRole="Cart" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="StoreID" />
+            <PropertyRef Name="CartID" />
+            <PropertyRef Name="OrderNo" />
+          </Key>
+          <Property Name="StoreID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CartID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseOrderFile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="PaymentType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PartialFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CombineOrderFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryPlant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShipVia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderNote" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="OrderStatus" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+          <Property Name="AutoOrderFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PaymentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResellerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerComment" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ChannelID" Type="Int32" />
+          <Property Name="ChannelName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Courier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CourierAccount" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CourierPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingMethod" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ZM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Z2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SalesID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SAPSyncBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SAPSyncDate" Type="DateTime" Precision="3" />
+          <Property Name="SAPSyncStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TDSCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ShipmentTerm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EarlyShipFlag" Type="Boolean" />
+          <Property Name="Freight" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Insurance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Tax" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TaxRate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="RequiredDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmedDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="VATAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VATNumbe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PromoteCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TotalDiscount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="LocalCurrency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocalCurExchangeRate" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FreightDiscount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TaxDiscount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ResellerCertificate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DutyAndTax" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TaxAndFees" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="VATTax" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OtherTaxAndFees" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Surcharge" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Cart" Relationship="Self.FK_OrderMaster_CartMaster" FromRole="Order" ToRole="Cart" />
+          <NavigationProperty Name="OrderSyncedRecords" Relationship="Self.FK_OrderSyncedRecords_Order" FromRole="Order" ToRole="OrderSyncedRecords" />
+          <Property Name="RegistrationNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OrderSyncedRecords">
+          <Key>
+            <PropertyRef Name="OrderNo" />
+            <PropertyRef Name="StoreID" />
+            <PropertyRef Name="CartID" />
+          </Key>
+          <Property Name="OrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CartID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SalesOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CashManagmentGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesDistrict" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryPriority" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesAssistant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMPCODE3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingCondition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Distribution_Channel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EarlyShipping" Type="Boolean" />
+          <Property Name="PartialShipment" Type="Boolean" />
+          <Property Name="ReturnMessage" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_OrderSyncedRecords_Order" FromRole="OrderSyncedRecords" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="OrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CartID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaymentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StatusCode" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CCUser1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CardHolderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comment1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comment2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CCResultCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CCPNREF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CCRESPMSG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CCAuthCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CCAVSAddr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CCAVSZIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CCIAVS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CCPREFPSMSG" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CCPOSTFPSMSG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="EncryptCardNumber" Type="Binary" MaxLength="256" FixedLength="false" />
+          <Property Name="CardExpiredDate" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="CardType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastFourDigit" Type="Int32" />
+          <Property Name="TranxType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OriginalTranxID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_CartItem_Cart">
+          <End Role="Cart" Type="Self.Cart" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CartItem" Type="Self.CartItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cart">
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="CartItem">
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderMaster_CartMaster">
+          <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cart">
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderSyncedRecords_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderSyncedRecords" Type="Self.OrderSyncedRecords" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="StoreID" />
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="OrderNo" />
+            </Principal>
+            <Dependent Role="OrderSyncedRecords">
+              <PropertyRef Name="StoreID" />
+              <PropertyRef Name="CartID" />
+              <PropertyRef Name="OrderNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BBeStoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cart" EntityType="Self.Cart" />
+          <EntitySet Name="CartItem" EntityType="Self.CartItem" />
+          <EntitySet Name="Order" EntityType="Self.Order" />
+          <EntitySet Name="OrderSyncedRecords" EntityType="Self.OrderSyncedRecords" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" />
+          <AssociationSet Name="FK_CartItem_Cart" Association="Self.FK_CartItem_Cart">
+            <End Role="Cart" EntitySet="Cart" />
+            <End Role="CartItem" EntitySet="CartItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderMaster_CartMaster" Association="Self.FK_OrderMaster_CartMaster">
+            <End Role="Cart" EntitySet="Cart" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderSyncedRecords_Order" Association="Self.FK_OrderSyncedRecords_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderSyncedRecords" EntitySet="OrderSyncedRecords" />
+          </AssociationSet>
+          <EntitySet Name="CartContact" EntityType="BBeStoreModel.CartContact" />
+          <AssociationSet Name="FK_Cart_CartContact" Association="BBeStoreModel.FK_Cart_CartContact">
+            <End Role="CartContact" EntitySet="CartContact" />
+            <End Role="Cart" EntitySet="Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_CartContact1" Association="BBeStoreModel.FK_Cart_CartContact1">
+            <End Role="CartContact" EntitySet="CartContact" />
+            <End Role="Cart" EntitySet="Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_CartContact2" Association="BBeStoreModel.FK_Cart_CartContact2">
+            <End Role="CartContact" EntitySet="CartContact" />
+            <End Role="Cart" EntitySet="Cart" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CartContact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AddressID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AttCompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FaxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelExt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LegalForm" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="VATNumbe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValidationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cart" Relationship="BBeStoreModel.FK_Cart_CartContact" FromRole="CartContact" ToRole="Cart" />
+          <NavigationProperty Name="Cart1" Relationship="BBeStoreModel.FK_Cart_CartContact1" FromRole="CartContact" ToRole="Cart" />
+          <NavigationProperty Name="Cart2" Relationship="BBeStoreModel.FK_Cart_CartContact2" FromRole="CartContact" ToRole="Cart" />
+        </EntityType>
+        <Association Name="FK_Cart_CartContact">
+          <End Type="BBeStoreModel.CartContact" Role="CartContact" Multiplicity="0..1" />
+          <End Type="BBeStoreModel.Cart" Role="Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CartContact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="SoldtoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_CartContact1">
+          <End Type="BBeStoreModel.CartContact" Role="CartContact" Multiplicity="0..1" />
+          <End Type="BBeStoreModel.Cart" Role="Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CartContact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="BilltoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_CartContact2">
+          <End Type="BBeStoreModel.CartContact" Role="CartContact" Multiplicity="0..1" />
+          <End Type="BBeStoreModel.Cart" Role="Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CartContact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="ShiptoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BBeStoreModelStoreContainer" CdmEntityContainer="BBeStoreEntities">
+          <EntitySetMapping Name="Cart">
+            <EntityTypeMapping TypeName="BBeStoreModel.Cart">
+              <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="CartID" ColumnName="CartID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="SoldtoID" ColumnName="SoldtoID" />
+                <ScalarProperty Name="BilltoID" ColumnName="BilltoID" />
+                <ScalarProperty Name="ShiptoID" ColumnName="ShiptoID" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ProtectionStatus" ColumnName="ProtectionStatus" />
+                <ScalarProperty Name="SalesDivision" ColumnName="SalesDivision" />
+                <ScalarProperty Name="LocalCurrency" ColumnName="LocalCurrency" />
+                <ScalarProperty Name="LocalCurExchangeRate" ColumnName="LocalCurExchangeRate" />
+                <ScalarProperty Name="MiniSiteID" ColumnName="MiniSiteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CartItem">
+            <EntityTypeMapping TypeName="BBeStoreModel.CartItem">
+              <MappingFragment StoreEntitySet="CartItem">
+                <ScalarProperty Name="CartID" ColumnName="CartID" />
+                <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="BTOConfigID" ColumnName="BTOConfigID" />
+                <ScalarProperty Name="SProductID" ColumnName="SProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+                <ScalarProperty Name="AdjustedPrice" ColumnName="AdjustedPrice" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="AutoOrderFlag" ColumnName="AutoOrderFlag" />
+                <ScalarProperty Name="AutoOrderQty" ColumnName="AutoOrderQty" />
+                <ScalarProperty Name="SupplierDueDate" ColumnName="SupplierDueDate" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="CustomerMessage" ColumnName="CustomerMessage" />
+                <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+                <ScalarProperty Name="AffiliateID" ColumnName="AffiliateID" />
+                <ScalarProperty Name="DeliveryPlant" ColumnName="DeliveryPlant" />
+                <ScalarProperty Name="ShippingMethod" ColumnName="ShippingMethod" />
+                <ScalarProperty Name="PromotionStrategy" ColumnName="PromotionStrategy" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+                <ScalarProperty Name="PromotionMessage" ColumnName="PromotionMessage" />
+                <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+                <ScalarProperty Name="WarrantyItem" ColumnName="WarrantyItem" />
+                <ScalarProperty Name="RelatedItem" ColumnName="RelatedItem" />
+                <ScalarProperty Name="RelatedType" ColumnName="RelatedType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="BBeStoreModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="CartID" ColumnName="CartID" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="PurchaseNO" ColumnName="PurchaseNO" />
+                <ScalarProperty Name="PurchaseOrderFile" ColumnName="PurchaseOrderFile" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="PartialFlag" ColumnName="PartialFlag" />
+                <ScalarProperty Name="CombineOrderFlag" ColumnName="CombineOrderFlag" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="DeliveryPlant" ColumnName="DeliveryPlant" />
+                <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+                <ScalarProperty Name="OrderNote" ColumnName="OrderNote" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="AutoOrderFlag" ColumnName="AutoOrderFlag" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="ResellerID" ColumnName="ResellerID" />
+                <ScalarProperty Name="CustomerComment" ColumnName="CustomerComment" />
+                <ScalarProperty Name="ChannelID" ColumnName="ChannelID" />
+                <ScalarProperty Name="ChannelName" ColumnName="ChannelName" />
+                <ScalarProperty Name="Courier" ColumnName="Courier" />
+                <ScalarProperty Name="CourierAccount" ColumnName="CourierAccount" />
+                <ScalarProperty Name="CourierPhone" ColumnName="CourierPhone" />
+                <ScalarProperty Name="ShippingMethod" ColumnName="ShippingMethod" />
+                <ScalarProperty Name="ZM" ColumnName="ZM" />
+                <ScalarProperty Name="Z2" ColumnName="Z2" />
+                <ScalarProperty Name="SalesID" ColumnName="SalesID" />
+                <ScalarProperty Name="SAPSyncBy" ColumnName="SAPSyncBy" />
+                <ScalarProperty Name="SAPSyncDate" ColumnName="SAPSyncDate" />
+                <ScalarProperty Name="SAPSyncStatus" ColumnName="SAPSyncStatus" />
+                <ScalarProperty Name="TDSCost" ColumnName="TDSCost" />
+                <ScalarProperty Name="ShipmentTerm" ColumnName="ShipmentTerm" />
+                <ScalarProperty Name="EarlyShipFlag" ColumnName="EarlyShipFlag" />
+                <ScalarProperty Name="Freight" ColumnName="Freight" />
+                <ScalarProperty Name="Insurance" ColumnName="Insurance" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+                <ScalarProperty Name="ConfirmedDate" ColumnName="ConfirmedDate" />
+                <ScalarProperty Name="ConfirmedBy" ColumnName="ConfirmedBy" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="VATAddress" ColumnName="VATAddress" />
+                <ScalarProperty Name="VATNumbe" ColumnName="VATNumbe" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="PromoteCode" ColumnName="PromoteCode" />
+                <ScalarProperty Name="TotalDiscount" ColumnName="TotalDiscount" />
+                <ScalarProperty Name="LocalCurrency" ColumnName="LocalCurrency" />
+                <ScalarProperty Name="LocalCurExchangeRate" ColumnName="LocalCurExchangeRate" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="FreightDiscount" ColumnName="FreightDiscount" />
+                <ScalarProperty Name="TaxDiscount" ColumnName="TaxDiscount" />
+                <ScalarProperty Name="ResellerCertificate" ColumnName="ResellerCertificate" />
+                <ScalarProperty Name="DutyAndTax" ColumnName="DutyAndTax" />
+                <ScalarProperty Name="TaxAndFees" ColumnName="TaxAndFees" />
+                <ScalarProperty Name="VATTax" ColumnName="VATTax" />
+                <ScalarProperty Name="OtherTaxAndFees" ColumnName="OtherTaxAndFees" />
+                <ScalarProperty Name="Surcharge" ColumnName="Surcharge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderSyncedRecords">
+            <EntityTypeMapping TypeName="BBeStoreModel.OrderSyncedRecords">
+              <MappingFragment StoreEntitySet="OrderSyncedRecords">
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="CartID" ColumnName="CartID" />
+                <ScalarProperty Name="SalesOffice" ColumnName="SalesOffice" />
+                <ScalarProperty Name="CashManagmentGroup" ColumnName="CashManagmentGroup" />
+                <ScalarProperty Name="SalesDistrict" ColumnName="SalesDistrict" />
+                <ScalarProperty Name="SalesGroup" ColumnName="SalesGroup" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+                <ScalarProperty Name="DeliveryPriority" ColumnName="DeliveryPriority" />
+                <ScalarProperty Name="SalesPerson" ColumnName="SalesPerson" />
+                <ScalarProperty Name="SalesAssistant" ColumnName="SalesAssistant" />
+                <ScalarProperty Name="EMPCODE3" ColumnName="EMPCODE3" />
+                <ScalarProperty Name="ShippingCondition" ColumnName="ShippingCondition" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Distribution_Channel" ColumnName="Distribution_Channel" />
+                <ScalarProperty Name="EarlyShipping" ColumnName="EarlyShipping" />
+                <ScalarProperty Name="PartialShipment" ColumnName="PartialShipment" />
+                <ScalarProperty Name="ReturnMessage" ColumnName="ReturnMessage" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payment">
+            <EntityTypeMapping TypeName="BBeStoreModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="CartID" ColumnName="CartID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CCUser1" ColumnName="CCUser1" />
+                <ScalarProperty Name="CardHolderName" ColumnName="CardHolderName" />
+                <ScalarProperty Name="Comment1" ColumnName="Comment1" />
+                <ScalarProperty Name="Comment2" ColumnName="Comment2" />
+                <ScalarProperty Name="TransactionDesc" ColumnName="TransactionDesc" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CCResultCode" ColumnName="CCResultCode" />
+                <ScalarProperty Name="CCPNREF" ColumnName="CCPNREF" />
+                <ScalarProperty Name="CCRESPMSG" ColumnName="CCRESPMSG" />
+                <ScalarProperty Name="CCAuthCode" ColumnName="CCAuthCode" />
+                <ScalarProperty Name="CCAVSAddr" ColumnName="CCAVSAddr" />
+                <ScalarProperty Name="CCAVSZIP" ColumnName="CCAVSZIP" />
+                <ScalarProperty Name="CCIAVS" ColumnName="CCIAVS" />
+                <ScalarProperty Name="CCPREFPSMSG" ColumnName="CCPREFPSMSG" />
+                <ScalarProperty Name="CCPOSTFPSMSG" ColumnName="CCPOSTFPSMSG" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="EncryptCardNumber" ColumnName="EncryptCardNumber" />
+                <ScalarProperty Name="CardExpiredDate" ColumnName="CardExpiredDate" />
+                <ScalarProperty Name="CardType" ColumnName="CardType" />
+                <ScalarProperty Name="SecurityCode" ColumnName="SecurityCode" />
+                <ScalarProperty Name="LastFourDigit" ColumnName="LastFourDigit" />
+                <ScalarProperty Name="TranxType" ColumnName="TranxType" />
+                <ScalarProperty Name="OriginalTranxID" ColumnName="OriginalTranxID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CartContact">
+            <EntityTypeMapping TypeName="BBeStoreModel.CartContact">
+              <MappingFragment StoreEntitySet="CartContact">
+                <ScalarProperty Name="ValidationStatus" ColumnName="ValidationStatus" />
+                <ScalarProperty Name="VATNumbe" ColumnName="VATNumbe" />
+                <ScalarProperty Name="LegalForm" ColumnName="LegalForm" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="TelExt" ColumnName="TelExt" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="AttCompanyName" ColumnName="AttCompanyName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

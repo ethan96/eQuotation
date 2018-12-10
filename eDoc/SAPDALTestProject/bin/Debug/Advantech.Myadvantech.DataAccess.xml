@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Advantech.Myadvantech.DataAccess</name>
+    </assembly>
+    <members>
+        <member name="M:Advantech.Myadvantech.DataAccess.OptyQuoteHelper.GetOptyQuote(System.String)">
+            <summary>
+            Get optyQuote by quoteID
+            </summary>
+            <param name="quoteID">quoteID</param>
+            <returns>optyQuote</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.QuotationMasterHelper.GetQuotationMaster(System.String)">
+            <summary>
+            Get  QuotationMaster by quoteID
+            </summary>
+            <param name="quoteID">quoteID</param>
+            <returns>QuotationMaster</returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelActiveHelper">
+            <summary>
+            eQuotation.dbo.SiebelActive
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelActiveHelper.GetNewSiebelActive">
+            <summary>
+            Get New SiebelActive entity object
+            </summary>
+            <returns>new SiebelActive</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelActiveHelper.Save(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Save SiebelActive data
+            </summary>
+            <param name="active">SiebelActive object</param>
+            <returns>int</returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.Model">
+            <summary>
+            PIS Model data entity
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetModelNameByModelID(System.String)">
+            <summary>
+            Get model name by model ID
+            </summary>
+            <param name="model_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetModelNameByCategory_ModelID(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="category_id"></param>
+            <param name="model_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadBasicModelInformation">
+            <summary>
+            Load only model master information
+            </summary>
+            <param name="modelname"></param>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadModel_ParentCategory">
+            <summary>
+            Load model's parent categories
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadModel_LangInformation">
+            <summary>
+            Load model master information in other language version
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadLiteraturesInformation">
+            <summary>
+            Load model's literatures
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadModelSpecsInformation">
+            <summary>
+            Load model's specs
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadPartsInformation">
+            <summary>
+            Load model's parts
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadFeaturesInformation">
+            <summary>
+            Load models features
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadCompleteModelInformation">
+            <summary>
+            Load complete model information
+            </summary>
+            <param name="modelname"></param>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetFeaturesByDefault">
+            <summary>
+            Get model's default features
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetFeaturesByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)">
+            <summary>
+            Get model's features in specify language
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetDescriptionByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)">
+            <summary>
+            Get model's description in specify language
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetIntroductionByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)">
+            <summary>
+            Get model's introduction in specify language
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetMainPictures">
+            <summary>
+            Get model's main pictures
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetBigPictures">
+            <summary>
+            Get model's big pictures
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetSmallPictures">
+            <summary>
+            Get model's small pictures
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.Model.Parent_Category">
+            <summary>
+            Get model' parent category
+            </summary>
+        </member>
+    </members>
+</doc>

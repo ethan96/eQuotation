@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyAdminModelStoreContainer" CdmEntityContainer="MyAdminEntity">
+    <EntitySetMapping Name="SA_BAPIADDR1">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_BAPIADDR1">
+        <MappingFragment StoreEntitySet="SA_BAPIADDR1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HeadID" ColumnName="HeadID" />
+          <ScalarProperty Name="Addr_No" ColumnName="Addr_No" />
+          <ScalarProperty Name="Adr_Notes" ColumnName="Adr_Notes" />
+          <ScalarProperty Name="Build_Long" ColumnName="Build_Long" />
+          <ScalarProperty Name="Building" ColumnName="Building" />
+          <ScalarProperty Name="C_O_Name" ColumnName="C_O_Name" />
+          <ScalarProperty Name="Chckstatus" ColumnName="Chckstatus" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="City_No" ColumnName="City_No" />
+          <ScalarProperty Name="Comm_Type" ColumnName="Comm_Type" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Countryiso" ColumnName="Countryiso" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="County_Code" ColumnName="County_Code" />
+          <ScalarProperty Name="Deli_Serv_Number" ColumnName="Deli_Serv_Number" />
+          <ScalarProperty Name="Deli_Serv_Type" ColumnName="Deli_Serv_Type" />
+          <ScalarProperty Name="Deliv_Dis" ColumnName="Deliv_Dis" />
+          <ScalarProperty Name="Distrct_No" ColumnName="Distrct_No" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Dont_Use_P" ColumnName="Dont_Use_P" />
+          <ScalarProperty Name="Dont_Use_S" ColumnName="Dont_Use_S" />
+          <ScalarProperty Name="E_Mail" ColumnName="E_Mail" />
+          <ScalarProperty Name="Fax_Extens" ColumnName="Fax_Extens" />
+          <ScalarProperty Name="Fax_Number" ColumnName="Fax_Number" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Formofaddr" ColumnName="Formofaddr" />
+          <ScalarProperty Name="Home_City" ColumnName="Home_City" />
+          <ScalarProperty Name="Homecityno" ColumnName="Homecityno" />
+          <ScalarProperty Name="Homepage" ColumnName="Homepage" />
+          <ScalarProperty Name="House_No" ColumnName="House_No" />
+          <ScalarProperty Name="House_No2" ColumnName="House_No2" />
+          <ScalarProperty Name="House_No3" ColumnName="House_No3" />
+          <ScalarProperty Name="Langu" ColumnName="Langu" />
+          <ScalarProperty Name="Langu_Cr" ColumnName="Langu_Cr" />
+          <ScalarProperty Name="Langu_Iso" ColumnName="Langu_Iso" />
+          <ScalarProperty Name="Langucriso" ColumnName="Langucriso" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Name_2" ColumnName="Name_2" />
+          <ScalarProperty Name="Name_3" ColumnName="Name_3" />
+          <ScalarProperty Name="Name_4" ColumnName="Name_4" />
+          <ScalarProperty Name="Pboxcit_No" ColumnName="Pboxcit_No" />
+          <ScalarProperty Name="Pcode1_Ext" ColumnName="Pcode1_Ext" />
+          <ScalarProperty Name="Pcode2_Ext" ColumnName="Pcode2_Ext" />
+          <ScalarProperty Name="Pcode3_Ext" ColumnName="Pcode3_Ext" />
+          <ScalarProperty Name="Po_Box" ColumnName="Po_Box" />
+          <ScalarProperty Name="Po_Box_Cit" ColumnName="Po_Box_Cit" />
+          <ScalarProperty Name="Po_Box_Lobby" ColumnName="Po_Box_Lobby" />
+          <ScalarProperty Name="Po_Box_Reg" ColumnName="Po_Box_Reg" />
+          <ScalarProperty Name="Po_Ctryiso" ColumnName="Po_Ctryiso" />
+          <ScalarProperty Name="Po_W_O_No" ColumnName="Po_W_O_No" />
+          <ScalarProperty Name="Pobox_Ctry" ColumnName="Pobox_Ctry" />
+          <ScalarProperty Name="Postl_Cod1" ColumnName="Postl_Cod1" />
+          <ScalarProperty Name="Postl_Cod2" ColumnName="Postl_Cod2" />
+          <ScalarProperty Name="Postl_Cod3" ColumnName="Postl_Cod3" />
+          <ScalarProperty Name="Regiogroup" ColumnName="Regiogroup" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Room_No" ColumnName="Room_No" />
+          <ScalarProperty Name="Sort1" ColumnName="Sort1" />
+          <ScalarProperty Name="Sort2" ColumnName="Sort2" />
+          <ScalarProperty Name="Str_Abbr" ColumnName="Str_Abbr" />
+          <ScalarProperty Name="Str_Suppl1" ColumnName="Str_Suppl1" />
+          <ScalarProperty Name="Str_Suppl2" ColumnName="Str_Suppl2" />
+          <ScalarProperty Name="Str_Suppl3" ColumnName="Str_Suppl3" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Street_Lng" ColumnName="Street_Lng" />
+          <ScalarProperty Name="Street_No" ColumnName="Street_No" />
+          <ScalarProperty Name="Taxjurcode" ColumnName="Taxjurcode" />
+          <ScalarProperty Name="Tel1_Ext" ColumnName="Tel1_Ext" />
+          <ScalarProperty Name="Tel1_Numbr" ColumnName="Tel1_Numbr" />
+          <ScalarProperty Name="Time_Zone" ColumnName="Time_Zone" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Township" ColumnName="Township" />
+          <ScalarProperty Name="Township_Code" ColumnName="Township_Code" />
+          <ScalarProperty Name="Transpzone" ColumnName="Transpzone" />
+          <ScalarProperty Name="Uri_Type" ColumnName="Uri_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_BAPIADDR2">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_BAPIADDR2">
+        <MappingFragment StoreEntitySet="SA_BAPIADDR2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HeadID" ColumnName="HeadID" />
+          <ScalarProperty Name="Addr_No" ColumnName="Addr_No" />
+          <ScalarProperty Name="Adr_Notes" ColumnName="Adr_Notes" />
+          <ScalarProperty Name="Birth_Name" ColumnName="Birth_Name" />
+          <ScalarProperty Name="Build_Long" ColumnName="Build_Long" />
+          <ScalarProperty Name="Building" ColumnName="Building" />
+          <ScalarProperty Name="C_O_Name" ColumnName="C_O_Name" />
+          <ScalarProperty Name="Chckstatus" ColumnName="Chckstatus" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="City_No" ColumnName="City_No" />
+          <ScalarProperty Name="Comm_Type" ColumnName="Comm_Type" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Countryiso" ColumnName="Countryiso" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="County_Code" ColumnName="County_Code" />
+          <ScalarProperty Name="Deli_Serv_Number" ColumnName="Deli_Serv_Number" />
+          <ScalarProperty Name="Deli_Serv_Type" ColumnName="Deli_Serv_Type" />
+          <ScalarProperty Name="Deliv_Dis" ColumnName="Deliv_Dis" />
+          <ScalarProperty Name="Distrct_No" ColumnName="Distrct_No" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Dont_Use_P" ColumnName="Dont_Use_P" />
+          <ScalarProperty Name="Dont_Use_S" ColumnName="Dont_Use_S" />
+          <ScalarProperty Name="E_Mail" ColumnName="E_Mail" />
+          <ScalarProperty Name="Fax_Extens" ColumnName="Fax_Extens" />
+          <ScalarProperty Name="Fax_Number" ColumnName="Fax_Number" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="Fullname_X" ColumnName="Fullname_X" />
+          <ScalarProperty Name="Home_City" ColumnName="Home_City" />
+          <ScalarProperty Name="Homecityno" ColumnName="Homecityno" />
+          <ScalarProperty Name="Homepage" ColumnName="Homepage" />
+          <ScalarProperty Name="House_No" ColumnName="House_No" />
+          <ScalarProperty Name="House_No2" ColumnName="House_No2" />
+          <ScalarProperty Name="House_No3" ColumnName="House_No3" />
+          <ScalarProperty Name="Initials" ColumnName="Initials" />
+          <ScalarProperty Name="Langu_Cr_P" ColumnName="Langu_Cr_P" />
+          <ScalarProperty Name="Langu_P" ColumnName="Langu_P" />
+          <ScalarProperty Name="Langucpiso" ColumnName="Langucpiso" />
+          <ScalarProperty Name="Langup_Iso" ColumnName="Langup_Iso" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="Namcountry" ColumnName="Namcountry" />
+          <ScalarProperty Name="Nameformat" ColumnName="Nameformat" />
+          <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+          <ScalarProperty Name="Pboxcit_No" ColumnName="Pboxcit_No" />
+          <ScalarProperty Name="Pcode1_Ext" ColumnName="Pcode1_Ext" />
+          <ScalarProperty Name="Pcode2_Ext" ColumnName="Pcode2_Ext" />
+          <ScalarProperty Name="Pers_No" ColumnName="Pers_No" />
+          <ScalarProperty Name="Po_Box" ColumnName="Po_Box" />
+          <ScalarProperty Name="Po_Box_Cit" ColumnName="Po_Box_Cit" />
+          <ScalarProperty Name="Po_Box_Lobby" ColumnName="Po_Box_Lobby" />
+          <ScalarProperty Name="Po_Box_Reg" ColumnName="Po_Box_Reg" />
+          <ScalarProperty Name="Po_Ctryiso" ColumnName="Po_Ctryiso" />
+          <ScalarProperty Name="Po_W_O_No" ColumnName="Po_W_O_No" />
+          <ScalarProperty Name="Pobox_Ctry" ColumnName="Pobox_Ctry" />
+          <ScalarProperty Name="Postl_Cod1" ColumnName="Postl_Cod1" />
+          <ScalarProperty Name="Postl_Cod2" ColumnName="Postl_Cod2" />
+          <ScalarProperty Name="Prefix1" ColumnName="Prefix1" />
+          <ScalarProperty Name="Prefix2" ColumnName="Prefix2" />
+          <ScalarProperty Name="Regiogroup" ColumnName="Regiogroup" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Room_No" ColumnName="Room_No" />
+          <ScalarProperty Name="Secondname" ColumnName="Secondname" />
+          <ScalarProperty Name="Sort1_P" ColumnName="Sort1_P" />
+          <ScalarProperty Name="Sort2_P" ColumnName="Sort2_P" />
+          <ScalarProperty Name="Str_Abbr" ColumnName="Str_Abbr" />
+          <ScalarProperty Name="Str_Suppl1" ColumnName="Str_Suppl1" />
+          <ScalarProperty Name="Str_Suppl2" ColumnName="Str_Suppl2" />
+          <ScalarProperty Name="Str_Suppl3" ColumnName="Str_Suppl3" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Street_No" ColumnName="Street_No" />
+          <ScalarProperty Name="Taxjurcode" ColumnName="Taxjurcode" />
+          <ScalarProperty Name="Tel1_Ext" ColumnName="Tel1_Ext" />
+          <ScalarProperty Name="Tel1_Numbr" ColumnName="Tel1_Numbr" />
+          <ScalarProperty Name="Time_Zone" ColumnName="Time_Zone" />
+          <ScalarProperty Name="Title_Aca1" ColumnName="Title_Aca1" />
+          <ScalarProperty Name="Title_Aca2" ColumnName="Title_Aca2" />
+          <ScalarProperty Name="Title_P" ColumnName="Title_P" />
+          <ScalarProperty Name="Title_Sppl" ColumnName="Title_Sppl" />
+          <ScalarProperty Name="Township" ColumnName="Township" />
+          <ScalarProperty Name="Township_Code" ColumnName="Township_Code" />
+          <ScalarProperty Name="Transpzone" ColumnName="Transpzone" />
+          <ScalarProperty Name="Uri_Type" ColumnName="Uri_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_FKNBK">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_FKNBK">
+        <MappingFragment StoreEntitySet="SA_FKNBK">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HeadID" ColumnName="HeadID" />
+          <ScalarProperty Name="Bankl" ColumnName="Bankl" />
+          <ScalarProperty Name="Bankn" ColumnName="Bankn" />
+          <ScalarProperty Name="Banks" ColumnName="Banks" />
+          <ScalarProperty Name="Bkont" ColumnName="Bkont" />
+          <ScalarProperty Name="Bkref" ColumnName="Bkref" />
+          <ScalarProperty Name="Bvtyp" ColumnName="Bvtyp" />
+          <ScalarProperty Name="Ebpp_Accname" ColumnName="Ebpp_Accname" />
+          <ScalarProperty Name="Ebpp_Bvstatus" ColumnName="Ebpp_Bvstatus" />
+          <ScalarProperty Name="Kobis" ColumnName="Kobis" />
+          <ScalarProperty Name="Koinh" ColumnName="Koinh" />
+          <ScalarProperty Name="Kovon" ColumnName="Kovon" />
+          <ScalarProperty Name="Kunnr" ColumnName="Kunnr" />
+          <ScalarProperty Name="Kz" ColumnName="Kz" />
+          <ScalarProperty Name="Mandt" ColumnName="Mandt" />
+          <ScalarProperty Name="Xezer" ColumnName="Xezer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_FKNVI">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_FKNVI">
+        <MappingFragment StoreEntitySet="SA_FKNVI">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HeadID" ColumnName="HeadID" />
+          <ScalarProperty Name="Aland" ColumnName="Aland" />
+          <ScalarProperty Name="Kunnr" ColumnName="Kunnr" />
+          <ScalarProperty Name="Kz" ColumnName="Kz" />
+          <ScalarProperty Name="Mandt" ColumnName="Mandt" />
+          <ScalarProperty Name="Tatyp" ColumnName="Tatyp" />
+          <ScalarProperty Name="Taxkd" ColumnName="Taxkd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_KNA1">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_KNA1">
+        <MappingFragment StoreEntitySet="SA_KNA1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HeadID" ColumnName="HeadID" />
+          <ScalarProperty Name="Abrvw" ColumnName="Abrvw" />
+          <ScalarProperty Name="Adrnr" ColumnName="Adrnr" />
+          <ScalarProperty Name="Alc" ColumnName="Alc" />
+          <ScalarProperty Name="Anred" ColumnName="Anred" />
+          <ScalarProperty Name="Aufsd" ColumnName="Aufsd" />
+          <ScalarProperty Name="Bahne" ColumnName="Bahne" />
+          <ScalarProperty Name="Bahns" ColumnName="Bahns" />
+          <ScalarProperty Name="Bbbnr" ColumnName="Bbbnr" />
+          <ScalarProperty Name="Bbsnr" ColumnName="Bbsnr" />
+          <ScalarProperty Name="Begru" ColumnName="Begru" />
+          <ScalarProperty Name="Bran1" ColumnName="Bran1" />
+          <ScalarProperty Name="Bran2" ColumnName="Bran2" />
+          <ScalarProperty Name="Bran3" ColumnName="Bran3" />
+          <ScalarProperty Name="Bran4" ColumnName="Bran4" />
+          <ScalarProperty Name="Bran5" ColumnName="Bran5" />
+          <ScalarProperty Name="Brsch" ColumnName="Brsch" />
+          <ScalarProperty Name="Bubkz" ColumnName="Bubkz" />
+          <ScalarProperty Name="Cassd" ColumnName="Cassd" />
+          <ScalarProperty Name="Ccc01" ColumnName="Ccc01" />
+          <ScalarProperty Name="Ccc02" ColumnName="Ccc02" />
+          <ScalarProperty Name="Ccc03" ColumnName="Ccc03" />
+          <ScalarProperty Name="Ccc04" ColumnName="Ccc04" />
+          <ScalarProperty Name="Cfopc" ColumnName="Cfopc" />
+          <ScalarProperty Name="Cityc" ColumnName="Cityc" />
+          <ScalarProperty Name="Civve" ColumnName="Civve" />
+          <ScalarProperty Name="Confs" ColumnName="Confs" />
+          <ScalarProperty Name="Counc" ColumnName="Counc" />
+          <ScalarProperty Name="Datlt" ColumnName="Datlt" />
+          <ScalarProperty Name="Dear1" ColumnName="Dear1" />
+          <ScalarProperty Name="Dear2" ColumnName="Dear2" />
+          <ScalarProperty Name="Dear3" ColumnName="Dear3" />
+          <ScalarProperty Name="Dear4" ColumnName="Dear4" />
+          <ScalarProperty Name="Dear5" ColumnName="Dear5" />
+          <ScalarProperty Name="Dear6" ColumnName="Dear6" />
+          <ScalarProperty Name="Dtams" ColumnName="Dtams" />
+          <ScalarProperty Name="Dtaws" ColumnName="Dtaws" />
+          <ScalarProperty Name="Duefl" ColumnName="Duefl" />
+          <ScalarProperty Name="Ekont" ColumnName="Ekont" />
+          <ScalarProperty Name="Erdat" ColumnName="Erdat" />
+          <ScalarProperty Name="Ernam" ColumnName="Ernam" />
+          <ScalarProperty Name="Etikg" ColumnName="Etikg" />
+          <ScalarProperty Name="Exabl" ColumnName="Exabl" />
+          <ScalarProperty Name="Faksd" ColumnName="Faksd" />
+          <ScalarProperty Name="Fiskn" ColumnName="Fiskn" />
+          <ScalarProperty Name="Fityp" ColumnName="Fityp" />
+          <ScalarProperty Name="Gform" ColumnName="Gform" />
+          <ScalarProperty Name="Hzuor" ColumnName="Hzuor" />
+          <ScalarProperty Name="Inspatdebi" ColumnName="Inspatdebi" />
+          <ScalarProperty Name="Inspbydebi" ColumnName="Inspbydebi" />
+          <ScalarProperty Name="J_1kfrepre" ColumnName="J_1kfrepre" />
+          <ScalarProperty Name="J_1kftbus" ColumnName="J_1kftbus" />
+          <ScalarProperty Name="J_1kftind" ColumnName="J_1kftind" />
+          <ScalarProperty Name="Jmjah" ColumnName="Jmjah" />
+          <ScalarProperty Name="Jmzah" ColumnName="Jmzah" />
+          <ScalarProperty Name="Katr1" ColumnName="Katr1" />
+          <ScalarProperty Name="Katr10" ColumnName="Katr10" />
+          <ScalarProperty Name="Katr2" ColumnName="Katr2" />
+          <ScalarProperty Name="Katr3" ColumnName="Katr3" />
+          <ScalarProperty Name="Katr4" ColumnName="Katr4" />
+          <ScalarProperty Name="Katr5" ColumnName="Katr5" />
+          <ScalarProperty Name="Katr6" ColumnName="Katr6" />
+          <ScalarProperty Name="Katr7" ColumnName="Katr7" />
+          <ScalarProperty Name="Katr8" ColumnName="Katr8" />
+          <ScalarProperty Name="Katr9" ColumnName="Katr9" />
+          <ScalarProperty Name="Kdkg1" ColumnName="Kdkg1" />
+          <ScalarProperty Name="Kdkg2" ColumnName="Kdkg2" />
+          <ScalarProperty Name="Kdkg3" ColumnName="Kdkg3" />
+          <ScalarProperty Name="Kdkg4" ColumnName="Kdkg4" />
+          <ScalarProperty Name="Kdkg5" ColumnName="Kdkg5" />
+          <ScalarProperty Name="Knazk" ColumnName="Knazk" />
+          <ScalarProperty Name="Knrza" ColumnName="Knrza" />
+          <ScalarProperty Name="Knurl" ColumnName="Knurl" />
+          <ScalarProperty Name="Konzs" ColumnName="Konzs" />
+          <ScalarProperty Name="Ktocd" ColumnName="Ktocd" />
+          <ScalarProperty Name="Ktokd" ColumnName="Ktokd" />
+          <ScalarProperty Name="Kukla" ColumnName="Kukla" />
+          <ScalarProperty Name="Kunnr" ColumnName="Kunnr" />
+          <ScalarProperty Name="Land1" ColumnName="Land1" />
+          <ScalarProperty Name="Lifnr" ColumnName="Lifnr" />
+          <ScalarProperty Name="Lifsd" ColumnName="Lifsd" />
+          <ScalarProperty Name="Locco" ColumnName="Locco" />
+          <ScalarProperty Name="Loevm" ColumnName="Loevm" />
+          <ScalarProperty Name="Lzone" ColumnName="Lzone" />
+          <ScalarProperty Name="Mandt" ColumnName="Mandt" />
+          <ScalarProperty Name="Mcod1" ColumnName="Mcod1" />
+          <ScalarProperty Name="Mcod2" ColumnName="Mcod2" />
+          <ScalarProperty Name="Mcod3" ColumnName="Mcod3" />
+          <ScalarProperty Name="Milve" ColumnName="Milve" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Name2" ColumnName="Name2" />
+          <ScalarProperty Name="Name3" ColumnName="Name3" />
+          <ScalarProperty Name="Name4" ColumnName="Name4" />
+          <ScalarProperty Name="Niels" ColumnName="Niels" />
+          <ScalarProperty Name="Nodel" ColumnName="Nodel" />
+          <ScalarProperty Name="Ort01" ColumnName="Ort01" />
+          <ScalarProperty Name="Ort02" ColumnName="Ort02" />
+          <ScalarProperty Name="Periv" ColumnName="Periv" />
+          <ScalarProperty Name="Pfach" ColumnName="Pfach" />
+          <ScalarProperty Name="Pfort" ColumnName="Pfort" />
+          <ScalarProperty Name="Pmt_Office" ColumnName="Pmt_Office" />
+          <ScalarProperty Name="Psofg" ColumnName="Psofg" />
+          <ScalarProperty Name="Psohs" ColumnName="Psohs" />
+          <ScalarProperty Name="Psois" ColumnName="Psois" />
+          <ScalarProperty Name="Pson1" ColumnName="Pson1" />
+          <ScalarProperty Name="Pson2" ColumnName="Pson2" />
+          <ScalarProperty Name="Pson3" ColumnName="Pson3" />
+          <ScalarProperty Name="Psoo1" ColumnName="Psoo1" />
+          <ScalarProperty Name="Psoo2" ColumnName="Psoo2" />
+          <ScalarProperty Name="Psoo3" ColumnName="Psoo3" />
+          <ScalarProperty Name="Psoo4" ColumnName="Psoo4" />
+          <ScalarProperty Name="Psoo5" ColumnName="Psoo5" />
+          <ScalarProperty Name="Psost" ColumnName="Psost" />
+          <ScalarProperty Name="Psotl" ColumnName="Psotl" />
+          <ScalarProperty Name="Psovn" ColumnName="Psovn" />
+          <ScalarProperty Name="Pstl2" ColumnName="Pstl2" />
+          <ScalarProperty Name="Pstlz" ColumnName="Pstlz" />
+          <ScalarProperty Name="Regio" ColumnName="Regio" />
+          <ScalarProperty Name="Rpmkr" ColumnName="Rpmkr" />
+          <ScalarProperty Name="Sortl" ColumnName="Sortl" />
+          <ScalarProperty Name="Sperr" ColumnName="Sperr" />
+          <ScalarProperty Name="Sperz" ColumnName="Sperz" />
+          <ScalarProperty Name="Spras" ColumnName="Spras" />
+          <ScalarProperty Name="Stcd1" ColumnName="Stcd1" />
+          <ScalarProperty Name="Stcd2" ColumnName="Stcd2" />
+          <ScalarProperty Name="Stcd3" ColumnName="Stcd3" />
+          <ScalarProperty Name="Stcd4" ColumnName="Stcd4" />
+          <ScalarProperty Name="Stcd5" ColumnName="Stcd5" />
+          <ScalarProperty Name="Stcdt" ColumnName="Stcdt" />
+          <ScalarProperty Name="Stceg" ColumnName="Stceg" />
+          <ScalarProperty Name="Stkza" ColumnName="Stkza" />
+          <ScalarProperty Name="Stkzn" ColumnName="Stkzn" />
+          <ScalarProperty Name="Stkzu" ColumnName="Stkzu" />
+          <ScalarProperty Name="Stras" ColumnName="Stras" />
+          <ScalarProperty Name="Telbx" ColumnName="Telbx" />
+          <ScalarProperty Name="Telf1" ColumnName="Telf1" />
+          <ScalarProperty Name="Telf2" ColumnName="Telf2" />
+          <ScalarProperty Name="Telfx" ColumnName="Telfx" />
+          <ScalarProperty Name="Teltx" ColumnName="Teltx" />
+          <ScalarProperty Name="Telx1" ColumnName="Telx1" />
+          <ScalarProperty Name="Txjcd" ColumnName="Txjcd" />
+          <ScalarProperty Name="Txlw1" ColumnName="Txlw1" />
+          <ScalarProperty Name="Txlw2" ColumnName="Txlw2" />
+          <ScalarProperty Name="Umjah" ColumnName="Umjah" />
+          <ScalarProperty Name="Umsa1" ColumnName="Umsa1" />
+          <ScalarProperty Name="Umsat" ColumnName="Umsat" />
+          <ScalarProperty Name="Updat" ColumnName="Updat" />
+          <ScalarProperty Name="Uptim" ColumnName="Uptim" />
+          <ScalarProperty Name="Uwaer" ColumnName="Uwaer" />
+          <ScalarProperty Name="Vbund" ColumnName="Vbund" />
+          <ScalarProperty Name="Vso_R_Dpoint" ColumnName="Vso_R_Dpoint" />
+          <ScalarProperty Name="Vso_R_I_No_Lyr" ColumnName="Vso_R_I_No_Lyr" />
+          <ScalarProperty Name="Vso_R_Load_Pref" ColumnName="Vso_R_Load_Pref" />
+          <ScalarProperty Name="Vso_R_Matpal" ColumnName="Vso_R_Matpal" />
+          <ScalarProperty Name="Vso_R_One_Mat" ColumnName="Vso_R_One_Mat" />
+          <ScalarProperty Name="Vso_R_One_Sort" ColumnName="Vso_R_One_Sort" />
+          <ScalarProperty Name="Vso_R_Pal_Ul" ColumnName="Vso_R_Pal_Ul" />
+          <ScalarProperty Name="Vso_R_Palhgt" ColumnName="Vso_R_Palhgt" />
+          <ScalarProperty Name="Vso_R_Pk_Mat" ColumnName="Vso_R_Pk_Mat" />
+          <ScalarProperty Name="Vso_R_Uld_Side" ColumnName="Vso_R_Uld_Side" />
+          <ScalarProperty Name="Werks" ColumnName="Werks" />
+          <ScalarProperty Name="Xcpdk" ColumnName="Xcpdk" />
+          <ScalarProperty Name="Xicms" ColumnName="Xicms" />
+          <ScalarProperty Name="Xknza" ColumnName="Xknza" />
+          <ScalarProperty Name="Xsubt" ColumnName="Xsubt" />
+          <ScalarProperty Name="Xxipi" ColumnName="Xxipi" />
+          <ScalarProperty Name="Xzemp" ColumnName="Xzemp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_KNB1">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_KNB1">
+        <MappingFragment StoreEntitySet="SA_KNB1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HeadID" ColumnName="HeadID" />
+          <ScalarProperty Name="Ad_Hash" ColumnName="Ad_Hash" />
+          <ScalarProperty Name="Akont" ColumnName="Akont" />
+          <ScalarProperty Name="Altkn" ColumnName="Altkn" />
+          <ScalarProperty Name="Avsnd" ColumnName="Avsnd" />
+          <ScalarProperty Name="Begru" ColumnName="Begru" />
+          <ScalarProperty Name="Blnkz" ColumnName="Blnkz" />
+          <ScalarProperty Name="Bukrs" ColumnName="Bukrs" />
+          <ScalarProperty Name="Busab" ColumnName="Busab" />
+          <ScalarProperty Name="Cession_Kz" ColumnName="Cession_Kz" />
+          <ScalarProperty Name="Confs" ColumnName="Confs" />
+          <ScalarProperty Name="Datlz" ColumnName="Datlz" />
+          <ScalarProperty Name="Eikto" ColumnName="Eikto" />
+          <ScalarProperty Name="Ekvbd" ColumnName="Ekvbd" />
+          <ScalarProperty Name="Erdat" ColumnName="Erdat" />
+          <ScalarProperty Name="Ernam" ColumnName="Ernam" />
+          <ScalarProperty Name="Fdgrv" ColumnName="Fdgrv" />
+          <ScalarProperty Name="Frgrp" ColumnName="Frgrp" />
+          <ScalarProperty Name="Gmvkzd" ColumnName="Gmvkzd" />
+          <ScalarProperty Name="Gricd" ColumnName="Gricd" />
+          <ScalarProperty Name="Gridt" ColumnName="Gridt" />
+          <ScalarProperty Name="Guzte" ColumnName="Guzte" />
+          <ScalarProperty Name="Hbkid" ColumnName="Hbkid" />
+          <ScalarProperty Name="Intad" ColumnName="Intad" />
+          <ScalarProperty Name="Knrzb" ColumnName="Knrzb" />
+          <ScalarProperty Name="Knrze" ColumnName="Knrze" />
+          <ScalarProperty Name="Kultg" ColumnName="Kultg" />
+          <ScalarProperty Name="Kunnr" ColumnName="Kunnr" />
+          <ScalarProperty Name="Kverm" ColumnName="Kverm" />
+          <ScalarProperty Name="Lockb" ColumnName="Lockb" />
+          <ScalarProperty Name="Loevm" ColumnName="Loevm" />
+          <ScalarProperty Name="Mandt" ColumnName="Mandt" />
+          <ScalarProperty Name="Mgrup" ColumnName="Mgrup" />
+          <ScalarProperty Name="Nodel" ColumnName="Nodel" />
+          <ScalarProperty Name="Perkz" ColumnName="Perkz" />
+          <ScalarProperty Name="Pernr" ColumnName="Pernr" />
+          <ScalarProperty Name="Qland" ColumnName="Qland" />
+          <ScalarProperty Name="Remit" ColumnName="Remit" />
+          <ScalarProperty Name="Sperr" ColumnName="Sperr" />
+          <ScalarProperty Name="Sregl" ColumnName="Sregl" />
+          <ScalarProperty Name="Tlfns" ColumnName="Tlfns" />
+          <ScalarProperty Name="Tlfxs" ColumnName="Tlfxs" />
+          <ScalarProperty Name="Togru" ColumnName="Togru" />
+          <ScalarProperty Name="Updat" ColumnName="Updat" />
+          <ScalarProperty Name="Uptim" ColumnName="Uptim" />
+          <ScalarProperty Name="Urlid" ColumnName="Urlid" />
+          <ScalarProperty Name="Uzawe" ColumnName="Uzawe" />
+          <ScalarProperty Name="Verdt" ColumnName="Verdt" />
+          <ScalarProperty Name="Vlibb" ColumnName="Vlibb" />
+          <ScalarProperty Name="Vrbkz" ColumnName="Vrbkz" />
+          <ScalarProperty Name="Vrsdg" ColumnName="Vrsdg" />
+          <ScalarProperty Name="Vrsnr" ColumnName="Vrsnr" />
+          <ScalarProperty Name="Vrspr" ColumnName="Vrspr" />
+          <ScalarProperty Name="Vrszl" ColumnName="Vrszl" />
+          <ScalarProperty Name="Vzskz" ColumnName="Vzskz" />
+          <ScalarProperty Name="Wakon" ColumnName="Wakon" />
+          <ScalarProperty Name="Wbrsl" ColumnName="Wbrsl" />
+          <ScalarProperty Name="Webtr" ColumnName="Webtr" />
+          <ScalarProperty Name="Xausz" ColumnName="Xausz" />
+          <ScalarProperty Name="Xdezv" ColumnName="Xdezv" />
+          <ScalarProperty Name="Xedip" ColumnName="Xedip" />
+          <ScalarProperty Name="Xknzb" ColumnName="Xknzb" />
+          <ScalarProperty Name="Xpore" ColumnName="Xpore" />
+          <ScalarProperty Name="Xverr" ColumnName="Xverr" />
+          <ScalarProperty Name="Xzver" ColumnName="Xzver" />
+          <ScalarProperty Name="Zahls" ColumnName="Zahls" />
+          <ScalarProperty Name="Zamib" ColumnName="Zamib" />
+          <ScalarProperty Name="Zamim" ColumnName="Zamim" />
+          <ScalarProperty Name="Zamio" ColumnName="Zamio" />
+          <ScalarProperty Name="Zamir" ColumnName="Zamir" />
+          <ScalarProperty Name="Zamiv" ColumnName="Zamiv" />
+          <ScalarProperty Name="Zgrup" ColumnName="Zgrup" />
+          <ScalarProperty Name="Zindt" ColumnName="Zindt" />
+          <ScalarProperty Name="Zinrt" ColumnName="Zinrt" />
+          <ScalarProperty Name="Zsabe" ColumnName="Zsabe" />
+          <ScalarProperty Name="Zterm" ColumnName="Zterm" />
+          <ScalarProperty Name="Zuawa" ColumnName="Zuawa" />
+          <ScalarProperty Name="Zwels" ColumnName="Zwels" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_KNVV">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_KNVV">
+        <MappingFragment StoreEntitySet="SA_KNVV">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HeadID" ColumnName="HeadID" />
+          <ScalarProperty Name="Agrel" ColumnName="Agrel" />
+          <ScalarProperty Name="Antlf" ColumnName="Antlf" />
+          <ScalarProperty Name="Aufsd" ColumnName="Aufsd" />
+          <ScalarProperty Name="Autlf" ColumnName="Autlf" />
+          <ScalarProperty Name="Awahr" ColumnName="Awahr" />
+          <ScalarProperty Name="Begru" ColumnName="Begru" />
+          <ScalarProperty Name="Bev1_Emlgforts" ColumnName="Bev1_Emlgforts" />
+          <ScalarProperty Name="Bev1_Emlgpfand" ColumnName="Bev1_Emlgpfand" />
+          <ScalarProperty Name="Blind" ColumnName="Blind" />
+          <ScalarProperty Name="Boidt" ColumnName="Boidt" />
+          <ScalarProperty Name="Bokre" ColumnName="Bokre" />
+          <ScalarProperty Name="Bzirk" ColumnName="Bzirk" />
+          <ScalarProperty Name="Carrier_Notif" ColumnName="Carrier_Notif" />
+          <ScalarProperty Name="Cassd" ColumnName="Cassd" />
+          <ScalarProperty Name="Chspl" ColumnName="Chspl" />
+          <ScalarProperty Name="Eikto" ColumnName="Eikto" />
+          <ScalarProperty Name="Erdat" ColumnName="Erdat" />
+          <ScalarProperty Name="Ernam" ColumnName="Ernam" />
+          <ScalarProperty Name="Faksd" ColumnName="Faksd" />
+          <ScalarProperty Name="Inco1" ColumnName="Inco1" />
+          <ScalarProperty Name="Inco2" ColumnName="Inco2" />
+          <ScalarProperty Name="Kabss" ColumnName="Kabss" />
+          <ScalarProperty Name="Kalks" ColumnName="Kalks" />
+          <ScalarProperty Name="Kdgrp" ColumnName="Kdgrp" />
+          <ScalarProperty Name="Kkber" ColumnName="Kkber" />
+          <ScalarProperty Name="Klabc" ColumnName="Klabc" />
+          <ScalarProperty Name="Konda" ColumnName="Konda" />
+          <ScalarProperty Name="Ktgrd" ColumnName="Ktgrd" />
+          <ScalarProperty Name="Kunnr" ColumnName="Kunnr" />
+          <ScalarProperty Name="Kurst" ColumnName="Kurst" />
+          <ScalarProperty Name="Kvakz" ColumnName="Kvakz" />
+          <ScalarProperty Name="Kvawt" ColumnName="Kvawt" />
+          <ScalarProperty Name="Kvgr1" ColumnName="Kvgr1" />
+          <ScalarProperty Name="Kvgr2" ColumnName="Kvgr2" />
+          <ScalarProperty Name="Kvgr3" ColumnName="Kvgr3" />
+          <ScalarProperty Name="Kvgr4" ColumnName="Kvgr4" />
+          <ScalarProperty Name="Kvgr5" ColumnName="Kvgr5" />
+          <ScalarProperty Name="Kzazu" ColumnName="Kzazu" />
+          <ScalarProperty Name="Kztlf" ColumnName="Kztlf" />
+          <ScalarProperty Name="Lifsd" ColumnName="Lifsd" />
+          <ScalarProperty Name="Loevm" ColumnName="Loevm" />
+          <ScalarProperty Name="Lprio" ColumnName="Lprio" />
+          <ScalarProperty Name="Mandt" ColumnName="Mandt" />
+          <ScalarProperty Name="Megru" ColumnName="Megru" />
+          <ScalarProperty Name="Mrnkz" ColumnName="Mrnkz" />
+          <ScalarProperty Name="Perfk" ColumnName="Perfk" />
+          <ScalarProperty Name="Perrl" ColumnName="Perrl" />
+          <ScalarProperty Name="Pltyp" ColumnName="Pltyp" />
+          <ScalarProperty Name="Podkz" ColumnName="Podkz" />
+          <ScalarProperty Name="Podtg" ColumnName="Podtg" />
+          <ScalarProperty Name="Prat1" ColumnName="Prat1" />
+          <ScalarProperty Name="Prat2" ColumnName="Prat2" />
+          <ScalarProperty Name="Prat3" ColumnName="Prat3" />
+          <ScalarProperty Name="Prat4" ColumnName="Prat4" />
+          <ScalarProperty Name="Prat5" ColumnName="Prat5" />
+          <ScalarProperty Name="Prat6" ColumnName="Prat6" />
+          <ScalarProperty Name="Prat7" ColumnName="Prat7" />
+          <ScalarProperty Name="Prat8" ColumnName="Prat8" />
+          <ScalarProperty Name="Prat9" ColumnName="Prat9" />
+          <ScalarProperty Name="Prata" ColumnName="Prata" />
+          <ScalarProperty Name="Prfre" ColumnName="Prfre" />
+          <ScalarProperty Name="Pvksm" ColumnName="Pvksm" />
+          <ScalarProperty Name="Rdoff" ColumnName="Rdoff" />
+          <ScalarProperty Name="Spart" ColumnName="Spart" />
+          <ScalarProperty Name="Uebtk" ColumnName="Uebtk" />
+          <ScalarProperty Name="Uebto" ColumnName="Uebto" />
+          <ScalarProperty Name="Untto" ColumnName="Untto" />
+          <ScalarProperty Name="Versg" ColumnName="Versg" />
+          <ScalarProperty Name="Vkbur" ColumnName="Vkbur" />
+          <ScalarProperty Name="Vkgrp" ColumnName="Vkgrp" />
+          <ScalarProperty Name="Vkorg" ColumnName="Vkorg" />
+          <ScalarProperty Name="Vsbed" ColumnName="Vsbed" />
+          <ScalarProperty Name="Vsort" ColumnName="Vsort" />
+          <ScalarProperty Name="Vtweg" ColumnName="Vtweg" />
+          <ScalarProperty Name="Vwerk" ColumnName="Vwerk" />
+          <ScalarProperty Name="Waers" ColumnName="Waers" />
+          <ScalarProperty Name="Zterm" ColumnName="Zterm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_Files">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_Files">
+        <MappingFragment StoreEntitySet="SA_Files">
+          <ScalarProperty Name="File_CreateTime" ColumnName="File_CreateTime" />
+          <ScalarProperty Name="File_CreateBy" ColumnName="File_CreateBy" />
+          <ScalarProperty Name="File_Ext" ColumnName="File_Ext" />
+          <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+          <ScalarProperty Name="Files" ColumnName="Files" />
+          <ScalarProperty Name="AppID" ColumnName="AppID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_Proposal">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_Proposal">
+        <MappingFragment StoreEntitySet="SA_Proposal">
+          <ScalarProperty Name="AppID" ColumnName="AppID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="MailTo" ColumnName="MailTo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_APPLICATION">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_APPLICATION">
+        <MappingFragment StoreEntitySet="SA_APPLICATION">
+          <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+          <ScalarProperty Name="WFInstanceID" ColumnName="WFInstanceID" />
+          <ScalarProperty Name="LAST_UPD_DATE" ColumnName="LAST_UPD_DATE" />
+          <ScalarProperty Name="LAST_UPD_BY" ColumnName="LAST_UPD_BY" />
+          <ScalarProperty Name="REJECTED_DATE" ColumnName="REJECTED_DATE" />
+          <ScalarProperty Name="REJECTED_BY" ColumnName="REJECTED_BY" />
+          <ScalarProperty Name="APPROVED_DATE" ColumnName="APPROVED_DATE" />
+          <ScalarProperty Name="APPROVED_BY" ColumnName="APPROVED_BY" />
+          <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+          <ScalarProperty Name="REQUEST_DATE" ColumnName="REQUEST_DATE" />
+          <ScalarProperty Name="REQUEST_BY" ColumnName="REQUEST_BY" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="AplicationNO" ColumnName="AplicationNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SA_APPLICATION2COMPANY">
+      <EntityTypeMapping TypeName="MyAdminModel.SA_APPLICATION2COMPANY">
+        <MappingFragment StoreEntitySet="SA_APPLICATION2COMPANY">
+          <ScalarProperty Name="SiebelRBU" ColumnName="SiebelRBU" />
+          <ScalarProperty Name="CustomerGroup" ColumnName="CustomerGroup" />
+          <ScalarProperty Name="DBPaymentIndex" ColumnName="DBPaymentIndex" />
+          <ScalarProperty Name="DUNSNumber" ColumnName="DUNSNumber" />
+          <ScalarProperty Name="PriceGrade" ColumnName="PriceGrade" />
+          <ScalarProperty Name="OfficialRegistrationNo" ColumnName="OfficialRegistrationNo" />
+          <ScalarProperty Name="VerticalMarketDefinition" ColumnName="VerticalMarketDefinition" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="OPCode" ColumnName="OPCode" />
+          <ScalarProperty Name="InsideSalesCode" ColumnName="InsideSalesCode" />
+          <ScalarProperty Name="SalesCode" ColumnName="SalesCode" />
+          <ScalarProperty Name="IsExistSAP" ColumnName="IsExistSAP" />
+          <ScalarProperty Name="AccountRowID" ColumnName="AccountRowID" />
+          <ScalarProperty Name="IsExistSiebel" ColumnName="IsExistSiebel" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

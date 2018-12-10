@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7870aed88b5541aa931e209fda56acd9" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.ORDER_DETAIL" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.order_Master_ExtensionV2" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.ORDER_MASTER" Width="1.5" PointX="2.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.ORDER_MASTER_EXTENSION" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.TIMEZONE" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.PRODUCT_DEPENDENCY" Width="1.5" PointX="6.75" PointY="2.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.Cart2OrderMaping" Width="1.5" PointX="6.75" PointY="5.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.CARTMASTERV2" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SIEBEL_CONTACT" Width="1.5" PointX="4.75" PointY="2.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SIEBEL_CONTACT_PRIVILEGE" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SIEBEL_CONTACT_PRIVILEGE_TEMP" Width="1.5" PointX="10.75" PointY="3.125" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SIEBEL_ACCOUNT" Width="1.5" PointX="0.75" PointY="7.625" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.cart_DETAIL_V2" Width="1.5" PointX="8.75" PointY="4" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.CheckPointOrder2Cart" Width="1.5" PointX="10.75" PointY="5.875" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SAP_PRODUCT_ABC" Width="1.5" PointX="12.75" PointY="5.5" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SAP_EMPLOYEE" Width="1.5" PointX="4.75" PointY="11.25" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SAP_DIMCOMPANY" Width="1.5" PointX="6.75" PointY="8.375" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SAP_COMPANY_PARTNERS" Width="1.5" PointX="8.75" PointY="10.625" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.PRODUCT_COMPATIBILITY" Width="1.5" PointX="10.75" PointY="9.125" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SAP_PRODUCT_STATUS" Width="1.5" PointX="10.75" PointY="11.875" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SAP_PRODUCT_STATUS_ORDERABLE" Width="1.5" PointX="12.75" PointY="9.875" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.OrderForwarderService" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.ORDER_PARTNERS" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.BB_ESTORE_ORDER" Width="1.5" PointX="13.375" PointY="14.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.FreightOption" Width="1.5" PointX="15.375" PointY="7.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.BB_CREDITCARD_ORDER" Width="1.5" PointX="15.375" PointY="3.25" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.SAP_COMPANY_ORG" Width="1.5" PointX="15.375" PointY="14.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.HubConfiguredResult" Width="1.5" PointX="15.375" PointY="10.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.ASG_BTOSInstruction" Width="1.5" PointX="10.75" PointY="15.75" />
+        <EntityTypeShape EntityType="MyAdvantechGlobalModel.ExtendedWarrantyPartNo_V2" Width="1.5" PointX="0.75" PointY="16.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,3274 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Advantech.Myadvantech.DataAccess</name>
+    </assembly>
+    <members>
+        <member name="M:Advantech.Myadvantech.DataAccess.DataCore.CurationPoolDAL.GetSalesDistricts(System.String)">
+            <summary>
+            Get district list of sales
+            </summary>
+            <param name="sales_code">Sales code on SAP</param>
+            <returns>district list in Datatable</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.eQuotationDAL.updateOptyQuote(System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            updateOptyQuote
+            </summary>
+            <param name="QuoteID">QuoteID</param>
+            <param name="optyId">optyId</param>
+            <param name="optyName">optyName</param>
+            <param name="optyStage">optyStage</param>
+            <param name="msg">return msg</param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.OptyQuoteHelper.GetOptyQuote(System.String)">
+            <summary>
+            Get optyQuote by quoteID
+            </summary>
+            <param name="quoteID">quoteID</param>
+            <returns>optyQuote</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Advantech.Myadvantech.DataAccess.QuotationDetailHelper.GetQuotationDetail(System.String)" -->
+        <member name="M:Advantech.Myadvantech.DataAccess.QuotationDetailHelper.GetQuotationDetailItem(System.String,System.Int32)">
+            <summary>
+            Get one QuotationDetail item by quoteID and line number
+            </summary>
+            <param name="quoteID"></param>
+            <param name="line_no"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.QuotationDetailHelper.UpdateQuotationDetail(Advantech.Myadvantech.DataAccess.QuotationDetail)">
+            <summary>
+            Update QuotationDetail
+            </summary>
+            <param name="detail">QuotationDetail</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.QuotationMasterHelper.GetQuotationMaster(System.String)">
+            <summary>
+            Get  QuotationMaster by quoteID
+            </summary>
+            <param name="quoteID">quoteID</param>
+            <returns>QuotationMaster</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.QuotationMasterHelper.GetQuotationMasterForeStore(System.String,Advantech.Myadvantech.DataAccess.QuoteDocStatus)">
+            <summary>
+            Get QuotationMaster for eStore
+            </summary>
+            <param name="quoteNo">quoteNo</param>
+            <param name="status">status</param>
+            <returns>QuotationMaster</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.QuotationMasterHelper.GetMyQuotes(System.String)">
+            <summary>
+            Get all my quotes
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelActiveHelper">
+            <summary>
+            eQuotation.dbo.SiebelActive
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelActiveHelper.GetNewSiebelActive">
+            <summary>
+            Get New SiebelActive entity object
+            </summary>
+            <returns>new SiebelActive</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelActiveHelper.Save(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Save SiebelActive data
+            </summary>
+            <param name="active">SiebelActive object</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.MyAdvantechDAL.getBelowMOQLineItem(System.String,System.String)">
+            <summary>
+            ICC 2015/9/22 Get minimun order qty datatable. Use order ID and org ID paramete.
+            </summary>
+            <param name="order_id"></param>
+            <param name="plant"></param>
+            <param name="org_id"></param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.MyAdvantechDAL.UpdateOptyID(System.String,System.String)">
+            <summary>
+            Update CARTMASTERV2 optyID if Opprotunity ID is in Null, empty and new ID
+            </summary>
+            <param name="quoteID"></param>
+            <param name="optyID"></param>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.MyAdvantechDAL.GetSiebelSalesPositionByEmail(System.String)">
+            <summary>
+            Get Siebel Sales Position by email
+            </summary>
+            <param name="emial"></param>
+            <returns>POSITION</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.MyAdvantechDAL.GetSaleseManager(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sales_code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.CreateAccount(System.Int32)">
+            <summary>
+             根据appid创建Account
+            </summary>
+            <param name="ApplicationID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.CreateSiebelQuoteV2(Advantech.Myadvantech.DataAccess.QuotationMaster,System.Collections.Generic.List{Advantech.Myadvantech.DataAccess.QuotationDetail},System.String,System.String@,System.String@)">
+            <summary>
+            New version of create Siebel quote
+            </summary>
+            <param name="QM"></param>
+            <param name="QD"></param>
+            <param name="optyid"></param>
+            <param name="WSParameters"></param>
+            <param name="ErrorMSG"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.CreateSiebleActivity(Advantech.Myadvantech.DataAccess.SiebelActive,System.String@,System.String@)">
+            <summary>
+            CreateSiebleActivity
+            </summary>
+            <param name="active">active</param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.CreateSiebelOpty(Advantech.Myadvantech.DataAccess.SiebelActive,System.String@,System.String@)">
+            <summary>
+            Create Siebel Opportunity through Siebel web service locate: http://172.20.1.43:8089/WSSiebel.asmx
+            </summary>
+            <param name="active"></param>
+            <returns>Opportunity ROW_ID</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.UpdateOptyStageV2(System.String,System.String,System.Nullable{System.Int32},System.String,System.Nullable{System.DateTime},System.String@)">
+            <summary>
+            Ryan Huang 2015/12/04. Update UpdateOptyStageV2 with new Web-Service"UpdOppty".
+            </summary>
+            <param name="OptyID"></param>
+            <param name="Stage"></param>
+            <param name="Revenue"></param>
+            <param name="desc"></param>
+            <param name="closeDate"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.UpdateSiebelOptyV2(Advantech.Myadvantech.DataAccess.SiebelActive,System.String@,System.String@)">
+            <summary>
+            Ryan Huang 2015/12/03. Update new UpdOppty.ws and it's function(UpdateSiebelOptyV2)
+            </summary>
+            <param name="active"></param>
+            <param name="wsparas"></param>
+            <param name="errmsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.CreateSiebelContactByWS(Advantech.Myadvantech.DataAccess.SIEBEL_CONTACT)">
+            <summary>
+            Create Siebel Contact through Siebel web service locate: http://172.20.1.43:8089/WSSiebel.asmx
+            </summary>
+            <param name="contact"></param>
+            <returns>Row ID</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.UpdateSiebelContactByWS(Advantech.Myadvantech.DataAccess.SIEBEL_CONTACT)">
+            <summary>
+            Update Siebel Contact through Siebel web service locate: http://172.20.1.43:8089/WSSiebel.asmx
+            </summary>
+            <param name="contact"></param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.GetSiebelContact(System.String)">
+            <summary>
+            Get Siebel Contact from MyGlobal by Contact Row ID
+            </summary>
+            <param name="RowID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.GetActiveListForCheck(Advantech.Myadvantech.DataAccess.SiebelActiveStatus,Advantech.Myadvantech.DataAccess.SiebelActiveType,System.String,System.String,System.Int32)">
+            <summary>
+            检测是否存在 
+            </summary>
+            <param name="status"></param>
+            <param name="type"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelDAL.updateOptyQuote(System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            updateOptyQuote
+            </summary>
+            <param name="QuoteID">QuoteID</param>
+            <param name="optyId">optyId</param>
+            <param name="optyName">optyName</param>
+            <param name="optyStage">optyStage</param>
+            <param name="msg">return msg</param>
+            <returns></returns>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.QuotationDetail.IsServicePartX">
+            <summary>
+            Is Service Part
+            </summary>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.QuotationDetail.ItemTypeX">
+            <summary>
+            Identify quote line type
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelActive.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelActive.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            建構子，給創建或更新 Opportunity使用
+            </summary>
+            <param name="eQuoteID"></param>
+            <param name="optyName"></param>
+            <param name="optyStage"></param>
+            <param name="createdBy"></param>
+            <param name="optyOwnerEmail"></param>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelActive.#ctor(System.String,System.String)">
+            <summary>
+            建構子，給創建Quote使用
+            </summary>
+            <param name="eQuoteID"></param>
+            <param name="createdBy"></param>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.OracleProvider.GetConnection(System.String)">
+            <summary>
+            Get Oracle db connection
+            </summary>
+            <param name="ConnectionName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.QuotationMaster.IsConfigSystemQuote">
+            <summary>
+            Return if the quote has configuration system
+            </summary>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.QuotationMaster.GetParentQuoteItems">
+            <summary>
+            Get all parent line items of quote
+            </summary>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.QuotationMaster.QuotationPartner">
+            <summary>
+            Get Quotation Detail into Quotation Partner
+            </summary>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.QuotationMaster.AttentionFirstName">
+            <summary>
+            Get attention user's first name from Siebel
+            </summary>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.QuotationMaster.Position">
+            <summary>
+            Get sales's position. By sales email in SIEBEL_SALES_HIERARCHY.
+            </summary>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.Model">
+            <summary>
+            PIS Model data entity
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetModelNameByModelID(System.String)">
+            <summary>
+            Get model name by model ID
+            </summary>
+            <param name="model_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetModelNameByCategory_ModelID(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="category_id"></param>
+            <param name="model_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadBasicModelInformation">
+            <summary>
+            Load only model master information
+            </summary>
+            <param name="modelname"></param>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadModel_ParentCategory">
+            <summary>
+            Load model's parent categories
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadModel_LangInformation">
+            <summary>
+            Load model master information in other language version
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadLiteraturesInformation">
+            <summary>
+            Load model's literatures
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadModelSpecsInformation">
+            <summary>
+            Load model's specs
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadPartsInformation">
+            <summary>
+            Load model's parts
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadFeaturesInformation">
+            <summary>
+            Load models features
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.LoadCompleteModelInformation">
+            <summary>
+            Load complete model information
+            </summary>
+            <param name="modelname"></param>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetFeaturesByDefault">
+            <summary>
+            Get model's default features
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetFeaturesByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)">
+            <summary>
+            Get model's features in specify language
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetDescriptionByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)">
+            <summary>
+            Get model's description in specify language
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetIntroductionByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)">
+            <summary>
+            Get model's introduction in specify language
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetMainPictures">
+            <summary>
+            Get model's main pictures
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetBigPictures">
+            <summary>
+            Get model's big pictures
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.Model.GetSmallPictures">
+            <summary>
+            Get model's small pictures
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.Model.Parent_Category">
+            <summary>
+            Get model' parent category
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SAPDAL.GetAccountPONumber(System.String,System.String,System.String)">
+            <summary>
+            Get Account PO Number
+            </summary>
+            <param name="ORGID"></param>
+            <param name="ERPID"></param>
+            <param name="PO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SAPDAL.ExpandBOM(System.String,System.String,System.Int32,System.Int32,ZPP_BOM_EXPL_MAT_V2_RFC_CKD.ZPP_BOM_EXPL_MAT_V2_RFC_CKD@,System.Data.DataTable@)">
+            <summary>
+            Expand BOM
+            </summary>
+            <param name="ParentItem"></param>
+            <param name="Plant"></param>
+            <param name="CurrLevel"></param>
+            <param name="MaxLevel"></param>
+            <param name="RFCProxy"></param>
+            <param name="dtBOM"></param>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SAPDAL.GetSalesEmployee(Advantech.Myadvantech.DataAccess.AOnlineRegion,System.String)">
+            <summary>
+            Get Sales Employee list for Aonline's quote/order
+            </summary>
+            <param name="region"></param>
+            <param name="ERPID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SAPDAL.GetInventory(System.Collections.Generic.List{Advantech.Myadvantech.DataAccess.Part},System.Int32,System.String@)">
+            <summary>
+            Get part's inventory information
+            </summary>
+            <param name="_Parts"></param>
+            <param name="PostponeDays"></param>
+            <param name="errorMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SAPDAL.CreateOrder(Advantech.Myadvantech.DataAccess.Order@,System.DateTime,System.Boolean,System.String@)">
+            <summary>
+            Convert order to SAP
+            </summary>
+            <param name="_Order"></param>
+            <param name="ErrMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SAPDAL.GetSpecialProcurement(System.String,System.String)">
+            <summary>
+            Get part's Special Procurement
+            </summary>
+            <param name="PartNumber"></param>
+            <param name="Plant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SAPDAL.GetShippingVia(System.String,System.String)">
+            <summary>
+            Get part's shipping via condition by loading group
+            </summary>
+            <param name="PartNumber"></param>
+            <param name="Plant"></param>
+            <returns>0001=Air,0002=Sea</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SAPDAL.CreateSAPAccount(System.Int32,Advantech.Myadvantech.DataAccess.companyType,System.Boolean,System.String@)">
+            <summary>
+             Create SAP Account
+            </summary>
+            <param name="applicationID"></param>
+            <param name="type"></param>
+            <param name="istesting"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.CPTEST.general">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.CPTEST.general.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.CPTEST.general.LOGSuccessSO(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.CPTEST.general.LOGSuccessSOAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.CPTEST.general.LOGSuccessSOAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.CPTEST.general.GetNotifyEmailHtmlStr(System.String,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.CPTEST.general.GetNotifyEmailHtmlStrAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.CPTEST.general.GetNotifyEmailHtmlStrAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.CPTEST.general.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.CPTEST.general.LOGSuccessSOCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.CPTEST.general.GetNotifyEmailHtmlStrCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.CPTEST.LOGSuccessSOCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.CPTEST.GetNotifyEmailHtmlStrCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.CPTEST.GetNotifyEmailHtmlStrCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.CPTEST.GetNotifyEmailHtmlStrCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.CPTEST.GetNotifyEmailHtmlStrCompletedEventArgs.Msg">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.DelCampaign(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.DelCampaignAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.DelCampaignAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddCampaign(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddCampaignAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddCampaignAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddRevenueGIP(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddRevenueGIPAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddRevenueGIPAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddAction(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddActionAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddActionAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddAccount(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddAccountAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddAccountAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdCampaign(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdCampaignAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdCampaignAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdAccount(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdAccountAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdAccountAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddOppty(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddOpptyAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddOpptyAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddProductForecast(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddProductForecastAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddProductForecastAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddLead(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddLeadAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddLeadAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdOppty(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdOpptyAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdOpptyAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdLead(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdLeadAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdLeadAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdAction(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdActionAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdActionAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckEmployee(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckEmployeeAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckEmployeeAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckContact(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckContactAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckContactAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckPosition(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.POSITION)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckPositionAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.POSITION)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckPositionAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.POSITION,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddSR(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddSRAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddSRAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddContact(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddContactAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddContactAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdContact(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdContactAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdContactAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetCallAccountList(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetCallAccountListAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetCallAccountListAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetCallContactList(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetCallContactListAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetCallContactListAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddQuote(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddQuoteAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddQuoteAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdQuote(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdQuoteAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdQuoteAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddContactList(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddContactListAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddContactListAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetEmployeeInfo(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetEmployeeInfoAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetEmployeeInfoAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetRelatedSolution(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetRelatedSolutionAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetRelatedSolutionAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetProductLine(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetProductLineAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetProductLineAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetProduct(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetProductAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetProductAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetSRInformation(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetSRInformationAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetSRInformationAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdSR(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdSRAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdSRAsync(Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE,Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.DelCampaignCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddCampaignCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddRevenueGIPCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddActionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdCampaignCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddOpptyCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddProductForecastCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddLeadCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdOpptyCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdLeadCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdActionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckEmployeeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckContactCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.CheckPositionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddSRCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddContactCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdContactCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetCallAccountListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetCallContactListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddQuoteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdQuoteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.AddContactListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetEmployeeInfoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetRelatedSolutionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetProductLineCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetProductCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.GetSRInformationCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.SiebelWebService.WSSiebel.UpdSRCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.USER_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.PASSWORD">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.POS_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.POSITION_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.JOB_TITLE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.ALIAS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.FST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.LST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.EMPLOYEE.EMAIL">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.CURRENCY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.DUE_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.COMMENTS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.ACCOUNT_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.OPPORTUNITY_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.OWNER_LOGIN_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.OWNER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.ORGANIZATION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.PRI_POSITION_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.PRODUCT_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.PRODUCT_QUANTITY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.DISCOUNT_PRICE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.QUOTE.DELIVERY_DATE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.POSITION.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.POSITION.PRI_EMP_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.POSITION.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.POSITION.DIVISION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.POSITION.POSITION_ORG">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.ROOT">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.ACC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.SECOND_ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.FST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.LST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.WORK_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.FAX_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.CELLULAR">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.USER_TYPE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.JOB_TITLE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.CMT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.DATA_SRC">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.IS_NEVER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.IS_EMPLOYEE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.IS_ACTIVE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.IS_NAVER_MAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.IS_NAVER_CALL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.UPLOAD_FROM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.OWNER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.IS_ADDED_ORG_FLAG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.IS_ASSIGN_OWNER_FLAG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.JOB_FUNCTION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.CONTACT_DEPT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.MR_MS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.PRI_POSITION_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.ASN_POSITION_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.BAA">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.LIST_IP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT_LIST.LIST_SECOND_OWNER">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.FUNCTION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.ABSTRACT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.DESP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.CONTACT_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.MODEL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.OWNER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.OWNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.SVC_REQ.SCOPE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.ACC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.SECOND_ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.FST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.LST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.WORK_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.FAX_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.CELLULAR">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.USER_TYPE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.JOB_TITLE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.CMT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.DATA_SRC">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.IS_NEVER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.IS_EMPLOYEE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.IS_ACTIVE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.IS_NAVER_MAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.IS_NAVER_CALL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.UPLOAD_FROM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.OWNER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.IS_ADDED_ORG_FLAG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.IS_ASSIGN_OWNER_FLAG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.JOB_FUNCTION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.CONTACT_DEPT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.MR_MS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.PRI_POSITION_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.ASN_POSITION_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.BAA">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.LIST_IP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.LIST_IN">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.LIST_SECOND_OWNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.LIST_MP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CONTACT.ORG">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.ACC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.CON_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.SRC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.DESCRIPTION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.LEAD_STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.OWNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.OWNER_POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.SECOND_ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.ORGANIZATION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.LEAD_SCORE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.QUALITY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.LEAD.PRODUCT_INTEREST">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST.OPPTY_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST.CURRENCY_CODE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST.SALES_REP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST.SALES_REP_ORGANIZATION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST.PRODUCT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.PRODUCT_FORECAST.PRODUCT_QUANTITY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.PRI_POS_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.ACC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.CON_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.PROJ_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.DESP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.CHANNEL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.BIZ_GROUP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.SALES_METHOD">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.SALES_STAGE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.SRC_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.CLOSE_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.REVENUE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.PROGRAM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.SUPPORT_REQUEST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.SUCCESS_FACTOR">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.REASON_WON_LOST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.LEAD_QUALITY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.IS_ASSIGN_TO_PARTNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.PARTNER_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.CURRENCY_CODE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.BUYCYCLE_STAGE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.OWNER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.CONTRACT_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.IS_ASSIGN_PRI_OWNER_FLG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.POSTN_ID_IN_TEAM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.OPPTY.ORG_ID_IN_TEAM">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.PRI_AONLINE_EA_OWNER_POS_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.PRI_AONLINE_EP_OWNER_POS_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.PRI_AONLINE_EA_OWNER_POS_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.PRI_AONLINE_EP_OWNER_POS_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.PRI_POS_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.SITE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.MAIN_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.MAIN_FAX">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.TYPE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.URL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.CURRENCY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.IS_PARTNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.CITY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.ZIP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.COUNTRY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.ADDR_LINE1">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.STATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.ERPID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.PRI_POS_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.BAA">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.INDUSTRY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACCOUNT.SIC_CODE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.CON_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.SRC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.ACC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.ACT_TYPE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.DESP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.CMT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.CON_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.OWNER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.SALES_LEADS_FLAG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.DONE_FLAG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.OPPORTUNITY_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.LEAD_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.SR_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.ALARM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.ACTION.PLANNED_START">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP.FORECAST_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP.COMMENT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP.COMMENTED_BY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP.COMMENT_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP.COMMENT_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.REVENUE_GIP.SO_NUMBER">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.RESULT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.RESULT.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.RESULT.ERR_MSG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.RESULT.RESULT_A">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.RESULT.IS_COMMITTED">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.RESULT.IS_DUPE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.RESULT.IS_EMPLOYEE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.RESULT.RETURN_LIST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.RESULT.RETURN_TABLE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.OBJECTIVE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.SUMMARY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.SOURCE_CODE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.TYPE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.START">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.END">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CAMPAIGN.PAR_CAM_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.DelCampaignCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.DelCampaignCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.DelCampaignCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddCampaignCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddCampaignCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddCampaignCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddRevenueGIPCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddRevenueGIPCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddRevenueGIPCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddActionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddActionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddActionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdCampaignCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdCampaignCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdCampaignCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddOpptyCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddOpptyCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddOpptyCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddProductForecastCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddProductForecastCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddProductForecastCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddLeadCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddLeadCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddLeadCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdOpptyCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdOpptyCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdOpptyCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdLeadCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdLeadCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdLeadCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdActionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdActionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdActionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.CheckEmployeeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.CheckEmployeeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CheckEmployeeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.CheckContactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.CheckContactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CheckContactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.CheckPositionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.CheckPositionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.CheckPositionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddSRCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddSRCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddSRCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddContactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddContactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddContactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdContactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdContactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdContactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetCallAccountListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetCallAccountListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.GetCallAccountListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetCallContactListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetCallContactListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.GetCallContactListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddQuoteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddQuoteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddQuoteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdQuoteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdQuoteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdQuoteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddContactListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.AddContactListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.AddContactListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetEmployeeInfoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetEmployeeInfoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.GetEmployeeInfoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetRelatedSolutionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetRelatedSolutionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.GetRelatedSolutionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetProductLineCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetProductLineCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.GetProductLineCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetProductCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetProductCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.GetProductCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetSRInformationCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.GetSRInformationCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.GetSRInformationCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdSRCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdSRCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.SiebelWebService.UpdSRCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.ADVWebServiceUpdOppty">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.UpdOppty.ADVWebServiceUpdOppty.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.UpdOppty.ADVWebServiceUpdOppty.UpdOppty(Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.UpdOppty.ADVWebServiceUpdOppty.UpdOpptyAsync(Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.UpdOppty.ADVWebServiceUpdOppty.UpdOpptyAsync(Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Input,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.UpdOppty.ADVWebServiceUpdOppty.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.UpdOppty.ADVWebServiceUpdOppty.UpdOpptyCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Input">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Input.OPPTY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Input.SOURCE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.SALES_METHOD">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.ACC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.IS_ASSIGN_TO_PARTNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.BIZ_GROUP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.BUYCYCLE_STAGE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.CHANNEL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.CONTRACT_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.SUCCESS_FACTOR">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.CURRENCY_CODE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.DESP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.PROJ_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.REVENUE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.CLOSE_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.PROGRAM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.LEAD_QUALITY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.REASON_WON_LOST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.SALES_STAGE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.SUPPORT_REQUEST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.PRODUCT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.CONTACT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.PARTNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.OPPTY.SOURCE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.PRODUCT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.PRODUCT.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.PRODUCT.QTY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.PRODUCT.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.SOURCE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.SOURCE.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.SOURCE.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.PARTNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.PARTNER.PARTNER_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.PARTNER.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.ORG.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.ORG.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.CONTACT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.CONTACT.CON_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.CONTACT.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.POSITION.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.POSITION.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Output">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Output.Error_spcCode">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Output.Error_spcMessage">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Output.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOppty_Output.STATUS">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOpptyCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOpptyCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.UpdOppty.UpdOpptyCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADVWebServiceAddAccount">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADVWebServiceAddAccount.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADVWebServiceAddAccount.AddAccount(Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADVWebServiceAddAccount.AddAccountAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADVWebServiceAddAccount.AddAccountAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Input,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADVWebServiceAddAccount.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADVWebServiceAddAccount.AddAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Input">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Input.ACC">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Input.SOURCE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.BUS_GROUP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.CURRENCY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.DESC">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.ERPID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.URL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.SITE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.MAIN_FAX">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.MAIN_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.PAR_ACC_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.IS_PARTNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.TAXID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.TYPE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.ADDR">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.BAA">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.INDUSTRY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ACC.CONTACT">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADDR">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADDR.CITY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADDR.COUNTRY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADDR.ZIP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADDR.STATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADDR.LINE1">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADDR.LINE2">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ADDR.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.CONTACT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.CONTACT.CON_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.INDUSTRY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.INDUSTRY.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.INDUSTRY.CODE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.INDUSTRY.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.BAA">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.BAA.NAME">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ORG.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.ORG.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.POSITION.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.POSITION.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Output">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Output.Error_spcCode">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Output.Error_spcMessage">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Output.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccount_Output.STATUS">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAccount.AddAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ADVWebServoceAddAction">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ADVWebServoceAddAction.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ADVWebServoceAddAction.AddAction(Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ADVWebServoceAddAction.AddActionAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ADVWebServoceAddAction.AddActionAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Input,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ADVWebServoceAddAction.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ADVWebServoceAddAction.AddActionCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Input">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Input.ACT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Input.SOURCE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.SR_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.ALARM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.SRC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.COMMENT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.CONTACT_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.DESP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.DONE_FLAG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.LEAD_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.OPPORTUNITY_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.OWNER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.PLANNED_START">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.CON_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.SALES_LEADS_FLAG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.ACT.ACT_TYPE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Output">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Output.Error_spcCode">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Output.Error_spcMessage">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Output.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddAction_Output.STATUS">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddActionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddActionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddAction.AddActionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ADVWebServiceAddContact">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ADVWebServiceAddContact.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ADVWebServiceAddContact.AddContact(Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ADVWebServiceAddContact.AddContactAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ADVWebServiceAddContact.AddContactAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Input,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ADVWebServiceAddContact.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ADVWebServiceAddContact.AddContactCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Input">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Input.CON">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Input.SOURCE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.IS_ACTIVE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.CELLULAR">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.CMT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.FAX_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.FST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.DATA_SRC">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.JOB_FUNCTION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.JOB_TITLE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.LST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.MR_MS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.IS_NAVER_CALL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.IS_NEVER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.IS_NAVER_MAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.UPLOAD_FROM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.USER_TYPE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.WORK_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.BAA">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.LIST_IP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.LIST_IN">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.LIST_MP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.CON.ACC">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ORG.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ORG.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ACC">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.ACC.ACC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.LIST_MP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.LIST_MP.NAME">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.LIST_IN">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.LIST_IN.NAME">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.LIST_IP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.LIST_IP.NAME">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.BAA">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.BAA.NAME">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.POSITION.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.POSITION.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Output">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Output.Error_spcCode">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Output.Error_spcMessage">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Output.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContact_Output.STATUS">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddContact.AddContactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ADVWebServiceAddOppty">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ADVWebServiceAddOppty.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ADVWebServiceAddOppty.AddOppty(Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ADVWebServiceAddOppty.AddOpptyAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ADVWebServiceAddOppty.AddOpptyAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Input,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ADVWebServiceAddOppty.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ADVWebServiceAddOppty.AddOpptyCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Input">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Input.OPPTY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Input.SOURCE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.SALES_METHOD">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.ACC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.IS_ASSIGN_TO_PARTNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.BIZ_GROUP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.BUYCYCLE_STAGE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.CHANNEL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.CONTRACT_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.SUCCESS_FACTOR">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.CURRENCY_CODE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.DESP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.PROJ_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.REVENUE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.CLOSE_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.PROGRAM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.LEAD_QUALITY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.REASON_WON_LOST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.SALES_STAGE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.STATUS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.SUPPORT_REQUEST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.PRODUCT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.CONTACT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.PARTNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.OPPTY.SOURCE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.PRODUCT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.PRODUCT.PRODUCT1">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.PRODUCT.QTY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.PRODUCT.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.SOURCE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.SOURCE.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.SOURCE.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.PARTNER">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.PARTNER.PARTNER_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.PARTNER.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ORG.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.ORG.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.CONTACT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.CONTACT.CON_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.CONTACT.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.POSITION.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.POSITION.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Output">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Output.Error_spcCode">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Output.Error_spcMessage">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Output.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOppty_Output.STATUS">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOpptyCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOpptyCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddOpty.AddOpptyCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ADVWebServiceAddQuote">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ADVWebServiceAddQuote.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ADVWebServiceAddQuote.AddQuote(Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ADVWebServiceAddQuote.AddQuoteAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ADVWebServiceAddQuote.AddQuoteAsync(Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Input,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ADVWebServiceAddQuote.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ADVWebServiceAddQuote.AddQuoteCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Input">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Input.QUOTE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Input.SOURCE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE.ACCOUNT_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE.COMMENTS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE.DUE_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE.OPPORTUNITY_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE.CURRENCY_CODE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE.ORGANIZATION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE.QUOTE_ITEM">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ORGANIZATION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ORGANIZATION.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.ORGANIZATION.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE_ITEM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE_ITEM.PRODUCT_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE_ITEM.PRODUCT_QUANTITY">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE_ITEM.DELIVERY_DATE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.QUOTE_ITEM.DISCOUNT_PRICE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.POSITION.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.POSITION.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Output">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Output.Error_spcCode">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Output.Error_spcMessage">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Output.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuote_Output.STATUS">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuoteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuoteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_AddQuote.AddQuoteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckContact(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckContactAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckContactAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckEmployee(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckEmployeeAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckEmployeeAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckPosition(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckPositionAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckPositionAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetSRInformation(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetSRInformationAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetSRInformationAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckProduct(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckProductAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckProductAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetContactListunderAccount(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetContactListunderAccountAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetContactListunderAccountAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetContactPrivilege(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetContactPrivilegeAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetContactPrivilegeAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetAccountPrimarySales(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetAccountPrimarySalesAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetAccountPrimarySalesAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetAccountContactAdmin(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetAccountContactAdminAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetAccountContactAdminAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetSRUnderAccount(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetSRUnderAccountAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetSRUnderAccountAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetActivitiesUnderSR(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetActivitiesUnderSRAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetActivitiesUnderSRAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckContactCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckEmployeeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckPositionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetSRInformationCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.CheckProductCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetContactListunderAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetContactPrivilegeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetAccountPrimarySalesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetAccountContactAdminCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetSRUnderAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_New.WSSiebel.GetActivitiesUnderSRCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.RESULT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.RESULT.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.RESULT.ERR_MSG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.RESULT.RESULT_A">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.RESULT.IS_COMMITTED">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.RESULT.RETURN_LIST">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.RESULT.RETURN_TABLE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckContactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckContactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckContactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckEmployeeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckEmployeeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckEmployeeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckPositionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckPositionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckPositionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetSRInformationCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetSRInformationCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetSRInformationCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckProductCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckProductCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.CheckProductCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetContactListunderAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetContactListunderAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetContactListunderAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetContactPrivilegeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetContactPrivilegeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetContactPrivilegeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetAccountPrimarySalesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetAccountPrimarySalesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetAccountPrimarySalesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetAccountContactAdminCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetAccountContactAdminCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetAccountContactAdminCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetSRUnderAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetSRUnderAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetSRUnderAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetActivitiesUnderSRCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetActivitiesUnderSRCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_New.GetActivitiesUnderSRCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ADVWebServiceUpdateContact">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ADVWebServiceUpdateContact.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ADVWebServiceUpdateContact.UpdContact(Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ADVWebServiceUpdateContact.UpdContactAsync(Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Input)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ADVWebServiceUpdateContact.UpdContactAsync(Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Input,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ADVWebServiceUpdateContact.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ADVWebServiceUpdateContact.UpdContactCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Input">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Input.CON">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Input.SOURCE">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.IS_ACTIVE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.CELLULAR">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.CMT">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.FAX_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.FST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.DATA_SRC">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.JOB_FUNCTION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.JOB_TITLE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.LST_NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.MR_MS">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.IS_NAVER_CALL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.IS_NEVER_EMAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.IS_NAVER_MAIL">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.UPLOAD_FROM">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.USER_TYPE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.WORK_PHONE">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.BAA">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.LIST_IP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.LIST_IN">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.LIST_MP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.CON.ACC">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ORG">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ORG.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ORG.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ACC">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.ACC.ACC_ROW_ID">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.LIST_MP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.LIST_MP.NAME">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.LIST_IN">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.LIST_IN.NAME">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.LIST_IP">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.LIST_IP.NAME">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.BAA">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.BAA.NAME">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.POSITION">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.POSITION.NAME">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.POSITION.IS_PRIMARY">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Output">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Output.Error_spcCode">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Output.Error_spcMessage">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Output.ROW_ID">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContact_Output.STATUS">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Advantech.Myadvantech.DataAccess.WSSiebel_UpdContact.UpdContactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+    </members>
+</doc>

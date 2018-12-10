@@ -1,0 +1,384 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style type="text/css">
+    /*.stylenormal {
+        color: black;
+        font-size: 13.0pt;
+        text-decoration: none;
+        font-family: Microsoft JhengHei,Arial;
+        text-align: left;
+    }
+
+    .stylenormaleng {
+        color: black;
+        font-size: 12.0pt;
+        text-decoration: none;
+        font-family: Arial;
+        text-align: left;
+    }*/
+
+    .QDtext3 {
+        color: #000000;
+        font-size: 12.0pt;
+        font-family: Microsoft JhengHei;
+        font-weight: bold;
+        vertical-align: top;
+    }
+</style>
+
+<div id="divHeader">
+    <style type="text/css">
+        .style1 {
+            color: black;
+            font-size: 9.0pt;
+            text-decoration: none;
+            font-family: Microsoft JhengHei;
+            text-align: left;
+        }
+
+        .style2 {
+            width: 231px;
+        }
+
+        .style3 {
+            color: black;
+            font-size: 10.0pt;
+            text-decoration: none;
+            font-family: Microsoft JhengHei;
+            text-align: left;
+            width: 189px;
+        }
+    </style>
+
+    <style>
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .w35p {
+            width: 35%;
+        }
+        /*圖片套用的樣式*/
+        .test-arrow {
+            animation-name: arrow; /*使用的補間動畫*/
+            animation-duration: 0.5s; /*動畫時間長度*/
+            transform: rotate(90deg); /*相對於原圖的旋轉角度*/
+            -webkit-filter: brightness(200%); /*相對於原圖的亮度*/
+        }
+
+        .test-arrow-close {
+            animation-name: arrow_close;
+            animation-duration: 0.5s;
+            transform: rotate(0deg);
+            -webkit-filter: brightness(100%); /**/
+        }
+
+        .eQtable {
+            height: 220px;
+            padding: 10px 20px 0px 20px;
+        }
+
+        .eQtable-title {
+            border: 0px solid transparent;
+            font-weight: 600;
+            font-size: 0.85em;
+        }
+
+        .eQtable-body {
+            overflow: auto;
+            margin-bottom: 0px;
+            height: 200px;
+            width: 100%;
+        }
+
+        .eQtable-input {
+            margin-bottom: 10px;
+            margin-top: 2px;
+            border: 0px solid transparent;
+        }
+
+        .eQtable-row {
+            width: 100%;
+            margin-top: 2px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+        }
+
+            .eQtable-row > div:first-child {
+                width: 200px;
+                background-color: #eee;
+                padding: 2px 2px 2px 2px;
+            }
+
+            .eQtable-row .itempos:hover {
+                background-color: #cecece;
+                cursor: pointer;
+            }
+
+            .eQtable-row > div:nth-child(2) {
+                background-color: #f7f7f7;
+                padding: 2px;
+                align-self: stretch;
+                width: 100%;
+                margin-left: 2px;
+            }
+
+            .eQtable-row > div:nth-child(3) {
+                background-color: #f7f7f7;
+                padding: 2px;
+                align-self: stretch;
+                width: 100%;
+                margin-left: 2px;
+            }
+
+            .eQtable-row > div:nth-child(4) {
+                background-color: #f7f7f7;
+                padding: 2px;
+                align-self: stretch;
+                width: 100%;
+                margin-left: 2px;
+            }
+
+            .eQtable-row > div:nth-child(5) {
+                background-color: #f7f7f7;
+                padding: 2px;
+                align-self: stretch;
+                width: 100%;
+                margin-left: 2px;
+            }
+
+            .eQtable-row > div:nth-child(6) {
+                background-color: #f7f7f7;
+                padding: 2px;
+                align-self: stretch;
+                width: 100%;
+                margin-left: 2px;
+            }
+
+            .eQtable-row > div:nth-child(7) {
+                background-color: #f7f7f7;
+                padding: 2px;
+                align-self: stretch;
+                width: 100%;
+                margin-left: 2px;
+            }
+
+            .eQtable-row > div:nth-child(8) {
+                background-color: #f7f7f7;
+                padding: 2px 2px 1px 2px;
+            }
+
+                .eQtable-row > div:nth-child(8) a {
+                    color: #666;
+                }
+
+            .eQtable-row select {
+                width: 300px;
+            }
+
+            .main-content{
+                background-color:#ffffff;
+            }
+    </style>
+
+    <div class="main-content">
+        @*<div class="titlebox topbox">
+                <h4>Create New Quotation</h4>
+            </div>*@
+        <div class="content">
+            <table width="950" border="0" cellspacing="0" cellpadding="0" align="center">
+                <tr>
+                    <td align="left" valign="top" width="210">
+                        <img src="@Util.ResolveServerUrl(VirtualPathUtility.ToAbsolute("~/Images/adv-logo.jpg"),false)" alt="研華科技" width="200" />
+                    </td>
+                    <td align="center" valign="top" width="480">
+                        <font style="font-size: 30px; font-weight: bold; letter-spacing: 1px; font-family: Microsoft JhengHei;">
+                            @Model.QuoteTemplateInformation.RBUCompanyName
+                        </font>
+                        @*<p>
+                                <font style="font-size: 24px; font-family: Arial;">Advantech(China) Co.,Ltd.</font>
+                            </p>*@
+                    </td>
+                    <td width="10"></td>
+                    <td width="200" align="left" valign="top" class="style1">
+                        <font style="font-size: 11px; text-align: left">
+                            @Model.QuoteTemplateInformation.RBUCompanyAddress<br />
+                            邮编 : @Model.QuoteTemplateInformation.RBUCompanyZipCode<br />
+                            电话 : @Model.QuoteTemplateInformation.RBUCompanyTel<br />
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;<br /></td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top" colspan="4">
+                        <font style="font-size: 30px; font-weight: bold; font-family: Microsoft JhengHei; text-decoration: underline;">
+                            报&nbsp;&nbsp; 价&nbsp;&nbsp; 单
+                        </font>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table width="950" border="0" cellspacing="3" cellpadding="0" align="center"
+                   class="stylenormal">
+                <tr>
+                    <td align="left" width="100px">
+                        购买单位：
+                    </td>
+                    <td align="left" width="540px">
+                        @Model.AccountName
+                    </td>
+                    <td align="left" width="130px">
+                        报价日期：
+                    </td>
+                    <td align="right" width="180px">
+                        @Model.QuoteDate.ToString("yyyy-MM-dd")
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        发货地址：
+                    </td>
+                    <td align="left">
+                        @Model.Address
+                    </td>
+                    <td align="left">
+                        报价单号：
+                    </td>
+                    <td align="right">
+                        @Model.QuoteNo
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        联&nbsp; 系&nbsp; 人：
+                    </td>
+                    <td align="left">
+                        @Model.AccountContactName
+                    </td>
+                    <td align="left">
+                        REV#：
+                    </td>
+                    <td align="right">
+                        @Model.RevisionNo
+                    </td>
+                </tr>
+                <tr runat="server" id="expireddate" visible="false">
+                    <td align="left">
+                        电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 话：
+                    </td>
+                    <td align="left">
+                        @Model.AccountContactTel
+                    </td>
+                    <td align="left">
+                        有效日期：
+                    </td>
+                    <td align="right">
+                        @Model.ExpiredDate.ToString("yyyy-MM-dd")
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        邮箱地址：
+                    </td>
+                    <td align="left" class="stylenormaleng">
+                        @Model.AccountContactEmail
+                    </td>
+                    <td align="left">
+                        负责业务：
+                    </td>
+                    <td align="right">
+                        @Model.SalesName
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left"></td>
+                    <td align="left"></td>
+                    <td align="left">
+                        业务电话：
+                    </td>
+                    <td align="right">
+                        @Model.SalesTel
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left"></td>
+                    <td align="left"></td>
+                    <td align="left">
+                        业务邮箱地址：
+                    </td>
+                    <td align="right" class="stylenormaleng">
+                        @Model.SalesEmail
+                    </td>
+                </tr>
+            </table>
+            <table width="950" border="0" cellspacing="3" cellpadding="0" align="center"
+                   class="stylenormal">
+                <tr>
+                    <td align="left" width="120">
+                        1.保固期间：
+                    </td>
+                    <td align="left" width="780">
+                        @Model.Warranty
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top">
+                        2.付款条件：
+                    </td>
+                    <td align="left">
+                        公司名称：@Model.QuoteTemplateInformation.RBUCompanyName<br />
+                        帐    号：@Model.QuoteTemplateInformation.RBUBankAccountNumber<br />
+                        开 户 行：@Model.QuoteTemplateInformation.RBUBankAccountName<br />
+                        @*电     话：010-62984346<br />
+                            传     真：010-62984346-6335	<br />*@
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        @*<div class="eQtable-title" >
+                <div class="eQtable-row">
+                    <div style="background-color: #e3e3e3">序号</div>
+                    <div style="background-color: #e3e3e3">名称</div>
+                    <div style="background-color: #e3e3e3">描述</div>
+                    <div style="background-color: #e3e3e3">数量</div>
+                    <div style="background-color: #e3e3e3">单价</div>
+                    <div style="background-color: #e3e3e3">总价</div>
+                </div>
+            </div>*@
+
+
+        @*@Html.Partial("_QuoteDetails", @Model)*@
+        @Html.Partial("~/Views/Shared/QuoteDetails/_ACN_QuoteDetails.cshtml", @Model)
+        <table width="950" align="center">
+            <tr>
+                <td width="630" class="stylenormal"></td>
+                <td width="270" align="center" valign="top">
+                    <font class="stylenormal" style="font-weight: bold;">
+                        @Model.QuoteTemplateInformation.RBUCompanyName<br />
+                        <asp:Label runat="server" ID="lbSalesEngineerName" />
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td class="stylenormal">
+                    发票要求（勾选）：1.专用发票   2.普通发票
+                </td>
+                <td class="stylenormal">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+
+
+

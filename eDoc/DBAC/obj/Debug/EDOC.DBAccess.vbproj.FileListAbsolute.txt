@@ -1,0 +1,17 @@
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\DBAC.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\DBAC.pdb
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\DBAC.xml
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\COMM.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\Oracle.DataAccess.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\SgmlReaderDll.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\COMM.pdb
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\bin\Debug\COMM.xml
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\obj\Debug\EDOC.DBAccess.vbprojResolveAssemblyReference.cache
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\obj\Debug\DBAC.Resources.resources
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\obj\Debug\EDOC.DBAccess.vbproj.GenerateResource.Cache
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\obj\Debug\DBAC.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\obj\Debug\DBAC.xml
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\DBAC\obj\Debug\DBAC.pdb

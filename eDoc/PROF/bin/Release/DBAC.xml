@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DBAC
+</name>
+</assembly>
+<members>
+<member name="T:DBAC.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:DBAC.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:DBAC.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:DBAC.quotationMaster.SetQuoteActive(System.String,System.Int32)">
+ <summary>
+ Set a quote to active status
+ </summary>
+ <param name="quoteNo"></param>
+ <param name="revision_number"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

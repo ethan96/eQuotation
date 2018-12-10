@@ -1,0 +1,7 @@
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\bin\Release\eStoreServices.dll.config
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\bin\Release\eStoreServices.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\bin\Release\eStoreServices.XmlSerializers.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\bin\Release\eStoreServices.pdb
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\obj\Release\eStoreServices.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\obj\Release\eStoreServices.pdb
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\obj\Release\eStoreServices.XmlSerializers.dll

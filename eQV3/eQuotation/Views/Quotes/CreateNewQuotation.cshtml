@@ -1,0 +1,1352 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    .left {
+        text-align: left;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .top {
+        vertical-align: top;
+    }
+
+    .w35p {
+        width: 35%;
+    }
+
+    .w20p {
+        width: 300px;
+    }
+    /*圖片套用的樣式*/
+    .test-arrow {
+        animation-name: arrow; /*使用的補間動畫*/
+        animation-duration: 0.5s; /*動畫時間長度*/
+        transform: rotate(90deg); /*相對於原圖的旋轉角度*/
+        -webkit-filter: brightness(200%); /*相對於原圖的亮度*/
+    }
+
+    .test-arrow-close {
+        animation-name: arrow_close;
+        animation-duration: 0.5s;
+        transform: rotate(0deg);
+        -webkit-filter: brightness(100%); /**/
+    }
+
+    .eQtable {
+        height: 220px;
+        padding: 0px 20px 0px 20px;
+    }
+
+    .eQtable-title {
+        margin-top: 5px;
+        border: 0px solid transparent;
+        font-weight: 600;
+        font-size: 0.85em;
+    }
+
+    .eQtable-body {
+        overflow: auto;
+        margin-bottom: 0px;
+        /*height: 230px;*/
+        width: 100%;
+    }
+
+    .eQtable-input {
+        width: 100%;
+        margin-top: 2px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+        .eQtable-input > div:first-child {
+            width: 50px;
+            margin-top: 6px;
+            background-color: #eee;
+            padding: 2px 2px 2px 2px;
+        }
+
+        .eQtable-input > div:nth-child(2) {
+            padding: 2px;
+            align-self: stretch;
+            width: 250px;
+            margin-left: 2px;
+        }
+
+    .eQtable-row {
+        width: 100%;
+        margin-top: 2px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+        .eQtable-row > div:first-child {
+            width: 250px;
+            background-color: #eee;
+            padding: 2px 2px 2px 2px;
+        }
+
+        .eQtable-row .itempos:hover {
+            background-color: #cecece;
+            cursor: pointer;
+        }
+
+        .eQtable-row > div:nth-child(2) {
+            background-color: #f7f7f7;
+            padding: 2px;
+            align-self: stretch;
+            width: 100%;
+            margin-left: 2px;
+        }
+
+        .eQtable-row > div:nth-child(3) {
+            background-color: #f7f7f7;
+            padding: 2px;
+            align-self: stretch;
+            width: 1700px;
+            margin-left: 2px;
+        }
+
+        .eQtable-row > div:nth-child(4) {
+            background-color: #f7f7f7;
+            padding: 2px;
+            align-self: stretch;
+            width: 100%;
+            margin-left: 2px;
+        }
+
+        .eQtable-row > div:nth-child(5) {
+            background-color: #f7f7f7;
+            padding: 2px;
+            align-self: stretch;
+            width: 100%;
+            margin-left: 2px;
+        }
+
+        .eQtable-row > div:nth-child(6) {
+            background-color: #f7f7f7;
+            padding: 2px;
+            align-self: stretch;
+            width: 100%;
+            margin-left: 2px;
+        }
+
+        .eQtable-row > div:nth-child(7) {
+            background-color: #f7f7f7;
+            padding: 2px;
+            align-self: stretch;
+            width: 500px;
+            margin-left: 2px;
+        }
+
+        .eQtable-row > div:nth-child(8) {
+            background-color: #f7f7f7;
+            padding: 2px;
+            align-self: stretch;
+            width: 100%;
+            margin-left: 2px;
+        }
+
+        .eQtable-row > div:nth-child(9) {
+            background-color: #f7f7f7;
+            padding: 2px;
+            align-self: stretch;
+            width: 100%;
+            margin-left: 2px;
+        }
+
+        .eQtable-row > div:nth-child(10) {
+            background-color: #f7f7f7;
+            padding: 2px 2px 1px 2px;
+        }
+
+            .eQtable-row > div:nth-child(10) a {
+                color: #666;
+            }
+
+        .eQtable-row select {
+            width: 300px;
+        }
+
+    .currency {
+        top: 20%;
+        position: relative;
+        margin-right: 2px;
+    }
+
+    .stylenormal {
+        color: black;
+        /*font-size: 13.0pt;*/
+        text-decoration: none;
+        font-family: Microsoft JhengHei;
+        text-align: left;
+    }
+
+    .disable {
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        var simulateErrMsg = $('.simulatePriceErrMsg').val();
+        if (simulateErrMsg != '') {
+            alert(simulateErrMsg);
+        }
+        $(document).ajaxStart(function () {
+            $.blockUI();
+            $("#LOADING_STATUS").html("<i class='fa fa-cog fa-spin fa-2x'></i>");
+        });
+        $(document).ajaxStop(function () {
+            $.unblockUI();
+            $("#LOADING_STATUS").html("");
+        })
+
+        $("#icon-detail").mouseover(function () { $(this).css("-webkit-filter", "brightness(200%)") })
+        $("#icon-detail").mouseout(function () { $(this).css("-webkit-filter", "brightness(100%)") })
+        $("#icon-detail").click(function (e) {
+
+            // 运行特效
+            $("#div_detail").toggle("blind", 500);
+            if (this.className == "fa fa-plus-square") {
+                this.className = "fa fa-minus-square";
+            }
+            else {
+                this.className = "fa fa-plus-square";
+            }
+        });
+        $("#div_detail").hide();
+
+        //tab
+        // select first tab
+        if ($("ul.tabnav li")) {
+            $("ul.tabnav li").first().addClass("active");
+        }
+        if ($(".tab-pane")) {
+            $(".tab-pane").first().addClass("active");
+        }
+
+        //switch to different tab
+        $("ul.tabnav li").on("click", function () {
+
+            //display tab element
+            $("ul.tabnav li").removeClass("active");
+            $(this).addClass("active");
+
+            //change tab content
+            $(".tab-pane").removeClass("active");
+            var tabId = $(this).attr("data-value");
+            $("#" + tabId).addClass("active");
+        });
+
+        //tokeninput
+        //$("#aPartNo").removeAttr("style");
+        $("#aPartNo").tokenInput("@Url.Action("GetTokenInputPartNo")", {
+            theme: "facebook", searchDelay: 700, minChars: 1, tokenDelimiter: ";", hintText: "Type PartNo", preventDuplicates: true, resultsLimit: 5,
+            resultsFormatter: function (data) {
+
+                var cpn = "";
+                if (data.cpn.length > 0) {
+                    cpn = "<br /><span style='color:red;'>Customer PN: " + data.cpn + "</span>";
+                }
+
+                return "<li style='border-bottom: 1px solid #003377;'>" + "<span style='font-weight: bold;font-size: 14px;'>" + data.name + "</span><br/>" + "<span style='color:gray;'>" + data.id + "</span>" + cpn + "</li>";
+            }
+            //, onAdd: function (data) {
+            //    //$("#aPartNo").val(data.name);
+            //    $("#aPartNo").tokenInput("add", { id: data.id, name: data.name });
+            //}
+        });
+
+        $("#aSales").tokenInput("@Url.Action("GetTokenInputSales")", {
+            theme: "facebook", searchDelay: 700, minChars: 1, tokenDelimiter: ";", tokenLimit: 3, hintText: "Type Sales", preventDuplicates: true, resultsLimit: 10,
+            resultsFormatter: function (data) {
+
+                return "<li style='border-bottom: 1px solid #003377;'>" + "<span style='font-weight: bold;font-size: 14px;'>" + data.name + "</span> - " + "<span style='color:gray;'>" + data.id + "</span></li>";
+            }
+        });
+
+        //塞Sales Representative的資料
+        @{
+             var Sales1 = Model.QuotationPartner.Where(s => s.TYPE == "E").FirstOrDefault();
+             if(Sales1 != null)
+             {
+                  @:$("#aSales").tokenInput("add", { id: '@Sales1.ERPID', name: '@Sales1.NAME' });
+                                                     }
+             var Sales2 = Model.QuotationPartner.Where(s => s.TYPE == "E2").FirstOrDefault();
+             if (Sales2 != null)
+             {
+                 @:$("#aSales").tokenInput("add", { id: '@Sales2.ERPID', name: '@Sales2.NAME' });
+                                             }
+             var Sales3 = Model.QuotationPartner.Where(s => s.TYPE == "E3").FirstOrDefault();
+             if (Sales3 != null)
+             {
+                @:$("#aSales").tokenInput("add", { id: ' @Sales3.ERPID', name: '@Sales3.NAME' });
+                                     }
+         }
+
+        //add product item to product list
+        $(".btn-add-item").on("click", function () {
+            //var PartNo = $("#aPartNo").val();
+            var PartNo = new Array();
+            ar_PartNo = $("#aPartNo").tokenInput("get");
+            $.each(ar_PartNo, function (i, value) {
+                PartNo.push({
+                    partno: ar_PartNo[i].name,
+                    qty: 1
+                });
+            });
+            var parent = $("#ddlParentItem").val();
+
+            AddItem(PartNo, parent);
+
+        });
+
+        //Product List設定
+        for (var i = 0; i < $(".eQtable-body > div").length; i++) {
+            var elem = $(".eQtable-body > div");
+            var ID = elem[i].attributes["data-value"].value;
+            if (ID != "") {
+                ////加總自動運算
+                //keycontrol('tQuoting_Price-' + ID, "sum", ID);
+                //keycontrol('tQuantity-' + ID, "sum", ID);
+                //立即更新
+                keychange('tDescription-' + ID, ID);
+                keychange('tQuoting_Price-' + ID, ID);
+                keychange('tQuantity-' + ID, ID);
+            }
+        }
+
+        ////Add product item自動加總設定
+        //keycontrol('aQuoting_Price', "add", "");
+        //keycontrol('aQuantity', "add", "");
+
+        //display modal for listing account
+        $("#pick-account").on("click", function () {
+            //$.blockUI();
+            $.get("/operation/SearchAccount", function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-search-account", data);
+                });
+                //$.unblockUI();
+            });
+        });
+
+        //display modal for listing oppty
+        $("#pick-oppty").on("click", function () {
+            //$.blockUI();
+            $.get("/operation/SearchOppty", function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-search-oppty", data);
+                });
+                //$.unblockUI();
+            });
+        });
+
+        // check if new bto quoting price is money format
+        $("#newBtoQuotingPrice").on("keyup", function () {
+            //var valid = /^\d{0,4}(\.\d{0,2})?$/.test(this.value),
+            //var valid = /^\d+(?:\.\d{0,2})$/.test(this.value),
+            //    val = this.value;
+
+            //if (!valid) {
+            //    this.value = val.substring(0, val.length - 1);
+            //}
+        });
+
+        $("#btn-recal-btoPrice").on("click", function (e) {
+
+
+            var valid = /^[1-9]\d*(((,\d{3}){1})?(\.\d{0,2})?)$/.test($("#newBtoQuotingPrice").val());
+            if (!valid) {
+                AlertDialog("Number is valid");
+            }
+            else {
+
+                var postdata = JSON.stringify({ parentLineNo: $("#ddlBTOParent").val(), totalAmount: $("#newBtoQuotingPrice").val() });
+                $.ajax({
+                    url: "/Quotes/RecalBtoPrice", type: "POST", dataType: "json", data: postdata
+                        , contentType: "application/json; charset=utf-8", success: function (redata) {
+                            if (redata.succeed) {
+                                var result = redata.data;
+                                setproductDetail(result);
+                            } else {
+                                AlertDialog(redata.err);
+                            }
+                        }
+                });
+            }
+        });
+
+        $("#btn-configurator").on("click", function (e) {
+
+            if ($("#ddlORG").val() == null || $("#ddlORG").val() == "") {
+                AlertDialog("ORG不可为空白，请pick一个Account!");
+                e.preventDefault();
+                return false;
+            }
+
+            Modal_Configuration_List();
+        });
+
+
+
+        //判斷新增還是修改
+        if ('@Model.pagetype' == 'Create') {
+            $("#pick-account").click();
+        } else {
+            //取得ShipBillto等資料
+            //getShipBill('@Model.ERPID', '@Model.AccountRowID', '@Model.AccountName', '@Model.org', '@Model.ERPID', '', '@Model.Currency');
+        }
+
+
+        $("#btn-QuotationFormat").on("click", function (e) {
+            $.get("/operation/QuotationFormat", function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-Quotation-Format", data);
+                });
+                //$.unblockUI();
+            });
+        });
+
+
+        //display modal for Preview
+        $("#btn-preview").on("click", function (e) {
+
+            if ($("#Description").val() == "") {
+                AlertDialog('Description为必填栏位');
+                e.preventDefault();
+                return false;
+            }
+
+            if ($("#aSales").val() == "") {
+                AlertDialog('Sales Representative为必填栏位');
+                e.preventDefault();
+                return false;
+            }
+
+            var SalesCode = new Array(); SalesName = new Array();
+            ar_Sales = $("#aSales").tokenInput("get");
+            $.each(ar_Sales, function (i, value) {
+                SalesCode.push(ar_Sales[i].id);
+                SalesName.push(ar_Sales[i].name);
+            });
+
+            if ($("#Freight").val() == '') {
+                $("#Freight").val('0');
+            }
+            var freight = parseFloat($("#Freight").val()).toFixed(2);
+
+            jQuery.ajaxSettings.traditional = true;
+            $.get("/Quotes/Preview"
+                , {
+                    quoteID: "", SalesCode: SalesCode, SalesName: SalesName, InsideSales: $("#ddlInsideSales").val()
+                    , Description: $("#Description").val(), ContactRowID: $("#ddlContact").val()
+                    , AccountName: $("#AccountName").val(), Freight: freight, Warranty: $("#Warranty").val()
+                    , Comment: '', QuotationNote: '', ExpiredDate: $('#txtExpiredDate').val()
+                    , PONO: ""
+                }, function (data) {
+                    $.pushHTML(data, function () {
+                        $.OSXModalInit("osx-search-Preview", data);
+                    });
+                });
+        });
+
+        $("#btn-save").on("click", function (e) {
+            save(true);
+            e.preventDefault();
+        });
+
+
+
+        //Confirm and Check Approval
+        $("#btn-confirm").on("click", function (e) {
+
+            if ($("#Description").val() == "") {
+                AlertDialog('Description为必填栏位');
+                e.preventDefault();
+                return false;
+            }
+
+            if ($("#aSales").val() == "") {
+                AlertDialog('Sales Representative为必填栏位');
+                e.preventDefault();
+                return false;
+            }
+
+            if ($("#Opportunity").val() == "") {
+                AlertDialog('Opportunity为必要栏位，请Pick或新增一个Opportunity');
+                e.preventDefault();
+                return false;
+            }
+
+            if ($("#ddlInsideSales").val() == "") {
+                AlertDialog('Inside Sale 为必選栏位');
+                e.preventDefault();
+                return false;
+            }
+
+            var SalesCode = new Array(); SalesName = new Array();
+            ar_Sales = $("#aSales").tokenInput("get");
+            $.each(ar_Sales, function (i, value) {
+                SalesCode.push(ar_Sales[i].id);
+                SalesName.push(ar_Sales[i].name);
+            });
+
+            if ($("#Freight").val() == '') {
+                $("#Freight").val('0');
+            }
+            var freight = parseFloat($("#Freight").val()).toFixed(2);
+
+
+            //確認是否需簽核 若需要 先出現簽核list畫面讓user確認，若不需要則直接進入confirm action 建立Quote
+            jQuery.ajaxSettings.traditional = true;
+            $.get("/Quotes/CheckBeforeQuoteApproval"
+                , {
+                    quoteID: "", SalesCode: SalesCode, SalesName: SalesName, InsideSales: $("#ddlInsideSales").val()
+                    , Description: $("#Description").val(), ContactRowID: $("#ddlContact").val()
+                    , AccountName: $("#AccountName").val(), Freight: freight, Warranty: $("#Warranty").val()
+                    , Comment: '', QuotationNote: '', ExpiredDate: $('#txtExpiredDate').val()
+                }, function (redata) {
+                    if (redata.succeed) { // 不需要簽核則直接進入confirm action 建立Quote
+                        confirmAndCreateQuote(SalesCode,
+                            SalesName,
+                            $("#ddlInsideSales").val(),
+                            $("#Description").val(),
+                            $("#ddlContact").val(),
+                            $("#AccountName").val(),
+                            freight, $("#Warranty").val());
+                    } else {
+                        if (redata.err == null) {
+                            // 需要簽核則 show CheckBeforeQuoteApproval view
+                            $.pushHTML(redata, function () {
+                                $.OSXModalInit("osx-approval-Check", redata);
+                            });
+                        }
+                        else {
+                            alert(redata.err);
+                        }
+                    }
+                });
+        });
+
+        //ORG變動時
+        $("#ddlORG").change(function (e) {
+            getShipBill($("#ERPID").val(), $("#hd_AccountID").val(), $("#AccountName").val(), $("#ddlORG").val(), $("#ERPID").val(), '', $("#hd_Currency").val());
+            changeORG($("#ddlORG").val());
+        });
+
+        //copy ddl to another bto-parent ddl, show bto-parent ddl if bto item is existed
+        updateddlBTOParentItems();
+
+        //Taxrate有修改時
+        $('#TaxRate').change(function (e) {
+            updateTax();
+        });
+
+    });
+
+    //暫存
+    function save(toMyQuotation) {
+        //toMyQuotation為bool值，判斷是否要跳轉到MyQuotation
+        //Account不可以空白
+        if ($("#AccountName").val() == "") {
+            debugger;
+            AlertDialog('Account Name不可空白');
+            return false;
+        }
+
+        var salesCode = new Array(); salesName = new Array();
+        ar_Sales = $("#aSales").tokenInput("get");
+        $.each(ar_Sales, function (i, value) {
+            salesCode.push(ar_Sales[i].id);
+            salesName.push(ar_Sales[i].name);
+        });
+        if ($("#Freight").val() == '') {
+            $("#Freight").val('0');
+        }
+        var freight = parseFloat($("#Freight").val()).toFixed(2);
+
+        var postdata = JSON.stringify({
+            SalesCode: salesCode, SalesName: salesName, InsideSales: $("#ddlInsideSales").val()
+            , Description: $("#Description").val(), ContactRowID: $("#ddlContact").val(), AccountName: $("#AccountName").val()
+            , Freight: freight, Warranty: $("#Warranty").val(), Comment: '', QuotationNote: '', ExpiredDate: $('#txtExpiredDate').val()
+        });
+        $.ajax({
+            url: "/Quotes/Save", type: "POST", dataType: "json", data: postdata, async: false
+            , contentType: "application/json; charset=utf-8", success: function (redata) {
+                if (redata.succeed) {
+                    if (toMyQuotation) {
+                        initContent('@Url.Action("MyQuotation", "Quotes")');
+                    }
+                    return true;
+                } else {
+                    alert(redata.err);
+                    return false;
+                }
+            }
+        });
+    }
+
+    function updateddlBTOParentItems() {
+        $('#ddlBTOParent option').remove()
+        $('#ddlParentItem option[value!=""]').clone().appendTo('#ddlBTOParent');
+        if ($('#ddlBTOParent option[value!=""]').length > 0) {
+            $('#bto-recalculation-area').show();
+            $('.add-loosItem').hide();
+        }
+        else {
+            $('#bto-recalculation-area').hide();
+            $('.add-loosItem').show();
+        }
+    }
+
+    function confirmAndCreateQuote(salesCode, salesName, insideSales, description, contactRowId, accountName, freight, warranty) {
+        var postdata = JSON.stringify({
+            SalesCode: salesCode, SalesName: salesName, InsideSales: insideSales, Description: description, ContactRowID: contactRowId
+            , AccountName: accountName, Freight: freight, Warranty: warranty, QuotationNote: '', ExpiredDate: $('#txtExpiredDate').val(), PONO: ""
+        });
+        $.ajax({
+            url: "/Quotes/Confirm", type: "POST", dataType: "json", data: postdata, async: false
+            , contentType: "application/json; charset=utf-8", success: function (redata) {
+                if (redata.succeed) {
+
+                    initContent('@Url.Action("MyQuotation", "Quotes")');
+                } else {
+                    alert(redata.err);
+                }
+            }
+        });
+    }
+
+    function Modal_Configuration_List() {
+        $.get("/operation/Configuration_List", {
+            ORG: $("#ddlORG").val()
+        }
+          , function (data) {
+              $.pushHTML(data, function () {
+                  $.OSXModalInit("osx-search-Configuration_List", data, function () {
+                      var BTO = localStorage.getItem('Configuration_List');
+                      if (BTO != null) {
+                          var PartNo = new Array();
+                          var _BTO = JSON.parse(BTO);
+                          localStorage.clear();
+                          if (_BTO != null) {
+                              Modal_configurator(_BTO[0].name, _BTO[0].id, _BTO[0].qty, $("#hd_Currency").val(), $("#hd_CurrencySign").val(), $("#ddlORG").val());
+                          } else {
+                              AlertDialog("查询组装单失败...");
+                          }
+                      }
+                  });
+              });
+          });
+    }
+
+    function Modal_configurator(name, id, qty, currency, currencysign, org) {
+        setTimeout(function () {
+            var postdata = { NAME: name, ID: id, QTY: qty, Currency: currency, CurrencySign: currencysign, ORG: org };
+            $.ajax({
+                url: "/operation/Configurator", type: "POST"//, dataType: "json"
+                , data: postdata
+                //, contentType: "application/json; charset=utf-8"
+                , success: function (result) {
+                    $.pushHTML(result, function () {
+                        $.OSXModalInit("osx-search-configurator", result, function () {
+                            var BTO = localStorage.getItem('Configurator');
+                            if (BTO != null) {
+                                var PartNo = new Array();
+                                var _BTO = JSON.parse(BTO);
+                                $.each(_BTO, function (i, value) {
+                                    PartNo.push({
+                                        partno: _BTO[i].name,
+                                        qty: _BTO[i].qty
+                                    });
+                                });
+                                AddItem(PartNo, "");
+                                localStorage.clear();
+                            }
+                        });
+                    });
+                },
+                failure: function (response) {
+                    //callback function result(on failure)
+                    AlertDialog(response.d);
+                }
+            });
+        }, 1500);
+    }
+
+    function changeORG(org) {
+        var postdata = JSON.stringify({ ORG: org });
+        $.ajax({
+            url: "/Quotes/changeORG", type: "POST", dataType: "json", data: postdata
+           , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+               if (redata.succeed) {
+                   var result = redata.data;
+                   setproductDetail(result);
+                   if (redata.err != null && redata.err.length != '') {
+                       AlertDialog(redata.err);
+                   }
+
+               } else {
+                   AlertDialog(redata.err);
+               }
+           }
+        });
+    }
+
+
+    function getShipBill(soldtoid, accountrowid, accountname, org, erpid, type, currency) {
+        //$.blockUI();
+        var postdata = JSON.stringify({
+            SoldtoID: soldtoid, AccountRowID: accountrowid, AccountName: accountname, ORG: org,
+            ERPID: erpid, Type: type, CURRENCY: currency
+        });
+        $.ajax({
+            url: "/Operation/getShipBill", type: "POST", dataType: "json", data: postdata
+           , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+               if (redata.succeed) {
+
+                   var result = redata.data;
+                   if (result) {
+                       if (result.S) {
+                           $("#txtName-S").val(result.S.Name);
+                           $("#txtERPID-S").val(result.S.ERPID);
+                           $("#txtAddress-S").val(result.S.Address);
+                           $("#txtCity-S").val(result.S.City);
+                           $("#txtState-S").val(result.S.State);
+                           $("#txtZipcode-S").val(result.S.Zipcode);
+                           $("#txtCountry-S").val(result.S.Country);
+                           $("#txtAttention-S").val(result.S.Attention);
+                           $("#txtTel-S").val(result.S.Tel);
+                       }
+                       if (result.B) {
+                           $("#txtName-B").val(result.B.Name);
+                           $("#txtERPID-B").val(result.B.ERPID);
+                           $("#txtAddress-B").val(result.B.Address);
+                           $("#txtCity-B").val(result.B.City);
+                           $("#txtState-B").val(result.B.State);
+                           $("#txtZipcode-B").val(result.B.Zipcode);
+                           $("#txtCountry-B").val(result.B.Country);
+                           $("#txtAttention-B").val(result.B.Attention);
+                           $("#txtTel-B").val(result.B.Tel);
+                       }
+                       if (result.EM) {
+                           $("#txtName-EM").val(result.EM.Name);
+                           $("#txtERPID-EM").val(result.EM.ERPID);
+                           $("#txtAddress-EM").val(result.EM.Address);
+                           $("#txtCity-EM").val(result.EM.City);
+                           $("#txtState-EM").val(result.EM.State);
+                           $("#txtZipcode-EM").val(result.EM.Zipcode);
+                           $("#txtCountry-EM").val(result.EM.Country);
+                           $("#txtAttention-EM").val(result.EM.Attention);
+                           $("#txtTel-EM").val(result.EM.Tel);
+                       }
+                   }
+               } else {
+                   AlertDialog(redata.err);
+               }
+               //$.unblockUI();
+           }
+        });
+    }
+
+    function AddItem(PartNo, parent) {
+        var postdata = JSON.stringify({ _parts: JSON.stringify(PartNo), _parent: parent });
+        $.ajax({
+            url: "/Quotes/AddProductItem", type: "POST", dataType: "json", data: postdata
+            , contentType: "application/json; charset=utf-8", success: function (redata) {
+                if (redata.succeed) {
+                    var result = redata.data;
+                    setproductDetail(result);
+
+                    //清空輸入欄位
+                    $("#aPartNo").tokenInput("clear");
+                } else {
+                    AlertDialog("Get SAP Price error: " + redata.err);
+                }
+            }
+        });
+    }
+
+    function deleteItem(arg) {
+        var ID = $(arg).attr("data-value");
+        var postdata = JSON.stringify({ ID: ID });
+        $.ajax({
+            url: "/Quotes/DeleteProductItem", type: "POST", dataType: "json", data: postdata
+            , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                if (redata.succeed) {
+                    //$('#row-' + redata.ID).remove();
+                    var result = redata.data;
+                    setproductDetail(result);
+                } else {
+                    AlertDialog(redata.err);
+                }
+
+                //$.unblockUI();
+            }
+        });
+    }
+
+    function keychange(id, ID) {
+        $('#' + id).change(function (e) {//有修改時
+
+            //Sub_total("sum", id, ID);
+            updateItem(ID);
+        });
+
+        $('#' + id).keypress(function (e) {//按下Enter時
+            code = (e.keyCode ? e.keyCode : e.which);
+            if (code == 13) {
+                //Sub_total("sum", id, ID);
+                updateItem(ID);
+            }
+        });
+    }
+
+    function updateItem(ID) {
+        var postdata = JSON.stringify({
+            ID: ID, Description: $('#tDescription-' + ID).val()
+            , Quoting_Price: $.unformatMoney($('#tQuoting_Price-' + ID).val()), Quantity: $('#tQuantity-' + ID).val()
+        });
+        $.ajax({
+            url: "/Quotes/updateProductItem", type: "POST", dataType: "json", data: postdata
+            , contentType: "application/json; charset=utf-8", success: function (redata) {
+                if (redata.succeed) {
+
+                    var result = redata.data;
+                    setproductDetail(result);
+
+                } else {
+                    AlertDialog(redata.err);
+                    // 有錯誤時就回復原值
+                    $('#tDescription-101').val($('#tDescription-' + ID).val());
+                    $('#tQuoting_Price-101').val($('#tQuoting_Price-' + ID).val());
+                    $('#tQuantity-100').val($('#tQuantity-' + ID).val());
+                }
+            }
+        });
+
+    }
+
+    //加入Product Detail資料
+    function setproductDetail(result) {
+        var divbody = "";
+        $("#div-body").empty();
+        $("#ddlParentItem option").remove();
+        $("#ddlParentItem").append($("<option></option>").attr("value", "").text("Loose items"));
+        for (var i = 0; i < result.length; i++) {
+            var divbody = "<div data-value='" + result[i].line_No + "' class='eQtable-row' id='row-" + result[i].line_No + "'>";
+            divbody += "<div><input type='text' style='width:100%' name='tLineNo-" + result[i].line_No + "' id='tLineNo-'" + result[i].line_No + "' value='" + result[i].line_No + "' disabled='disabled' /></div>";
+            divbody += "<div><input type='button' class='itempos' data-value='" + result[i].line_No + "' style='width:100%' name='tPartNo-" + result[i].line_No + "' id='tPartNo-" + result[i].line_No + "' value='" + result[i].partNo + "' onclick='PartInfo(this);' /></div>";
+            divbody += "<div><input type='text' style='width:100%' name='tDescription-" + result[i].line_No + "' id='tDescription-" + result[i].line_No + "' value='" + result[i].description + "' /></div>";
+            divbody += "<div><span class='currency'>" + result[i].currencysign + "</span><span style='top:20%;position:relative;'>" + result[i].listPrice + "</span></div>";
+            divbody += "<div><span class='currency'>" + result[i].currencysign + "</span><span style='top:20%;position:relative;'>" + result[i].unitPrice + "</span></div>";
+            divbody += "<div><span>" + result[i].currencysign + "</span><input type='text' style='width:75%' name='tQuoting_Price-" + result[i].line_No + "' id='tQuoting_Price-" + result[i].line_No + "' value='" + result[i].newUnitPrice + "' onkeypress='return onKeyPressBlockNumbers(event);' onpaste='return false;' " + (result[i].partNo.indexOf("-BTO") > -1 ? "disabled='disabled'" : "") + "/></div>";
+            divbody += "<div><input type='text' style='width:100%' name='tQuantity-" + result[i].line_No + "' id='tQuantity-" + result[i].line_No + "' value='" + result[i].qty + "' onkeypress='return onKeyPressInteger(event);' onpaste='return false;' /></div>";
+            divbody += "<div><span style='top:20%;position:relative;' name='tSPRNO-" + result[i].line_No + "' id='tSPRNO-" + result[i].line_No + "'>" + result[i].SPRNO + "</span> </span> <a style='top:20%;position:relative;' data-value='" + result[i].line_No + "' onclick='javascript: SPRNO(this);'><i class='fa fa-external-link'></i></a></div>";
+            divbody += "<div><span class='currency'>" + result[i].currencysign + "</span><span style='top:20%;position:relative;' name='tSub_total-" + result[i].line_No + "' id='tSub_total-" + result[i].line_No + "'>" + result[i].SubTotal + "</span></div>";
+            divbody += "<div style='padding-top:6px;'><a class='btn-del-item' style='color:darkred' data-value='" + result[i].line_No + "' data-quoteid='" + result[i].quoteId + "' onclick='javascript: deleteItem(this);'><i class='fa fa-times-circle fa-lg'></i></a></div>";
+            divbody += "</div>";
+            $("#div-body").append(divbody);
+
+            if (result[i].partNo.indexOf("-BTO") > -1) {
+                $("#ddlParentItem").append($("<option></option>").attr("value", result[i].line_No).text(result[i].partNo));
+                $("#ddlBTOParent").append($("<option></option>").attr("value", result[i].line_No).text(result[i].partNo));
+            }
+
+            ////加入加總自動運算
+            //keycontrol('tQuoting_Price-' + result[i].line_No, "sum", result[i].line_No);
+            //keycontrol('tQuantity-' + result[i].line_No, "sum", result[i].line_No);
+            //加入立即更新
+            keychange('tDescription-' + result[i].line_No, result[i].line_No);
+            keychange('tQuoting_Price-' + result[i].line_No, result[i].line_No);
+            keychange('tQuantity-' + result[i].line_No, result[i].line_No);
+        }
+
+        //copy ddl to another bto-parent ddl for price recalculation, show bto-parent ddl if bto item is existed
+        updateddlBTOParentItems();
+
+        //總計合計
+        if (result.length > 0) {
+            $("#PreTaxTotalAmount").text(result[0].currencysign + " " + result[0].PreTaxTotalAmount);
+            $("#TotalTaxAmount").text(result[0].currencysign + " " + result[0].TotalTaxAmount);
+            $("#PostTaxTotalAmount").text(result[0].currencysign + " " + result[0].PostTaxTotalAmount);
+        } else {
+            $("#PreTaxTotalAmount").text("");
+            $("#TotalTaxAmount").text("");
+            $("#PostTaxTotalAmount").text("");
+        }
+    }
+
+    //Part No Info
+    function PartInfo(e) {
+        var partno = e.value;
+        $.get("/operation/PartInfo",
+            { PartNo: partno, ORG: $("#ddlORG").val(), Currency: $("#hd_Currency").val() }, function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-search-PartInfo", data);
+                });
+            });
+    }
+
+    //Part No Info
+    function SPRNO(arg) {
+        var lineno = $(arg).attr("data-value");
+        $.get("/operation/SPRNO",
+            { LineNo: parseInt(lineno) }, function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-SPRNO", data);
+                });
+            });
+    }
+
+    //加總自動運算
+    function keycontrol(id, type, keyid) {
+        $('#' + id).keypress(function (e) {//按下Enter時
+            code = (e.keyCode ? e.keyCode : e.which);
+            if (code == 13) {
+                if (type == "add" || type == "sum") {
+                    Sub_total(type, id, keyid);
+                }
+            }
+        });
+
+        $('#' + id).blur(function () {//當輸入失去焦點時就當是確定了
+            if (type == "add" || type == "sum") {
+                Sub_total(type, id, keyid);
+            }
+        });
+    };
+
+    function Sub_total(type, id, keyid) {
+
+        if (type == "add") {
+            var Quoting_Price = $('#aQuoting_Price').val() != "" ? $('#aQuoting_Price').val() : "0";
+            var Quantity = $('#aQuantity').val() != "" ? $('#aQuantity').val() : "0";
+            var Sum = parseFloat(Quoting_Price) * parseFloat(Quantity);
+            $('#aSub_total').text(formatFloat(Sum, 2));
+        } else if (type == "sum") {
+            var Quoting_Price = $('#tQuoting_Price-' + keyid).val() != "" ? $('#tQuoting_Price-' + keyid).val() : "0";
+            var Quantity = $('#tQuantity-' + keyid).val() != "" ? $('#tQuantity-' + keyid).val() : "0";
+            var Sum = parseFloat(Quoting_Price) * parseFloat(Quantity);
+            $('#tSub_total-' + keyid).text(formatFloat(Sum, 2));
+        }
+    }
+
+    //小數點第N位四捨五入
+    function formatFloat(num, pos) {
+        var size = Math.pow(10, pos);
+        return Math.round(num * size) / size;
+    }
+
+    //只能輸入數字和小數點
+    function onKeyPressBlockNumbers(e) {
+        var key = window.event ? e.keyCode : e.which;
+        var keychar = String.fromCharCode(key);
+        reg = /[0-9]|\./;
+        return reg.test(keychar);
+    }
+    function onKeyPressInteger(e) {
+        var key = window.event ? e.keyCode : e.which;
+        var keychar = String.fromCharCode(key);
+        reg = /[0-9]/;
+        return reg.test(keychar);
+    }
+
+    //數字處理為有千分位
+    //function AppendComma(n) {
+    //
+    //    if (!/^((-*\d+)|(0))$/.test(n)) {
+    //        var newValue = /^((-*\d+)|(0))$/.exec(n);
+    //        if (newValue != null) {
+    //            if (parseInt(newValue, 10)) {
+    //                n = newValue;
+    //            }
+    //            else {
+    //                n = '0';
+    //            }
+    //        }
+    //        else {
+    //            n = '0';
+    //        }
+    //    }
+    //    if (parseInt(n, 10) == 0) {
+    //        n = '0';
+    //    }
+    //    else {
+    //        n = parseInt(n, 10).toString();
+    //    }
+
+    //    n += '';
+    //    var arr = n.split('.');
+    //    var re = /(\d{1,3})(?=(\d{3})+$)/g;
+    //    return arr[0].replace(re, '$1,') + (arr.length == 2 ? '.' + arr[1] : '');
+    //}
+    //將有千分位的數值轉為一般數字
+    function RemoveComma(n) {
+        return n.replace(/[,]+/g, '');
+    }
+
+
+
+    function updateTax() {
+        $.ajax({
+            url: "/Quotes/UpdateTax",
+            type: "POST",
+            data: { newRate: $('#TaxRate').val() },
+            success: function (redata) {
+
+                //更改稅率後更新details
+                if (redata.succeed) {
+                    var result = redata.data;
+                    setproductDetail(result);
+                    $("#TotalTaxAmountWording").html("Tax(" + $('#TaxRate').val() * 100 + " %)");
+
+                } else {
+                    AlertDialog("Change Tax Rate error: " + redata.err);
+                }
+
+            }
+        })
+    }
+</script>
+
+@Html.Modal("osx-search-account", "Search-Account", "410px", "900px")
+@Html.Modal("osx-search-ShipBillTo", "Search", "410px", "700px")
+@Html.Modal("osx-search-Preview", "Preview", "500px", "1000px")
+@Html.Modal("osx-approval-Check", "Check Before Approval", "500px", "1000px")
+@Html.Modal("osx-search-oppty", "Oppty", "430px", "900px")
+@Html.Modal("osx-search-configurator", "Configurator", "500px", "900px")
+@Html.Modal("osx-search-Configuration_List", "Configuration List", "500px", "900px")
+@Html.Modal("osx-search-PartInfo", "Product Related Info", "300px", "900px")
+@Html.Modal("osx-SPRNO", "special ITP", "80px", "400px")
+@Html.Modal("osx-Quotation-Format", "Quotation Format", "80px", "300px")
+
+<div class="main-content">
+    <div class="titlebox topbox">
+        <h4>Create New Quotation</h4>
+    </div>
+    <div class="actionbox">
+        <ul>
+            @{
+                var className = "disable";
+                if (Model.AppRegion != null && Model.AppRegion == "ACN")
+                {
+                    className = "";
+                }
+            }
+            <li class="@className">
+                <a id="btn-QuotationFormat"><i class="fa fa-th-list"></i> Quotation Format</a>
+            </li>
+            <li>
+                <a id="btn-preview"><i class="fa fa-search"></i> Preview</a>
+            </li>
+            <li>
+                <a id="btn-save"><i class="fa fa-floppy-o"></i> Save</a>
+            </li>
+            <li>
+                <a id="btn-confirm"><i class="fa fa-check-square-o"></i> Confirm</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <input class="simulatePriceErrMsg" value="@Model.SimulatePriceErrorMessage" hidden />
+        <table id="tbCreateQuotation">
+            <tr>
+                <td class="field150 right">
+                    Account Name
+                    <input type="hidden" id="hd_AccountID" value="@Model.AccountRowID" />
+                    <input type="hidden" id="hd_Currency" value="@Model.Currency" />
+                    <input type="hidden" id="hd_CurrencySign" value="@Model.CurrencySign" />
+                </td>
+                <td colspan="3">
+                    @Html.TextBoxFor(mdl => mdl.AccountName, new { @class = "text090" })
+                    <a id="pick-account"><i class="fa fa-external-link"></i></a>
+                </td>
+                <td class="field150 right">
+                    Quote No
+                    <input type="hidden" id="hd_QuoteID" value="@Model.QuoteID" />
+                </td>
+                <td class="field">
+                    @Html.TextBoxFor(mdl => mdl.QuoteNo, new { @Value = @Model.QuoteNo, @class = "text090", @disabled = "disabled" })&nbsp;
+                </td>
+                <td class="field100 right">Expired Date</td>
+                <td>
+                    @Html.TextBoxFor(mdl => mdl.ExpiredDate, "{0:yyyy-MM-dd}", new { @id = "txtExpiredDate", @class = "text070", @disabled = "disabled" })&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="field150 right">ERP ID</td>
+                <td>
+                    @Html.TextBoxFor(mdl => mdl.ERPID, new { @class = "text090", @disabled = "disabled" })&nbsp;
+                </td>
+                <td class="field70 right">ORG</td>
+                <td>
+                    @Html.DropDownListFor(mdl => mdl.org, Model.ORGList, new { @id = "ddlORG", @style = "width:100px" })
+                </td>
+                <td class="field150 right"><span style="color:red;">*</span>Sales Representative</td>
+                <td class="text090" colspan="3">
+                    @*@Html.Partial("_AutocompleteCombobox", Model)*@
+                    <div style="width:90%"><textarea style="width:100%" name="aSales" id="aSales" rows="2" /></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="field150 right">Address</td>
+                <td colspan="3">
+                    @Html.TextBoxFor(mdl => mdl.Address, new { @class = "text090", @disabled = "disabled" })&nbsp;
+                </td>
+                <td class="field150 right"><span style="color:red;">*</span>Inside Sales</td>
+                <td colspan="3">
+                    @Html.DropDownListFor(mdl => mdl.InsideSales, Model.InsideSalesList, new { @id = "ddlInsideSales", @class = "text090" })&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="field150 right"><span style="color:red;">*</span>Opportunity</td>
+                <td colspan="3">
+                    @Html.TextBoxFor(mdl => mdl.Opportunity, new { @class = "text090", @disabled = "disabled" })&nbsp;
+                    <input type="hidden" id="hd_OpptyStage" value="@Model.OptyStage" />
+                    <a id="pick-oppty"><i class="fa fa-external-link"></i></a>
+                </td>
+                <td class="field150 right"><span style="color:red;">*</span>Description</td>
+                <td colspan="3">
+                    @Html.TextBoxFor(mdl => mdl.Description, new { @class = "text090" })&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="field150 right">Customer Contact</td>
+                <td>
+                    @Html.DropDownListFor(mdl => mdl.Contact, Model.ContactList, new { @id = "ddlContact", @class = "text090" })&nbsp;
+                </td>
+                <td class="field100 right">Warranty Period</td>
+                <td>
+                    @Html.TextBoxFor(mdl => mdl.Warranty, new { @class = "text070" })&nbsp;
+                </td>
+                <td>&nbsp;</td>
+                <td class="top" colspan="3"><span style="color:red;">@Model.exp</span></td>
+            </tr>
+            <tr>
+                <td colspan="6">&nbsp;</td>
+            </tr>
+        </table>
+        More Detail
+        <i id="icon-detail" class="fa fa-plus-square"></i>
+        <div id="div_detail" style="width:95%;">
+            <div>
+                <ul class="tabnav nav-tabs">
+                    <li data-value="001">
+                        <a>Ship-to/Bill-to/End-Customer</a>
+                    </li>
+                    <li data-value="002">
+                        <a>Payment/ Shipment/Tax/Freight</a>
+                    </li>
+                    <li data-value="003">
+                        <a>Notes</a>
+                    </li>
+                    @*<li data-value="004">
+                            <a>Sales Employee 123</a>
+                        </li>*@
+                </ul>
+                <div class="tab-content" style="background-color: #fff; height:251px;">
+                    <div class="tab-pane" id="001" style="overflow:auto;">
+                        <div style="overflow:auto;float:left;width:33.1%;height:250px;">
+                            @{
+                                var Shipto = Model.QuotationPartner.Where(s => s.TYPE == "S").FirstOrDefault();
+                            }
+                            @Html.Partial("Ship_Billto", Shipto, new ViewDataDictionary { { "type", "S" } })
+                        </div>
+                        <div style="overflow:auto;float:left;width:33.1%;height:250px;">
+                            @{
+                                var Billto = Model.QuotationPartner.Where(s => s.TYPE == "B").FirstOrDefault();
+                            }
+                            @Html.Partial("Ship_Billto", Billto, new ViewDataDictionary { { "type", "B" } })
+                        </div>
+                        <div style="overflow:auto;float:left;width:33.1%;height:250px;">
+                            @{
+                                var Customer = Model.QuotationPartner.Where(s => s.TYPE == "EM").FirstOrDefault();
+                            }
+                            @Html.Partial("Ship_Billto", Customer, new ViewDataDictionary { { "type", "EM" } })
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="002" style="overflow:auto;">
+                        <table>
+                            <tr>
+                                <td class="field70">Tax</td>
+                                @*<td>@Html.TextBoxFor(mdl => mdl.tax, new { @disabled = "disabled" })&nbsp;</td>*@
+                                <td>
+                                    @Html.DropDownList("TaxRate", Model.TaxRateList)%
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="field70">Freight</td>
+                                <td>@Html.TextBoxFor(mdl => mdl.Freight)&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="003" style="overflow:auto;">
+
+                    </div>
+                    @*<div class="tab-pane" id="004" style="overflow:auto;">
+
+                        </div>*@
+                </div>
+            </div>
+        </div>
+
+
+        <div class="tabbox">
+            <div class="eQtable">
+                <div class="eQtable-input" style="display:none;">
+                    <div style="width:130px;">
+                        Choose Parent Item :
+                    </div>
+                    <div style="width:150px;">
+                        @Html.DropDownListFor(mdl => mdl.Parent, Model.ParentItem, new { @id = "ddlParentItem" })&nbsp;
+                    </div>
+                </div>
+                <div class="eQtable-input add-loosItem">
+                    <div style="width:100px;">
+                        Part No:
+                    </div>
+                    <div class="w35p">
+                        <textarea style="width:100%" name="aPartNo" id="aPartNo" rows="2" />
+                    </div>
+                    <div style="padding-top:6px;margin-left:3px;">
+                        <a data-quoteno="@Model.QuoteNo" style="color:green" class="btn-add-item"><i class="fa fa-plus-circle fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="eQtable-input">
+                    <div style="padding:2px;">
+                        <button id="btn-configurator" type="button" class="button">
+                            <i class="fa fa-television fa-lg"></i> Configure a System
+                        </button>
+                    </div>
+                </div>
+                <div id="bto-recalculation-area" class="eQtable-input">
+                    <div style="width:130px;">
+                        Price Recalculation:
+                    </div>
+                    <div style="width:115px;">
+                        <select id="ddlBTOParent"></select>
+                    </div>
+                    <input type="text" id="newBtoQuotingPrice" placeholder="Amount" style="margin-left:5px;">
+                    <button id="btn-recal-btoPrice" type="button" class="button" style="margin-left:5px;">
+                        <i class="fa fa-calculator fa-lg"></i> GO
+                    </button>
+                </div>
+                <div class="eQtable-title">
+                    <div class="eQtable-row">
+                        @foreach (var title in Model.CreateDetailTitle)
+                        {
+                            <div style="background-color: #e3e3e3">@title</div>
+                        }
+                        <div style="background-color: #e3e3e3;width:100px;">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="eQtable-body" id="div-body">
+                    @if (Model.QD != null)
+                    {
+                        foreach (var item in Model.QD)
+                        {
+                            <div data-value="@item.line_No" class="eQtable-row" id="row-@item.line_No">
+                                <div><input type='text' style='width:100%' name='tLineNo-@item.line_No' id='tLineNo-@item.line_No' value='@item.line_No' disabled='disabled' /></div>
+                                <div><input type='button' class='itempos' data-value='@item.line_No' style='width:100%' name='tPartNo-@item.line_No' id='tPartNo-@item.line_No' value='@item.partNo' onclick='PartInfo(this);' /></div>
+                                <div><input type='text' style='width:100%' name='tDescription-@item.line_No' id='tDescription-@item.line_No' value='@item.description' /></div>
+                                <div><span class='currency'>@item.currencysign</span><span style='top:20%;position:relative;'>@item.listPrice</span></div>
+                                <div><span class='currency'>@item.currencysign</span><span style='top:20%;position:relative;'>@item.unitPrice</span></div>
+                                <div><span>@item.currencysign</span><input type='text' style='width:75%' name='tQuoting_Price-@item.line_No' id='tQuoting_Price-@item.line_No' value='@item.newUnitPrice' onkeypress='return onKeyPressBlockNumbers(event);' onpaste='return false;' @(item.partNo.IndexOf("-BTO") > -1 ? "disabled='disabled'" : "") /></div>
+                                <div><input type='text' style='width:100%' name='tQuantity-@item.line_No' id='tQuantity-@item.line_No' value='@item.qty' onkeypress='return onKeyPressInteger(event);' onpaste='return false;' /></div>
+                                <div><span style='top:20%;position:relative;' name='tSPRNO-@item.line_No' id='tSPRNO-@item.line_No'>@item.SPRNO</span> <a style='top:20%;position:relative;' data-value='@item.line_No' onclick='javascript: SPRNO(this);'><i class="fa fa-external-link"></i></a></div>
+                                <div><span class='currency'>@item.currencysign</span><span style='top:20%;position:relative;' name='tSub_total-@item.line_No' id='tSub_total-@item.line_No'>@item.SubTotal</span></div>
+                                <div style='padding-top:6px;'><a class='btn-del-item' style='color:darkred' data-value='@item.line_No' data-quoteid='@item.quoteId' onclick='javascript: deleteItem(this);'><i class='fa fa-times-circle fa-lg'></i></a></div>
+                            </div>
+                        }
+                    }
+                    @*else
+                        {
+                            <div style="margin:10px">
+                                <strong>No repaired units are registered.</strong>
+                            </div>
+                        }*@
+                </div>
+                <div style="text-align:right;">
+                    <table style="width:100%" class="stylenormal" align="center">
+                        <tr>
+                            <td id="tbSM" style="text-align: left" rowspan="4" valign="top" width="70%" class="boder">
+                                &nbsp;
+                            </td>
+                            <td align="right">
+                                <b>Total</b>:
+                            </td>
+                            <td align="right"><span id="PreTaxTotalAmount">@Model.CurrencySign @Model.QuoteTotalAmount_WithoutTax.ToString("N")</span></td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <b id="TotalTaxAmountWording">Tax(@((Model.tax * 100).ToString("N")) %)</b>:
+                                @*<b>
+                                        Tax(
+                                        @Html.DropDownList("TaxRate", Model.TaxRateList)
+                                        %)
+                                    </b>:*@
+
+                            </td>
+                            <td align="right">
+                                <span id="TotalTaxAmount">@Model.CurrencySign @Model.QuoteTotalTax.ToString("N")</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <b>Total(Including Tax)</b>:
+                            </td>
+                            <td align="right" style="font-weight: bold; color: #FF0000;">
+                                <span id="PostTaxTotalAmount">@Model.CurrencySign @Model.QuoteTotalAmount_WithTax.ToString("N")</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                @*<div class="eQtable-input">
+                        <div class="eQtable-row">
+                            <div>
+                                <input type="text" style="width:100%" name="aLineNo" id="aLineNo" />
+                            </div>
+                            <div>
+                                <input type="text" style="width:100%" name="aPartNo" id="aPartNo" />
+                            </div>
+                            <div>
+                                <input type="text" style="width:100%" name="aDescription" id="aDescription" />
+                            </div>
+                            <div>
+                                <input type="text" style="width:100%" name="aList_Price" id="aList_Price" onkeypress="return onKeyPressBlockNumbers(event);" onpaste="return false;" />
+                            </div>
+                            <div>
+                                <input type="text" style="width:100%" name="aUnit_Price" id="aUnit_Price" onkeypress="return onKeyPressBlockNumbers(event);" onpaste="return false;" />
+                            </div>
+                            <div>
+                                <input type="text" style="width:100%" name="aQuoting_Price" id="aQuoting_Price" onkeypress="return onKeyPressBlockNumbers(event);" onpaste="return false;" />
+                            </div>
+                            <div>
+                                <input type="text" style="width:100%" name="aQuantity" id="aQuantity" onkeypress="return onKeyPressInteger(event);" onpaste="return false;" />
+                            </div>
+                            <div>
+                                <input type="text" style="width:100%" name="aSub_total" id="aSub_total" disabled="disabled" />
+                            </div>
+                            <div style="padding-top:6px;">
+                                <a data-quoteno="@Model.QuoteNo" style="color:green" class="btn-add-item"><i class="fa fa-check-circle fa-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+</div>

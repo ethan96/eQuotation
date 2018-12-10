@@ -1,0 +1,152 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    .stylenormal {
+        color: black;
+        font-size: 13.0pt;
+        text-decoration: none;
+        font-family: Microsoft JhengHei,Arial;
+        text-align: left;
+    }
+
+    .stylenormaleng {
+        color: black;
+        font-size: 12.0pt;
+        text-decoration: none;
+        font-family: Arial;
+        text-align: left;
+    }
+
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .alert-success {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }
+
+        .alert-success hr {
+            border-top-color: #c9e2b3;
+        }
+
+        .alert-success .alert-link {
+            color: #2b542c;
+        }
+
+    .alert-warning {
+        color: #8a6d3b;
+        background-color: #fcf8e3;
+        border-color: #faebcc;
+    }
+
+        .alert-warning hr {
+            border-top-color: #f7e1b5;
+        }
+
+        .alert-warning .alert-link {
+            color: #66512c;
+        }
+
+    .alert-danger {
+        color: #a94442;
+        background-color: #f2dede;
+        border-color: #ebccd1;
+    }
+
+        .alert-danger hr {
+            border-top-color: #e4b9c0;
+        }
+
+        .alert-danger .alert-link {
+            color: #843534;
+        }
+
+    .quote-approval-title {
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .quote-approval-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .content {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+
+    .quote-approval-image {
+        text-align: center;
+    }
+
+    .small_message {
+        margin-top:5px;
+    }
+</style>
+
+<div class="main-content quote-approval">
+
+    <div class="content">
+
+        @switch ((int)Model.ApprovalResultMessage)
+        {
+            case 0:
+                <div class="alert alert-success" role="alert">
+                    <h2>簽核成功!</h2>
+                </div>             
+                break;
+            case 1:
+                <div class="alert alert-danger" role="alert">
+                    <h2>退件成功!</h2>
+                </div>
+
+                break;
+            case 2:
+                <div class="alert alert-warning" role="alert">
+                    <h2>报价单已经被簽核过!</h2>
+                </div>
+                break;
+            case 3:
+                <div class="alert alert-warning" role="alert">
+                    <h2>报价单已经被退件过!</h2>
+                </div>
+                break;
+            case 4:
+                <div class="alert alert-warning" role="alert">
+                    <h2>簽核失敗!</h2>
+                    <p>此次簽核的层级不是该报价单目前的层级</p>
+                </div>
+                break;
+            default:
+                break;
+        }
+
+
+        <div class="quote-approval-image">
+            <img alt="logo" src="@Util.ResolveServerUrl(VirtualPathUtility.ToAbsolute("~/Images/logo.gif"), false)">
+        </div>
+        <div class="quote-approval-title">
+            <h1>eQuotation Approval result for @Model.QuoteNo</h1>
+        </div>
+        <div class="quote-approval-header">
+            @Html.Partial("_QuoteHeader", @Model)
+        </div>
+        <div class="quote-approval-detail" id="quote-approval-detail">
+            @Html.Partial("_QuoteDetails", @Model)
+        </div>
+
+    </div>
+</div>
+

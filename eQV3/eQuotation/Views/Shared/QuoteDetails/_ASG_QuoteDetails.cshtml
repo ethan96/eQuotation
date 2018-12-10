@@ -1,0 +1,141 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+@using eQuotation.ViewModels
+<style>
+    tr.spaceUnder>td {
+        padding-bottom: 1em;
+    }
+</style>
+<table style="border-collapse: collapse; width:100%;" align="center">
+    <thead style="font-size: 0.85em; line-height: 20px; border-bottom: 1px solid currentColor;">
+        <tr>
+            <th style="text-align:center;">LINE</th>
+            <th style="text-align:center;">ITEM NUMBER</th>
+            <th style="text-align:center; width:40%">DESCRIPTION</th>
+            <th style="text-align:center;">QUANTITY</th>
+            <th style="text-align:right;">UNIT PRICE</th>
+            @if (Model.GPIsViewable)
+            {
+                <th style="text-align:right;">ITP</th>
+            }
+            <th style="text-align:right;">EXTENDED PRICE</th>
+            @if (Model.GPIsViewable)
+            {
+                <th>Margin</th>
+            }
+            <th style="width: 5%;">LT*</th>
+            @*@if (Model.pagetype == "GPCheck")
+            {
+                <th style="text-align:right;">GPStatus</th>
+            }*@
+        </tr>
+    </thead>
+    <tbody>
+        @{ var list = Model.QD.Where(q => q.line_No >= 100).ToList(); var list2 = Model.QD.Where(q => q.line_No < 100).ToList(); list.AddRange(list2);}
+
+
+    @foreach (var item in list)
+    {
+        if (Model.DisplayItemType == DisplayItemOptionsForBto.SubItemWithPrice)
+        {
+
+            <tr class="spaceUnder">
+                <td style="text-align:center;">@item.line_No</td>
+                <td style="text-align:left;">@item.partNo</td>
+                <td style="text-align:left;" class="descriptionTxtArea">@item.description</td>
+                <td style="text-align:center;">@item.qty</td>
+                <td style="text-align:right;">@item.newUnitPrice.ToString("N2")</td>
+                @if (Model.GPIsViewable)
+                {
+                    <td style="text-align:right;"> @((item.ITP).ToString("N"))</td>
+                }
+                <td style="text-align:right;">@item.SubTotal.ToString("N2")</td>
+                @if (Model.GPIsViewable)
+                {
+                    if (item.Margin != 9999)
+                    {
+                            
+                        if (item.GPStatus == "Normal")
+                        {
+                            <td style="text-align:right;"> @((item.Margin).ToString("N")) %</td>
+                        }
+                        else
+                        {
+                            <td style="text-align:right; color: #FF0000;"> @((item.Margin).ToString("N")) %</td>
+                        }
+
+                    }
+                    else
+                    {
+                        <td style="text-align:right;"></td>
+                    }
+                }
+                <td style="padding-left:2%">@item.ABCIndicator</td>
+                @*@if (Model.pagetype == "GPCheck")
+                {
+                    <td style="text-align:right; color:RED">@item.GPStatus</td>
+                }*@
+            </tr>
+
+        }
+        else if (Model.DisplayItemType == DisplayItemOptionsForBto.SubItemWithoutPrice)
+        {
+
+                <tr class="spaceUnder">
+                    <td style="text-align:center;">@item.line_No</td>
+                    <td style="text-align:left;">@item.partNo</td>
+                    <td style="text-align:left;" class="descriptionTxtArea">@item.description</td>
+                    <td style="text-align:center;">@item.qty</td>
+                    <td style="text-align:right;"></td>
+                    <td style="text-align:right;"></td>
+                    <td style="padding-left:2%">@item.ABCIndicator</td>
+                </tr>
+
+
+        }
+        else if (Model.DisplayItemType == DisplayItemOptionsForBto.SubItemWithoutPriceButShowLooseItemPrice)
+        {
+
+                <tr class="spaceUnder">
+                    <td style="text-align:center;">@item.line_No</td>
+                    <td style="text-align:left;">@item.partNo</td>
+                    <td style="text-align:left;" class="descriptionTxtArea">@item.description</td>
+                    <td style="text-align:center;">@item.qty</td>
+                    @if (item.itemtype == 1)
+                    {
+                        <td style="text-align:right;"></td>
+                        <td style="text-align:right;"></td>
+                    }
+                    else
+                    {
+                        <td style="text-align:right;">@item.newUnitPrice.ToString("N2")</td>
+                        <td style="text-align:right;">@item.SubTotal.ToString("N2")</td>
+                    }
+                    <td style="padding-left:2%;">@item.ABCIndicator</td>
+                </tr>
+        }
+        else if (Model.DisplayItemType == DisplayItemOptionsForBto.MainItemOnly)
+        {
+            if (item.itemtype == -1 || item.itemtype == 0 )
+            {
+                    <tr class="spaceUnder">
+                        <td style="text-align:center;">@item.line_No</td>
+                        <td style="text-align:left;">@item.partNo</td>
+                        <td style="text-align:left;" class="descriptionTxtArea">@item.description</td>
+                        <td style="text-align:center;">@item.qty</td>
+                        <td style="text-align:right;"> @item.newUnitPrice.ToString("N2")</td>
+                        <td style="text-align:right;">@item.SubTotal.ToString("N2")</td>
+                        <td style="padding-left:2%">@item.ABCIndicator</td>
+                    </tr>
+            }
+        }
+    }
+    </tbody>
+</table>
+
+
+
+<script>
+    $('.descriptionTxtArea').each(function(){
+        $(this).html($(this).text().replace(/\r\n?|\n/g, '<br />'));
+    });   
+</script>

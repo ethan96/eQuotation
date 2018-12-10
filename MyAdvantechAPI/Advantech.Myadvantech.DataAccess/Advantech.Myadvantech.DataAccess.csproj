@@ -1,0 +1,1110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9FDD308C-F13D-4B90-B505-666846184259}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Advantech.Myadvantech.DataAccess</RootNamespace>
+    <AssemblyName>Advantech.Myadvantech.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\eDoc\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Advantech.Myadvantech.DataAccess.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bapi_Addrcontpart_Savereplica_dll">
+      <HintPath>..\packages\Bapi_Addrcontpart_Savereplica_dll.dll</HintPath>
+    </Reference>
+    <Reference Include="BAPI_SALESORDER_CREATEFROMDAT2, Version=1.0.4556.29761, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\BAPI_SALESORDER_CREATEFROMDAT2.dll</HintPath>
+    </Reference>
+    <Reference Include="BAPI_SALESORDER_SIMULATE, Version=1.0.4056.23877, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\BAPI_SALESORDER_SIMULATE.dll</HintPath>
+    </Reference>
+    <Reference Include="CreateSAPContact">
+      <HintPath>..\packages\CreateSAPContact.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Factory_Date_Conversion">
+      <HintPath>..\packages\Factory_Date_Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="GetCreditExposure">
+      <HintPath>..\packages\GetCreditExposure.dll</HintPath>
+    </Reference>
+    <Reference Include="GetSAPPeriodCost">
+      <HintPath>..\packages\GetSAPPeriodCost.dll</HintPath>
+    </Reference>
+    <Reference Include="GET_MATERIAL_ATP">
+      <HintPath>..\packages\GET_MATERIAL_ATP.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.4.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.4\lib\Net40\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.112.1.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\app\ming.zhao\product\11.2.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector, Version=1.2.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SAP.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPCustomerRFC">
+      <HintPath>..\packages\SAPCustomerRFC.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPRFC">
+      <HintPath>..\packages\SAPRFC.dll</HintPath>
+    </Reference>
+    <Reference Include="SgmlReaderDll">
+      <HintPath>..\..\MyGlobal\Bin\SgmlReaderDll.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="wnvhtmltopdf, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b12703d35a33ff98, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\eDoc\bin\wnvhtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="ZBILLING_SCHEDULE_SAVE">
+      <HintPath>..\packages\ZBILLING_SCHEDULE_SAVE.dll</HintPath>
+    </Reference>
+    <Reference Include="ZCUSTOMER_UPDATE_SALES_AREA">
+      <HintPath>..\packages\ZCUSTOMER_UPDATE_SALES_AREA.dll</HintPath>
+    </Reference>
+    <Reference Include="ZGET_ATP_LIMITQTY">
+      <HintPath>..\packages\ZGET_ATP_LIMITQTY.dll</HintPath>
+    </Reference>
+    <Reference Include="ZGET_PROD_PLANT_COST">
+      <HintPath>..\packages\ZGET_PROD_PLANT_COST.dll</HintPath>
+    </Reference>
+    <Reference Include="ZPP_BOM_EXPL_MAT_V2_RFC_CKD">
+      <HintPath>..\packages\ZPP_BOM_EXPL_MAT_V2_RFC_CKD.dll</HintPath>
+    </Reference>
+    <Reference Include="Zsd_Customer_Maintain_All_V2">
+      <HintPath>..\packages\Zsd_Customer_Maintain_All_V2.dll</HintPath>
+    </Reference>
+    <Reference Include="ZSD_SO_HEADER_UPDATE, Version=1.0.6386.18271, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ZSD_SO_HEADER_UPDATE.dll</HintPath>
+    </Reference>
+    <Reference Include="ZSD_UPDATE_FPLA, Version=1.0.4582.20422, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ZSD_UPDATE_FPLA.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_RELEASE_GP_ITEM">
+      <HintPath>..\packages\Z_RELEASE_GP_ITEM.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_SD_CTOS_SPLIT_PRICE, Version=1.0.6255.26691, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Z_SD_CTOS_SPLIT_PRICE.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_SD_USPRICELOOKUP">
+      <HintPath>..\packages\Z_SD_USPRICELOOKUP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ExcelUtil.cs" />
+    <Compile Include="Common\PDFUtil.cs" />
+    <Compile Include="Common\LogInUtil.cs" />
+    <Compile Include="Common\MyEnums.cs" />
+    <Compile Include="Common\MyExtension.cs" />
+    <Compile Include="Common\SendMailUtil.cs" />
+    <Compile Include="Common\SiebelEnums.cs" />
+    <Compile Include="DataCore\BBeStore\BBCustomer.cs" />
+    <Compile Include="DataCore\BBeStore\BBeStoreContext.cs" />
+    <Compile Include="DataCore\BBeStore\BBeStoreDAL.cs" />
+    <Compile Include="DataCore\BBeStore\CartContactX.cs" />
+    <Compile Include="DataCore\BBeStore\CartItemX.cs" />
+    <Compile Include="DataCore\BBeStore\CartX.cs" />
+    <Compile Include="DataCore\BBeStore\OrderX.cs" />
+    <Compile Include="DataCore\CBOMV2\CBOMV2_CatalogEditorDAL.cs" />
+    <Compile Include="DataCore\CBOMV2\CBOMV2_ConfiguratorDAL.cs" />
+    <Compile Include="DataCore\CBOMV2\CBOMV2_EditorDAL.cs" />
+    <Compile Include="DataCore\CBOMV2\CBOMV2_Model.cs" />
+    <Compile Include="DataCore\ConfigurationHub\CBOMV1Model.cs" />
+    <Compile Include="DataCore\ConfigurationHub\CBOMV2Model.cs" />
+    <Compile Include="DataCore\ConfigurationHub\ConfigurationHubDAL.cs" />
+    <Compile Include="DataCore\ConfigurationHub\ConfigurationHubModel.cs" />
+    <Compile Include="DataCore\CPDB\CPDBContext.cs" />
+    <Compile Include="DataCore\CPDB\CPDBDAL.cs" />
+    <Compile Include="DataCore\CurationPoolDAL.cs" />
+    <Compile Include="DataCore\DatabaceFactory.cs" />
+    <Compile Include="DataCore\eQuotation\eQuotationContext.cs" />
+    <Compile Include="DataCore\eQuotation\eQuotationDAL.cs" />
+    <Compile Include="DataCore\eQuotation\Model\ExtraTermsAndConditions.cs" />
+    <Compile Include="DataCore\eQuotation\Model\JsonEWPart.cs" />
+    <Compile Include="DataCore\eQuotation\Model\JsonPart.cs" />
+    <Compile Include="DataCore\eQuotation\Model\SalesRepresentative.cs" />
+    <Compile Include="DataCore\eQuotation\Model\SiebelAccountSearch.cs" />
+    <Compile Include="DataCore\eQuotation\OptyQuoteHelper.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\ACNApproverX.cs" />
+    <Compile Include="DataCore\eQuotation\QuotationDetailHelper.cs" />
+    <Compile Include="DataCore\eQuotation\QuotationMasterHelper.cs" />
+    <Compile Include="DataCore\eQuotation\QuotationPartnerHelper.cs" />
+    <Compile Include="DataCore\eQuotation\SiebelActiveHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataCore\eQuotation\POCOX\WorkFlowApprovalX.cs" />
+    <Compile Include="DataCore\eQuotation\_eQuotationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataCore\MyAdmin\MyAdminContext.cs" />
+    <Compile Include="DataCore\MyAdmin\MyAdminDAL.cs" />
+    <Compile Include="DataCore\MyAdmin\MyAdminEnum.cs" />
+    <Compile Include="DataCore\MyAdmin\POCOX\SA_APPLICATION2COMPANYX.cs" />
+    <Compile Include="DataCore\MyAdmin\POCOX\SA_APPLICATIONX.cs" />
+    <Compile Include="DataCore\MyAdmin\POCOX\SA_BAPIADDR1X.cs" />
+    <Compile Include="DataCore\MyAdmin\POCOX\SA_BAPIADDR2X.cs" />
+    <Compile Include="DataCore\MyAdmin\POCOX\SA_FKNBKX.cs" />
+    <Compile Include="DataCore\MyAdmin\POCOX\SA_FKNVIX.cs" />
+    <Compile Include="DataCore\MyAdmin\POCOX\SA_KNA1X.cs" />
+    <Compile Include="DataCore\MyAdmin\POCOX\SA_KNB1X.cs" />
+    <Compile Include="DataCore\MyAdmin\POCOX\SA_KNVVX.cs" />
+    <Compile Include="DataCore\MyAdvantech\CartDetailHelper.cs" />
+    <Compile Include="DataCore\MyAdvantech\MyAdvantechContext.cs" />
+    <Compile Include="DataCore\MyAdvantech\MyAdvantechDAL.cs" />
+    <Compile Include="DataCore\MyAdvantech\POCOX\ProjectRegistration.cs" />
+    <Compile Include="DataCore\MyAdvantech\POCOX\SIEBEL_CONTACT_PRIVILEGEX.cs" />
+    <Compile Include="DataCore\MyAdvantech\POCOX\SIEBEL_CONTACT_PRIVILEGE_TEMPX.cs" />
+    <Compile Include="DataCore\MyAdvantech\SAPCompanyHelper.cs" />
+    <Compile Include="DataCore\PIS\PISContext.cs" />
+    <Compile Include="DataCore\PIS\PISDAL.cs" />
+    <Compile Include="DataCore\PIS\PISHelper.cs" />
+    <Compile Include="DataCore\PIS\_PISHelper.cs" />
+    <Compile Include="DataCore\SiebelDAL.cs" />
+    <Compile Include="Entities\BBeStoreEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BBeStoreEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\BBeStoreEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BBeStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\BBeStoreEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BBeStoreEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Cart.cs">
+      <DependentUpon>BBeStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CartContact.cs">
+      <DependentUpon>BBeStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CartItem.cs">
+      <DependentUpon>BBeStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CATEGORY.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CATEGORY_LANG.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Category_Model.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CPDBEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPDBEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\LITERATURE.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Model.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\model_displayarea.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\MODEL_FEATURE.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\MODEL_LANG.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Model_lit.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\model_product.cs">
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\MyAdminEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAdminEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\MyAdvantechGlobalEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAdvantechGlobalEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataCore\eQuotation\POCOX\EQPARTNERX.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\optyQuoteX.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\QuotationDetailX.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\QuoteApprovalX.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\quoteSiebelQuoteX.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\SiebelActiveX.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\SiebelWSFailedLogX.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\SIEBEL_CONTACTX.cs" />
+    <Compile Include="Entities\Order.cs">
+      <DependentUpon>BBeStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OrderSyncedRecords.cs">
+      <DependentUpon>BBeStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Payment.cs">
+      <DependentUpon>BBeStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PISEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PISEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PISEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PISEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PISEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PISEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\ACN_EQ_PSM.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\ACN_EQ_Sales.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\ACN_Executive.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\AJP_ConfiguratorTerms.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\ASG_BTOSInstruction.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\BB_CREDITCARD_ORDER.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\BB_ESTORE_ORDER.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\Cart2OrderMaping.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\CARTMASTERV2.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\cart_DETAIL_V2.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\CheckPointOrder2Cart.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\CPDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\CPDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\EmailGreeting.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\EQPARTNER.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\ExtendedWarrantyPartNo_V2.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\FreightOption.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\HubConfiguredResult.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\MyAdminModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAdminModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\MyAdminModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\MyAdvantechGlobalModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAdvantechGlobalModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\MyAdvantechGlobalModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\OrderForwarderService.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\ORDER_DETAIL.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\ORDER_MASTER.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\ORDER_MASTER_EXTENSION.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\order_Master_ExtensionV2.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\ORDER_PARTNERS.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\PRODUCT_COMPATIBILITY.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\PRODUCT_DEPENDENCY.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\QuotationDetail_Extension_ABR.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\QuotationExtensionNew.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\QuoteApproval.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\quoteSiebelQuote.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\RegionSectorParameter.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SAP_COMPANY_ORG.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SAP_COMPANY_PARTNERS.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SAP_DIMCOMPANY.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SAP_EMPLOYEE.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SAP_PRODUCT.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SAP_PRODUCT_ABC.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SAP_PRODUCT_ORG.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SAP_PRODUCT_STATUS.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SAP_PRODUCT_STATUS_ORDERABLE.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_APPLICATION.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_APPLICATION2COMPANY.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_BAPIADDR1.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_BAPIADDR2.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_Files.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_FKNBK.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_FKNVI.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_KNA1.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_KNB1.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_KNVV.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SA_Proposal.cs">
+      <DependentUpon>MyAdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\Ship_to_Information.cs">
+      <DependentUpon>CPDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SiebelWSFailedLog.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SIEBEL_ACCOUNT.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SIEBEL_CONTACT.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SIEBEL_CONTACT_PRIVILEGE.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SIEBEL_CONTACT_PRIVILEGE_TEMP.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SO_DETAIL.cs">
+      <DependentUpon>CPDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SO_HEADER.cs">
+      <DependentUpon>CPDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SO_PARTNERFUNC.cs">
+      <DependentUpon>CPDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\TIMEZONE.cs">
+      <DependentUpon>MyAdvantechGlobalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\WorkFlowApproval.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order\CreditCard.cs" />
+    <Compile Include="Order\DocumentBase.cs" />
+    <Compile Include="DataCore\OracleProvider.cs" />
+    <Compile Include="Order\Freight.cs" />
+    <Compile Include="Order\Inventory.cs" />
+    <Compile Include="Order\Order.cs" />
+    <Compile Include="Order\OrderPartner.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\IRepository.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\QuotationExtensionX.cs" />
+    <Compile Include="DataCore\eQuotation\POCOX\QuotationMasterX.cs" />
+    <Compile Include="Entities\POCO\eQuotationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eQuotationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\eQuotationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\GPBLOCK_LOGIC.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\optyQuote.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\QuotationDetail.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\QuotationExtension.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\QuotationMaster.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\Quotation_Approval_Expiration.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POCO\SiebelActive.cs">
+      <DependentUpon>eQuotationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order\QuoteItem.cs" />
+    <Compile Include="Order\QuotePartner.cs" />
+    <Compile Include="Product\Category.cs" />
+    <Compile Include="Product\Conditions.cs" />
+    <Compile Include="Product\Part.cs" />
+    <Compile Include="Order\Product.cs" />
+    <Compile Include="Product\Feature.cs" />
+    <Compile Include="Product\Literature.cs" />
+    <Compile Include="Product\Model.cs" />
+    <Compile Include="Product\Model_Lang.cs" />
+    <Compile Include="Product\ProductSpec.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Order\Quote.cs" />
+    <Compile Include="DataCore\SAPDAL.cs" />
+    <Compile Include="DataCore\SqlProvider.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SAPModel\SAPAccount.cs" />
+    <Compile Include="SAPModel\SAPCompany.cs" />
+    <Compile Include="Service References\CTOSDocTunnel\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CheckPointWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CPTEST\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MemberShip\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Pipeline\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SiebelWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UpdOppty\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSSiebel_AddAccount\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSSiebel_AddAction\Reference.cs" />
+    <Compile Include="Web References\WSSiebel_AddContact\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSSiebel_AddOpty\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSSiebel_AddQuote\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSSiebel_New\Reference.cs" />
+    <Compile Include="Web References\WSSiebel_UpdAccount\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSSiebel_UpdContact\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Entities\eQuotationEntity.edmx" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Entities\CPDBEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CPDBEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Entities\BBeStoreEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BBeStoreEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\BBeStoreEntity.edmx.diagram">
+      <DependentUpon>BBeStoreEntity.edmx</DependentUpon>
+    </None>
+    <None Include="Entities\CPDBEntity.edmx.diagram">
+      <DependentUpon>CPDBEntity.edmx</DependentUpon>
+    </None>
+    <None Include="Entities\eQuotationEntity.edmx.diagram">
+      <DependentUpon>eQuotationEntity.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Entities\MyAdminEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyAdminEntity.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </EntityDeploy>
+    <None Include="Entities\MyAdminEntity.edmx.diagram">
+      <DependentUpon>MyAdminEntity.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Entities\MyAdvantechGlobalEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyAdvantechGlobalEntity.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </EntityDeploy>
+    <None Include="Entities\MyAdvantechGlobalEntity.edmx.diagram">
+      <DependentUpon>MyAdvantechGlobalEntity.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Entities\PISEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PISEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\PISEntity.edmx.diagram">
+      <DependentUpon>PISEntity.edmx</DependentUpon>
+    </None>
+    <None Include="Entities\POCO\CPDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CPDBModel.Context.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="Entities\POCO\CPDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CPDBModel.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="Entities\POCO\MyAdminModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyAdminModel.Context.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="Entities\POCO\MyAdminModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyAdminModel.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="Entities\POCO\MyAdvantechGlobalModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyAdvantechGlobalModel.Context.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="Entities\POCO\MyAdvantechGlobalModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyAdvantechGlobalModel.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="Entities\POCO\eQuotationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>eQuotationModel.Context.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="Entities\POCO\eQuotationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>eQuotationModel.cs</LastGenOutput>
+      <CustomToolNamespace>Advantech.Myadvantech.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CTOSDocTunnel\Advantech.Myadvantech.DataAccess.CTOSDocTunnel.CTOSDocItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CTOSDocTunnel\CTOSDocTunnel.wsdl" />
+    <None Include="Service References\CTOSDocTunnel\CTOSDocTunnel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CTOSDocTunnel\CTOSDocTunnel1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CTOSDocTunnel\CTOSDocTunnel2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CheckPointWS\job.wsdl" />
+    <None Include="Web References\CheckPointWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CPTEST\general.wsdl" />
+    <None Include="Web References\CPTEST\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MemberShip\MemberRegStepOne.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MemberShip\membershipwebservice.wsdl" />
+    <None Include="Web References\MemberShip\MEMBER_SIMPLE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MemberShip\MEMBER_SIMPLE_FORM_QUESTIONNAIRE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MemberShip\OnlineRequest.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MemberShip\OnlineRequestV2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MemberShip\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MemberShip\ReportMemberRBU.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MemberShip\SSOUSER.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MemberShip\UserLevel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Pipeline\general.wsdl" />
+    <None Include="Web References\Pipeline\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SiebelWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SiebelWebService\RESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SiebelWebService\WSSiebel.wsdl" />
+    <None Include="Web References\UpdOppty\PROD-UpdOppty.wsdl" />
+    <None Include="Web References\UpdOppty\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UpdOppty\UpdOppty_Output.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSSiebel_AddAccount\AddAccount-MYADVANTECH.wsdl" />
+    <None Include="Web References\WSSiebel_AddAccount\AddAccount_Output.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSSiebel_AddAccount\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSSiebel_AddAction\AddAction - MTL.wsdl" />
+    <None Include="Web References\WSSiebel_AddAction\AddAction_Output.datasource" />
+    <None Include="Web References\WSSiebel_AddAction\Reference.map" />
+    <None Include="Web References\WSSiebel_AddContact\AddContact-MYADVANTECH.wsdl" />
+    <None Include="Web References\WSSiebel_AddContact\AddContact_Output.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSSiebel_AddContact\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSSiebel_AddOpty\AddOppty_Output.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSSiebel_AddOpty\PROD-AddOppty.wsdl" />
+    <None Include="Web References\WSSiebel_AddOpty\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSSiebel_AddQuote\AddQuote.wsdl" />
+    <None Include="Web References\WSSiebel_AddQuote\AddQuote_Output.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSSiebel_AddQuote\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSSiebel_New\Reference.map" />
+    <None Include="Web References\WSSiebel_New\RESULT.datasource" />
+    <None Include="Web References\WSSiebel_New\WSSiebel.wsdl" />
+    <None Include="Web References\WSSiebel_UpdAccount\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSSiebel_UpdAccount\UpdAccount-MYADVANTECH.wsdl" />
+    <None Include="Web References\WSSiebel_UpdAccount\UpdAccount_Output.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSSiebel_UpdContact\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSSiebel_UpdContact\UpdContact-MYADVANTECH.wsdl" />
+    <None Include="Web References\WSSiebel_UpdContact\UpdContact_Output.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\Users\ic.chen\Desktop\AddQuote.WSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSSiebel_AddQuote\</RelPath>
+      <UpdateFromURL>C:\Users\ic.chen\Desktop\AddQuote.WSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_WSSiebel_AddQuote_ADVWebService_AddQuote</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\AddAccount-MYADVANTECH.WSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSSiebel_AddAccount\</RelPath>
+      <UpdateFromURL>D:\AddAccount-MYADVANTECH.WSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_WSSiebel_AddAccount_ADVWebService_AddAccount</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\AddContact-MYADVANTECH.WSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSSiebel_AddContact\</RelPath>
+      <UpdateFromURL>D:\AddContact-MYADVANTECH.WSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_WSSiebel_AddContact_ADVWebService_AddContact</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\PROD-AddOppty.WSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSSiebel_AddOpty\</RelPath>
+      <UpdateFromURL>D:\PROD-AddOppty.WSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_WSSiebel_AddOpty_ADVWebService_AddOppty</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\PROD-UpdOppty.WSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UpdOppty\</RelPath>
+      <UpdateFromURL>D:\PROD-UpdOppty.WSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_UpdOppty_ADVWebService_UpdOppty</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\UpdAccount-MYADVANTECH.WSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSSiebel_UpdAccount\</RelPath>
+      <UpdateFromURL>D:\UpdAccount-MYADVANTECH.WSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_WSSiebel_UpdAccount_ADVWebService_UpdAccount</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\UpdContact-MYADVANTECH.WSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSSiebel_UpdContact\</RelPath>
+      <UpdateFromURL>D:\UpdContact-MYADVANTECH.WSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_WSSiebel_UpdContact_ADVWebService_UpdateContact</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.20.1.43:8089/WSSiebel.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SiebelWebService\</RelPath>
+      <UpdateFromURL>http://172.20.1.43:8089/WSSiebel.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_SiebelWebService_WSSiebel</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.21.1.133/ws/general.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CPTEST\</RelPath>
+      <UpdateFromURL>http://172.21.1.133/ws/general.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_CPTEST_general</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.21.1.133/ws/general.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Pipeline\</RelPath>
+      <UpdateFromURL>http://172.21.1.133/ws/general.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_Pipeline_general</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.21.1.133/ws/job.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CheckPointWS\</RelPath>
+      <UpdateFromURL>http://172.21.1.133/ws/job.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_CheckPointWS_Job</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://member.advantech.com/membershipwebservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MemberShip\</RelPath>
+      <UpdateFromURL>http://member.advantech.com/membershipwebservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Advantech_Myadvantech_DataAccess_MemberShip_MembershipWebservice</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SiebelWebService\WSSiebel.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\CPTEST\general.disco" />
+    <None Include="Web References\Pipeline\general.disco" />
+    <None Include="Web References\CheckPointWS\job.disco" />
+    <None Include="Service References\CTOSDocTunnel\CTOSDocTunnel.disco" />
+    <None Include="Service References\CTOSDocTunnel\configuration91.svcinfo" />
+    <None Include="Service References\CTOSDocTunnel\configuration.svcinfo" />
+    <None Include="Service References\CTOSDocTunnel\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MemberShip\membershipwebservice.disco" />
+    <Content Include="Entities\BBeStoreEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BBeStoreEntity.edmx</DependentUpon>
+      <LastGenOutput>BBeStoreEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\BBeStoreEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BBeStoreEntity.edmx</DependentUpon>
+      <LastGenOutput>BBeStoreEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\PISEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PISEntity.edmx</DependentUpon>
+      <LastGenOutput>PISEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\PISEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PISEntity.edmx</DependentUpon>
+      <LastGenOutput>PISEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\WSSiebel_New\WSSiebel.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CTOSDocTunnel\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

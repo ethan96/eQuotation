@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5097489c09584c58b623c72d7f940a44" Name="Diagram1">
+        <EntityTypeShape EntityType="PISModel.CATEGORY" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISModel.CATEGORY_LANG" Width="1.5" PointX="8" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISModel.Category_Model" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISModel.Model" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISModel.MODEL_LANG" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISModel.model_product" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISModel.model_displayarea" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISModel.MODEL_FEATURE" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="PISModel.FK_CATEGORY_LANG_CATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="PISModel.FK_Category_Model_Model" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PISModel.Model_lit" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PISModel.LITERATURE" Width="1.5" PointX="9.375" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

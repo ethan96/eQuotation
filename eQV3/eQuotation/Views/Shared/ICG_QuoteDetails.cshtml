@@ -1,0 +1,83 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    .totalMargin {
+        font-size: 16px;
+    }
+
+    .table {
+        border-collapse: collapse; /* 关键属性：合并表格内外边框(其实表格边框有2px，外面1px，里面还有1px哦) */
+        border: solid #000; /* 设置边框属性；样式(solid=实线)、颜色(#999=灰) */
+        border-width: 1px 0 0 1px; /* 设置边框状粗细：上 右 下 左 = 对应：1px 0 0 1px */
+    }
+
+    .disableButton {
+        display: none;
+    }
+</style>
+
+@{
+    var className = "disableButton";
+    if (Model.pagetype != null && Model.pagetype != "CheckBeforeApproval")
+    {
+        className = null;
+    }
+}
+<table width="950" border="1" align="center" class="stylenormal table">
+    <tr>
+        <td align="center">No.</td>
+        <td align="center">Part No.</td>
+        <td align="center">Description</td>
+        <td class='@className' align="center">List Price</td>
+        <td align="center">Unit Price</td>
+        <td align="center">Qty</td>
+        <td align="center">Sub Total</td>
+    </tr>
+    @foreach (var item in @Model.QD)
+    {
+        <tr>
+            <td align="center">@item.line_No</td>
+            <td class="stylenormaleng">@item.partNo</td>
+            <td class="stylenormaleng">@item.description</td>
+            <td class="stylenormaleng @className" align="right">@Model.CurrencySign @item.unitPrice</td>
+            <td class="stylenormaleng" align="right">@Model.CurrencySign @item.newUnitPrice</td>
+            <td class="stylenormaleng" align="center">@item.qty</td>
+            <td class="stylenormaleng" align="right">@Model.CurrencySign @item.SubTotal</td>
+        </tr>
+    }
+</table>
+<table width="950" class="stylenormal" align="center">
+    <tr>
+        <td style="height:25px"></td>
+    </tr>
+    <tr>
+        <td id="tbSM" style="text-align: left" rowspan="4" valign="top" width="60%" class="boder">
+            Note:
+        </td>
+        <td align="right">
+            <strong>Pretax Amount</strong>:
+        </td>
+        <td align="right">@Model.CurrencySign @Model.QuoteTotalAmount_WithoutTax.ToString("N2")</td>
+    </tr>
+    <tr>
+        <td align="right">
+            <strong>
+                <span>
+                    Tax Amount(@((Model.tax * 100).ToString("N")) %)
+                </span>
+            </strong>:
+        </td>
+        <td align="right">
+            @Model.CurrencySign @Model.QuoteTotalTax.ToString("N2")
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <strong>Total Amount</strong>:
+        </td>
+        <td align="right" style="font-weight: bold; color: #FF0000;">
+            @Model.CurrencySign @Model.QuoteTotalAmount_WithTax.ToString("N2")
+        </td>
+    </tr>
+
+</table>
+

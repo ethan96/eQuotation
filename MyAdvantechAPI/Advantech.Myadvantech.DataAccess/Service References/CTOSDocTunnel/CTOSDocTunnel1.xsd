@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ifs.advantech.co.jp/services/ctos/CTOSDocTunnel.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Advantech.Mes.Ctos.Services.CTOS" />
+  <xs:element name="GetFAEDocumentList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="partNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFAEDocumentListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Advantech.Mes.Ctos.Services.CTOS" minOccurs="0" name="GetFAEDocumentListResult" nillable="true" type="q1:ArrayOfCTOSDocItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDocumentList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="standardPartNO" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDocumentListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Advantech.Mes.Ctos.Services.CTOS" minOccurs="0" name="GetCustomerDocumentListResult" nillable="true" type="q2:ArrayOfCTOSDocItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

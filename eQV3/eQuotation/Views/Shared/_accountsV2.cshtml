@@ -1,0 +1,443 @@
+﻿<div class="modal-content" style="height:380px;">
+    <div>
+        <table id="tbCreateQuotation">
+            <tr>
+                <td class="field100 right">Account Name :</td>
+                <td class="w35p">
+                    @Html.TextBox("txtSearchAccountName", "", new { @class = "text090" })&nbsp;
+                </td>
+                <td class="field100 right">ERP ID :</td>
+                <td>
+                    @Html.TextBox("txtSearchERPID", "", new { @class = "text090" })&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="field100 right">Primary Sales :</td>
+                <td>
+                    @Html.TextBox("txtSearchPrimary_Sales", "", new { @class = "text090" })&nbsp;
+                </td>
+                <td class="field100 right">Status :</td>
+                <td>
+                    @Html.DropDownList("ddlSearchStatus", (IEnumerable<SelectListItem>)ViewBag.Status, new { @style = "width:90%" })&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="field100 right">Country :</td>
+                <td>
+                    @Html.TextBox("txtSearchCountry", "", new { @class = "text090" })&nbsp;
+                </td>
+                <td class="field100 right">City :</td>
+                <td>
+                    @Html.TextBox("txtSearchCity", "", new { @class = "text090" })&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="field100 right">Zip code :</td>
+                <td>
+                    @Html.TextBox("txtSearchZipcode", "", new { @class = "text090" })&nbsp;
+                </td>
+                <td class="field100 right">State :</td>
+                <td>
+                    @Html.TextBox("txtSearchState", "", new { @class = "text090" })&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="field100 right">Region :</td>
+                <td>
+                    @Html.TextBox("txtSearchRegion", "", new { @class = "text090" })&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    &nbsp;
+                </td>
+                <td class="right" colspan="2">
+                    <button id="btn-search" type="button" class="button"><i class="fa fa-search"></i> Search</button>&nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td class="field200" colspan="4">&nbsp;</td>
+            </tr>
+        </table>
+
+        <table id="tblAccountList">
+            <thead>
+                <tr>
+                    <th style="width:25%">Name</th>
+                    <th style="width:15%">ERP ID</th>
+                    <th style="width:1%">ORG</th>
+                    <th style="width:1%">CURRENCY</th>
+                    <th style="width:20%">Account Status</th>
+                    <th style="width:30%">Account Primary</th>
+                    <th style="width:1%">RowID</th>
+                    <th style="width:10%">Country</th>
+                    <th style="width:5%">City</th>
+                    <th style="width:5%">Zip code</th>
+                    <th style="width:5%">State</th>
+                    <th style="width:5%">Region</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        //initiate datatable instance
+        oTableCust = $("#tblAccountList").dataTable({
+            "bJQueryUI": false,
+            "bLengthChange": false,
+            "bFilter": false,
+            "iDisplayLength": 100,
+            "bAutoWidth": false,
+            "sScrollX": "99%",
+            "sScrollXInner": "99%",
+            "sScrollY": "200px",
+            "bScrollCollapse": true,
+            "bPaginate": true,
+            "aoColumnDefs": [
+                { "bVisible": false, "aTargets": [2] },
+                 { "bVisible": false, "aTargets": [3] },
+                  { "bVisible": false, "aTargets": [6] },
+            ]
+        });
+        $(".dataTable").width('100%');
+        $(".dataTables_scrollHeadInner").width('100%');
+        clickevent();
+
+        //Search
+        $("#btn-search").on("click", function () {
+            var search = {
+                name: $("#txtSearchAccountName").val(),
+                ID: $("#txtSearchERPID").val(),
+                sales: $("#txtSearchPrimary_Sales").val(),
+                status: $("#ddlSearchStatus").val(),
+                country: $("#txtSearchCountry").val(),
+                city: $("#txtSearchCity").val(),
+                zip: $("#txtSearchZipcode").val(),
+                state: $("#txtSearchState").val(),
+                region: $("#txtSearchRegion").val()
+            };
+            var postdata = { SearchAccount : JSON.stringify(search) };
+
+            $.ajax({
+                url: "/Operation/getAccountList", type: "POST", dataType: "json", data: postdata
+                , success: function (redata) {
+
+                    if (redata.succeed) {
+
+                        var result = redata.data;
+
+                        var tbbody;
+                        //加入 hyper link for account selection
+                        for (var i = 0; i < result.length; i++) {
+                            tbbody = "<a class='select-account' href='javascript:void(0)'>" + result[i][0] + " </a> ";
+                            result[i][0] = tbbody;
+                        }
+                        table = $('#tblAccountList').dataTable();
+                        oSettings = table.fnSettings();
+
+                        table.fnClearTable(this);
+                        for (var i = 0; i < result.length; i++) {
+
+                            table.oApi._fnAddData(oSettings, result[i]);
+                        }
+                        oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+                        table.fnDraw();
+                        clickevent();
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+                }
+            });
+        });
+    });
+
+    //The click event must be load again.
+    function clickevent() {
+        $(".select-account").on("click", function (e) {
+            e.preventDefault();
+            var rowIndex = oTableCust.fnGetPosition($(this).closest('tr')[0]);
+
+            $.modal.close();
+            $("#txtAccountName").val($(this).text());
+            $("#txtErpId").val(oTableCust.fnGetData(rowIndex)[1]);
+
+            var post = JSON.stringify({
+                ERPID: $("#txtErpId").val()
+            });
+            $.ajax({
+                url: "/Operation/GetORGList", type: "POST", dataType: "json"
+                , async: false, data: post
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                    if (redata.succeed) {
+
+                        var result = redata.data;
+                        if (result) {
+                            $("#ddlOrg option").remove();
+                            for (var i = 0; i < result.length; i++) {
+                                $("#ddlOrg").append($("<option></option>").attr("value", result[i].Value).text(result[i].Text));
+
+                            }
+
+                            //if no sales org is selected, select first one.
+                            if($('select > [selected]').length > 0)
+                            {
+                                $("#ddlOrg option:first").attr('selected', 'selected');
+                            }
+
+                        }
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+                }
+            });
+
+            var Contact_post = JSON.stringify({
+                AccountRowId: oTableCust.fnGetData(rowIndex)[6]
+            });
+            $.ajax({
+                url: "/Operation/GetContactList", type: "POST", dataType: "json", data: Contact_post
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                    if (redata.succeed) {
+
+                        var result = redata.data;
+                        if (result) {
+                            $("#ddlContact option").remove();
+                            for (var i = 0; i < result.length; i++) {
+                                if (result[i].Selected) {
+                                    $("#ddlContact").append($("<option></option>").attr("value", result[i].Value).text(result[i].Text)).prop('selected', true);
+                                } else {
+                                    $("#ddlContact").append($("<option></option>").attr("value", result[i].Value).text(result[i].Text));
+                                }
+                            }
+                        }
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+                }
+            });
+
+            var postdata = JSON.stringify({
+                soldtoId: $("#txtErpId").val(), accountRowID: oTableCust.fnGetData(rowIndex)[6],
+                accountName: $("#txtAccountName").val(), org: $('#ddlOrg option:selected').text(),
+                erpId: $("#txtErpId").val(), Type: "",
+                currency: oTableCust.fnGetData(rowIndex)[3],
+                country: oTableCust.fnGetData(rowIndex)[7]
+            });
+            $.ajax({
+                url: "/Operation/GetQuotePartners", type: "POST", dataType: "json"
+                , async: false, data: postdata
+               , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                   if (redata.succeed) {
+
+                       var result = redata.data;
+                       if (result) {
+                           //Sold-to
+                           if (result.SOLDTO) {
+                               /// Header
+                               $("#txtAccountName").val(result.SOLDTO.Name);
+                               $("#txtErpId").val(result.SOLDTO.ERPID);
+                               $("#txtAddress").val(result.SOLDTO.Address);
+                               $("#hd_AccountID").val(result.SOLDTO.AccountID);
+                               $("#hd_SiebleRBU").val(result.SOLDTO.SiebelRBU);
+                               $("#hd_SalesOffice").val(result.SOLDTO.SalesOffice);
+                               $("#hd_SalesGroup").val(result.SOLDTO.SalesGroup);
+                               $("#hd_Inco1").val(result.SOLDTO.Inco1);
+                               $("#hd_Inco2").val(result.SOLDTO.Inco2);
+                               $("#hd_Currency").val(result.SOLDTO.Currency);
+                               $('#ddlCurrency option').attr('disabled', false);
+                               $('#ddlCurrency option:selected').attr("selected", null);
+                               $('#ddlCurrency  option[value="'+ result.SOLDTO.Currency + '"]').attr("selected", "selected");                              
+                               if ($("#txtErpId").val() == "") {///if ERP id is existed, fix to default currency
+                                   $('#ddlCurrency option').attr('disabled', false);
+                               }
+                               else {
+                                   $('#ddlCurrency option:not(:selected)').attr('disabled', true);
+                               }
+
+                               $("#txtTax").val(result.SOLDTO.TaxRate);
+                               
+
+
+                               ///Sold to Block 
+                               $("#txtName-SOLDTO").val(result.SOLDTO.Name);
+                               $("#txtERPID-SOLDTO").val(result.SOLDTO.ERPID);
+                               $("#txtAddress-SOLDTO").val(result.SOLDTO.Address);
+                               $("#txtAddress2-SOLDTO").val("");
+                               $("#txtCity-SOLDTO").val(result.SOLDTO.City);
+                               $("#txtState-SOLDTO").val(result.SOLDTO.State);
+                               $("#txtZipcode-SOLDTO").val(result.SOLDTO.Zipcode);
+                               $("#ddlCountry-SOLDTO").val(result.SOLDTO.Country);
+                               $("#txtCountry-SOLDTO").val(result.SOLDTO.Country);
+                               $("#txtAttention-SOLDTO").val(result.SOLDTO.Attention);
+                               $("#txtTel-SOLDTO").val(result.SOLDTO.Tel);
+                           } else {
+                               /// Header
+                               $("#txtAccountName").val("");
+                               $("#txtErpId").val("");
+                               $("#txtAddress").val("");
+                               $("#hd_AccountID").val("");
+                               $("#hd_SiebleRBU").val("");
+                               $("#hd_Currency").val("");
+                               $("#hd_SalesOffice").val("");
+                               $("#hd_SalesGroup").val("");
+                               $("#hd_Inco1").val("");
+                               $("#hd_Inco2").val("");
+                               $("#txtTax").val(0.00);
+
+                               ///Sold to Block
+                               $("#txtName-SOLDTO").val("");
+                               $("#txtERPID-SOLDTO").val("");
+                               $("#txtAddress-SOLDTO").val("");
+                               $("#txtAddress2-SOLDTO").val("");
+                               $("#txtCity-SOLDTO").val("");
+                               $("#txtState-SOLDTO").val("");
+                               $("#txtZipcode-SOLDTO").val("");
+                               $("#ddlCountry-SOLDTO").val("");
+                               $("#txtCountry-SOLDTO").val("");
+                               $("#txtAttention-SOLDTO").val("");
+                               $("#txtTel-SOLDTO").val("");
+                           }
+
+                           //Ship-to
+                           if (result.S) {
+                               $("#txtName-S").val(result.S.Name);
+                               $("#txtERPID-S").val(result.S.ERPID);
+                               $("#txtAddress-S").val(result.S.Address);
+                               $("#txtAddress2-S").val("");
+                               $("#txtCity-S").val(result.S.City);
+                               $("#txtState-S").val(result.S.State);
+                               $("#txtZipcode-S").val(result.S.Zipcode);
+                               $("#ddlCountry-S").val(result.S.Country);
+                               $("#txtCountry-S").val(result.S.Country);
+                               $("#txtAttention-S").val(result.S.Attention);
+                               $("#txtTel-S").val(result.S.Tel);
+                           } else {
+                               $("#txtName-S").val("");
+                               $("#txtERPID-S").val("");
+                               $("#txtAddress-S").val("");
+                               $("#txtAddress2-S").val("");
+                               $("#txtCity-S").val("");
+                               $("#txtState-S").val("");
+                               $("#txtZipcode-S").val("");
+                               $("#ddlCountry-S").val("");
+                               $("#txtCountry-S").val("");
+                               $("#txtAttention-S").val("");
+                               $("#txtTel-S").val("");
+                           }
+
+                           //Bill-to
+                           if (result.B) {
+                               $("#txtName-B").val(result.B.Name);
+                               $("#txtERPID-B").val(result.B.ERPID);
+                               $("#txtAddress-B").val(result.B.Address);
+                               $("#txtAddress2-B").val("");
+                               $("#txtCity-B").val(result.B.City);
+                               $("#txtState-B").val(result.B.State);
+                               $("#txtZipcode-B").val(result.B.Zipcode);
+                               $("#ddlCountry-B").val(result.B.Country);
+                               $("#txtCountry-B").val(result.B.Country);
+                               $("#txtAttention-B").val(result.B.Attention);
+                               $("#txtTel-B").val(result.B.Tel);
+                           } else {
+                               $("#txtName-B").val("");
+                               $("#txtERPID-B").val("");
+                               $("#txtAddress-B").val("");
+                               $("#txtAddress2-B").val("");
+                               $("#txtCity-B").val("");
+                               $("#txtState-B").val("");
+                               $("#txtZipcode-B").val("");
+                               $("#ddlCountry-B").val("");
+                               $("#txtCountry-B").val("");
+                               $("#txtAttention-B").val("");
+                               $("#txtTel-B").val("");
+                           }
+
+                           //Alex 20180411 don't set endcutomer as default
+                           // End Customer
+                           if (result.EM) {
+                               $("#txtName-EM").val(result.EM.Name);
+                               $("#txtERPID-EM").val(result.EM.ERPID);
+                               $("#txtAddress-EM").val(result.EM.Address);
+                               $("#txtCity-EM").val(result.EM.City);
+                               $("#txtState-EM").val(result.EM.State);
+                               $("#txtZipcode-EM").val(result.EM.Zipcode);
+                               $("#ddlCountry-EM").val(result.EM.Country);
+                               $("#txtCountry-EM").val(result.EM.Country);
+                               $("#txtAttention-EM").val(result.EM.Attention);
+                               $("#txtTel-EM").val(result.EM.Tel);
+                           } else {
+                               $("#txtName-EM").val("");
+                               $("#txtERPID-EM").val("");
+                               $("#txtAddress-EM").val("");
+                               $("#txtCity-EM").val("");
+                               $("#txtState-EM").val("");
+                               $("#txtZipcode-EM").val("");
+                               $("#ddlCountry-EM").val("");
+                               $("#txtCountry-EM").val("");
+                               $("#txtAttention-EM").val("");
+                               $("#txtTel-EM").val("");
+                           }
+
+                           // Reload Price because currency,taxrate may be changed // 如果currecny保持一樣,因為sales discout的小數問題,可能造成quoting price有差異
+                            $.ajax({
+                                url: "/Quotes/ReloadPriceForAccountInfoChange",
+                                type: 'POST',
+                                data: $("form").serialize(),
+                                dataType: "json",
+                                success: function (redata) {
+                                    if (redata.succeed != null && redata.succeed) {
+                                        $('#quoteCart').html(redata.data);
+
+                                    } else {
+                                        AlertDialog("Error: " + redata.err);
+                                    }
+                                }
+                            });
+
+                       }
+                   } else {
+                       AlertDialog(redata.err);
+                   }
+               }
+            });
+
+            // reset token input part for new account row id
+            $(".salesRepresentativeTokenInputDiv .token-input-list-facebook").remove();
+            setTokenInputSalesRepresentative();
+
+            // reset token input part for new sales org
+            $(".quoteItemInput .token-input-list-facebook").remove();
+            setTokenInputPart();
+
+            var DefaultSalesPost = JSON.stringify({
+                AccountRowID: oTableCust.fnGetData(rowIndex)[6],
+                ERPID: $("#txtErpId").val()
+            });
+            $.ajax({
+                url: "/Operation/GetDefaultSales", type: "POST", dataType: "json", data: DefaultSalesPost
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+                    $("#salesRepresentatives").tokenInput("clear");
+                    if (redata.succeed) {
+                        $("#salesRepresentatives").tokenInput("add", { id: redata.sales, name: redata.salesemail });
+                    }
+                }
+            });
+        });
+
+        //設定哪個teg按下enter後會觸發哪一個按鈕的click事件
+        EnterClick('txtAccountName', 'btn-search');
+        EnterClick('txtERPID', 'btn-search');
+        EnterClick('txtPrimary_Sales', 'btn-search');
+    }
+
+</script>

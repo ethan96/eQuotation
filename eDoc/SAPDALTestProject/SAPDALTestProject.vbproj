@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{2CEA3265-43B3-4F43-ACD9-B3C15DB4607A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SAPDALTestProject</RootNamespace>
+    <AssemblyName>SAPDALTestProject</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <ReferencePath>$(DevEnvDir)PublicAssemblies\</ReferencePath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SAPDALTestProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SAPDALTestProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\App_Code\DLL\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="App_Licenses">
+      <HintPath>..\App_Code\DLL\App_Licenses.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\App_Code\DLL\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Pdf">
+      <HintPath>..\App_Code\DLL\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="BAPI_CUSTOMERQUOTATION_CHANGE">
+      <HintPath>..\..\SAPDAL\Bin\BAPI_CUSTOMERQUOTATION_CHANGE.dll</HintPath>
+    </Reference>
+    <Reference Include="Bapi_Quotation_Create">
+      <HintPath>..\..\SAPDAL\Bin\Bapi_Quotation_Create.dll</HintPath>
+    </Reference>
+    <Reference Include="BAPI_SALESORDER_CHANGE">
+      <HintPath>..\..\SAPDAL\bin\BAPI_SALESORDER_CHANGE.dll</HintPath>
+    </Reference>
+    <Reference Include="BAPI_SALESORDER_CREATEFROMDAT2">
+      <HintPath>..\..\SAPDAL\Bin\BAPI_SALESORDER_CREATEFROMDAT2.dll</HintPath>
+    </Reference>
+    <Reference Include="BAPI_SALESORDER_SIMULATE">
+      <HintPath>..\..\SAPDAL\Bin\BAPI_SALESORDER_SIMULATE.dll</HintPath>
+    </Reference>
+    <Reference Include="Change_SD_Order">
+      <HintPath>..\..\SAPDAL\Bin\Change_SD_Order.dll</HintPath>
+    </Reference>
+    <Reference Include="Create_Po">
+      <HintPath>..\..\SAPDAL\Bin\Create_Po.dll</HintPath>
+    </Reference>
+    <Reference Include="DBauer.Web.UI.WebControls.DynamicControlsPlaceholder">
+      <HintPath>..\App_Code\DLL\DBauer.Web.UI.WebControls.DynamicControlsPlaceholder.dll</HintPath>
+    </Reference>
+    <Reference Include="ephtmltopdf">
+      <HintPath>..\App_Code\DLL\ephtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Factory_Date_Conversion">
+      <HintPath>..\..\SAPDAL\Bin\Factory_Date_Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="GetCreditExposure">
+      <HintPath>..\..\SAPDAL\Bin\GetCreditExposure.dll</HintPath>
+    </Reference>
+    <Reference Include="GetMultiATP">
+      <HintPath>..\..\SAPDAL\Bin\GetMultiATP.dll</HintPath>
+    </Reference>
+    <Reference Include="GET_MATERIAL_ATP">
+      <HintPath>..\..\SAPDAL\Bin\GET_MATERIAL_ATP.dll</HintPath>
+    </Reference>
+    <Reference Include="Get_Price">
+      <HintPath>..\..\SAPDAL\Bin\Get_Price.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\App_Code\DLL\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADODB">
+      <HintPath>..\..\SAPDAL\Bin\Interop.ADODB.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.MSXML2">
+      <HintPath>..\..\SAPDAL\Bin\Interop.MSXML2.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\App_Code\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Editor">
+      <HintPath>..\App_Code\DLL\obout_Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Flyout2_NET">
+      <HintPath>..\App_Code\DLL\obout_Flyout2_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Payflow_dotNET">
+      <HintPath>..\App_Code\DLL\Payflow_dotNET.dll</HintPath>
+    </Reference>
+    <Reference Include="PRICE_GRADE">
+      <HintPath>..\..\SAPDAL\Bin\PRICE_GRADE.dll</HintPath>
+    </Reference>
+    <Reference Include="Quotation_Create_SAP">
+      <HintPath>..\..\SAPDAL\Bin\Quotation_Create_SAP.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector">
+      <HintPath>..\..\SAPDAL\Bin\SAP.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="SgmlReaderDll">
+      <HintPath>..\App_Code\DLL\SgmlReaderDll.dll</HintPath>
+    </Reference>
+    <Reference Include="SO_CREATE_COMMIT">
+      <HintPath>..\..\SAPDAL\Bin\SO_CREATE_COMMIT.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="URLRewriter">
+      <HintPath>..\App_Code\DLL\URLRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="wnvhtmltopdf">
+      <HintPath>..\bin\wnvhtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="ZCUSTOMER_UPDATE_SALES_AREA">
+      <HintPath>..\..\SAPDAL\Bin\ZCUSTOMER_UPDATE_SALES_AREA.dll</HintPath>
+    </Reference>
+    <Reference Include="ZGET_ATP_LIMITQTY">
+      <HintPath>..\..\SAPDAL\Bin\ZGET_ATP_LIMITQTY.dll</HintPath>
+    </Reference>
+    <Reference Include="ZSD_CUSTOMER_MAINTAIN_ALL">
+      <HintPath>..\..\SAPDAL\Bin\ZSD_CUSTOMER_MAINTAIN_ALL.dll</HintPath>
+    </Reference>
+    <Reference Include="ZSD_QUOTATION_ABR">
+      <HintPath>..\..\SAPDAL\Bin\ZSD_QUOTATION_ABR.dll</HintPath>
+    </Reference>
+    <Reference Include="ZSD_UPDATE_FPLA">
+      <HintPath>..\..\SAPDAL\Bin\ZSD_UPDATE_FPLA.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_EBIZAEU_PRICEINQUIRY_BR">
+      <HintPath>..\..\SAPDAL\Bin\Z_EBIZAEU_PRICEINQUIRY_BR.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_GET_ATP_LIMITQTY">
+      <HintPath>..\..\SAPDAL\Bin\Z_GET_ATP_LIMITQTY.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_READ_TEXT">
+      <HintPath>..\App_Code\DLL\Z_READ_TEXT.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_SD_EUPRICEINQUERY">
+      <HintPath>..\..\SAPDAL\Bin\Z_SD_EUPRICEINQUERY.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessTest.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SAPDALTest.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Shadow Include="Test References\SAPDAL.accessor" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SAPDAL\SAPDAL.vbproj">
+      <Project>{465CEF83-F14D-4783-8917-1A9B5ED8EDD5}</Project>
+      <Name>SAPDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AOnlineWall\AOnlineWall.csproj">
+      <Project>{A05F8114-3583-45E4-A954-DC1416D94082}</Project>
+      <Name>AOnlineWall</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\COMM\EDOC.Common.vbproj">
+      <Project>{25E69930-9DDD-46DE-8667-EDA571F6D381}</Project>
+      <Name>EDOC.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCH\EDOC.DocumentsMain.vbproj">
+      <Project>{786931A9-97CA-4149-A4D0-22C5875FF76E}</Project>
+      <Name>EDOC.DocumentsMain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EDOC.UI.vbproj">
+      <Project>{96D104D7-68A1-4A92-B859-FACCEC39757C}</Project>
+      <Name>EDOC.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eStoreServices\eStoreServices.csproj">
+      <Project>{6470818D-03EA-43EA-9AF1-CBD5BBBACE17}</Project>
+      <Name>eStoreServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EXSY\EDOC.Ex-SystemsTools.vbproj">
+      <Project>{572AA953-C783-43D4-8990-35A9B2C116B6}</Project>
+      <Name>EDOC.Ex-SystemsTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBUS\EDOC.IBUS.vbproj">
+      <Project>{2EB2E027-5936-400A-A6F9-D3418EC5821E}</Project>
+      <Name>EDOC.IBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PATC\EDOC.Patches.vbproj">
+      <Project>{3D202CEA-C422-4B3E-BC7C-DFE4475F8609}</Project>
+      <Name>EDOC.Patches</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PROF\EDOC.Profile.vbproj">
+      <Project>{5AA950F1-C439-469E-B9F8-9C5367EF1867}</Project>
+      <Name>EDOC.Profile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RELI\EDOC.Relics.vbproj">
+      <Project>{95DD6EFA-8162-45C2-A28E-A2D9AF0F8C31}</Project>
+      <Name>EDOC.Relics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

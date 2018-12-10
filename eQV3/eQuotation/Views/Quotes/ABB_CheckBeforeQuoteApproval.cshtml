@@ -1,0 +1,148 @@
+﻿@using WorkFlowlAPI
+@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    .totalMargin {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .approvedIssue{
+        color:red;
+        margin-left: 25px;
+        padding: 5px;
+    }
+</style>
+
+<div class="titlebox topbox">
+    <h4>Approval Confirm:</h4>
+</div>
+<div class="actionbox">
+    <ul>
+        @if (Model.FindApproverResult == FindApproverResult.NeedApprovalForExpiredDate || Model.FindApproverResult == FindApproverResult.NeedApprovalForGP || Model.FindApproverResult == FindApproverResult.NeedApprovalForGPAndExpiredDate)
+        {
+            <li>
+                <a id="btn-Approval-confirm"><i class="fa fa-check-square-o"></i>Confirm</a>
+            </li>
+        }
+        <li>
+            <a id="btn-Approval-cancel"><i class="fa fa-times"></i>Cancel</a>
+        </li>
+    </ul>
+</div>
+
+@Html.Partial("ABB_QuoteDetails", @Model)
+
+<div style="margin:10px;">
+    @if (Model.FindApproverResult == FindApproverResult.GPRuleNotFound)
+    {
+        <h2 align="center" style="color: #FF0000;">GP Rule can not be found, please check the group and office setting of QuoteTo Account: @Model.ERPID</h2>
+    }
+    else
+    {
+        <div id="approvalReasonReminder">
+            <h4>This quote must be approved through Approval Flow due to below issues: </h4>
+            <ul>
+                @if (Model.FindApproverResult == FindApproverResult.NeedApprovalForGP)
+                {
+                    <li class="approvedIssue">Below GP</li>
+                }
+                else if (Model.FindApproverResult == FindApproverResult.NeedApprovalForExpiredDate)
+                {
+                    <li class="approvedIssue">Expired date exceeds 90 days</li>
+                }
+                else if (Model.FindApproverResult == FindApproverResult.NeedApprovalForGPAndExpiredDate)
+                {
+                    <li class="approvedIssue">Below GP</li>
+                    <li class="approvedIssue">Expired date exceeds 90 days</li>
+                }
+            </ul>
+        </div>
+        <h4>Please provide comments for Approval Flow:</h4>
+        <span style="color:red;">@Model.CommentExp</span>
+        @Html.TextArea("CommentForApproval", new { style = "height:100px;" })
+    }
+</div>
+
+
+
+@if ((Model.FindApproverResult == FindApproverResult.NeedApprovalForExpiredDate || Model.FindApproverResult == FindApproverResult.NeedApprovalForGP || Model.FindApproverResult == FindApproverResult.NeedApprovalForGPAndExpiredDate)
+                                && Model.QuoteApprovalList != null)
+{
+    <div id="quoteApproverList">
+        @Html.Partial("ABB_QuoteApproverList", @Model)
+    </div>
+}
+        @Html.Partial("_AlertDialog")
+
+        <script type="text/javascript">
+            $(function () {
+                //cancel button
+                $("#btn-Approval-cancel").on("click", function (e) {
+                    var quoteID = "@Model.QuoteID";
+                    $.modal.close();
+                });
+
+                //Confirm and start approval process
+                $("#btn-Approval-confirm").on("click", function (e) {
+                    if ($("#CommentForApproval").val() == "") {
+                        alert('Comment for approval flow is required');
+                        e.preventDefault();
+                        return false;
+                    }
+
+                    var SalesCode = new Array(); SalesName = new Array();
+                    ar_Sales = $("#aSales").tokenInput("get");
+                    $.each(ar_Sales, function (i, value) {
+                        SalesCode.push(ar_Sales[i].id);
+                        SalesName.push(ar_Sales[i].name);
+                    });
+                    if ($("#Freight").val() == '') {
+                        $("#Freight").val('0');
+                    }
+                    var freight = parseFloat($("#Freight").val()).toFixed(2);
+
+                    var approvalReason = $("#approvalReasonReminder").html() + "<br><b>Approval request reason:</b> " + $("#CommentForApproval").val();
+                    //Confirm and create Quote
+                    confirmAndCreateQuote2(SalesCode, SalesName, $("#Description").val(), $("#ddlContact").val(), $("#AccountName").val(), freight, '', approvalReason, $('#txtQuotationNotes').val(), $('#txtExpiredDate').val(), $("#txtPONO").val());
+                    $.modal.close();
+                });
+            });
+
+            function confirmAndCreateQuote2(salesCode, salesName, description, contactRowId, accountName, freight, warranty, comment, quotationNote, expiredDate, pono) {
+                var postdata = JSON.stringify({
+                    SalesCode: salesCode, SalesName: salesName, Description: description, ContactRowID: contactRowId
+                    , AccountName: accountName, Freight: freight, Warranty: warranty
+                    , Comment: comment, QuotationNote: quotationNote, ExpiredDate: expiredDate, PONO: pono
+                });
+                $.ajax({
+                    url: "/Quotes/Confirm", type: "POST", dataType: "json", data: postdata, async: false
+                    , contentType: "application/json; charset=utf-8", success: function (redata) {
+                        if (redata.succeed) {
+
+                            initContent('@Url.Action("MyQuotation", "Quotes")');
+                        } else {
+                            alert(redata.err);
+                        }
+                    }
+                });
+            }
+
+            function CancelQuoteApproval(quoteID) {
+                $.ajax({
+                    url: "/Quotes/CancelQuoteApproval",
+                    type: "POST",
+                    dataType: "json",
+                    data: "{quoteID:'" + quoteID + "'}",
+                    async: false,
+                    contentType: "application/json; charset=utf-8",
+                    success: function (redata) {
+                        if (redata.succeed) {
+                        } else {
+                            alert(redata.err);
+                        }
+                    }
+                });
+            }
+
+        </script>
+

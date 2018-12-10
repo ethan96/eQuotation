@@ -1,0 +1,99 @@
+﻿
+<script type="text/javascript">
+
+    function navhide() {
+        $("#navigation-container").hide("slide", { direction: "left" }, 300);
+        $("#li-expand").show();
+        $("#li-collapse").hide();
+    }
+
+    function navshow() {
+        $("#navigation-container").show("slow");
+        $("#li-expand").hide();
+        $("#li-collapse").show("slide", { direction: "right" }, 300);
+    }
+
+    $(document).ready(function () {
+
+        //navigation menu
+        var tabMenu =
+            [
+                //{ tab: "0", title: "DEFAULT", url: "/Home/DefaultTab" },
+                { tab: "0", title: "Quotes", url: "/Home/QuotesTab" },
+                { tab: "1", title: "Admin", url: "/Home/DefaultTab" }
+            ];
+
+        $.getNavi = function (tab) {
+            $.blockUI();
+
+            var url, title;
+            $.each(tabMenu, function (key, value) {
+                if (value.tab == tab)
+                {
+                    url = value.url;
+                    title = value.title;
+                    return;
+                }
+            })
+
+            //set title
+            $("#nav-title").text(title);
+            $("#div-main-nav-child").html("");
+
+            //set active tab
+            $("#ifs_tab_" + tab).addClass("selected");
+
+            $.get(url, function (data) {
+                $.pushHTML(data, function () {
+                    adjheight();
+                    $("#div-main-nav-child").html(data);
+                });
+                $.unblockUI();
+            });
+
+        };
+
+        //find active navigation
+        var aTab = getQuery("tab"); if (!aTab) aTab = 0;
+        $.getNavi(aTab);
+
+        //get navigation mode
+        var aMode = getQuery("mode"); if (!aMode) aMode = 1;
+        if (aMode == 1) navshow();
+        if (aMode == 0) navhide();
+
+        //load content
+        checkURL(getURL());
+        
+        //change content 
+        $(".blk-func").on("click", function () {
+
+            $(".blk-func").removeClass("selected");
+            $(this).addClass("selected");
+
+            //change into frontpage
+            $.get("/home/frontpage", function (data) {
+                $.pushHTML(data, function () {
+                    $("#wrapper-content").html(data);
+                });
+            });
+
+            var tabId = $(this).attr("data-value");
+            window.location.hash = "?tab=" + tabId;
+
+            $.getNavi(tabId);
+
+        });
+
+        //collapse navigation
+        $("#btn-nav-hide").on("click", function () { navhide(); setQuery("mode", "0"); });
+
+        //expand navigation
+        $("#btn-nav-show").on("click", function () { navshow(); setQuery("mode", "1"); });
+
+
+    });
+
+
+
+</script>

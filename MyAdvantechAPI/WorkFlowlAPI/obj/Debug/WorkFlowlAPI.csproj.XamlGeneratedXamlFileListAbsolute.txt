@@ -1,0 +1,12 @@
+obj\Debug\ACNFindApproverFlow.g.xaml
+obj\Debug\FindApproverFlow.g.xaml
+obj\Debug\QuoteApprovalFlow.g.xaml
+obj\Debug\ABBFindApproverFlow.g.xaml
+obj\Debug\SimulateSAPPriceITPFlow.g.xaml
+obj\Debug\ASGFindApproverFlow.g.xaml
+obj\Debug\WorkFlowlAPI.ACNGPApproval_ACNFindApproverFlow_BeforeInitializeComponentHelper.txt
+obj\Debug\WorkFlowlAPI_FindApproverFlow_BeforeInitializeComponentHelper.txt
+obj\Debug\WorkFlowlAPI_QuoteApprovalFlow_BeforeInitializeComponentHelper.txt
+obj\Debug\WorkFlowlAPI.ABBGPApproval_ABBFindApproverFlow_BeforeInitializeComponentHelper.txt
+obj\Debug\WorkFlowlAPI.SimulatePrice_SimulateSAPPriceITPFlow_BeforeInitializeComponentHelper.txt
+obj\Debug\WorkFlowlAPI.ASGGPApproval_ASGFindApproverFlow_BeforeInitializeComponentHelper.txt

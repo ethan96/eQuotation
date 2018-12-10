@@ -1,0 +1,9 @@
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\bin\Release\COMM.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\bin\Release\COMM.pdb
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\bin\Release\COMM.xml
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\bin\Release\SgmlReaderDll.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Release\COMM.Resources.resources
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Release\EDOC.Common.vbproj.GenerateResource.Cache
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Release\COMM.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Release\COMM.xml
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Release\COMM.pdb

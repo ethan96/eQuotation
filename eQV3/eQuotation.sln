@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eQuotation", "eQuotation\eQuotation.csproj", "{8CFE242D-F2D1-48F6-BAF2-E004FCE26C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advantech.Myadvantech.Business", "..\MyAdvantechAPI\Advantech.Myadvantech.Business\Advantech.Myadvantech.Business.csproj", "{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advantech.Myadvantech.DataAccess", "..\MyAdvantechAPI\Advantech.Myadvantech.DataAccess\Advantech.Myadvantech.DataAccess.csproj", "{9FDD308C-F13D-4B90-B505-666846184259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkFlowlAPI", "..\MyAdvantechAPI\WorkFlowlAPI\WorkFlowlAPI.csproj", "{4E26DAB8-D05F-4E9E-995B-43C484A160AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CFE242D-F2D1-48F6-BAF2-E004FCE26C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CFE242D-F2D1-48F6-BAF2-E004FCE26C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CFE242D-F2D1-48F6-BAF2-E004FCE26C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CFE242D-F2D1-48F6-BAF2-E004FCE26C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E26DAB8-D05F-4E9E-995B-43C484A160AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E26DAB8-D05F-4E9E-995B-43C484A160AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E26DAB8-D05F-4E9E-995B-43C484A160AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E26DAB8-D05F-4E9E-995B-43C484A160AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://myadvantechcollection.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = eQuotation\\eQuotation.csproj
+		SccProjectName1 = eQuotation
+		SccLocalPath1 = eQuotation
+		SccProjectUniqueName2 = ..\\MyAdvantechAPI\\Advantech.Myadvantech.Business\\Advantech.Myadvantech.Business.csproj
+		SccProjectName2 = ../MyAdvantechAPI/Advantech.Myadvantech.Business
+		SccLocalPath2 = ..\\MyAdvantechAPI\\Advantech.Myadvantech.Business
+		SccProjectUniqueName3 = ..\\MyAdvantechAPI\\Advantech.Myadvantech.DataAccess\\Advantech.Myadvantech.DataAccess.csproj
+		SccProjectName3 = ../MyAdvantechAPI/Advantech.Myadvantech.DataAccess
+		SccLocalPath3 = ..\\MyAdvantechAPI\\Advantech.Myadvantech.DataAccess
+		SccProjectUniqueName4 = ..\\MyAdvantechAPI\\WorkFlowlAPI\\WorkFlowlAPI.csproj
+		SccProjectName4 = ../MyAdvantechAPI/WorkFlowlAPI
+		SccLocalPath4 = ..\\MyAdvantechAPI\\WorkFlowlAPI
+	EndGlobalSection
+EndGlobal

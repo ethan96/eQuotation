@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Advantech.Myadvantech.Business</name>
+    </assembly>
+    <members>
+        <member name="T:Advantech.Myadvantech.Business.OrderBusinessLogic">
+            <summary>
+            Order business layer
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.OrderBusinessLogic.IsPONumberExisting(System.String,System.String,System.String)">
+            <summary>
+            The function checks that if the PO number of specific account already exists 
+            </summary>
+            <param name="ORGID"></param>
+            <param name="ERPID"></param>
+            <param name="PO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.OrderBusinessLogic.IsAEUOrderItemBelowMOQ(System.String,System.String,System.String@)">
+            <summary>
+            The function checks AEU's order that if there is any item's request qty is less than minimum order qty
+            </summary>
+            <param name="OrderID"></param>
+            <param name="OrgID"></param>
+            <param name="ErrMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.Business.PartBusinessLogic">
+            <summary>
+            Part business layer
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.PartBusinessLogic.ExpandSchneiderSystemPartToCart(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="SystemPartNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.PartBusinessLogic.GetReferencePlantBySpecialProcurement(System.String,System.String)">
+            <summary>
+            Get part's reference plant by Special Procurement
+            </summary>
+            <param name="PartNumber"></param>
+            <param name="plant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPartWithCompleteModelInformation(System.String)">
+            <summary>
+            Get part instance that including related model, and load basic model information
+            The other model's attributes will be loaded when the attribute is called
+            </summary>
+            <param name="PartNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPartWithBasicModelInformation(System.String)">
+            <summary>
+            Get part instance that including related models, and load complete model information
+            </summary>
+            <param name="PartNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.Business.QuoteBusinessLogic">
+            <summary>
+            Quote business layer
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.LogQuote2Order(System.String,System.String,System.String@)">
+            <summary>
+            插入Quote转Order记录
+            </summary>
+            <param name="OrderID">订单ID</param>
+            <param name="QuoteID">QuoteID</param>
+            <param name="Msg">返回信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.IsPartIn30ValidDaysLimitation(System.String[])">
+            <summary>
+            判断arrary中的Part是否有特殊指定产品
+            </summary>
+            <param name="products"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.IsPTradePart(System.String)">
+            <summary>
+            判断时候是Ptrade Part
+            </summary>
+            <param name="PartNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.GetQuotationMaster(System.String)">
+            <summary>
+            Get quotation master information
+            </summary>
+            <param name="quoteID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.GetQuotationMasterForeStore(System.String,Advantech.Myadvantech.DataAccess.QuoteDocStatus)">
+            <summary>
+            Get QuotationMaster data for eStore web service
+            </summary>
+            <param name="quoteID"></param>
+            <param name="status"></param>
+            <returns>QuotationMaster</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.GetQuotationDetail(System.String)">
+            <summary>
+            Get quotation detail(product list) information
+            </summary>
+            <param name="quoteID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.CheckANASalesDistrict(System.String,System.String)">
+            <summary>
+            Check US AOnline sales district
+            </summary>
+            <param name="SalesID"></param>
+            <param name="District"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.CheckUSAOnlineIagDistrict(System.String,System.String)">
+            <summary>
+            Check US AOnline IAG sales district
+            </summary>
+            <param name="SalesID"></param>
+            <param name="District"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.Business.SiebelBusinessLogic">
+            <summary>
+            Processing SiebelActive business logic
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.CreateOpportunityCommand(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Create Opty的指令檔，quoteID必填，同時必須有對應的QuotationMaster資料
+            </summary>
+            <param name="active"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.CreateQuoteCommand(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Create Opty的指令檔，quoteID必填，同時必須有對應的QuotationMaster資料
+            </summary>
+            <param name="active"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.CreateQuoteActive(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Create QuoteActive的指令檔，quoteID必填，同時必須有對應的QuotationMaster資料
+            </summary>
+            <param name="active"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.UpdateOpportunityCommand(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Update Opty的指令檔，quoteID必填，同時必須有對應的QuotationMaster資料
+            </summary>
+            <param name="active"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.BatchCreateSiebelOpportunity(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Web background job - Create Siebel Opportunity
+            </summary>
+            <param name="active"></param>
+            <param name="errorMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.BatchUpdateSiebelOpportunity(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Web background job - Update Siebel Opportunity
+            </summary>
+            <param name="active"></param>
+            <param name="errorMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.BatchCreateSiebelQuote(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Web bacjground job - Create Siebel Quote
+            </summary>
+            <param name="active"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.BatchCreateSiebelActivity(Advantech.Myadvantech.DataAccess.SiebelActive)">
+            <summary>
+            Web bacjground job - Create Siebel Activity
+            </summary>
+            <param name="active"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.GetAencSiebelAccountList(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.ArrayList)">
+            <summary>
+            For AENC user to pick a SIEBEL account
+            </summary>
+            <param name="name"></param>
+            <param name="RBU"></param>
+            <param name="erpID"></param>
+            <param name="country"></param>
+            <param name="location"></param>
+            <param name="state"></param>
+            <param name="province"></param>
+            <param name="status"></param>
+            <param name="address1"></param>
+            <param name="ZipCode"></param>
+            <param name="City"></param>
+            <param name="priSales"></param>
+            <returns>DataTable dt</returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.Business.UserRoleBusinessLogic">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

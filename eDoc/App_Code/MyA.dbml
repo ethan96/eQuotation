@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyAdvantechGlobal" Class="MyADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ACLSQL6\SQL2008R2;Initial Catalog=MyAdvantechGlobal;Persist Security Info=True;User ID=b2bsa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="B2B" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ORDER_MASTER" Member="ORDER_MASTERs">
+    <Type Name="ORDER_MASTER">
+      <Column Name="ORDER_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_NO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORDER_TYPE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PO_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SOLDTO_ID" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SHIPTO_ID" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="BILLTO_ID" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SALES_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ORDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PAYMENT_TYPE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ATTENTION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PARTIAL_FLAG" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="COMBINE_ORDER_FLAG" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="EARLY_SHIP_FLAG" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FREIGHT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="INSURANCE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PRODUCT_SITE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DUE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REQUIRED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SHIPMENT_TERM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SHIP_VIA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CURRENCY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ORDER_NOTE" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="ORDER_STATUS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TOTAL_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TOTAL_LINE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LAST_UPDATED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CUSTOMER_ATTENTION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AUTO_ORDER_FLAG" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INCOTERM" Type="System.String" DbType="NVarChar(28)" CanBeNull="true" />
+      <Column Name="INCOTERM_TEXT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SALES_NOTE" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="OP_NOTE" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SHIP_CONDITION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NONERoHS_ACCEPT" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ProjectFlag" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Z7Sales" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DefaultSalesNote" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="prj_Note" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EARLY_SHIP" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="ER_EMPLOYEE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="END_CUST" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="KEYPERSON" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CREDIT_CARD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREDIT_CARD_EXPIRE_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREDIT_CARD_VERIFY_NUMBER" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PAYTERM" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="CREDIT_CARD_HOLDER" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CREDIT_CARD_TYPE" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BILLINGINSTRUCTION_INFO" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="EMPLOYEEID" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DIST_CHAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIVISION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SALESGROUP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SALESOFFICE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DISTRICT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IS_EARLYSHIP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isExempt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDER_DETAIL" Member="ORDER_DETAILs">
+    <Type Name="ORDER_DETAIL">
+      <Column Name="ORDER_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LINE_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRODUCT_LINE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PART_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORDER_LINE_TYPE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="QTY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LIST_PRICE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="UNIT_PRICE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="REQUIRED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DUE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ERP_SITE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ERP_LOCATION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AUTO_ORDER_FLAG" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="AUTO_ORDER_QTY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUPPLIER_DUE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LINE_PARTIAL_FLAG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoHS_FLAG" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EXWARRANTY_FLAG" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CustMaterialNo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="DeliveryPlant" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NoATPFlag" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="DMF_Flag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OptyID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cate" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="HigherLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

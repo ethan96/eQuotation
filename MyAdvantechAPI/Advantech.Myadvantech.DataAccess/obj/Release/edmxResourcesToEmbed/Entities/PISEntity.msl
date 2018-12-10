@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PISModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="CATEGORY">
+      <EntityTypeMapping TypeName="PISModel.CATEGORY">
+        <MappingFragment StoreEntitySet="CATEGORY">
+          <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+          <ScalarProperty Name="CATALOG_ID" ColumnName="CATALOG_ID" />
+          <ScalarProperty Name="CATEGORY_NAME" ColumnName="CATEGORY_NAME" />
+          <ScalarProperty Name="CATEGORY_TYPE" ColumnName="CATEGORY_TYPE" />
+          <ScalarProperty Name="PARENT_CATEGORY_ID" ColumnName="PARENT_CATEGORY_ID" />
+          <ScalarProperty Name="CATEGORY_DESC" ColumnName="CATEGORY_DESC" />
+          <ScalarProperty Name="DISPLAY_NAME" ColumnName="DISPLAY_NAME" />
+          <ScalarProperty Name="IMAGE_ID" ColumnName="IMAGE_ID" />
+          <ScalarProperty Name="EXTENDED_DESC" ColumnName="EXTENDED_DESC" />
+          <ScalarProperty Name="CREATED" ColumnName="CREATED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="LAST_UPDATED" ColumnName="LAST_UPDATED" />
+          <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+          <ScalarProperty Name="SEQ_NO" ColumnName="SEQ_NO" />
+          <ScalarProperty Name="PUBLISH_STATUS" ColumnName="PUBLISH_STATUS" />
+          <ScalarProperty Name="ACTIVE_FLG" ColumnName="ACTIVE_FLG" />
+          <ScalarProperty Name="KEYWORDS" ColumnName="KEYWORDS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATEGORY_LANG">
+      <EntityTypeMapping TypeName="PISModel.CATEGORY_LANG">
+        <MappingFragment StoreEntitySet="CATEGORY_LANG">
+          <ScalarProperty Name="TRANSLATION_ID" ColumnName="TRANSLATION_ID" />
+          <ScalarProperty Name="LANG_ID" ColumnName="LANG_ID" />
+          <ScalarProperty Name="CATEGORY_DESC" ColumnName="CATEGORY_DESC" />
+          <ScalarProperty Name="DISPLAY_NAME" ColumnName="DISPLAY_NAME" />
+          <ScalarProperty Name="EXTENDED_DESC" ColumnName="EXTENDED_DESC" />
+          <ScalarProperty Name="KEY_WORD" ColumnName="KEY_WORD" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KEYWORDS" ColumnName="KEYWORDS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category_Model">
+      <EntityTypeMapping TypeName="PISModel.Category_Model">
+        <MappingFragment StoreEntitySet="Category_Model">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="model_id" ColumnName="model_id" />
+          <ScalarProperty Name="Category_id" ColumnName="Category_id" />
+          <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="MainCategory" ColumnName="MainCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Model">
+      <EntityTypeMapping TypeName="PISModel.Model">
+        <MappingFragment StoreEntitySet="Model">
+          <ScalarProperty Name="MODEL_ID" ColumnName="MODEL_ID" />
+          <ScalarProperty Name="MODEL_NAME" ColumnName="MODEL_NAME" />
+          <ScalarProperty Name="MODEL_DESC" ColumnName="MODEL_DESC" />
+          <ScalarProperty Name="DISPLAY_NAME" ColumnName="DISPLAY_NAME" />
+          <ScalarProperty Name="IMAGE_ID" ColumnName="IMAGE_ID" />
+          <ScalarProperty Name="EXTENDED_DESC" ColumnName="EXTENDED_DESC" />
+          <ScalarProperty Name="KEYWORDS" ColumnName="KEYWORDS" />
+          <ScalarProperty Name="CREATED" ColumnName="CREATED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="LAST_UPDATED" ColumnName="LAST_UPDATED" />
+          <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+          <ScalarProperty Name="SEQ_NO" ColumnName="SEQ_NO" />
+          <ScalarProperty Name="CURRENT_STATUS" ColumnName="CURRENT_STATUS" />
+          <ScalarProperty Name="MODEL_TYPE" ColumnName="MODEL_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MODEL_LANG">
+      <EntityTypeMapping TypeName="PISModel.MODEL_LANG">
+        <MappingFragment StoreEntitySet="MODEL_LANG">
+          <ScalarProperty Name="LANGID" ColumnName="LANGID" />
+          <ScalarProperty Name="model_name" ColumnName="model_name" />
+          <ScalarProperty Name="model_desc" ColumnName="model_desc" />
+          <ScalarProperty Name="Display_name" ColumnName="Display_name" />
+          <ScalarProperty Name="extended_desc" ColumnName="extended_desc" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="model_product">
+      <EntityTypeMapping TypeName="PISModel.model_product">
+        <MappingFragment StoreEntitySet="model_product">
+          <ScalarProperty Name="model_name" ColumnName="model_name" />
+          <ScalarProperty Name="part_no" ColumnName="part_no" />
+          <ScalarProperty Name="relation" ColumnName="relation" />
+          <ScalarProperty Name="seq_num" ColumnName="seq_num" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="Last_update_by" ColumnName="Last_update_by" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Last_update_date" ColumnName="Last_update_date" />
+          <ScalarProperty Name="desc_com" ColumnName="desc_com" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="model_displayarea">
+      <EntityTypeMapping TypeName="PISModel.model_displayarea">
+        <MappingFragment StoreEntitySet="model_displayarea">
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="model_name" ColumnName="model_name" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MODEL_FEATURE">
+      <EntityTypeMapping TypeName="PISModel.MODEL_FEATURE">
+        <MappingFragment StoreEntitySet="MODEL_FEATURE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Model_id" ColumnName="Model_id" />
+          <ScalarProperty Name="FEATURE_SEQ" ColumnName="FEATURE_SEQ" />
+          <ScalarProperty Name="FEATURE_DESC" ColumnName="FEATURE_DESC" />
+          <ScalarProperty Name="LANG_ID" ColumnName="LANG_ID" />
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="Model_name" ColumnName="Model_name" />
+          <ScalarProperty Name="LAST_UPDATED" ColumnName="LAST_UPDATED" />
+          <ScalarProperty Name="Last_updateby" ColumnName="Last_updateby" />
+          <ScalarProperty Name="FEATURE_EXTENDED_DESC" ColumnName="FEATURE_EXTENDED_DESC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_CATEGORY_LANG_CATEGORY" TypeName="PISModel.FK_CATEGORY_LANG_CATEGORY" StoreEntitySet="CATEGORY_LANG">
+      <EndProperty Name="CATEGORY">
+        <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+      </EndProperty>
+      <EndProperty Name="CATEGORY_LANG">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="CATEGORY_ID" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Category_Model_Model" TypeName="PISModel.FK_Category_Model_Model" StoreEntitySet="Category_Model">
+      <EndProperty Name="Model">
+        <ScalarProperty Name="MODEL_NAME" ColumnName="model_name" />
+      </EndProperty>
+      <EndProperty Name="Category_Model">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="model_name" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Model_lit">
+      <EntityTypeMapping TypeName="PISModel.Model_lit">
+        <MappingFragment StoreEntitySet="Model_lit">
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="literature_id" ColumnName="literature_id" />
+          <ScalarProperty Name="model_name" ColumnName="model_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LITERATURE">
+      <EntityTypeMapping TypeName="PISModel.LITERATURE">
+        <MappingFragment StoreEntitySet="LITERATURE">
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED" ColumnName="CREATED" />
+          <ScalarProperty Name="FILE_SIZE" ColumnName="FILE_SIZE" />
+          <ScalarProperty Name="FILE_EXT" ColumnName="FILE_EXT" />
+          <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+          <ScalarProperty Name="LIT_TYPE" ColumnName="LIT_TYPE" />
+          <ScalarProperty Name="LIT_NAME" ColumnName="LIT_NAME" />
+          <ScalarProperty Name="LITERATURE_ID" ColumnName="LITERATURE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

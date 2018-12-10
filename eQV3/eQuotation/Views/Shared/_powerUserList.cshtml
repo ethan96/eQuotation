@@ -1,0 +1,19 @@
+﻿@model List<eQuotation.Entities.AppUser>
+<div>
+    
+    @if (Model != null)
+    {
+        <b style="color:red; font-size:24px;">You are not assigned to any roles by power user, please contact following power users:</b>
+        foreach (var user in Model)
+        {
+            <table>
+                <tr>
+                    <td style="font-size:16px;">
+                        @user.Email
+                    </td>
+                </tr>
+            </table>
+        }
+    }
+</div>
+

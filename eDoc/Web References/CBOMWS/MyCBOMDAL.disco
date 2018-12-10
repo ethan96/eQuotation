@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://my.advantech.com/Services/MyCBOMDAL.asmx?wsdl" docRef="http://my.advantech.com/Services/MyCBOMDAL.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://my.advantech.com/Services/MyCBOMDAL.asmx" xmlns:q1="MyAdvantech.SAP.DataAccessLayer" binding="q1:MyCBOMDALSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://my.advantech.com/Services/MyCBOMDAL.asmx" xmlns:q2="MyAdvantech.SAP.DataAccessLayer" binding="q2:MyCBOMDALSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

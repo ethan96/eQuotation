@@ -1,0 +1,2491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2018-05-24T13:50:53.5925824+08:00</TimeStampOfAssociatedLegacyPublishXmlFile>
+    <_PublishTargetUrl>D:\Publish\eQuotation</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Code/DLL/AjaxControlToolkit.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/App_Licenses.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Aspose.Cells.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Aspose.Pdf.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/BAPI_SALESORDER_CREATEFROMDAT2.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/BAPI_SALESORDER_SIMULATE.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Change_SD_Order.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/DBauer.Web.UI.WebControls.DynamicControlsPlaceholder.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/ephtmltopdf.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Factory_Date_Conversion.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/GetCreditExposure.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/GET_MATERIAL_ATP.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Get_Price.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/HtmlAgilityPack.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Newtonsoft.Json.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/obout_Editor.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="App_Code/DLL/obout_Flyout2_NET.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Payflow_dotNET.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/PRICE_GRADE.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Quotation_Create_SAP.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/SAP.Connector.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/SgmlReaderDll.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/SO_CREATE_COMMIT.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/URLRewriter.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/ZCUSTOMER_UPDATE_SALES_AREA.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/ZGET_ATP_LIMITQTY.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/ZSD_CUSTOMER_MAINTAIN_ALL.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/ZSD_UPDATE_FPLA.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Z_EBIZAEU_PRICEINQUIRY_BR.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Z_GET_ATP_LIMITQTY.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/DLL/Z_SD_EUPRICEINQUERY.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/Ling2Sql.dbml">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Code/Ling2Sql.vb">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_GlobalResources/myRs.resx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="App_Themes/DefualtSkin/SkinFile.skin">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AEUQuoteTemplate/Conditions.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AEUQuoteTemplate/images/heard.png">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AEUQuoteTemplate/images/Tbg1.gif">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AEUQuoteTemplate/QuoteDetail.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AEUQuoteTemplate/QuoteDetailForBTOS.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AEUQuoteTemplate/QuoteMaster.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AEUQuoteTemplate/QuoteNotes.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AJPConfiguratorTerms/AJPTerm1.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AJPConfiguratorTerms/AJPTerm2.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/AJPConfiguratorTerms/AJPTerm3.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/BRAOnlineQuoteTemplate.ascx">
+      <publishTime>07/31/2018 09:24:51</publishTime>
+    </File>
+    <File Include="Ascx/CBOMCategory.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/CheckUID.ascx">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="Ascx/CheckUIDisCanInsert2Siebel.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/CheckUIDisVisiable.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/CNAOnlineQuoteTemplate.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/DisplayImageHandler.ashx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/Forward.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/HierarchyConfigUI.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/InterconQuoteTemplate.ascx">
+      <publishTime>07/13/2018 13:03:48</publishTime>
+    </File>
+    <File Include="Ascx/JPAOnlineQuoteTemplateV2.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/JPAOnlineQuoteTemplateV3.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/JPAOnlineQuoteTemplateV4.ascx">
+      <publishTime>08/13/2018 11:04:04</publishTime>
+    </File>
+    <File Include="Ascx/KRAOnlineQuoteTemplate.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/NCNRAgreement.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/NVCHART.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/Order/AuthCreditResult.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/Order/OrderAddress.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/Order/OrderInfo.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/Order/PartialDeliver.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/Order/PickCalendar.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/Order/soldtoshipto.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/Order/USAOnlineShipBillTo.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickAccount.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickAddressSiebel.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickAttention.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/pickBTO.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickCTOSAssemblyInstructionDoc.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickProduct.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickQuoteCopy.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickQuoteFinished.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickRole.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickShipToBillToSAP.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickSiebelOpportunity.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/PickSignature.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/ProdInvalidList.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/QuotationViewOption.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/quoteDetail.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/QuoteReportSalesMultiSelectBlock.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/SendeQuotationUI.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/TWAOnlineQuoteTemplate.ascx">
+      <publishTime>08/08/2018 14:08:17</publishTime>
+    </File>
+    <File Include="Ascx/UCCreditInfo.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/USAENCQuoteTemplate.ascx">
+      <publishTime>05/24/2018 13:50:49</publishTime>
+    </File>
+    <File Include="Ascx/USANAiAQuoteTemplate.ascx">
+      <publishTime>05/24/2018 13:50:50</publishTime>
+    </File>
+    <File Include="Ascx/USAOnlineQuoteTemplate.ascx">
+      <publishTime>05/24/2018 13:50:50</publishTime>
+    </File>
+    <File Include="Ascx/USVolumeDiscount.ascx">
+      <publishTime>05/24/2018 13:50:50</publishTime>
+    </File>
+    <File Include="ATW/SiebelQuote.aspx">
+      <publishTime>05/24/2018 13:50:50</publishTime>
+    </File>
+    <File Include="bin/Advantech.Myadvantech.Business.dll">
+      <publishTime>08/16/2018 16:31:09</publishTime>
+    </File>
+    <File Include="bin/Advantech.Myadvantech.Business.XmlSerializers.dll">
+      <publishTime>08/16/2018 16:31:11</publishTime>
+    </File>
+    <File Include="bin/Advantech.Myadvantech.DataAccess.dll">
+      <publishTime>08/16/2018 16:30:39</publishTime>
+    </File>
+    <File Include="bin/Advantech.Myadvantech.DataAccess.XmlSerializers.dll">
+      <publishTime>08/16/2018 16:30:47</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/AOnlineWall.dll">
+      <publishTime>06/21/2018 15:00:54</publishTime>
+    </File>
+    <File Include="bin/App_Licenses.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/Aspose.Cells.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/Aspose.Pdf.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/Aspose.Words.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/AuthorizeNet.dll">
+      <publishTime>05/24/2018 13:52:16</publishTime>
+    </File>
+    <File Include="bin/Bapi_Addrcontpart_Savereplica_dll.dll">
+      <publishTime>05/24/2018 13:52:16</publishTime>
+    </File>
+    <File Include="bin/BAPI_CUSTOMERQUOTATION_CHANGE.dll">
+      <publishTime>05/24/2018 13:53:37</publishTime>
+    </File>
+    <File Include="bin/Bapi_Quotation_Create.dll">
+      <publishTime>05/24/2018 13:53:37</publishTime>
+    </File>
+    <File Include="bin/BAPI_SALESORDER_CHANGE.dll">
+      <publishTime>05/24/2018 13:53:37</publishTime>
+    </File>
+    <File Include="bin/BAPI_SALESORDER_CREATEFROMDAT2.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/BAPI_SALESORDER_SIMULATE.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/Change_SD_Order.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/COMM.dll">
+      <publishTime>06/21/2018 15:00:21</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.Core.dll">
+      <publishTime>05/24/2018 13:51:01</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>05/24/2018 13:51:01</publishTime>
+    </File>
+    <File Include="bin/CreateSAPContact.dll">
+      <publishTime>05/24/2018 13:52:16</publishTime>
+    </File>
+    <File Include="bin/Create_Po.dll">
+      <publishTime>05/24/2018 13:53:38</publishTime>
+    </File>
+    <File Include="bin/DBAC.dll">
+      <publishTime>06/21/2018 15:00:54</publishTime>
+    </File>
+    <File Include="bin/DBauer.Web.UI.WebControls.DynamicControlsPlaceholder.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/DOCH.dll">
+      <publishTime>08/10/2018 11:29:34</publishTime>
+    </File>
+    <File Include="bin/EDOC.dll">
+      <publishTime>08/16/2018 16:32:08</publishTime>
+    </File>
+    <File Include="bin/EDOC.xml">
+      <publishTime>08/16/2018 16:32:05</publishTime>
+    </File>
+    <File Include="bin/EDOC.XmlSerializers.dll">
+      <publishTime>08/16/2018 16:32:16</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/24/2018 13:52:20</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>05/24/2018 13:52:20</publishTime>
+    </File>
+    <File Include="bin/EnvDTE.dll">
+      <publishTime>10/22/2009 19:51:18</publishTime>
+    </File>
+    <File Include="bin/ephtmltopdf.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/eStoreServices.dll">
+      <publishTime>06/21/2018 15:00:55</publishTime>
+    </File>
+    <File Include="bin/eStoreServices.XmlSerializers.dll">
+      <publishTime>06/21/2018 15:00:57</publishTime>
+    </File>
+    <File Include="bin/EXSY.dll">
+      <publishTime>08/10/2018 11:28:59</publishTime>
+    </File>
+    <File Include="bin/EXSY.XmlSerializers.dll">
+      <publishTime>08/10/2018 11:29:05</publishTime>
+    </File>
+    <File Include="bin/Factory_Date_Conversion.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/GetCreditExposure.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/GetMultiATP.dll">
+      <publishTime>05/24/2018 13:53:39</publishTime>
+    </File>
+    <File Include="bin/GetSAPPeriodCost.dll">
+      <publishTime>05/24/2018 13:52:23</publishTime>
+    </File>
+    <File Include="bin/GET_MATERIAL_ATP.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/Get_Price.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/GPcontrolAPI.dll">
+      <publishTime>08/16/2018 16:31:32</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/IBUS.dll">
+      <publishTime>08/10/2018 11:28:55</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>05/24/2018 13:52:32</publishTime>
+    </File>
+    <File Include="bin/Interop.ADODB.dll">
+      <publishTime>05/24/2018 13:53:39</publishTime>
+    </File>
+    <File Include="bin/Interop.MSXML2.dll">
+      <publishTime>05/24/2018 13:53:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.ConnectionInfo.dll">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.Smo.dll">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.SqlEnum.dll">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/NPOI.dll">
+      <publishTime>05/24/2018 13:52:30</publishTime>
+    </File>
+    <File Include="bin/NPOI.OOXML.dll">
+      <publishTime>05/24/2018 13:52:30</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXml4Net.dll">
+      <publishTime>05/24/2018 13:52:30</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXmlFormats.dll">
+      <publishTime>05/24/2018 13:52:30</publishTime>
+    </File>
+    <File Include="bin/obout_Editor.dll">
+      <publishTime>05/24/2018 13:50:47</publishTime>
+    </File>
+    <File Include="bin/obout_Flyout2_NET.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/Oracle.DataAccess.dll">
+      <publishTime>04/07/2010 04:17:46</publishTime>
+    </File>
+    <File Include="bin/PATC.dll">
+      <publishTime>08/10/2018 11:29:16</publishTime>
+    </File>
+    <File Include="bin/Payflow_dotNET.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/PRICE_GRADE.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/PROF.dll">
+      <publishTime>08/16/2018 16:31:16</publishTime>
+    </File>
+    <File Include="bin/PROF.XmlSerializers.dll">
+      <publishTime>08/16/2018 16:31:20</publishTime>
+    </File>
+    <File Include="bin/Quartz.dll">
+      <publishTime>05/24/2018 13:51:09</publishTime>
+    </File>
+    <File Include="bin/Quotation_Create_SAP.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/Read_Sap_Table.dll">
+      <publishTime>05/24/2018 13:52:31</publishTime>
+    </File>
+    <File Include="bin/Relics.dll">
+      <publishTime>06/21/2018 15:00:30</publishTime>
+    </File>
+    <File Include="bin/Relics.XmlSerializers.dll">
+      <publishTime>06/21/2018 15:00:41</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/SAP.Connector.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/SAPCustomerRFC.dll">
+      <publishTime>05/24/2018 13:52:32</publishTime>
+    </File>
+    <File Include="bin/SAPDAL.dll">
+      <publishTime>08/10/2018 11:28:19</publishTime>
+    </File>
+    <File Include="bin/SAPDAL.XmlSerializers.dll">
+      <publishTime>08/10/2018 11:28:30</publishTime>
+    </File>
+    <File Include="bin/sapnco.dll">
+      <publishTime>07/11/2018 17:30:27</publishTime>
+    </File>
+    <File Include="bin/sapnco_utils.dll">
+      <publishTime>07/11/2018 17:30:27</publishTime>
+    </File>
+    <File Include="bin/SAPRFC.dll">
+      <publishTime>05/24/2018 13:52:32</publishTime>
+    </File>
+    <File Include="bin/SgmlReaderDll.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/SO_CREATE_COMMIT.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>07/07/2015 00:51:38</publishTime>
+    </File>
+    <File Include="bin/Update_Warranty.dll">
+      <publishTime>05/24/2018 13:53:40</publishTime>
+    </File>
+    <File Include="bin/URLRewriter.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/wnvhtmltopdf.dll">
+      <publishTime>05/24/2018 13:52:32</publishTime>
+    </File>
+    <File Include="bin/wnvinternal.dat">
+      <publishTime>05/24/2018 13:52:33</publishTime>
+    </File>
+    <File Include="bin/ZBILLING_SCHEDULE_SAVE.dll">
+      <publishTime>05/24/2018 13:52:33</publishTime>
+    </File>
+    <File Include="bin/ZCUSTOMER_UPDATE_SALES_AREA.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/ZGET_ATP_LIMITQTY.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/ZGET_PROD_PLANT_COST.dll">
+      <publishTime>05/24/2018 13:52:33</publishTime>
+    </File>
+    <File Include="bin/ZPP_BOM_EXPL_MAT_V2_RFC_CKD.dll">
+      <publishTime>05/24/2018 13:52:33</publishTime>
+    </File>
+    <File Include="bin/ZSD_CUSTOMER_MAINTAIN_ALL.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/ZSD_QUOTATION_ABR.dll">
+      <publishTime>05/24/2018 13:53:41</publishTime>
+    </File>
+    <File Include="bin/ZSD_SO_HEADER_UPDATE.dll">
+      <publishTime>05/24/2018 13:52:33</publishTime>
+    </File>
+    <File Include="bin/ZSD_UPDATE_FPLA.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/Z_EBIZAEU_PRICEINQUIRY_BR.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/Z_GET_ATP_LIMITQTY.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/Z_READ_TEXT.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/Z_RELEASE_GP_ITEM.dll">
+      <publishTime>07/03/2018 09:29:08</publishTime>
+    </File>
+    <File Include="bin/Z_SD_CTOS_SPLIT_PRICE.dll">
+      <publishTime>05/24/2018 13:52:33</publishTime>
+    </File>
+    <File Include="bin/Z_SD_EUPRICEINQUERY.dll">
+      <publishTime>05/24/2018 13:50:48</publishTime>
+    </File>
+    <File Include="bin/Z_SD_USPRICELOOKUP.dll">
+      <publishTime>05/24/2018 13:52:33</publishTime>
+    </File>
+    <File Include="Css/Ajax.css">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-bg_flat_55_fbec88_40x100.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-bg_glass_75_d0e5f5_1x400.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-bg_glass_85_dfeffc_1x400.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-bg_inset-hard_100_f5f8f9_1x100.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-bg_inset-hard_100_fcfdfd_1x100.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_217bc0_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_222222_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_454545_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_469bdd_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_6da8d5_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_888888_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_d8e7f3_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/images/ui-icons_f9bd01_256x240.png">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/jquery-ui-1.8.5.custom.css">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/jquery.autocomplete.css">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/JqueryUI.css">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/MainWall.css">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/StyleSheet.css">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="Css/token-input-facebook.css">
+      <publishTime>05/24/2018 13:50:53</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Files/Advantech_Terms_and_Conditions.pdf">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Files/Aspose.Total.lic">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Files/ITPSample.xlsx">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Files/Return_Policy.pdf">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Files/SalesMappingSample.xlsx">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Functions/DoApprove.aspx">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="GPControl/Agent.aspx">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="GPControl/ApprovalDef.aspx">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="GPPad/Approval.aspx">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="GPPad/MobileApprove.aspx">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Home.aspx">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Home_MyAOnlineWall.aspx">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/2010-Logo-with-Slogan.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/Advantech logo.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AEUbottom.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AEUheard.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AEUline.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AEUline2.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AEUline3.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AJPCompanyInfo.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AJPCompanyInfoV2.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AJPConfirmTermJPG1.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AJPConfirmTermJPG2.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AJPQuotationTitle.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AJPQuotationTitle.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/AKRStamp.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/Approved.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/arrow_01.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/back.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/backdis.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/BBBG.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/bg.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/bg1.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/bg2.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/bgactive.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/bgb.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/bgBlue.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/BGGRAY.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/bggv.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/bgloading.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/Calendar_scheduleHS.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/CheckList.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/collapse.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/collapse_blue.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/Complete196.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/Config.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/copyimg.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/copyimg.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/Current.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/del.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/Detail.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/DOTLINE_Mid.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/download.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/edit-2.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/edit-cancel.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/edit.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/edss_showall.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/emptytrash.png">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/EQ_Logo.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/ex.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/excel.gif">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/excelSample.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/excelSample1.jpg">
+      <publishTime>05/24/2018 13:50:54</publishTime>
+    </File>
+    <File Include="Images/expand.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/expand_blue.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Fast Delivery.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/File.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/filesave.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/folder.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Go.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/goDis.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/header_advantech_logo.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/heard.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/heardBB.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/history.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/historyV2.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Hot-orange.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Indicator.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/JPAonlineQuoteTemplateHeaderImg.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/jt01.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/loader.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/loading.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/LoadingRed.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/loginBOT.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/loginMid.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/loginTop.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/loginTop1.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/login_btn.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Logo.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/LogoPI.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/LogoPI1.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/logoUS.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Logo_AonlineDocCenter.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Logo_AOnlineWall.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/logo_BB.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/mail.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Master.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/openfolder.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/pdf.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/pdf_icon.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Pending.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/pickPick.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/pickPN.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/pipeline.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/pipelined_icon.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/plus.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Preview.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Product.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Reconfigure.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Recycle.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Rejected.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Rohs.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/SalesMappingSample.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/search.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/search.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/square_blue.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/square_gray.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/tabCom0.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/tabCom1.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/tabSys0.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/tabSys1.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/TITLEBG.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/Vertebrae.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/webIE.jpg">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Images/word_icon.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Includes/ProductRelatedInfo.aspx">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Includes/Products.aspx">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Includes/QuoteByMOQ.aspx">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/FancyBox/images/blank.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/FancyBox/images/fancybox_loading%402x.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/FancyBox/images/fancybox_loading.gif">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/FancyBox/images/fancybox_overlay.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/FancyBox/images/fancybox_sprite%402x.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/FancyBox/images/fancybox_sprite.png">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/FancyBox/jquery.fancybox.css">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/FancyBox/jquery.fancybox.js">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/jquery-1.2.6.js">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/jquery-1.4.2.min.js">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/jquery-1.9.1.js">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/jquery-latest.min.js">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/jquery-ui-1.10.3.custom.js">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/jquery-ui-1.10.3.custom.min.js">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/jquery-ui-1.8.2.custom.min.js">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/jquery-ui.js">
+      <publishTime>05/24/2018 13:50:55</publishTime>
+    </File>
+    <File Include="Js/jquery.autocomplete.min.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/jquery.corner.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/jquery.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/jquery.tokeninput.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/jquery.tokeninput_eQuote.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/jquery.validate.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/Jquery1.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/datagrid-detailview.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/easyloader.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/jquery.easyui.min.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/jquery.min.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-af.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-ar.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-bg.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-ca.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-cs.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-cz.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-da.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-de.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-el.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-en.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-es.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-fr.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-it.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-jp.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-nl.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-pl.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-pt_BR.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-ru.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-sv_SE.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-tr.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-zh_CN.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/locale/easyui-lang-zh_TW.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.accordion.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.calendar.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.combo.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.combobox.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.combogrid.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.combotree.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.datagrid.js">
+      <publishTime>05/24/2018 13:50:56</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.datebox.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.datetimebox.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.dialog.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.draggable.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.droppable.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.form.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.layout.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.linkbutton.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.menu.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.menubutton.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.messager.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.numberbox.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.numberspinner.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.pagination.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.panel.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.parser.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.progressbar.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.propertygrid.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.resizable.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.searchbox.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.slider.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.spinner.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.splitbutton.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.tabs.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.timespinner.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.tooltip.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.tree.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.treegrid.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.validatebox.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/plugins/jquery.window.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/easyloader.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.accordion.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.calendar.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.combobox.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.datebox.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.draggable.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.droppable.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.form.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.linkbutton.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.menu.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.parser.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.progressbar.js">
+      <publishTime>05/24/2018 13:50:57</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.propertygrid.js">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.resizable.js">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.slider.js">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.tabs.js">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/src/jquery.window.js">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/accordion.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/calendar.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/combo.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/combobox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/datagrid.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/datebox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/dialog.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/easyui.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/accordion_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/blank.gif">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/calendar_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/combo_arrow.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/datagrid_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/datebox_arrow.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/layout_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/linkbutton_bg.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/loading.gif">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/menu_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/messager_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/pagination_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/panel_tools.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/searchbox_button.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/slider_handle.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/spinner_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/tabs_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/tree_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/images/validatebox_warning.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/layout.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/linkbutton.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/menu.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/menubutton.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/messager.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/pagination.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/panel.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/progressbar.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/propertygrid.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/searchbox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/slider.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/spinner.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/splitbutton.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/tabs.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/tooltip.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/tree.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/validatebox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/black/window.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/accordion.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/calendar.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/combo.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/combobox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/datagrid.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/datebox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/dialog.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/easyui.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/accordion_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/blank.gif">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/calendar_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/combo_arrow.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/datagrid_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/datebox_arrow.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/layout_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/linkbutton_bg.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/loading.gif">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/menu_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/messager_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/pagination_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/panel_tools.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/searchbox_button.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/slider_handle.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/spinner_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/tabs_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/tree_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/images/validatebox_warning.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/layout.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/linkbutton.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/menu.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/menubutton.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/messager.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/pagination.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/panel.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/progressbar.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/propertygrid.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/searchbox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/slider.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/spinner.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/splitbutton.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/tabs.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/tooltip.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/tree.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/validatebox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/bootstrap/window.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/accordion.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/calendar.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/combo.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/combobox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/datagrid.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/datebox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/dialog.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/easyui.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/accordion_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/blank.gif">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/calendar_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/combo_arrow.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/datagrid_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/datebox_arrow.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/layout_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/linkbutton_bg.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/loading.gif">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/menu_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/messager_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/pagination_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/panel_tools.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/searchbox_button.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/slider_handle.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/spinner_arrows.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/tabs_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/tree_icons.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/images/validatebox_warning.png">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/layout.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/linkbutton.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/menu.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/menubutton.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/messager.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/pagination.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/panel.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/progressbar.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/propertygrid.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/searchbox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/slider.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/spinner.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/splitbutton.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/tabs.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/tooltip.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/tree.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/validatebox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/default/window.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/accordion.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/calendar.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/combo.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/combobox.css">
+      <publishTime>05/24/2018 13:50:58</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/datagrid.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/datebox.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/dialog.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/easyui.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/accordion_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/blank.gif">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/calendar_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/combo_arrow.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/datagrid_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/datebox_arrow.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/layout_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/linkbutton_bg.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/loading.gif">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/menu_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/messager_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/pagination_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/panel_tools.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/searchbox_button.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/slider_handle.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/spinner_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/tabs_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/tree_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/images/validatebox_warning.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/layout.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/linkbutton.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/menu.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/menubutton.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/messager.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/pagination.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/panel.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/progressbar.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/propertygrid.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/searchbox.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/slider.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/spinner.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/splitbutton.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/tabs.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/tooltip.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/tree.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/validatebox.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/gray/window.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icon.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/back.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/blank.gif">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/cancel.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/cut.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/edit_add.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/edit_remove.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/filesave.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/help.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/mini_add.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/mini_edit.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/mini_refresh.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/no.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/ok.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/pencil.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/print.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/redo.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/reload.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/search.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/sum.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/tip.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/icons/undo.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/accordion.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/calendar.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/combo.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/combobox.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/datagrid.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/datebox.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/dialog.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/easyui.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/accordion_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/blank.gif">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/calendar_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/combo_arrow.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/datagrid_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/datebox_arrow.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/layout_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/linkbutton_bg.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/loading.gif">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/menu_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/messager_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/pagination_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/panel_tools.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/searchbox_button.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/slider_handle.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/spinner_arrows.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/tabs_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/tree_icons.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/images/validatebox_warning.png">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/layout.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/linkbutton.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/menu.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/menubutton.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/messager.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/pagination.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/panel.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/progressbar.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/propertygrid.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/searchbox.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/slider.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/spinner.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/splitbutton.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/tabs.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/tooltip.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/tree.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/validatebox.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/JQueryEasyUI/themes/metro/window.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/json2.js">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/MainWall.js">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/Numeral/numeral.js">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/redactor.css">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/redactor.js">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/redactor.min.js">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Js/SiteUtil.js">
+      <publishTime>05/24/2018 13:50:59</publishTime>
+    </File>
+    <File Include="Lab/AEUQuoteTemplateTesting.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/AJPQuoteTemplateTesting.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/ATWQuoteTemplateTesting.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/Copy.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/dropdrawtest.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/ICG_Spec.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/MingTest/ProductReport.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/Opportunity_Management.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/PLMDB_Test.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/RyanTest.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/SiebelJob.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/TestMing.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Lab/VersionInfo.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>07/11/2018 13:58:50</publishTime>
+    </File>
+    <File Include="myMaster.master">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Order/OrderDueDate.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Order/OrderInfo.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Order/OrderPreview.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Order/OrderRecover.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="Order/PI.aspx">
+      <publishTime>05/24/2018 13:51:00</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/06/2018 09:30:47</publishTime>
+    </File>
+    <File Include="Product/ModelDetailTranslation.aspx">
+      <publishTime>05/24/2018 13:51:10</publishTime>
+    </File>
+    <File Include="Quote/AdminDefault.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/ANAiAUsageReport.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/atpAndPrice.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/BtosSearch.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/Catalog.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CBOM_eStoreBTO_List1.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CBOM_eStoreBTO_List3.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CBOM_eStoreBTO_List5.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CBOM_LIST.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/cGP.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/ChangeUser.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/chart.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/ChartOver.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/ChartOver_old.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/ChartProduct.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CN_SPR_Configurator.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/Configurator.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CreateNewCust.aspx">
+      <publishTime>07/11/2018 17:30:28</publishTime>
+    </File>
+    <File Include="Quote/CreateQuotationByCopy.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CreateQuotationByRef.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CreditInfo.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CustomBtos.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CustomBTOS_ACN.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/CustomBTOS_ATW.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/EstoreCBOMCategory.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/EstoreCBOMList.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/eStoreQuote2Quote.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/ITPInquiry.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/ListPriceInquiry.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/maintainFranchise.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/MyAccountQuotation.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/MyQuotationRecord.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/myTeamsQuotation.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/Order2Quote.aspx">
+      <publishTime>05/24/2018 13:51:11</publishTime>
+    </File>
+    <File Include="Quote/OrderFromCombinedQuotation.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/piACN.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/piAIN.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/piHtml.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/PipeLine.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/price_bylevel.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/ProductReport.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/quickConfigQuote.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/Quotation2Siebel.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/Quotation2SiebelAJP.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/QuotationDetail.aspx">
+      <publishTime>05/31/2018 18:11:11</publishTime>
+    </File>
+    <File Include="Quote/QuotationMaster.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/QuotationPreview.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/QuotationToOrderLog.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/QuoteApproval.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/quoteByAccountOwner.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/QuoteForward.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/quoteModify.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/ReConfigureCTOSCheck.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/ShowQuoteDetail.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/UpdateQuotePrintFormat.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/UploadSalesMapping.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/USPriceByLevel.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/USPriceOW.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Quote/USPriceOW_Log.aspx">
+      <publishTime>05/24/2018 13:51:12</publishTime>
+    </File>
+    <File Include="Report/rGPControl.aspx">
+      <publishTime>08/14/2018 10:06:38</publishTime>
+    </File>
+    <File Include="Role/RoleDef.aspx">
+      <publishTime>05/24/2018 13:51:14</publishTime>
+    </File>
+    <File Include="Role/RoleManagement.aspx">
+      <publishTime>05/24/2018 13:51:14</publishTime>
+    </File>
+    <File Include="Services/AJPTerms.asmx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="Services/AutoComplete.asmx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="Services/eQ25WS.asmx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="Services/ForeStore.asmx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="Services/quoteExit.asmx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="Services/tokenInput.ashx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="SOP/2015_AKR_eQuotation SOP_Final_Iris_10.30.ppt">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="SOP/2016_eQuotation_SOP_Intercon_0630.ppt">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="SOP/SOPforATWAOnline.pptx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="SSO.aspx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="SSOENTER.aspx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="tempSyncPN.aspx">
+      <publishTime>05/24/2018 13:51:18</publishTime>
+    </File>
+    <File Include="User/SHOWServerV.aspx">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="User/Signature.aspx">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="Wall/AOnlineHomePageEdit.aspx">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="Wall/Module/CategoryTree.ascx">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="Wall/Module/HTMLEditor.ascx">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="Wall/Module/WallContent.ascx">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="Wall/Wall.Master">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="Wall/WallHome.aspx">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="Web References/CBOMWS/CBOMDS.xsc">
+      <publishTime>05/31/2018 18:11:11</publishTime>
+    </File>
+    <File Include="Web References/CBOMWS/CBOMDS.xss">
+      <publishTime>05/31/2018 18:11:11</publishTime>
+    </File>
+    <File Include="Web References/UpdateSiebelAcc/Reference.map">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="Web References/UpdateSiebelAcc/UpdAccount_Output.datasource">
+      <publishTime>05/24/2018 13:51:19</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/06/2018 09:35:41</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

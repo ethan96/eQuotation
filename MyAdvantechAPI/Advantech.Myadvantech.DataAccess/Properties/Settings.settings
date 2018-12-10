@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Advantech.Myadvantech.DataAccess.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Advantech_Myadvantech_DataAccess_SiebelWebService_WSSiebel" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.20.1.43:8089/WSSiebel.asmx</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_WSSiebel_New_WSSiebel" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.20.1.43:8066/WSSiebel.asmx</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_WSSiebel_AddAction_ADVWebServoce_AddAction" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://crmap-global3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MTL&amp;Password=MTL02DkOSq</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_WSSiebel_AddQuote_ADVWebService_AddQuote" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://crmap-global3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_CPTEST_general" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.21.1.133/ws/general.asmx</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_Pipeline_general" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.21.1.133/ws/general.asmx</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_WSSiebel_AddOpty_ADVWebService_AddOppty" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://CRMAP-GLOBAL3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_WSSiebel_UpdAccount_ADVWebService_UpdAccount" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://CRMAP-GLOBAL3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_WSSiebel_AddAccount_ADVWebService_AddAccount" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://CRMAP-GLOBAL3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_WSSiebel_AddContact_ADVWebService_AddContact" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://CRMAP-GLOBAL3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_WSSiebel_UpdContact_ADVWebService_UpdateContact" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://CRMAP-GLOBAL3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_CheckPointWS_Job" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.21.1.133/ws/job.asmx</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_UpdOppty_ADVWebService_UpdOppty" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://CRMAP-GLOBAL3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234</Value>
+    </Setting>
+    <Setting Name="Advantech_Myadvantech_DataAccess_MemberShip_MembershipWebservice" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://member.advantech.com/membershipwebservice.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

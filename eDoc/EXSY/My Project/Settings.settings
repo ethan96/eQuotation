@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="EXSY_SAPWS_B2B_AEU_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://myadvan-global:9000/B2B_SAP_WS.asmx</Value>
+    </Setting>
+    <Setting Name="EXSY_SBWS_Siebel_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://myadvan-global:2000/Services/Siebel_WS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

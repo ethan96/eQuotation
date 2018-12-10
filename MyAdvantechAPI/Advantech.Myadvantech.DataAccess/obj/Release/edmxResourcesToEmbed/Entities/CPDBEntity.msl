@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CheckPointDBModelStoreContainer" CdmEntityContainer="CheckPointDBEntities1">
+    <EntitySetMapping Name="SO_HEADER">
+      <EntityTypeMapping TypeName="CheckPointDBModel.SO_HEADER">
+        <MappingFragment StoreEntitySet="SO_HEADER">
+          <ScalarProperty Name="SO" ColumnName="SO" />
+          <ScalarProperty Name="ORDER_TYPE" ColumnName="ORDER_TYPE" />
+          <ScalarProperty Name="SALES_ORG" ColumnName="SALES_ORG" />
+          <ScalarProperty Name="DIST_CHAN" ColumnName="DIST_CHAN" />
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+          <ScalarProperty Name="SalesGroup" ColumnName="SalesGroup" />
+          <ScalarProperty Name="SalesOffice" ColumnName="SalesOffice" />
+          <ScalarProperty Name="INCO1" ColumnName="INCO1" />
+          <ScalarProperty Name="INCO2" ColumnName="INCO2" />
+          <ScalarProperty Name="SHIPTO_COUNTRY" ColumnName="SHIPTO_COUNTRY" />
+          <ScalarProperty Name="TAX_CLASS" ColumnName="TAX_CLASS" />
+          <ScalarProperty Name="TRIANGULAR_INDICATOR" ColumnName="TRIANGULAR_INDICATOR" />
+          <ScalarProperty Name="REQUIRE_DATE" ColumnName="REQUIRE_DATE" />
+          <ScalarProperty Name="SHIP_CONDITION" ColumnName="SHIP_CONDITION" />
+          <ScalarProperty Name="CUST_PO_NO" ColumnName="CUST_PO_NO" />
+          <ScalarProperty Name="SHIP_CUST_PO_NO" ColumnName="SHIP_CUST_PO_NO" />
+          <ScalarProperty Name="PO_DATE" ColumnName="PO_DATE" />
+          <ScalarProperty Name="PARTIAL_SHIPMENT" ColumnName="PARTIAL_SHIPMENT" />
+          <ScalarProperty Name="EARLY_SHIP" ColumnName="EARLY_SHIP" />
+          <ScalarProperty Name="TAXDEL_CTY" ColumnName="TAXDEL_CTY" />
+          <ScalarProperty Name="TAXDES_CTY" ColumnName="TAXDES_CTY" />
+          <ScalarProperty Name="DEST_TYPE" ColumnName="DEST_TYPE" />
+          <ScalarProperty Name="PAYTERM" ColumnName="PAYTERM" />
+          <ScalarProperty Name="DOC_DATE" ColumnName="DOC_DATE" />
+          <ScalarProperty Name="DOC_DATESpecified" ColumnName="DOC_DATESpecified" />
+          <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+          <ScalarProperty Name="Ref_Doc" ColumnName="Ref_Doc" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SO_DETAIL">
+      <EntityTypeMapping TypeName="CheckPointDBModel.SO_DETAIL">
+        <MappingFragment StoreEntitySet="SO_DETAIL">
+          <ScalarProperty Name="POLineNo" ColumnName="POLineNo" />
+          <ScalarProperty Name="ItCa" ColumnName="ItCa" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StorageLoc" ColumnName="StorageLoc" />
+          <ScalarProperty Name="ShipPoint" ColumnName="ShipPoint" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="REQ_DATE" ColumnName="REQ_DATE" />
+          <ScalarProperty Name="QTY" ColumnName="QTY" />
+          <ScalarProperty Name="DMF_FLAG" ColumnName="DMF_FLAG" />
+          <ScalarProperty Name="CUST_MATERIAL" ColumnName="CUST_MATERIAL" />
+          <ScalarProperty Name="MATERIAL" ColumnName="MATERIAL" />
+          <ScalarProperty Name="PLANT" ColumnName="PLANT" />
+          <ScalarProperty Name="DELIVERY_GROUP" ColumnName="DELIVERY_GROUP" />
+          <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+          <ScalarProperty Name="HIGHER_LEVEL" ColumnName="HIGHER_LEVEL" />
+          <ScalarProperty Name="PART_Dlv" ColumnName="PART_Dlv" />
+          <ScalarProperty Name="SO" ColumnName="SO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SO_PARTNERFUNC">
+      <EntityTypeMapping TypeName="CheckPointDBModel.SO_PARTNERFUNC">
+        <MappingFragment StoreEntitySet="SO_PARTNERFUNC">
+          <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+          <ScalarProperty Name="SO" ColumnName="SO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ship_to_Information">
+      <EntityTypeMapping TypeName="CheckPointDBModel.Ship_to_Information">
+        <MappingFragment StoreEntitySet="Ship_to_Information">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="contact_telnumber" ColumnName="contact_telnumber" />
+          <ScalarProperty Name="contact_email" ColumnName="contact_email" />
+          <ScalarProperty Name="contact_person_last" ColumnName="contact_person_last" />
+          <ScalarProperty Name="contact_person_first" ColumnName="contact_person_first" />
+          <ScalarProperty Name="ship_to_email" ColumnName="ship_to_email" />
+          <ScalarProperty Name="ship_to_faxnumber" ColumnName="ship_to_faxnumber" />
+          <ScalarProperty Name="ship_to_telnumber" ColumnName="ship_to_telnumber" />
+          <ScalarProperty Name="ship_to_stateName" ColumnName="ship_to_stateName" />
+          <ScalarProperty Name="ship_to_postal_code" ColumnName="ship_to_postal_code" />
+          <ScalarProperty Name="ship_to_country_code" ColumnName="ship_to_country_code" />
+          <ScalarProperty Name="ship_to_country_name" ColumnName="ship_to_country_name" />
+          <ScalarProperty Name="ship_to_city" ColumnName="ship_to_city" />
+          <ScalarProperty Name="ship_to_address" ColumnName="ship_to_address" />
+          <ScalarProperty Name="ship_to_name" ColumnName="ship_to_name" />
+          <ScalarProperty Name="ship_to_id" ColumnName="ship_to_id" />
+          <ScalarProperty Name="SO_Number" ColumnName="SO_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

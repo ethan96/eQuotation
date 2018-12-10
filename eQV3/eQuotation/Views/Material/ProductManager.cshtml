@@ -1,0 +1,68 @@
+﻿@model eQuotation.Models.Material.ProductManager
+@using eQuotation.Utility
+
+@if (Model != null)
+{
+    <div class="main-content">
+        <div class="titlebox topbox"><h4>Product Management</h4></div>
+        <div class="actionbox">
+            <ul>
+                <li><a id="btn-refresh"><i class="fa fa-refresh"></i> Reset</a></li>
+                <li><a id="btn-save"><i class="fa fa-floppy-o"></i> Save</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div>
+                @using (Ajax.BeginForm("ProductManager", "Material", null,
+                new AjaxOptions()
+                {
+                    HttpMethod = "POST",
+                    OnBegin = "OnProductBegin",
+                    OnSuccess = "OnProductSuccess"
+                }))
+                {
+                    <div class="submithidden"><input type="submit" id="btn-submit-form" /></div>
+                    <table style="width:680px;">
+                        <tr>
+                            <td class="field150">Product ID</td>
+
+                            <td colspan="3">@Html.TextBoxFor(mdl => mdl.Header.ID, new { @class = "text100", @id = "TXTPROD" })</td>
+                        </tr>
+                        <tr>
+                            <td class="field150">Product Name</td>
+                            <td colspan="3">@Html.TextBoxFor(mdl => mdl.Header.Name, new { @class = "text100" })</td>
+                        </tr>
+                        <tr>
+                            <td class="field150">Description</td>
+                            <td colspan="3">@Html.TextAreaFor(mdl => mdl.Header.ExtDesc, new { @style = "height:200px" })</td>
+                        </tr>
+
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+
+    function OnProductBegin() { $.blockUI(); }
+
+    function OnProductSuccess(data) {
+        $.pushHTML(data, function () { $("#wrapper-content").html(data); });
+        $.unblockUI();
+    }
+
+    $(document).ready(function () {
+
+        //click refresh
+        $("#btn-refresh").on("click", function () { initContent("Material/ProductManager"); })
+
+        // onEnter product ID
+        $("#TXTPROD").onEnter(function () { initContent("Material/ProductManager/" + $(this).val()); });
+
+        //click button 'SAVE'
+        $("#btn-save").on("click", function () { $("#btn-submit-form").trigger("click"); })
+
+    });
+</script>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SiebelQuoteDB">
+  <DataContextMoniker Name="/SiebelQuoteDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="645835d4-4ce8-4652-a885-ce6681cdcaee" absoluteBounds="1.125, 1.375, 2, 2.4600651041666666">
+      <DataClassMoniker Name="/SiebelQuoteDBDataContext/SiebelQuoteMaster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2edfb18c-87e5-45fc-ab3b-524a512b8c23" absoluteBounds="1.1400000000000001, 1.835, 1.9700000000000002, 1.9000651041666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fce435ed-7c17-4fb3-9a21-91712a74734c" absoluteBounds="4.5, 2.625, 2, 2.2914453125">
+      <DataClassMoniker Name="/SiebelQuoteDBDataContext/SiebelQuoteDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f10e9c42-695a-40b2-9e1e-0bcfcaaa9305" absoluteBounds="4.515, 3.085, 1.9700000000000002, 1.7314453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 3.23003255208333); (4.5 : 3.23003255208333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SiebelQuoteDBDataContext/SiebelQuoteMaster/SiebelQuoteMaster_SiebelQuoteDetail" />
+      <nodes>
+        <classShapeMoniker Id="645835d4-4ce8-4652-a885-ce6681cdcaee" />
+        <classShapeMoniker Id="fce435ed-7c17-4fb3-9a21-91712a74734c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

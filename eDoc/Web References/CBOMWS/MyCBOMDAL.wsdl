@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="MyAdvantech.SAP.DataAccessLayer" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="MyAdvantech.SAP.DataAccessLayer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="MyAdvantech.SAP.DataAccessLayer">
+      <s:import namespace="http://tempuri.org/CBOMDAL.xsd" />
+      <s:import schemaLocation="http://my.advantech.com/Services/MyCBOMDAL.asmx?schema=CBOMDS" namespace="http://tempuri.org/CBOMDAL.xsd" />
+      <s:element name="GetCBOMCatalog">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCBOMCatalogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCBOMCatalogResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCBOM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParentCategoryId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPOrg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCBOMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCBOMResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCatalogList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPOrg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCatalogListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCatalogListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/CBOMDAL.xsd" name="namespace" />
+                <s:attribute fixed="CBOM_CATALOGDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCatalogLocalName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Catalog_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPOrg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCatalogLocalNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCatalogLocalNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCBOMList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPOrg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Catalog" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCBOMListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCBOMListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/CBOMDAL.xsd" name="namespace" />
+                <s:attribute fixed="CBOM_CATALOGDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBTOParentList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPOrg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBTOParentListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBTOParentListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/CBOMDAL.xsd" name="namespace" />
+                <s:attribute fixed="CBOM_CATALOGDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCBOM2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParentCategoryId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPOrg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RootId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCBOM2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCBOM2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/CBOMDAL.xsd" name="namespace" />
+                <s:attribute fixed="CBOM_CATALOG_CATEGORYDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeteStoreCBOM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParentCategoryId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPOrg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeteStoreCBOMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeteStoreCBOMResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/CBOMDAL.xsd" name="namespace" />
+                <s:attribute fixed="CBOM_CATALOG_CATEGORYDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCBOMV3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParentCategoryId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPOrg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCBOMV3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCBOMV3Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/CBOMDAL.xsd" name="namespace" />
+                <s:attribute fixed="CBOM_CATALOG_CATEGORYDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloKitty">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloKittyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloKittyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CBOM_CATALOGDataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+          <s:attribute fixed="http://tempuri.org/CBOMDAL.xsd" name="namespace" />
+          <s:attribute fixed="CBOM_CATALOGDataTable" name="tableTypeName" />
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="CBOM_CATALOG_CATEGORYDataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+          <s:attribute fixed="http://tempuri.org/CBOMDAL.xsd" name="namespace" />
+          <s:attribute fixed="CBOM_CATALOG_CATEGORYDataTable" name="tableTypeName" />
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCBOMCatalogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCBOMCatalog" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMCatalogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCBOMCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCBOM" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCBOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogListSoapIn">
+    <wsdl:part name="parameters" element="tns:getCatalogList" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogListSoapOut">
+    <wsdl:part name="parameters" element="tns:getCatalogListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogLocalNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getCatalogLocalName" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogLocalNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getCatalogLocalNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCBOMListSoapIn">
+    <wsdl:part name="parameters" element="tns:getCBOMList" />
+  </wsdl:message>
+  <wsdl:message name="getCBOMListSoapOut">
+    <wsdl:part name="parameters" element="tns:getCBOMListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBTOParentListSoapIn">
+    <wsdl:part name="parameters" element="tns:getBTOParentList" />
+  </wsdl:message>
+  <wsdl:message name="getBTOParentListSoapOut">
+    <wsdl:part name="parameters" element="tns:getBTOParentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOM2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetCBOM2" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOM2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetCBOM2Response" />
+  </wsdl:message>
+  <wsdl:message name="GeteStoreCBOMSoapIn">
+    <wsdl:part name="parameters" element="tns:GeteStoreCBOM" />
+  </wsdl:message>
+  <wsdl:message name="GeteStoreCBOMSoapOut">
+    <wsdl:part name="parameters" element="tns:GeteStoreCBOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMV3SoapIn">
+    <wsdl:part name="parameters" element="tns:GetCBOMV3" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMV3SoapOut">
+    <wsdl:part name="parameters" element="tns:GetCBOMV3Response" />
+  </wsdl:message>
+  <wsdl:message name="HelloKittySoapIn">
+    <wsdl:part name="parameters" element="tns:HelloKitty" />
+  </wsdl:message>
+  <wsdl:message name="HelloKittySoapOut">
+    <wsdl:part name="parameters" element="tns:HelloKittyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMCatalogHttpGetIn" />
+  <wsdl:message name="GetCBOMCatalogHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMHttpGetIn">
+    <wsdl:part name="ParentCategoryId" type="s:string" />
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogListHttpGetIn">
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogListHttpGetOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOGDataTable" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogLocalNameHttpGetIn">
+    <wsdl:part name="Catalog_type" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogLocalNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getCBOMListHttpGetIn">
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+    <wsdl:part name="Catalog" type="s:string" />
+    <wsdl:part name="CompanyId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCBOMListHttpGetOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOGDataTable" />
+  </wsdl:message>
+  <wsdl:message name="getBTOParentListHttpGetIn">
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+    <wsdl:part name="PN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBTOParentListHttpGetOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOGDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOM2HttpGetIn">
+    <wsdl:part name="ParentCategoryId" type="s:string" />
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+    <wsdl:part name="RootId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOM2HttpGetOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOG_CATEGORYDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GeteStoreCBOMHttpGetIn">
+    <wsdl:part name="ParentCategoryId" type="s:string" />
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeteStoreCBOMHttpGetOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOG_CATEGORYDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMV3HttpGetIn">
+    <wsdl:part name="ParentCategoryId" type="s:string" />
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMV3HttpGetOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOG_CATEGORYDataTable" />
+  </wsdl:message>
+  <wsdl:message name="HelloKittyHttpGetIn" />
+  <wsdl:message name="HelloKittyHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMCatalogHttpPostIn" />
+  <wsdl:message name="GetCBOMCatalogHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMHttpPostIn">
+    <wsdl:part name="ParentCategoryId" type="s:string" />
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogListHttpPostIn">
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogListHttpPostOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOGDataTable" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogLocalNameHttpPostIn">
+    <wsdl:part name="Catalog_type" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCatalogLocalNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getCBOMListHttpPostIn">
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+    <wsdl:part name="Catalog" type="s:string" />
+    <wsdl:part name="CompanyId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCBOMListHttpPostOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOGDataTable" />
+  </wsdl:message>
+  <wsdl:message name="getBTOParentListHttpPostIn">
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+    <wsdl:part name="PN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBTOParentListHttpPostOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOGDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOM2HttpPostIn">
+    <wsdl:part name="ParentCategoryId" type="s:string" />
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+    <wsdl:part name="RootId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOM2HttpPostOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOG_CATEGORYDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GeteStoreCBOMHttpPostIn">
+    <wsdl:part name="ParentCategoryId" type="s:string" />
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeteStoreCBOMHttpPostOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOG_CATEGORYDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMV3HttpPostIn">
+    <wsdl:part name="ParentCategoryId" type="s:string" />
+    <wsdl:part name="RBU" type="s:string" />
+    <wsdl:part name="SAPOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCBOMV3HttpPostOut">
+    <wsdl:part name="Body" element="tns:CBOM_CATALOG_CATEGORYDataTable" />
+  </wsdl:message>
+  <wsdl:message name="HelloKittyHttpPostIn" />
+  <wsdl:message name="HelloKittyHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="MyCBOMDALSoap">
+    <wsdl:operation name="GetCBOMCatalog">
+      <wsdl:input message="tns:GetCBOMCatalogSoapIn" />
+      <wsdl:output message="tns:GetCBOMCatalogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM">
+      <wsdl:input message="tns:GetCBOMSoapIn" />
+      <wsdl:output message="tns:GetCBOMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogList">
+      <wsdl:input message="tns:getCatalogListSoapIn" />
+      <wsdl:output message="tns:getCatalogListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogLocalName">
+      <wsdl:input message="tns:getCatalogLocalNameSoapIn" />
+      <wsdl:output message="tns:getCatalogLocalNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCBOMList">
+      <wsdl:input message="tns:getCBOMListSoapIn" />
+      <wsdl:output message="tns:getCBOMListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBTOParentList">
+      <wsdl:input message="tns:getBTOParentListSoapIn" />
+      <wsdl:output message="tns:getBTOParentListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM2">
+      <wsdl:input message="tns:GetCBOM2SoapIn" />
+      <wsdl:output message="tns:GetCBOM2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeteStoreCBOM">
+      <wsdl:input message="tns:GeteStoreCBOMSoapIn" />
+      <wsdl:output message="tns:GeteStoreCBOMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOMV3">
+      <wsdl:input message="tns:GetCBOMV3SoapIn" />
+      <wsdl:output message="tns:GetCBOMV3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloKitty">
+      <wsdl:input message="tns:HelloKittySoapIn" />
+      <wsdl:output message="tns:HelloKittySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MyCBOMDALHttpGet">
+    <wsdl:operation name="GetCBOMCatalog">
+      <wsdl:input message="tns:GetCBOMCatalogHttpGetIn" />
+      <wsdl:output message="tns:GetCBOMCatalogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM">
+      <wsdl:input message="tns:GetCBOMHttpGetIn" />
+      <wsdl:output message="tns:GetCBOMHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogList">
+      <wsdl:input message="tns:getCatalogListHttpGetIn" />
+      <wsdl:output message="tns:getCatalogListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogLocalName">
+      <wsdl:input message="tns:getCatalogLocalNameHttpGetIn" />
+      <wsdl:output message="tns:getCatalogLocalNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCBOMList">
+      <wsdl:input message="tns:getCBOMListHttpGetIn" />
+      <wsdl:output message="tns:getCBOMListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBTOParentList">
+      <wsdl:input message="tns:getBTOParentListHttpGetIn" />
+      <wsdl:output message="tns:getBTOParentListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM2">
+      <wsdl:input message="tns:GetCBOM2HttpGetIn" />
+      <wsdl:output message="tns:GetCBOM2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeteStoreCBOM">
+      <wsdl:input message="tns:GeteStoreCBOMHttpGetIn" />
+      <wsdl:output message="tns:GeteStoreCBOMHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOMV3">
+      <wsdl:input message="tns:GetCBOMV3HttpGetIn" />
+      <wsdl:output message="tns:GetCBOMV3HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloKitty">
+      <wsdl:input message="tns:HelloKittyHttpGetIn" />
+      <wsdl:output message="tns:HelloKittyHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MyCBOMDALHttpPost">
+    <wsdl:operation name="GetCBOMCatalog">
+      <wsdl:input message="tns:GetCBOMCatalogHttpPostIn" />
+      <wsdl:output message="tns:GetCBOMCatalogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM">
+      <wsdl:input message="tns:GetCBOMHttpPostIn" />
+      <wsdl:output message="tns:GetCBOMHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogList">
+      <wsdl:input message="tns:getCatalogListHttpPostIn" />
+      <wsdl:output message="tns:getCatalogListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogLocalName">
+      <wsdl:input message="tns:getCatalogLocalNameHttpPostIn" />
+      <wsdl:output message="tns:getCatalogLocalNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCBOMList">
+      <wsdl:input message="tns:getCBOMListHttpPostIn" />
+      <wsdl:output message="tns:getCBOMListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBTOParentList">
+      <wsdl:input message="tns:getBTOParentListHttpPostIn" />
+      <wsdl:output message="tns:getBTOParentListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM2">
+      <wsdl:input message="tns:GetCBOM2HttpPostIn" />
+      <wsdl:output message="tns:GetCBOM2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeteStoreCBOM">
+      <wsdl:input message="tns:GeteStoreCBOMHttpPostIn" />
+      <wsdl:output message="tns:GeteStoreCBOMHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOMV3">
+      <wsdl:input message="tns:GetCBOMV3HttpPostIn" />
+      <wsdl:output message="tns:GetCBOMV3HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloKitty">
+      <wsdl:input message="tns:HelloKittyHttpPostIn" />
+      <wsdl:output message="tns:HelloKittyHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyCBOMDALSoap" type="tns:MyCBOMDALSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCBOMCatalog">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GetCBOMCatalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GetCBOM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogList">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/getCatalogList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogLocalName">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/getCatalogLocalName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCBOMList">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/getCBOMList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBTOParentList">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/getBTOParentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM2">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GetCBOM2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeteStoreCBOM">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GeteStoreCBOM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOMV3">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GetCBOMV3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloKitty">
+      <soap:operation soapAction="MyAdvantech.SAP.DataAccessLayer/HelloKitty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyCBOMDALSoap12" type="tns:MyCBOMDALSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCBOMCatalog">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GetCBOMCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GetCBOM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogList">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/getCatalogList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogLocalName">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/getCatalogLocalName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCBOMList">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/getCBOMList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBTOParentList">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/getBTOParentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM2">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GetCBOM2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeteStoreCBOM">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GeteStoreCBOM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOMV3">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/GetCBOMV3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloKitty">
+      <soap12:operation soapAction="MyAdvantech.SAP.DataAccessLayer/HelloKitty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyCBOMDALHttpGet" type="tns:MyCBOMDALHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetCBOMCatalog">
+      <http:operation location="/GetCBOMCatalog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM">
+      <http:operation location="/GetCBOM" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogList">
+      <http:operation location="/getCatalogList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogLocalName">
+      <http:operation location="/getCatalogLocalName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCBOMList">
+      <http:operation location="/getCBOMList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBTOParentList">
+      <http:operation location="/getBTOParentList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM2">
+      <http:operation location="/GetCBOM2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeteStoreCBOM">
+      <http:operation location="/GeteStoreCBOM" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOMV3">
+      <http:operation location="/GetCBOMV3" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloKitty">
+      <http:operation location="/HelloKitty" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyCBOMDALHttpPost" type="tns:MyCBOMDALHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetCBOMCatalog">
+      <http:operation location="/GetCBOMCatalog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM">
+      <http:operation location="/GetCBOM" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogList">
+      <http:operation location="/getCatalogList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCatalogLocalName">
+      <http:operation location="/getCatalogLocalName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCBOMList">
+      <http:operation location="/getCBOMList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBTOParentList">
+      <http:operation location="/getBTOParentList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOM2">
+      <http:operation location="/GetCBOM2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeteStoreCBOM">
+      <http:operation location="/GeteStoreCBOM" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCBOMV3">
+      <http:operation location="/GetCBOMV3" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloKitty">
+      <http:operation location="/HelloKitty" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyCBOMDAL">
+    <wsdl:port name="MyCBOMDALSoap" binding="tns:MyCBOMDALSoap">
+      <soap:address location="http://my.advantech.com/Services/MyCBOMDAL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MyCBOMDALSoap12" binding="tns:MyCBOMDALSoap12">
+      <soap12:address location="http://my.advantech.com/Services/MyCBOMDAL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MyCBOMDALHttpGet" binding="tns:MyCBOMDALHttpGet">
+      <http:address location="http://my.advantech.com/Services/MyCBOMDAL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MyCBOMDALHttpPost" binding="tns:MyCBOMDALHttpPost">
+      <http:address location="http://my.advantech.com/Services/MyCBOMDAL.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

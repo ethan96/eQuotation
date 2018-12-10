@@ -1,0 +1,92 @@
+﻿@model eQuotation.Models.Admin.AppUserViewModel
+
+@if (Model != null)
+{
+    using (Ajax.BeginForm("NewUsers", "admin", null,
+    new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        OnBegin = "onNewUserBegin",
+        OnSuccess = "onNewUserSuccess"
+    }, new { @id = "frmNewUser" }))
+    {
+        <div class="modal-action">
+            <ul>
+                <li><button type="submit" class="clear"><i class="fa fa-floppy-o"></i> Submit</button></li>
+                <li><a id="close-newuser"><i class="fa fa-times"></i> Close</a></li>
+            </ul>
+        </div>
+        <div class="modal-content">
+            <table class="modal-form">
+                <thead>
+                    <tr>
+                        <td class="fieldtext">User Email</td> 
+                        <td class="fieldtext">User Role</td> 
+                        <td class="fieldtext"></td>
+                    </tr>
+                </thead>
+                <tbody id="userList">
+                    <tr class="userRow">
+                        <td><input type="text" name="UsersList[0].Email" class="userEmail" /></td>
+                        @*<td>@Html.TextBoxFor(mdl => mdl.UsersList[0].Email, new { @class = "userEmail" })</td>*@
+                        @*<td>@Html.DropDownListFor(mdl => mdl.UsersList[0].Roles.ToList()[0].RoleId, Model.RegionRoleNames, new { @class = "clsddRole" })</td>*@
+
+                        <td>
+                            <select name="UsersList[0].Roles.ToList()[0].RoleId" class="clsddRole">
+                                @foreach (SelectListItem item in Model.RegionRoleNames)
+                                {
+                                    <option value="@item.Value">@item.Text</option>
+                                }
+                            </select>
+                        </td>
+                        <td><a href="javascript:void(0);" class="remRow"><i class="icon-remove-sign"></i></a></td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <p>
+                <a href="javascript:void(0);" class="addRow">Add item</a>
+            </p>
+        </div>
+    }
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("a#close-newuser").on("click", function () {
+            $.modal.close();
+        });
+
+
+        $(".addRow").click(function () {
+
+            var rowCount = $('.userRow').length;
+            $("#userList").append('<tr class="userRow"><td><input type="text" name="UsersList[' + rowCount + '].Roles.ToList()[0].RoleId" class="userEmail" /></td><td><select name="UsersList[' + rowCount + '].Roles" class="clsddRole">@foreach (SelectListItem item in Model.RegionRoleNames){<option value="@item.Value">@item.Text</option>}</select></td><td><a href="javascript:void(0);" class="remRow"><i class="icon-remove-sign"></i></a></td>');
+        });
+
+        $("#userList").on('click', '.remRow', function () {
+
+            $(this).closest('.userRow').remove();
+
+            //$('.phoneType').each(function (index) {
+            //    $(this).attr('name', 'Phones[' + index + '].Type');
+            //});
+
+            $('.userEmail').each(function (index) {
+                $(this).attr('name', 'UsersList[' + index + '].Email');
+            });
+        })
+    });
+
+    //called on submit begin
+    function onNewUserBegin() { $.blockUI(); }
+
+    //called on return value
+    function onNewUserSuccess(data) {
+        $.pushHTML(data, function () {
+            $.modal.close(); $("#wrapper-content").html(data);
+        });
+        $.unblockUI();
+    }
+</script>

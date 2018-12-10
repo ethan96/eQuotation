@@ -1,0 +1,40 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+
+<div class="main-content">
+
+    @Html.Partial("ABB_QuoteHeader", @Model)
+    @Html.Partial("ABB_QuoteDetails", @Model)
+
+    <table>
+        <tr>
+            <td>
+                <b>Shipping Method/Condition</b>:&nbsp;&nbsp;<span>UPS 2DAY AIR</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @foreach (var p in Model.QuotationPartner)
+                {
+                    if (p.TYPE.IndexOf("BB_Extra") > -1)
+                    {
+                        @p.NAME<br />
+                    }
+                }
+            </td>
+        </tr>
+    </table>
+    <p style="page-break-after:always"></p>
+
+    <div style="height: 100px; text-align: center;">
+        By accepting this Quotation with a corresponding order, Customer agrees to the attached terms and conditions<br />
+        <div style="width: 100%; padding-left: 5px; border-color: #D4D0C8; border-width: 2px; border-style: inset; line-height:normal; text-align: left; background-color: white;">
+            @{
+                var tc = new HtmlString(Model.QuoteTemplateInformation.RBUTermsAndCondition);
+            }
+            <span>@tc</span>
+        </div>
+    </div>
+</div>
+
+
+

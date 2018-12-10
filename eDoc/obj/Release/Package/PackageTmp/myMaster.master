@@ -1,0 +1,178 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="myMaster.master.vb"
+    Inherits="EDOC.myMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Advantech eQuotation</title>
+    <link id="MAjax" href="css\Ajax.css" rel="stylesheet" type="text/css" />
+    <link id="MStyle" href="css\stylesheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="50" EnablePageMethods="true">
+    </asp:ScriptManager>
+    <link href="<%=Util.GetRuntimeSiteUrl() %>/Css/JqueryUI.css" rel="stylesheet" type="text/css" />
+    <script src="<%=Util.GetRuntimeSiteUrl() %>/Js/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="<%=Util.GetRuntimeSiteUrl() %>/Js/jquery-ui.js" type="text/javascript"></script>
+    <script src="<%=Util.GetRuntimeSiteUrl() %>/Js/SiteUtil.js" type="text/javascript"></script>
+    <script src="<%=Util.GetRuntimeSiteUrl() %>/Js/json2.js" type="text/javascript"></script>
+     <div id="loading" > </div>
+    <div id="divMasterAlertWindow" style="display: none;">
+        <center>
+            <b style="color: #E35838; text-align:left;float:left;" class="errMsg"></b>
+        </center>
+    </div>
+    <div>
+        <asp:Panel ID="PLGMsg" runat="server" Style="display: none;" CssClass="modalPopup">
+            <div style="text-align: right;">
+                <asp:ImageButton ID="CancelGMsg" runat="server" ImageUrl="~/Images/del.gif" />
+            </div>
+            <fieldset style="margin-top: 3%; width: 400px; font-size: 12px; color: #666666">
+                <legend style="font-weight: bold; font-size: 14px">Message:</legend>
+                <asp:HiddenField runat="server" ID="hDestUrl" />
+                <table style="width: 396px">
+                    <tr>
+                        <td>
+                            <asp:UpdatePanel runat="server" ID="upGMsg" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <div runat="server" id="DivGMsg" style="color: #FF6633">
+                                    </div>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <br />
+        </asp:Panel>
+        <asp:LinkButton ID="lbGMsg" runat="server" />
+        <ajaxToolkit:ModalPopupExtender ID="MPGMsg" runat="server" TargetControlID="lbGMsg" OnCancelScript="msgCancelScript();"
+            PopupControlID="PLGMsg" BackgroundCssClass="modalBackground" CancelControlID="CancelGMsg" />
+        <ajaxToolkit:AlwaysVisibleControlExtender ID="AlwaysVisibleControlExtender1" runat="server"
+            TargetControlID="UpdateProgress2" HorizontalSide="Center" VerticalSide="Top"
+            HorizontalOffset="0" />
+        <asp:UpdateProgress DynamicLayout="false" ID="UpdateProgress2" runat="server">
+            <ProgressTemplate>
+                <div class="Progress">
+                    <asp:Image runat="server" ID="imgMasterLoad" ImageUrl="~/Images/LoadingRed.gif" />
+                    <b>Loading ...</b>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+        <table id="titleTB" style="background-color: #ffffff;">
+            <tr>
+                <td align="left" style="border: 0px">
+                    <asp:ImageButton runat="server" ImageUrl="~/Images/logo.GIF" ID="imgLogo" OnClick="imgLogo_Click" />
+                </td>
+                <td align="right" valign="bottom" style="border: 0px">
+                    <table>
+                        <tr>
+                            <td align="right" style="border: 0">
+                                <table border="1" style="border: 0;width: 400px">
+                                    <tr>
+                                        <td nowrap="nowrap" style="border: 0px" align="right">
+                                            <b>User Id:</b>&nbsp;&nbsp;<asp:Label runat="server" ID="lbUID" />
+                                        </td>
+                                        <td runat="server" id="tdQuoteid" visible="false" nowrap="nowrap" style="border: 0px" align="right">
+                                            <b>Quote No:</b>&nbsp;&nbsp;<%--<asp:Label runat="server" ID="lbQuoteid" Font-Bold="true"
+                                                ForeColor="Tomato" />--%>
+                                            <asp:HyperLink ID="HyperLinkQuoteNo" runat="server" Text="" NavigateUrl="" />
+                                        </td>
+                                        <td runat="server" id="tdQuoteDate" visible="false" nowrap="nowrap" style="border: 0px" align="right">
+                                            <b>Quote Date:</b>&nbsp;&nbsp;<asp:Label runat="server" ID="lbQuoteDate" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="border: 0">
+                                <table runat="server" id="TableTopLink" style="width: 200px">
+                                    <tr align="right">
+                                        <td>
+                                            <asp:HyperLink runat="server" ID="hyEQHome" NavigateUrl="~/Home.aspx" Text="Home" />
+                                        </td>
+                                        <td runat="server" id="tdMyAOnlineWall" visible="false">
+                                            <asp:HyperLink runat="server" ID="hyMyAOnlineWall" NavigateUrl="~/Home_MyAOnlineWall.aspx"
+                                                Text="My AOnline Wall" />
+                                        </td>
+                                        <td>
+                                            <asp:LinkButton ID="IdMyAdvantech" runat="server" ForeColor="#333333" Text="MyAdvantech"
+                                                OnClick="IdMyAdvantech_Click" />
+                                        </td>
+                                        <td>
+                                            <asp:LinkButton ID="lbLogIn" runat="server" OnClick="lbLogIn_Click" ForeColor="#666666"
+                                                Text="<%$ Resources:myRs,Login %>" Visible="false" />
+                                            <asp:LinkButton ID="lbLogOut" runat="server" OnClick="lbLogOut_Click" ForeColor="#666666"
+                                                Text="<%$ Resources:myRs,Logout%>" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <%--<table><tr><td>Change Reg:</td><td><asp:DropDownList runat="server" ID="drpReg"></asp:DropDownList></td></tr></table>--%>
+        <table>
+            <tr>
+                <td id="tdMenu" runat="server" valign="top" style="border: 0px; width: 0px; background-image: url(/images/BBBG.GIF);
+                    background-repeat: no-repeat; background-position: left bottom">
+                    <%--<myASCX:Dmenu ID="ascxDmenu" runat="server" />--%>
+                </td>
+                <td style="width: 1px; padding: 2px;">
+                    <asp:Image runat="server" ID="imgVertebrae" ImageUrl="~/images/Vertebrae.gif" Width="1px" />
+                </td>
+                <td valign="top" style="border: 0px">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+        <div id="AlertDiv" style="visibility: hidden">
+            <div id="AlertMessage">
+            </div>
+            <br />
+            <div id="AlertButtons">
+                <input id="OKButton" type="button" value="OK" runat="server" onclick="ClearErrorState()" />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" language="javascript">
+   
+        function banBackSpace(e) {
+            var ev = e || window.event;
+            var obj = ev.target || ev.srcElement;
+            var t = obj.type || obj.getAttribute('type');
+            var vReadOnly = obj.readOnly;
+            var vDisabled = obj.disabled;
+            vReadOnly = (vReadOnly == undefined) ? false : vReadOnly;
+            vDisabled = (vDisabled == undefined) ? true : vDisabled;
+            var flag1 = ev.keyCode == 8 && (t == "password" || t == "text" || t == "textarea") && (vReadOnly == true || vDisabled == true);
+            var flag2 = ev.keyCode == 8 && t != "password" && t != "text" && t != "textarea";
+            if (flag2 || flag1) return false;
+        }
+        document.onkeypress = banBackSpace;
+        document.onkeydown = banBackSpace;
+
+        function msgCancelScript() {
+            var desturl = document.getElementById('<%=Me.hDestUrl.ClientID %>')
+            if (typeof (desturl) != 'undefined') {
+                if (desturl.value.toLowerCase == "back") {
+                    history.go(-1);
+                }
+                if (desturl.value != '') {
+                location.href = desturl.value;
+                }
+            
+            }
+        }
+    </script>
+    </form>
+</body>
+</html>

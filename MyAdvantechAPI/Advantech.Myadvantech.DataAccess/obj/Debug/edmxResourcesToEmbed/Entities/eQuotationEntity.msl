@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdvantechMyadvantechDataAccessStoreContainer" CdmEntityContainer="eQEntities">
+    <EntitySetMapping Name="GPBLOCK_LOGIC">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.GPBLOCK_LOGIC">
+        <MappingFragment StoreEntitySet="GPBLOCK_LOGIC">
+          <ScalarProperty Name="Office_code" ColumnName="Office_code" />
+          <ScalarProperty Name="office_name" ColumnName="office_name" />
+          <ScalarProperty Name="group_code" ColumnName="group_code" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="gp_level" ColumnName="gp_level" />
+          <ScalarProperty Name="approver" ColumnName="approver" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuotationMaster">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationMaster">
+        <MappingFragment StoreEntitySet="QuotationMaster">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Revision_Number" ColumnName="Revision_Number" />
+          <ScalarProperty Name="quoteNo" ColumnName="quoteNo" />
+          <ScalarProperty Name="TRIANGULARINDICATOR" ColumnName="TRIANGULARINDICATOR" />
+          <ScalarProperty Name="TAXDSTCITY" ColumnName="TAXDSTCITY" />
+          <ScalarProperty Name="TAXDEPCITY" ColumnName="TAXDEPCITY" />
+          <ScalarProperty Name="TAXCLASS" ColumnName="TAXCLASS" />
+          <ScalarProperty Name="SHIPCUSTPONO" ColumnName="SHIPCUSTPONO" />
+          <ScalarProperty Name="isVirPartOnly" ColumnName="isVirPartOnly" />
+          <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+          <ScalarProperty Name="KEYPERSON" ColumnName="KEYPERSON" />
+          <ScalarProperty Name="PODate" ColumnName="PODate" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="DocRealType" ColumnName="DocRealType" />
+          <ScalarProperty Name="IS_EARLYSHIP" ColumnName="IS_EARLYSHIP" />
+          <ScalarProperty Name="Partial" ColumnName="Partial" />
+          <ScalarProperty Name="DOCSTATUS" ColumnName="DOCSTATUS" />
+          <ScalarProperty Name="reqDate" ColumnName="reqDate" />
+          <ScalarProperty Name="DocType" ColumnName="DocType" />
+          <ScalarProperty Name="DocReg" ColumnName="DocReg" />
+          <ScalarProperty Name="OriginalQuoteID" ColumnName="OriginalQuoteID" />
+          <ScalarProperty Name="PRINTOUT_FORMAT" ColumnName="PRINTOUT_FORMAT" />
+          <ScalarProperty Name="INCO2" ColumnName="INCO2" />
+          <ScalarProperty Name="INCO1" ColumnName="INCO1" />
+          <ScalarProperty Name="isExempt" ColumnName="isExempt" />
+          <ScalarProperty Name="CARE_ON" ColumnName="CARE_ON" />
+          <ScalarProperty Name="PO_NO" ColumnName="PO_NO" />
+          <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+          <ScalarProperty Name="SALESOFFICE" ColumnName="SALESOFFICE" />
+          <ScalarProperty Name="SALESGROUP" ColumnName="SALESGROUP" />
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+          <ScalarProperty Name="DIST_CHAN" ColumnName="DIST_CHAN" />
+          <ScalarProperty Name="siebelRBU" ColumnName="siebelRBU" />
+          <ScalarProperty Name="org" ColumnName="org" />
+          <ScalarProperty Name="DelDateFlag" ColumnName="DelDateFlag" />
+          <ScalarProperty Name="ogroup" ColumnName="ogroup" />
+          <ScalarProperty Name="isRepeatedOrder" ColumnName="isRepeatedOrder" />
+          <ScalarProperty Name="isLumpSumOnly" ColumnName="isLumpSumOnly" />
+          <ScalarProperty Name="isShowDueDate" ColumnName="isShowDueDate" />
+          <ScalarProperty Name="isShowDiscount" ColumnName="isShowDiscount" />
+          <ScalarProperty Name="isShowListPrice" ColumnName="isShowListPrice" />
+          <ScalarProperty Name="qstatus" ColumnName="qstatus" />
+          <ScalarProperty Name="preparedBy" ColumnName="preparedBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="relatedInfo" ColumnName="relatedInfo" />
+          <ScalarProperty Name="quoteNote" ColumnName="quoteNote" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="specialCharge" ColumnName="specialCharge" />
+          <ScalarProperty Name="insurance" ColumnName="insurance" />
+          <ScalarProperty Name="freight" ColumnName="freight" />
+          <ScalarProperty Name="paymentTerm" ColumnName="paymentTerm" />
+          <ScalarProperty Name="shipTerm" ColumnName="shipTerm" />
+          <ScalarProperty Name="expiredDate" ColumnName="expiredDate" />
+          <ScalarProperty Name="deliveryDate" ColumnName="deliveryDate" />
+          <ScalarProperty Name="quoteDate" ColumnName="quoteDate" />
+          <ScalarProperty Name="bankInfo" ColumnName="bankInfo" />
+          <ScalarProperty Name="attentionEmail" ColumnName="attentionEmail" />
+          <ScalarProperty Name="attentionRowId" ColumnName="attentionRowId" />
+          <ScalarProperty Name="directPhone" ColumnName="directPhone" />
+          <ScalarProperty Name="salesRowId" ColumnName="salesRowId" />
+          <ScalarProperty Name="salesEmail" ColumnName="salesEmail" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="office" ColumnName="office" />
+          <ScalarProperty Name="quoteToName" ColumnName="quoteToName" />
+          <ScalarProperty Name="quoteToErpId" ColumnName="quoteToErpId" />
+          <ScalarProperty Name="quoteToRowId" ColumnName="quoteToRowId" />
+          <ScalarProperty Name="customId" ColumnName="customId" />
+          <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quotation_Approval_Expiration">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.Quotation_Approval_Expiration">
+        <MappingFragment StoreEntitySet="Quotation_Approval_Expiration">
+          <ScalarProperty Name="ApprovalFlowType" ColumnName="ApprovalFlowType" />
+          <ScalarProperty Name="ApprovalFrom" ColumnName="ApprovalFrom" />
+          <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+          <ScalarProperty Name="MobileApproveNo" ColumnName="MobileApproveNo" />
+          <ScalarProperty Name="MobileApproveYes" ColumnName="MobileApproveYes" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+          <ScalarProperty Name="GPlever" ColumnName="GPlever" />
+          <ScalarProperty Name="Approver" ColumnName="Approver" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuotationExtension">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationExtension">
+        <MappingFragment StoreEntitySet="QuotationExtension">
+          <ScalarProperty Name="CopyPurpose" ColumnName="CopyPurpose" />
+          <ScalarProperty Name="JPCustomerOffice" ColumnName="JPCustomerOffice" />
+          <ScalarProperty Name="ABRQuoteType" ColumnName="ABRQuoteType" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="AuditType" ColumnName="AuditType" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="ApprovalFlowType" ColumnName="ApprovalFlowType" />
+          <ScalarProperty Name="IsShowFreight" ColumnName="IsShowFreight" />
+          <ScalarProperty Name="IsShowTotal" ColumnName="IsShowTotal" />
+          <ScalarProperty Name="ExpressCompany" ColumnName="ExpressCompany" />
+          <ScalarProperty Name="QuoteSource" ColumnName="QuoteSource" />
+          <ScalarProperty Name="Engineer_Telephone" ColumnName="Engineer_Telephone" />
+          <ScalarProperty Name="Engineer" ColumnName="Engineer" />
+          <ScalarProperty Name="SignatureRowID" ColumnName="SignatureRowID" />
+          <ScalarProperty Name="SpecialTandC" ColumnName="SpecialTandC" />
+          <ScalarProperty Name="EmailGreeting" ColumnName="EmailGreeting" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailGreeting">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.EmailGreeting">
+        <MappingFragment StoreEntitySet="EmailGreeting">
+          <ScalarProperty Name="Greeting" ColumnName="Greeting" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="optyQuote">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.optyQuote">
+        <MappingFragment StoreEntitySet="optyQuote">
+          <ScalarProperty Name="processId" ColumnName="processId" />
+          <ScalarProperty Name="Opty_Owner_Email" ColumnName="Opty_Owner_Email" />
+          <ScalarProperty Name="optyStage" ColumnName="optyStage" />
+          <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+          <ScalarProperty Name="optyName" ColumnName="optyName" />
+          <ScalarProperty Name="optyId" ColumnName="optyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quoteSiebelQuote">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.quoteSiebelQuote">
+        <MappingFragment StoreEntitySet="quoteSiebelQuote">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="processId" ColumnName="processId" />
+          <ScalarProperty Name="siebelQuoteId" ColumnName="siebelQuoteId" />
+          <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiebelWSFailedLog">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.SiebelWSFailedLog">
+        <MappingFragment StoreEntitySet="SiebelWSFailedLog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LastRecallTime" ColumnName="LastRecallTime" />
+          <ScalarProperty Name="IsRecall" ColumnName="IsRecall" />
+          <ScalarProperty Name="InsertTime" ColumnName="InsertTime" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+          <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+          <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiebelActive">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.SiebelActive">
+        <MappingFragment StoreEntitySet="SiebelActive">
+          <ScalarProperty Name="WSParameters" ColumnName="WSParameters" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ContactRowId" ColumnName="ContactRowId" />
+          <ScalarProperty Name="SendToMails" ColumnName="SendToMails" />
+          <ScalarProperty Name="Greeting" ColumnName="Greeting" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="FailedLog" ColumnName="FailedLog" />
+          <ScalarProperty Name="OptyOwnerEmail" ColumnName="OptyOwnerEmail" />
+          <ScalarProperty Name="OptyStage" ColumnName="OptyStage" />
+          <ScalarProperty Name="OptyName" ColumnName="OptyName" />
+          <ScalarProperty Name="OptyID" ColumnName="OptyID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ActiveType" ColumnName="ActiveType" />
+          <ScalarProperty Name="ActiveSource" ColumnName="ActiveSource" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteApproval">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuoteApproval">
+        <MappingFragment StoreEntitySet="QuoteApproval">
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="WorkFlowID" ColumnName="WorkFlowID" />
+          <ScalarProperty Name="Mailbody" ColumnName="Mailbody" />
+          <ScalarProperty Name="ApprovedReason" ColumnName="ApprovedReason" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="RejectReason" ColumnName="RejectReason" />
+          <ScalarProperty Name="RejectedDate" ColumnName="RejectedDate" />
+          <ScalarProperty Name="RejectedBy" ColumnName="RejectedBy" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="MobileYes" ColumnName="MobileYes" />
+          <ScalarProperty Name="IsSendSuccessfully" ColumnName="IsSendSuccessfully" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LevelNum" ColumnName="LevelNum" />
+          <ScalarProperty Name="GPBrief" ColumnName="GPBrief" />
+          <ScalarProperty Name="Approver" ColumnName="Approver" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="UID" ColumnName="UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AJP_ConfiguratorTerms">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.AJP_ConfiguratorTerms">
+        <MappingFragment StoreEntitySet="AJP_ConfiguratorTerms">
+          <ScalarProperty Name="IFS_SOP" ColumnName="IFS_SOP" />
+          <ScalarProperty Name="FINAL_SWSummary" ColumnName="FINAL_SWSummary" />
+          <ScalarProperty Name="FINAL_HWSummary" ColumnName="FINAL_HWSummary" />
+          <ScalarProperty Name="SW_Others" ColumnName="SW_Others" />
+          <ScalarProperty Name="SW_Settings" ColumnName="SW_Settings" />
+          <ScalarProperty Name="SW_IP_Settings" ColumnName="SW_IP_Settings" />
+          <ScalarProperty Name="SW_OS_Input" ColumnName="SW_OS_Input" />
+          <ScalarProperty Name="SW_OS_Timezone" ColumnName="SW_OS_Timezone" />
+          <ScalarProperty Name="SW_Username" ColumnName="SW_Username" />
+          <ScalarProperty Name="SW_OS_Installation" ColumnName="SW_OS_Installation" />
+          <ScalarProperty Name="HW_Others" ColumnName="HW_Others" />
+          <ScalarProperty Name="HW_OS_Activation" ColumnName="HW_OS_Activation" />
+          <ScalarProperty Name="HW_OS_License" ColumnName="HW_OS_License" />
+          <ScalarProperty Name="HW_BIOS" ColumnName="HW_BIOS" />
+          <ScalarProperty Name="HW_Cable" ColumnName="HW_Cable" />
+          <ScalarProperty Name="HW_Disk_Division" ColumnName="HW_Disk_Division" />
+          <ScalarProperty Name="HW_SATA" ColumnName="HW_SATA" />
+          <ScalarProperty Name="HW_Storage" ColumnName="HW_Storage" />
+          <ScalarProperty Name="HW_COMUSB" ColumnName="HW_COMUSB" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQPARTNER">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.EQPARTNER">
+        <MappingFragment StoreEntitySet="EQPARTNER">
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="STREET2" ColumnName="STREET2" />
+          <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="ATTENTION" ColumnName="ATTENTION" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ERPID" ColumnName="ERPID" />
+          <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+          <ScalarProperty Name="QUOTEID" ColumnName="QUOTEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACN_EQ_PSM">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.ACN_EQ_PSM">
+        <MappingFragment StoreEntitySet="ACN_EQ_PSM">
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="PSM" ColumnName="PSM" />
+          <ScalarProperty Name="ProductDivision" ColumnName="ProductDivision" />
+          <ScalarProperty Name="PG" ColumnName="PG" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACN_EQ_Sales">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.ACN_EQ_Sales">
+        <MappingFragment StoreEntitySet="ACN_EQ_Sales">
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="ApproverEmail" ColumnName="ApproverEmail" />
+          <ScalarProperty Name="SalesEmail" ColumnName="SalesEmail" />
+          <ScalarProperty Name="IdSBU" ColumnName="IdSBU" />
+          <ScalarProperty Name="SalesCode" ColumnName="SalesCode" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegionSectorParameter">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.RegionSectorParameter">
+        <MappingFragment StoreEntitySet="RegionSectorParameter">
+          <ScalarProperty Name="ParaValue" ColumnName="ParaValue" />
+          <ScalarProperty Name="ParaDesc" ColumnName="ParaDesc" />
+          <ScalarProperty Name="SiteParameter" ColumnName="SiteParameter" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuotationDetail">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationDetail">
+        <MappingFragment StoreEntitySet="QuotationDetail">
+          <ScalarProperty Name="NCNR" ColumnName="NCNR" />
+          <ScalarProperty Name="SequenceNo" ColumnName="SequenceNo" />
+          <ScalarProperty Name="DisplayLineNo" ColumnName="DisplayLineNo" />
+          <ScalarProperty Name="DisplayQty" ColumnName="DisplayQty" />
+          <ScalarProperty Name="DisplayUnitPrice" ColumnName="DisplayUnitPrice" />
+          <ScalarProperty Name="RECFIGID" ColumnName="RECFIGID" />
+          <ScalarProperty Name="StorageLoc" ColumnName="StorageLoc" />
+          <ScalarProperty Name="ShipPoint" ColumnName="ShipPoint" />
+          <ScalarProperty Name="DELIVERYGROUP" ColumnName="DELIVERYGROUP" />
+          <ScalarProperty Name="VirtualPartNo" ColumnName="VirtualPartNo" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="DMF_Flag" ColumnName="DMF_Flag" />
+          <ScalarProperty Name="HigherLevel" ColumnName="HigherLevel" />
+          <ScalarProperty Name="sprNo" ColumnName="sprNo" />
+          <ScalarProperty Name="modelNo" ColumnName="modelNo" />
+          <ScalarProperty Name="oType" ColumnName="oType" />
+          <ScalarProperty Name="inventory" ColumnName="inventory" />
+          <ScalarProperty Name="custMaterial" ColumnName="custMaterial" />
+          <ScalarProperty Name="canBeConfirmed" ColumnName="canBeConfirmed" />
+          <ScalarProperty Name="satisfyFlag" ColumnName="satisfyFlag" />
+          <ScalarProperty Name="dueDate" ColumnName="dueDate" />
+          <ScalarProperty Name="reqDate" ColumnName="reqDate" />
+          <ScalarProperty Name="ewFlag" ColumnName="ewFlag" />
+          <ScalarProperty Name="rohs" ColumnName="rohs" />
+          <ScalarProperty Name="classABC" ColumnName="classABC" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="deliveryPlant" ColumnName="deliveryPlant" />
+          <ScalarProperty Name="RecyclingFee" ColumnName="RecyclingFee" />
+          <ScalarProperty Name="newItp" ColumnName="newItp" />
+          <ScalarProperty Name="itp" ColumnName="itp" />
+          <ScalarProperty Name="newUnitPrice" ColumnName="newUnitPrice" />
+          <ScalarProperty Name="unitPrice" ColumnName="unitPrice" />
+          <ScalarProperty Name="listPrice" ColumnName="listPrice" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="partNo" ColumnName="partNo" />
+          <ScalarProperty Name="line_No" ColumnName="line_No" />
+          <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACN_Executive">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.ACN_Executive">
+        <MappingFragment StoreEntitySet="ACN_Executive">
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkFlowApproval">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.WorkFlowApproval">
+        <MappingFragment StoreEntitySet="WorkFlowApproval">
+          <ScalarProperty Name="FinalMailBody" ColumnName="FinalMailBody" />
+          <ScalarProperty Name="ViewGP" ColumnName="ViewGP" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="WorkFlowID" ColumnName="WorkFlowID" />
+          <ScalarProperty Name="Mailbody" ColumnName="Mailbody" />
+          <ScalarProperty Name="ApprovedReason" ColumnName="ApprovedReason" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="RejectReason" ColumnName="RejectReason" />
+          <ScalarProperty Name="RejectedDate" ColumnName="RejectedDate" />
+          <ScalarProperty Name="RejectedBy" ColumnName="RejectedBy" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="MobileYes" ColumnName="MobileYes" />
+          <ScalarProperty Name="IsSendSuccessfully" ColumnName="IsSendSuccessfully" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LevelNum" ColumnName="LevelNum" />
+          <ScalarProperty Name="ApproverType" ColumnName="ApproverType" />
+          <ScalarProperty Name="Approver" ColumnName="Approver" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="UID" ColumnName="UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuotationExtensionNew">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationExtensionNew">
+        <MappingFragment StoreEntitySet="QuotationExtensionNew">
+          <ScalarProperty Name="BelowGP" ColumnName="BelowGP" />
+          <ScalarProperty Name="NewExpiredDate" ColumnName="NewExpiredDate" />
+          <ScalarProperty Name="CompanyTitle" ColumnName="CompanyTitle" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="GeneralRate" ColumnName="GeneralRate" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuotationDetail_Extension_ABR">
+      <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationDetail_Extension_ABR">
+        <MappingFragment StoreEntitySet="QuotationDetail_Extension_ABR">
+          <ScalarProperty Name="BX10" ColumnName="BX10" />
+          <ScalarProperty Name="BX40" ColumnName="BX40" />
+          <ScalarProperty Name="FK00" ColumnName="FK00" />
+          <ScalarProperty Name="NCM" ColumnName="NCM" />
+          <ScalarProperty Name="BPI1" ColumnName="BPI1" />
+          <ScalarProperty Name="BCO1" ColumnName="BCO1" />
+          <ScalarProperty Name="ISTS" ColumnName="ISTS" />
+          <ScalarProperty Name="ISIC" ColumnName="ISIC" />
+          <ScalarProperty Name="IPVA" ColumnName="IPVA" />
+          <ScalarProperty Name="ICVA" ColumnName="ICVA" />
+          <ScalarProperty Name="BX96" ColumnName="BX96" />
+          <ScalarProperty Name="BX95" ColumnName="BX95" />
+          <ScalarProperty Name="BX94" ColumnName="BX94" />
+          <ScalarProperty Name="PartNo" ColumnName="PartNo" />
+          <ScalarProperty Name="BX82" ColumnName="BX82" />
+          <ScalarProperty Name="BX72" ColumnName="BX72" />
+          <ScalarProperty Name="BX41" ColumnName="BX41" />
+          <ScalarProperty Name="BX23" ColumnName="BX23" />
+          <ScalarProperty Name="BX13" ColumnName="BX13" />
+          <ScalarProperty Name="line_No" ColumnName="line_No" />
+          <ScalarProperty Name="quoteid" ColumnName="quoteid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

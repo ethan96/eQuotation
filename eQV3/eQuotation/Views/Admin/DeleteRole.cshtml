@@ -1,0 +1,61 @@
+﻿@model eQuotation.Models.Admin.AppRoleViewModel
+
+@if (Model != null)
+{
+    using (Ajax.BeginForm("DeleteRole", "Admin", null,
+        new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            OnBegin = "onDeleteRoleBegin",
+            OnSuccess = "onDeleteRoleSuccess"
+        }))
+    {
+    @Html.HiddenFor(mdl => mdl.Role.Id)
+    <div class="modal-action">
+        <ul>
+            <li><button type="submit" class="clear"><i class="fa fa-trash-o"></i> Delete</button></li>
+            <li><a id="close-deleterole"><i class="fa fa-times"></i> Close</a></li>
+        </ul>
+    </div>         
+        
+    <div class="modal-content">
+        <div class="newrole">
+            <div><span>Org:</span></div>
+            <div>@Html.TextBoxFor(mdl => mdl.Role.Region, new { @readonly = "readonly" })</div>
+            @*<div><span>Sector:</span></div>
+            <div>@Html.TextBoxFor(mdl => mdl.Role.Sector, new { @readonly = "readonly" })</div>*@
+            <div><span>Role Name:</span></div>
+            <div>@Html.TextBoxFor(mdl => mdl.Role.Name, new { @readonly = "readonly" })</div>
+            <div><span>Role Description:</span></div>
+            <div>@Html.TextAreaFor(mdl => mdl.Role.Description, new { @readonly = "readonly" })</div>
+        </div>
+    </div>
+        @*<div class="button-group" style="margin-top:5px; float:right;">
+            <button type="submit" class="button button-dark icon remove danger">Delete</button>
+        </div>*@
+    }
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#close-deleterole").on("click", function () {
+            $.modal.close();
+            $.blockUI();
+            $.get("/admin/rolemanager", function (data) {
+                $.pushHTML(data, function () { $("#wrapper").html(data); }); $.unblockUI();
+            })
+        });
+    });
+
+    function onDeleteRoleBegin(data) { $.blockUI(); }
+
+    function onDeleteRoleSuccess(data) {
+        $.pushHTML(data, function () {
+            $.modal.close();
+            $("#wrapper-content").html(data);
+        });
+        $.unblockUI();
+    }
+
+</script>

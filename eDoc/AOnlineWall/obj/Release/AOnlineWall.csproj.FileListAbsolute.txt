@@ -1,0 +1,4 @@
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\AOnlineWall\bin\Release\AOnlineWall.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\AOnlineWall\bin\Release\AOnlineWall.pdb
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\AOnlineWall\obj\Release\AOnlineWall.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\AOnlineWall\obj\Release\AOnlineWall.pdb

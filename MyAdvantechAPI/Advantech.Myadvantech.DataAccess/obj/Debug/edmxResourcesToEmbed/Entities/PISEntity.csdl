@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CATEGORY">
+    <Key>
+      <PropertyRef Name="CATEGORY_ID" />
+    </Key>
+    <Property Name="CATEGORY_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CATALOG_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CATEGORY_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CATEGORY_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_CATEGORY_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CATEGORY_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DISPLAY_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IMAGE_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENDED_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_UPDATED" Type="DateTime" Precision="3" />
+    <Property Name="LAST_UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SEQ_NO" Type="Int32" />
+    <Property Name="PUBLISH_STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACTIVE_FLG" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="KEYWORDS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CATEGORY_LANG" Relationship="Self.FK_CATEGORY_LANG_CATEGORY" FromRole="CATEGORY" ToRole="CATEGORY_LANG" />
+  </EntityType>
+  <EntityType Name="CATEGORY_LANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="TRANSLATION_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LANG_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CATEGORY_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DISPLAY_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENDED_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KEY_WORD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="KEYWORDS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CATEGORY" Relationship="Self.FK_CATEGORY_LANG_CATEGORY" FromRole="CATEGORY_LANG" ToRole="CATEGORY" />
+  </EntityType>
+  <EntityType Name="Category_Model">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="model_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Category_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SEQ" Type="Int32" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MainCategory" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Model" Relationship="Self.FK_Category_Model_Model" FromRole="Category_Model" ToRole="Model" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="MODEL_NAME" />
+    </Key>
+    <Property Name="MODEL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MODEL_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MODEL_DESC" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DISPLAY_NAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="IMAGE_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENDED_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KEYWORDS" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_UPDATED" Type="DateTime" Precision="3" />
+    <Property Name="LAST_UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SEQ_NO" Type="Int32" />
+    <Property Name="CURRENT_STATUS" Type="Single" />
+    <Property Name="MODEL_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Category_Model" Relationship="Self.FK_Category_Model_Model" FromRole="Model" ToRole="Category_Model" />
+  </EntityType>
+  <EntityType Name="MODEL_LANG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="LANGID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="model_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="model_desc" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Display_name" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="extended_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="keyword" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="model_product">
+    <Key>
+      <PropertyRef Name="model_name" />
+      <PropertyRef Name="part_no" />
+      <PropertyRef Name="relation" />
+    </Key>
+    <Property Name="model_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="part_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="relation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="seq_num" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Last_update_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Last_update_date" Type="DateTime" Precision="3" />
+    <Property Name="desc_com" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="model_displayarea">
+    <Key>
+      <PropertyRef Name="model_name" />
+      <PropertyRef Name="did" />
+    </Key>
+    <Property Name="model_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="did" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MODEL_FEATURE">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="FEATURE_SEQ" />
+      <PropertyRef Name="LANG_ID" />
+      <PropertyRef Name="Model_name" />
+      <PropertyRef Name="LAST_UPDATED" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Model_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FEATURE_SEQ" Type="Int64" Nullable="false" />
+    <Property Name="FEATURE_DESC" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="LANG_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ORG_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Model_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LAST_UPDATED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Last_updateby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FEATURE_EXTENDED_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_CATEGORY_LANG_CATEGORY">
+    <End Role="CATEGORY" Type="Self.CATEGORY" Multiplicity="0..1" />
+    <End Role="CATEGORY_LANG" Type="Self.CATEGORY_LANG" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Category_Model_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+    <End Role="Category_Model" Type="Self.Category_Model" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" />
+    <EntitySet Name="CATEGORY_LANG" EntityType="Self.CATEGORY_LANG" />
+    <EntitySet Name="Category_Model" EntityType="Self.Category_Model" />
+    <EntitySet Name="Model" EntityType="Self.Model" />
+    <EntitySet Name="MODEL_LANG" EntityType="Self.MODEL_LANG" />
+    <EntitySet Name="model_product" EntityType="Self.model_product" />
+    <EntitySet Name="model_displayarea" EntityType="Self.model_displayarea" />
+    <EntitySet Name="MODEL_FEATURE" EntityType="Self.MODEL_FEATURE" />
+    <AssociationSet Name="FK_CATEGORY_LANG_CATEGORY" Association="Self.FK_CATEGORY_LANG_CATEGORY">
+      <End Role="CATEGORY" EntitySet="CATEGORY" />
+      <End Role="CATEGORY_LANG" EntitySet="CATEGORY_LANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Model_Model" Association="Self.FK_Category_Model_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Category_Model" EntitySet="Category_Model" />
+    </AssociationSet>
+    <EntitySet Name="Model_lit" EntityType="PISModel.Model_lit" />
+    <EntitySet Name="LITERATURE" EntityType="PISModel.LITERATURE" />
+  </EntityContainer>
+  <EntityType Name="Model_lit">
+    <Key>
+      <PropertyRef Name="model_name" />
+      <PropertyRef Name="literature_id" />
+    </Key>
+    <Property Name="model_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="literature_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="LITERATURE">
+    <Key>
+      <PropertyRef Name="LITERATURE_ID" />
+    </Key>
+    <Property Name="LITERATURE_ID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LIT_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="LIT_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_EXT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_SIZE" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="CREATED" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LANG" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

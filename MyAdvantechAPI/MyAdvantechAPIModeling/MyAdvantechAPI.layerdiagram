@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f1f2943b-bdd5-4a4c-ab36-85f061e27e6c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="fa955c4a-2e48-4b1c-830b-ff073f1c726f" name="MyAdvantech Business Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="02735025-a17c-4b2c-bee3-6372dfda55aa" direction="Bidirectional">
+          <layerMoniker Id="320b51e8-200e-4939-a861-f374c86ce48b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="a015a9f9-e329-4b7f-898e-b5f0c1862fd7" name="Account" />
+        <layer Id="64f509f4-c70d-4972-b6a7-495e675cee38" name="Order" />
+        <layer Id="9e2bd0dd-c60e-4428-8a40-e28e526baa88" name="Quote" />
+        <layer Id="fd255405-5aa4-41b9-b740-679b6f032c36" name="Lead" />
+        <layer Id="f9851f08-8a7a-4c94-9c57-37ff1bbf4370" name="User Active" />
+        <layer Id="2206bc76-9eee-426d-a4b3-684c2daecd35" name="Part" />
+      </childLayers>
+    </layer>
+    <layer Id="320b51e8-200e-4939-a861-f374c86ce48b" name="Data Access Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="7dbe6db2-58be-4714-9414-ed95d52bfff7" direction="Bidirectional">
+          <layerMoniker Id="5d22a948-fe58-4887-8e27-1117d51c9faf" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="7c83546c-6824-4c16-88d8-13f091091907" name="Common Data Access Layer">
+          <childLayers>
+            <layer Id="9843af58-9a09-466c-b2da-ccf1dced7145" name="SAP API" />
+            <layer Id="5cf020a3-7dbd-45a5-961f-c7ea14d6e632" name="Oracle DB Access" />
+            <layer Id="fa6fd874-9d16-4993-a093-b7aea1a364f6" name="Siebel Web Service" />
+            <layer Id="c624862f-40c7-4994-a248-f6931ebc85dd" name="MS SQL DB Access" />
+          </childLayers>
+        </layer>
+        <layer Id="4e6ad9f2-d4b8-4c54-9472-b81c0b7b663e" name="Model Data Entity" />
+        <layer Id="65b72dd7-01e0-4f26-8294-28d65ce95a30" name="Part Data Entity" />
+        <layer Id="c3593f35-9f3e-4d55-ba25-57be25738efb" name="Order Data Entity" />
+        <layer Id="0ce2780b-d92d-45f9-84d0-cfa140ebc2a7" name="Category Data Entity" />
+        <layer Id="c2b1a03e-51c3-4772-9702-d73b9eb194c4" name="Quote Data Entity" />
+      </childLayers>
+    </layer>
+    <layer Id="dddeae99-0e77-48a2-9254-b96e188df266" name=".Com&#xD;&#xA;Web">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="eea2f425-7b41-42e1-b844-8923bb50c7de" direction="Bidirectional">
+          <layerMoniker Id="a68f174d-fbcb-4ed2-8422-220b3e3c02da" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="a95e63e9-1e20-4409-9986-5ba0110ccf98" name="MyAdvantech Web">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c69f9d93-abdd-4cd1-ad4e-77e3ace18e70" direction="Bidirectional">
+          <layerMoniker Id="fa955c4a-2e48-4b1c-830b-ff073f1c726f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ad088dc8-e0d3-4199-b9d2-d17fa33aa6c7" name="eQuotation&#xD;&#xA;Web">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="cbad75eb-3c43-4c72-acbc-adda7d31418a" direction="Bidirectional">
+          <layerMoniker Id="fa955c4a-2e48-4b1c-830b-ff073f1c726f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="370f4cf5-4c88-4e1e-97a4-b43833910ec8" name="eStore&#xD;&#xA;Web">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8c3196bc-2e1d-420b-a922-f21157c46989" direction="Bidirectional">
+          <layerMoniker Id="fa955c4a-2e48-4b1c-830b-ff073f1c726f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="5d22a948-fe58-4887-8e27-1117d51c9faf" name="Database">
+      <childLayers>
+        <layer Id="f21db194-dfc5-4c9e-9221-7c2308ecc199" name="SAP&#xD;&#xA;DB" />
+        <layer Id="b6fd4bca-bd4f-4e97-8b78-a3907cec3ca7" name="PLM&#xD;&#xA;DB" />
+        <layer Id="e8be62e2-1d7e-4a31-80d4-c7ef862e4f14" name="Siebel DB" />
+        <layer Id="a7f21a38-a65e-41dc-86e8-251b4a45ad93" name="MyAdvantech DB" />
+        <layer Id="b38d3e33-fc73-4886-bdcc-0d30a4eb0fff" name="eQuotation DB" />
+        <layer Id="cedfba78-99df-4d01-bab3-cf67bca99137" name="PIS DB" />
+        <layer Id="927cd7d1-9403-46a8-8288-bc15c0c53471" name="Unica DB" />
+        <layer Id="b4bc421f-fc84-4d78-acc1-d136e73b76e2" name="eCampaign DB" />
+        <layer Id="238938c8-3789-4eb3-a59c-584355fbb64e" name="Curation Pool DB" />
+      </childLayers>
+    </layer>
+    <layer Id="a68f174d-fbcb-4ed2-8422-220b3e3c02da" name="PIS Business Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="416dba5b-e3a3-4b6e-9cbd-d7b638b0020a" direction="Bidirectional">
+          <layerMoniker Id="320b51e8-200e-4939-a861-f374c86ce48b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="c9e45641-33a3-43b4-bc41-a2a18980a5de" name="Model" />
+        <layer Id="8d82afa1-261a-4dcf-a2ee-e924482b8f5f" name="Category" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

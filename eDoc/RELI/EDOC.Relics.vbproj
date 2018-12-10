@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{95DD6EFA-8162-45C2-A28E-A2D9AF0F8C31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Relics</RootNamespace>
+    <AssemblyName>Relics</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Relics.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Relics.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BAPI_SALESORDER_CREATEFROMDAT2, Version=1.0.4556.29761, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\BAPI_SALESORDER_CREATEFROMDAT2.dll</HintPath>
+    </Reference>
+    <Reference Include="BAPI_SALESORDER_SIMULATE, Version=1.0.4056.23877, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\BAPI_SALESORDER_SIMULATE.dll</HintPath>
+    </Reference>
+    <Reference Include="Change_SD_Order, Version=1.0.2166.20661, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Change_SD_Order.dll</HintPath>
+    </Reference>
+    <Reference Include="Factory_Date_Conversion, Version=1.0.2162.26487, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Factory_Date_Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="GetCreditExposure, Version=1.0.4388.32257, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\GetCreditExposure.dll</HintPath>
+    </Reference>
+    <Reference Include="GET_MATERIAL_ATP, Version=1.0.2105.25561, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\GET_MATERIAL_ATP.dll</HintPath>
+    </Reference>
+    <Reference Include="Get_Price, Version=1.0.2308.25192, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Get_Price.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="PRICE_GRADE, Version=1.0.3853.19101, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\PRICE_GRADE.dll</HintPath>
+    </Reference>
+    <Reference Include="Quotation_Create_SAP, Version=1.0.3128.20875, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Quotation_Create_SAP.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector, Version=1.2.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\SAP.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="SO_CREATE_COMMIT, Version=1.0.2116.28746, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\SO_CREATE_COMMIT.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZCUSTOMER_UPDATE_SALES_AREA, Version=1.0.4497.19982, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\ZCUSTOMER_UPDATE_SALES_AREA.dll</HintPath>
+    </Reference>
+    <Reference Include="ZGET_ATP_LIMITQTY, Version=1.0.3945.16614, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\ZGET_ATP_LIMITQTY.dll</HintPath>
+    </Reference>
+    <Reference Include="ZSD_CUSTOMER_MAINTAIN_ALL, Version=1.0.4469.38906, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\ZSD_CUSTOMER_MAINTAIN_ALL.dll</HintPath>
+    </Reference>
+    <Reference Include="ZSD_UPDATE_FPLA, Version=1.0.4582.20422, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\ZSD_UPDATE_FPLA.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_EBIZAEU_PRICEINQUIRY_BR, Version=1.0.4020.23748, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Z_EBIZAEU_PRICEINQUIRY_BR.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_GET_ATP_LIMITQTY, Version=1.0.4535.29333, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Z_GET_ATP_LIMITQTY.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_SD_EUPRICEINQUERY, Version=1.0.2949.25961, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Z_SD_EUPRICEINQUERY.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonLogic.vb" />
+    <Compile Include="dbUtil.vb" />
+    <Compile Include="Global_Inc.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="OraDbUtil.vb" />
+    <Compile Include="SalesOrder.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrder.vb">
+      <DependentUpon>SalesOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAPDAL.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SAPDALDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAPDALDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAPDALDS.vb">
+      <DependentUpon>SAPDALDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlHelper.vb" />
+    <Compile Include="Web References\agsWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="SalesOrder.xsc">
+      <DependentUpon>SalesOrder.xsd</DependentUpon>
+    </None>
+    <None Include="SalesOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SalesOrder.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="SalesOrder.xss">
+      <DependentUpon>SalesOrder.xsd</DependentUpon>
+    </None>
+    <None Include="SAPDALDS.xsc">
+      <DependentUpon>SAPDALDS.xsd</DependentUpon>
+    </None>
+    <None Include="SAPDALDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAPDALDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="SAPDALDS.xss">
+      <DependentUpon>SAPDALDS.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\agsWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\agsWS\USTaxService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ags.advantech.com/WebService/USTaxService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\agsWS\</RelPath>
+      <UpdateFromURL>http://ags.advantech.com/WebService/USTaxService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAPDAL_agsWS_USTaxService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\agsWS\USTaxService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bin\BAPI_SALESORDER_CREATEFROMDAT2.dll" />
+    <Content Include="Bin\BAPI_SALESORDER_SIMULATE.dll" />
+    <Content Include="Bin\Change_SD_Order.dll" />
+    <Content Include="Bin\Factory_Date_Conversion.dll" />
+    <Content Include="Bin\GetCreditExposure.dll" />
+    <Content Include="Bin\GET_MATERIAL_ATP.dll" />
+    <Content Include="Bin\Get_Price.dll" />
+    <Content Include="Bin\PRICE_GRADE.dll" />
+    <Content Include="Bin\Quotation_Create_SAP.dll" />
+    <Content Include="Bin\SAP.Connector.dll" />
+    <Content Include="Bin\SO_CREATE_COMMIT.dll" />
+    <Content Include="Bin\ZCUSTOMER_UPDATE_SALES_AREA.dll" />
+    <Content Include="Bin\ZGET_ATP_LIMITQTY.dll" />
+    <Content Include="Bin\ZSD_CUSTOMER_MAINTAIN_ALL.dll" />
+    <Content Include="Bin\ZSD_UPDATE_FPLA.dll" />
+    <Content Include="Bin\Z_EBIZAEU_PRICEINQUIRY_BR.dll" />
+    <Content Include="Bin\Z_GET_ATP_LIMITQTY.dll" />
+    <Content Include="Bin\Z_SD_EUPRICEINQUERY.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

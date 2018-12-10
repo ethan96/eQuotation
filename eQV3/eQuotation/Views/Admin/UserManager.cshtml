@@ -1,0 +1,148 @@
+﻿@model IEnumerable<eQuotation.Entities.AppUser>
+
+
+<div class="main-content">
+    <div class="titlebox topbox"><h4>User Manager</h4></div>
+
+    <div class="actionbox">
+        <ul>
+            <li><a id="btn-refresh"><i class="fa fa-refresh"></i> Refresh</a></li>
+            @*<li><a id="newUsers"><i class="fa fa-plus"></i> Add Users</a></li>*@
+            <li><a id="newUser"><i class="fa fa-plus"></i> Add User</a></li>
+            @*<li><a id="roleManager"><i class="fa fa-user-md"></i> Role Manager</a></li>*@
+        </ul>
+    </div>
+    <div class="content">
+        <table id="tblAppsUser">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>UserName</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    @*<th>Function</th>
+                    <th>Location</th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a class="editRole" href="javascript:void(0)" data-attr="@item.Id"><i class="fa fa-user-md"></i></a>
+                        </td>
+                        <td>
+                            <a class="editUser" href="javascript:void(0)" data-attr="@item.Id"><i class="fa fa-pencil-square-o"></i></a>
+                        </td>
+                        <td>@item.UserName</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Email</td>
+                        @*<td>@item.Position</td>
+                        <td>@item.Location</td>*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+@Html.Modal("printcode", "Print Employee Code", "320px", "550px")
+@Html.Modal("osx-new-user", "New User", "320px", "460px")
+@Html.Modal("osx-detail-user", "User Detail Profile", "250px", "460px")
+@Html.Modal("osx-edit-user", "Edit User Profile", "340px", "460px")
+@Html.Modal("osx-edit-role", "Edit User Role", "370px", "430px")
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        //configure data-table
+        /* Init the table */
+        oTable = $('#tblAppsUser').dataTable({
+            "bJQueryUI": false,
+            "bLengthChange": true,
+            "bFilter": true,
+            "iDisplayLength": 1000,
+            "aoColumnDefs": [
+                { "bSortable": false, "aTargets": [0] },
+                { "bSortable": false, "aTargets": [1] },
+                { "bSortable": false, "aTargets": [2] }
+            ]
+        });
+
+        /* Add a click handler to the rows - this could be used as a callback */
+        $("#tblAppsUser tbody").click(function (e) {
+
+            $(oTable.fnSettings().aoData).each(function () {
+                $(this.nTr).removeClass("row_selected");
+            });
+            $(e.target.parentNode).addClass("row_selected");
+        });
+
+        //get the rows which are currently selected
+        function fnGetSelected(oTableLocal) {
+            var aReturn = new Array();
+            var aTrs = oTableLocal.fnGetNodes();
+
+            for (var i = 0; i < aTrs.length; i++) {
+                if ($(aTrs[i]).hasClass("row_selected")) {
+                    aReturn.push(aTrs[i]);
+                }
+            }
+
+            return aReturn;
+        }
+
+        //display modal window to create new user
+        $("#newUsers").on("click", function () {
+            openModal("/admin/newusers", "osx-new-user");
+        });
+
+        //display modal window to create new user
+        $("#newUser").on("click", function () {
+            openModal("/admin/newuser", "osx-new-user");
+        });
+
+        //display modal to review user detail
+        $("a.editUser").on("click", function () {
+            openModal("/admin/editprofile/" + $(this).attr("data-attr"), "osx-edit-user");
+
+            //var userId = $(this).attr("data-attr");
+
+            //$.get("/admin/editprofile/" + userId, function (data) {
+            //    $.pushHTML(data, function () {
+            //        $.OSXModalInit("osx-edit-user", data);
+            //    });
+            //    $.unblockUI();
+            //});
+        });
+
+        //display model to edit user role
+        $("a.editRole").on("click", function () {
+            openModal("/admin/edituserrole/" + $(this).attr("data-attr"), "osx-edit-role");
+
+            //var userId = $(this).attr("data-attr");
+            //$.get("/admin/edituserrole/" + userId, function (data) {
+            //    $.pushHTML(data, function () {
+            //        $.OSXModalInit("osx-edit-role", data);
+            //    });
+            //    $.unblockUI();
+            //});
+        });
+
+        //refresh content
+        $("#btn-refresh").on("click", function () {
+            $.blockUI();
+            $.get("/admin/usermanager", function (data) {
+                $.pushHTML(data, function () { $("#wrapper-content").html(data); });
+                $.unblockUI();
+            });
+        });
+    });
+
+</script>

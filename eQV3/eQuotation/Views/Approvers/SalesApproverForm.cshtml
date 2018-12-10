@@ -1,0 +1,210 @@
+﻿@model eQuotation.Models.Approvers.ApproverFormViewModel
+
+
+<style>
+    .approverSettingsWording{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .approverLevel {
+        width: 40px;
+    }
+    .approverEmail {
+        width: 250px;
+    }
+
+    .emailTitle {
+        margin-left:16px;
+    }
+</style>
+
+@if (Model != null)
+{
+    using (Ajax.BeginForm("CreateOrUpdateSalesApprovers", "approvers",
+        new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            OnBegin = "onNewApproverBegin",
+            OnSuccess = "onNewApproverSuccess"
+        }, new { @id = "frmNewUser" }))
+    {
+        <div class="modal-action">
+            <ul>
+                <li><button type="submit" class="clear"><i class="fa fa-floppy-o"></i> Save</button></li>
+                <li><a id="close-newapprover"><i class="fa fa-times"></i> Close</a></li>
+            </ul>
+        </div>
+        <div class="modal-content">
+            @Html.HiddenFor(mdl => mdl.IsNew)
+            <table class="modal-form">
+                <tr>
+                    <td class="fieldtext">Sales Code</td>
+                    @if (Model.IsNew)
+                    {
+                        <td>@Html.TextBoxFor(mdl => mdl.SalesCode, new { @style = "width:90%" })</td>
+                    }
+                    else
+                    {
+                        <td>@Html.TextBoxFor(mdl => mdl.SalesCode, new {  @readonly = "readonly", @style = "width:90%" })</td>
+
+                    }
+                </tr>
+                <tr>
+                    <td class="fieldtext">Sales Email</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.SalesEmail, new { @style = "width:90%" })</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">Sector</td>
+                    <td>
+                        @Html.DropDownListFor(mdl => mdl.Sector, Model.SectorListItem, new { @id = "ddSector", @class = "clsddSector" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">IdSBU</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.IdSBU, new { @style = "width:90%" })</td>
+                </tr>
+
+            </table>
+
+            <div class="approverSettingsWording"><bold>Approver Settings:</bold></div>
+            <div><span>Level</span><span class="emailTitle">Email</span></div>
+            <div id="approverList">
+                @for (int i = 0; i < Model.SalesApprovers.Count; i++)
+                {
+                    <div class="approverRow" data-row-sector=@Model.SalesApprovers[i].Sector>
+                        @*@Html.DropDownList("Approvers[" + i + "].Level", Enumerable.Range(1, 10).Select(j => new SelectListItem { Text = j.ToString(), Value = j.ToString(), Selected = Model.SalesApprovers[i].Level==j? true:false }), new { @class = "approverLevel" })*@
+                        @Html.TextBoxFor(model => Model.SalesApprovers[i].Level, new { @readonly = "readonly", @class = "approverLevel" })
+                        @if (Model.SalesApprovers[i].IsExecutives)
+                        {
+                            @Html.TextBoxFor(model => Model.SalesApprovers[i].ApproverEmail, new { @readonly = "readonly", placeholder = "Enter Approver Email..", @class = "approverEmail" })
+
+                        }
+                        else
+                        {
+                            @Html.TextBoxFor(model => Model.SalesApprovers[i].ApproverEmail, new { placeholder = "Enter Approver Email..", @class = "approverEmail" })
+
+                        }
+                        @Html.HiddenFor(mdl => mdl.SalesApprovers[i].Id, new { @class = "approverId" })
+                        @Html.HiddenFor(mdl => mdl.SalesApprovers[i].Sector, new { @class = "approverId" })
+                        @*<a href="javascript:void(0);" class="addRow">Add row</a>
+                            <a href="javascript:void(0);" class="remRow">Remove</a>*@
+                    </div>
+                }
+            </div>
+
+        </div>
+    }
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("a#close-newapprover").on("click", function () {
+            $.modal.close();
+        });
+
+        HideApprover($('#ddSector').val());
+
+        $("#ddSector").change(function () {
+            HideApprover($(this).val());
+        });
+
+
+        //$(".approverRow").append('<div class="approverRow"><input type="text" readonly="readonly" value="1" name="SalesApprovers[' + rowCount + '].Level" class="approverLevel" /><input type="text" name="SalesApprovers[' + rowCount + '].ApproverEmail" class="approverEmail" /><input type="hidden" name="SalesApprovers[' + rowCount + '].Id" class="approverId" /><a href="javascript:void(0);" class="addRow">Add row</a><a href="javascript:void(0);" class="remRow">Remove</a></div>');
+
+
+        //$(".addRow").click(function () {
+
+        //    var rowCount = $('.approverRow').length;
+        //    $(this).parent().after('<div class="approverRow"><input type="text" readonly="readonly" value="1" name="SalesApprovers[' + rowCount + '].Level" class="approverLevel" /><input type="text" name="SalesApprovers[' + rowCount + '].ApproverEmail" class="approverEmail" /><input type="hidden" name="SalesApprovers[' + rowCount + '].Id" class="approverId" /><a href="javascript:void(0);" class="addRow">Add row</a><a href="javascript:void(0);" class="remRow">Remove</a></div>');
+
+        //    refreshAttr();
+        //});
+
+        //$("#approverList").on('click', '.remRow', function () {
+
+        //    $(this).closest('.approverRow').remove();
+
+        //    refreshAttr();
+        //})
+
+
+
+    });
+
+    function isValidEmailAddress(emailAddress) {
+        var pattern = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+        return pattern.test(emailAddress);
+    }
+
+    function HideApprover(sector) {
+        $('.approverRow').each(function () {
+            var rwoSector = $(this).attr("data-row-sector");
+            if (sector == rwoSector) {
+                $(this).find('input').show();
+            }
+            else {
+                $(this).find('input').hide();
+            }
+
+        })
+    }
+
+    function refreshAttr() {
+        $('.approverLevel').each(function (index) {
+            $(this).attr('name', 'SalesApprovers[' + index + '].Level');
+            $(this).attr('value', index + 1);
+        });
+
+        $('.approverEmail').each(function (index) {
+            $(this).attr('name', 'SalesApprovers[' + index + '].ApproverEmail');
+        });
+
+        $('.approverId').each(function (index) {
+            $(this).attr('name', 'SalesApprovers[' + index + '].Id');
+        });
+
+
+    }
+
+    //called on submit begin
+    function onNewApproverBegin() {
+        if (!isValidEmailAddress($('#SalesEmail').val())) {
+            alert("Sales Email format is invalid.");
+            return false;
+        }
+
+        if (checkApproverEmailFormat() == false) {
+            alert("Approver Email format is invalid.");
+            return false;
+        }
+        
+        $.blockUI();
+    }
+
+    //called on return value
+    function onNewApproverSuccess(data) {
+
+        $.pushHTML(data, function () {
+            if (data.succeed == false)
+                alert(data.err);
+            else {
+                $.modal.close(); $("#wrapper-content").html(data);
+            }
+        });
+
+        $.unblockUI();
+    }
+
+    function checkApproverEmailFormat()
+    {
+        var isApproverEmailValid = true
+        $('.approverEmail').each(function () {
+            if (!isValidEmailAddress($(this).val())) {             
+                return isApproverEmailValid = false;
+            }
+        });
+        return isApproverEmailValid
+    }
+
+</script>

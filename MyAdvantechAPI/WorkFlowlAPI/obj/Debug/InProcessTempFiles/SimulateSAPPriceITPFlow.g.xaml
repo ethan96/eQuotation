@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<local:SimulateSAPPriceITPFlow xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:amd="clr-namespace:Advantech.Myadvantech.DataAccess;assembly=Advantech.Myadvantech.DataAccess" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:local="clr-namespace:WorkFlowlAPI.SimulatePrice;assembly=WorkFlowlAPI" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Advantech.Myadvantech.DataAccess</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>EntityFramework</AssemblyReference>
+      <AssemblyReference>EntityFramework.SqlServer</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Activities.DurableInstancing</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.DataAnnotations</AssemblyReference>
+      <AssemblyReference>System.Configuration</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.DurableInstancing</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>Advantech.Myadvantech.Business</AssemblyReference>
+      <AssemblyReference>Advantech.Myadvantech.DataAccess</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>WorkFlowlAPI</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <local:SimulateSAPPriceITPFlow.Implementation>
+    <Flowchart>
+      <Flowchart.StartNode>
+        <FlowStep x:Name="__ReferenceID15">
+          <local:SimulateListUnitPriceVPRS>
+            <local:SimulateListUnitPriceVPRS.ErrorMessage>
+              <InOutArgument x:TypeArguments="x:String">
+                <mca:CSharpReference x:TypeArguments="x:String">ErrorMessage</mca:CSharpReference>
+              </InOutArgument>
+            </local:SimulateListUnitPriceVPRS.ErrorMessage>
+            <local:SimulateListUnitPriceVPRS.QuoteMaster>
+              <InOutArgument x:TypeArguments="amd:QuotationMaster">
+                <mca:CSharpReference x:TypeArguments="amd:QuotationMaster">QuotationMaster</mca:CSharpReference>
+              </InOutArgument>
+            </local:SimulateListUnitPriceVPRS.QuoteMaster>
+          </local:SimulateListUnitPriceVPRS>
+          <FlowStep.Next>
+            <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID14" DisplayName="Org?">
+              <FlowSwitch.Expression>
+                <mca:CSharpValue x:TypeArguments="x:String">QuotationMaster.org</mca:CSharpValue>
+              </FlowSwitch.Expression>
+              <FlowStep x:Key="CN30" x:Name="__ReferenceID13">
+                <Sequence DisplayName="Get ITP and other Price For ACN">
+                  <Sequence DisplayName="Get ITP">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="scg:List(amd:QuotationDetail)" Name="RemainQuotationDetails">
+                        <Variable.Default>
+                          <mca:CSharpValue x:TypeArguments="scg:List(amd:QuotationDetail)">new List&lt;QuotationDetail&gt;()</mca:CSharpValue>
+                        </Variable.Default>
+                      </Variable>
+                      <Variable x:TypeArguments="scg:List(amd:QuotationDetail)" Name="OSParts">
+                        <Variable.Default>
+                          <mca:CSharpValue x:TypeArguments="scg:List(amd:QuotationDetail)">new List&lt;QuotationDetail&gt;()</mca:CSharpValue>
+                        </Variable.Default>
+                      </Variable>
+                      <Variable x:TypeArguments="scg:List(amd:QuotationDetail)" Name="LocalPTDParts">
+                        <Variable.Default>
+                          <mca:CSharpValue x:TypeArguments="scg:List(amd:QuotationDetail)">new List&lt;QuotationDetail&gt;()</mca:CSharpValue>
+                        </Variable.Default>
+                      </Variable>
+                      <Variable x:TypeArguments="scg:List(amd:QuotationDetail)" Name="LocalNumberParts">
+                        <Variable.Default>
+                          <mca:CSharpValue x:TypeArguments="scg:List(amd:QuotationDetail)">new List&lt;QuotationDetail&gt;()</mca:CSharpValue>
+                        </Variable.Default>
+                      </Variable>
+                    </Sequence.Variables>
+                    <Flowchart DisplayName="GroupBy PartType,Source">
+                      <Flowchart.StartNode>
+                        <FlowStep x:Name="__ReferenceID0">
+                          <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="GetOSParts">
+                            <ForEach.Values>
+                              <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                              </InArgument>
+                            </ForEach.Values>
+                            <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                              </ActivityAction.Argument>
+                              <Sequence>
+                                <If>
+                                  <If.Condition>
+                                    <InArgument x:TypeArguments="x:Boolean">
+                                      <mca:CSharpValue x:TypeArguments="x:Boolean">item.isACNOSParts</mca:CSharpValue>
+                                    </InArgument>
+                                  </If.Condition>
+                                  <If.Then>
+                                    <Sequence>
+                                      <AddToCollection x:TypeArguments="amd:QuotationDetail" DisplayName="Add To OSParts">
+                                        <AddToCollection.Item>
+                                          <InArgument x:TypeArguments="amd:QuotationDetail">
+                                            <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                          </InArgument>
+                                        </AddToCollection.Item>
+                                        <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                          <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">OSParts</mca:CSharpValue>
+                                        </InArgument>
+                                      </AddToCollection>
+                                    </Sequence>
+                                  </If.Then>
+                                </If>
+                              </Sequence>
+                            </ActivityAction>
+                          </ForEach>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID3">
+                              <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="RemoveOSPartsFromDetails">
+                                <ForEach.Values>
+                                  <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                    <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">OSParts</mca:CSharpValue>
+                                  </InArgument>
+                                </ForEach.Values>
+                                <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                                  </ActivityAction.Argument>
+                                  <RemoveFromCollection x:TypeArguments="amd:QuotationDetail" DisplayName="RemoveFromCollection&lt;QuotationDetail&gt;">
+                                    <RemoveFromCollection.Item>
+                                      <InArgument x:TypeArguments="amd:QuotationDetail">
+                                        <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                      </InArgument>
+                                    </RemoveFromCollection.Item>
+                                    <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                      <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                                    </InArgument>
+                                  </RemoveFromCollection>
+                                </ActivityAction>
+                              </ForEach>
+                              <FlowStep.Next>
+                                <FlowStep x:Name="__ReferenceID1">
+                                  <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="Get Local No.Parts">
+                                    <ForEach.Values>
+                                      <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                        <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                                      </InArgument>
+                                    </ForEach.Values>
+                                    <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                                      </ActivityAction.Argument>
+                                      <Sequence>
+                                        <If>
+                                          <If.Condition>
+                                            <InArgument x:TypeArguments="x:Boolean">
+                                              <mca:CSharpValue x:TypeArguments="x:Boolean">item.isACNLocalNumberParts</mca:CSharpValue>
+                                            </InArgument>
+                                          </If.Condition>
+                                          <If.Then>
+                                            <Sequence>
+                                              <AddToCollection x:TypeArguments="amd:QuotationDetail" DisplayName="AddToLocalNumParts">
+                                                <AddToCollection.Item>
+                                                  <InArgument x:TypeArguments="amd:QuotationDetail">
+                                                    <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                                  </InArgument>
+                                                </AddToCollection.Item>
+                                                <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                                  <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">LocalNumberParts</mca:CSharpValue>
+                                                </InArgument>
+                                              </AddToCollection>
+                                            </Sequence>
+                                          </If.Then>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ForEach>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID4">
+                                      <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="RemoveNoPartsFromDetails">
+                                        <ForEach.Values>
+                                          <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                            <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">LocalNumberParts</mca:CSharpValue>
+                                          </InArgument>
+                                        </ForEach.Values>
+                                        <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                                          </ActivityAction.Argument>
+                                          <RemoveFromCollection x:TypeArguments="amd:QuotationDetail" DisplayName="RemoveFromCollection&lt;QuotationDetail&gt;">
+                                            <RemoveFromCollection.Item>
+                                              <InArgument x:TypeArguments="amd:QuotationDetail">
+                                                <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                              </InArgument>
+                                            </RemoveFromCollection.Item>
+                                            <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                              <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                                            </InArgument>
+                                          </RemoveFromCollection>
+                                        </ActivityAction>
+                                      </ForEach>
+                                      <FlowStep.Next>
+                                        <FlowStep x:Name="__ReferenceID2">
+                                          <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="Get PTD Parts">
+                                            <ForEach.Values>
+                                              <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                                <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                                              </InArgument>
+                                            </ForEach.Values>
+                                            <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                                              </ActivityAction.Argument>
+                                              <Sequence>
+                                                <If DisplayName="PTD?">
+                                                  <If.Condition>
+                                                    <InArgument x:TypeArguments="x:Boolean">
+                                                      <mca:CSharpValue x:TypeArguments="x:Boolean">item.isACNLocalPTDParts</mca:CSharpValue>
+                                                    </InArgument>
+                                                  </If.Condition>
+                                                  <If.Then>
+                                                    <Sequence>
+                                                      <AddToCollection x:TypeArguments="amd:QuotationDetail" DisplayName="AddToLocalPTDParts">
+                                                        <AddToCollection.Item>
+                                                          <InArgument x:TypeArguments="amd:QuotationDetail">
+                                                            <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                                          </InArgument>
+                                                        </AddToCollection.Item>
+                                                        <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                                          <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">LocalPTDParts</mca:CSharpValue>
+                                                        </InArgument>
+                                                      </AddToCollection>
+                                                    </Sequence>
+                                                  </If.Then>
+                                                </If>
+                                              </Sequence>
+                                            </ActivityAction>
+                                          </ForEach>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID5">
+                                              <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="RemovePTDPartsFromDetails">
+                                                <ForEach.Values>
+                                                  <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                                    <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">LocalPTDParts</mca:CSharpValue>
+                                                  </InArgument>
+                                                </ForEach.Values>
+                                                <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                                                  </ActivityAction.Argument>
+                                                  <RemoveFromCollection x:TypeArguments="amd:QuotationDetail" DisplayName="RemoveFromCollection&lt;QuotationDetail&gt;">
+                                                    <RemoveFromCollection.Item>
+                                                      <InArgument x:TypeArguments="amd:QuotationDetail">
+                                                        <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                                      </InArgument>
+                                                    </RemoveFromCollection.Item>
+                                                    <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                                      <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                                                    </InArgument>
+                                                  </RemoveFromCollection>
+                                                </ActivityAction>
+                                              </ForEach>
+                                            </FlowStep>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </Flowchart.StartNode>
+                      <x:Reference>__ReferenceID0</x:Reference>
+                      <x:Reference>__ReferenceID1</x:Reference>
+                      <x:Reference>__ReferenceID2</x:Reference>
+                      <x:Reference>__ReferenceID3</x:Reference>
+                      <x:Reference>__ReferenceID4</x:Reference>
+                      <x:Reference>__ReferenceID5</x:Reference>
+                    </Flowchart>
+                    <Parallel DisplayName="Parallel Get ITP">
+                      <Flowchart DisplayName="Get ITP for OS Parts">
+                        <Flowchart.StartNode>
+                          <FlowStep x:Name="__ReferenceID6">
+                            <local:GetACNOSPartITP ErrorMessage="{x:Null}">
+                              <local:GetACNOSPartITP.ERPId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <mca:CSharpValue x:TypeArguments="x:String">String.IsNullOrEmpty(QuotationMaster.quoteToErpId) ? QuotationMaster.quoteToErpId : QuotationMaster.DefaultERPID</mca:CSharpValue>
+                                </InArgument>
+                              </local:GetACNOSPartITP.ERPId>
+                              <local:GetACNOSPartITP.QuotationDetails>
+                                <InOutArgument x:TypeArguments="scg:List(amd:QuotationDetail)">
+                                  <mca:CSharpReference x:TypeArguments="scg:List(amd:QuotationDetail)">OSParts</mca:CSharpReference>
+                                </InOutArgument>
+                              </local:GetACNOSPartITP.QuotationDetails>
+                            </local:GetACNOSPartITP>
+                          </FlowStep>
+                        </Flowchart.StartNode>
+                        <x:Reference>__ReferenceID6</x:Reference>
+                      </Flowchart>
+                      <Flowchart DisplayName="GetITPForLocalNumberParts">
+                        <Flowchart.StartNode>
+                          <FlowStep x:Name="__ReferenceID7">
+                            <local:GetACNLocalNumberPartITP ErrorMessage="{x:Null}">
+                              <local:GetACNLocalNumberPartITP.ERPId>
+                                <InArgument x:TypeArguments="x:String">
+                                  <mca:CSharpValue x:TypeArguments="x:String">String.IsNullOrEmpty(QuotationMaster.quoteToErpId) ? QuotationMaster.quoteToErpId : QuotationMaster.DefaultERPID</mca:CSharpValue>
+                                </InArgument>
+                              </local:GetACNLocalNumberPartITP.ERPId>
+                              <local:GetACNLocalNumberPartITP.QuotationDetails>
+                                <InOutArgument x:TypeArguments="scg:List(amd:QuotationDetail)">
+                                  <mca:CSharpReference x:TypeArguments="scg:List(amd:QuotationDetail)">LocalNumberParts</mca:CSharpReference>
+                                </InOutArgument>
+                              </local:GetACNLocalNumberPartITP.QuotationDetails>
+                            </local:GetACNLocalNumberPartITP>
+                          </FlowStep>
+                        </Flowchart.StartNode>
+                        <x:Reference>__ReferenceID7</x:Reference>
+                      </Flowchart>
+                      <Flowchart DisplayName="Get ITP for LocalPTDParts(Keep VPRS, so do nothing)" StartNode="{x:Null}" />
+                      <Flowchart DisplayName="Get ITP for Remain Parts">
+                        <Flowchart.Variables>
+                          <Variable x:TypeArguments="amd:QuotationMaster" Name="TempQuoteMaster" />
+                        </Flowchart.Variables>
+                        <Flowchart.StartNode>
+                          <FlowStep x:Name="__ReferenceID9">
+                            <local:SimulateITPByOrgAndERPId ErrorMessage="{x:Null}" DisplayName="Get ITP byADVACN,TW01" ERPId="ADVACN" Org="TW01">
+                              <local:SimulateITPByOrgAndERPId.QuoteMaster>
+                                <InOutArgument x:TypeArguments="amd:QuotationMaster">
+                                  <mca:CSharpReference x:TypeArguments="amd:QuotationMaster">QuotationMaster</mca:CSharpReference>
+                                </InOutArgument>
+                              </local:SimulateITPByOrgAndERPId.QuoteMaster>
+                            </local:SimulateITPByOrgAndERPId>
+                            <FlowStep.Next>
+                              <FlowStep x:Name="__ReferenceID8">
+                                <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="Add to Master's Details">
+                                  <ForEach.Values>
+                                    <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                      <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">RemainQuotationDetails</mca:CSharpValue>
+                                    </InArgument>
+                                  </ForEach.Values>
+                                  <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                                    </ActivityAction.Argument>
+                                    <AddToCollection x:TypeArguments="amd:QuotationDetail" DisplayName="Add To Master's Details">
+                                      <AddToCollection.Item>
+                                        <InArgument x:TypeArguments="amd:QuotationDetail">
+                                          <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                        </InArgument>
+                                      </AddToCollection.Item>
+                                      <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                        <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                                      </InArgument>
+                                    </AddToCollection>
+                                  </ActivityAction>
+                                </ForEach>
+                              </FlowStep>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </Flowchart.StartNode>
+                        <x:Reference>__ReferenceID8</x:Reference>
+                        <x:Reference>__ReferenceID9</x:Reference>
+                      </Flowchart>
+                    </Parallel>
+                    <Flowchart DisplayName="Add to Master's Details">
+                      <Flowchart.StartNode>
+                        <FlowStep x:Name="__ReferenceID10">
+                          <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="Add OSParts to Details">
+                            <ForEach.Values>
+                              <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">OSParts</mca:CSharpValue>
+                              </InArgument>
+                            </ForEach.Values>
+                            <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                              </ActivityAction.Argument>
+                              <AddToCollection x:TypeArguments="amd:QuotationDetail" DisplayName="Add To Master's Details">
+                                <AddToCollection.Item>
+                                  <InArgument x:TypeArguments="amd:QuotationDetail">
+                                    <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                  </InArgument>
+                                </AddToCollection.Item>
+                                <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                  <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                                </InArgument>
+                              </AddToCollection>
+                            </ActivityAction>
+                          </ForEach>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID11">
+                              <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="Add LocalNoParts to Details">
+                                <ForEach.Values>
+                                  <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                    <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">LocalNumberParts</mca:CSharpValue>
+                                  </InArgument>
+                                </ForEach.Values>
+                                <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                                  </ActivityAction.Argument>
+                                  <AddToCollection x:TypeArguments="amd:QuotationDetail" DisplayName="Add To Master's Details">
+                                    <AddToCollection.Item>
+                                      <InArgument x:TypeArguments="amd:QuotationDetail">
+                                        <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                      </InArgument>
+                                    </AddToCollection.Item>
+                                    <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                      <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                                    </InArgument>
+                                  </AddToCollection>
+                                </ActivityAction>
+                              </ForEach>
+                              <FlowStep.Next>
+                                <FlowStep x:Name="__ReferenceID12">
+                                  <ForEach x:TypeArguments="amd:QuotationDetail" DisplayName="Add LocalPTDParts to Details">
+                                    <ForEach.Values>
+                                      <InArgument x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">
+                                        <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:QuotationDetail)">LocalPTDParts</mca:CSharpValue>
+                                      </InArgument>
+                                    </ForEach.Values>
+                                    <ActivityAction x:TypeArguments="amd:QuotationDetail">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="amd:QuotationDetail" Name="item" />
+                                      </ActivityAction.Argument>
+                                      <AddToCollection x:TypeArguments="amd:QuotationDetail" DisplayName="Add To Master's Details">
+                                        <AddToCollection.Item>
+                                          <InArgument x:TypeArguments="amd:QuotationDetail">
+                                            <mca:CSharpValue x:TypeArguments="amd:QuotationDetail">item</mca:CSharpValue>
+                                          </InArgument>
+                                        </AddToCollection.Item>
+                                        <InArgument x:TypeArguments="scg:ICollection(amd:QuotationDetail)">
+                                          <mca:CSharpValue x:TypeArguments="scg:ICollection(amd:QuotationDetail)">QuotationMaster.QuotationDetail</mca:CSharpValue>
+                                        </InArgument>
+                                      </AddToCollection>
+                                    </ActivityAction>
+                                  </ForEach>
+                                </FlowStep>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </Flowchart.StartNode>
+                      <x:Reference>__ReferenceID10</x:Reference>
+                      <x:Reference>__ReferenceID11</x:Reference>
+                      <x:Reference>__ReferenceID12</x:Reference>
+                    </Flowchart>
+                  </Sequence>
+                  <Parallel DisplayName="Parallel Get Other Price For ACN">
+                    <local:SimulatePCPPrice ErrorMessage="{x:Null}" DisplayName="Get PCP Price by C200611" ERPId="C200611">
+                      <local:SimulatePCPPrice.Org>
+                        <InArgument x:TypeArguments="x:String">
+                          <mca:CSharpValue x:TypeArguments="x:String">QuotationMaster.org</mca:CSharpValue>
+                        </InArgument>
+                      </local:SimulatePCPPrice.Org>
+                      <local:SimulatePCPPrice.QuoteMaster>
+                        <InOutArgument x:TypeArguments="amd:QuotationMaster">
+                          <mca:CSharpReference x:TypeArguments="amd:QuotationMaster">QuotationMaster</mca:CSharpReference>
+                        </InOutArgument>
+                      </local:SimulatePCPPrice.QuoteMaster>
+                    </local:SimulatePCPPrice>
+                    <local:SimulateProductBOMCost ErrorMessage="{x:Null}" Currency="CNY" DisplayName="Simulate Product BOM Cost">
+                      <local:SimulateProductBOMCost.QuoteMaster>
+                        <InOutArgument x:TypeArguments="amd:QuotationMaster">
+                          <mca:CSharpReference x:TypeArguments="amd:QuotationMaster">QuotationMaster</mca:CSharpReference>
+                        </InOutArgument>
+                      </local:SimulateProductBOMCost.QuoteMaster>
+                    </local:SimulateProductBOMCost>
+                  </Parallel>
+                </Sequence>
+              </FlowStep>
+              <x:Reference>__ReferenceID13<x:Key>CN10</x:Key></x:Reference>
+              <FlowStep x:Key="US10" x:Name="__ReferenceID16">
+                <local:SimulateITPByOrgAndERPId DisplayName="Get ITP by ADVANA(US10)" ERPId="ADVANA" Org="US10">
+                  <local:SimulateITPByOrgAndERPId.ErrorMessage>
+                    <InOutArgument x:TypeArguments="x:String">
+                      <mca:CSharpReference x:TypeArguments="x:String">ErrorMessage</mca:CSharpReference>
+                    </InOutArgument>
+                  </local:SimulateITPByOrgAndERPId.ErrorMessage>
+                  <local:SimulateITPByOrgAndERPId.QuoteMaster>
+                    <InOutArgument x:TypeArguments="amd:QuotationMaster">
+                      <mca:CSharpReference x:TypeArguments="amd:QuotationMaster">QuotationMaster</mca:CSharpReference>
+                    </InOutArgument>
+                  </local:SimulateITPByOrgAndERPId.QuoteMaster>
+                </local:SimulateITPByOrgAndERPId>
+              </FlowStep>
+              <x:Reference>__ReferenceID13<x:Key>CN70</x:Key></x:Reference>
+              <FlowStep x:Key="SG01" x:Name="__ReferenceID17">
+                <local:SimulateITPByGPBlockRFC>
+                  <local:SimulateITPByGPBlockRFC.ErrorMessage>
+                    <InOutArgument x:TypeArguments="x:String">
+                      <mca:CSharpReference x:TypeArguments="x:String">ErrorMessage</mca:CSharpReference>
+                    </InOutArgument>
+                  </local:SimulateITPByGPBlockRFC.ErrorMessage>
+                  <local:SimulateITPByGPBlockRFC.QuoteMaster>
+                    <InOutArgument x:TypeArguments="amd:QuotationMaster">
+                      <mca:CSharpReference x:TypeArguments="amd:QuotationMaster">QuotationMaster</mca:CSharpReference>
+                    </InOutArgument>
+                  </local:SimulateITPByGPBlockRFC.QuoteMaster>
+                </local:SimulateITPByGPBlockRFC>
+              </FlowStep>
+            </FlowSwitch>
+          </FlowStep.Next>
+        </FlowStep>
+      </Flowchart.StartNode>
+      <x:Reference>__ReferenceID14</x:Reference>
+      <x:Reference>__ReferenceID13</x:Reference>
+      <x:Reference>__ReferenceID15</x:Reference>
+      <x:Reference>__ReferenceID16</x:Reference>
+      <FlowStep>
+        <local:SimulateITPByOrgAndERPId DisplayName="Get ITP by ADVASG(TW01)" ERPId="ADVASG" Org="TW01">
+          <local:SimulateITPByOrgAndERPId.ErrorMessage>
+            <InOutArgument x:TypeArguments="x:String">
+              <mca:CSharpReference x:TypeArguments="x:String">ErrorMessage</mca:CSharpReference>
+            </InOutArgument>
+          </local:SimulateITPByOrgAndERPId.ErrorMessage>
+          <local:SimulateITPByOrgAndERPId.QuoteMaster>
+            <InOutArgument x:TypeArguments="amd:QuotationMaster">
+              <mca:CSharpReference x:TypeArguments="amd:QuotationMaster">QuotationMaster</mca:CSharpReference>
+            </InOutArgument>
+          </local:SimulateITPByOrgAndERPId.QuoteMaster>
+        </local:SimulateITPByOrgAndERPId>
+      </FlowStep>
+      <x:Reference>__ReferenceID17</x:Reference>
+      <sads:DebugSymbol.Symbol>d1hEOlxNeUFkdmFudGVjaEdpdFxNeUFkdmFudGVjaEFQSVxXb3JrRmxvd2xBUElcU2ltdWxhdGVQcmljZVxTaW11bGF0ZVNBUFByaWNlSVRQRmxvdy54YW1sajgDpgQPAgEBOwlGKwMBjwNKD0pgAwGMA4EED4wELwMBhQNND+4DGgIBC/IDD/0DMAIBAkMPQ28DAZMDPg8+YQMBkAOJBBWJBHUDAYkDhAQVhARnAwGGA04R2AMcAgEa2QMR7QMcAgEM+gMV+gN1AgEI8gOlAfIDqwECAQf1AxX1A2cCAQTyA1vyA2MCAQNSGVKNAQIBMFcZV40BAgEpXBlcjQECASJhGWGNAQIBG2UTrwIfAwHNAbACE4QDHgMBgwGFAxPXAx8CATfaAxPlAywCARLmAxPsAzICAQ1oGYoBIwMB4QKNAR2iAScDAcgCpQEhxwErAwGkAsoBJd8BLwMBiwLiASmEAjMDAecBhwItnAI3AwHOAbECFcMCIQMBvQHEAhXWAiEDAa0B1wIV1wKoAQMBrAHYAhWDAyEDAYQBiAMZnQMjAgFqoAMdtQMnAgFRuAMhzQMrAgE44gMZ4gN5AgEX3QMZ3QNqAgEU2gNw2gN5AgET6QMZ6QN5AgEP5gNS5gNXAgEOax9rmAEDAf4Cch2IASgDAeICkAEjkAGEAQMB2gKXASGgATgDAckCqAEnqAGgAQMBwQKvASXFATADAaUCzQErzQGVAQMBnQLUASndAUADAYwC5QEv5QGoAQMBhALsAS2CAjgDAegBigIzigKaAQMB4AGRAjGaAkgDAc8BtAIbvwIzAwG+AccCG9ICPAMBrgHeAhvkAjwDAaEB5wIf/AIpAwGFAYsDH4sDgAECAXySAx2bAy8CAWujAyOjA40BAgFjqgMhswMzAgFSuwMnuwOOAQIBSsIDJcsDNwIBOXMfhwEkAwHjAp4BJZ4BngEDAdICmgEnmgF0AwHKArABJ8QBLAMBpgLbAS3bAaYBAwGVAtcBL9cBfAMBjQLtAS+BAjQDAekBmAI1mAKuAQMB2AGUAjeUAoQBAwHQAbcCIbcCzwEDAcYBvAIhvAKDAQMBvwHKAiHKAs8BAwG2Ac8CIc8CjAEDAa8B4QIh4QKBAQMBpAHeAscB3gLNAQMBowHeAn3eAoUBAwGiAeoCJeoClQEDAZkB8QIj+gI1AwGGAZkDIZkDmgECAXSVAyOVA3ACAWyxAyWxA54BAgFbrQMnrQN0AgFTyQMpyQOiAQIBQsUDK8UDeAIBOnYldnUDAeQCeiOFAS4DAewCswEtswGGAQMBpwK3ASvCATYDAa8C8AE18AGLAQMB6gH0ATP/AT4DAfIB+AIn+AKgAQMBkAH0Ain0AnYDAYcBeyWEATcDAe0CuAEtwQE/AwGwAvUBNf4BRwMB8wGCASmCAYoBAwH2An4rfngDAe4CvwExvwGbAQMBuQK7ATO7AYABAwGxAvwBOfwBoAEDAfwB+AE7+AGIAQMB9AE=</sads:DebugSymbol.Symbol>
+    </Flowchart>
+  </local:SimulateSAPPriceITPFlow.Implementation>
+</local:SimulateSAPPriceITPFlow>

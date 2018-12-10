@@ -1,0 +1,275 @@
+﻿
+.NoBord td
+{ height:20px;
+     border:0px;
+    }
+.TbNoWrap td
+{
+    white-space:nowrap 
+    }
+th
+{
+    text-align: center;
+    color: #FFFFFF;
+}
+.pricehistory th,th.pncss { color: #000000;
+}
+
+table.pricehistory {
+
+}
+
+h1
+{
+    color: #666;
+    letter-spacing: -2px;
+    font-weight: normal;
+    font-size: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #8fc629;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+h2
+{
+    color: #333;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px;
+}
+input
+{
+   
+    font-family :arial,\5B8B\4F53,Arial Narrow,serif;
+    font-size: 12px;
+   
+    color: #333333;
+}
+textarea 
+{   padding:2px 8px 0pt 3px;
+    border:1px solid #CCC;
+    font-size: 12px;
+    color: #333333;
+    }
+
+select 
+{
+    border:1px solid #CCC;
+    font-size: 12px;
+    color: #333333;
+    background-color: #f6f0ce;
+}
+
+select option
+{
+    border:1px solid #CCC;
+    font-size: 12px;
+    color: #333333;
+    background-color: #f6f0ce;
+}
+
+select .l1
+{
+    font-size: 12px;
+    background-color: #fff;
+}
+
+select .l2
+{
+    font-size: 12px;
+    background-color: #40854c;
+    color: #fff;
+}
+
+
+
+body
+{
+    font-family:arial,\5B8B\4F53,Arial Narrow,serif;
+    font-size: 12px;
+    margin: 0px;
+    width: 100%;
+
+}
+span,td,th
+{
+    font-family:arial,\5B8B\4F53,Arial Narrow,serif;
+    font-size: 12px;
+    
+    }
+table
+{
+    width: 100%; 
+    border-collapse: collapse;
+    text-align: left;
+}
+table.ptb  { width:400px; 
+}
+    table.ptb table td, table.ptb  th { color:#000000;
+    } 
+td
+{
+    font-family:arial,\5B8B\4F53,Arial Narrow,serif;
+    font-size: 12px;
+    border: solid 0px #EEEEEE;
+    padding: 4px;
+}
+#soDetailList td { border-color:#CCC;
+}
+.gtd td
+{
+    border: solid 1px #efefef;
+    padding: 2px;
+}
+.ttd td
+{
+    border: 0px;
+    padding: 5px;
+}
+p
+{
+    line-height: 20px;
+}
+.HeaderStyle
+{
+    /*background-image: url(/Images/TITLEBG.gif);*/ /*background-position:left;*/ /*background-repeat:repeat-x;*/
+    height: 25px;
+   
+}
+
+
+.PagerStyle
+{
+    /*background-position:top;*/ /*background-repeat:repeat-x;*/
+}
+.PagerStyle table
+{
+    width: auto;
+}
+.Ind
+{
+    width: auto;
+}
+.Ind td
+{
+    border: solid 1px #ffffff;
+    color: #dcb558;
+}
+.NoUndl a:link{ text-decoration:none}
+.NoUndl a:visited{ text-decoration:none}
+a:link
+{
+    color: #4e0000;
+}
+a:visited
+{
+    color: #4e4444;
+}
+a:hover
+{
+    color: #000000;
+}
+a:active
+{
+    color: #000000;
+}
+#ContentPlaceHolder1_ascxPickAccount_FlyoutLitType_cblRBU td{ width:50px;}
+.hide
+{
+    display: none;
+}
+ul.myul
+{
+    padding: 5px 0px 3px 5px;
+    margin: 0px;
+    margin-left: 30px;
+    background: #fff8e8;
+    border: 1px solid #ffe296;
+    position: relative;
+}
+ul.myul .pct
+{
+    position: absolute;
+top:-7px; left:3px; width:13px; height:7px;    background-image: url('../Images/jt01.gif');_top:-6px;
+    background-repeat: no-repeat;
+}
+ul.myul .pname
+{ 
+   display: inline-block;
+    *display:inline;      
+     zoom:1;               
+    width: 100px; font-weight: normal; font-style: normal; }
+
+ul.myul li
+{
+    display: inline-block;
+    *display:inline;      
+     zoom:1;               
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    list-style-type: none;
+}
+.pnmore
+{
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+.cursor
+{
+     cursor:pointer;
+    }
+    #loading {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #A9ADB5;
+    padding: 2px 25px 2px 25px;
+    position: absolute;
+    top: 10%; 
+    left: 50%; 
+    height: 35px; 
+    background-image: url('../images/bgloading.png');
+    color: #CC3300;
+    font-weight: bold;
+    line-height: 35px;
+    text-align: center;
+    display: none;
+    z-index: 5000;
+}
+
+ #ProductRelatedInfoFrame   .HeaderStyle
+    {
+        color: white;
+        background-color: #FF6600;
+    }
+   #ProductRelatedInfoFrame   .black
+    {
+        color: #000000;
+        font-weight: bold;
+    }
+ #ProductRelatedInfoFrame     td, tbody
+    {
+        vertical-align: top;
+    }
+    #divEngineer{ width:500px; float:left;}
+    .GlobalHide{ display:none;}
+#gptd {
+    color: #333333
+}
+#gptd ul {           margin:0px; padding:0px;
+}
+#gptd ul li {
+    text-align: left;
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 50px;
+    line-height: 20px;
+   
+}
+
+#soDetailList td{ height:22px; line-height:22px;
+font-family: arial,\5B8B\4F53,Arial Narrow,serif;
+font-size: 12px;}

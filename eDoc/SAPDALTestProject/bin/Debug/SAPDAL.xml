@@ -1,0 +1,337 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SAPDAL
+</name>
+</assembly>
+<members>
+<member name="T:SAPDAL.SalesOrder.OrderHeaderDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.HeaderTextsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.PartnerFuncDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.CreditCardDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.ConditionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.OrderLinesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.SAP_BAPIPARNRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.PartnerAddressesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.OrderHeaderRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.HeaderTextsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.PartnerFuncRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.CreditCardRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.ConditionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.OrderLinesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.SAP_BAPIPARNRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.PartnerAddressesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.OrderHeaderRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.HeaderTextsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.PartnerFuncRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.CreditCardRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.ConditionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.OrderLinesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.SAP_BAPIPARNRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SalesOrder.PartnerAddressesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SalesOrder">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="M:SAPDAL.UserRole.GetAUSDocNumberPrefixStringByGroup(System.Collections.ArrayList,SAPDAL.UserRole.AccountStatus,SAPDAL.UserRole.DocType)">
+	<summary>
+ Based on user's mail goup and customer's account status to get AUS's order/quotation prefix number
+ </summary>
+	<param name="Ar"></param>
+	<param name="account_status"></param>
+	<param name="_docType"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SAPDAL.UserRole.IsAUSAOlineSales(System.Collections.ArrayList)">
+	<summary>
+ Return true if user is AUS Aonline sales(including Aonline.USA and Aonline.USA.IAG)
+ </summary>
+	<param name="GA"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SAPDAL.UserRole.IsInGroupAonlineUsa(System.Collections.ArrayList)">
+	<summary>
+ Return true if user belongs to mail group Aonline.USA or SALES.AISA.USA
+ </summary>
+	<param name="GA"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SAPDAL.UserRole.IsInGroupAonlineUsaIag(System.Collections.ArrayList)">
+	<summary>
+ Return true if user belongs to mail group Aonline.USA.IAG
+ </summary>
+	<param name="GA"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SAPDAL.UserRole.IsInGroupSalesIagUsa(System.Collections.ArrayList)">
+	<summary>
+ Return true if user belongs to mail group SALES.IAG.USA(AAC CP or KA sales)
+ </summary>
+	<param name="GA"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SAPDAL.OrderDAL.GetRequireDate(System.Data.DataTable,System.String,System.Boolean,System.DateTime,System.Boolean)">
+	<summary>
+ 'MasterReqdate  已经是页面计算过的工作日
+ </summary>
+</member><member name="M:SAPDAL.agsWS.USTaxService.#ctor">
+	<remarks/>
+</member><member name="E:SAPDAL.agsWS.USTaxService.getSalesTaxByZIPCompleted">
+	<remarks/>
+</member><member name="E:SAPDAL.agsWS.USTaxService.getStateTaxInfoCompleted">
+	<remarks/>
+</member><member name="E:SAPDAL.agsWS.USTaxService.getZIPInfoCompleted">
+	<remarks/>
+</member><member name="E:SAPDAL.agsWS.USTaxService.getPFPCompleted">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getSalesTaxByZIP(System.String,System.Decimal@)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getSalesTaxByZIPAsync(System.String,System.Decimal)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getSalesTaxByZIPAsync(System.String,System.Decimal,System.Object)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getStateTaxInfo(System.String,System.Boolean@,System.Boolean@)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getStateTaxInfoAsync(System.String,System.Boolean,System.Boolean)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getStateTaxInfoAsync(System.String,System.Boolean,System.Boolean,System.Object)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getZIPInfo(System.String,System.String@,System.String@,System.String@,System.Boolean@,System.Boolean@)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getZIPInfoAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getZIPInfoAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getPFP(System.String,System.Boolean,System.String@)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getPFPAsync(System.String,System.Boolean,System.String)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.getPFPAsync(System.String,System.Boolean,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:SAPDAL.agsWS.USTaxService.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:SAPDAL.agsWS.USTaxService">
+	<remarks/>
+</member><member name="T:SAPDAL.agsWS.getSalesTaxByZIPCompletedEventHandler">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getSalesTaxByZIPCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getSalesTaxByZIPCompletedEventArgs.pDecSalesTax">
+	<remarks/>
+</member><member name="T:SAPDAL.agsWS.getSalesTaxByZIPCompletedEventArgs">
+	<remarks/>
+</member><member name="T:SAPDAL.agsWS.getStateTaxInfoCompletedEventHandler">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getStateTaxInfoCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getStateTaxInfoCompletedEventArgs.TAX_SHIPPING_ALONE">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getStateTaxInfoCompletedEventArgs.Advan_Taxable">
+	<remarks/>
+</member><member name="T:SAPDAL.agsWS.getStateTaxInfoCompletedEventArgs">
+	<remarks/>
+</member><member name="T:SAPDAL.agsWS.getZIPInfoCompletedEventHandler">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getZIPInfoCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getZIPInfoCompletedEventArgs.pStrStateAbb2Digit">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getZIPInfoCompletedEventArgs.pStrCountyName">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getZIPInfoCompletedEventArgs.pStrCityName">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getZIPInfoCompletedEventArgs.TAX_SHIPPING_ALONE">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getZIPInfoCompletedEventArgs.Advan_Taxable">
+	<remarks/>
+</member><member name="T:SAPDAL.agsWS.getZIPInfoCompletedEventArgs">
+	<remarks/>
+</member><member name="T:SAPDAL.agsWS.getPFPCompletedEventHandler">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getPFPCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="P:SAPDAL.agsWS.getPFPCompletedEventArgs.pResponse">
+	<remarks/>
+</member><member name="T:SAPDAL.agsWS.getPFPCompletedEventArgs">
+	<remarks/>
+</member><member name="M:SAPDAL.ProductX.GetProductInfo(System.Collections.Generic.List{SAPDAL.ProductX},System.String,System.Boolean@)">
+	<summary>
+ 'Get SAP status and ATP on runtime
+ </summary>
+	<param name="Products">料集合</param>
+	<param name="SalesOrg">SalesOrg</param>
+	<param name="IsHavePhaseout">IsHavePhaseout</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SAPDAL.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SAPDAL.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:SAPDAL.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:SAPDAL.SAPDAL.QueryInventory(SAPDAL.SAPDALDS.ProductInDataTable,System.String,SAPDAL.SAPDALDS.QueryInventory_OutputDataTable@,System.String@)">
+	<summary>
+ Query Product Inventory
+ </summary>
+	<param name="PartNos"></param>
+	<param name="plant"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SAPDAL.SAPDAL.QueryInventory_V2(SAPDAL.SAPDALDS.ProductInDataTable,System.String,System.DateTime,SAPDAL.SAPDALDS.QueryInventory_OutputDataTable@,System.String@)">
+	<summary>
+ Query Product Inventory V2
+ </summary>
+	<param name="PartNos"></param>
+	<param name="plant"></param>
+	<param name="Req_Date">format is yyyyMMdd(Ex 20120101)</param>
+	<param name="QueryResult"></param>
+	<param name="ErrorMsg"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SAPDAL.SAPDALDS.ProductInDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.ProductOutDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.QueryInventory_OutputDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.ProductOut_ABRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.SimulateOutDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.ProductInRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.ProductOutRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.QueryInventory_OutputRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.ProductOut_ABRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.SimulateOutRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.ProductInRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.ProductOutRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.QueryInventory_OutputRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.ProductOut_ABRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS.SimulateOutRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SAPDAL.SAPDALDS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+</members>
+</doc>

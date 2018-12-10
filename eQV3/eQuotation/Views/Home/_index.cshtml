@@ -1,0 +1,154 @@
+﻿@model eQuotation.Models.Home.LayoutViewModel
+@using eQuotation.Utility
+
+@{
+    Layout = "~/Views/Home/_layout.cshtml";
+}
+
+@section Header {
+    <div style="margin-left:15px;">
+        @*<img alt="logo" src="~/Images/adv-logo.jpg" />*@
+        <a style="color:#cfcfcf"><span><i class="fa fa-cubes"></i><strong style="font-size:x-large"> @Model.AppName</strong></span></a>
+    </div>
+    <div class="flex-row" style="color:#cfcfcf">
+        <div style="margin-right:50px;">&nbsp;</div>
+        <div style="font-size:9pt;"></div>&nbsp;
+        <div id="LOADING_STATUS" style="color:#c0c0c0; width:30px; margin-left:10px;"></div>
+    </div>
+    <div style="margin-right:20px; padding-top:4px;">
+        <div class="flex-row" style="color:#cfcfcf">
+            <div>
+                @Html.DropDownList("CurrentRegionDDL", Model.BelongOrgList)
+            </div>&nbsp; &nbsp;
+            @*@if(Model.BelongSectorList.Any())
+                {
+                    <div style="display:none;">
+                        @Html.DropDownList("CurrentSectorDDL", Model.BelongSectorList)
+                    </div><span>&nbsp;&nbsp;</span>
+                }*@
+            <div><a class="go-act" id="btn-home"><i class="fa fa-home fa-2x"></i></a></div>&nbsp;&nbsp;
+            <div><a class="go-act" id="btn-fullscreen"><i class="fa fa-laptop fa-2x"></i></a></div>&nbsp; &nbsp;
+            <div><a class="go-act" href='@Url.Action("logout", "home")'><i class="fa fa-sign-out fa-2x"></i></a></div>
+            <span>&nbsp;&nbsp;</span>
+            <span>&nbsp;&nbsp;</span>
+            <h4><span><a style="color:#cfcfcf"><i class="fa fa-user"></i><strong style="font-size:larger"> @Model.UserName</strong></a></span></h4>
+        </div>
+    </div>
+    <div class="imgWait" style="background:url(/Images/Reload.gif) no-repeat center center; background-color: white;"></div>
+}
+
+@section Anchor {
+    <ul class="navigation">
+        <li id="li-collapse">
+            <a id="btn-nav-hide" style="color:#999"><i class="fa fa-chevron-circle-left fa-2x"></i></a>
+        </li>
+        <li id="li-expand" style="display:none">
+            <a id="btn-nav-show" style="color:#999"><i class="fa fa-chevron-circle-right fa-2x"></i></a>
+        </li>
+        @*<li class="blk-func" id="ifs_tab_0" data-value="0"><a id="btn-nav-prod" style="color:#999"><i class="fa fa-codepen fa-2x"></i></a></li>*@
+        <li class="blk-func" id="ifs_tab_0" data-value="0"><a id="btn-nav-quotation" style="color:#999"><i class="fa fa-file-text-o fa-2x"></i></a></li>
+        <li class="blk-func" id="ifs_tab_1" data-value="1"><a id="btn-nav-admin" style="color:#999"><i class="fa fa-user fa-2x"></i></a></li>
+        <li><a style="color:#999; display:none"><i class="fa fa-book fa-2x"></i></a></li>
+    </ul>
+
+
+}
+
+@section Navigation { @Html.Partial("_tabmenu") }
+
+@*@if (Model.CurrentRegion == Model.DefaultRegion)
+{
+    @Html.Partial("_default", @Model.PowerUserList)
+}
+else
+{
+    @Html.Action("MyQuotation", "Quotes")
+}*@
+
+@Html.Action("MyQuotation", "Quotes")
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+
+        adjheight();
+
+
+        //$imgWait = $(".imgWait");
+
+        //fullscreen
+        $("#btn-fullscreen").on("click", function () {
+            $("#wrapper-content").fullscreen();
+        });
+
+        //refresh page (go to home)
+        $("#btn-home").on("click", function () {
+            $.blockUI();
+            window.location = window.location.href.split("#")[0];
+        });
+
+
+        $('form').keypress(function (e) {
+            return e.which !== 13
+        });
+
+        ////enter serial number
+        //$("#TXTSEARCHKEY").onEnter(function () {
+        //    var url = "production/searchwo?type=" + $("#DDSEARCHTYPE").val() + "&key=" + $(this).val();
+        //    initContent(url);
+        //});
+
+
+        $('#CurrentRegionDDL').change(function () {
+            var region = $('#CurrentRegionDDL option:selected').val();
+            $(".imgWait").show();
+            var postdata = JSON.stringify({
+                region: region
+            });
+
+            $.ajax({
+                url: "/Operation/ChangeCurrentRegion", type: "POST", dataType: "json", data: postdata,
+                contentType: "application/json; charset=utf-8",
+
+                success: function (redata) {
+
+                    if (redata.succeed) {
+                        var url = '@Url.Action("Index", "Home")';
+                        window.location.href = url;
+                    } else {
+                        alert(redata.err);
+                        $(".imgWait").hide();
+                    }
+
+                }
+            });
+
+        });
+
+
+        $('#CurrentSectorDDL').change(function () {
+            var sector = $('#CurrentSectorDDL option:selected').val();
+            $(".imgWait").show();
+            var postdata = JSON.stringify({
+                sector: sector
+            });
+
+            $.ajax({
+                url: "/Operation/ChangeCurrentSector", type: "POST", dataType: "json", data: postdata,
+                contentType: "application/json; charset=utf-8",
+
+                success: function (redata) {
+                    if (redata.succeed) {
+                        var url = '@Url.Action("Index", "Home")';
+                        window.location.href = url;
+                    } else {
+                        alert(redata.err);
+                        $(".imgWait").hide();
+                    }
+                }
+            });
+
+        });
+    });
+</script>

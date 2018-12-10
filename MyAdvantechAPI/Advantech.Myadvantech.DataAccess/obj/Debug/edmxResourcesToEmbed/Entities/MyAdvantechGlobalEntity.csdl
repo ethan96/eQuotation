@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyAdvantechGlobalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ORDER_DETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDER_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LINE_NO" Type="Int32" />
+    <Property Name="PRODUCT_LINE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PART_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_LINE_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="QTY" Type="Int32" />
+    <Property Name="LIST_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UNIT_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="REQUIRED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DUE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="ERP_SITE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ERP_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AUTO_ORDER_FLAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AUTO_ORDER_QTY" Type="Int32" />
+    <Property Name="SUPPLIER_DUE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="LINE_PARTIAL_FLAG" Type="Int32" />
+    <Property Name="RoHS_FLAG" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="EXWARRANTY_FLAG" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CustMaterialNo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryPlant" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NoATPFlag" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DMF_Flag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OptyID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cate" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="HigherLevel" Type="Int32" />
+    <Property Name="itp" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="order_Master_ExtensionV2">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+    </Key>
+    <Property Name="ORDER_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PI2CUSTOMER_FLAG" Type="Int32" Nullable="false" />
+    <Property Name="OrderNoScheme" Type="Int32" Nullable="false" />
+    <Property Name="OrderTaxRate" Type="Decimal" Precision="8" Scale="4" />
+  </EntityType>
+  <EntityType Name="ORDER_MASTER">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+      <PropertyRef Name="ORDER_NO" />
+    </Key>
+    <Property Name="ORDER_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ORDER_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ORDER_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PO_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SOLDTO_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SHIPTO_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="BILLTO_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SALES_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PAYMENT_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ATTENTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PARTIAL_FLAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="COMBINE_ORDER_FLAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EARLY_SHIP_FLAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INSURANCE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="REMARK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_SITE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DUE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQUIRED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SHIPMENT_TERM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SHIP_VIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_NOTE" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="ORDER_STATUS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TOTAL_AMOUNT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TOTAL_LINE" Type="Int32" />
+    <Property Name="LAST_UPDATED" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CUSTOMER_ATTENTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AUTO_ORDER_FLAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="INCOTERM" Type="String" MaxLength="28" FixedLength="false" Unicode="true" />
+    <Property Name="INCOTERM_TEXT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SALES_NOTE" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="OP_NOTE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SHIP_CONDITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NONERoHS_ACCEPT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="ProjectFlag" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Z7Sales" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultSalesNote" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="prj_Note" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EARLY_SHIP" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ER_EMPLOYEE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="END_CUST" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="KEYPERSON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CREDIT_CARD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREDIT_CARD_EXPIRE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="CREDIT_CARD_VERIFY_NUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PAYTERM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CREDIT_CARD_HOLDER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREDIT_CARD_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BILLINGINSTRUCTION_INFO" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="EMPLOYEEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DIST_CHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIVISION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SALESGROUP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SALESOFFICE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DISTRICT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IS_EARLYSHIP" Type="Int32" />
+    <Property Name="isExempt" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ORDER_MASTER_EXTENSION">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+    </Key>
+    <Property Name="ORDER_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PI2CUSTOMER_FLAG" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="MyAdvantechGlobalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ORDER_DETAIL" EntityType="Self.ORDER_DETAIL" />
+    <EntitySet Name="order_Master_ExtensionV2" EntityType="Self.order_Master_ExtensionV2" />
+    <EntitySet Name="ORDER_MASTER" EntityType="Self.ORDER_MASTER" />
+    <EntitySet Name="ORDER_MASTER_EXTENSION" EntityType="Self.ORDER_MASTER_EXTENSION" />
+    <EntitySet Name="TIMEZONE" EntityType="MyAdvantechGlobalModel.TIMEZONE" />
+    <EntitySet Name="PRODUCT_DEPENDENCY" EntityType="MyAdvantechGlobalModel.PRODUCT_DEPENDENCY" />
+    <EntitySet Name="Cart2OrderMaping" EntityType="MyAdvantechGlobalModel.Cart2OrderMaping" />
+    <EntitySet Name="CARTMASTERV2" EntityType="MyAdvantechGlobalModel.CARTMASTERV2" />
+    <EntitySet Name="SIEBEL_CONTACT" EntityType="MyAdvantechGlobalModel.SIEBEL_CONTACT" />
+    <EntitySet Name="SIEBEL_CONTACT_PRIVILEGE" EntityType="MyAdvantechGlobalModel.SIEBEL_CONTACT_PRIVILEGE" />
+    <EntitySet Name="SIEBEL_CONTACT_PRIVILEGE_TEMP" EntityType="MyAdvantechGlobalModel.SIEBEL_CONTACT_PRIVILEGE_TEMP" />
+    <EntitySet Name="SAP_PRODUCT" EntityType="MyAdvantechGlobalModel.SAP_PRODUCT" />
+    <EntitySet Name="SAP_PRODUCT_ORG" EntityType="MyAdvantechGlobalModel.SAP_PRODUCT_ORG" />
+    <EntitySet Name="SIEBEL_ACCOUNT" EntityType="MyAdvantechGlobalModel.SIEBEL_ACCOUNT" />
+    <EntitySet Name="cart_DETAIL_V2" EntityType="MyAdvantechGlobalModel.cart_DETAIL_V2" />
+    <EntitySet Name="CheckPointOrder2Cart" EntityType="MyAdvantechGlobalModel.CheckPointOrder2Cart" />
+    <EntitySet Name="SAP_PRODUCT_ABC" EntityType="MyAdvantechGlobalModel.SAP_PRODUCT_ABC" />
+    <EntitySet Name="SAP_EMPLOYEE" EntityType="MyAdvantechGlobalModel.SAP_EMPLOYEE" />
+    <EntitySet Name="SAP_DIMCOMPANY" EntityType="MyAdvantechGlobalModel.SAP_DIMCOMPANY" />
+    <EntitySet Name="SAP_COMPANY_PARTNERS" EntityType="MyAdvantechGlobalModel.SAP_COMPANY_PARTNERS" />
+    <EntitySet Name="PRODUCT_COMPATIBILITY" EntityType="MyAdvantechGlobalModel.PRODUCT_COMPATIBILITY" />
+    <EntitySet Name="SAP_PRODUCT_STATUS" EntityType="MyAdvantechGlobalModel.SAP_PRODUCT_STATUS" />
+    <EntitySet Name="SAP_PRODUCT_STATUS_ORDERABLE" EntityType="MyAdvantechGlobalModel.SAP_PRODUCT_STATUS_ORDERABLE" />
+    <EntitySet Name="OrderForwarderServices" EntityType="MyAdvantechGlobalModel.OrderForwarderService" />
+    <EntitySet Name="ORDER_PARTNERS" EntityType="MyAdvantechGlobalModel.ORDER_PARTNERS" />
+    <EntitySet Name="BB_ESTORE_ORDER" EntityType="MyAdvantechGlobalModel.BB_ESTORE_ORDER" />
+    <EntitySet Name="FreightOptions" EntityType="MyAdvantechGlobalModel.FreightOption" />
+    <EntitySet Name="BB_CREDITCARD_ORDER" EntityType="MyAdvantechGlobalModel.BB_CREDITCARD_ORDER" />
+    <EntitySet Name="SAP_COMPANY_ORG" EntityType="MyAdvantechGlobalModel.SAP_COMPANY_ORG" />
+    <EntitySet Name="HubConfiguredResults" EntityType="MyAdvantechGlobalModel.HubConfiguredResult" />
+    <EntitySet Name="ASG_BTOSInstruction" EntityType="MyAdvantechGlobalModel.ASG_BTOSInstruction" />
+    <EntitySet Name="ExtendedWarrantyPartNo_V2" EntityType="MyAdvantechGlobalModel.ExtendedWarrantyPartNo_V2" />
+  </EntityContainer>
+  <EntityType Name="TIMEZONE">
+    <Key>
+      <PropertyRef Name="ORG" />
+    </Key>
+    <Property Name="TimeZoneName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORG" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRODUCT_DEPENDENCY">
+    <Key>
+      <PropertyRef Name="DEPENDENCY_ID" />
+    </Key>
+    <Property Name="DEPENDENCY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PART_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPENDENCY_PART_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_ID" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="LAST_UPDATED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_UPDATED_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Cart2OrderMaping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CartID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrderID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrderNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CARTMASTERV2">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ErpID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="QuoteID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="OpportunityID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="OpportunityAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Currency" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SIEBEL_CONTACT">
+    <Key>
+      <PropertyRef Name="ROW_ID" />
+    </Key>
+    <Property Name="ROW_ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkPhone" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="CellPhone" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="FaxNumber" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_FUNCTION" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="PAR_ROW_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ERPID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PriOrgId" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="OrgID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="OwnerId" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CanSeeOrder" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Sales_Rep" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="NeverEmail" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="NeverCall" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="NeverFax" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="NeverMail" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_TITLE" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL_ADDRESS" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="COMMENTS" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_ROW_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_STATUS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Salutation" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="EMPLOYEE_FLAG" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="ACTIVE_FLAG" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="USER_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REG_SOURCE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED" Type="DateTime" Precision="3" />
+    <Property Name="LAST_UPDATED" Type="DateTime" Precision="3" />
+    <Property Name="PRIMARY_FLAG" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="GDPR_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SIEBEL_CONTACT_PRIVILEGE">
+    <Key>
+      <PropertyRef Name="ROW_ID" />
+      <PropertyRef Name="PRIVILEGE" />
+    </Key>
+    <Property Name="ROW_ID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PRIVILEGE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SIEBEL_CONTACT_PRIVILEGE_TEMP">
+    <Key>
+      <PropertyRef Name="ROW_ID" />
+      <PropertyRef Name="PRIVILEGE" />
+      <PropertyRef Name="ACTION_TYPE" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ROW_ID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PRIVILEGE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ACTION_TYPE" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT">
+    <Key>
+      <PropertyRef Name="PART_NO" />
+    </Key>
+    <Property Name="PART_NO" Type="String" Nullable="false" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="MODEL_NO" Type="String" Nullable="false" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="MATERIAL_GROUP" Type="String" Nullable="false" MaxLength="27" FixedLength="false" Unicode="true" />
+    <Property Name="DIVISION" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_HIERARCHY" Type="String" Nullable="false" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_GROUP" Type="String" Nullable="false" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_DIVISION" Type="String" Nullable="false" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_LINE" Type="String" Nullable="false" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="GENITEMCATGRP" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_DESC" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="ROHS_FLAG" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EGROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EDIVISION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NET_WEIGHT" Type="Double" />
+    <Property Name="GROSS_WEIGHT" Type="Double" />
+    <Property Name="WEIGHT_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VOLUME" Type="Double" />
+    <Property Name="VOLUME_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_UPD_DATE" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="GIP_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SIZE_DIMENSIONS" Type="String" MaxLength="96" FixedLength="false" Unicode="true" />
+    <Property Name="SOURCE_LOCATION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_FAMILY" Type="String" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="PLM_STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT_ORG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PART_NO" Type="String" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="ORG_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="DIST_CHANNEL" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="B2BONLINE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="DELIVERYPLANT" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="PRICINGGROUP" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_UPD_DATE" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="MIN_ORD_QTY" Type="Int32" />
+    <Property Name="MIN_DLV_QTY" Type="Int32" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SIEBEL_ACCOUNT">
+    <Key>
+      <PropertyRef Name="ROW_ID" />
+    </Key>
+    <Property Name="ROW_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ERP_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_STATUS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FAX_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OU_TYPE_CD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RBU" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_SALES_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_ROW_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAJORACCOUNT_FLAG" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="COMPETITOR_FLAG" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PARTNER_FLAG" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ZIPCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROVINCE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BAA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED" Type="DateTime" Precision="3" />
+    <Property Name="LAST_UPDATED" Type="DateTime" Precision="3" />
+    <Property Name="PriOwnerDivision" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PriOwnerRowId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriOwnerPosition" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_TEAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_CC_GRADE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cart_DETAIL_V2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cart_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Line_No" Type="Int32" />
+    <Property Name="Part_No" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="List_Price" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Unit_Price" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Itp" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RecyclingFee" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Delivery_Plant" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="class" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="rohs" Type="Int32" />
+    <Property Name="Ew_Flag" Type="Int32" />
+    <Property Name="req_date" Type="DateTime" Precision="0" />
+    <Property Name="due_date" Type="DateTime" Precision="0" />
+    <Property Name="SatisfyFlag" Type="Int32" />
+    <Property Name="CanbeConfirmed" Type="Int32" />
+    <Property Name="CustMaterial" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="inventory" Type="Int32" />
+    <Property Name="otype" Type="Int32" />
+    <Property Name="Model_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QUOTE_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="oUnit_Price" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="higherLevel" Type="Int32" />
+    <Property Name="PRODUCT_FAMILY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CheckPointOrder2Cart">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ERPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CheckPointOrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CartID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrderStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+    <Property Name="Creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PO_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT_ABC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PART_NO" Type="String" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="PLANT" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="ABC_INDICATOR" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="PLANNED_DEL_TIME" Type="Int32" />
+    <Property Name="GP_PROCESSING_TIME" Type="Int32" />
+    <Property Name="IN_HOUSE_PRODUCTION" Type="Int32" />
+    <Property Name="ProfitCenter" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Ctrl_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="safety_stock" Type="Double" />
+    <Property Name="min_safety_stock" Type="Double" />
+    <Property Name="service_level" Type="Decimal" Precision="8" Scale="1" />
+    <Property Name="MIN_LOT_SIZE" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FREIGHT_METHOD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY_ORIGIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SAP_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="SALES_CODE" />
+      <PropertyRef Name="PERS_AREA" />
+    </Key>
+    <Property Name="SALES_CODE" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="PERS_AREA" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_GROUP" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="SUB_EMP_GROUP" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="SNAME" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+    <Property Name="ENAME" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="FULL_NAME" Type="String" MaxLength="241" FixedLength="false" Unicode="true" />
+    <Property Name="TEL" Type="String" MaxLength="723" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="723" FixedLength="false" Unicode="true" />
+    <Property Name="CELLPHONE" Type="String" MaxLength="723" FixedLength="false" Unicode="true" />
+    <Property Name="OTHERPHONE" Type="String" MaxLength="723" FixedLength="false" Unicode="true" />
+    <Property Name="NUM_OF_CHILD" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PAYR_AREA" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="SALESOFFICE" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="SALESGROUP" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SAP_DIMCOMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="UNIQUE_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ORG_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="PARENTCOMPANYID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_NAME" Type="String" MaxLength="210" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="420" FixedLength="false" Unicode="true" />
+    <Property Name="FAX_NO" Type="String" MaxLength="93" FixedLength="false" Unicode="true" />
+    <Property Name="TEL_NO" Type="String" MaxLength="48" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_TYPE" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="PRICE_CLASS" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="REGION_CODE" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="ZIP_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="ATTENTION" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="CREDIT_TERM" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="SHIP_VIA" Type="String" MaxLength="95" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="396" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDDATE" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_PRICE_TYPE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPCONDITION" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="ATTRIBUTE4" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="SALESOFFICE" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="SALESGROUP" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="AMT_INSURED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CREDIT_LIMIT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="CONTACT_EMAIL" Type="String" MaxLength="723" FixedLength="false" Unicode="true" />
+    <Property Name="DELETION_FLAG" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY_NAME" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="SALESOFFICENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SAP_SALESNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SAP_SALESCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SAP_ISNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SAP_OPNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SECTOR" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_BAA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_ROW_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_STATUS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="RBU" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_SALES_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_OWNER_DIVISION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BUSINESS_GROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FACT2005" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FACT2006" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FACT2007" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FACT2008" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FACT2009" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FACT2010" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LAST_BUY_DATE" Type="DateTime" Precision="3" />
+    <Property Name="ORDERS_IN_PAST_YEAR" Type="Int32" />
+    <Property Name="AMOUNT_IN_PAST_YEAR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ORDERS_IN_PAST_HALFYEAR" Type="Int32" />
+    <Property Name="CUST_IND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VM" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="PRICE_GRP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PRICE_LIST" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="INCO1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="INCO2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMENT_TERM_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMENT_TERM_NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SAP_COMPANY_PARTNERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="COMPANY_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ORG_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="DIST_CHANN" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="DIVISION" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="PARTNER_FUNCTION" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_COMPANY_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="VENDOR_CREDITOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SALES_CODE" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="PARTNER_NUMBER" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="KNREF" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+    <Property Name="DEFPA" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="PRODUCT_COMPATIBILITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PART_NO1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PART_NO2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="RELATION" Type="Int32" />
+    <Property Name="REASON" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PART_NO" Type="String" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="SALES_ORG" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="DIST_CHANNEL" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_STATUS" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="MIN_ORDER_QTY" Type="Decimal" Precision="13" Scale="3" />
+    <Property Name="MIN_DLV_QTY" Type="Decimal" Precision="13" Scale="3" />
+    <Property Name="MIN_BTO_QTY" Type="Decimal" Precision="13" Scale="3" />
+    <Property Name="DLV_PLANT" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="MATERIAL_PRICING_GRP" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="VALID_DATE" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ITEM_CATEGORY_GROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT_STATUS_ORDERABLE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="PART_NO" Type="String" Nullable="false" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="SALES_ORG" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="DIST_CHANNEL" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_STATUS" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="MIN_ORDER_QTY" Type="Decimal" Precision="13" Scale="3" />
+    <Property Name="MIN_DLV_QTY" Type="Decimal" Precision="13" Scale="3" />
+    <Property Name="MIN_BTO_QTY" Type="Decimal" Precision="13" Scale="3" />
+    <Property Name="DLV_PLANT" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="MATERIAL_PRICING_GRP" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="VALID_DATE" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="ITEM_CATEGORY_GROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="OrderForwarderService">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FreightOption" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FreightChargeBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomChargeBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ORDER_PARTNERS">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="ORDER_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROWID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ERPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="TYPE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ATTENTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MOBILE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STREET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DISTRICT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STREET2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TAXJURI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BB_ESTORE_ORDER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDER_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ERPID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ORDER_STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROCESS_LOG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FreightOption">
+    <Key>
+      <PropertyRef Name="SAPCode" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="SAPCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CarrierCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EStoreServiceName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="SAPShippingCondition" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SAPShippingConditionText" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BB_CREDITCARD_ORDER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDER_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CARD_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CARD_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TRANSACTION_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MESSAGE" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="TRANSACTION_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AUTH_CODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TOTAL_AUTH_AMOUNT" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SAP_COMPANY_ORG">
+    <Key>
+      <PropertyRef Name="COMPANY_ID" />
+      <PropertyRef Name="ORG_ID" />
+    </Key>
+    <Property Name="COMPANY_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ORG_ID" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="ORG_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IS_DEFAULT" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HubConfiguredResult">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ParentLineNo" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentLineNo" Type="Int32" Nullable="false" />
+    <Property Name="Result" Type="Int32" />
+    <Property Name="RootID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelectedItems" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ReConfigData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ASG_BTOSInstruction">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LineNo" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineNo" Type="Int32" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ExtendedWarrantyPartNo_V2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="EW_PartNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EW_Month" Type="Int32" />
+    <Property Name="EW_Rate" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Plant" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SeqNO" Type="Int32" />
+    <Property Name="SalesGroup" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder" version="2014.11.22.0" projectFile="D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.Myadvantech.Business.Help.shfbproj" started="2014/12/10 下午 04:41:12">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+Searching for HTML Help 1 compiler...
+Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
+Locating components in the following folder(s):
+   D:\Advantech\MyAdvantech\MyAdvantechAPI
+Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013&#39;
+Loading and initializing plug-ins...
+Lightweight Website Style Version 2014.11.22.0
+Copyright &#169; 2006-2014, Eric Woodruff, All Rights Reserved
+Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.Myadvantech.Business\bin\Debug\Advantech.Myadvantech.Business.dll
+    Found assembly &#39;D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.Myadvantech.Business\bin\Debug\Advantech.Myadvantech.Business.dll&#39;
+Source: D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.Myadvantech.Business\bin\Debug\Advantech.Myadvantech.Business.XML
+Source: D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.Myadvantech.DataAccess\bin\Debug\Advantech.Myadvantech.DataAccess.dll
+    Found assembly &#39;D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.Myadvantech.DataAccess\bin\Debug\Advantech.Myadvantech.DataAccess.dll&#39;
+Source: D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.Myadvantech.DataAccess\bin\Debug\Advantech.Myadvantech.DataAccess.XML
+Source: D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.PIS.Business\bin\Debug\Advantech.PIS.Business.dll
+    Found assembly &#39;D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.PIS.Business\bin\Debug\Advantech.PIS.Business.dll&#39;
+Source: D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.PIS.Business\bin\Debug\Advantech.PIS.Business.XML
+
+Copying XML comments files
+    D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.Myadvantech.Business\bin\Debug\Advantech.Myadvantech.Business.XML -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Advantech.Myadvantech.Business.XML
+    D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.Myadvantech.DataAccess\bin\Debug\Advantech.Myadvantech.DataAccess.XML -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Advantech.Myadvantech.DataAccess.XML
+    D:\Advantech\MyAdvantech\MyAdvantechAPI\Advantech.PIS.Business\bin\Debug\Advantech.PIS.Business.XML -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Advantech.PIS.Business.XML
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, English (United States))...
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+</plugIn>    Last step completed in 00:00:00.0060
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00.0020
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Build started 2014/12/10 下午 04:41:13.
+Project &quot;D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;obj\Debug\&quot;.
+GenerateRefInfo:
+  MRefBuilder (v2014.11.22.0)
+  Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loaded 3 assemblies for reflection and 1 dependency assemblies.
+  Wrote information on 3 namespaces, 28 types, and 190 members
+  Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
+  XslTransform (v2014.11.22.0)
+  Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
+Done Building Project &quot;D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\GenerateRefInfo.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.86
+    Last step completed in 00:00:00.9670
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Build started 2014/12/10 下午 04:41:14.
+Project &quot;D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
+TransformManifest:
+  XslTransform (v2014.11.22.0)
+  Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Copying file from &quot;reflection.xml&quot; to &quot;reflection.nofilenames&quot;.
+  XslTransform (v2014.11.22.0)
+  Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+  XslTransform (v2014.11.22.0)
+  Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Done Building Project &quot;D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\TransformManifest.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.63
+    Last step completed in 00:00:00.7280
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00.0170
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+No additional content to copy
+    Last step completed in 00:00:00.0040
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00.0020
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Build started 2014/12/10 下午 04:41:15.
+Project &quot;D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
+GenerateIntermediateTOC:
+  XslTransform (v2014.11.22.0)
+  Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Done Building Project &quot;D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\GenerateIntermediateTOC.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.15
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:00.2440
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    Last step completed in 00:00:00.2270
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\sandcastle.config
+    Last step completed in 00:00:00.0310
+</buildStep>
+<buildStep step="BuildReferenceTopics">
+Building reference help topics...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Build started 2014/12/10 下午 04:41:15.
+Project &quot;D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
+BuildReferenceTopics:
+  BuildAssembler (v2014.11.22.0)
+  Copyright c 2006-2014, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ShowMissingComponent: [N:Advantech.Myadvantech.Business] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.OrderBusinessLogic.CreateSAPOrder(Advantech.Myadvantech.DataAccess.Order)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.OrderBusinessLogic.CreateSAPOrder(Advantech.Myadvantech.DataAccess.Order)] Missing &lt;param name=&quot;order&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.OrderBusinessLogic.SimulateSAPOrder(Advantech.Myadvantech.DataAccess.Order)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.OrderBusinessLogic.SimulateSAPOrder(Advantech.Myadvantech.DataAccess.Order)] Missing &lt;param name=&quot;order&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.Business.PartBusinessLogic] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPartWithBasicModelInformation(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPartWithBasicModelInformation(System.String)] Missing &lt;param name=&quot;PartNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPartWithCompleteModelInformation(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPartWithCompleteModelInformation(System.String)] Missing &lt;param name=&quot;PartNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPrice(Advantech.Myadvantech.DataAccess.Part,System.String@)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPrice(Advantech.Myadvantech.DataAccess.Part,System.String@)] Missing &lt;param name=&quot;part&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPrice(Advantech.Myadvantech.DataAccess.Part,System.String@)] Missing &lt;param name=&quot;errorMsg&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPrice(System.Collections.Generic.List{Advantech.Myadvantech.DataAccess.Part},System.String@)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPrice(System.Collections.Generic.List{Advantech.Myadvantech.DataAccess.Part},System.String@)] Missing &lt;param name=&quot;parts&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPrice(System.Collections.Generic.List{Advantech.Myadvantech.DataAccess.Part},System.String@)] Missing &lt;param name=&quot;errorMsg&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:Advantech.Myadvantech.DataAccess] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.DatabaceFactory] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateAdapter(System.Data.IDbCommand,Advantech.Myadvantech.DataAccess.DatabaseType)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateAdapter(System.Data.IDbCommand,Advantech.Myadvantech.DataAccess.DatabaseType)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateAdapter(System.Data.IDbCommand,Advantech.Myadvantech.DataAccess.DatabaseType)] Missing &lt;param name=&quot;cmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateAdapter(System.Data.IDbCommand,Advantech.Myadvantech.DataAccess.DatabaseType)] Missing &lt;param name=&quot;dbtype&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateCommand(System.String,Advantech.Myadvantech.DataAccess.DatabaseType,System.Data.IDbConnection)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateCommand(System.String,Advantech.Myadvantech.DataAccess.DatabaseType,System.Data.IDbConnection)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateCommand(System.String,Advantech.Myadvantech.DataAccess.DatabaseType,System.Data.IDbConnection)] Missing &lt;param name=&quot;CommandText&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateCommand(System.String,Advantech.Myadvantech.DataAccess.DatabaseType,System.Data.IDbConnection)] Missing &lt;param name=&quot;dbtype&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateCommand(System.String,Advantech.Myadvantech.DataAccess.DatabaseType,System.Data.IDbConnection)] Missing &lt;param name=&quot;cnn&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateConnection(System.String,Advantech.Myadvantech.DataAccess.DatabaseType)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateConnection(System.String,Advantech.Myadvantech.DataAccess.DatabaseType)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateConnection(System.String,Advantech.Myadvantech.DataAccess.DatabaseType)] Missing &lt;param name=&quot;ConnectionString&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.CreateConnection(System.String,Advantech.Myadvantech.DataAccess.DatabaseType)] Missing &lt;param name=&quot;dbtype&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.GetPISConnection] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.GetPISConnection] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.GetPISConnectionString] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DatabaceFactory.GetPISConnectionString] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.DatabaseType] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.DocumentBase] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.BillTo] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.Currency] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.EM] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.Employee1] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.Employee2] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.Employee3] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.ID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.KIP] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.LineItems] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.DocumentBase.LoadInfo] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.OrgID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.ShipTo] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.DocumentBase.SoldTo] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.Feature] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Feature.FEATURE_DESC] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Feature.FEATURE_ID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Feature.FEATURE_SEQ] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Feature.Language] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.LanguageCode] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.LineItemType] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.Literature] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Literature.#ctor(System.String)] Missing &lt;param name=&quot;literatureid&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Literature.FILE_EXT] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Literature.FILE_NAME] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Literature.HTTP_URL] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Literature.Language] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Literature.LAST_UPDATED_BY] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Literature.LIT_NAME] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Literature.LIT_TYPE] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Literature.LITERATURE_ID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.Model] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.#ctor(System.String)] Missing &lt;param name=&quot;modelname&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.AllFeatures] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.Description] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.Features] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.GetBigPictures] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.GetDescriptionByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.GetDescriptionByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)] Missing &lt;param name=&quot;lang&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.GetFeaturesByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.GetFeaturesByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)] Missing &lt;param name=&quot;lang&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.GetIntroductionByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.GetIntroductionByLanguage(Advantech.Myadvantech.DataAccess.LanguageCode)] Missing &lt;param name=&quot;lang&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.GetMainPictures] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Model.GetSmallPictures] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.Introduction] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.Literatures] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.Model_Langs] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.Model_Name] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.Model_Type] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.ModelSpecs] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model.Parts] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.Model_Lang] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model_Lang.Description] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model_Lang.Introduction] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model_Lang.Language] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Model_Lang.Model_Name] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.ModelType] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.MyExtension] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.MyExtension.GetLanguageCodeByPISLanguageID(System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.MyExtension.GetLanguageCodeByPISLanguageID(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.MyExtension.GetLanguageCodeByPISLanguageID(System.String)] Missing &lt;param name=&quot;PISLangID&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.MyExtension.IsNumberPart(System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.MyExtension.IsNumberPart(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.MyExtension.IsNumberPart(System.String)] Missing &lt;param name=&quot;partno&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.MyExtension.ToMyAdvantechPart(System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.MyExtension.ToMyAdvantechPart(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.MyExtension.ToMyAdvantechPart(System.String)] Missing &lt;param name=&quot;partno&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.OracleProvider] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.ExecuteNoQuery(System.String,System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.ExecuteNoQuery(System.String,System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.ExecuteNoQuery(System.String,System.String)] Missing &lt;param name=&quot;ConnectionName&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.ExecuteNoQuery(System.String,System.String)] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.ExecuteScalar(System.String,System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.ExecuteScalar(System.String,System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.ExecuteScalar(System.String,System.String)] Missing &lt;param name=&quot;ConnectionName&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.ExecuteScalar(System.String,System.String)] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.GetDataTable(System.String,System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.GetDataTable(System.String,System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.GetDataTable(System.String,System.String)] Missing &lt;param name=&quot;ConnectionName&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OracleProvider.GetDataTable(System.String,System.String)] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.Order] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.#ctor(System.String)] Missing &lt;param name=&quot;SoldToErpID&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddBTOSChildItem(System.String,System.Int32,System.Int32)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddBTOSChildItem(System.String,System.Int32,System.Int32)] Missing &lt;param name=&quot;PartNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddBTOSChildItem(System.String,System.Int32,System.Int32)] Missing &lt;param name=&quot;ParentItemLineNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddBTOSChildItem(System.String,System.Int32,System.Int32)] Missing &lt;param name=&quot;Quantity&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddBTOSParentItem(System.String,System.Int32)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddBTOSParentItem(System.String,System.Int32)] Missing &lt;param name=&quot;PartNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddBTOSParentItem(System.String,System.Int32)] Missing &lt;param name=&quot;Quantity&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddLooseItem(System.String,System.Int32)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddLooseItem(System.String,System.Int32)] Missing &lt;param name=&quot;PartNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Order.AddLooseItem(System.String,System.Int32)] Missing &lt;param name=&quot;Quantity&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Order.LineItems] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Order.OrderNumber] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Order.OrderStatus] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Order.ORGID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.OrderPartner] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OrderPartner.#ctor(System.String,System.String,Advantech.Myadvantech.DataAccess.PartnerType)] Missing &lt;param name=&quot;ErpID&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OrderPartner.#ctor(System.String,System.String,Advantech.Myadvantech.DataAccess.PartnerType)] Missing &lt;param name=&quot;Org_id&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OrderPartner.#ctor(System.String,System.String,Advantech.Myadvantech.DataAccess.PartnerType)] Missing &lt;param name=&quot;partnerType&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.Address] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.Attention] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.City] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.Country] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.District] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.EmployeeID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.ErpID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OrderPartner.LoadPartner(System.String,System.String,Advantech.Myadvantech.DataAccess.PartnerType)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OrderPartner.LoadPartner(System.String,System.String,Advantech.Myadvantech.DataAccess.PartnerType)] Missing &lt;param name=&quot;ErpID&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OrderPartner.LoadPartner(System.String,System.String,Advantech.Myadvantech.DataAccess.PartnerType)] Missing &lt;param name=&quot;Org_id&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.OrderPartner.LoadPartner(System.String,System.String,Advantech.Myadvantech.DataAccess.PartnerType)] Missing &lt;param name=&quot;partnerType&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.Mobile] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.Name] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.State] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.Street] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.TaxJuri] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.Tel] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.Type] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.OrderPartner.ZipCode] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.OrderStatus] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.ParameterType] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.Part] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Part.#ctor(System.String)] Missing &lt;param name=&quot;PartNo&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.Currency] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.ITP] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.ListPrice] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.Models] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.OrgID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.PartNumber] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.PartSpecs] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.PISDescription] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.PlantID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.SAPDescription] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.SoldToErpID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Part.UnitPrice] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.PartnerType] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.PISDAL] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.PISLiteratureType] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.Product] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String)] Missing &lt;param name=&quot;ERPID&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String)] Missing &lt;param name=&quot;LineNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String)] Missing &lt;param name=&quot;PartNo&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String,System.Decimal)] Missing &lt;param name=&quot;ERPID&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String,System.Decimal)] Missing &lt;param name=&quot;LineNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String,System.Decimal)] Missing &lt;param name=&quot;PartNo&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String,System.Decimal)] Missing &lt;param name=&quot;UnitPrice&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String,System.Int16,System.Decimal)] Missing &lt;param name=&quot;ERPID&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String,System.Int16,System.Decimal)] Missing &lt;param name=&quot;LineNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String,System.Int16,System.Decimal)] Missing &lt;param name=&quot;PartNo&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String,System.Int16,System.Decimal)] Missing &lt;param name=&quot;Quantity&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.#ctor(System.String,System.Int16,System.String,System.Int16,System.Decimal)] Missing &lt;param name=&quot;UnitPrice&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Product.LineItemType] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Product.LineNumber] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Product.Load] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Product.order] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Product.ParentLineNumber] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Product.Quantity] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Product.SellingPrice] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.ProductSpec] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.ProductSpec.IsFilterOption] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.ProductSpec.Sequence] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.ProductSpec.SpecCategoryID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.ProductSpec.SpecCategoryName] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.ProductSpec.SpecItemID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.ProductSpec.SpecItemName] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.ProductSpec.SpecItemValueID] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.ProductSpec.SpecItemValueName] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.Quote] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Quote.AddLineItem(System.Object,System.Object)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Quote.AddLineItem(System.Object,System.Object)] Missing &lt;param name=&quot;LineNo&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.Quote.AddLineItem(System.Object,System.Object)] Missing &lt;param name=&quot;Part&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Quote.LineItems] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Quote.QuoteNo] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:Advantech.Myadvantech.DataAccess.Quote.Version] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.SAPDAL] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.FormatItmNumber(System.Int32)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.FormatItmNumber(System.Int32)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.FormatItmNumber(System.Int32)] Missing &lt;param name=&quot;ItemNumber&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.FormatToSAPPartNo(System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.FormatToSAPPartNo(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.FormatToSAPPartNo(System.String)] Missing &lt;param name=&quot;str&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.GetAHighLevelItemForPricing(System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.GetAHighLevelItemForPricing(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.GetAHighLevelItemForPricing(System.String)] Missing &lt;param name=&quot;org&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.RemovePrecedingZeros(System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.RemovePrecedingZeros(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SAPDAL.RemovePrecedingZeros(System.String)] Missing &lt;param name=&quot;str&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.Myadvantech.DataAccess.SqlProvider] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQuery(System.String,System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQuery(System.String,System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQuery(System.String,System.String)] Missing &lt;param name=&quot;ConnectionStringName&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQuery(System.String,System.String)] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQuery2(System.String,System.String,System.Data.SqlClient.SqlParameter[])] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQuery2(System.String,System.String,System.Data.SqlClient.SqlParameter[])] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQuery2(System.String,System.String,System.Data.SqlClient.SqlParameter[])] Missing &lt;param name=&quot;ConnectionStringName&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQuery2(System.String,System.String,System.Data.SqlClient.SqlParameter[])] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQuery2(System.String,System.String,System.Data.SqlClient.SqlParameter[])] Missing &lt;param name=&quot;Parameters&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;param name=&quot;ConnectionStringName&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;param name=&quot;g_adoConn&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;param name=&quot;dbCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryShareConn(System.Data.SqlClient.SqlConnection,System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryShareConn(System.Data.SqlClient.SqlConnection,System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryShareConn(System.Data.SqlClient.SqlConnection,System.String)] Missing &lt;param name=&quot;Connection&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteNoQueryShareConn(System.Data.SqlClient.SqlConnection,System.String)] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteScalar(System.String,System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteScalar(System.String,System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteScalar(System.String,System.String)] Missing &lt;param name=&quot;ConnectionName&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbExecuteScalar(System.String,System.String)] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetDataTable(System.String,System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetDataTable(System.String,System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetDataTable(System.String,System.String)] Missing &lt;param name=&quot;ConnectionName&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetDataTable(System.String,System.String)] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetReaderAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetReaderAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetReaderAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;param name=&quot;ConnectionName&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetReaderAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;param name=&quot;strSqlCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetReaderAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;param name=&quot;g_adoConn&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.Myadvantech.DataAccess.SqlProvider.dbGetReaderAsync(System.String,System.String,System.Data.SqlClient.SqlConnection@,System.Data.SqlClient.SqlCommand@)] Missing &lt;param name=&quot;dbCmd&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:Advantech.PIS.Business] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Advantech.PIS.Business.ModelBusinessLogic] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.PIS.Business.ModelBusinessLogic.GetCompleteModelByModelID(System.String)] Missing &lt;summary&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.PIS.Business.ModelBusinessLogic.GetCompleteModelByModelID(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.PIS.Business.ModelBusinessLogic.GetCompleteModelByModelID(System.String)] Missing &lt;param name=&quot;model_id&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.PIS.Business.ModelBusinessLogic.GetModelByCategory_ModelID(System.String,System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.PIS.Business.ModelBusinessLogic.GetModelByCategory_ModelID(System.String,System.String)] Missing &lt;param name=&quot;model_id&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.PIS.Business.ModelBusinessLogic.GetModelByModelID(System.String)] Missing &lt;returns&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Advantech.PIS.Business.ModelBusinessLogic.GetModelByModelID(System.String)] Missing &lt;param name=&quot;model_id&quot;/&gt; documentation [D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj]
+  Processed 223 topic(s)
+  267 warning(s)
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 6 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 5 of 30.
+  ResolveReferenceLinksComponent: New MSDN content ID cache size: 23 entries
+Done Building Project &quot;D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\BuildReferenceTopics.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:16.54
+    Last step completed in 00:00:16.6780
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+    Last step completed in 00:00:00.0020
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Sandcastle Help File Builder, version 2014.11.22.0
+Copyright c 2006-2014, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
+
+Processing Help 1 files in D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1
+Processed 223 HTML files
+Sorting keywords and generating See Also indices
+Saving HTML Help 1 keyword index to D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Documentation.hhk
+Saving HTML Help 1 table of contents to D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Documentation.hhc
+    Last step completed in 00:00:00.4580
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\AlertCaution.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\AlertNote.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\AlertSecurity.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\CFW.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\CodeExample.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\privstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protoperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\protstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\puboperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\pubstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\SectionExpanded.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\slMobile.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\static.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\icons\xna.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\scripts\branding.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-de-DE.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-en-US.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-es-ES.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-Help1.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help2.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-Help2.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-it-IT.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-Website.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; D:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\styles\branding.css
+    Last step completed in 00:00:00.1700
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating HTML Help 1 table of contents file...
+    Last step completed in 00:00:00.0020
+</buildStep>
+<buildStep step="GenerateHelpFileIndex">
+Generating HTML Help 1 index file...
+    Last step completed in 00:00:00.0020
+</buildStep>
+<buildStep step="GenerateHelpProject">
+Generating HTML Help 1 project file...
+    Last step completed in 00:00:00.0070
+</buildStep>
+<buildStep step="CompilingHelpFile">
+Compiling HTML Help 1 file...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+  Microsoft HTML Help Compiler 4.74.8702
+  
+  
+  
+  Compiling d:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\Documentation.chm
+  
+  
+  
+  
+  
+  Compile time: 0 minutes, 1 second
+  
+  225	Topics
+  
+  2,532	Local links
+  
+  804	Internet links
+  
+  0	Graphics
+  
+  
+  
+  
+  
+  Created d:\Advantech\MyAdvantech\MyAdvantechAPI\Help\Working\Output\HtmlHelp1\Documentation.chm, 282,077 bytes
+  
+  Compression decreased file by 1,674,833 bytes.
+  
+    Last step completed in 00:00:01.9660
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:00.0770
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 2014/12/10 下午 04:41:35.  Total time: 00:00:22.6260
+
+</buildStep>
+</shfbBuild>

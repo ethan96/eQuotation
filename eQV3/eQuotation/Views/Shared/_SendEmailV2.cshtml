@@ -1,0 +1,116 @@
+﻿@model eQuotation.ViewModels.SendEmailViewModel
+@using eQuotation.ViewModels
+@using (Ajax.BeginForm("SendV2", "Quotes",
+                                new AjaxOptions() { HttpMethod = "POST", OnBegin = "onSubmitQuoteBegin", OnSuccess = "onSubmitQuoteSuccess" }
+                                ))
+{
+    @Html.HiddenFor(m => m.DisplayItemType)
+    @Html.HiddenFor(m => m.QuoteTitle)
+    @Html.HiddenFor(m => m.AdvantechCompanyTitleOrg)
+    <div class="modal-action" style="padding-top: 5px;">
+        <ul>
+            <li>
+                <button id="btn-send" type="submit" class="clear"><i class="fa fa-envelope-o"></i> Send</button>
+            </li>
+            <li><a id="btn-cust-close"><i class="fa fa-times"></i> Close</a></li>
+        </ul>
+    </div>
+    <div class="modal-content" style="height:380px;">
+        <div>
+            <table id="tbSendEmail">
+                <tr>
+                    <td class="field100 right">Quote No :</td>
+                    <td class="w35p">
+                        @Html.TextBox("email_QuoteNo", Model.QuoteNo, new { @class = "text090" })&nbsp;
+                        @Html.HiddenFor(m=>m.QuoteId)
+                        @*<input type="hidden" id="hd_email_QuoteID" value="@Model.QuoteId" />*@
+                    </td>
+                    <td class="field50 right">Type  :</td>
+                    <td>
+                        @Html.RadioButtonFor(m=>m.FileType, FileType.HTML, new { @id= "radio-html" })
+                        @*<input type="radio" name="radio-1" id="radio-html" value="html">*@
+                        <label for="radio-html">Html</label>
+                        &nbsp;&nbsp;
+                        @*<input type="radio" name="radio-1" id="radio-pdf" value="pdf"  checked="checked">*@
+                        @Html.RadioButtonFor(m => m.FileType, FileType.PDF, new { @id = "radio-pdf", @chekcked = "checked" })
+                        <label for="radio-pdf">PDF</label>
+                    </td>
+                </tr>
+                 <tr>
+                     <td class="field100 right">Recipient Email:</td>
+                     <td colspan="3">
+                         @Html.TextBoxFor(m => m.ReciverEmail, new { @class = "text090" })
+                         @*@Html.TextBox("email_RecipientEmail", "", new { @class = "text090" })&nbsp;*@
+                     </td>
+                 </tr>
+                <tr>
+                    <td class="field100 right">Subject:</td>
+                    <td  colspan="3">
+                        @Html.TextBoxFor(m => m.MailSubject, new { @class = "text090" })
+                        @*@Html.TextBox("email_Subject", Model.CustomerMailSubject + " " + Model.QuoteNo, new { @class = "text090" })&nbsp;*@
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="width:100%;height:250px;">
+                        <fieldset  style="width:92%;height:240px;">
+                            <legend>Email Greeting : </legend>
+                            @*<textarea id="email_body" style="height:225px;"></textarea>*@
+                            @Html.TextAreaFor(m => m.MailBody, new { @style = "height:225px;"})
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    function onSubmitQuoteBegin() {
+        $.blockUI();
+    }
+
+    //called on return value
+    function onSubmitQuoteSuccess(redata) {
+        $.unblockUI();
+        if (redata.succeed) {
+            alert("Send @Model.QuoteNo to " + $("#ReciverEmail").val() + " successfully.");
+        } else {
+            alert(redata.err);
+        }
+
+    }
+
+    @*$(document).ready(function () {
+
+        //Send Email
+        $("#btn-cust-send").on("click", function (e) {
+
+            var reciverEmail = $("#email_RecipientEmail").val();
+            if (reciverEmail == null || reciverEmail == "") {
+                alert("Recipient Email不可为空白");
+                e.preventDefault();
+                return false;
+            }
+            var quoteId = $("#hd_email_QuoteID").val();
+            var type = $("input[name='radio-1']:checked").val();
+            var subject = $("#email_Subject").val();
+            var mailbody = $('#email_body').val().replace(/ /g, "&nbsp;&nbsp;").replace(/\n/gi, '<br />');
+
+            //$.modal.close();
+
+            var postdata = JSON.stringify({
+                quoteId: quoteId, type: type, reciverEmail: reciverEmail, subject: subject, mailbody: mailbody
+            });
+            $.ajax({
+                url: "/Quotes/SendV2", type: "POST", dataType: "json", data: postdata
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+                    if (redata.succeed) {
+                        AlertDialog("Send @Model.QuoteNo to " + reciverEmail "successfully.");
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+                }
+            });
+        });
+    });*@
+</script>

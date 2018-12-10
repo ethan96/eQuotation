@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsdLocal1="http://www.siebel.com/xml/ADVOpptyIO" xmlns:tns="http://siebel.com/CustomUI" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://siebel.com/CustomUI" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://siebel.com/CustomUI">
+      <xsd:import namespace="http://www.siebel.com/xml/ADVOpptyIO" />
+      <xsd:element name="AddOppty_Input">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="xsdLocal1:OPPTY" />
+            <xsd:element name="SOURCE" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddOppty_Output">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Error_spcCode" type="xsd:string" />
+            <xsd:element name="Error_spcMessage" type="xsd:string" />
+            <xsd:element name="ROW_ID" type="xsd:string" />
+            <xsd:element name="STATUS" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/ADVOpptyIO">
+      <xsd:annotation>
+        <xsd:documentation>Copyright (C) 2001-2004 Siebel Systems, Inc. All rights reserved. Siebel XSD Generation</xsd:documentation>
+      </xsd:annotation>
+      <xsd:element name="OPPTY" type="xsdLocal1:OPPTY" />
+      <xsd:complexType name="OPPTYTopElmt">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="OPPTY" type="xsdLocal1:OPPTY" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OPPTY">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="SALES_METHOD" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="SALES_STAGE" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ACC_ROW_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="IS_ASSIGN_TO_PARTNER" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="BIZ_GROUP" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="BUYCYCLE_STAGE" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="CHANNEL" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="COMPETITION" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="CONTRACT_DATE" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="SUCCESS_FACTOR" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="CURRENCY_CODE" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="DESP" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="INTEGRATION_ID" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="PROJ_NAME" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="PARTNER_CON_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="PARTNER_ID" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="REVENUE" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="CLOSE_DATE" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="PROGRAM" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="LEAD_QUALITY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="REASON_WON_LOST" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ROW_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="STATUS" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="SUPPORT_REQUEST" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PRODUCT" type="xsdLocal1:PRODUCT" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="POSITION" type="xsdLocal1:POSITION" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CONTACT" type="xsdLocal1:CONTACT" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ORG" type="xsdLocal1:ORG" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="SOURCE" type="xsdLocal1:SOURCE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PRODUCT">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="AUG_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="DEC_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="FEB_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="JAN_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="JUL_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="JUN_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="MAR_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="MAY_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="NOV_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="OCT_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="SEP_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="APR_QTY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="INTEGRATION_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="NAME" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="QTY" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="POSITION">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="NAME" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="IS_PRIMARY" type="xsd:string" />
+      </xsd:complexType>
+      <xsd:complexType name="CONTACT">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="CON_ID" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="IS_PRIMARY" type="xsd:string" />
+      </xsd:complexType>
+      <xsd:complexType name="ORG">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="NAME" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="IS_PRIMARY" type="xsd:string" />
+      </xsd:complexType>
+      <xsd:complexType name="SOURCE">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="NAME" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="IS_PRIMARY" type="xsd:string" />
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="AddOppty_Input">
+    <part name="AddOppty_Input" element="tns:AddOppty_Input" />
+  </message>
+  <message name="AddOppty_Output">
+    <part name="AddOppty_Output" element="tns:AddOppty_Output" />
+  </message>
+  <portType name="ADVWebService-AddOppty">
+    <operation name="AddOppty">
+      <input message="tns:AddOppty_Input" />
+      <output message="tns:AddOppty_Output" />
+    </operation>
+  </portType>
+  <binding name="ADVWebService-AddOppty" type="tns:ADVWebService-AddOppty">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="AddOppty">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:AddOppty" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ADVWebService-AddOppty">
+    <port name="ADVWebService-AddOppty" binding="tns:ADVWebService-AddOppty">
+      <soap:address location="http://CRMAP-GLOBAL3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,870 @@
+﻿@model eQuotation.ViewModels.QuoteForm.QuoteFormViewModel
+<script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@using (Ajax.BeginForm("SubmitQuote", "Quotes",
+                                new AjaxOptions() { HttpMethod = "POST", OnBegin = "onSubmitQuoteBegin", OnSuccess = "onSubmitQuoteSuccess" }
+                                ))
+{
+
+    <div id="quoteFormApprovalInfoModal" class="quoteFormApprovalInfoModal">
+        <div class="quoteFormApprovalInfoModalContent">
+            <span class="quoteFormApprovalInfoModalClose "><i class="fa fa-times" aria-hidden="true"></i></span>
+            <p></p>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="titlebox topbox">
+            <h4>Create New Quotation</h4>
+        </div>
+
+        <div class="actionbox">
+            <ul>
+                <li>
+                    <a id="btn-preview"><i class="fa fa-search"></i> Preview</a>
+                </li>
+                <li>
+                    <button id="btn-save" type="submit" name="submitButton" value="Save" class="clear"><i class="fa fa-floppy-o"></i> Save</button>
+
+                </li>
+                <li>
+                    <button id="btn-confirm" type="submit" name="submitButton" value="CheckBeforeConfirm" class="clear"><i class="fa fa-check-square-o"></i> Confirm</button>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Region)
+            @Html.HiddenFor(m => m.QuoteDate)
+            @Html.HiddenFor(m => m.CreatedDate)
+            @Html.HiddenFor(m => m.CreatedBy)
+            @Html.HiddenFor(m => m.LastUpdatedBy)
+            @Html.HiddenFor(m => m.LastUpdatedDate)
+            @Html.HiddenFor(m => m.DeliveryDate)
+            @Html.HiddenFor(m => m.ReqDate)
+            @Html.HiddenFor(m => m.PoDate)
+            @Html.HiddenFor(m => m.Active)
+            @Html.HiddenFor(m => m.QuoteTitle)
+            @Html.HiddenFor(m => m.RevisionNumber)
+            @Html.HiddenFor(m => m.OriginalQuoteID)
+            @Html.ValidationSummary(true, "Following fields are required.", new { @class = "text-danger" })
+            <table id="tbCreateQuotation">
+                <tr>
+                    <td class="field150 fieldTitleRight">
+                        Account Name
+                        @Html.HiddenFor(m => m.QuoteToRowId, new { @id = "hd_AccountID" })
+                        @Html.HiddenFor(m => m.SiebelRBU, new { @id = "hd_SiebleRBU" })
+                        @Html.HiddenFor(m => m.SalesOffice, new { @id = "hd_SalesOffice" })
+                        @Html.HiddenFor(m => m.SalesGroup, new { @id = "hd_SalesGroup" })
+                        @Html.HiddenFor(m => m.Inco1, new { @id = "hd_Inco1" })
+                        @Html.HiddenFor(m => m.Inco2, new { @id = "hd_Inco2" })
+                    </td>
+                    <td colspan="3">
+                        @Html.TextBoxFor(mdl => mdl.QuoteToName, new { @id = "txtAccountName", @class = "text090" })
+                        <a id="pick-account"><i class="fa fa-external-link"></i></a>
+                    </td>
+                    <td class="field150 fieldTitleRight">
+                        Quote No
+                        @Html.HiddenFor(m => m.QuoteId, new { @id = "hd_QuoteID" })
+                    </td>
+                    <td>
+                        <span>
+                            @Html.TextBoxFor(mdl => mdl.QuoteNo, new { @Value = @Model.QuoteNo, @class = "text050", @readonly = true })&nbsp;
+                        </span>
+                        <span style="display:none;">
+                            @Html.TextBoxFor(mdl => mdl.RevisionNumber, new { @readonly = true, @style = "width: 35px;" })
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field150 fieldTitleRight">ERP ID</td>
+                    <td colspan="3">
+                        @Html.TextBoxFor(mdl => mdl.QuoteToErpId, new { @class = "text090", @readonly = true, @id = "txtErpId" })
+                        @Html.HiddenFor(m => m.DistChan)
+                        @Html.HiddenFor(m => m.Division)
+                    </td>
+                    <td class="field100 fieldTitleRight">Expired Date</td>
+                    <td>
+                        @Html.TextBoxFor(mdl => mdl.ExpiredDate, "{0:MM/dd/yyyy}", new { @id = "txtExpiredDate", @class = "text050", @readonly = "true" })&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field150 fieldTitleRight">Address</td>
+                    <td colspan="3">
+                        @Html.TextBoxFor(mdl => mdl.Address, new { @id = "txtAddress", @class = "text090", @readonly = true })&nbsp;
+                    </td>
+                    <td class="field150 fieldTitleRight"><span style="color:red;">*</span>Sales Representative</td>
+                    <td class="text090">
+                        <div style="width:90%" class="salesRepresentativeTokenInputDiv">
+                            @Html.TextBoxFor(
+                                                x => x.SalesRepresentatives,
+                                                new
+                                                {
+                                                    id = "salesRepresentatives",
+                                                    data_url = Url.Action("GetTokenInputSalesV2"),
+                                                    data_salesRepresentatives = Json.Encode(
+                                                        Model.SalesRepresentatives.Select(
+                                                            x => new { id = x.SalesCode, name = x.Email }
+                                                        )
+                                                    )
+                                                }
+                                            )
+                            @Html.ValidationMessageFor(m => m.SalesRepresentatives, null, new { @style = "color:red;" })
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field150 fieldTitleRight"><span style="color:red;">*</span>Opportunity</td>
+                    <td colspan="3">
+                        @Html.TextBoxFor(mdl => mdl.OptyName, new {@id= "Opportunity", @class = "text090", @readonly = true })&nbsp;
+                        @Html.HiddenFor(m => m.OptyStage, new { @id = "hd_OpptyStage" })
+                        @Html.HiddenFor(m => m.OptyId, new { @id = "hd_OpptyId" })
+                        <a id="pick-oppty"><i class="fa fa-external-link"></i></a>
+                        @Html.ValidationMessageFor(m => m.OptyName, null, new { @style = "color:red;" })
+                    </td>
+                    <td class="field150 fieldTitleRight">Customer Contact</td>
+                    <td colspan="2">
+                        @Html.DropDownListFor(mdl => mdl.SalesRowId, Model.ContactOptions, new { @id = "ddlContact", @class = "text090" })&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    @*<td class="field150 fieldTitleRight">PO No.</td>
+                    <td colspan="3">
+                        @Html.TextBoxFor(mdl => mdl.PoNo, new { @id = "txtPONO", @class = "text090" })&nbsp;
+                    </td>*@
+                    <td class="field70 fieldTitleRight" style="display:none;">ORG</td>
+                    <td colspan="3" style="display:none;">
+                        @Html.DropDownListFor(mdl => mdl.Org, Model.OrgOptions, new { @id = "ddlOrg", @class = "form-control text090" })
+                        @Html.HiddenFor(m => m.Plant, new { @id = "hd_Plant" })
+                    </td>
+                    <td class="field150 fieldTitleRight">Currency</td>
+                    <td colspan="3">
+                        @Html.DropDownListFor(mdl => mdl.Currency, Model.CurrencyOptions, new { @id = "ddlCurrency", @class = "form-control text090" })
+                    </td>
+                    <td class="field150 fieldTitleRight">Description</td>
+                    <td colspan="3">
+                        @Html.TextBoxFor(mdl => mdl.Description, new { @class = "text090" })&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">&nbsp;</td>
+                </tr>
+            </table>
+            More Detail
+            <i id="icon-detail" class="fa fa-plus-square"></i>
+            <div id="div_detail" style="width:95%;">
+                <div>
+                    <ul class="tabnav nav-tabs">
+                        <li data-value="001">
+                            <a>Sold-to/Ship-to/Bill-to</a>
+                        </li>
+                        <li data-value="002">
+                            <a>Payment/ Shipment/Tax/Freight</a>
+                        </li>
+                        <li data-value="003">
+                            <a>Remarks/Comments</a>
+                        </li>
+                        <li data-value="004" style="display:none;">
+                            <a>Terms and Conditions</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" style="background-color: #fff; height:251px;">
+                        <div class="tab-pane" id="001" style="overflow:auto;">
+                            <div id="soldToArea" style="overflow:auto;float:left;width:32.7%;height:250px;margin-right:5px">
+                                @{
+                                    var soldToEditable = "false";
+                                    if (Model.SoldToPartner == null || String.IsNullOrEmpty(Model.SoldToPartner.ERPID))
+                                    {
+                                        soldToEditable = "true";
+                                    }
+                                }
+                                @Html.Partial("_QuotePartner",
+                                                Model.SoldToPartner,
+                                                new ViewDataDictionary(new ViewDataDictionary { { "type", "SOLDTO" }, { "editable", @soldToEditable } })
+                                                {
+                                                    TemplateInfo = new System.Web.Mvc.TemplateInfo
+                                                    {
+                                                        HtmlFieldPrefix = "SoldToPartner"
+                                                    }
+
+                                                })
+                            </div>
+                            <div id="shipToArea" style="overflow:auto;float:left;width:32.7%;height:250px;margin-right:5px">
+                                @Html.Partial("_QuotePartner",
+                                                Model.ShipToPartner,
+                                                new ViewDataDictionary(new ViewDataDictionary { { "type", "S" }, { "editable", "true" } })
+                                                {
+                                                    TemplateInfo = new System.Web.Mvc.TemplateInfo
+                                                    {
+                                                        HtmlFieldPrefix = "ShipToPartner"
+                                                    }
+
+                                                })
+                            </div>
+                            <div id="billToArea" style="overflow:auto;float:right;width:32.7%;height:250px;">
+                                @Html.Partial("_QuotePartner",
+                                                Model.BillToPartner,
+                                                new ViewDataDictionary(new ViewDataDictionary { { "type", "B" }, { "editable", "true" } })
+                                                {
+                                                    TemplateInfo = new System.Web.Mvc.TemplateInfo
+                                                    {
+                                                        HtmlFieldPrefix = "BillToPartner"
+                                                    }
+
+                                                })
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="002" style="overflow:auto;">
+                            <table>
+                                <tr>
+                                    <td class="field70">Tax Rate</td>
+                                    <td>@Html.TextBoxFor(mdl => mdl.Tax, new { @readonly = true, @id = "txtTax", @style= "width: 70px;" })&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="field150">Payment Term</td>
+                                    <td>@Html.DropDownListFor(mdl=>mdl.PaymentTerm, Model.PaymentTermOptions)&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr style="display:none;">
+                                    <td class="field70">Freight</td>
+                                    <td>@Html.TextBoxFor(mdl => mdl.Freight)&nbsp;</td>
+                                    <td class="field150">Shipping Methods</td>
+                                    <td>@Html.TextBoxFor(mdl => mdl.ShipTerm) <button id="getFreight">Select and Calculate Freight</button></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="003" style="overflow:auto;">
+                            <table>
+                                <tr>
+                                    <td style="width:100px;vertical-align:middle">Remarks: </td>
+                                    <td>@Html.TextAreaFor(m => m.Remark, new { @id = "txtRemarks", @style = "height:100px" })&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:100px;vertical-align:middle">Comments: </td>
+                                    <td>@Html.TextAreaFor(m => m.QuoteNote, new { @id = "txtQuotationNotes", @style = "height:100px" })&nbsp;</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="004" style="overflow:auto; display:none;">
+                            <table>
+                                @for (int i = 0; i < Model.ExtraTermsAndConditionOptions.Count; i++)
+                                {
+                                <tr style="height:30px">
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.ExtraTermsAndConditionOptions[i].Selected, new { @id = "cbIsShippingHandlingIncluded" })
+                                    </td>
+                                    <td>@Html.DisplayFor(m => m.ExtraTermsAndConditionOptions[i].Name)</td>
+                                </tr>
+                                @Html.HiddenFor(m => m.ExtraTermsAndConditionOptions[i].Name)
+                                @Html.HiddenFor(m => m.ExtraTermsAndConditionOptions[i].Type)
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divQuoteItems">
+                @*<div class="quoteItemInput">
+                    <div style="width:130px;">
+                        Choose Parent Item :
+                    </div>
+                    <div style="width:150px;">
+                        @Html.DropDownList("ddlParentItem", Model.ParentItemOptions)
+                    </div>
+                </div>*@
+                <div class="eQtable-input">
+                    <div style="padding:2px;">
+                        <button id="btn-configurator" type="button" class="button">
+                            <i class="fa fa-television fa-lg"></i> Configure a System
+                        </button>
+                    </div>
+                </div>
+                <div class="quoteItemInput">
+                    <div>
+                        Part No:
+                    </div>
+                    <div style="width: 35%;">
+                        @Html.TextArea("aPartNo", new { @rows = "1" })
+                    </div>
+                    <div style="padding-top:6px;margin-left:3px;">
+                        <a data-quoteno="@Model.QuoteNo" style="color:green" id="btn-add-item"><i class="fa fa-plus-circle fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="quoteQtyInput">
+                    <div>
+                        Qty:
+                    </div>
+                    <div>
+                        @Html.TextBox("txtQty", "1", new { @style = "width:40px" })
+                    </div>
+                </div>
+                <div id="quoteCart">
+                    @Html.Partial("~/Views/Shared/QuoteCart/_ASG_QuoteCartPartial.cshtml", Model)
+                </div>
+            </div>
+        </div>
+        <div id="configuratorFrame"></div>
+        @Html.Modal("osx-search-account", "Search-Account", "410px", "900px")
+        @Html.Modal("osx-search-oppty", "Oppty", "430px", "900px")
+        @Html.Modal("osx-SPRNO", "special ITP", "80px", "400px")
+        @Html.Modal("osx-search-Preview", "Preview", "500px", "1000px")
+        @Html.Modal("osx-search-ShipBillTo", "Search", "410px", "700px")
+        @Html.Modal("osx-search-PartInfo", "Product Related Info", "300px", "900px")
+
+    </div>
+}
+<script>
+    //called on submit begin
+    function onSubmitQuoteBegin() {
+
+        $.blockUI();
+
+    }
+
+    //called on return value
+    function onSubmitQuoteSuccess(redata) {
+        $.unblockUI();
+        if (redata.succeed) {
+            if (redata.checkApprovalData != "") {
+                //$('#quoteFormApprovalInfo').html(redata.checkApprovalData);
+                $('.quoteFormApprovalInfoModalContent p').empty();
+
+                $('#quoteFormApprovalInfoModal').css('display', 'block');
+                $('.quoteFormApprovalInfoModalContent p').append(redata.checkApprovalData);
+
+                // When the user clicks anywhere outside of the modal, close it
+                var approvalModal = document.getElementById('quoteFormApprovalInfoModal');
+                window.onclick = function (event) {
+                    if (event.target == approvalModal) {
+                        $('#quoteFormApprovalInfoModal').css('display', 'none');
+                    }
+                }
+
+                // When the user clicks on <span> (x), close the approval modal
+                $('.quoteFormApprovalInfoModalClose').on("click", function () {
+                    $('#quoteFormApprovalInfoModal').css('display', 'none');
+                });
+                //cancel approval
+                $("#btn-Approval-cancel").on("click", function () {
+                    $('#quoteFormApprovalInfoModal').css('display', 'none');
+                });
+
+            } else {
+                $.modal.close(); // close checkBeforeApproval modal
+                if (redata.msg && redata.msg.includes("Below GP"))// if below GP when save quotation, pop an message
+                    alert("Below GP: You can't download PDF or send mail.");
+                initContent('@Url.Action("MyQuotation", "Quotes")');
+            }
+        } else {
+            AlertDialog(redata.msg);
+        }
+
+    }
+
+    $(function () {
+        //allow validation framework to parse DOM
+        $('#btn-confirm').on('click', function (e) {
+            //var result = confirm("You will not be able to edit the quotation once it is confirmed. Are you ready to confirm it?");
+            //if (!result) {
+            //    e.preventDefault();
+            //    return false;
+            //}
+            $.validator.unobtrusive.parse('form');
+        });
+        $('#btn-save').on('click', function (e) {
+            // 移除所有的檢核設定
+            $("form").removeData("validator")
+                        .removeData("unobtrusiveValidation");
+            if ($('#salesRepresentatives').val() == "")
+            {
+                e.preventDefault();
+                AlertDialog("Sales Representative is required");
+            }
+                
+        });
+
+        //disable form submit on enter
+        $('form').on('keyup keypress', function (e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13 && !$(e.target).is("textarea")) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        //// more detail area ////
+        $("#icon-detail").mouseover(function () { $(this).css("-webkit-filter", "brightness(200%)") })
+        $("#icon-detail").mouseout(function () { $(this).css("-webkit-filter", "brightness(100%)") })
+        $("#icon-detail").click(function (e) {
+
+            // 运行特效
+            $("#div_detail").toggle("blind", 500);
+            if (this.className == "fa fa-plus-square") {
+                this.className = "fa fa-minus-square";
+            }
+            else {
+                this.className = "fa fa-plus-square";
+            }
+        });
+        $("#div_detail").hide();
+        //// more detail area ////
+
+        ///////tab - Start///////
+        // select first tab
+        if ($("ul.tabnav li")) {
+            $("ul.tabnav li").first().addClass("active");
+        }
+        if ($(".tab-pane")) {
+            $(".tab-pane").first().addClass("active");
+        }
+
+        //switch to different tab
+        $("ul.tabnav li").on("click", function () {
+
+            //display tab element
+            $("ul.tabnav li").removeClass("active");
+            $(this).addClass("active");
+
+            //change tab content
+            $(".tab-pane").removeClass("active");
+            var tabId = $(this).attr("data-value");
+            $("#" + tabId).addClass("active");
+        });
+        ///////tab - End///////
+
+        ///////check erpid then decide fix currency or not///////
+        if ($("#txtErpId").val() == "") {
+            $('#ddlCurrency option:not(:selected)').attr('disabled', false);
+        }
+        else {
+            $('#ddlCurrency option:not(:selected)').attr('disabled', true);
+        }
+
+        // init token input part
+        setTokenInputPart();
+        setTokenInputSalesRepresentative();
+
+        //listen close fancy box event from myadvantech core
+        window.addEventListener('message', function (event) {
+            if (event.data == 'closefancybox') {
+                $.fancybox.close();
+            }
+        }, false);
+
+        //Show message if resimulate price error:
+        var msg = "@Model.ErrorMessage";
+        if(msg != "")
+            alert(msg);
+
+
+        //If ERP ID is empty in header, make sold to information editable
+        $(document).click(function () {
+            var $headerERPId = $("#txtErpId");
+            if ($headerERPId.val() == "") {
+                $("#soldToArea").find("input").not("#txtERPID-SOLDTO").attr("readonly", false);
+                $("#soldToArea").find("select").prop("disabled", false);
+            }
+            else {
+                $("#soldToArea").find("input").not("#txtERPID-SOLDTO").attr("readonly", true);
+                $("#soldToArea").find("select").prop("disabled", true);
+            }
+        });
+    });
+
+    //Preview QuotationTemplate
+    $("#btn-preview").on("click", function () {
+        $.ajax({
+            url: "/Quotes/PreviewQuotationTemplate",
+            type: 'POST',
+            data: $("form").serialize(),
+            success: function (data) {
+                $.OSXModalInit("osx-search-Preview", data);
+            }
+        });
+    });
+
+
+    //display modal for listing account
+    $("#pick-account").on("click", function () {
+        $.get("/operation/SearchAccountV2", function (data) {
+            $.pushHTML(data, function () {
+                $.OSXModalInit("osx-search-account", data);
+            });
+        });
+    });
+
+    //判斷新增還是修改
+    if ($('#hd_AccountID').val() == '') {
+        $("#pick-account").click();
+    }
+
+
+    //display modal for listing oppty
+    $("#pick-oppty").on("click", function () {
+        $.get("/operation/SearchOppty", function (data) {
+            $.pushHTML(data, function () {
+                $.OSXModalInit("osx-search-oppty", data);
+            });
+        });
+    });
+
+
+    // salesRepresenttaive token input prepartion
+    function setTokenInputSalesRepresentative() {
+        var sales = $('#salesRepresentatives');
+        var ajaxUrl = sales.data('url') + "?queryParam=q&accountRowId=" + $('#hd_AccountID').val();
+        sales.tokenInput(ajaxUrl, {
+            theme: 'facebook',
+            searchDelay: 700,
+            minChars: 1,
+            tokenDelimiter: ';',
+            tokenLimit: 1,
+            hintText: 'Type Sales',
+            preventDuplicates: true,
+            resultsLimit: 10,
+
+            prePopulate: sales.data('salesrepresentatives'),
+            resultsFormatter: function (data) {
+                return "<li style='border-bottom: 1px solid #003377;'>" + "<span style='font-weight: bold;font-size: 14px;'>" + data.name + "</span> - " + "<span style='color:gray;'>" + data.id + "</span></li>";
+            }
+        });
+    };
+
+    /////Part Token Input prepartion, using following code to pass org dynamically
+    function setTokenInputPart() {
+        var selectedorg = $('#ddlOrg').val();
+        $("#aPartNo").tokenInput("/Quotes/GetTokenInputPartNoV2?queryParam=q&org=" + selectedorg, {
+            theme: "facebook", searchDelay: 700, minChars: 1, tokenDelimiter: ";", hintText: "Type PartNo", preventDuplicates: true, resultsLimit: 6,
+            resultsFormatter: function (data) {
+                var cpn = "";
+                if (data.cpn.length > 0) {
+                    cpn = "<br /><span style='color:red;'>Customer PN: " + data.cpn + "</span>";
+                }
+
+                return "<li style='border-bottom: 1px solid #003377;'>" + "<span style='font-weight: bold;font-size: 14px;'>" + data.name + "</span><br/>" + "<span style='color:gray;'>" + data.id + "</span>" + cpn + "</li>";
+            }
+        });
+
+    };
+
+
+    function AddQtyFormatIsValid(addQty) {
+        if (addQty == "" || addQty == "0") {
+            return false;
+        }
+        return true;
+    }
+
+    //on sales discount text change event, update quoting price textbox and do ajax update
+    $(document).on('change', 'input.txtSalesDiscount', function () {
+        var lineNo = $(this).closest('tr').attr("data-lineNo");
+
+        //var postTaxUnitPrice = $("#txtPostTaxUnitPrice-" + lineNo).val();
+        var preTaxUnitPrice = $("#txtPreTaxUnitPrice-" + lineNo).val();
+        var discountRate = $(this).val();
+        //var newQuotingPrice = (postTaxUnitPrice * (1 - (discountRate / 100))).toFixed(2);
+        var preTxQuotingPrice = (preTaxUnitPrice * (1 - (discountRate / 100))).toFixed(2);
+        //$("#txtPostTaxQuotingPrice-" + lineNo).val(newQuotingPrice);
+        $("#txtPreTaxQuotingPrice-" + lineNo).val(preTxQuotingPrice);
+        updateItem(lineNo);
+    });
+
+    //add quote item to quote cart
+    $("#btn-add-item").on("click", function () {
+        var PartNo = new Array();
+        ar_PartNo = $("#aPartNo").tokenInput("get");
+        var addQty = $("#txtQty").val();
+
+        if (AddQtyFormatIsValid(addQty)) {
+            $.each(ar_PartNo, function (i, value) {
+                PartNo.push({
+                    partno: ar_PartNo[i].name,
+                    qty: addQty
+                });
+            });
+            var parent = $("#ddlParentItem").val();
+
+            AddItem(PartNo, parent, false);
+        }
+    });
+
+    //Click configurator button
+    $("#btn-configurator").on("click", function (e) {
+        Modal_Configuration_List(false, getNextBtoLineNo());
+
+    });
+
+    function getNextBtoLineNo() {
+        var newBTOLineNo = 100;
+        var maxLineNo = getMaxLineNo();
+        if (maxLineNo % 100 == 0)
+            newBTOLineNo = (maxLineNo / 100) * 100 + 100;
+        else
+            newBTOLineNo = Math.ceil(maxLineNo / 100) * 100;
+        return newBTOLineNo;
+    }
+
+    function getMaxLineNo() {
+        var max = 0;
+        $('#QuoteItems-tbody tr').each(function () {
+            var val = $(this).data('lineno');
+            if (val > max) max = val;
+        });
+        return max;
+    }
+
+    function Modal_Configuration_List(isReconfig, btoLineNo) {
+        var originalTime = '';
+        //// get original server time
+        $.ajax({
+            url: "/operation/GetCurrentServerTime",
+            type: 'GET',
+            data: postdata,
+            async: false,
+            success: function (redata) {
+                originalTime = redata.currentServerTime;
+            }
+        });
+
+        var configuratorUrl = '';
+        var postdata = {
+            quoteId: $("#hd_QuoteID").val(),
+            org: $("#ddlOrg").val(),
+            companyId: $("#txtErpId").val(),
+            currency: $("#ddlCurrency").val(),
+            isReconfig: isReconfig,
+            btoLineNo: btoLineNo
+        };
+
+        // get configurator url
+        $.ajax({
+            url: "/operation/GetConfiguratorUrl",
+            type: 'GET',
+            data: postdata,
+            async: false,
+            success: function (redata) {
+                configuratorUrl = redata;
+            }
+        });
+
+
+        $.fancybox($('#configuratorFrame'), {
+            'type': 'iframe',
+            'width': ($(window).width() * 0.9),
+            'height': ($(window).height() * 0.9),
+            'autoDimensions': false,
+            'autoScale': false,
+            'href': configuratorUrl,
+            'helpers': {
+                overlay: { closeClick: false }
+            },
+            'afterClose': function () {
+                // When click confirm button in configurator fancy box
+                GetConfigurationResult(originalTime, btoLineNo, isReconfig);
+            }
+        });
+    }
+
+    function GetConfigurationResult(originalTime, btoLineNo, isReconfig) {
+
+        $.get("/operation/GetConfigurationResult", {
+            quoteId: $("#hd_QuoteID").val(),
+            originalTime: originalTime,
+            btoLineNo: btoLineNo
+        }
+        , function (result) {
+            if (result.succeed) {
+                if (result.data != "") {
+                    var PartNo = new Array();
+                    var _BTO = JSON.parse(result.data);
+                    $.each(_BTO, function (i, value) {
+                        PartNo.push({
+                            partno: _BTO[i].name,
+                            qty: _BTO[i].qty
+                        });
+                    });
+                    if (isReconfig)
+                        AddItem(PartNo, btoLineNo, isReconfig);
+                    else
+                        AddItem(PartNo, btoLineNo, isReconfig);
+                }
+            }
+            else {
+                AlertDialog(result.err);
+            }
+        });
+    }
+
+    //Add quote item
+    function AddItem(PartNo, parent, isReconfig) {
+
+        var addPartsJson = JSON.stringify(PartNo);
+        var parentJson = parent;
+        if (parent == null)
+            parentJson = "";
+        $.ajax({
+            url: "/Quotes/AddItemToQuote",
+            type: 'POST',
+            data: $("form").serialize() + "&addPartsJson=" + encodeURIComponent(addPartsJson) + "&parentJson=" + parentJson + "&isReconfig=" + isReconfig,
+            dataType: "json",
+            success: function (redata) {
+                if (redata.succeed != null && redata.succeed) {
+                    $('#quoteCart').html(redata.data);
+
+                    //清空輸入欄位
+                    $("#aPartNo").tokenInput("clear");
+
+                } else {
+                    AlertDialog("Get SAP Price error: " + redata.err);
+                }
+            }
+        });
+    }
+
+
+    //change currecny, simulate price again
+    $("#ddlCurrency").on("change", function () {
+        $.ajax({
+            url: "/Quotes/ReloadPriceForAccountInfoChange",
+            type: 'POST',
+            data: $("form").serialize(),
+            dataType: "json",
+            success: function (redata) {
+                if (redata.succeed != null && redata.succeed) {
+                    $('#quoteCart').html(redata.data);
+
+                } else {
+                    AlertDialog("Error: " + redata.err);
+                }
+            }
+        });
+    });
+
+    //update EW Parts
+    function updateEWPart(lineNoWithEx) {
+
+        //var ewPartNos = new Array();
+        var ewPartNos = {
+            partno: $("#drpEWPart-" + lineNoWithEx + " option:selected").text(),
+            qty: 1,
+            ewId: $("#drpEWPart-" + lineNoWithEx + " option:selected").val()
+        };
+        var EWPartsJson = JSON.stringify(ewPartNos);
+
+
+        $.ajax({
+            url: "/Quotes/UpdateExtendWarrantyItem",
+            type: 'POST',
+            data: $("form").serialize() + "&EWPartsJson=" + encodeURIComponent(EWPartsJson) + "&lineNoWithEx=" + lineNoWithEx,
+            dataType: "json",
+            success: function (redata) {
+                if (redata.succeed != null && redata.succeed) {
+                    $('#quoteCart').html(redata.data);
+                    //清空輸入欄位
+                    $("#aPartNo").tokenInput("clear");
+
+                } else {
+                    AlertDialog("Get SAP Price error: " + redata.err);
+                }
+            }
+        });
+
+    }
+
+
+    //delete quote item
+    function deleteItem(arg) {
+        var lineNo = $(arg).attr("data-lineNo");
+        $.ajax({
+            url: "/Quotes/DeleteQuoteItemV2",
+            type: 'POST',
+            data: $("form").serialize() + "&lineNo=" + lineNo,
+            dataType: "json",
+            success: function (redata) {
+                if (redata.succeed != null && redata.succeed) {
+                    $('#quoteCart').html(redata.data);
+
+                } else {
+                    AlertDialog("Delete Item error: " + redata.err);
+                }
+            }
+        });
+    }
+
+
+    function updateItem(lineNo) {
+        $.ajax({
+            url: "/Quotes/UpdateQuoteItemV2",
+            type: 'POST',
+            data: $("form").serialize() + "&lineNo=" + lineNo ,
+            dataType: "json",
+            success: function (redata) {
+                if (redata.succeed != null && redata.succeed) {
+                    $('#quoteCart').html(redata.data);
+
+                } else {
+                    AlertDialog(redata.err);
+                }
+            }
+        });
+
+    }
+
+    //Update SPR
+    function SPRNO(arg) {
+        var lineNo = $(arg).attr("data-value");
+        $.get("/operation/SPRNoV2",
+			{
+			    lineNo: parseInt(lineNo),
+			    sprNo: $("#txtSPRNo-" + lineNo).val(),
+			    erpId: $("#txtErpId").val(),
+			    partNo: $("#txtPartNo-" + lineNo).val(),
+                expiredDate: $("#txtExpiredDate").val()
+			}, function (data) {
+			    $.pushHTML(data, function () {
+			        $.OSXModalInit("osx-SPRNO", data);
+			    });
+			});
+    }
+
+    // Date Picker for expiration date textbox
+    @*$("#txtExpiredDate").datepicker({
+        dateFormat: "mm/dd/yy",
+        changeMonth: true,
+        changeYear: true,
+        minDate: "@Model.QuoteDate.AddDays(30).ToString("MM/dd/yyyy")",
+    maxDate: "@Model.QuoteDate.AddDays(30).ToString("MM/dd/yyyy")"
+    });*@
+
+
+    //只能輸入數字和小數點
+    function onKeyPressBlockNumbers(e) {
+        var key = window.event ? e.keyCode : e.which;
+        var keychar = String.fromCharCode(key);
+        reg = /[0-9]|\./;
+        return reg.test(keychar);
+    }
+    function onKeyPressInteger(e) {
+        var key = window.event ? e.keyCode : e.which;
+        var keychar = String.fromCharCode(key);
+        reg = /[0-9]/;
+        return reg.test(keychar);
+    }
+
+
+    //Part No Info
+    function PartInfo(e) {
+        var partno = e.value;
+        $.get("/operation/PartInfo",
+			{ PartNo: partno, ORG: $("#ddlOrg").val(), Currency: $("#ddlCurrency").val() }, function (data) {
+			    $.pushHTML(data, function () {
+			        $.OSXModalInit("osx-search-PartInfo", data);
+			    });
+			});
+    }
+</script>

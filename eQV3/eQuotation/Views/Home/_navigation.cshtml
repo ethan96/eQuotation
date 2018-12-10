@@ -1,0 +1,58 @@
+﻿@model eQuotation.Models.Home.NavigationViewModel
+
+<div id="tree" class="aciTree"></div>
+<br />
+<div>
+    <ul>
+        @foreach (var sop in Model.Sops)
+        {
+            <li><a href='@sop.Url'><i class="fa fa-file-powerpoint-o"></i> @sop.Name</a></li>
+        }
+    </ul>
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var jsonObj = '@Html.Raw(Json.Encode(Model.ActiveMenus))';
+        var data = $.parseJSON(jsonObj);
+
+        //initiate ACITREE
+        $('#tree').aciTree({
+            ajax: null,
+            rootData: data,
+            selectable: true
+        });
+
+        //handle select event
+        $('#tree').on("acitree", function (event, api, item, eventName, options) {
+            if (eventName == "selected") {
+              
+                //get data
+                var itemData = api.itemData(item);
+                if (!api.isInode(item)) {
+                    var url = api.getId(item);
+                    
+                    //function in underconstruction
+                    if (!url) {
+                        alert("This function is under development. Thank you for understanding.");
+                        return false;
+                    }
+
+                    //get content
+                    initContent(url);
+
+                    // deselect it
+                    api.deselect(item);
+                }
+            }
+        });
+
+    });
+
+</script>
+
+
+

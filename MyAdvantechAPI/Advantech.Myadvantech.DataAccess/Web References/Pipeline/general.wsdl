@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LOGSuccessSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LOGSuccessSOResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNotifyEmailHtmlStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNotifyEmailHtmlStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNotifyEmailHtmlStrResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSOPendingForMYA">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSOPendingForMYAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSOPendingForMYAResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateNewCust">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KTOKD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KUNNR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VKORG" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VTWEG" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SPART" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NAME1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NAME2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SORT1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SORT2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NAME_CO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="STREET" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="STR_SUPPL3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LOCATION" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CITY1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="REGION" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="POST_CODE1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="COUNTRY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TXJCD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRANSPZONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FAX_NUMBER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TEL_NUMBER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOB_NUMBER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SMTP_ADDR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="REMARK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KUKLA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BRSCH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="STCD1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="STCEG" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AKONT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZUAWA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FDGRV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BUSAB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BZIRK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VKBUR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VKGRP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KDGRP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WAERS" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="KLIMK" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="KONDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VSBED" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VWERK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="INCO1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="INCO2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZTERM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KTGRD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TAXKD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KVGR1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="retResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewCustResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateNewCustResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="retResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePIPELine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t" type="tns:ArrayOfPipelineReport" />
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPipelineReport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="pipelineReport" nillable="true" type="tns:pipelineReport" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="pipelineReport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Year" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Month" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sales" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="District" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebSite" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Industry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Product" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Probability" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EAU" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LostWon" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EAUNextYear" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceNextYear" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalNextYear" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipDateNextYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="v" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="App" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuoteId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cdate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuoteNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sub_Total" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="sub_TotalNextYear" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="isQuoteExpired" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ABCIndicator" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreatePIPELineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreatePIPELineResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPIPELineExcelReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="salesEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPIPELineExcelReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPIPELineExcelReportResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPIPELineExcelReportByYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="salesEmail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPIPELineExcelReportByYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPIPELineExcelReportByYearResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPIPELineExcelReportByYearAndStage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="salesEmail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Stage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPIPELineExcelReportByYearAndStageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPIPELineExcelReportByYearAndStageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LOGSuccessSOSoapIn">
+    <wsdl:part name="parameters" element="tns:LOGSuccessSO" />
+  </wsdl:message>
+  <wsdl:message name="LOGSuccessSOSoapOut">
+    <wsdl:part name="parameters" element="tns:LOGSuccessSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNotifyEmailHtmlStrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNotifyEmailHtmlStr" />
+  </wsdl:message>
+  <wsdl:message name="GetNotifyEmailHtmlStrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNotifyEmailHtmlStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSOPendingForMYASoapIn">
+    <wsdl:part name="parameters" element="tns:GetSOPendingForMYA" />
+  </wsdl:message>
+  <wsdl:message name="GetSOPendingForMYASoapOut">
+    <wsdl:part name="parameters" element="tns:GetSOPendingForMYAResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewCustSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewCust" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewCustSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewCustResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePIPELineSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePIPELine" />
+  </wsdl:message>
+  <wsdl:message name="CreatePIPELineSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePIPELineResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPIPELineExcelReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPIPELineExcelReport" />
+  </wsdl:message>
+  <wsdl:message name="GetPIPELineExcelReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPIPELineExcelReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPIPELineExcelReportByYearSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPIPELineExcelReportByYear" />
+  </wsdl:message>
+  <wsdl:message name="GetPIPELineExcelReportByYearSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPIPELineExcelReportByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPIPELineExcelReportByYearAndStageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPIPELineExcelReportByYearAndStage" />
+  </wsdl:message>
+  <wsdl:message name="GetPIPELineExcelReportByYearAndStageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPIPELineExcelReportByYearAndStageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="generalSoap">
+    <wsdl:operation name="LOGSuccessSO">
+      <wsdl:input message="tns:LOGSuccessSOSoapIn" />
+      <wsdl:output message="tns:LOGSuccessSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifyEmailHtmlStr">
+      <wsdl:input message="tns:GetNotifyEmailHtmlStrSoapIn" />
+      <wsdl:output message="tns:GetNotifyEmailHtmlStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSOPendingForMYA">
+      <wsdl:input message="tns:GetSOPendingForMYASoapIn" />
+      <wsdl:output message="tns:GetSOPendingForMYASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewCust">
+      <wsdl:input message="tns:CreateNewCustSoapIn" />
+      <wsdl:output message="tns:CreateNewCustSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePIPELine">
+      <wsdl:input message="tns:CreatePIPELineSoapIn" />
+      <wsdl:output message="tns:CreatePIPELineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPIPELineExcelReport">
+      <wsdl:input message="tns:GetPIPELineExcelReportSoapIn" />
+      <wsdl:output message="tns:GetPIPELineExcelReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPIPELineExcelReportByYear">
+      <wsdl:input message="tns:GetPIPELineExcelReportByYearSoapIn" />
+      <wsdl:output message="tns:GetPIPELineExcelReportByYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPIPELineExcelReportByYearAndStage">
+      <wsdl:input message="tns:GetPIPELineExcelReportByYearAndStageSoapIn" />
+      <wsdl:output message="tns:GetPIPELineExcelReportByYearAndStageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="generalSoap" type="tns:generalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LOGSuccessSO">
+      <soap:operation soapAction="http://tempuri.org/LOGSuccessSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifyEmailHtmlStr">
+      <soap:operation soapAction="http://tempuri.org/GetNotifyEmailHtmlStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSOPendingForMYA">
+      <soap:operation soapAction="http://tempuri.org/GetSOPendingForMYA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewCust">
+      <soap:operation soapAction="http://tempuri.org/CreateNewCust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePIPELine">
+      <soap:operation soapAction="http://tempuri.org/CreatePIPELine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPIPELineExcelReport">
+      <soap:operation soapAction="http://tempuri.org/GetPIPELineExcelReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPIPELineExcelReportByYear">
+      <soap:operation soapAction="http://tempuri.org/GetPIPELineExcelReportByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPIPELineExcelReportByYearAndStage">
+      <soap:operation soapAction="http://tempuri.org/GetPIPELineExcelReportByYearAndStage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="generalSoap12" type="tns:generalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LOGSuccessSO">
+      <soap12:operation soapAction="http://tempuri.org/LOGSuccessSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifyEmailHtmlStr">
+      <soap12:operation soapAction="http://tempuri.org/GetNotifyEmailHtmlStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSOPendingForMYA">
+      <soap12:operation soapAction="http://tempuri.org/GetSOPendingForMYA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewCust">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewCust" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePIPELine">
+      <soap12:operation soapAction="http://tempuri.org/CreatePIPELine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPIPELineExcelReport">
+      <soap12:operation soapAction="http://tempuri.org/GetPIPELineExcelReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPIPELineExcelReportByYear">
+      <soap12:operation soapAction="http://tempuri.org/GetPIPELineExcelReportByYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPIPELineExcelReportByYearAndStage">
+      <soap12:operation soapAction="http://tempuri.org/GetPIPELineExcelReportByYearAndStage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="general">
+    <wsdl:port name="generalSoap" binding="tns:generalSoap">
+      <soap:address location="http://172.21.1.133/ws/general.asmx" />
+    </wsdl:port>
+    <wsdl:port name="generalSoap12" binding="tns:generalSoap12">
+      <soap12:address location="http://172.21.1.133/ws/general.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

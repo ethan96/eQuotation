@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="cc9c0574-c138-4368-a649-c915fb704343" name="SAPClassDiagram" linkedPackageId="2c95e780-0f93-4c66-ac30-c4b0aec2b1d2" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="d5accffe-0498-48fd-a85f-79856b3649b7" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="cb093927-d996-4ec0-93ee-6a9ef12538a0" />
+    </stereotypeInstance>
+    <stereotypeInstance Id="a30bd6bf-b56f-4205-8c10-c480ee54baf0" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="63f0f771-d33e-4f60-9e8f-995e2cab2a0d" />
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="8f4a6877-13f0-4adb-88a2-e3511228045d" name="QuoteID" isAbstract="false" isLeaf="false" cachedFullName="QuoteID">
+        <elementDefinition Id="f3c43507-0436-4b46-8c11-bbe8e96fe81e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="22d08509-c2fc-441f-b495-663cefaa8a71" name="Cart or Order" isAbstract="false" isLeaf="false" cachedFullName="Cart or Order">
+        <elementDefinition Id="6cb85253-64e2-4a97-a09c-cbae83154c3f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9ff1a26e-8531-4024-bd61-142a70768d68" name="Order" isAbstract="false" isLeaf="false" cachedFullName="MyAdvantechAPIModeling::Advantech.MyAdvantech.DataAccess::Order">
+        <elementDefinition Id="57a02995-1a2a-4192-946a-2b16c759b165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="5b898977-4222-4897-8e05-53b4eab1a540" name="Advantech.MyAdvantech.Business">
+        <elementDefinition Id="000a149f-460c-40df-9dca-2cdee7d3c874" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="3452f7b5-f8b1-4ddb-8b7c-4f9f4eb80a56" name="OrderBusinessLogic" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Call SAP BAPI to flip order</description>
+              <elementDefinition Id="9e53226d-35db-4425-99c7-8bceb6718a4e" />
+              <ownedOperationsInternal>
+                <operation Id="9b2904a5-ba7c-4de5-8bb6-e0e080dac95f" name="CreateSAPOrder" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b7488989-f737-4399-b7ae-15be449b5e87" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="09090b39-ad02-4476-ad58-be788def28d9" name="Order" direction="In" isUnique="false">
+                        <elementDefinition Id="a0166c81-c36c-493a-a72e-56fa847ca279" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="bda8b582-2613-49ea-9063-4d8f945ec380" name="LoadSAPOrder" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="56c9a1d0-e059-4611-80ae-3a11c0e185b6" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8831c07a-9941-47cc-8398-221b30eb1f77" direction="Return" isUnique="false">
+                        <elementDefinition Id="965af700-0015-481f-9935-274c4d8e3f1c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="9ff1a26e-8531-4024-bd61-142a70768d68" LastKnownName="Order" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="efcc37a6-5823-4dc0-b046-6df8c1b2c1c9" name="CopySAPOrderToNewQuote" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d47c7731-446c-4047-824b-35da16c96917" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2d7e5f83-17e2-4cee-ac73-81d3babca62d" name="PartBusinessLogic" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Call SAP BAPI to flip order</description>
+              <elementDefinition Id="33d8e51d-c66f-418a-9bdb-95636e9f5877" />
+              <ownedOperationsInternal>
+                <operation Id="7ac1c697-d69a-481e-a281-e346be658124" name="LoadPrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="df35fcac-2cb3-4ec5-ae29-1d1eab5b3967" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="0ddd25db-e7ef-4c86-a0cb-8212ab79497e" name="List&lt;Part&gt;" direction="In" isUnique="false">
+                        <elementDefinition Id="07e8bd36-6210-42e1-b39b-33e127c37ab7" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="f46e0936-dd62-4302-9824-bd5edc70cecd" name="LoadPrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="adf5dca8-5afd-4776-86f6-16041210d422" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="605595de-f26b-4559-84e5-5308fb0c157d" name="Part" direction="In" isUnique="false">
+                        <elementDefinition Id="1f796970-1d7c-4559-bd64-dcd9ec8e700a" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="26ae9fab-735f-4028-947f-54a9ebda16ff" name="SAPAccountBusinessLogic" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="2a9f8a6a-8907-47b6-bc49-d0d3fc9fc7a2" />
+              <ownedOperationsInternal>
+                <operation Id="949c041f-a62e-4e8b-af57-240ed391120d" name="CreateNewAccount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="129a0c76-c40f-43be-8d14-3e10cc2fca40" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="9bcaedfd-eda8-410f-ac92-a79334e2f10c" name="Advantech.MyAdvantech.DataAccess">
+        <elementDefinition Id="bc409c17-5477-46a2-ad57-c7bcc9d526bf" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="f874a88c-761a-42e4-8904-f62e9005beb6" name="Order" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="57a02995-1a2a-4192-946a-2b16c759b165" />
+              <generalsInternal>
+                <generalization Id="d8f9fc5f-cd3a-4aa0-823f-87c77f9fa8a1" isSubstitutable="false">
+                  <classMoniker Id="267e47cc-09b8-449f-9694-f4bde46d812d" LastKnownName="DocumentBase" />
+                  <elementDefinition Id="e5fc8326-2f5a-4ac4-81d2-f58918efe62a" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="e7da491a-5f86-423d-8bce-49aecce8eb9b" name="OrderID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a431550b-8216-457a-9378-4743de41c182" />
+                </property>
+                <property Id="33a72da6-1c65-45f1-969f-412d6441c0a9" name="LineItems" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="58d838c3-36ed-4b8d-80f5-77521b2d1d0f" />
+                </property>
+                <property Id="bfc647d1-1c66-4326-bfb0-958c2eca4c9e" name="SAPOrderNo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8ca00913-1010-43be-b6cb-30304492c5a0" />
+                </property>
+                <property Id="9dd2e2ee-95e1-4b92-80c2-e8c1ef66f5fb" name="Status" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1d6c1076-3e94-4882-aea9-6fa9264cb0f1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="22d08509-c2fc-441f-b495-663cefaa8a71" LastKnownName="Cart or Order" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="7f13aa19-b71d-4067-939e-026a184ec9d9" name="AddLineItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e165eade-1863-464e-9e93-3e750459d0e6" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2ddfcf3e-a41d-4b94-bf3b-6c20f829b0db" name="LineNo" direction="In" isUnique="false">
+                        <elementDefinition Id="11f0da08-32d8-4ba6-a6b6-43374108e5d9" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="101d14d8-55f7-47cb-938d-3f0f5f3f825f" name="Part" direction="In" isUnique="false">
+                        <elementDefinition Id="f552adc4-06dc-418b-8d3f-8c53480e1059" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="c4a2a1f9-0851-4957-9d17-95cf5c547201" name="LineItem" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="133159d3-1b96-460b-b231-e6da67b0c84f" />
+              <generalsInternal>
+                <generalization Id="14754ce3-ca0e-47c2-a671-4d44e31379ed" isSubstitutable="false">
+                  <classMoniker Id="e405bb10-2d52-4df1-9c21-9f26c2e216a1" LastKnownName="Part" />
+                  <elementDefinition Id="505a9fb8-6b1b-4137-94a7-a7aa92312828" />
+                </generalization>
+              </generalsInternal>
+              <targetEnds>
+                <association Id="6c019f6d-f98d-41cd-9dda-7e5611eb95af" isDerived="false" sourceEndRoleName="LineItem" targetEndRoleName="Order" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="f874a88c-761a-42e4-8904-f62e9005beb6" LastKnownName="Order" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="44aa69ba-972a-43ce-882b-607a19da6463" name="LineItem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="bf00021e-71bc-4318-be47-21ec24bcbe54" name="Lower" value="0">
+                            <elementDefinition Id="2f3f890c-f654-462a-bdd1-464a56f24d16" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="0d97dcfd-d220-4409-a719-2e6c765b6c1c" name="Upper" value="*">
+                            <elementDefinition Id="acfa3055-dc87-4d5e-b9ea-bc75a2017485" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="5fccbc84-3f03-4084-b658-cc7666d432e8" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="f70121a9-d263-4d68-ae57-63e0ea3b3b37" name="Order" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="de8c1ab4-0186-41eb-86d6-9293c86e5661" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="47f971d8-2bda-435b-ae7f-f9903ff69303" />
+                </association>
+                <association Id="ec0c0cd7-a8c5-4c77-b440-3221dcab089c" isDerived="false" sourceEndRoleName="LineItem" targetEndRoleName="Quote" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="30a98976-2693-4bd0-a491-eb022d745609" LastKnownName="Quote" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="a2205cb3-6beb-4ec7-9059-ae2380b7d52a" name="LineItem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="e03fad23-1222-408b-9cfd-be593ce48e76" name="Lower" value="0">
+                            <elementDefinition Id="6357442d-c62e-4504-9860-8b4c217ed1ec" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="dcfa3cef-4515-4152-b221-ff460f9eb82f" name="Upper" value="*">
+                            <elementDefinition Id="9ad156bf-4423-458a-bd37-2011db61f5d7" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="418fef0a-7fb2-41a0-ba87-bb8577645148" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="4dd76b81-eca3-4454-81bd-261783a8306f" name="Quote" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="f2be9df6-b717-433f-90c7-0bd90c4321c7" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="5f9200e9-66e0-444e-95ca-60ff1aa770e6" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="46740179-6dbf-42cb-a4cc-3a10ce66c75d" name="PartNo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="74730c90-f709-4da6-8ee2-fd69cd4f5edb" />
+                </property>
+                <property Id="319a0161-487b-4e48-becd-410be512939a" name="LineNo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ee0b4be0-f387-4aa7-ba41-0f4bdfc6c9c4" />
+                </property>
+                <property Id="adfaaeb9-052a-41ff-913c-9b6a1f1fcb12" name="Qty" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="26a90f1d-d402-438a-bebd-6f40651e1ac7" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="30a98976-2693-4bd0-a491-eb022d745609" name="Quote" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="4eafe9be-e836-41f0-b5d0-84980028f64a" />
+              <generalsInternal>
+                <generalization Id="412982ec-65ae-459a-afce-cc4d8b2f1ab0" isSubstitutable="false">
+                  <classMoniker Id="267e47cc-09b8-449f-9694-f4bde46d812d" LastKnownName="DocumentBase" />
+                  <elementDefinition Id="4758e4a0-5b2c-4998-940e-2c7a3be4bf7d" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="8bd56336-5464-4a03-9d9b-d5ecfb50c18e" name="QuoteNo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3c103453-fa92-45da-a7bf-9539dd85484c" />
+                </property>
+                <property Id="a3641211-19c4-45fa-84b0-61f04234522a" name="ID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7d45e480-b1a0-48df-b7a3-9c3f0a80ad4c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8f4a6877-13f0-4adb-88a2-e3511228045d" LastKnownName="QuoteID" />
+                  </type_NamedElement>
+                </property>
+                <property Id="48751a63-f020-45f3-95e9-59c3cc917f92" name="Version" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="49a18949-320a-42ed-8018-491feac1d277" />
+                </property>
+                <property Id="3d13ea96-1663-44aa-9b6f-e121d512f05d" name="LineItems" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="57de2978-d83f-4f34-bd8f-28ce78ffa1f5" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="7196ce22-fb58-4276-b3c0-ac835347b329" name="AddLineItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ec8c93e0-4f02-4c50-b0bf-d1c1a14eff7d" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a9a45530-9880-4e98-9e13-a89edf5f6274" name="LineNo" direction="In" isUnique="false">
+                        <elementDefinition Id="6780ff3e-b7ec-484b-8a22-b95632b14620" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e515304c-fed2-4def-8e16-cb781396c95a" name="Part" direction="In" isUnique="false">
+                        <elementDefinition Id="ead9d9c1-6fe1-49b0-a289-d291e8b7f055" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="33f7d6d9-afd2-45bc-9046-6bd25a7a0563" name="Stock" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="942823d9-50e1-4c98-ba62-081ae53da2c3" />
+              <targetEnds>
+                <association Id="8e5eb3b4-3334-4d4e-a1b8-dac0ef52c934" isDerived="false" sourceEndRoleName="Stock" targetEndRoleName="Part" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="e405bb10-2d52-4df1-9c21-9f26c2e216a1" LastKnownName="Part" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="7f09367b-9edc-43af-b049-834b6b62be50" name="Stock" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="20f702de-2ebc-4c82-923c-6e38746f8961" name="Lower" value="0">
+                            <elementDefinition Id="be605b1c-0e85-41ff-abce-8d300fbf9694" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="c743dfa7-c811-4251-b7ec-ff69457cd0bd" name="Upper" value="*">
+                            <elementDefinition Id="f3db2f48-219d-4a95-951f-ec6767f4deab" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="e03bf5ee-14b1-4c85-aada-eb81725281ea" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="03b9d0d2-c42a-47ea-8b2d-a6f9ad8a3c2e" name="Part" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="24958b31-03c6-489f-ba3e-718d776416ef" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="acddf56b-3664-44f2-b459-a0f7cc9e4579" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="34093051-2a14-4a1c-ab22-f15cfde6abf7" name="PartNo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a0d84a2f-56c2-45e1-af86-d948fd49e46f" />
+                </property>
+                <property Id="c04f6a53-45ef-4b59-a1cf-71ae44e9c703" name="AvailableDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b8f3c36c-812f-47e1-a0f8-4905c3266036" />
+                </property>
+                <property Id="e8d31f92-b158-43d0-9ce4-0deb733f6fa6" name="PlantID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="492b4ccd-7d99-4b1b-a9b8-7ed2abd51932" />
+                </property>
+                <property Id="a6e1250b-0524-44a6-95f5-b60723750046" name="Quantity" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fcfbe171-e6c9-4935-aa39-487b3bb346b5" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="e405bb10-2d52-4df1-9c21-9f26c2e216a1" name="Part" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="5cb179bc-7a72-46e3-81bd-5200a35fe654" />
+              <targetEnds>
+                <association Id="3bef1c53-fb66-43aa-85e6-fe6084d1c616" isDerived="false" sourceEndRoleName="Part" targetEndRoleName="Model" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="3b0f6e82-8a95-4457-a6e1-09745a29ff46" LastKnownName="Model" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="2761b807-5af0-4d4d-9fd4-3584aecc30d4" name="Part" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="6a583940-954f-4165-82cf-d43efcfe2fe4" name="Lower" value="*">
+                            <elementDefinition Id="4fc3dbc9-271a-4ed1-87a4-abd1c7b472c4" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="0a3f1d41-67ba-4960-8152-0bd4244cba69" name="Upper" value="*">
+                            <elementDefinition Id="f6de39a0-7c01-48e2-b00c-64fc5ae5e5d1" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="c4c63285-f86b-4c49-ba35-5593253366fa" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="275b75a7-d0c8-4ecb-a46c-041463cd99a1" name="Model" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="a2a1e534-3f92-4433-b125-a08dee4182d4" name="Lower" value="*">
+                            <elementDefinition Id="a2de1be3-0708-415e-8113-ea25665e2799" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="a2b19615-8f66-47df-b00c-19d6661d36e1" name="Upper" value="*">
+                            <elementDefinition Id="14de11a1-044d-40d8-ae39-938def489068" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="41675639-4ddf-4a48-87ba-54fa64dc9583" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="a5f4b499-d61a-4eef-b990-8d710c97b69a" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="3291084a-a602-4d61-af62-8bcd49fea047" name="PartNo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fa1984a7-d465-4b1e-a6f1-c51a15d74e4f" />
+                </property>
+                <property Id="b44ea4f1-ee0f-462f-8289-3cff5552e500" name="ListPrice" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c5d47baf-3f2e-4ccf-a1e5-35c597246acb" />
+                </property>
+                <property Id="ebeddde3-2fd1-48e8-837d-a137cf848623" name="OrgID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="73c97b79-2d93-41d3-bd8b-dab8558dd24f" />
+                </property>
+                <property Id="a36615b7-db5a-4629-aff1-8ec0c920d88c" name="PlantID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6c526026-ceb2-4757-9bb9-e48e806692e7" />
+                </property>
+                <property Id="66900d1a-3bff-4e9e-917a-3322594fe382" name="ModelList" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f262773e-299a-491f-97b5-c9e4817ec83b" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="c30eb1d0-80a0-48dd-97e8-148767f49279" name="LoadPrice" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6f205d32-2f44-4235-a13d-8bf583668843" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="fde34cef-4b21-4811-bb3d-28aaf2177890" name="ERPID" direction="In" isUnique="false">
+                        <elementDefinition Id="aee2ff47-85bd-492a-988f-a885a029a51d" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="80993291-2a6d-46d2-85ee-ae939ee297d8" name="GetStock" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a0188292-e67a-4351-8731-fa324c61723a" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="267e47cc-09b8-449f-9694-f4bde46d812d" name="DocumentBase" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="5575bad6-bcf4-4f53-b5ca-8f68489bea30" />
+              <ownedAttributesInternal>
+                <property Id="0dd80436-18de-4397-8b9e-a4c863a4103a" name="ID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="14e17e89-86e3-422f-ae3f-7390837dcd1a" />
+                </property>
+                <property Id="15547ebd-3f57-46a2-be75-8756b34b258d" name="LineItems" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1cb24c71-9765-4528-bd0f-87896f133bcb" />
+                </property>
+                <property Id="3b39bfe5-cd74-40b0-8849-3dbc2f129bc1" name="SoldTo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="94e49b38-0604-4f6f-a8dd-c7135507d32d" />
+                </property>
+                <property Id="f6115c08-1044-411d-9200-24afba94de63" name="ShipTo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5180efa4-836f-4b6b-bfc1-37f977bb654f" />
+                </property>
+                <property Id="071483f0-84e0-4bc5-a84f-b07b84fcbb0b" name="BillTo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7dc3f79e-527b-4a89-8f61-d9fd2ccbfde3" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="f198a790-b52c-4ca1-b1b3-54f4f543b765" name="Partner" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a7892e34-afbf-4a9b-9e6e-da3720e42ce7" />
+              <targetEnds>
+                <association Id="a677d15e-f06c-4049-bfd6-d23d603d9df4" isDerived="false" sourceEndRoleName="" targetEndRoleName="Order" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="f874a88c-761a-42e4-8904-f62e9005beb6" LastKnownName="Order" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="ecbff1f3-7e9a-4223-bbac-83a96d66e1d6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="00593ec1-003c-4c0a-9613-5060f1d0a254" name="Lower" value="*">
+                            <elementDefinition Id="31bfbc04-90d6-4071-b5a0-18451ff22ef2" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="3b9aab13-0c0e-4915-a355-855b70fce4b3" name="Upper" value="*">
+                            <elementDefinition Id="6cf515ab-063b-45d4-b515-49896293c0ab" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="e43984ed-3745-4635-83b6-7639cb6f8a7d" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="c3dfb439-f20e-4cad-b0fc-f42f5804c3bd" name="Order" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="786adb11-b772-4d54-a0a4-fefe064d2e39" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="51b3437b-0d51-4a6b-b4f8-634b19d93f70" />
+                </association>
+                <association Id="9d9f7581-a05a-4a77-8d62-52b6bd25d94f" isDerived="false" sourceEndRoleName="" targetEndRoleName="Quote" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="30a98976-2693-4bd0-a491-eb022d745609" LastKnownName="Quote" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="09c90174-52ea-4758-bf65-919a09b1ff97" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="95ef0550-0d9a-491c-bffd-09f49d7ab52c" name="Lower" value="*">
+                            <elementDefinition Id="0db2197a-4c0e-4611-8236-d6f65d9aafd0" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="6052476e-6602-4942-bfad-0bed9141b380" name="Upper" value="*">
+                            <elementDefinition Id="1b42855d-0373-4bbd-ae68-2f54cdfcf90f" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="dc69bd2b-c4b9-4ba6-98b6-1f6843892d92" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="0b685ce6-aaf1-4be7-86ab-baf8754b247e" name="Quote" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="2eea5563-b227-4060-a487-ff87b4c447e1" name="Lower" value="1">
+                            <elementDefinition Id="5c9c3692-4036-474a-9a97-ccf5c070d96b" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="ac608624-31d0-4afd-8c75-7f0a13639b8a" name="Upper" value="1">
+                            <elementDefinition Id="e1aec5c1-cea6-4bd0-b3be-ab0766140b95" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="9f97f8ef-0570-4ccb-bb7c-0ab81a6ead73" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="52a6ec11-3b09-47e4-b949-c129f3974cbe" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="c6556c06-805f-48c6-8b5e-de1a652759b7" name="REPID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="97d81bf5-50fb-4a34-8cc9-240747136a66" />
+                </property>
+                <property Id="e5e79c6b-08d4-4647-a89f-e18a14801726" name="Tel" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="96a7cb29-45ac-4709-ac2d-3012ce966194" />
+                </property>
+                <property Id="f1a2eaaa-060f-4fad-9d67-c8de3dda0935" name="TYPE" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c06d91ec-7013-479b-8a9a-59fdbed0e13e" />
+                </property>
+                <property Id="c594a2b1-c55d-4248-937f-5d261492c643" name="Address" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8909133b-5ab4-432f-8080-ac69651f841a" />
+                </property>
+                <property Id="8ec96157-980a-446b-9f44-db7767e71b69" name="ATTENTION" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="05fc32ab-014b-4564-be82-961055ea3780" />
+                </property>
+                <property Id="e15c9ac7-6f3f-449d-93ed-b85054c01f3e" name="MOBILE" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7fabd770-e128-4153-838a-3fe3b3f23958" />
+                </property>
+                <property Id="aaf6aebd-e20c-46a3-94f9-ccf8999aac39" name="ZIPCODE" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4143890c-27c9-496d-b39e-b763db0c45db" />
+                </property>
+                <property Id="a4e6d1d0-172d-4d9c-a5ec-7522e2432174" name="COUNTRY" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="61da3c3b-bad8-4946-b3a7-9717087c3691" />
+                </property>
+                <property Id="54d351b1-fc3a-4606-b4f6-6dbec087a019" name="CITY" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5c18464b-fa7b-4764-aa3b-340376f49a30" />
+                </property>
+                <property Id="5095e592-e0fa-459f-9ffe-78036ca5b859" name="STREET" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="093ff216-ac38-4517-b6b9-7e325b363ce4" />
+                </property>
+                <property Id="4566f1d4-1a31-42d1-baa7-2677f18c4814" name="STATE" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="268a6a39-67c7-498d-998e-c0b69c10bc2c" />
+                </property>
+                <property Id="136bbf71-fb26-4da4-ab08-f577026949e0" name="DISTRICT" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="599699d3-ab30-4b48-8350-fa04a1c9d881" />
+                </property>
+                <property Id="efaaffed-5cf7-434f-a170-d4faec361fbe" name="TAXJURI" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="33499347-102d-48cc-af6c-6f2dbc8bacd1" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="3b0f6e82-8a95-4457-a6e1-09745a29ff46" name="Model" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a8a5d602-e8d1-4423-9fdb-4465f414328f" />
+              <ownedAttributesInternal>
+                <property Id="8ff350bc-8fed-42ae-ac0a-c0a93025b5b2" name="Lang" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b6c72808-72af-49b3-b3c8-b9cbb6f536a7" />
+                </property>
+                <property Id="0af022c6-82c3-491d-afa4-ec3b3403a647" name="ID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d79808bf-9f6d-48bc-9002-972b14980a4e" />
+                </property>
+                <property Id="cd913039-e27b-45b2-96e9-85a47e4e4baf" name="Description" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fe66af19-40a3-41f3-ac6a-2d14121422b9" />
+                </property>
+                <property Id="8c5d8de7-971c-4841-adac-e82aadeddf82" name="LiteratureList" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="be9280fc-7b75-4700-8bc3-eeb3a2500dc7" />
+                </property>
+                <property Id="0786e9a7-b3eb-4791-bf66-181584d18f2e" name="Introduction" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="887cd06b-1a81-464b-afda-cb304d7b1495" />
+                </property>
+                <property Id="df79c462-647a-480c-9fa5-52e6a5159b16" name="Attribute1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1fd49446-e569-4dbd-a1aa-be8aa7915543" />
+                </property>
+                <property Id="f0768091-2c37-45e8-973b-55931ad958b9" name="Attribute2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a01d37d5-bb95-4021-9c37-773c14e12a98" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="774d8fea-5e81-4a37-8dee-acc1d8de29b3" name="Literature" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="cf8ce5d4-f089-45c1-9bd8-991ac9d9a7e7" />
+              <targetEnds>
+                <association Id="0ccb1f73-788c-4897-982a-ee2251a18bff" isDerived="false" sourceEndRoleName="Literature" targetEndRoleName="Model" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="3b0f6e82-8a95-4457-a6e1-09745a29ff46" LastKnownName="Model" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="58e37d03-36e8-4238-ab2a-b9730726cd23" name="Literature" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="5f9db03c-8bb0-4b3a-b590-3d270eed85f7" name="Lower" value="*">
+                            <elementDefinition Id="b526ba87-9e22-421d-a505-afb7f73237ce" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="6cec4d0f-abcc-4006-a541-34fba3b2f11a" name="Upper" value="*">
+                            <elementDefinition Id="e07bae5d-e4d3-4d2e-8f51-c722ea4fd55f" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="dd72e87f-a663-44ac-b3a2-1d9bc3a72b0b" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="acc39ef6-f329-40a1-a244-ad23c1b14241" name="Model" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="d1bd9535-ea9f-4f56-aee1-1616844f49ad" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="91e2073b-41e2-41a0-8a88-b274d2b6d996" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="e670fa5a-04e9-4f0b-aef1-a64b7e089469" name="Lit_Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ad77516a-7699-4aee-81a6-24148a2d06ca" />
+                </property>
+                <property Id="1efc27eb-ac78-4bfe-9bc0-f52371c407fa" name="LiteratureID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9051aed7-3eb8-4d17-b756-e5b91e979bdf" />
+                </property>
+                <property Id="3ae5b63f-4435-4145-96d0-b07b8290cda4" name="Size" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="10ae290e-29bd-45b3-8b03-f1e0e243b26e" />
+                </property>
+                <property Id="10bed8e3-7a61-4092-98ac-099e9e4aa29b" name="Lit_Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dec5af54-5d67-4610-8073-4663039188f7" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="44308e74-d668-433b-a3b7-1c644fe9e803" name="SAPDAL" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="4eb9be23-098e-41bf-a4f8-1c3e58b6ec7f" />
+              <ownedAttributesInternal>
+                <property Id="7bfdca27-b42d-4bc5-87ff-9ea03c1f5cb7" name="PartNo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="71442409-0ae9-48b3-acb4-81a713739129" />
+                </property>
+                <property Id="3afbe6aa-94b2-4fef-a3cb-b76821879528" name="AvailableDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ef7b518a-ad5c-43cf-a1fe-dc3fa6c2c4d2" />
+                </property>
+                <property Id="760fd8be-2fbc-4699-805a-043cdb2f63bd" name="PlantID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e131080a-ca78-41b2-967b-eb0c1894e081" />
+                </property>
+                <property Id="548baf9c-4942-44f5-96d5-5d12b7350cb8" name="Quantity" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0de3c1b7-49e3-4bf1-a219-2dbdef33705f" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="2c95e780-0f93-4c66-ac30-c4b0aec2b1d2" name="MyAdvantechAPIModeling">
+    <elementDefinition Id="1f96ac77-63d4-463b-951b-6107eb2921ce" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f12d8386-fa10-471a-95d8-7d8e8aa9dbe3">
+        <profileInstance Id="ea33da9d-c29e-4e95-aa5e-b21ba0d4bad7" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="670f3fd2-87fb-45eb-88e4-f1640413ca8d">
+        <profileInstance Id="54cc53c9-9bc5-43ff-85c8-bcfa9525906a" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

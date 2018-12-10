@@ -1,0 +1,96 @@
+﻿@model Advantech.Myadvantech.DataAccess.ACN_EQ_PSM
+
+@if (Model != null)
+{
+    using (Ajax.BeginForm("CreateOrUpdatePSMApprovers", "approvers",
+        new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            OnBegin = "onNewApproverBegin",
+            OnSuccess = "onNewApproverSuccess"
+        }, new { @id = "frmNewUser" }))
+    {
+        <div class="modal-action">
+            <ul>
+                <li><button type="submit" class="clear"><i class="fa fa-floppy-o"></i> Save</button></li>
+                <li><a id="close-newapprover"><i class="fa fa-times"></i> Close</a></li>
+            </ul>
+        </div>
+        <div class="modal-content">            
+            <table class="modal-form">
+                @Html.HiddenFor(mdl => mdl.Id)
+                @*<tr>
+                    <td class="fieldtext">Sector</td>
+                    <td>
+                        @Html.DropDownListFor(mdl => mdl.Sector, new List<SelectListItem> { new SelectListItem { Text="EIOT",Value="EIOT" }, new SelectListItem { Text = "IAG", Value = "IAG" }, new SelectListItem { Text = "ISG", Value = "ISG" } }, new { @id = "ddSector", @class = "clsddSector" })
+                    </td>
+                </tr>*@
+                <tr>
+                    <td class="fieldtext">Product Group</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.PG, new { @style = "width:90%" })</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">Product Division</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.ProductDivision, new { @style = "width:90%" })</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">PSM Email</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.PSM, new { @style = "width:90%" })</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">Approve Level</td>
+                    @*<td>@Html.TextBoxFor(mdl => mdl.Level, new { @style = "width:90%" })</td>*@
+                    <td>
+                        @Html.DropDownListFor(mdl => mdl.Level, new List<SelectListItem> { new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2"} }, new { @id = "ddSector", @class = "clsddSector" })
+                    </td>
+                </tr>
+
+
+
+            </table>
+        </div>
+    }
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("a#close-newapprover").on("click", function () {
+            $.modal.close();
+        });
+
+
+
+    });
+
+    function isValidEmailAddress(emailAddress) {
+        var pattern = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+        return pattern.test(emailAddress);
+    }
+
+    //called on submit begin
+    function onNewApproverBegin() {
+        if (!$('#ProductDivision').val()) {
+            alert("ProductDivision can't be empty.");
+            return false;
+        }
+        if(!$('#PSM').val()){
+            alert("Email can't be empty.");
+            return false;
+        }
+        if (!isValidEmailAddress($('#PSM').val())) {
+            alert("Email format is invalid.");
+            return false;
+        }
+        $.blockUI();
+    }
+
+    //called on return value
+    function onNewApproverSuccess(data) {
+        $.pushHTML(data, function () {
+            $.modal.close(); $("#wrapper-content").html(data);
+        });
+        $.unblockUI();
+    }
+
+</script>

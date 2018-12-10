@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Advantech.PIS.Business</name>
+    </assembly>
+    <members>
+        <member name="M:Advantech.PIS.Business.ModelBusinessLogic.GetModelByModelID(System.String)">
+            <summary>
+            Get model by model ID
+            </summary>
+            <param name="model_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.PIS.Business.ModelBusinessLogic.GetModelByCategory_ModelID(System.String,System.String)">
+            <summary>
+            Get model by category ID and model ID
+            </summary>
+            <param name="category_id">The model belongs to which category</param>
+            <param name="model_id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

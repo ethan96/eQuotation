@@ -1,0 +1,125 @@
+﻿@model eQuotation.Models.Admin.VisibilityViewModel
+
+@if (Model != null)
+{
+    <div class="main-content">
+        <div class="topbox titlebox"><h4>Feature Visibility Control</h4></div>
+        <div class="actionbox">
+            <ul>
+                <li><a id="btn-refresh"><i class="fa fa-refresh"></i> Refresh</a></li>
+                <li><a id="btn-save"><i class="fa fa-floppy-o"></i> Save</a></li>
+            </ul>
+        </div>
+        <div class="content flex-row">
+            <div class="blank-block flex-row flex-ver-stretch" style="overflow:auto; justify-content:space-around">
+                <div style="width:65%;">
+                    <table id="tblVisibControl">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th style="width:50px;">Enabled</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var menu in Model.Elements)
+                            {
+                                if (menu.IsNewCategory)
+                                {
+                                    <tr>
+                                        <td style="padding-left:10px;">
+                                            <strong><i class="fa fa-plus-square"></i> &nbsp;@menu.Category</strong>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                }
+
+                                if (menu.IsNewGroup && !string.IsNullOrEmpty(menu.Group))
+                                {
+                                    <tr>
+                                        <td style="padding-left:40px; font-style:italic;">
+                                            <i class="fa fa-plus-square"></i> &nbsp;@menu.Group
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                }
+
+                                <tr style="">
+                                    <td style="border-bottom: 1px dotted #ccc; padding-left:70px;">
+                                        @if (menu.Enabled)
+                                        {
+                                            <span><i class="fa fa-square" style="color: #75cf4e;"></i> &nbsp;@menu.ElementName</span>
+                                        }
+                                        else
+                                        {
+                                            <span><i class="fa fa-square" style="color: #aaa;"></i> &nbsp;@menu.ElementName</span>
+                                        }
+                                    </td>
+                                    <td style="text-align: center; border-bottom: 1px dotted #ccc">
+                                        @if (menu.Default)
+                                        {
+                                            <input type="checkbox" disabled="disabled" checked="@menu.Enabled" value="@menu.Enabled" data-value="@menu.ElementID" />
+                                        }
+                                        else
+                                        {
+                                            <input type="checkbox" class="cntrl-selection" checked="@menu.Enabled" value="@menu.Enabled" data-value="@menu.ElementID" />
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="flex-wrap" style="width:30%; margin:15px 5px;">
+                    @*<p>
+                        The iFS provides built-in business functions which are adopted from best practice in industrial computers manufacturing.
+                    </p>
+                    <br />
+                    <p>
+                        You may configure your iFS features according to business requirement.
+                        Include the available functions which are suitable to your business process, or remove ones which are not relevant from your customized iFS.
+                        GREEN = Enabled, GRAY = Disabled.
+                    </p>
+                    <br />
+                    <p>
+                        You can come back to this visibility control later to change configuration. In case your requirements are not supported 
+                        by available built-in function, please contact iFS team to consult. 
+                    </p>
+                    <br />
+                    <p>
+                        Your iFS Team, <br />
+                        eBusiness.Europe@advantech.eu
+                    </p>*@
+                </div>
+            </div>
+        </div>
+    </div>    
+}
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#btn-refresh").on("click", function () { initContent("admin/visibility"); })
+
+        $("#btn-save").on("click", function () {
+            var ctrls = "";
+            $(".cntrl-selection").each(function (key) {
+                ctrls = ctrls + $(this).attr("data-value") + "=" + $(this).prop("checked") + "$";
+            });
+            updateContent("admin/savecontrol?ctrls=" + ctrls);
+            //window.location.reload();
+        });
+
+        $('#tblVisibControl').dataTable({
+            "bPaginate": false,
+            "bFilter": false,
+            "bInfo": false,
+            "bSort": false
+        });
+
+    });
+
+</script>

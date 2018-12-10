@@ -1,0 +1,3 @@
+obj\Debug\_eQuotationWorkFlow.g.cs
+obj\Debug\GPControlFlow.g.cs
+obj\Debug\eQuotationWorkFlow_Activity1_BeforeInitializeComponentHelper.cs

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsdLocal1="http://www.siebel.com/xml/ADVAccountIO" xmlns:tns="http://siebel.com/CustomUI" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://siebel.com/CustomUI" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://siebel.com/CustomUI">
+      <xsd:import namespace="http://www.siebel.com/xml/ADVAccountIO" />
+      <xsd:element name="AddAccount_Input">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="xsdLocal1:ACC" />
+            <xsd:element name="SOURCE" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddAccount_Output">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Error_spcCode" type="xsd:string" />
+            <xsd:element name="Error_spcMessage" type="xsd:string" />
+            <xsd:element name="ROW_ID" type="xsd:string" />
+            <xsd:element name="STATUS" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/ADVAccountIO">
+      <xsd:annotation>
+        <xsd:documentation>Copyright (C) 2001-2004 Siebel Systems, Inc. All rights reserved. Siebel XSD Generation</xsd:documentation>
+      </xsd:annotation>
+      <xsd:element name="ACC" type="xsdLocal1:ACC" />
+      <xsd:complexType name="ACCTopElmt">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="ACC" type="xsdLocal1:ACC" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ACC">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="STATUS" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="BUS_GROUP" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="CURRENCY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="DESC" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ERPID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="URL" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="INTEGRATION_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="SITE" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="MAIN_FAX" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="MAIN_PHONE" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="NAME" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="NDA_DATE" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="PAR_ACC_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="IS_PARTNER" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="DETENTION" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ROW_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="TAXID" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="TYPE" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ADDR" type="xsdLocal1:ADDR" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="POSITION" type="xsdLocal1:POSITION" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ORG" type="xsdLocal1:ORG" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="BAA" type="xsdLocal1:BAA" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="INDUSTRY" type="xsdLocal1:INDUSTRY" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CONTACT" type="xsdLocal1:CONTACT" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ADDR">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="CITY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="COUNTRY" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ZIP" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="STATE" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="LINE1" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="LINE2" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="IS_PRIMARY" type="xsd:string" />
+      </xsd:complexType>
+      <xsd:complexType name="POSITION">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="NAME" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="IS_PRIMARY" type="xsd:string" />
+      </xsd:complexType>
+      <xsd:complexType name="ORG">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="NAME" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="IS_PRIMARY" type="xsd:string" />
+      </xsd:complexType>
+      <xsd:complexType name="BAA">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="NAME" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="INDUSTRY">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="NAME" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="CODE" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="IS_PRIMARY" type="xsd:string" />
+      </xsd:complexType>
+      <xsd:complexType name="CONTACT">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="CON_ROW_ID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="AddAccount_Input">
+    <part name="AddAccount_Input" element="tns:AddAccount_Input" />
+  </message>
+  <message name="AddAccount_Output">
+    <part name="AddAccount_Output" element="tns:AddAccount_Output" />
+  </message>
+  <portType name="ADVWebService-AddAccount">
+    <operation name="AddAccount">
+      <input message="tns:AddAccount_Input" />
+      <output message="tns:AddAccount_Output" />
+    </operation>
+  </portType>
+  <binding name="ADVWebService-AddAccount" type="tns:ADVWebService-AddAccount">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="AddAccount">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:AddAccount" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ADVWebService-AddAccount">
+    <port name="ADVWebService-AddAccount" binding="tns:ADVWebService-AddAccount">
+      <soap:address location="http://CRMAP-GLOBAL3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234" />
+    </port>
+  </service>
+</definitions>

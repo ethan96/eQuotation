@@ -1,0 +1,203 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    .totalMargin {
+        font-size: 16px;
+    }
+
+    .table {
+        border-collapse: collapse; /* 关键属性：合并表格内外边框(其实表格边框有2px，外面1px，里面还有1px哦) */
+        border: solid #000; /* 设置边框属性；样式(solid=实线)、颜色(#999=灰) */
+        border-width: 1px 0 0 1px; /* 设置边框状粗细：上 右 下 左 = 对应：1px 0 0 1px */
+    }
+
+    .disableButton {
+        display: none;
+    }
+</style>
+
+@{
+    var className = "disableButton";
+    if (Model.pagetype != null && Model.pagetype != "CheckBeforeApproval" && Model.pagetype != "Template")
+    {
+        className = null;
+    }
+}
+<table width="950" border="1" align="center" class="stylenormal table" id="quoteDetailTb">
+    <tr>
+        <td align="center">序号</td>
+        <td align="center">名称</td>
+        <td align="center">描述</td>
+        @if (Model.pagetype != "SendMailToCustomer")
+        {
+            <td class='@className' align="center">标準价(含税)</td>
+        }
+        <td align="center">单价(含税)</td>
+        <td align="center">数量</td>
+        <td align="center">总价(含税)</td>
+        @if (Model.pagetype != "SendMailToCustomer")
+        {
+            <td class='@className' align="center">与标准价价差(%)</td>
+        }
+        @if (Model.GPIsViewable)
+        {
+            <td class='@className' align="center">Margin</td>
+            if (Model.End2EndGPIsViewable)
+            {
+                <td class='@className' align="center">End2End Margin</td>
+            }
+        }
+
+        <td align="center">SPR</td>
+    </tr>
+    @foreach (var item in @Model.QD)
+    {
+        <tr>
+            <td align="center">@item.line_No</td>
+            <td class="stylenormaleng">@item.partNo</td>
+            <td class="stylenormaleng">@item.description</td>
+            @if (Model.pagetype != "SendMailToCustomer")
+            {
+                <td class="stylenormalenge @className" align="right">@Model.CurrencySign @item.unitPrice</td>
+            }
+            <td class="stylenormaleng" align="right">@Model.CurrencySign @item.newUnitPrice</td>
+            <td class="stylenormaleng" align="center">@item.qty</td>
+            <td class="stylenormaleng" align="right">@Model.CurrencySign @item.SubTotal</td>
+
+            @{ var sprNo = String.IsNullOrEmpty(item.SPRNO) ? "" : item.SPRNO; }
+            @if (Model.pagetype != "SendMailToCustomer")
+            {
+                if (item.itemtype == -1)
+                {
+                    // Ryan 20171212 Show total system discount info for BTOS Parent
+                    var DiscountRate = (item.unitPrice == 0) ? 0 : Math.Round((Convert.ToDecimal(item.newUnitPrice) - Convert.ToDecimal(item.unitPrice)) / Convert.ToDecimal(item.unitPrice), 4, MidpointRounding.AwayFromZero);
+                    <td class="stylenormaleng @className" align="right">@((DiscountRate * 100).ToString("N")) %</td>
+                    if (Model.GPIsViewable)
+                    {
+                        <td class="@className" align="right"></td>
+                    }
+                }
+                else
+                {
+                    if (item.BelowSAPPriceRate > 0)
+                    {
+                        <td class="stylenormaleng @className" align="right" style="color: #FF0000;">@("-" + (item.BelowSAPPriceRate * 100).ToString("N")) %</td>
+                    }
+                    else
+                    {
+                        <td class="stylenormaleng @className" align="right"> @((Math.Abs(item.BelowSAPPriceRate) * 100).ToString("N")) %</td>
+                    }
+                    if (Model.GPIsViewable)
+                    {
+                        if (item.Margin != 9999)
+                        {
+                            if (item.GPStatus == "Normal" || item.GPStatus == "NA")
+                            {
+                                <td class="@className" align="right"> @((item.Margin * 100).ToString("N")) %</td>
+                            }
+                            else
+                            {
+                                <td class="@className" align="right" style="color: #FF0000;">@((item.Margin * 100).ToString("N")) %</td>
+                            }
+                            if (Model.End2EndGPIsViewable)
+                            {
+                                <td class="@className" align="right"> @((item.End2EndMargin * 100).ToString("N")) %</td>
+                            }
+                        }
+                        else
+                        {
+                            <td class="@className" align="right"></td>
+                            if (Model.End2EndGPIsViewable)
+                            {
+                                <td class="@className" align="right"></td>
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            <td class="stylenormaleng itemSPRNo" align="center">
+                <span>@(sprNo)</span>
+                @if (Model.pagetype == "ReviewQuoteApproval" && Model.SPRIsAdjustable)
+                {
+                    <a style='top:20%;position:relative;' data-value='@item.line_No' onclick='javascript: SPRNO(this);'><i class="fa fa-external-link"></i></a>
+                }
+            </td>
+        </tr>
+
+                }
+
+</table>
+<table width="950" class="stylenormal" align="center">
+    @if (Model.GPIsViewable)
+    {
+        <tr class="@className">
+            <td align="right"></td>
+            <td align="right">
+                <strong>Total Margin</strong>:
+            </td>
+            <td align="right">@((Model.ACNTotalMargin * 100).ToString("N")) %</td>
+        </tr>
+    }
+
+    <tr>
+        <td id="tbSM" style="text-align: left" rowspan="4" valign="top" width="60%" class="boder">
+            註:
+        </td>
+        <td align="right">
+            <strong>未税合计</strong>:
+        </td>
+        <td align="right">@Model.CurrencySign @Model.QuoteTotalAmount_WithoutTax.ToString("N2")</td>
+    </tr>
+    @*@if (Model.pagetype == "ReviewQuoteApproval" && Model.GeneralRateIsAdjustable)
+    {
+        <tr>
+            <td align="right">
+                <strong>
+                    <span class="CostTaxdrp">
+                        綜合費用(
+                        @Html.DropDownList("GeneralRate", Model.GeneralRateList)
+                        %)
+                    </span>
+                </strong>:
+            </td>
+            <td align="right">
+                @Model.CurrencySign @Model.QuoteTotalGeneralAmount.ToString("N2")
+            </td>
+        </tr>
+    }*@
+
+    <tr>
+        <td align="right">
+            <strong>
+                <span>
+                    税 额(@((Model.tax * 100).ToString("N")) %)
+                </span>
+            </strong>:
+        </td>
+        <td align="right">
+            @Model.CurrencySign @Model.QuoteTotalTax.ToString("N2")
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <strong>含税合计</strong>:
+        </td>
+        <td align="right" style="font-weight: bold; color: #FF0000;">
+            @Model.CurrencySign @Model.QuoteTotalAmount_WithTax.ToString("N2")
+        </td>
+    </tr>
+
+</table>
+@if (!string.IsNullOrEmpty(Model.SalesComment))
+{
+    <table align="center" width="950" class="stylenormal @className">
+        <tr>
+            <td class="stylenormal" style="text-align: left; color: #FF0000;" width="60%">
+                申请特价簽原因 : @Model.SalesComment
+            </td>
+        </tr>
+    </table>
+}
+
+

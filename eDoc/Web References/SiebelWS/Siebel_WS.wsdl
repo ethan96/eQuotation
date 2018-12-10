@@ -1,0 +1,2747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateNewContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contact_email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanSeeOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanPlaceOrder" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkPhone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewContactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMyAdvantechProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contact_email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanSeeOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanPlaceOrder" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkPhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAccountAdmin" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanSeeCost" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="InterestedProduct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMyAdvantechProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMyAdvantechProfileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewContact_New">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contact_email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanSeeOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanPlaceOrder" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkPhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAccountAdmin" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanSeeCost" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewContact_NewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewContact_NewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Display" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountRowID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactRowID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateSiebelActivityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelActivityWithOpty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Display" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountRowID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactRowID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OptyId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelActivityWithOptyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateSiebelActivityWithOptyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateActivityWithOwnerAccountContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Duration" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OptyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AssignTo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateActivityWithOwnerAccountContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateActivityWithOwnerAccountContactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSiebelActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Activity_Status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Activity_Display" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strActivityDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOwner" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectToACL" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSiebelActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSiebelActivityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityPartnerContact2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityPartnerContact2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityPartnerContact2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSourceName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SourceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSourceNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSourceNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptyDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rowid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptyDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOptyDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOptyForecast">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProdDt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOptyForecastResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteOptyForecastResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportOptyForecast">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProdDt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportOptyForecastResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportOptyForecastResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_OpportunityNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOrganization" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrimaryPositionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrimaryUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountSite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContactRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContactLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContactFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContactEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strChannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBusinessGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSalesMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSalesStage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCloseDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRevenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProbability" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProgram" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSupportRequest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCriticalSuccessFactor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReasonWonLost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLeadQuality" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isAssignToPartner" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPartnerRowId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_OpportunityNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Import_OpportunityNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityStageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStage_Proj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReasonWonLost" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStage_ProjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityStage_ProjResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatus2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReasonWonLost" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatus2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityStatus2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityPartnerContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityPartnerContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityPartnerContactResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityPartnerContactId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactRowId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityPartnerContactIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityPartnerContactIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatusAmtCloseDateProb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="PriRevWinProb" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatusAmtCloseDateProbResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityStatusAmtCloseDateProbResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOpportunity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSalesStage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRevenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReasonWonLost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="PriRevWinProb" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOpportunityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateOpportunityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelOpportunity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSalesStage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRevenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReasonWonLost" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectToACL" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelOpportunityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateSiebelOpportunityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewOpportunity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSalesStage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRevenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReasonWonLost" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectToACL" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewOpportunityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewOpportunityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewOpportunity4Quote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSalesStage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRevenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReasonWonLost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerLogin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewOpportunity4QuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewOpportunity4QuoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_Opportunity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrimaryPositionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrimaryUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContactRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSalesMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSalesStage" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strCloseDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRevenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProbability" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReasonWonLost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Import_OpportunityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Import_OpportunityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="channel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BizGrp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesStage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PriRevCloseDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Revenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PriRevWinProb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReasonWonLost" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatusOld">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectToACL" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatusOldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityStatusOldResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatusRevenue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Revenue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectToACL" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityStatusRevenueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityStatusRevenueResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSiebelOpportunity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSalesStage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRevenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReasonWonLost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStatus" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectToACL" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSiebelOpportunityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSiebelOpportunityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityOrg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountRowID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriOrg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOpportunityOrgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOpportunityOrgResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportOpportunity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="proj_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="proj_desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="biz_group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="channel" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="is_assign_to_partner" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="close_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lead_quality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="support_request" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="revenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="success_factor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason_won_lost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sales_method" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sales_stage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partner_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primary_user_login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="source_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportOpportunityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportOpportunityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportOpportunityV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="proj_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="proj_desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="biz_group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="channel" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="is_assign_to_partner" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="close_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lead_quality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="support_request" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="revenue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="success_factor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason_won_lost" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sales_method" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sales_stage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partner_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primary_user_login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="source_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Oppty_RowID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportOpportunityV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportOpportunityV2Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Oppty_RowID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeENews2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eNewsName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsSubscribe" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeENews2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubscribeENews2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactNeverEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsNeverEmail" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactNeverEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateContactNeverEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssociateContactToAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssociateContactToAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssociateContactToAccountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactDisable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsDisable" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactDisableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateContactDisableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsSubscribe" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubscribeProductResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactInfoByMyAdvantechProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobFunction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CellPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NeverEmail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanSeeOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanPlaceOrder" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactInfoByMyAdvantechProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateContactInfoByMyAdvantechProfileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactInfoByMyAdvantechProfile_New">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobFunction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CellPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NeverEmail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanSeeOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanPlaceOrder" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAccountAdmin" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CanSeeCost" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="InterestedProduct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactInfoByMyAdvantechProfile_NewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateContactInfoByMyAdvantechProfile_NewResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobFunction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateContactProfileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeBAA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAA" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsSubscribe" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeBAAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubscribeBAAResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountInfoByMyAdvantechProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FaxNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ERPId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BizGrp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentAccountId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountInfoByMyAdvantechProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAccountInfoByMyAdvantechProfileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRegion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMainPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMainFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountTeam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIndustry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAddressLine1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBAA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPartner" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrganization" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateAccountResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRegion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMainPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMainFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountTeam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAddressLine1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBAA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPartner" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrganization" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strParentAccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewAccountResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ERPId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountRowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ERPId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateAccountV2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="erp_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_row_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountBusinessGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RowId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountBusinessGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAccountBusinessGroupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelSR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StrContactId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Abstract" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Function_Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OWNER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Product_Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelSRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateSiebelSRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Qrow_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quote_desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cur" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="del_date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quote_note" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customer_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sales_Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QuoteDetail">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateSiebelQuotationResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Qrow_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelQuotationWithOpportunity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Qrow_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quote_desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cur" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="del_date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quote_note" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customer_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sales_Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QuoteDetail">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="OptyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelQuotationWithOpportunityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateSiebelQuotationWithOpportunityResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Qrow_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelQuotationWithOpportunity2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Qrow_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quote_desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cur" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="del_date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quote_note" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sales_Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QuoteDetail">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="OptyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelQuotationWithOpportunity2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateSiebelQuotationWithOpportunity2Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Qrow_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelQuotationWithOpportunity3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Qrow_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quote_desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cur" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="del_date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quote_note" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_row_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sales_Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QuoteDetail">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="OptyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSiebelQuotationWithOpportunity3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateSiebelQuotationWithOpportunity3Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Qrow_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q_No" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Error_Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQuoteOwner">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuoteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesRepPostnId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQuoteOwnerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateQuoteOwnerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateNewContactSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewContact" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewContactSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateMyAdvantechProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMyAdvantechProfile" />
+  </wsdl:message>
+  <wsdl:message name="CreateMyAdvantechProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMyAdvantechProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewContact_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewContact_New" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewContact_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewContact_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSiebelActivity" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSiebelActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelActivityWithOptySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSiebelActivityWithOpty" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelActivityWithOptySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSiebelActivityWithOptyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateActivityWithOwnerAccountContactSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateActivityWithOwnerAccountContact" />
+  </wsdl:message>
+  <wsdl:message name="CreateActivityWithOwnerAccountContactSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateActivityWithOwnerAccountContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSiebelActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSiebelActivity" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSiebelActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSiebelActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityPartnerContact2SoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityPartnerContact2" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityPartnerContact2SoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityPartnerContact2Response" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSourceNameSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSourceName" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSourceNameSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSourceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOptyDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOptyDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetOptyDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOptyDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOptyForecastSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOptyForecast" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOptyForecastSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOptyForecastResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportOptyForecastSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportOptyForecast" />
+  </wsdl:message>
+  <wsdl:message name="ImportOptyForecastSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportOptyForecastResponse" />
+  </wsdl:message>
+  <wsdl:message name="Import_OpportunityNewSoapIn">
+    <wsdl:part name="parameters" element="tns:Import_OpportunityNew" />
+  </wsdl:message>
+  <wsdl:message name="Import_OpportunityNewSoapOut">
+    <wsdl:part name="parameters" element="tns:Import_OpportunityNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStageSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStageSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStageResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStage_ProjSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStage_Proj" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStage_ProjSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStage_ProjResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatus2SoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatus2" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatus2SoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatus2Response" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityPartnerContactSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityPartnerContact" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityPartnerContactSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityPartnerContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityPartnerContactIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityPartnerContactId" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityPartnerContactIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityPartnerContactIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatusAmtCloseDateProbSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatusAmtCloseDateProb" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatusAmtCloseDateProbSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatusAmtCloseDateProbResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOpportunitySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOpportunity" />
+  </wsdl:message>
+  <wsdl:message name="CreateOpportunitySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelOpportunitySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSiebelOpportunity" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelOpportunitySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSiebelOpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOpportunitySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewOpportunity" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOpportunitySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewOpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOpportunity4QuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewOpportunity4Quote" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOpportunity4QuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewOpportunity4QuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Import_OpportunitySoapIn">
+    <wsdl:part name="parameters" element="tns:Import_Opportunity" />
+  </wsdl:message>
+  <wsdl:message name="Import_OpportunitySoapOut">
+    <wsdl:part name="parameters" element="tns:Import_OpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunitySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunity" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunitySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatusOldSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatusOld" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatusOldSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatusOldResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatusRevenueSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatusRevenue" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityStatusRevenueSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityStatusRevenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSiebelOpportunitySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSiebelOpportunity" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSiebelOpportunitySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSiebelOpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityOrgSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityOrg" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOpportunityOrgSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOpportunityOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportOpportunitySoapIn">
+    <wsdl:part name="parameters" element="tns:ImportOpportunity" />
+  </wsdl:message>
+  <wsdl:message name="ImportOpportunitySoapOut">
+    <wsdl:part name="parameters" element="tns:ImportOpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportOpportunityV2SoapIn">
+    <wsdl:part name="parameters" element="tns:ImportOpportunityV2" />
+  </wsdl:message>
+  <wsdl:message name="ImportOpportunityV2SoapOut">
+    <wsdl:part name="parameters" element="tns:ImportOpportunityV2Response" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeENews2SoapIn">
+    <wsdl:part name="parameters" element="tns:SubscribeENews2" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeENews2SoapOut">
+    <wsdl:part name="parameters" element="tns:SubscribeENews2Response" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactNeverEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContactNeverEmail" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactNeverEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContactNeverEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssociateContactToAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:AssociateContactToAccount" />
+  </wsdl:message>
+  <wsdl:message name="AssociateContactToAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:AssociateContactToAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactDisableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContactDisable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactDisableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContactDisableResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SubscribeProduct" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SubscribeProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactInfoByMyAdvantechProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfoByMyAdvantechProfile" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactInfoByMyAdvantechProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfoByMyAdvantechProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactInfoByMyAdvantechProfile_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfoByMyAdvantechProfile_New" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactInfoByMyAdvantechProfile_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfoByMyAdvantechProfile_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContactProfile" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContactProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeBAASoapIn">
+    <wsdl:part name="parameters" element="tns:SubscribeBAA" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeBAASoapOut">
+    <wsdl:part name="parameters" element="tns:SubscribeBAAResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountInfoByMyAdvantechProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAccountInfoByMyAdvantechProfile" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountInfoByMyAdvantechProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAccountInfoByMyAdvantechProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAccount" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountV2SoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAccountV2" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountV2SoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAccountV2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountBusinessGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAccountBusinessGroup" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountBusinessGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAccountBusinessGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelSRSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSiebelSR" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelSRSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSiebelSRResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSiebelQuotation" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSiebelQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelQuotationWithOpportunitySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSiebelQuotationWithOpportunity" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelQuotationWithOpportunitySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSiebelQuotationWithOpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelQuotationWithOpportunity2SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSiebelQuotationWithOpportunity2" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelQuotationWithOpportunity2SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSiebelQuotationWithOpportunity2Response" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelQuotationWithOpportunity3SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSiebelQuotationWithOpportunity3" />
+  </wsdl:message>
+  <wsdl:message name="CreateSiebelQuotationWithOpportunity3SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSiebelQuotationWithOpportunity3Response" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuoteOwnerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateQuoteOwner" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuoteOwnerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateQuoteOwnerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Siebel_WSSoap">
+    <wsdl:operation name="CreateNewContact">
+      <wsdl:input message="tns:CreateNewContactSoapIn" />
+      <wsdl:output message="tns:CreateNewContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMyAdvantechProfile">
+      <wsdl:input message="tns:CreateMyAdvantechProfileSoapIn" />
+      <wsdl:output message="tns:CreateMyAdvantechProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewContact_New">
+      <wsdl:input message="tns:CreateNewContact_NewSoapIn" />
+      <wsdl:output message="tns:CreateNewContact_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelActivity">
+      <wsdl:input message="tns:CreateSiebelActivitySoapIn" />
+      <wsdl:output message="tns:CreateSiebelActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelActivityWithOpty">
+      <wsdl:input message="tns:CreateSiebelActivityWithOptySoapIn" />
+      <wsdl:output message="tns:CreateSiebelActivityWithOptySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivityWithOwnerAccountContact">
+      <wsdl:input message="tns:CreateActivityWithOwnerAccountContactSoapIn" />
+      <wsdl:output message="tns:CreateActivityWithOwnerAccountContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSiebelActivity">
+      <wsdl:input message="tns:UpdateSiebelActivitySoapIn" />
+      <wsdl:output message="tns:UpdateSiebelActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityPartnerContact2">
+      <wsdl:input message="tns:UpdateOpportunityPartnerContact2SoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityPartnerContact2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSourceName">
+      <wsdl:input message="tns:UpdateSourceNameSoapIn" />
+      <wsdl:output message="tns:UpdateSourceNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptyDetail">
+      <wsdl:input message="tns:GetOptyDetailSoapIn" />
+      <wsdl:output message="tns:GetOptyDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOptyForecast">
+      <wsdl:input message="tns:DeleteOptyForecastSoapIn" />
+      <wsdl:output message="tns:DeleteOptyForecastSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportOptyForecast">
+      <wsdl:input message="tns:ImportOptyForecastSoapIn" />
+      <wsdl:output message="tns:ImportOptyForecastSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Import_OpportunityNew">
+      <wsdl:input message="tns:Import_OpportunityNewSoapIn" />
+      <wsdl:output message="tns:Import_OpportunityNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatus">
+      <wsdl:input message="tns:UpdateOpportunityStatusSoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStage">
+      <wsdl:input message="tns:UpdateOpportunityStageSoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityStageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStage_Proj">
+      <wsdl:input message="tns:UpdateOpportunityStage_ProjSoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityStage_ProjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatus2">
+      <wsdl:input message="tns:UpdateOpportunityStatus2SoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityStatus2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityPartnerContact">
+      <wsdl:input message="tns:UpdateOpportunityPartnerContactSoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityPartnerContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityPartnerContactId">
+      <wsdl:input message="tns:UpdateOpportunityPartnerContactIdSoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityPartnerContactIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatusAmtCloseDateProb">
+      <wsdl:input message="tns:UpdateOpportunityStatusAmtCloseDateProbSoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityStatusAmtCloseDateProbSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOpportunity">
+      <wsdl:input message="tns:CreateOpportunitySoapIn" />
+      <wsdl:output message="tns:CreateOpportunitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelOpportunity">
+      <wsdl:input message="tns:CreateSiebelOpportunitySoapIn" />
+      <wsdl:output message="tns:CreateSiebelOpportunitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOpportunity">
+      <wsdl:input message="tns:CreateNewOpportunitySoapIn" />
+      <wsdl:output message="tns:CreateNewOpportunitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOpportunity4Quote">
+      <wsdl:input message="tns:CreateNewOpportunity4QuoteSoapIn" />
+      <wsdl:output message="tns:CreateNewOpportunity4QuoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Import_Opportunity">
+      <wsdl:input message="tns:Import_OpportunitySoapIn" />
+      <wsdl:output message="tns:Import_OpportunitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunity">
+      <wsdl:input message="tns:UpdateOpportunitySoapIn" />
+      <wsdl:output message="tns:UpdateOpportunitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatusOld">
+      <wsdl:input message="tns:UpdateOpportunityStatusOldSoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityStatusOldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatusRevenue">
+      <wsdl:input message="tns:UpdateOpportunityStatusRevenueSoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityStatusRevenueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSiebelOpportunity">
+      <wsdl:input message="tns:UpdateSiebelOpportunitySoapIn" />
+      <wsdl:output message="tns:UpdateSiebelOpportunitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityOrg">
+      <wsdl:input message="tns:UpdateOpportunityOrgSoapIn" />
+      <wsdl:output message="tns:UpdateOpportunityOrgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportOpportunity">
+      <wsdl:input message="tns:ImportOpportunitySoapIn" />
+      <wsdl:output message="tns:ImportOpportunitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportOpportunityV2">
+      <wsdl:input message="tns:ImportOpportunityV2SoapIn" />
+      <wsdl:output message="tns:ImportOpportunityV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeENews2">
+      <wsdl:input message="tns:SubscribeENews2SoapIn" />
+      <wsdl:output message="tns:SubscribeENews2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactNeverEmail">
+      <wsdl:input message="tns:UpdateContactNeverEmailSoapIn" />
+      <wsdl:output message="tns:UpdateContactNeverEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociateContactToAccount">
+      <wsdl:input message="tns:AssociateContactToAccountSoapIn" />
+      <wsdl:output message="tns:AssociateContactToAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactDisable">
+      <wsdl:input message="tns:UpdateContactDisableSoapIn" />
+      <wsdl:output message="tns:UpdateContactDisableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeProduct">
+      <wsdl:input message="tns:SubscribeProductSoapIn" />
+      <wsdl:output message="tns:SubscribeProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfoByMyAdvantechProfile">
+      <wsdl:input message="tns:UpdateContactInfoByMyAdvantechProfileSoapIn" />
+      <wsdl:output message="tns:UpdateContactInfoByMyAdvantechProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfoByMyAdvantechProfile_New">
+      <wsdl:input message="tns:UpdateContactInfoByMyAdvantechProfile_NewSoapIn" />
+      <wsdl:output message="tns:UpdateContactInfoByMyAdvantechProfile_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactProfile">
+      <wsdl:input message="tns:UpdateContactProfileSoapIn" />
+      <wsdl:output message="tns:UpdateContactProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeBAA">
+      <wsdl:input message="tns:SubscribeBAASoapIn" />
+      <wsdl:output message="tns:SubscribeBAASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountInfoByMyAdvantechProfile">
+      <wsdl:input message="tns:UpdateAccountInfoByMyAdvantechProfileSoapIn" />
+      <wsdl:output message="tns:UpdateAccountInfoByMyAdvantechProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <wsdl:input message="tns:CreateAccountSoapIn" />
+      <wsdl:output message="tns:CreateAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAccount">
+      <wsdl:input message="tns:CreateNewAccountSoapIn" />
+      <wsdl:output message="tns:CreateNewAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <wsdl:input message="tns:UpdateAccountSoapIn" />
+      <wsdl:output message="tns:UpdateAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountV2">
+      <wsdl:input message="tns:UpdateAccountV2SoapIn" />
+      <wsdl:output message="tns:UpdateAccountV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoSoapIn" />
+      <wsdl:output message="tns:GetAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountBusinessGroup">
+      <wsdl:input message="tns:UpdateAccountBusinessGroupSoapIn" />
+      <wsdl:output message="tns:UpdateAccountBusinessGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelSR">
+      <wsdl:input message="tns:CreateSiebelSRSoapIn" />
+      <wsdl:output message="tns:CreateSiebelSRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotation">
+      <wsdl:input message="tns:CreateSiebelQuotationSoapIn" />
+      <wsdl:output message="tns:CreateSiebelQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotationWithOpportunity">
+      <wsdl:input message="tns:CreateSiebelQuotationWithOpportunitySoapIn" />
+      <wsdl:output message="tns:CreateSiebelQuotationWithOpportunitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotationWithOpportunity2">
+      <wsdl:input message="tns:CreateSiebelQuotationWithOpportunity2SoapIn" />
+      <wsdl:output message="tns:CreateSiebelQuotationWithOpportunity2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotationWithOpportunity3">
+      <wsdl:input message="tns:CreateSiebelQuotationWithOpportunity3SoapIn" />
+      <wsdl:output message="tns:CreateSiebelQuotationWithOpportunity3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuoteOwner">
+      <wsdl:input message="tns:UpdateQuoteOwnerSoapIn" />
+      <wsdl:output message="tns:UpdateQuoteOwnerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Siebel_WSSoap" type="tns:Siebel_WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNewContact">
+      <soap:operation soapAction="http://tempuri.org/CreateNewContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMyAdvantechProfile">
+      <soap:operation soapAction="http://tempuri.org/CreateMyAdvantechProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewContact_New">
+      <soap:operation soapAction="http://tempuri.org/CreateNewContact_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelActivity">
+      <soap:operation soapAction="http://tempuri.org/CreateSiebelActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelActivityWithOpty">
+      <soap:operation soapAction="http://tempuri.org/CreateSiebelActivityWithOpty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivityWithOwnerAccountContact">
+      <soap:operation soapAction="http://tempuri.org/CreateActivityWithOwnerAccountContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSiebelActivity">
+      <soap:operation soapAction="http://tempuri.org/UpdateSiebelActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityPartnerContact2">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityPartnerContact2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSourceName">
+      <soap:operation soapAction="http://tempuri.org/UpdateSourceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptyDetail">
+      <soap:operation soapAction="http://tempuri.org/GetOptyDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOptyForecast">
+      <soap:operation soapAction="http://tempuri.org/DeleteOptyForecast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportOptyForecast">
+      <soap:operation soapAction="http://tempuri.org/ImportOptyForecast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_OpportunityNew">
+      <soap:operation soapAction="http://tempuri.org/Import_OpportunityNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStage">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityStage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStage_Proj">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityStage_Proj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatus2">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityStatus2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityPartnerContact">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityPartnerContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityPartnerContactId">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityPartnerContactId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatusAmtCloseDateProb">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityStatusAmtCloseDateProb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOpportunity">
+      <soap:operation soapAction="http://tempuri.org/CreateOpportunity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelOpportunity">
+      <soap:operation soapAction="http://tempuri.org/CreateSiebelOpportunity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOpportunity">
+      <soap:operation soapAction="http://tempuri.org/CreateNewOpportunity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOpportunity4Quote">
+      <soap:operation soapAction="http://tempuri.org/CreateNewOpportunity4Quote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_Opportunity">
+      <soap:operation soapAction="http://tempuri.org/Import_Opportunity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunity">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatusOld">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityStatusOld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatusRevenue">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityStatusRevenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSiebelOpportunity">
+      <soap:operation soapAction="http://tempuri.org/UpdateSiebelOpportunity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityOrg">
+      <soap:operation soapAction="http://tempuri.org/UpdateOpportunityOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportOpportunity">
+      <soap:operation soapAction="http://tempuri.org/ImportOpportunity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportOpportunityV2">
+      <soap:operation soapAction="http://tempuri.org/ImportOpportunityV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeENews2">
+      <soap:operation soapAction="http://tempuri.org/SubscribeENews2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactNeverEmail">
+      <soap:operation soapAction="http://tempuri.org/UpdateContactNeverEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateContactToAccount">
+      <soap:operation soapAction="http://tempuri.org/AssociateContactToAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactDisable">
+      <soap:operation soapAction="http://tempuri.org/UpdateContactDisable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeProduct">
+      <soap:operation soapAction="http://tempuri.org/SubscribeProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfoByMyAdvantechProfile">
+      <soap:operation soapAction="http://tempuri.org/UpdateContactInfoByMyAdvantechProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfoByMyAdvantechProfile_New">
+      <soap:operation soapAction="http://tempuri.org/UpdateContactInfoByMyAdvantechProfile_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactProfile">
+      <soap:operation soapAction="http://tempuri.org/UpdateContactProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeBAA">
+      <soap:operation soapAction="http://tempuri.org/SubscribeBAA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountInfoByMyAdvantechProfile">
+      <soap:operation soapAction="http://tempuri.org/UpdateAccountInfoByMyAdvantechProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap:operation soapAction="http://tempuri.org/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAccount">
+      <soap:operation soapAction="http://tempuri.org/CreateNewAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <soap:operation soapAction="http://tempuri.org/UpdateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountV2">
+      <soap:operation soapAction="http://tempuri.org/UpdateAccountV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountBusinessGroup">
+      <soap:operation soapAction="http://tempuri.org/UpdateAccountBusinessGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelSR">
+      <soap:operation soapAction="http://tempuri.org/CreateSiebelSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotation">
+      <soap:operation soapAction="http://tempuri.org/CreateSiebelQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotationWithOpportunity">
+      <soap:operation soapAction="http://tempuri.org/CreateSiebelQuotationWithOpportunity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotationWithOpportunity2">
+      <soap:operation soapAction="http://tempuri.org/CreateSiebelQuotationWithOpportunity2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotationWithOpportunity3">
+      <soap:operation soapAction="http://tempuri.org/CreateSiebelQuotationWithOpportunity3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuoteOwner">
+      <soap:operation soapAction="http://tempuri.org/UpdateQuoteOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Siebel_WSSoap12" type="tns:Siebel_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNewContact">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMyAdvantechProfile">
+      <soap12:operation soapAction="http://tempuri.org/CreateMyAdvantechProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewContact_New">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewContact_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelActivity">
+      <soap12:operation soapAction="http://tempuri.org/CreateSiebelActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelActivityWithOpty">
+      <soap12:operation soapAction="http://tempuri.org/CreateSiebelActivityWithOpty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivityWithOwnerAccountContact">
+      <soap12:operation soapAction="http://tempuri.org/CreateActivityWithOwnerAccountContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSiebelActivity">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSiebelActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityPartnerContact2">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityPartnerContact2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSourceName">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSourceName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptyDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetOptyDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOptyForecast">
+      <soap12:operation soapAction="http://tempuri.org/DeleteOptyForecast" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportOptyForecast">
+      <soap12:operation soapAction="http://tempuri.org/ImportOptyForecast" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_OpportunityNew">
+      <soap12:operation soapAction="http://tempuri.org/Import_OpportunityNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStage">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityStage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStage_Proj">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityStage_Proj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatus2">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityStatus2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityPartnerContact">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityPartnerContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityPartnerContactId">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityPartnerContactId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatusAmtCloseDateProb">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityStatusAmtCloseDateProb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOpportunity">
+      <soap12:operation soapAction="http://tempuri.org/CreateOpportunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelOpportunity">
+      <soap12:operation soapAction="http://tempuri.org/CreateSiebelOpportunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOpportunity">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewOpportunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewOpportunity4Quote">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewOpportunity4Quote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Import_Opportunity">
+      <soap12:operation soapAction="http://tempuri.org/Import_Opportunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunity">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatusOld">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityStatusOld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityStatusRevenue">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityStatusRevenue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSiebelOpportunity">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSiebelOpportunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOpportunityOrg">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOpportunityOrg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportOpportunity">
+      <soap12:operation soapAction="http://tempuri.org/ImportOpportunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportOpportunityV2">
+      <soap12:operation soapAction="http://tempuri.org/ImportOpportunityV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeENews2">
+      <soap12:operation soapAction="http://tempuri.org/SubscribeENews2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactNeverEmail">
+      <soap12:operation soapAction="http://tempuri.org/UpdateContactNeverEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateContactToAccount">
+      <soap12:operation soapAction="http://tempuri.org/AssociateContactToAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactDisable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateContactDisable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeProduct">
+      <soap12:operation soapAction="http://tempuri.org/SubscribeProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfoByMyAdvantechProfile">
+      <soap12:operation soapAction="http://tempuri.org/UpdateContactInfoByMyAdvantechProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfoByMyAdvantechProfile_New">
+      <soap12:operation soapAction="http://tempuri.org/UpdateContactInfoByMyAdvantechProfile_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactProfile">
+      <soap12:operation soapAction="http://tempuri.org/UpdateContactProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeBAA">
+      <soap12:operation soapAction="http://tempuri.org/SubscribeBAA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountInfoByMyAdvantechProfile">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAccountInfoByMyAdvantechProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap12:operation soapAction="http://tempuri.org/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAccount">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountV2">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAccountV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountBusinessGroup">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAccountBusinessGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelSR">
+      <soap12:operation soapAction="http://tempuri.org/CreateSiebelSR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotation">
+      <soap12:operation soapAction="http://tempuri.org/CreateSiebelQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotationWithOpportunity">
+      <soap12:operation soapAction="http://tempuri.org/CreateSiebelQuotationWithOpportunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotationWithOpportunity2">
+      <soap12:operation soapAction="http://tempuri.org/CreateSiebelQuotationWithOpportunity2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSiebelQuotationWithOpportunity3">
+      <soap12:operation soapAction="http://tempuri.org/CreateSiebelQuotationWithOpportunity3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuoteOwner">
+      <soap12:operation soapAction="http://tempuri.org/UpdateQuoteOwner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Siebel_WS">
+    <wsdl:port name="Siebel_WSSoap" binding="tns:Siebel_WSSoap">
+      <soap:address location="http://myadvan-global:2000/Services/Siebel_WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Siebel_WSSoap12" binding="tns:Siebel_WSSoap12">
+      <soap12:address location="http://myadvan-global:2000/Services/Siebel_WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

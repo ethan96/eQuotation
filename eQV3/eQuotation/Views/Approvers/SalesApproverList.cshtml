@@ -1,0 +1,214 @@
+﻿@model IEnumerable<Advantech.Myadvantech.DataAccess.ACN_EQ_Sales>
+
+@{
+    Layout = null;
+}
+
+
+<div class="main-content">
+    <div class="titlebox topbox">
+        <h4>Sales Approvers</h4>
+    </div>
+
+    <div class="actionbox">
+        <ul>
+            <li>
+                <a id="btn-refresh"><i class="fa fa-refresh"></i> Refresh</a>
+            </li>
+            <li>
+                <a id="new_approver_settings"><i class="fa fa-plus"></i> Create New Approver Settings</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        @*<table id="tblApprovers">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>SalesCode</th>
+                    <th>SalesEmail</th>
+                    <th>Sector</th>
+                    <th>IdSBU</th>
+                    <th>Approvers</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            @*<tfoot>
+                <tr>
+                    <th></th>>
+                    <th>SalesCode</th>
+                    <th>SalesEmail</th>
+                    <th>Sector</th>
+                    <th>IdSBU</th>
+                </tr>
+            </tfoot>*@
+        @*</table>*@
+
+        <div class="tab-content">
+            <table id="tblApprovers" class="table table-striped table-bordered table-condensed" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>SalesCode</th>
+                        <th>SalesEmail</th>
+                        <th>Sector</th>
+                        <th>IdSBU</th>
+                        <th>Approvers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var group in Model.GroupBy(s => s.SalesCode))
+                    {
+                        <tr data-customer-salesCode=@group.Key>
+                            <td>
+                                <a class='js-edit' data-customer-salesCode=@group.Key><i class='fa fa-pencil-square-o'></i></a><a class='js-delete' data-customer-salesCode=@group.Key><i class='fa fa-times'></i></a>
+                            </td>
+                            <td>@group.Key</td>
+                            <td>@group.FirstOrDefault().SalesEmail</td>
+                            <td>@group.FirstOrDefault().Sector</td>
+                            <td>@group.FirstOrDefault().IdSBU</td>
+                            <td>
+                                @foreach (var approver in group)
+                                {
+                                    if (!string.IsNullOrEmpty(approver.ApproverEmail))
+                                    {
+                                        <sapn>@approver.Level.@approver.ApproverName </sapn>
+                                    }
+                                }                            
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+
+@Html.Modal("osx-approver-form", "Sales Approver Settings", "400px", "500px")
+
+<script>
+    $(document).ready(function () {
+        $('#tblApprovers').DataTable({
+                "aoColumns": [
+                    {
+                        'sWidth': "5%"
+                    },
+                    { 'sWidth': "8%" },
+                    { 'sWidth': "16%" },
+                    { 'sWidth': "4%" },
+                    { 'sWidth': "12%" },
+                    { 'sWidth': "55%"}
+                ],
+                'iDisplayLength': 100,
+                "order": [[1, 'asc']]
+        });
+
+
+        //var table = $('#tblApprovers').DataTable({
+        //     //jquery datatable 1.9.4 need to use different syntax to 1.10
+
+        //    //"bServerSide": true, <-- don't enabel this property
+        //    "bProcessing": true,
+        //    "sAjaxSource": "/Approvers/GetSalesApprovers",
+        //    "sAjaxDataProp": "",
+        //    "aoColumns": [
+        //        {
+        //            "bSortable": false,
+        //            "mData": "SalesCode",
+
+        //            "mRender": function(data) {
+        //                return "<a class='js-edit' data-customer-salesCode=" + data + "><i class='fa fa-pencil-square-o'></i></a>" + "<a class='js-delete' data-customer-salesCode=" + data + "><i class='fa fa-times'></i></a>";
+        //            },
+                    
+        //            "sDefaultContent": '',
+        //            'sWidth': "5%"
+        //        },
+        //        { "mData": "SalesCode", 'sWidth': "8%" },
+        //        { "mData": "SalesEmail", 'sWidth': "20%" },
+        //        { "mData": "Sector", 'sWidth': "5%" },
+        //        { "mData": "IdSBU", 'sWidth': "12%" },
+        //        {
+        //            "mData": "Approvers",
+        //            "mRender": "[, ].ApproverEmail",
+        //            'sWidth': "50%"
+        //        }
+        //    ],
+        //    "order": [[1, 'asc']]
+        //});
+
+
+
+        $("#tblApprovers").on("click", ".js-delete", function () {
+            var salesCode = $(this).attr("data-customer-salesCode");
+            if(confirm("Are you sure you want to delete "+ salesCode +"'s approver settings?") == true) {
+                    $.ajax({
+                        url: "/Approvers/DeleteSalesApprovers/" + salesCode,
+                        method: "POST",
+                        success: function (redata) {
+                            if (redata.succeed) {
+                                $('#tblApprovers tr[data-customer-salesCode="' + salesCode + '"]').fadeOut(400, function () {
+                                    $(this).remove();
+                                })
+
+                            } else {
+                                    AlertDialog(redata.err);
+                            }
+                        }
+                    });
+            };
+        });
+
+        //display modal window to create new approver settings
+        $("#new_approver_settings").on("click", function () {
+            openModal("/approvers/NewSalesApprovers", "osx-approver-form");
+        });
+
+        //display modal window to edit approver settings
+        $("#tblApprovers").on("click", ".js-edit", function () {
+            var salesCode = $(this).attr("data-customer-salesCode");
+            openModal("/approvers/EditSalesApprovers/" + salesCode, "osx-approver-form");
+        });
+
+        // Add event listener for opening and closing details
+        //$('#tblApprovers tbody').on('click', 'td.details-control', function () {
+        //    var tr = $(this).closest('tr');
+        //    var row = table.row(tr);
+
+        //    if (row.child.isShown()) {
+        //        // This row is already open - close it
+        //        row.child.hide();
+        //        tr.removeClass('shown');
+        //    }
+        //    else {
+        //        // Open this row
+        //        row.child(format(row.data())).show();
+        //        tr.addClass('shown');
+        //    }
+        //});
+
+    });
+
+    /* Formatting function for row details - modify as you need */
+    function format(d) {
+        // `d` is the original data object for the row
+        var approvers = d.Approvers
+        var rows;
+        for (var i = 0; i < approvers.length; i++) {
+            rows +=
+            "<tr>" +
+            "<td>" + approvers[i].approverEmail + "</td>" +
+            "<td>" + approvers[i].level + "</td>" +
+            "</tr>";
+        }
+
+        return
+        '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+        +rows
+        + '</table>';
+    }
+</script>

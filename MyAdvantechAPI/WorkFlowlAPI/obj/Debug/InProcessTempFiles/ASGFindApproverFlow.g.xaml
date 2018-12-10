@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wa:ASGFindApproverFlow xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:amd="clr-namespace:Advantech.Myadvantech.DataAccess;assembly=Advantech.Myadvantech.DataAccess" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:local="clr-namespace:WorkFlowlAPI;assembly=WorkFlowlAPI" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:wa="clr-namespace:WorkFlowlAPI.ASGGPApproval;assembly=WorkFlowlAPI" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Advantech.Myadvantech.DataAccess</x:String>
+      <x:String>Advantech.Myadvantech.Business</x:String>
+      <x:String>WorkFlowlAPI</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>EntityFramework</AssemblyReference>
+      <AssemblyReference>EntityFramework.SqlServer</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Activities.DurableInstancing</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.DataAnnotations</AssemblyReference>
+      <AssemblyReference>System.Configuration</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.DurableInstancing</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>Advantech.Myadvantech.Business</AssemblyReference>
+      <AssemblyReference>Advantech.Myadvantech.DataAccess</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>WorkFlowlAPI</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <wa:ASGFindApproverFlow.Implementation>
+    <Flowchart>
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="scg:List(amd:GPBLOCK_LOGIC)" Name="GPRuleList" />
+        <Variable x:TypeArguments="x:Int32" Default="0" Name="levelNum" />
+        <Variable x:TypeArguments="x:Double" Name="TotalMargin" />
+      </Flowchart.Variables>
+      <Flowchart.StartNode>
+        <FlowStep x:Name="__ReferenceID6">
+          <Assign DisplayName="Init Approval List">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(amd:WorkFlowApproval)">
+                <mca:CSharpReference x:TypeArguments="scg:List(amd:WorkFlowApproval)">ApprovalList</mca:CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(amd:WorkFlowApproval)">
+                <mca:CSharpValue x:TypeArguments="scg:List(amd:WorkFlowApproval)">new List&lt;WorkFlowApproval&gt;()</mca:CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <FlowStep.Next>
+            <FlowDecision x:Name="__ReferenceID15" DisplayName="Only Contain 968MS/SW?">
+              <FlowDecision.Condition>
+                <mca:CSharpValue x:TypeArguments="x:Boolean">QuoteBusinessLogic.IsOnlyContain968MSSW(QuotationDetails)</mca:CSharpValue>
+              </FlowDecision.Condition>
+              <FlowDecision.True>
+                <FlowStep x:Name="__ReferenceID16">
+                  <Assign DisplayName="Set Sector as MS/SW">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <mca:CSharpReference x:TypeArguments="x:String">BU_Sector</mca:CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">ASG-MSSW</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID5" DisplayName="BU Sector is found?">
+                      <FlowDecision.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">!string.IsNullOrEmpty(BU_Sector)</mca:CSharpValue>
+                      </FlowDecision.Condition>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID11">
+                          <Flowchart DisplayName="Find Approvers by minMargin">
+                            <Flowchart.Variables>
+                              <Variable x:TypeArguments="x:Boolean" Name="ViewGP" />
+                              <Variable x:TypeArguments="s:String[]" Name="Approvers" />
+                            </Flowchart.Variables>
+                            <Flowchart.StartNode>
+                              <FlowStep x:Name="__ReferenceID0">
+                                <Assign>
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Double">
+                                      <mca:CSharpReference x:TypeArguments="x:Double">TotalMargin</mca:CSharpReference>
+                                    </OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Double">
+                                      <mca:CSharpValue x:TypeArguments="x:Double">(double)QuoteBusinessLogic.GetTotalMarginByQuotationDetails(QuotationDetails)</mca:CSharpValue>
+                                    </InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <FlowStep.Next>
+                                  <FlowStep x:Name="__ReferenceID1">
+                                    <Assign DisplayName="Find Approver by SalesEmail and ApprovelLevel">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="s:String[]">
+                                          <mca:CSharpReference x:TypeArguments="s:String[]">Approvers</mca:CSharpReference>
+                                        </OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="s:String[]">
+                                          <mca:CSharpValue x:TypeArguments="s:String[]">GPControlBusinessLogic.FindApproversByMarginAndSalesTeam((decimal)TotalMargin, BU_Sector)</mca:CSharpValue>
+                                        </InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <FlowStep.Next>
+                                      <FlowDecision x:Name="__ReferenceID4" DisplayName="Found GP Rule ?">
+                                        <FlowDecision.Condition>
+                                          <mca:CSharpValue x:TypeArguments="x:Boolean">Approvers.Count() &gt; 0</mca:CSharpValue>
+                                        </FlowDecision.Condition>
+                                        <FlowDecision.True>
+                                          <FlowStep x:Name="__ReferenceID2">
+                                            <ForEach x:TypeArguments="x:String" DisplayName="Add approvers">
+                                              <ForEach.Values>
+                                                <InArgument x:TypeArguments="scg:IEnumerable(x:String)">
+                                                  <mca:CSharpValue x:TypeArguments="scg:IEnumerable(x:String)">Approvers</mca:CSharpValue>
+                                                </InArgument>
+                                              </ForEach.Values>
+                                              <ActivityAction x:TypeArguments="x:String">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                                </ActivityAction.Argument>
+                                                <local:AddApprovalToList ViewGp="True">
+                                                  <local:AddApprovalToList.ApprovalList>
+                                                    <InOutArgument x:TypeArguments="scg:List(amd:WorkFlowApproval)">
+                                                      <mca:CSharpReference x:TypeArguments="scg:List(amd:WorkFlowApproval)">ApprovalList</mca:CSharpReference>
+                                                    </InOutArgument>
+                                                  </local:AddApprovalToList.ApprovalList>
+                                                  <local:AddApprovalToList.Approver>
+                                                    <InArgument x:TypeArguments="x:String">
+                                                      <mca:CSharpValue x:TypeArguments="x:String">item</mca:CSharpValue>
+                                                    </InArgument>
+                                                  </local:AddApprovalToList.Approver>
+                                                  <local:AddApprovalToList.ApproverType>
+                                                    <InArgument x:TypeArguments="x:String">
+                                                      <mca:CSharpValue x:TypeArguments="x:String">ApproverType.Sales.ToString()</mca:CSharpValue>
+                                                    </InArgument>
+                                                  </local:AddApprovalToList.ApproverType>
+                                                  <local:AddApprovalToList.LevelNum>
+                                                    <InArgument x:TypeArguments="x:Double">
+                                                      <mca:CSharpValue x:TypeArguments="x:Double">Array.IndexOf(Approvers,item)+1</mca:CSharpValue>
+                                                    </InArgument>
+                                                  </local:AddApprovalToList.LevelNum>
+                                                  <local:AddApprovalToList.QuoteId>
+                                                    <InArgument x:TypeArguments="x:String">
+                                                      <mca:CSharpValue x:TypeArguments="x:String">QuoteId</mca:CSharpValue>
+                                                    </InArgument>
+                                                  </local:AddApprovalToList.QuoteId>
+                                                  <local:AddApprovalToList.Url>
+                                                    <InArgument x:TypeArguments="x:String">
+                                                      <mca:CSharpValue x:TypeArguments="x:String">Url</mca:CSharpValue>
+                                                    </InArgument>
+                                                  </local:AddApprovalToList.Url>
+                                                </local:AddApprovalToList>
+                                              </ActivityAction>
+                                            </ForEach>
+                                          </FlowStep>
+                                        </FlowDecision.True>
+                                        <FlowDecision.False>
+                                          <FlowStep x:Name="__ReferenceID3">
+                                            <Assign>
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="local:FindApproverResult">
+                                                  <mca:CSharpReference x:TypeArguments="local:FindApproverResult">FindApproverResult</mca:CSharpReference>
+                                                </OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="local:FindApproverResult">
+                                                  <mca:CSharpValue x:TypeArguments="local:FindApproverResult">FindApproverResult.GPRuleNotFound</mca:CSharpValue>
+                                                </InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </FlowStep>
+                                        </FlowDecision.False>
+                                      </FlowDecision>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </Flowchart.StartNode>
+                            <x:Reference>__ReferenceID0</x:Reference>
+                            <x:Reference>__ReferenceID1</x:Reference>
+                            <x:Reference>__ReferenceID2</x:Reference>
+                            <x:Reference>__ReferenceID3</x:Reference>
+                            <x:Reference>__ReferenceID4</x:Reference>
+                          </Flowchart>
+                          <FlowStep.Next>
+                            <FlowDecision x:Name="__ReferenceID13" DisplayName="Negative GP?">
+                              <FlowDecision.Condition>
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">TotalMargin &lt; 0.0</mca:CSharpValue>
+                              </FlowDecision.Condition>
+                              <FlowDecision.True>
+                                <FlowStep x:Name="__ReferenceID14">
+                                  <Assign>
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="local:FindApproverResult">
+                                        <mca:CSharpReference x:TypeArguments="local:FindApproverResult">FindApproverResult</mca:CSharpReference>
+                                      </OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="local:FindApproverResult">
+                                        <mca:CSharpValue x:TypeArguments="local:FindApproverResult">FindApproverResult.NegativeGP</mca:CSharpValue>
+                                      </InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </FlowStep>
+                              </FlowDecision.True>
+                              <FlowDecision.False>
+                                <FlowDecision x:Name="__ReferenceID7" DisplayName="Exist approvers?">
+                                  <FlowDecision.Condition>
+                                    <mca:CSharpValue x:TypeArguments="x:Boolean">ApprovalList!=null &amp;&amp; ApprovalList.Count &gt; 0</mca:CSharpValue>
+                                  </FlowDecision.Condition>
+                                  <FlowDecision.True>
+                                    <FlowStep x:Name="__ReferenceID8">
+                                      <Assign>
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="local:FindApproverResult">
+                                            <mca:CSharpReference x:TypeArguments="local:FindApproverResult">FindApproverResult</mca:CSharpReference>
+                                          </OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="local:FindApproverResult">
+                                            <mca:CSharpValue x:TypeArguments="local:FindApproverResult">FindApproverResult.NeedApprovalForGP</mca:CSharpValue>
+                                          </InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </FlowStep>
+                                  </FlowDecision.True>
+                                  <FlowDecision.False>
+                                    <FlowStep x:Name="__ReferenceID9">
+                                      <Assign>
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="local:FindApproverResult">
+                                            <mca:CSharpReference x:TypeArguments="local:FindApproverResult">FindApproverResult</mca:CSharpReference>
+                                          </OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="local:FindApproverResult">
+                                            <mca:CSharpValue x:TypeArguments="local:FindApproverResult">FindApproverResult.NoNeed</mca:CSharpValue>
+                                          </InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </FlowStep>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowDecision.False>
+                            </FlowDecision>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID12">
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="local:FindApproverResult">
+                                <mca:CSharpReference x:TypeArguments="local:FindApproverResult">FindApproverResult</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="local:FindApproverResult">
+                                <mca:CSharpValue x:TypeArguments="local:FindApproverResult">FindApproverResult.SalesSectorNotFound</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowDecision.True>
+              <FlowDecision.False>
+                <FlowStep x:Name="__ReferenceID10">
+                  <Assign DisplayName="Get Sales Sector By eManager">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <mca:CSharpReference x:TypeArguments="x:String">BU_Sector</mca:CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <mca:CSharpValue x:TypeArguments="x:String">UserRoleBusinessLogic.getSectorBySalesEmailSalesCode(SalesEmail,SalesCode, "ASG")</mca:CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <FlowStep.Next>
+                    <x:Reference>__ReferenceID5</x:Reference>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowDecision.False>
+            </FlowDecision>
+          </FlowStep.Next>
+        </FlowStep>
+      </Flowchart.StartNode>
+      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
+      <x:Reference>__ReferenceID9</x:Reference>
+      <x:Reference>__ReferenceID10</x:Reference>
+      <x:Reference>__ReferenceID11</x:Reference>
+      <x:Reference>__ReferenceID12</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID13</x:Reference>
+      <x:Reference>__ReferenceID14</x:Reference>
+      <x:Reference>__ReferenceID15</x:Reference>
+      <x:Reference>__ReferenceID16</x:Reference>
+      <sads:DebugSymbol.Symbol>d1REOlxNeUFkdmFudGVjaEdpdFxNeUFkdmFudGVjaEFQSVxXb3JrRmxvd2xBUElcQVNHR1BBcHByb3ZhbFxBU0dGaW5kQXBwcm92ZXJGbG93LnhhbWwwQQPXAg8CAQFEM0Q2AgECSQlUEgMBjwNYD1iHAQMBgwO1AhHAAhoDAeoCaRdpdgMB3gKhAhmsAiIDAcUCbRneASUCAXTiAR/iAXICAWj3ASP3AZkBAgFciwIllgIuAgFD+wElhgIuAgEq5gEh8QEqAgERXBFlGgIBA1EPUYUBAwGcA0wPTHcDAZADvQIXvQKmAQMB9wK4Ahe4AmYDAesCqQIfqQKTAQMB0gKkAh+kAocBAwHGAnQffygDAagCggEjjQEsAwGLApEBKZEBgAEDAf0BxQEr0AE0AwHgAZUBK8ABNQIBdZMCK5MCkgECAVCOAiuOApMBAgFEgwIrgwKdAQIBN/4BK/4BkwECASvuASfuAZIBAgEe6QEn6QGPAQIBEmM8Y0QCARBfF19mAgEEfCV8sAEDAbcCdyV3dgMBqQKKASmKAcIBAwGaAoUBKYUBegMBjALNATHNAaABAwHvAcgBMcgBmQEDAeEBmAExmAGJAQMB0gGfAS++AUkCAXasATWsAZABAwHDAaIBNaIBnQEDAbQBsQE1sQGSAQMBpQG2ATW2AXoDAZYBuwE1uwF2AwGHAZ8BhQGfAYsBAwGGAacBNacBdwIBdw==</sads:DebugSymbol.Symbol>
+    </Flowchart>
+  </wa:ASGFindApproverFlow.Implementation>
+</wa:ASGFindApproverFlow>

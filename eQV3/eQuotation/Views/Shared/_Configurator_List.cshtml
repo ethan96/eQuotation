@@ -1,0 +1,114 @@
+﻿@model eQuotation.Models.Shared.ConfiguratorViewModel
+
+    <div class="modal-content" style="height:450px;">
+        <div>
+            <table>
+                <tr>
+                    <td class="field150 right">Catalog:</td>
+                    <td class="w35p">
+                       @Html.DropDownList("ddlCatalog", Model.CatalogList, new { @style = "width:90%" })&nbsp;
+                    </td>
+                    <td>
+                        <button id="btn-search-config" type="button" class="button"><i class="fa fa-search"></i> Search</button>&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field200" colspan="3">&nbsp;</td>
+                </tr>
+            </table>
+            <table id="tblConfiguration_List">
+                <tbody>
+                </tbody>
+            </table>
+        </div>  
+    </div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+    
+        //initiate datatable instance
+        oTableCust = $("#tblConfiguration_List").dataTable({
+            "bJQueryUI": false,
+            "bLengthChange": false,
+            "bFilter": true,
+            "iDisplayLength": 1000,
+            "bAutoWidth": false,
+            "sScrollX": "99%",
+            "sScrollXInner": "99%",
+            "sScrollY": "300px",
+            "bScrollCollapse": true,
+            "bPaginate": true,
+            "aoColumnDefs": [
+                 { "sTitle": "No.", "sWidth": "5%", "aTargets": [0] },
+                 { "sTitle": "BTO Description", "sWidth": "30%", "aTargets": [1] },
+                 { "sTitle": "Group Description", "sWidth": "55%", "aTargets": [2] },
+                 { "sTitle": "Assemble", "sWidth": "10%", "aTargets": [3] }
+            ]
+        });
+
+        //Search
+        $("#btn-search-config").on("click", function () {
+            var postdata = JSON.stringify({ CatalogID: $("#ddlCatalog").val(), ORG: '@Model.ORG' });
+            $.ajax({
+                url: "/Operation/getConfiguration_List", type: "POST", dataType: "json", data: postdata
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                    if (redata.succeed) {
+
+                        var result = redata.data;
+
+                        var tbbody;
+                        //加入checkbox
+                        for (var i = 0; i < result.length; i++) {
+                            //tbbody = "<a class='select-BTO' href='javascript:void(0)' data-id='" + result[i][3] + "'><i class='fa fa-arrow-right fa-lg' title='Config'></i></a>";
+                            tbbody = "<button type='button' class='select-BTO button' data-id='" + result[i][3] + "'>";
+                            tbbody += "<i class='fa fa-arrow-right' title='Config'></i> Config";
+                            tbbody += "</button>";
+                            result[i][3] = tbbody;
+                        }
+                        table = $('#tblConfiguration_List').dataTable();
+                        oSettings = table.fnSettings();
+
+                        table.fnClearTable(this);
+                        for (var i = 0; i < result.length; i++) {
+
+                            table.oApi._fnAddData(oSettings, result[i]);
+                        }
+                        oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+                        table.fnDraw();
+                        clickevent();
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+                }
+            });
+        });
+
+        //直接先查詢一次
+        setTimeout(function () {
+            $("#btn-search-config").click();
+        }, 600);
+    });
+
+    //The click event must be load again.
+    function clickevent() {
+        $(".select-BTO").on("click", function (e) {
+            //e.preventDefault();
+            var Id = $(this).attr("data-id");
+            var rowIndex = oTableCust.fnGetPosition($(this).closest('tr')[0]);
+          
+            var oBTO = new Array();
+            oBTO.push({
+                name: oTableCust.fnGetData(rowIndex)[1],
+                id: Id,
+                qty: '1',
+                org: '@Model.ORG'
+            });
+           
+            localStorage.setItem('Configuration_List',  JSON.stringify(oBTO));
+            $.modal.close();
+        });
+    }
+</script>

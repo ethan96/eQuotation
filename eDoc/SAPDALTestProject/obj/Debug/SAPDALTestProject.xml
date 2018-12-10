@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SAPDALTestProject
+</name>
+</assembly>
+<members>
+<member name="P:SAPDALTestProject.SAPDALTest.TestContext">
+	<summary>
+Gets or sets the test context which provides
+information about and functionality for the current test run.
+</summary>
+</member><member name="M:SAPDALTestProject.SAPDALTest.GetMultiPrice_eStoreTest">
+	<summary>
+A test for GetMultiPrice_eStore
+</summary>
+</member><member name="T:SAPDALTestProject.SAPDALTest">
+	<summary>
+This is a test class for SAPDALTest and is intended
+to contain all SAPDALTest Unit Tests
+</summary>
+</member><member name="P:SAPDALTestProject.BusinessTest.TestContext">
+	<summary>
+Gets or sets the test context which provides
+information about and functionality for the current test run.
+</summary>
+</member><member name="M:SAPDALTestProject.BusinessTest.isNeedGPControlTest">
+	<summary>
+A test for isNeedGPControl
+</summary>
+</member><member name="T:SAPDALTestProject.BusinessTest">
+	<summary>
+This is a test class for BusinessTest and is intended
+to contain all BusinessTest Unit Tests
+</summary>
+</member>
+</members>
+</doc>

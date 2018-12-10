@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF Pagination Example</title>
+  <style>
+    .header {background:blue; height:25px}
+    .footer {background:green; height:25px}
+    .window {height:500px; width:500px}
+    #window1, #window2, #window3 {height:450px; overflow:hidden}
+    #spacer2 {height:0; margin-top:-450px}
+    #spacer3 {height:0; margin-top:-900px}
+    li {font-size:30px; padding:10px}
+  </style>
+</head>
+<body>
+
+<div class='window'>
+<div class='header'>A header</div>
+  <div id='window1'>
+    <ol>
+  	  <li>Content of variable height that may or may not overflow.</li>
+  	  <li>Content of variable height that may or may not overflow.</li>
+  	  <li>Content of variable height that may or may not overflow.</li>
+  	  <li>Content of variable height that may or may not overflow.</li>
+  	  <li>Content of variable height that may or may not overflow.</li>
+  	  <li>Content of variable height that may or may not overflow.</li>
+  	  <li>Content of variable height that may or may not overflow.</li>
+  	  <li>Content of variable height that may or may not overflow.</li>
+  	  <li>Content of variable height that may or may not overflow.</li>
+    </ol>
+  </div>
+<div class='footer'>A footer</div>
+</div>
+
+<div class='window'>
+<div class='header'>A header</div>
+  <div id='window2'>
+  <div id='spacer2'></div>
+    <ol>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+	</ol>
+  </div>
+<div class='footer'>A footer</div>
+</div>
+
+<div class='window'>
+<div class='header'>A header</div>
+  <div id='window3'>
+  <div id='spacer3'></div>
+    <ol>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+      <li>Content of variable height that may or may not overflow.</li>
+    </ol>
+</div>
+<div class='footer'>A footer</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>eQuotation</title>
+    <link rel="shortcut icon" href="@Url.Content("~/images/favicon.ico")" />
+
+    <link rel="stylesheet" href="~/Styles/global.css" />
+    <link rel="stylesheet" href="~/Styles/gh-buttons.css" />
+    <link rel="stylesheet" href="~/Styles/font-awesome-4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Styles/theme/jquery-ui.css" />
+    <link rel="stylesheet" href="~/Styles/theme/jquery-ui-timepicker-addon.css" />
+    <link rel="stylesheet" href="~/Scripts/printpreview/css/print-preview.css" media="screen" />
+    <link rel="stylesheet" href="~/Scripts/datatable/jquery.dataTables.css" />
+    <link rel="stylesheet" href="~/Scripts/datatable/dataTables.colVis.css" />
+    <link rel="stylesheet" href="~/Scripts/datatable/dataTables.tableTools.css" />
+    <link rel="stylesheet" href="~/Scripts/countdown/jquery.countdown.css" />
+    <link rel="stylesheet" href="~/Scripts/acitree/css/aciTree.css" />
+    <link rel="stylesheet" href="~/Scripts/jqplot/jquery.jqplot.css" />
+    <link rel="stylesheet" href="~/Scripts/prettyphoto/css/prettyphoto.css" />
+    <link rel="stylesheet" href="~/Scripts/multipleselect/select-multiple.css" />
+    <link rel="stylesheet" href="~/Scripts/tooltip/tooltipster-master/css/tooltipster.css" />
+    <link rel="stylesheet" href="~/Scripts/language/css/polyglot-language-switcher.css"/>
+    <link rel="stylesheet" href="~/Styles/token-input-facebook.css" />
+    <link rel="stylesheet" href="~/Scripts/FancyBox/jquery.fancybox.css" />
+
+
+    <script type="text/javascript" src="~/Scripts/jquery/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery/jquery-migrate-1.0.0.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/datepicker/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript" src="~/Scripts/datepicker/jquery-ui-sliderAccess.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/block/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="~/Scripts/fullscreen/jquery.fullscreen-0.4.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/printpreview/jquery.print-preview.js"></script>
+    <script type="text/javascript" src="~/Scripts/barcode/jquery.scannerdetection.js"></script>
+    <script type="text/javascript" src="~/Scripts/pdfobject/pdfobject.min.js"></script>
+
+    @*<script type="text/javascript" src="~/Scripts/acitree/js/jquery.aciTree.core.js"></script>*@
+    <script type="text/javascript" src="~/Scripts/acitree/js/jquery.aciPlugin.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/acitree/js/jquery.aciTree.min.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/datatable/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/datatable/dataTables.colVis.js"></script>
+    <script type="text/javascript" src="~/Scripts/datatable/dataTables.tableTools.js"></script>
+    <script type="text/javascript" src="~/Scripts/modal/jquery-simplemodal-1.4.4.js"></script>
+    <script type="text/javascript" src="~/Scripts/modal/jquery.osx.js"></script>
+    <script type="text/javascript" src="~/Scripts/cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="~/Scripts/countdown/jquery.plugin.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/countdown/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/fileupload/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="~/Scripts/fileupload/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="~/Scripts/fileupload/jquery.fileupload.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/jqplot/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot/jqplot.barRenderer.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot/jqplot.categoryAxisRenderer.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot/jqplot.pointLabels.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot/jqplot.canvasTextRenderer.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot/jqplot.canvasAxisLabelRenderer.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot/jqplot.canvasAxisTickRenderer.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot/jqplot.enhancedLegendRenderer.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot/jqplot.canvasOverlay.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/fullcalendar/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/prettyphoto/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/Scripts/multipleselect/jquery.select-multiple.js"></script>
+    <script type="text/javascript" src="~/Scripts/tooltip/tooltipster-master/js/jquery.tooltipster.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/language/js/jquery.polyglot.language.switcher.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.tokeninput.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.formatMoney.js"></script>
+    <script type="text/javascript" src="~/Scripts/Shared/QuotationJS.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.mark.min.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/business/global.js"></script>
+    <script type="text/javascript" src="~/Scripts/business/tooltip.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/FancyBox/jquery.fancybox.js"></script>
+</head>
+<body class="flex-col">
+
+    <div style="background: #02478A; justify-content:space-between; padding: 5px 0px; min-height:30px;" class="flex-row">
+        @RenderSection("Header", required: true)
+    </div>
+    <div class="flex-row flex-ver-stretch" style="background: #f4f4f4; overflow: auto">
+        <div style="border-right:1px solid #dedede; min-width:50px;" class="anchor-nav">
+            @RenderSection("Anchor", required: true)
+        </div>
+        <div style="width: 220px; min-width:220px; background: #fff; overflow: auto;" class="flex-col" id="navigation-container">
+            <div style="padding: 6px; color: #666; border-left: 1px solid #fff; background: #f4f4f4;"><strong><span id="nav-title">PRODUCTION</span></strong></div>
+            <div class="flex-ver-stretch" style="overflow:auto; border:1px solid #aaa; background:#fff; padding:5px 0px 5px 5px;" id="div-main-nav">
+                <div style="overflow:auto; overflow-x:auto" id="div-main-nav-child">@RenderSection("Navigation", required: true)</div>
+            </div>
+            <div style="height: 85px; color: #666; border-left: 1px solid #fff; background: #f4f4f4;" class="flex-row">
+                <div class="flex-col flex-ver-stretch" style="padding:5px; flex-wrap:wrap;">
+                    <span id="SCANNER_OUTPUT" style="color:#389350; font-size:1.5em;"></span>
+                </div>
+                <div class="flex-col flex-ver-stretch">
+                    <div style="text-align:right; padding-right:20px;padding-top:10px; height:40px;">
+                        @*<img alt="logo" src="~/Images/adv-logo.jpg" width="90" height="40" />*@
+                    </div>
+                    <div style="text-align: right; padding-right: 15px; color:#333; font-size:12pt;">Quotation Management</div>
+                    <div style="text-align: right; padding-right: 15px; color: #333; font-size: 12pt;">Copyright ©2015 V.3.0</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-col flex-ver-stretch" style="background: #fefefe; border-left:1px solid #ccc; margin-left:2px; justify-content:center; overflow:auto; ">
+            <div class="flex-row flex-ver-stretch" id="wrapper-content" tabindex="-1" style="background: #eaf1f6; overflow: auto; overflow-x: auto;">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <!--ERROR HANDLING CONTAINER-->
+    <div class="box-error">
+        <div><a href="javascript:void(0);" id="close-box-error"><i class="fa fa-times fa-2x"></i></a></div>
+        <div class="data-error"></div>
+    </div>
+    <div style="display:none">
+        <audio controls="controls" src="~/Images/beep.wav" id="beep-error"></audio>
+        <audio controls="controls" src="~/Images/beep2.wav" id="beep-warning"></audio>
+    </div>
+    @Html.Partial("_AlertDialog")
+
+
+</body>
+</html>

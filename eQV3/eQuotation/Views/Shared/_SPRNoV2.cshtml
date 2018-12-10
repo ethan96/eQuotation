@@ -1,0 +1,54 @@
+﻿
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btn-update").on("click", function (e) {
+            e.preventDefault();
+            var lineNo = parseInt($('#hd_LineNo').val());
+            var postdata = JSON.stringify(
+                {                    
+                    lineNo: lineNo,
+                    sprNo: $("#txtSPRNO").val(),
+                    erpId: $("#hd_erpId").val(),
+                    partNo: $("#hd_partNo").val(),
+                    expiredDateString: $("#hd_expiredDate").val()
+                });
+            $.ajax({
+                url: "/operation/UpdateSPRNoV2", type: "POST", dataType: "json", data: postdata
+               , contentType: "application/json; charset=utf-8", success: function (redata) {
+                   if (redata.succeed) {
+                       var result = redata.data;
+                       $("#txtSPRNo-" + lineNo).val(redata.data);                  
+                   } else {
+                       AlertDialog(redata.err);
+                   }
+               }
+            });
+            $.modal.close();
+
+
+        });
+
+        //設定哪個teg按下enter後會觸發哪一個按鈕的click事件
+        EnterClick('txtSPRNO', 'btn-update');
+    });
+</script>
+
+<div class="modal-content">
+    <div>
+        <input type="hidden" id="hd_LineNo" value="@ViewBag.LineNo" />
+        <table id="tbITP">
+            <tr>
+                <td class="field100 right">SPR No :</td>
+                <td class="w35p">
+                    @Html.TextBox("txtSPRNO", (string)@ViewBag.sprNo, new { @class = "text090" })&nbsp;
+                </td>
+                <td>
+                    <button id="btn-update" type="button" class="button"><i class="fa fa-pencil-square-o"></i> Update</button>&nbsp;
+                </td>
+                @Html.Hidden("hd_erpId", (string)@ViewBag.erpId)
+                @Html.Hidden("hd_partNo", (string)@ViewBag.partNo)
+                @Html.Hidden("hd_expiredDate", (string)@ViewBag.expiredDate)
+            </tr>
+        </table>
+</div>
+</div>

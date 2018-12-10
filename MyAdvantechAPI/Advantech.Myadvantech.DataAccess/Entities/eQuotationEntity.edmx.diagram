@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b880c78bef204581a5f9f6f9b8f1bbfe" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.GPBLOCK_LOGIC" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.QuotationMaster" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.Quotation_Approval_Expiration" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.QuotationExtension" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.EmailGreeting" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.optyQuote" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.quoteSiebelQuote" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.SiebelWSFailedLog" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.SiebelActive" Width="1.5" PointX="6.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.QuoteApproval" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.AJP_ConfiguratorTerms" Width="1.5" PointX="11.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.EQPARTNER" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.ACN_EQ_PSM" Width="1.5" PointX="11.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.ACN_EQ_Sales" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.RegionSectorParameter" Width="1.5" PointX="13.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.QuotationDetail" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.ACN_Executive" Width="1.5" PointX="14.375" PointY="10.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.WorkFlowApproval" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.QuotationDetail_Extension_ABR" Width="1.5" PointX="3.375" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Advantech.Myadvantech.DataAccess.QuotationExtensionNew" Width="1.5" PointX="14.375" PointY="13.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1091 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SiebelDS" targetNamespace="http://tempuri.org/SiebelDS.xsd" xmlns:mstns="http://tempuri.org/SiebelDS.xsd" xmlns="http://tempuri.org/SiebelDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="CRM" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CRM (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.CRM.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="EQ" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EQ (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.EQ.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SIEBEL_ACCOUNTTableAdapter" GeneratorDataComponentClassName="SIEBEL_ACCOUNTTableAdapter" Name="SIEBEL_ACCOUNT" UserDataComponentName="SIEBEL_ACCOUNTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select top 1 a.ROW_ID, IsNull(b.ATTRIB_05,'') as ERP_ID, a.NAME as ACCOUNT_NAME, a.CUST_STAT_CD as ACCOUNT_STATUS,IsNull(a.MAIN_FAX_PH_NUM, '') as FAX_NUM, 
+IsNull(a.MAIN_PH_NUM, '') as PHONE_NUM,IsNull(a.OU_TYPE_CD, '') as OU_TYPE_CD,IsNull(a.URL, '') as URL,IsNull(b.ATTRIB_34, '') as BusinessGroup, 
+IsNull(a.OU_TYPE_CD, '') as ACCOUNT_TYPE, IsNull(c.NAME, '') as RBU, 
+IsNull((select EMAIL_ADDR from S_CONTACT where ROW_ID in (select PR_EMP_ID from S_POSTN where ROW_ID in (select PR_POSTN_ID from S_ORG_EXT where ROW_ID=a.ROW_ID))),'') as PRIMARY_SALES_EMAIL, 
+a.PAR_OU_ID as PARENT_ROW_ID,IsNull(b.ATTRIB_09,'N') as MAJORACCOUNT_FLAG,IsNull(a.CMPT_FLG,'N') as COMPETITOR_FLAG,IsNull(a.PRTNR_FLG,'N') as PARTNER_FLAG,IsNull(d.COUNTRY,'') as COUNTRY,
+IsNull(d.CITY,'') as CITY,IsNull(d.ADDR,'') as ADDRESS,IsNull(d.STATE,'') as STATE, IsNull(d.ZIPCODE,'') as ZIPCODE, IsNull(d.PROVINCE,'') as PROVINCE, 
+IsNull((select top 1 NAME from S_INDUST where ROW_ID=a.X_ANNIE_PR_INDUST_ID),'N/A') as BAA,b.CREATED, b.LAST_UPD as LAST_UPDATED, 
+IsNull((select top 1 e.NAME from S_PARTY e inner join S_POSTN f on e.ROW_ID=f.OU_ID where f.ROW_ID in (select PR_POSTN_ID from S_ORG_EXT where ROW_ID=a.ROW_ID)),'') as PriOwnerDivision,
+ PR_POSTN_ID as PriOwnerRowId,IsNull((select top 1 f.NAME from S_POSTN f where f.ROW_ID in (select PR_POSTN_ID from S_ORG_EXT where ROW_ID=a.ROW_ID)),'') as PriOwnerPosition, 
+ cast('' as nvarchar(10)) as LOCATION, cast('' as nvarchar(10)) as ACCOUNT_TEAM, IsNull(d.ADDR_LINE_2,'') as ADDRESS2, IsNull(b.ATTRIB_36,'') as ACCOUNT_CC_GRADE,  IsNull(a.BASE_CURCY_CD,'') as CURRENCY 
+ from S_ORG_EXT a left join S_ORG_EXT_X b on a.ROW_ID=b.ROW_ID left join S_PARTY c on a.BU_ID=c.ROW_ID left join S_ADDR_ORG d on a.PR_ADDR_ID=d.ROW_ID </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ROW_ID" DataSetColumn="ROW_ID" />
+              <Mapping SourceColumn="ERP_ID" DataSetColumn="ERP_ID" />
+              <Mapping SourceColumn="ACCOUNT_NAME" DataSetColumn="ACCOUNT_NAME" />
+              <Mapping SourceColumn="ACCOUNT_STATUS" DataSetColumn="ACCOUNT_STATUS" />
+              <Mapping SourceColumn="FAX_NUM" DataSetColumn="FAX_NUM" />
+              <Mapping SourceColumn="PHONE_NUM" DataSetColumn="PHONE_NUM" />
+              <Mapping SourceColumn="OU_TYPE_CD" DataSetColumn="OU_TYPE_CD" />
+              <Mapping SourceColumn="URL" DataSetColumn="URL" />
+              <Mapping SourceColumn="BusinessGroup" DataSetColumn="BusinessGroup" />
+              <Mapping SourceColumn="ACCOUNT_TYPE" DataSetColumn="ACCOUNT_TYPE" />
+              <Mapping SourceColumn="RBU" DataSetColumn="RBU" />
+              <Mapping SourceColumn="PRIMARY_SALES_EMAIL" DataSetColumn="PRIMARY_SALES_EMAIL" />
+              <Mapping SourceColumn="PARENT_ROW_ID" DataSetColumn="PARENT_ROW_ID" />
+              <Mapping SourceColumn="MAJORACCOUNT_FLAG" DataSetColumn="MAJORACCOUNT_FLAG" />
+              <Mapping SourceColumn="COMPETITOR_FLAG" DataSetColumn="COMPETITOR_FLAG" />
+              <Mapping SourceColumn="PARTNER_FLAG" DataSetColumn="PARTNER_FLAG" />
+              <Mapping SourceColumn="COUNTRY" DataSetColumn="COUNTRY" />
+              <Mapping SourceColumn="CITY" DataSetColumn="CITY" />
+              <Mapping SourceColumn="ADDRESS" DataSetColumn="ADDRESS" />
+              <Mapping SourceColumn="STATE" DataSetColumn="STATE" />
+              <Mapping SourceColumn="ZIPCODE" DataSetColumn="ZIPCODE" />
+              <Mapping SourceColumn="PROVINCE" DataSetColumn="PROVINCE" />
+              <Mapping SourceColumn="BAA" DataSetColumn="BAA" />
+              <Mapping SourceColumn="CREATED" DataSetColumn="CREATED" />
+              <Mapping SourceColumn="LAST_UPDATED" DataSetColumn="LAST_UPDATED" />
+              <Mapping SourceColumn="PriOwnerDivision" DataSetColumn="PriOwnerDivision" />
+              <Mapping SourceColumn="PriOwnerRowId" DataSetColumn="PriOwnerRowId" />
+              <Mapping SourceColumn="PriOwnerPosition" DataSetColumn="PriOwnerPosition" />
+              <Mapping SourceColumn="LOCATION" DataSetColumn="LOCATION" />
+              <Mapping SourceColumn="ACCOUNT_TEAM" DataSetColumn="ACCOUNT_TEAM" />
+              <Mapping SourceColumn="ADDRESS2" DataSetColumn="ADDRESS2" />
+              <Mapping SourceColumn="ACCOUNT_CC_GRADE" DataSetColumn="ACCOUNT_CC_GRADE" />
+              <Mapping SourceColumn="CURRENCY" DataSetColumn="CURRENCY" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetAccountByRowId" GetMethodModifier="Public" GetMethodName="GetAccountByRowId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAccountByRowId" UserSourceName="GetAccountByRowId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT          TOP (1) a.ROW_ID, ISNULL(b.ATTRIB_05, N'') AS ERP_ID, a.NAME AS ACCOUNT_NAME, 
+                            a.CUST_STAT_CD AS ACCOUNT_STATUS, ISNULL(a.MAIN_FAX_PH_NUM, N'') AS FAX_NUM, 
+                            ISNULL(a.MAIN_PH_NUM, N'') AS PHONE_NUM, ISNULL(a.OU_TYPE_CD, N'') AS OU_TYPE_CD, ISNULL(a.URL, N'') 
+                            AS URL, ISNULL(b.ATTRIB_34, N'') AS BusinessGroup, ISNULL(a.OU_TYPE_CD, N'') AS ACCOUNT_TYPE, 
+                            ISNULL(c.NAME, N'') AS RBU, ISNULL
+                                ((SELECT          EMAIL_ADDR
+                                    FROM              S_CONTACT
+                                    WHERE          (ROW_ID IN
+                                                                    (SELECT          PR_EMP_ID
+                                                                      FROM               S_POSTN
+                                                                      WHERE           (ROW_ID IN
+                                                                                                      (SELECT          PR_POSTN_ID
+                                                                                                        FROM               S_ORG_EXT
+                                                                                                        WHERE           (ROW_ID = a.ROW_ID)))))), N'') AS PRIMARY_SALES_EMAIL, 
+                            a.PAR_OU_ID AS PARENT_ROW_ID, ISNULL(b.ATTRIB_09, N'N') AS MAJORACCOUNT_FLAG, ISNULL(a.CMPT_FLG, 
+                            N'N') AS COMPETITOR_FLAG, ISNULL(a.PRTNR_FLG, N'N') AS PARTNER_FLAG, ISNULL(d.COUNTRY, N'') 
+                            AS COUNTRY, ISNULL(d.CITY, N'') AS CITY, ISNULL(d.ADDR, N'') AS ADDRESS, ISNULL(d.STATE, N'') AS STATE, 
+                            ISNULL(d.ZIPCODE, N'') AS ZIPCODE, ISNULL(d.PROVINCE, N'') AS PROVINCE, ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_INDUST
+                                    WHERE          (ROW_ID = a.X_ANNIE_PR_INDUST_ID)), N'N/A') AS BAA, b.CREATED, 
+                            b.LAST_UPD AS LAST_UPDATED, ISNULL
+                                ((SELECT          TOP (1) e.NAME
+                                    FROM              S_PARTY AS e INNER JOIN
+                                                                S_POSTN AS f ON e.ROW_ID = f.OU_ID
+                                    WHERE          (f.ROW_ID IN
+                                                                    (SELECT          PR_POSTN_ID
+                                                                      FROM               S_ORG_EXT AS S_ORG_EXT_2
+                                                                      WHERE           (ROW_ID = a.ROW_ID)))), N'') AS PriOwnerDivision, 
+                            a.PR_POSTN_ID AS PriOwnerRowId, ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_POSTN AS f
+                                    WHERE          (ROW_ID IN
+                                                                    (SELECT          PR_POSTN_ID
+                                                                      FROM               S_ORG_EXT AS S_ORG_EXT_1
+                                                                      WHERE           (ROW_ID = a.ROW_ID)))), N'') AS PriOwnerPosition, CAST('' AS nvarchar(10)) 
+                            AS LOCATION, CAST('' AS nvarchar(10)) AS ACCOUNT_TEAM, ISNULL(d.ADDR_LINE_2, N'') AS ADDRESS2, 
+                            ISNULL(b.ATTRIB_36, N'') AS ACCOUNT_CC_GRADE, ISNULL(a.BASE_CURCY_CD, N'') AS CURRENCY
+FROM              S_ORG_EXT AS a LEFT OUTER JOIN
+                            S_ORG_EXT_X AS b ON a.ROW_ID = b.ROW_ID LEFT OUTER JOIN
+                            S_PARTY AS c ON a.BU_ID = c.ROW_ID LEFT OUTER JOIN
+                            S_ADDR_PER AS d ON a.PR_ADDR_ID = d.ROW_ID
+WHERE          (a.ROW_ID = @RID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="RID" ColumnName="ROW_ID" DataSourceName="" DataTypeServer="unknown" DbType="Object" Direction="Input" ParameterName="@RID" Precision="0" Scale="0" Size="1024" SourceColumn="ROW_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SIEBEL_CONTACTTableAdapter" GeneratorDataComponentClassName="SIEBEL_CONTACTTableAdapter" Name="SIEBEL_CONTACT" UserDataComponentName="SIEBEL_CONTACTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT top 1 A.ROW_ID, IsNull(A.FST_NAME, '') AS 'FirstName',IsNull(A.MID_NAME, '') as 'MiddleName', IsNull(A.LAST_NAME, '') AS 'LastName', IsNull(A.WORK_PH_NUM, '') as 'WorkPhone',IsNull(A.CELL_PH_NUM, '') as 'CellPhone',IsNull(A.FAX_PH_NUM, '') as 'FaxNumber', IsNull(E.ATTRIB_37, '') as 'JOB_FUNCTION', IsNull(A.PAR_ROW_ID, '') as PAR_ROW_ID,IsNull(D.ATTRIB_05, '') AS 'ERPID', IsNull(A.BU_ID, '') as 'PriOrgId',(select top 1 z.NAME from S_PARTY z where z.ROW_ID=A.BU_ID) as 'OrgID', IsNull(A.PR_POSTN_ID, '') as 'OwnerId',IsNull(E.ATTRIB_09, 'N') AS 'CanSeeOrder',IsNull(A.X_CONTACT_LOGIN_PASSWORD, '') AS Password,'' as 'Sales_Rep',IsNull(A.SUPPRESS_EMAIL_FLG, '') as NeverEmail,IsNull(A.SUPPRESS_CALL_FLG,'') as NeverCall,IsNull(A.SUPPRESS_FAX_FLG, '') as NeverFax,IsNull(A.SUPPRESS_MAIL_FLG, '') as NeverMail,IsNull(A.JOB_TITLE, '') as JOB_TITLE,IsNull(A.EMAIL_ADDR, '') AS 'EMAIL_ADDRESS',B.ROW_ID as ACCOUNT_ROW_ID,IsNull(B.NAME, '') AS ACCOUNT,IsNull(B.OU_TYPE_CD, '') AS 'ACCOUNT_TYPE', IsNull(B.CUST_STAT_CD, '') AS 'ACCOUNT_STATUS',IsNull(C.COUNTRY, '') AS COUNTRY,IsNull(A.PER_TITLE, '') as Salutation,A.EMP_FLG as EMPLOYEE_FLAG,IsNull(A.ACTIVE_FLG,'N') as ACTIVE_FLG,IsNull(A.DFLT_ORDER_PROC_CD,'') as User_Type, IsNull(F.APPL_SRC_CD,'') as Reg_Source,A.CREATED, A.LAST_UPD as LAST_UPDATED, A.PR_REP_SYS_FLG as PRIMARY_FLAG FROM S_CONTACT A LEFT JOIN S_CONTACT_X E ON A.ROW_ID = E.ROW_ID LEFT JOIN S_ORG_EXT B ON A.PR_DEPT_OU_ID = B.PAR_ROW_ID LEFT JOIN S_ORG_EXT_X D ON B.ROW_ID = D.ROW_ID LEFT JOIN S_ADDR_ORG C ON A.PR_OU_ADDR_ID = C.ROW_ID LEFT JOIN S_PER_PRTNRAPPL F ON A.ROW_ID=F.ROW_ID </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ROW_ID" DataSetColumn="ROW_ID" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="MiddleName" DataSetColumn="MiddleName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="WorkPhone" DataSetColumn="WorkPhone" />
+              <Mapping SourceColumn="CellPhone" DataSetColumn="CellPhone" />
+              <Mapping SourceColumn="FaxNumber" DataSetColumn="FaxNumber" />
+              <Mapping SourceColumn="JOB_FUNCTION" DataSetColumn="JOB_FUNCTION" />
+              <Mapping SourceColumn="PAR_ROW_ID" DataSetColumn="PAR_ROW_ID" />
+              <Mapping SourceColumn="ERPID" DataSetColumn="ERPID" />
+              <Mapping SourceColumn="PriOrgId" DataSetColumn="PriOrgId" />
+              <Mapping SourceColumn="OrgID" DataSetColumn="OrgID" />
+              <Mapping SourceColumn="OwnerId" DataSetColumn="OwnerId" />
+              <Mapping SourceColumn="CanSeeOrder" DataSetColumn="CanSeeOrder" />
+              <Mapping SourceColumn="Password" DataSetColumn="Password" />
+              <Mapping SourceColumn="Sales_Rep" DataSetColumn="Sales_Rep" />
+              <Mapping SourceColumn="NeverEmail" DataSetColumn="NeverEmail" />
+              <Mapping SourceColumn="NeverCall" DataSetColumn="NeverCall" />
+              <Mapping SourceColumn="NeverFax" DataSetColumn="NeverFax" />
+              <Mapping SourceColumn="NeverMail" DataSetColumn="NeverMail" />
+              <Mapping SourceColumn="JOB_TITLE" DataSetColumn="JOB_TITLE" />
+              <Mapping SourceColumn="EMAIL_ADDRESS" DataSetColumn="EMAIL_ADDRESS" />
+              <Mapping SourceColumn="ACCOUNT_ROW_ID" DataSetColumn="ACCOUNT_ROW_ID" />
+              <Mapping SourceColumn="ACCOUNT" DataSetColumn="ACCOUNT" />
+              <Mapping SourceColumn="ACCOUNT_TYPE" DataSetColumn="ACCOUNT_TYPE" />
+              <Mapping SourceColumn="ACCOUNT_STATUS" DataSetColumn="ACCOUNT_STATUS" />
+              <Mapping SourceColumn="COUNTRY" DataSetColumn="COUNTRY" />
+              <Mapping SourceColumn="Salutation" DataSetColumn="Salutation" />
+              <Mapping SourceColumn="EMPLOYEE_FLAG" DataSetColumn="EMPLOYEE_FLAG" />
+              <Mapping SourceColumn="ACTIVE_FLG" DataSetColumn="ACTIVE_FLG" />
+              <Mapping SourceColumn="User_Type" DataSetColumn="User_Type" />
+              <Mapping SourceColumn="Reg_Source" DataSetColumn="Reg_Source" />
+              <Mapping SourceColumn="CREATED" DataSetColumn="CREATED" />
+              <Mapping SourceColumn="LAST_UPDATED" DataSetColumn="LAST_UPDATED" />
+              <Mapping SourceColumn="PRIMARY_FLAG" DataSetColumn="PRIMARY_FLAG" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetContactByEmail" GetMethodModifier="Public" GetMethodName="GetContactByEmail" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetContactByEmail" UserSourceName="GetContactByEmail">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT          TOP (100) A.ROW_ID, ISNULL(A.FST_NAME, N'') AS 'FirstName', ISNULL(A.MID_NAME, N'') AS 'MiddleName', 
+                            ISNULL(A.LAST_NAME, N'') AS 'LastName', ISNULL(A.WORK_PH_NUM, N'') AS 'WorkPhone', 
+                            ISNULL(A.CELL_PH_NUM, N'') AS 'CellPhone', ISNULL(A.FAX_PH_NUM, N'') AS 'FaxNumber', ISNULL(E.ATTRIB_37, 
+                            N'') AS 'JOB_FUNCTION', ISNULL(A.PAR_ROW_ID, N'') AS PAR_ROW_ID, ISNULL(D.ATTRIB_05, N'') AS 'ERPID', 
+                            ISNULL(A.BU_ID, N'') AS 'PriOrgId',
+                                (SELECT          TOP (1) NAME
+                                  FROM               S_PARTY AS z
+                                  WHERE           (ROW_ID = A.BU_ID)) AS 'OrgID', ISNULL(A.PR_POSTN_ID, N'') AS 'OwnerId', ISNULL(E.ATTRIB_09, 
+                            N'N') AS 'CanSeeOrder', ISNULL(A.X_CONTACT_LOGIN_PASSWORD, N'') AS Password, '' AS 'Sales_Rep', 
+                            ISNULL(A.SUPPRESS_EMAIL_FLG, N'') AS NeverEmail, ISNULL(A.SUPPRESS_CALL_FLG, N'') AS NeverCall, 
+                            ISNULL(A.SUPPRESS_FAX_FLG, N'') AS NeverFax, ISNULL(A.SUPPRESS_MAIL_FLG, N'') AS NeverMail, 
+                            ISNULL(A.JOB_TITLE, N'') AS JOB_TITLE, ISNULL(A.EMAIL_ADDR, N'') AS 'EMAIL_ADDRESS', 
+                            B.ROW_ID AS ACCOUNT_ROW_ID, ISNULL(B.NAME, N'') AS ACCOUNT, ISNULL(B.OU_TYPE_CD, N'') 
+                            AS 'ACCOUNT_TYPE', ISNULL(B.CUST_STAT_CD, N'') AS 'ACCOUNT_STATUS', ISNULL(C.COUNTRY, N'') 
+                            AS COUNTRY, ISNULL(A.PER_TITLE, N'') AS Salutation, A.EMP_FLG AS EMPLOYEE_FLAG, ISNULL(A.ACTIVE_FLG, 
+                            N'N') AS ACTIVE_FLG, ISNULL(A.DFLT_ORDER_PROC_CD, N'') AS User_Type, ISNULL(F.APPL_SRC_CD, N'') 
+                            AS Reg_Source, A.CREATED, A.LAST_UPD AS LAST_UPDATED, A.PR_REP_SYS_FLG AS PRIMARY_FLAG
+FROM              S_CONTACT AS A LEFT OUTER JOIN
+                            S_CONTACT_X AS E ON A.ROW_ID = E.ROW_ID LEFT OUTER JOIN
+                            S_ORG_EXT AS B ON A.PR_DEPT_OU_ID = B.PAR_ROW_ID LEFT OUTER JOIN
+                            S_ORG_EXT_X AS D ON B.ROW_ID = D.ROW_ID LEFT OUTER JOIN
+                            S_ADDR_ORG AS C ON A.PR_OU_ADDR_ID = C.ROW_ID LEFT OUTER JOIN
+                            S_PER_PRTNRAPPL AS F ON A.ROW_ID = F.ROW_ID
+WHERE          (UPPER(A.EMAIL_ADDR) = UPPER(@EM))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EM" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@EM" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetTopOneContactByEmail" GetMethodModifier="Public" GetMethodName="GetTopOneContactByEmail" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetTopOneContactByEmail" UserSourceName="GetTopOneContactByEmail">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT          TOP (1) A.ROW_ID, ISNULL(A.FST_NAME, N'') AS 'FirstName', ISNULL(A.MID_NAME, N'') AS 'MiddleName', 
+                            ISNULL(A.LAST_NAME, N'') AS 'LastName', ISNULL(A.WORK_PH_NUM, N'') AS 'WorkPhone', 
+                            ISNULL(A.CELL_PH_NUM, N'') AS 'CellPhone', ISNULL(A.FAX_PH_NUM, N'') AS 'FaxNumber', ISNULL(E.ATTRIB_37, 
+                            N'') AS 'JOB_FUNCTION', ISNULL(A.PAR_ROW_ID, N'') AS PAR_ROW_ID, ISNULL(D.ATTRIB_05, N'') AS 'ERPID', 
+                            ISNULL(A.BU_ID, N'') AS 'PriOrgId',
+                                (SELECT          TOP (1) NAME
+                                  FROM               S_PARTY AS z
+                                  WHERE           (ROW_ID = A.BU_ID)) AS 'OrgID', ISNULL(A.PR_POSTN_ID, N'') AS 'OwnerId', ISNULL(E.ATTRIB_09, 
+                            N'N') AS 'CanSeeOrder', ISNULL(A.X_CONTACT_LOGIN_PASSWORD, N'') AS Password, '' AS 'Sales_Rep', 
+                            ISNULL(A.SUPPRESS_EMAIL_FLG, N'') AS NeverEmail, ISNULL(A.SUPPRESS_CALL_FLG, N'') AS NeverCall, 
+                            ISNULL(A.SUPPRESS_FAX_FLG, N'') AS NeverFax, ISNULL(A.SUPPRESS_MAIL_FLG, N'') AS NeverMail, 
+                            ISNULL(A.JOB_TITLE, N'') AS JOB_TITLE, ISNULL(A.EMAIL_ADDR, N'') AS 'EMAIL_ADDRESS', 
+                            B.ROW_ID AS ACCOUNT_ROW_ID, ISNULL(B.NAME, N'') AS ACCOUNT, ISNULL(B.OU_TYPE_CD, N'') 
+                            AS 'ACCOUNT_TYPE', ISNULL(B.CUST_STAT_CD, N'') AS 'ACCOUNT_STATUS', ISNULL(C.COUNTRY, N'') 
+                            AS COUNTRY, ISNULL(A.PER_TITLE, N'') AS Salutation, A.EMP_FLG AS EMPLOYEE_FLAG, ISNULL(A.ACTIVE_FLG, 
+                            N'N') AS ACTIVE_FLG, ISNULL(A.DFLT_ORDER_PROC_CD, N'') AS User_Type, ISNULL(F.APPL_SRC_CD, N'') 
+                            AS Reg_Source, A.CREATED, A.LAST_UPD AS LAST_UPDATED, A.PR_REP_SYS_FLG AS PRIMARY_FLAG
+FROM              S_CONTACT AS A LEFT OUTER JOIN
+                            S_CONTACT_X AS E ON A.ROW_ID = E.ROW_ID LEFT OUTER JOIN
+                            S_ORG_EXT AS B ON A.PR_DEPT_OU_ID = B.PAR_ROW_ID LEFT OUTER JOIN
+                            S_ORG_EXT_X AS D ON B.ROW_ID = D.ROW_ID LEFT OUTER JOIN
+                            S_ADDR_ORG AS C ON A.PR_OU_ADDR_ID = C.ROW_ID LEFT OUTER JOIN
+                            S_PER_PRTNRAPPL AS F ON A.ROW_ID = F.ROW_ID
+WHERE          (UPPER(A.EMAIL_ADDR) = UPPER(@EM)) AND (B.CUST_STAT_CD &lt;&gt; '')
+ORDER BY   B.CUST_STAT_CD</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EM" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@EM" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SIEBEL_OPPORTUNITYTableAdapter" GeneratorDataComponentClassName="SIEBEL_OPPORTUNITYTableAdapter" Name="SIEBEL_OPPORTUNITY" UserDataComponentName="SIEBEL_OPPORTUNITYTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT          TOP (1) A.ROW_ID, A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID, A.NAME, A.CREATED, B.NAME AS ACCOUNT_NAME, 
+                            ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_ORG_EXT AS z
+                                    WHERE          (ROW_ID = A.PR_PRTNR_ID)), N'') AS ChannelPartner, A.CURCY_CD, A.SUM_REVN_AMT, 
+                            A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID, A.SUM_WIN_PROB, ISNULL(B.NAME, N'') AS STAGE_NAME, 
+                            A.STATUS_CD, ISNULL
+                                ((SELECT          NAME
+                                    FROM              S_SALES_METHOD AS SM
+                                    WHERE          (ROW_ID = A.SALES_METHOD_ID)), N'') AS SALES_METHOD_NAME, ISNULL(A.CHANNEL_TYPE_CD, 
+                            N'') AS Channel, A.SUM_EFFECTIVE_DT
+FROM              S_OPTY AS A INNER JOIN
+                            S_ORG_EXT AS B ON A.PR_DEPT_OU_ID = B.ROW_ID OR A.PR_PRTNR_ID = B.ROW_ID LEFT OUTER JOIN
+                            S_OPTY_X AS X ON A.ROW_ID = X.ROW_ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ROW_ID" DataSetColumn="ROW_ID" />
+              <Mapping SourceColumn="ACCOUNT_ROW_ID" DataSetColumn="ACCOUNT_ROW_ID" />
+              <Mapping SourceColumn="NAME" DataSetColumn="NAME" />
+              <Mapping SourceColumn="CREATED" DataSetColumn="CREATED" />
+              <Mapping SourceColumn="ACCOUNT_NAME" DataSetColumn="ACCOUNT_NAME" />
+              <Mapping SourceColumn="ChannelPartner" DataSetColumn="ChannelPartner" />
+              <Mapping SourceColumn="CURCY_CD" DataSetColumn="CURCY_CD" />
+              <Mapping SourceColumn="SUM_REVN_AMT" DataSetColumn="SUM_REVN_AMT" />
+              <Mapping SourceColumn="ACCOUNT_ROW_ID1" DataSetColumn="ACCOUNT_ROW_ID1" />
+              <Mapping SourceColumn="SUM_WIN_PROB" DataSetColumn="SUM_WIN_PROB" />
+              <Mapping SourceColumn="STAGE_NAME" DataSetColumn="STAGE_NAME" />
+              <Mapping SourceColumn="STATUS_CD" DataSetColumn="STATUS_CD" />
+              <Mapping SourceColumn="SALES_METHOD_NAME" DataSetColumn="SALES_METHOD_NAME" />
+              <Mapping SourceColumn="Channel" DataSetColumn="Channel" />
+              <Mapping SourceColumn="SUM_EFFECTIVE_DT" DataSetColumn="SUM_EFFECTIVE_DT" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckOptyNameExist" Modifier="Public" Name="CheckOptyNameExist" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckOptyNameExist">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select count(ROW_ID) as c from S_OPTY where PR_DEPT_OU_ID=@ACCOUNTID and NAME=@OPTYNAME</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ACCOUNTID" ColumnName="PR_DEPT_OU_ID" DataSourceName="Replaclcrmdb.dbo.S_OPTY" DataTypeServer="nvarchar(15)" DbType="String" Direction="Input" ParameterName="@ACCOUNTID" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumn="PR_DEPT_OU_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="OPTYNAME" ColumnName="NAME" DataSourceName="Replaclcrmdb.dbo.S_OPTY" DataTypeServer="nvarchar(100)" DbType="String" Direction="Input" ParameterName="@OPTYNAME" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumn="NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SearchOpty" GetMethodModifier="Public" GetMethodName="SearchOpty" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SearchOpty" UserSourceName="SearchOpty">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT          A.ROW_ID, A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID, A.NAME, A.CREATED, B.NAME AS ACCOUNT_NAME, 
+                            ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_ORG_EXT AS z
+                                    WHERE          (ROW_ID = A.PR_PRTNR_ID)), N'') AS ChannelPartner, A.CURCY_CD, A.SUM_REVN_AMT, 
+                            A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID, A.SUM_WIN_PROB, ISNULL(B.NAME, N'') AS STAGE_NAME, 
+                            A.STATUS_CD, ISNULL
+                                ((SELECT          NAME
+                                    FROM              S_SALES_METHOD AS SM
+                                    WHERE          (ROW_ID = A.SALES_METHOD_ID)), N'') AS SALES_METHOD_NAME, ISNULL(A.CHANNEL_TYPE_CD, 
+                            N'') AS Channel, A.SUM_EFFECTIVE_DT
+FROM              S_OPTY AS A INNER JOIN
+                            S_ORG_EXT AS B ON A.PR_DEPT_OU_ID = B.ROW_ID OR A.PR_PRTNR_ID = B.ROW_ID LEFT OUTER JOIN
+                            S_OPTY_X AS X ON A.ROW_ID = X.ROW_ID
+WHERE          (A.PR_DEPT_OU_ID IS NOT NULL) AND (UPPER(A.NAME) LIKE N'%' + REPLACE(UPPER(@OPTYNAME), '*', '%') + '%') 
+                            AND (B.ROW_ID = @ACCOUNTID)
+ORDER BY   A.NAME, A.CREATED DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OPTYNAME" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@OPTYNAME" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ACCOUNTID" ColumnName="ROW_ID" DataSourceName="Replaclcrmdb.dbo.S_ORG_EXT" DataTypeServer="nvarchar(15)" DbType="String" Direction="Input" ParameterName="@ACCOUNTID" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumn="ROW_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SearchOptyForANA" GetMethodModifier="Public" GetMethodName="SearchOptyForANA" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SearchOptyForANA" UserSourceName="SearchOptyForANA">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT       CASE A.CURR_STG_ID
+         WHEN '1-VXVAID' THEN 'c'
+         WHEN '1-VXVAIE' THEN 'b'
+ELSE 'a' END  as orderbystr,   A.ROW_ID, A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID,A.CURR_STG_ID, A.NAME, A.CREATED, B.NAME AS ACCOUNT_NAME, 
+                            A.CREATED_BY, ISNULL
+                                ((SELECT          TOP (1) EMAIL_ADDR
+                                    FROM              S_CONTACT AS z
+                                    WHERE          (ROW_ID = A.CAMP_CON_ID)), N'') AS CONTACT, ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_STG AS z
+                                    WHERE          (ROW_ID = A.CURR_STG_ID )), N'') AS STAGE_NAME, ISNULL
+                                ((SELECT          TOP (1) su.LOGIN
+                                    FROM              S_POSTN AS z LEFT OUTER JOIN
+                                                                S_USER AS su ON z.PR_EMP_ID = su.ROW_ID
+                                    WHERE          (z.ROW_ID = A.PR_POSTN_ID)), N'') AS [PRIMARY], ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_ORG_EXT AS z
+                                    WHERE          (ROW_ID = A.PR_PRTNR_ID)), N'') AS ChannelPartner, A.CURCY_CD, A.SUM_REVN_AMT, 
+                            A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID, A.SUM_WIN_PROB, A.STATUS_CD, ISNULL
+                                ((SELECT          NAME
+                                    FROM              S_SALES_METHOD AS SM
+                                    WHERE          (ROW_ID = A.SALES_METHOD_ID)), N'') AS SALES_METHOD_NAME, ISNULL(A.CHANNEL_TYPE_CD, 
+                            N'') AS Channel, A.SUM_EFFECTIVE_DT
+FROM              S_OPTY AS A INNER JOIN
+                            S_ORG_EXT AS B ON A.PR_DEPT_OU_ID = B.ROW_ID OR A.PR_PRTNR_ID = B.ROW_ID LEFT OUTER JOIN
+                            S_OPTY_X AS X ON A.ROW_ID = X.ROW_ID
+WHERE          (A.PR_DEPT_OU_ID IS NOT NULL) AND (UPPER(A.NAME) LIKE N'%' + REPLACE(UPPER(@OPTYNAME), '*', '%') + '%') 
+                            AND (B.ROW_ID = @ACCOUNTID)
+                           AND A.CURR_STG_ID&lt;&gt;'' 
+ORDER BY   orderbystr, A.CREATED DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OPTYNAME" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@OPTYNAME" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ACCOUNTID" ColumnName="ROW_ID" DataSourceName="Replaclcrmdb.dbo.S_ORG_EXT" DataTypeServer="nvarchar(15)" DbType="String" Direction="Input" ParameterName="@ACCOUNTID" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumn="ROW_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SearchOptyV2" GetMethodModifier="Public" GetMethodName="SearchOptyV2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SearchOptyV2" UserSourceName="SearchOptyV2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT          A.ROW_ID, A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID,A.CURR_STG_ID, A.NAME, A.CREATED, B.NAME AS ACCOUNT_NAME, 
+                            A.CREATED_BY, ISNULL
+                                ((SELECT          TOP (1) EMAIL_ADDR
+                                    FROM              S_CONTACT AS z
+                                    WHERE          (ROW_ID = A.CAMP_CON_ID)), N'') AS CONTACT, ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_STG AS z
+                                    WHERE          (ROW_ID = A.CURR_STG_ID)), N'') AS STAGE_NAME, ISNULL
+                                ((SELECT          TOP (1) su.LOGIN
+                                    FROM              S_POSTN AS z LEFT OUTER JOIN
+                                                                S_USER AS su ON z.PR_EMP_ID = su.ROW_ID
+                                    WHERE          (z.ROW_ID = A.PR_POSTN_ID)), N'') AS [PRIMARY], ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_ORG_EXT AS z
+                                    WHERE          (ROW_ID = A.PR_PRTNR_ID)), N'') AS ChannelPartner, A.CURCY_CD, A.SUM_REVN_AMT, 
+                            A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID, A.SUM_WIN_PROB, A.STATUS_CD, ISNULL
+                                ((SELECT          NAME
+                                    FROM              S_SALES_METHOD AS SM
+                                    WHERE          (ROW_ID = A.SALES_METHOD_ID)), N'') AS SALES_METHOD_NAME, ISNULL(A.CHANNEL_TYPE_CD, 
+                            N'') AS Channel, A.SUM_EFFECTIVE_DT
+FROM              S_OPTY AS A INNER JOIN
+                            S_ORG_EXT AS B ON A.PR_DEPT_OU_ID = B.ROW_ID OR A.PR_PRTNR_ID = B.ROW_ID LEFT OUTER JOIN
+                            S_OPTY_X AS X ON A.ROW_ID = X.ROW_ID
+WHERE          (A.PR_DEPT_OU_ID IS NOT NULL) AND (UPPER(A.NAME) LIKE N'%' + REPLACE(UPPER(@OPTYNAME), '*', '%') + '%') 
+                            AND (B.ROW_ID = @ACCOUNTID)
+                           AND A.CURR_STG_ID&lt;&gt;''
+ORDER BY    A.CREATED DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OPTYNAME" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@OPTYNAME" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ACCOUNTID" ColumnName="ROW_ID" DataSourceName="Replaclcrmdb.dbo.S_ORG_EXT" DataTypeServer="nvarchar(15)" DbType="String" Direction="Input" ParameterName="@ACCOUNTID" Precision="0" ProviderType="NVarChar" Scale="0" Size="15" SourceColumn="ROW_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SearchOptyV3" GetMethodModifier="Public" GetMethodName="SearchOptyV3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SearchOptyV3" UserSourceName="SearchOptyV3">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     CASE A.CURR_STG_ID
+         WHEN '1-VXVAID' THEN 'c'
+         WHEN '1-VXVAIE' THEN 'b'
+ELSE 'a' END  as orderbystr,       A.ROW_ID, A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID,A.CURR_STG_ID, A.NAME, A.CREATED, B.NAME AS ACCOUNT_NAME, 
+                            A.CREATED_BY, ISNULL
+                                ((SELECT          TOP (1) EMAIL_ADDR
+                                    FROM              S_CONTACT AS z
+                                    WHERE          (ROW_ID = A.CAMP_CON_ID)), N'') AS CONTACT, ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_STG AS z
+                                    WHERE          (ROW_ID = A.CURR_STG_ID     and   upper(NAME) &lt;&gt; upper('0% Lost') and upper(NAME) &lt;&gt; upper('100% Won-PO Input in SAP')  )), N'') AS STAGE_NAME, ISNULL
+                                ((SELECT          TOP (1) su.LOGIN
+                                    FROM              S_POSTN AS z LEFT OUTER JOIN
+                                                                S_USER AS su ON z.PR_EMP_ID = su.ROW_ID
+                                    WHERE          (z.ROW_ID = A.PR_POSTN_ID)), N'') AS [PRIMARY], ISNULL
+                                ((SELECT          TOP (1) NAME
+                                    FROM              S_ORG_EXT AS z
+                                    WHERE          (ROW_ID = A.PR_PRTNR_ID)), N'') AS ChannelPartner, A.CURCY_CD, A.SUM_REVN_AMT, 
+                            A.PR_DEPT_OU_ID AS ACCOUNT_ROW_ID, A.SUM_WIN_PROB, A.STATUS_CD, ISNULL
+                                ((SELECT          NAME
+                                    FROM              S_SALES_METHOD AS SM
+                                    WHERE          (ROW_ID = A.SALES_METHOD_ID)), N'') AS SALES_METHOD_NAME, ISNULL(A.CHANNEL_TYPE_CD, 
+                            N'') AS Channel, A.SUM_EFFECTIVE_DT
+FROM              S_OPTY AS A INNER JOIN
+                            S_ORG_EXT AS B ON A.PR_DEPT_OU_ID = B.ROW_ID OR A.PR_PRTNR_ID = B.ROW_ID LEFT OUTER JOIN
+                            S_OPTY_X AS X ON A.ROW_ID = X.ROW_ID
+WHERE          (A.PR_DEPT_OU_ID IS NOT NULL) AND (UPPER(A.NAME) LIKE N'%' + REPLACE(UPPER(@OPTYNAME), '*', '%') + '%') 
+                            AND (B.ROW_ID = @ACCOUNTID) and   A.STATUS_CD&lt;&gt;'Won'
+ORDER BY   orderbystr , A.CREATED DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OPTYNAME" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@OPTYNAME" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ACCOUNTID" ColumnName="ROW_ID" DataSourceName="" DataTypeServer="unknown" DbType="Object" Direction="Input" ParameterName="@ACCOUNTID" Precision="0" Scale="0" Size="1024" SourceColumn="ROW_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SiebelWSFailedLogTableAdapter" GeneratorDataComponentClassName="SiebelWSFailedLogTableAdapter" Name="SiebelWSFailedLog" UserDataComponentName="SiebelWSFailedLogTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EQ (Web.config)" DbObjectName="eQuotation.dbo.SiebelWSFailedLog" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [SiebelWSFailedLog] ([quoteId], [FunctionName], [Parameters], [EmailAddress], [ErrorMessage], [InsertTime], [LastRecallTime], [IsRecall]) VALUES (@quoteId, @FunctionName, @Parameters, @EmailAddress, @ErrorMessage, @InsertTime, @LastRecallTime, @IsRecall)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@quoteId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="quoteId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FunctionName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FunctionName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Parameters" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Parameters" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EmailAddress" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EmailAddress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ErrorMessage" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ErrorMessage" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@InsertTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="InsertTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@LastRecallTime" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LastRecallTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@IsRecall" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="IsRecall" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT          quoteId, FunctionName, Parameters, EmailAddress, ErrorMessage, InsertTime, LastRecallTime, IsRecall
+FROM              SiebelWSFailedLog</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="quoteId" DataSetColumn="quoteId" />
+              <Mapping SourceColumn="FunctionName" DataSetColumn="FunctionName" />
+              <Mapping SourceColumn="Parameters" DataSetColumn="Parameters" />
+              <Mapping SourceColumn="EmailAddress" DataSetColumn="EmailAddress" />
+              <Mapping SourceColumn="ErrorMessage" DataSetColumn="ErrorMessage" />
+              <Mapping SourceColumn="InsertTime" DataSetColumn="InsertTime" />
+              <Mapping SourceColumn="LastRecallTime" DataSetColumn="LastRecallTime" />
+              <Mapping SourceColumn="IsRecall" DataSetColumn="IsRecall" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SiebelDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="SiebelDS" msprop:Generator_UserDSName="SiebelDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SIEBEL_ACCOUNT" msprop:Generator_TableClassName="SIEBEL_ACCOUNTDataTable" msprop:Generator_TableVarName="tableSIEBEL_ACCOUNT" msprop:Generator_TablePropName="SIEBEL_ACCOUNT" msprop:Generator_RowDeletingName="SIEBEL_ACCOUNTRowDeleting" msprop:Generator_RowChangingName="SIEBEL_ACCOUNTRowChanging" msprop:Generator_RowEvHandlerName="SIEBEL_ACCOUNTRowChangeEventHandler" msprop:Generator_RowDeletedName="SIEBEL_ACCOUNTRowDeleted" msprop:Generator_UserTableName="SIEBEL_ACCOUNT" msprop:Generator_RowChangedName="SIEBEL_ACCOUNTRowChanged" msprop:Generator_RowEvArgName="SIEBEL_ACCOUNTRowChangeEvent" msprop:Generator_RowClassName="SIEBEL_ACCOUNTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ROW_ID" msprop:Generator_ColumnVarNameInTable="columnROW_ID" msprop:Generator_ColumnPropNameInRow="ROW_ID" msprop:Generator_ColumnPropNameInTable="ROW_IDColumn" msprop:Generator_UserColumnName="ROW_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ERP_ID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnERP_ID" msprop:Generator_ColumnPropNameInRow="ERP_ID" msprop:Generator_ColumnPropNameInTable="ERP_IDColumn" msprop:Generator_UserColumnName="ERP_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT_NAME" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_NAME" msprop:Generator_ColumnPropNameInRow="ACCOUNT_NAME" msprop:Generator_ColumnPropNameInTable="ACCOUNT_NAMEColumn" msprop:Generator_UserColumnName="ACCOUNT_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT_STATUS" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_STATUS" msprop:Generator_ColumnPropNameInRow="ACCOUNT_STATUS" msprop:Generator_ColumnPropNameInTable="ACCOUNT_STATUSColumn" msprop:Generator_UserColumnName="ACCOUNT_STATUS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FAX_NUM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFAX_NUM" msprop:Generator_ColumnPropNameInRow="FAX_NUM" msprop:Generator_ColumnPropNameInTable="FAX_NUMColumn" msprop:Generator_UserColumnName="FAX_NUM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PHONE_NUM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPHONE_NUM" msprop:Generator_ColumnPropNameInRow="PHONE_NUM" msprop:Generator_ColumnPropNameInTable="PHONE_NUMColumn" msprop:Generator_UserColumnName="PHONE_NUM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OU_TYPE_CD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOU_TYPE_CD" msprop:Generator_ColumnPropNameInRow="OU_TYPE_CD" msprop:Generator_ColumnPropNameInTable="OU_TYPE_CDColumn" msprop:Generator_UserColumnName="OU_TYPE_CD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="URL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnURL" msprop:Generator_ColumnPropNameInRow="URL" msprop:Generator_ColumnPropNameInTable="URLColumn" msprop:Generator_UserColumnName="URL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BusinessGroup" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBusinessGroup" msprop:Generator_ColumnPropNameInRow="BusinessGroup" msprop:Generator_ColumnPropNameInTable="BusinessGroupColumn" msprop:Generator_UserColumnName="BusinessGroup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT_TYPE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_TYPE" msprop:Generator_ColumnPropNameInRow="ACCOUNT_TYPE" msprop:Generator_ColumnPropNameInTable="ACCOUNT_TYPEColumn" msprop:Generator_UserColumnName="ACCOUNT_TYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RBU" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRBU" msprop:Generator_ColumnPropNameInRow="RBU" msprop:Generator_ColumnPropNameInTable="RBUColumn" msprop:Generator_UserColumnName="RBU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRIMARY_SALES_EMAIL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPRIMARY_SALES_EMAIL" msprop:Generator_ColumnPropNameInRow="PRIMARY_SALES_EMAIL" msprop:Generator_ColumnPropNameInTable="PRIMARY_SALES_EMAILColumn" msprop:Generator_UserColumnName="PRIMARY_SALES_EMAIL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PARENT_ROW_ID" msprop:Generator_ColumnVarNameInTable="columnPARENT_ROW_ID" msprop:Generator_ColumnPropNameInRow="PARENT_ROW_ID" msprop:Generator_ColumnPropNameInTable="PARENT_ROW_IDColumn" msprop:Generator_UserColumnName="PARENT_ROW_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAJORACCOUNT_FLAG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMAJORACCOUNT_FLAG" msprop:Generator_ColumnPropNameInRow="MAJORACCOUNT_FLAG" msprop:Generator_ColumnPropNameInTable="MAJORACCOUNT_FLAGColumn" msprop:Generator_UserColumnName="MAJORACCOUNT_FLAG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMPETITOR_FLAG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOMPETITOR_FLAG" msprop:Generator_ColumnPropNameInRow="COMPETITOR_FLAG" msprop:Generator_ColumnPropNameInTable="COMPETITOR_FLAGColumn" msprop:Generator_UserColumnName="COMPETITOR_FLAG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PARTNER_FLAG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPARTNER_FLAG" msprop:Generator_ColumnPropNameInRow="PARTNER_FLAG" msprop:Generator_ColumnPropNameInTable="PARTNER_FLAGColumn" msprop:Generator_UserColumnName="PARTNER_FLAG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COUNTRY" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOUNTRY" msprop:Generator_ColumnPropNameInRow="COUNTRY" msprop:Generator_ColumnPropNameInTable="COUNTRYColumn" msprop:Generator_UserColumnName="COUNTRY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CITY" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCITY" msprop:Generator_ColumnPropNameInRow="CITY" msprop:Generator_ColumnPropNameInTable="CITYColumn" msprop:Generator_UserColumnName="CITY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnADDRESS" msprop:Generator_ColumnPropNameInRow="ADDRESS" msprop:Generator_ColumnPropNameInTable="ADDRESSColumn" msprop:Generator_UserColumnName="ADDRESS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSTATE" msprop:Generator_ColumnPropNameInRow="STATE" msprop:Generator_ColumnPropNameInTable="STATEColumn" msprop:Generator_UserColumnName="STATE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZIPCODE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnZIPCODE" msprop:Generator_ColumnPropNameInRow="ZIPCODE" msprop:Generator_ColumnPropNameInTable="ZIPCODEColumn" msprop:Generator_UserColumnName="ZIPCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROVINCE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPROVINCE" msprop:Generator_ColumnPropNameInRow="PROVINCE" msprop:Generator_ColumnPropNameInTable="PROVINCEColumn" msprop:Generator_UserColumnName="PROVINCE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BAA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBAA" msprop:Generator_ColumnPropNameInRow="BAA" msprop:Generator_ColumnPropNameInTable="BAAColumn" msprop:Generator_UserColumnName="BAA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CREATED" msprop:Generator_ColumnVarNameInTable="columnCREATED" msprop:Generator_ColumnPropNameInRow="CREATED" msprop:Generator_ColumnPropNameInTable="CREATEDColumn" msprop:Generator_UserColumnName="CREATED" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LAST_UPDATED" msprop:Generator_ColumnVarNameInTable="columnLAST_UPDATED" msprop:Generator_ColumnPropNameInRow="LAST_UPDATED" msprop:Generator_ColumnPropNameInTable="LAST_UPDATEDColumn" msprop:Generator_UserColumnName="LAST_UPDATED" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PriOwnerDivision" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPriOwnerDivision" msprop:Generator_ColumnPropNameInRow="PriOwnerDivision" msprop:Generator_ColumnPropNameInTable="PriOwnerDivisionColumn" msprop:Generator_UserColumnName="PriOwnerDivision" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PriOwnerRowId" msprop:Generator_ColumnVarNameInTable="columnPriOwnerRowId" msprop:Generator_ColumnPropNameInRow="PriOwnerRowId" msprop:Generator_ColumnPropNameInTable="PriOwnerRowIdColumn" msprop:Generator_UserColumnName="PriOwnerRowId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PriOwnerPosition" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPriOwnerPosition" msprop:Generator_ColumnPropNameInRow="PriOwnerPosition" msprop:Generator_ColumnPropNameInTable="PriOwnerPositionColumn" msprop:Generator_UserColumnName="PriOwnerPosition" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOCATION" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLOCATION" msprop:Generator_ColumnPropNameInRow="LOCATION" msprop:Generator_ColumnPropNameInTable="LOCATIONColumn" msprop:Generator_UserColumnName="LOCATION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT_TEAM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_TEAM" msprop:Generator_ColumnPropNameInRow="ACCOUNT_TEAM" msprop:Generator_ColumnPropNameInTable="ACCOUNT_TEAMColumn" msprop:Generator_UserColumnName="ACCOUNT_TEAM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnADDRESS2" msprop:Generator_ColumnPropNameInRow="ADDRESS2" msprop:Generator_ColumnPropNameInTable="ADDRESS2Column" msprop:Generator_UserColumnName="ADDRESS2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT_CC_GRADE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_CC_GRADE" msprop:Generator_ColumnPropNameInRow="ACCOUNT_CC_GRADE" msprop:Generator_ColumnPropNameInTable="ACCOUNT_CC_GRADEColumn" msprop:Generator_UserColumnName="ACCOUNT_CC_GRADE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CURRENCY" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCURRENCY" msprop:Generator_ColumnPropNameInRow="CURRENCY" msprop:Generator_ColumnPropNameInTable="CURRENCYColumn" msprop:Generator_UserColumnName="CURRENCY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SIEBEL_CONTACT" msprop:Generator_TableClassName="SIEBEL_CONTACTDataTable" msprop:Generator_TableVarName="tableSIEBEL_CONTACT" msprop:Generator_TablePropName="SIEBEL_CONTACT" msprop:Generator_RowDeletingName="SIEBEL_CONTACTRowDeleting" msprop:Generator_RowChangingName="SIEBEL_CONTACTRowChanging" msprop:Generator_RowEvHandlerName="SIEBEL_CONTACTRowChangeEventHandler" msprop:Generator_RowDeletedName="SIEBEL_CONTACTRowDeleted" msprop:Generator_UserTableName="SIEBEL_CONTACT" msprop:Generator_RowChangedName="SIEBEL_CONTACTRowChanged" msprop:Generator_RowEvArgName="SIEBEL_CONTACTRowChangeEvent" msprop:Generator_RowClassName="SIEBEL_CONTACTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ROW_ID" msprop:Generator_ColumnVarNameInTable="columnROW_ID" msprop:Generator_ColumnPropNameInRow="ROW_ID" msprop:Generator_ColumnPropNameInTable="ROW_IDColumn" msprop:Generator_UserColumnName="ROW_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MiddleName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMiddleName" msprop:Generator_ColumnPropNameInRow="MiddleName" msprop:Generator_ColumnPropNameInTable="MiddleNameColumn" msprop:Generator_UserColumnName="MiddleName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkPhone" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWorkPhone" msprop:Generator_ColumnPropNameInRow="WorkPhone" msprop:Generator_ColumnPropNameInTable="WorkPhoneColumn" msprop:Generator_UserColumnName="WorkPhone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CellPhone" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCellPhone" msprop:Generator_ColumnPropNameInRow="CellPhone" msprop:Generator_ColumnPropNameInTable="CellPhoneColumn" msprop:Generator_UserColumnName="CellPhone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FaxNumber" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFaxNumber" msprop:Generator_ColumnPropNameInRow="FaxNumber" msprop:Generator_ColumnPropNameInTable="FaxNumberColumn" msprop:Generator_UserColumnName="FaxNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JOB_FUNCTION" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnJOB_FUNCTION" msprop:Generator_ColumnPropNameInRow="JOB_FUNCTION" msprop:Generator_ColumnPropNameInTable="JOB_FUNCTIONColumn" msprop:Generator_UserColumnName="JOB_FUNCTION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PAR_ROW_ID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPAR_ROW_ID" msprop:Generator_ColumnPropNameInRow="PAR_ROW_ID" msprop:Generator_ColumnPropNameInTable="PAR_ROW_IDColumn" msprop:Generator_UserColumnName="PAR_ROW_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ERPID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnERPID" msprop:Generator_ColumnPropNameInRow="ERPID" msprop:Generator_ColumnPropNameInTable="ERPIDColumn" msprop:Generator_UserColumnName="ERPID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PriOrgId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPriOrgId" msprop:Generator_ColumnPropNameInRow="PriOrgId" msprop:Generator_ColumnPropNameInTable="PriOrgIdColumn" msprop:Generator_UserColumnName="PriOrgId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrgID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOrgID" msprop:Generator_ColumnPropNameInRow="OrgID" msprop:Generator_ColumnPropNameInTable="OrgIDColumn" msprop:Generator_UserColumnName="OrgID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OwnerId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOwnerId" msprop:Generator_ColumnPropNameInRow="OwnerId" msprop:Generator_ColumnPropNameInTable="OwnerIdColumn" msprop:Generator_UserColumnName="OwnerId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CanSeeOrder" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCanSeeOrder" msprop:Generator_ColumnPropNameInRow="CanSeeOrder" msprop:Generator_ColumnPropNameInTable="CanSeeOrderColumn" msprop:Generator_UserColumnName="CanSeeOrder" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Password" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sales_Rep" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSales_Rep" msprop:Generator_ColumnPropNameInRow="Sales_Rep" msprop:Generator_ColumnPropNameInTable="Sales_RepColumn" msprop:Generator_UserColumnName="Sales_Rep" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NeverEmail" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNeverEmail" msprop:Generator_ColumnPropNameInRow="NeverEmail" msprop:Generator_ColumnPropNameInTable="NeverEmailColumn" msprop:Generator_UserColumnName="NeverEmail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NeverCall" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNeverCall" msprop:Generator_ColumnPropNameInRow="NeverCall" msprop:Generator_ColumnPropNameInTable="NeverCallColumn" msprop:Generator_UserColumnName="NeverCall" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NeverFax" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNeverFax" msprop:Generator_ColumnPropNameInRow="NeverFax" msprop:Generator_ColumnPropNameInTable="NeverFaxColumn" msprop:Generator_UserColumnName="NeverFax" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NeverMail" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNeverMail" msprop:Generator_ColumnPropNameInRow="NeverMail" msprop:Generator_ColumnPropNameInTable="NeverMailColumn" msprop:Generator_UserColumnName="NeverMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JOB_TITLE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnJOB_TITLE" msprop:Generator_ColumnPropNameInRow="JOB_TITLE" msprop:Generator_ColumnPropNameInTable="JOB_TITLEColumn" msprop:Generator_UserColumnName="JOB_TITLE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMAIL_ADDRESS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEMAIL_ADDRESS" msprop:Generator_ColumnPropNameInRow="EMAIL_ADDRESS" msprop:Generator_ColumnPropNameInTable="EMAIL_ADDRESSColumn" msprop:Generator_UserColumnName="EMAIL_ADDRESS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT_ROW_ID" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_ROW_ID" msprop:Generator_ColumnPropNameInRow="ACCOUNT_ROW_ID" msprop:Generator_ColumnPropNameInTable="ACCOUNT_ROW_IDColumn" msprop:Generator_UserColumnName="ACCOUNT_ROW_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnACCOUNT" msprop:Generator_ColumnPropNameInRow="ACCOUNT" msprop:Generator_ColumnPropNameInTable="ACCOUNTColumn" msprop:Generator_UserColumnName="ACCOUNT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT_TYPE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_TYPE" msprop:Generator_ColumnPropNameInRow="ACCOUNT_TYPE" msprop:Generator_ColumnPropNameInTable="ACCOUNT_TYPEColumn" msprop:Generator_UserColumnName="ACCOUNT_TYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT_STATUS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_STATUS" msprop:Generator_ColumnPropNameInRow="ACCOUNT_STATUS" msprop:Generator_ColumnPropNameInTable="ACCOUNT_STATUSColumn" msprop:Generator_UserColumnName="ACCOUNT_STATUS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COUNTRY" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOUNTRY" msprop:Generator_ColumnPropNameInRow="COUNTRY" msprop:Generator_ColumnPropNameInTable="COUNTRYColumn" msprop:Generator_UserColumnName="COUNTRY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Salutation" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSalutation" msprop:Generator_ColumnPropNameInRow="Salutation" msprop:Generator_ColumnPropNameInTable="SalutationColumn" msprop:Generator_UserColumnName="Salutation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMPLOYEE_FLAG" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_FLAG" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_FLAG" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_FLAGColumn" msprop:Generator_UserColumnName="EMPLOYEE_FLAG">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACTIVE_FLG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnACTIVE_FLG" msprop:Generator_ColumnPropNameInRow="ACTIVE_FLG" msprop:Generator_ColumnPropNameInTable="ACTIVE_FLGColumn" msprop:Generator_UserColumnName="ACTIVE_FLG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="User_Type" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUser_Type" msprop:Generator_ColumnPropNameInRow="User_Type" msprop:Generator_ColumnPropNameInTable="User_TypeColumn" msprop:Generator_UserColumnName="User_Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Reg_Source" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnReg_Source" msprop:Generator_ColumnPropNameInRow="Reg_Source" msprop:Generator_ColumnPropNameInTable="Reg_SourceColumn" msprop:Generator_UserColumnName="Reg_Source" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CREATED" msprop:Generator_ColumnVarNameInTable="columnCREATED" msprop:Generator_ColumnPropNameInRow="CREATED" msprop:Generator_ColumnPropNameInTable="CREATEDColumn" msprop:Generator_UserColumnName="CREATED" type="xs:dateTime" />
+              <xs:element name="LAST_UPDATED" msprop:Generator_ColumnVarNameInTable="columnLAST_UPDATED" msprop:Generator_ColumnPropNameInRow="LAST_UPDATED" msprop:Generator_ColumnPropNameInTable="LAST_UPDATEDColumn" msprop:Generator_UserColumnName="LAST_UPDATED" type="xs:dateTime" />
+              <xs:element name="PRIMARY_FLAG" msprop:Generator_ColumnVarNameInTable="columnPRIMARY_FLAG" msprop:Generator_ColumnPropNameInRow="PRIMARY_FLAG" msprop:Generator_ColumnPropNameInTable="PRIMARY_FLAGColumn" msprop:Generator_UserColumnName="PRIMARY_FLAG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SIEBEL_OPPORTUNITY" msprop:Generator_TableClassName="SIEBEL_OPPORTUNITYDataTable" msprop:Generator_TableVarName="tableSIEBEL_OPPORTUNITY" msprop:Generator_TablePropName="SIEBEL_OPPORTUNITY" msprop:Generator_RowDeletingName="SIEBEL_OPPORTUNITYRowDeleting" msprop:Generator_RowChangingName="SIEBEL_OPPORTUNITYRowChanging" msprop:Generator_RowEvHandlerName="SIEBEL_OPPORTUNITYRowChangeEventHandler" msprop:Generator_RowDeletedName="SIEBEL_OPPORTUNITYRowDeleted" msprop:Generator_UserTableName="SIEBEL_OPPORTUNITY" msprop:Generator_RowChangedName="SIEBEL_OPPORTUNITYRowChanged" msprop:Generator_RowEvArgName="SIEBEL_OPPORTUNITYRowChangeEvent" msprop:Generator_RowClassName="SIEBEL_OPPORTUNITYRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ROW_ID" msprop:Generator_ColumnVarNameInTable="columnROW_ID" msprop:Generator_ColumnPropNameInRow="ROW_ID" msprop:Generator_ColumnPropNameInTable="ROW_IDColumn" msprop:Generator_UserColumnName="ROW_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCOUNT_ROW_ID" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_ROW_ID" msprop:Generator_ColumnPropNameInRow="ACCOUNT_ROW_ID" msprop:Generator_ColumnPropNameInTable="ACCOUNT_ROW_IDColumn" msprop:Generator_UserColumnName="ACCOUNT_ROW_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CREATED" msprop:Generator_ColumnVarNameInTable="columnCREATED" msprop:Generator_ColumnPropNameInRow="CREATED" msprop:Generator_ColumnPropNameInTable="CREATEDColumn" msprop:Generator_UserColumnName="CREATED" type="xs:dateTime" />
+              <xs:element name="ACCOUNT_NAME" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_NAME" msprop:Generator_ColumnPropNameInRow="ACCOUNT_NAME" msprop:Generator_ColumnPropNameInTable="ACCOUNT_NAMEColumn" msprop:Generator_UserColumnName="ACCOUNT_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChannelPartner" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnChannelPartner" msprop:Generator_ColumnPropNameInRow="ChannelPartner" msprop:Generator_ColumnPropNameInTable="ChannelPartnerColumn" msprop:Generator_UserColumnName="ChannelPartner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CURCY_CD" msprop:Generator_ColumnVarNameInTable="columnCURCY_CD" msprop:Generator_ColumnPropNameInRow="CURCY_CD" msprop:Generator_ColumnPropNameInTable="CURCY_CDColumn" msprop:Generator_UserColumnName="CURCY_CD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SUM_REVN_AMT" msprop:Generator_ColumnVarNameInTable="columnSUM_REVN_AMT" msprop:Generator_ColumnPropNameInRow="SUM_REVN_AMT" msprop:Generator_ColumnPropNameInTable="SUM_REVN_AMTColumn" msprop:Generator_UserColumnName="SUM_REVN_AMT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ACCOUNT_ROW_ID1" msprop:Generator_ColumnVarNameInTable="columnACCOUNT_ROW_ID1" msprop:Generator_ColumnPropNameInRow="ACCOUNT_ROW_ID1" msprop:Generator_ColumnPropNameInTable="ACCOUNT_ROW_ID1Column" msprop:Generator_UserColumnName="ACCOUNT_ROW_ID1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SUM_WIN_PROB" msprop:Generator_ColumnVarNameInTable="columnSUM_WIN_PROB" msprop:Generator_ColumnPropNameInRow="SUM_WIN_PROB" msprop:Generator_ColumnPropNameInTable="SUM_WIN_PROBColumn" msprop:Generator_UserColumnName="SUM_WIN_PROB" type="xs:decimal" minOccurs="0" />
+              <xs:element name="STAGE_NAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSTAGE_NAME" msprop:Generator_ColumnPropNameInRow="STAGE_NAME" msprop:Generator_ColumnPropNameInTable="STAGE_NAMEColumn" msprop:Generator_UserColumnName="STAGE_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATUS_CD" msprop:Generator_ColumnVarNameInTable="columnSTATUS_CD" msprop:Generator_ColumnPropNameInRow="STATUS_CD" msprop:Generator_ColumnPropNameInTable="STATUS_CDColumn" msprop:Generator_UserColumnName="STATUS_CD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SALES_METHOD_NAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALES_METHOD_NAME" msprop:Generator_ColumnPropNameInRow="SALES_METHOD_NAME" msprop:Generator_ColumnPropNameInTable="SALES_METHOD_NAMEColumn" msprop:Generator_UserColumnName="SALES_METHOD_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Channel" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnChannel" msprop:Generator_ColumnPropNameInRow="Channel" msprop:Generator_ColumnPropNameInTable="ChannelColumn" msprop:Generator_UserColumnName="Channel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SUM_EFFECTIVE_DT" msprop:Generator_ColumnVarNameInTable="columnSUM_EFFECTIVE_DT" msprop:Generator_ColumnPropNameInRow="SUM_EFFECTIVE_DT" msprop:Generator_ColumnPropNameInTable="SUM_EFFECTIVE_DTColumn" msprop:Generator_UserColumnName="SUM_EFFECTIVE_DT" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SiebelWSFailedLog" msprop:Generator_TableClassName="SiebelWSFailedLogDataTable" msprop:Generator_TableVarName="tableSiebelWSFailedLog" msprop:Generator_RowChangedName="SiebelWSFailedLogRowChanged" msprop:Generator_TablePropName="SiebelWSFailedLog" msprop:Generator_RowDeletingName="SiebelWSFailedLogRowDeleting" msprop:Generator_RowChangingName="SiebelWSFailedLogRowChanging" msprop:Generator_RowEvHandlerName="SiebelWSFailedLogRowChangeEventHandler" msprop:Generator_RowDeletedName="SiebelWSFailedLogRowDeleted" msprop:Generator_RowClassName="SiebelWSFailedLogRow" msprop:Generator_UserTableName="SiebelWSFailedLog" msprop:Generator_RowEvArgName="SiebelWSFailedLogRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="quoteId" msprop:Generator_ColumnVarNameInTable="columnquoteId" msprop:Generator_ColumnPropNameInRow="quoteId" msprop:Generator_ColumnPropNameInTable="quoteIdColumn" msprop:Generator_UserColumnName="quoteId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FunctionName" msprop:Generator_ColumnVarNameInTable="columnFunctionName" msprop:Generator_ColumnPropNameInRow="FunctionName" msprop:Generator_ColumnPropNameInTable="FunctionNameColumn" msprop:Generator_UserColumnName="FunctionName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Parameters" msprop:Generator_ColumnVarNameInTable="columnParameters" msprop:Generator_ColumnPropNameInRow="Parameters" msprop:Generator_ColumnPropNameInTable="ParametersColumn" msprop:Generator_UserColumnName="Parameters" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailAddress" msprop:Generator_ColumnVarNameInTable="columnEmailAddress" msprop:Generator_ColumnPropNameInRow="EmailAddress" msprop:Generator_ColumnPropNameInTable="EmailAddressColumn" msprop:Generator_UserColumnName="EmailAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ErrorMessage" msprop:Generator_ColumnVarNameInTable="columnErrorMessage" msprop:Generator_ColumnPropNameInRow="ErrorMessage" msprop:Generator_ColumnPropNameInTable="ErrorMessageColumn" msprop:Generator_UserColumnName="ErrorMessage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InsertTime" msprop:Generator_ColumnVarNameInTable="columnInsertTime" msprop:Generator_ColumnPropNameInRow="InsertTime" msprop:Generator_ColumnPropNameInTable="InsertTimeColumn" msprop:Generator_UserColumnName="InsertTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LastRecallTime" msprop:Generator_ColumnVarNameInTable="columnLastRecallTime" msprop:Generator_ColumnPropNameInRow="LastRecallTime" msprop:Generator_ColumnPropNameInTable="LastRecallTimeColumn" msprop:Generator_UserColumnName="LastRecallTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IsRecall" msprop:Generator_ColumnVarNameInTable="columnIsRecall" msprop:Generator_ColumnPropNameInRow="IsRecall" msprop:Generator_ColumnPropNameInTable="IsRecallColumn" msprop:Generator_UserColumnName="IsRecall" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SIEBEL_ACCOUNT" />
+      <xs:field xpath="mstns:ROW_ID" />
+    </xs:unique>
+    <xs:unique name="SIEBEL_OPPORTUNITY_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SIEBEL_OPPORTUNITY" />
+      <xs:field xpath="mstns:ROW_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

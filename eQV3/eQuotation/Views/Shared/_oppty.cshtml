@@ -1,0 +1,298 @@
+﻿
+<style>
+    /****************************************************************/
+/*                          TAB STYLE                           */
+/****************************************************************/
+
+.tabnav_op { padding-left: 20px; margin-bottom: 0; list-style: none; }
+.tabnav_op:before, .tabnav:after { display: table; content: " "; }
+.tabnav_op:after { clear: both; }
+.tabnav_op:before, .tabnav_op:after { display: table; content: " "; }
+.tabnav_op:after { clear: both; }
+.tabnav_op > li { position: relative; display: block; cursor: pointer;}
+.tabnav_op > li > a { position: relative; display: block; padding: 2px 15px; }
+.tabnav_op > li > a:hover, .tabnav_op > li > a:focus { text-decoration: none; background-color: #fefefe; }
+.tabnav_op > li.disabled > a { color: #999999; }
+.tabnav_op > li.disabled > a:hover, .tabnav_op > li.disabled > a:focus { color: #999999; text-decoration: none; cursor: not-allowed; background-color: transparent; }
+.tabnav_op .open > a, .tabnav_op .open > a:hover, .tabnav_op .open > a:focus { background-color: #eeeeee; border-color: #428bca; } 
+.tabnav_op .open > a .caret, .tabnav_op .open > a:hover .caret, .tabnav_op .open > a:focus .caret { border-top-color: #2a6496; border-bottom-color: #2a6496; } 
+.tabnav_op .nav-divider { height: 1px; margin: 9px 0; overflow: hidden; background-color: #e5e5e5; } 
+.tabnav_op > li > a > img { max-width: none; }
+.nav-tabs_op { border-bottom: 1px solid #dddddd; } 
+.nav-tabs_op > li { float: left; margin-bottom: -1px; }
+.nav-tabs_op > li > a { margin-right: 2px; line-height: 1.428571429; border: 1px solid transparent; border-radius: 4px 4px 0 0; }
+.nav-tabs_op > li > a:hover { border-color: #eeeeee #eeeeee #dddddd; }
+.nav-tabs_op > li.active > a,
+.nav-tabs_op > li.active > a:hover,
+.nav-tabs_op > li.active > a:focus { color: #555555; cursor: default; background-color: #ffffff; border: 1px solid #dddddd; border-top:4px solid #FF9900;  border-bottom-color: transparent; }
+.nav-tabs_op.nav-justified { width: 100%; border-bottom: 0; }
+.nav-tabs_op.nav-justified > li { float: none; }
+.nav-tabs_op.nav-justified > li > a { margin-bottom: 5px; text-align: center; } 
+.nav-tabs_op.nav-justified > .dropdown .dropdown-menu { top: auto; left: auto; }
+.tab-content_op > .tab-pane_op { display: none;} 
+.tab-content_op > .tab-pane_op > div { background-color: #fff; min-height: 150px; border: 1px solid #dedede; border-top: 1px solid transparent; overflow:auto; }
+.tab-content_op > .active { display: block; }
+.tabbox { margin: 20px 0px 10px 0px; }
+
+</style>
+
+    <div id="div_detail_op" style="margin-top:10px;">
+        <div>
+            <ul class="tabnav_op nav-tabs">
+                <li data-value="tab_op1">
+                    <a>Pick Opportunity</a>
+                </li>
+                <li data-value="tab_op2">
+                    <a>New Opportunity</a>
+                </li>
+            </ul>
+            <div class="tab-content_op" style="background-color: #fff;">
+                <div class="tab-pane_op" id="tab_op1" style="overflow:auto;">
+                    <table>
+                        <tr>
+                            <td class="field150 right">Opportunity Name:</td>
+                            <td class="w35p">
+                                @Html.TextBox("txtOptyName", "", new { @class = "text090" })&nbsp;
+                            </td>   
+                            <td>
+                                <button id="btn-search" type="button" class="button"><i class="fa fa-search"></i> Search</button>&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field200" colspan="3">&nbsp;</td>
+                        </tr>
+                    </table>
+                    <table id="tblOpptyList">
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="tab-pane_op" id="tab_op2" style="overflow:auto;">
+                    <table>
+                        <tr>
+                            <td class="field150 right">New Opportunity name:</td>
+                            <td class="w35p">
+                                @Html.TextBox("txtNewOpptyName", "", new { @class = "text090" })&nbsp;
+                            </td>
+                            <td>
+                                <button id="btn-addOppty" type="button" class="button"><i class="fa fa-plus fa-lg"></i> New Opportunity</button>&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field150 right">Opportunity Stage:</td>
+                            <td class="w35p">
+                               @Html.DropDownList("ddlStage", (IEnumerable<SelectListItem>)ViewBag.Stage, new { @style = "width:90%" })&nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                           
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        //$("#txtNewOpptyName").val($("#Opportunity").val());
+        //$("#ddlStage").val($("#hd_OpptyStage").val());
+
+        //initiate datatable instance
+        oTable_oppty = $("#tblOpptyList").dataTable({
+            "bJQueryUI": false,
+            "bLengthChange": false,
+            "bFilter": false,
+            "iDisplayLength": 100,
+            "bAutoWidth": true,
+            "sScrollX": "99%",
+            "sScrollXInner": "99%",
+            "sScrollY": "290px",
+            "bScrollCollapse": true,
+            "bPaginate": false
+             , "aoColumnDefs": [
+                 { "bVisible": false, "aTargets": [0] },
+                 { "sTitle": "Projecct Name","sWidth":"25%", "aTargets": [1] },
+                 { "sTitle": "Account Name", "sWidth": "15%", "aTargets": [2] },
+                 { "sTitle": "Created", "sWidth": "10%", "aTargets": [3] },
+                 { "sTitle": "Primary", "sWidth": "10%", "aTargets": [4] },
+                 { "sTitle": "Stage", "sWidth": "15%", "aTargets": [5] },
+                 { "sTitle": "CONTACT", "sWidth": "10%", "aTargets": [6] }
+             ]
+        });
+        $(".dataTable").width('100%');
+        $(".dataTables_scrollHeadInner").width('100%');
+        $(".dataTables_scrollBody").height('100%');
+        //clickevent();
+
+       //tab --start
+
+        if ($("ul.tabnav_op li")) {
+            $("ul.tabnav_op li").first().addClass("active");
+        }
+        if ($(".tab-pane_op")) {
+            $(".tab-pane_op").first().addClass("active");
+        }
+
+         //switch to different tab
+        $("ul.tabnav_op li").on("click", function () {
+
+            //display tab element
+            $("ul.tabnav_op li").removeClass("active");
+            $(this).addClass("active");
+
+            //change tab content
+            $(".tab-pane_op").removeClass("active");
+            var tabId = $(this).attr("data-value");
+            $("#" + tabId).addClass("active");
+        });
+
+
+        //tab --End
+
+
+        //Search
+        $("#btn-search").on("click", function () {
+            var OptyName = $("#txtOptyName").val();
+            var EndCustomerERPID = $("#txtERPID-Customer").val();
+            var postdata = JSON.stringify({
+                OptyName: OptyName, AccountRowID: $('#hd_AccountID').val()
+                , EndCustomerERPID: EndCustomerERPID
+            });
+            $.ajax({
+                url: "/Operation/getOpptyList", type: "POST", dataType: "json", data: postdata
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+                    if (redata.succeed) {
+                        var result = redata.data;
+                        var tbbody;
+                        //加入checkbox
+                        for (var i = 0; i < result.length; i++) {
+                            tbbody = "<a class='select-oppty' href='javascript:void(0)'>" + result[i][1] + " </a> ";
+                            result[i][1] = tbbody;
+                        }
+                        table = $('#tblOpptyList').dataTable();
+                        oSettings = table.fnSettings();
+
+                        table.fnClearTable(this);
+                        for (var i = 0; i < result.length; i++) {
+
+                            table.oApi._fnAddData(oSettings, result[i]);
+                        }
+                        oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+                        table.fnDraw();
+                        clickevent();
+                        //$(".dataTable").width('100%');
+                        //$(".dataTables_scrollHeadInner").width('100%');
+                        //$(".dataTables_scrollBody").height('100%');
+                    } else {
+                        alert(redata.err);
+                    }
+                }
+            });
+        });
+
+        //直接先查詢一次
+        setTimeout(function () {
+            $("#btn-search").click();
+        },300);
+        ////直接先查詢一次
+        //$("#btn-search").click();
+
+        //Search
+        $("#btn-addOppty").on("click", function (e) {
+            e.preventDefault();
+
+            if ($("#txtNewOpptyName").val() == "") {
+                alert('New Opportunity name为必填栏位');
+                return false;
+            }
+
+
+            var postdata = JSON.stringify({
+                optyName: $("#txtNewOpptyName").val(),
+                quoteId: $("#hd_QuoteID").val(), optyStage: $("#ddlStage").val()
+            });
+            //$.blockUI();
+
+            $.ajax({
+                url: "/Operation/addOpportunity", type: "POST", dataType: "json"
+               , async: false, data: postdata
+              , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                  if (redata.succeed) {
+
+                      var result = redata.data;
+                      if (result) {
+                          if (result) {
+                              $("#Opportunity").val(result);
+                              $("#hd_OpptyStage").val($("#ddlStage").val());
+                              $("#hd_OpptyId").val("new ID");// for new version
+                          } else {
+                              $("#Opportunity").val("");
+                              $("#hd_OpptyStage").val("");
+                              $("#hd_OpptyId").val("");// for new version
+                          }
+                      }
+                  } else {
+                      alert(redata.err);
+                  }
+                  $.modal.close();
+              }
+            });
+        });
+    });
+
+    //The click event must be load again.
+    function clickevent() {
+
+        $(".select-oppty").on("click", function (e) {
+            e.preventDefault();
+            var rowIndex = oTable_oppty.fnGetPosition($(this).closest('tr')[0]);
+
+            $.modal.close();
+
+            var postdata = JSON.stringify({
+                optyId: oTable_oppty.fnGetData(rowIndex)[0], optyName: $(this).text(),
+                quoteId: $("#hd_QuoteID").val(), optyStage: oTable_oppty.fnGetData(rowIndex)[5]
+            });
+
+            //$.blockUI();
+
+            $.ajax({
+                url: "/Operation/setOpportunity", type: "POST", dataType: "json"
+                , async: false, data: postdata
+               , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                   if (redata.succeed) {
+
+                       var result = redata.data;
+                       if (result) {
+                           if (result) {
+                               $("#Opportunity").val(result);
+                               $("#hd_OpptyStage").val(result);// for new version
+                               $("#hd_OpptyId").val(oTable_oppty.fnGetData(rowIndex)[0]);// for new version
+                           } else {
+                               $("#Opportunity").val("");
+                               $("#hd_OpptyStage").val("");// for new version
+                               $("#hd_OpptyId").val("");// for new version
+                           }
+                       }
+                   } else {
+                       alert(redata.err);
+                       //$.unblockUI();
+                   }
+                   //$.unblockUI();
+               }
+            });
+        });
+
+        //設定哪個teg按下enter後會觸發哪一個按鈕的click事件
+        EnterClick('txtOptyName', 'btn-search');
+    }
+</script>

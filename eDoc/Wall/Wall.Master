@@ -1,0 +1,103 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Wall.master.vb" Inherits="EDOC.Wall" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>My AOnline Wall</title>
+    <link href="/Css/MainWall.css" rel="stylesheet" type="text/css" />
+    <script src="/Js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="/Js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+    <link href="/Css/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
+    <script src="/Js/MainWall.js" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div>
+        <table width="100%">
+            <tr>
+                <td align="left" style="border: 0px">
+                    <a href="~/Home_MyAOnlineWall.aspx" id="aLogo" runat="server">
+                        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/Logo_AOnlineWall.gif" BorderWidth="0" />
+                    </a>
+                </td>
+                <td align="right" valign="bottom" style="border: 0px">
+                    <table width="100%">
+                        <tr>
+                            <td align="right" style="border: 0">
+                                <b>User Id:</b>&nbsp;&nbsp;<asp:Label runat="server" ID="lblUserId" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="border: 0">
+                                <table id="tableTopLink" runat="server" style="width: 430px">
+                                    <tr align="right">
+                                        <td>
+                                            <asp:HyperLink runat="server" ID="hyHome" NavigateUrl="~/Wall/AOnlineHomePageEdit.aspx" Text="Edit Home Page" />
+                                        </td>
+                                        <td>
+                                            <asp:HyperLink runat="server" ID="hyMyAOnlineWall" NavigateUrl="~/Home_MyAOnlineWall.aspx" Text="My AOline Wall" />
+                                        </td>
+                                        <td runat="server" id="tdDefaultHome">
+                                            <asp:HyperLink runat="server" ID="hyeQuotation" NavigateUrl="~/Home.aspx" Text="eQuotation" />
+                                        </td>
+                                        <td>
+                                            <asp:LinkButton ID="lkbMyAdvantech" runat="server" ForeColor="#333333" Text="MyAdvantech" />
+                                        </td>
+                                        <td>
+                                            <asp:LinkButton ID="lbLogOut" runat="server" ForeColor="#666666" Text="<%$ Resources:myRs,Logout%>" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <asp:Literal ID="ltLine" runat="server"></asp:Literal>
+        <table id="tbMain" width="100%">
+            <tr>
+                <td id="tdLeftMenu" valign="top" style="width: 200px" runat="server" visible="false">
+                    <table width="100%">
+                        <tr style="background-image: url(/Images/bg.jpg); border-left: 1px solid #eeeeee; border-right: 1px solid #eeeeee;
+                            border-top: 1px solid #eeeeee" onmouseover="this.style.background='url(/Images/bgactive.jpg)';"
+                            onmouseout="this.style.background='url(/Images/bg.jpg)';">
+                            <td class="tdIcon" style="padding-left:1px;padding-right:0px">
+                                <img src="/Images/History.png" class="iconM" alt="Catalog" />
+                            </td>
+                            <td class="tdCata">
+                                <span style="line-height: 24px; font-weight: bold; color: #1e5997">Search History</span>
+                            </td>
+                        </tr>
+                        <tr style="background-image: url(/Images/bg.jpg); border-left: 1px solid #eeeeee; border-right: 1px solid #eeeeee;
+                            border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee" onmouseover="this.style.background='url(/Images/bgactive.jpg)';"
+                            onmouseout="this.style.background='url(/Images/bg.jpg)';">
+                            <td class="tdIcon" style="padding-left:1px;padding-right:0px">
+                                <img src="/Images/openfolder.png" class="iconM" alt="Catalog" />
+                            </td>
+                            <td class="tdCata">
+                                <span style="line-height: 24px; font-weight: bold; color: #1e5997">My Documents</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="overflow: scroll; width: 200px; height: 600px">
+                        <asp:ContentPlaceHolder ID="cphMenu" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+                <td id="tdRight" valign="top" class="clearPaddingTopBottom">
+                    <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+        <div style="width:100%; clear:both; text-align:center;">
+            <asp:Label ID="lblVersion" runat="server" Visible="true" Text="Advantech Aonline Wall 2013.7.1"></asp:Label>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

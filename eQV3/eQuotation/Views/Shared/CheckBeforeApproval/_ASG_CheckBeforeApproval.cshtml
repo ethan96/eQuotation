@@ -1,0 +1,69 @@
+﻿@using WorkFlowlAPI
+@model eQuotation.ViewModels.QuoteForm.QuoteFormViewModel
+
+<div class="titlebox topbox">
+    <h4>Approval Confirm:</h4>
+</div>
+<div style="margin:10px;">
+    <div class="actionbox">
+        <ul>
+            @if (Model.FindApproverResult == FindApproverResult.NeedApprovalForGP)
+            {
+                <li>
+                    <button id="btn-Approval-confirm" type="submit" name="submitButton" value="ConfirmAfterCheck"><i class="fa fa-check-square-o"></i>Confirm</button>
+                </li>
+            }
+            <li>
+                <a id="btn-Approval-cancel"><i class="fa fa-times"></i>Cancel</a>
+            </li>
+        </ul>
+    </div>
+    <div style="margin:10px;">
+        @if (Model.FindApproverResult == FindApproverResult.SalesSectorNotFound)
+        {
+            <h2 align="center" style="color: #FF0000;">GP Rule can not be found, please check eManager settings of @Model.SalesRepresentatives.FirstOrDefault().Email</h2>
+        }
+        else if (Model.FindApproverResult == FindApproverResult.NegativeGP)
+        {
+            <h3 align="center" style="color: #FF0000;">Negative GP!  Please check your quoting price.</h3>
+        }
+        else
+        {
+
+            <div class="approval-quoteItem" style="pointer-events: none;">
+                @Html.Partial("~/Views/Shared/QuoteDetails/_ASG_QuoteDetails.cshtml", Model.quote)
+            </div>
+            <div id="approvalReasonReminder">
+                <h4>This quote must be approved through Approval Flow due to below issues: </h4>
+                <ul>
+                    @if (Model.FindApproverResult == FindApproverResult.NeedApprovalForGP)
+                    {
+                        <li class="approvedIssue">Below GP: You can't download PDF or send mail until quote is approved.</li>
+                    }
+                </ul>
+            </div>
+            <h4>Please provide comments for Approval Flow:</h4>
+            @Html.TextAreaFor(m => m.ApprovalReason, new { style = "height:100px;" })
+            <div id="quoteApproverList">
+                @Html.Partial("~/Views/Shared/QuoteApprovalList/_ASG_QuoteApproverList.cshtml", @Model.QuoteApproval,
+                    new ViewDataDictionary()
+                    {
+                        TemplateInfo = new System.Web.Mvc.TemplateInfo
+                        {
+                            HtmlFieldPrefix = "QuoteApproval"
+                        }
+                    })
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    $("#btn-Approval-confirm").on("click", function () {
+        if ($("#ApprovalReason").val() == "") {
+            alert('Comment for approval flow is required');
+            return false;
+        }
+    });
+
+</script>

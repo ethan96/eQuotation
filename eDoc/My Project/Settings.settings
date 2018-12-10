@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="EDOC_AgsWS_USTaxService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ags.advantech.com/WebService/USTaxService.asmx</Value>
+    </Setting>
+    <Setting Name="EDOC_CBOMWS_MyCBOMDAL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://my.advantech.com/Services/MyCBOMDAL.asmx</Value>
+    </Setting>
+    <Setting Name="EDOC_eCovWS_WSSiebel" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.20.1.43:8089/WSSiebel.asmx</Value>
+    </Setting>
+    <Setting Name="EDOC_eStoreQuote_eStoreWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://buy.advantech.com/eStoreWebService.asmx</Value>
+    </Setting>
+    <Setting Name="EDOC_MAMigrationWS_MAMigration" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://my.advantech.com/Services/MAMigration.asmx</Value>
+    </Setting>
+    <Setting Name="EDOC_SAP_WS_B2B_AEU_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://myadvan-global:9000/B2B_SAP_WS.asmx</Value>
+    </Setting>
+    <Setting Name="EDOC_SAPWS_eBizAEU_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://myadvan-global:9000/eBizAEU_WS.asmx</Value>
+    </Setting>
+    <Setting Name="EDOC_SiebelWS_Siebel_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://myadvan-global:2000/Services/Siebel_WS.asmx</Value>
+    </Setting>
+    <Setting Name="EDOC_SSO_MembershipWebservice" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://member.advantech.com/membershipwebservice.asmx</Value>
+    </Setting>
+    <Setting Name="EDOC_UpdateSiebelAcc_ADVWebService_UpdAccount" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://CRMAP-GLOBAL3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MYADVANTECH&amp;Password=MYADVANTECH1234</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

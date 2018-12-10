@@ -1,0 +1,129 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+
+<div class="main-content template-white-content" style="font-family: sans-serif;">
+
+    @Html.Partial("~/Views/Shared/QuoteHeader/_ASG_QuoteHeader.cshtml", @Model)
+
+    @Html.Partial("~/Views/Shared/QuoteDetails/_ASG_QuoteDetails.cshtml", @Model)
+
+    <div id="pdfFooter">
+        <table style="width:100%; padding-top:20px; padding-bottom:10px;" class="stylenormal" align="center">
+            <tr>
+                <td style="width:70%;">
+                    @if (Model.Approval != null)
+                    {
+                        <table style="width:100%" class="stylenormal" align="center">
+                            <tr>
+                                <td><b>Approval Reason</b>:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea class='salesComment' cols="50" rows="5" readonly="readonly" style="border: none">@Model.SalesComment</textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                    else
+                    {
+                        <table style="width:100%; border:1px solid black; padding-bottom:20px; vertical-align: top; " class="stylenormal" align="center">
+                            <tr>
+                                <td>
+                                    <b>Comments:</b>
+                                    <p class="commentParagraph">
+                                        @if (!string.IsNullOrEmpty(@Model.QuotationNotes))
+                                        {
+                                            @Model.QuotationNotes
+                                        }
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                </td>
+                <td style="width:30%; vertical-align: top; font-size: 14px; padding-left: 10px;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        @if (Model.GPIsViewable)
+                        {
+                            <tr>
+                                <td>
+                                    <b>Total Margin</b>:
+                                </td>
+                                <td style="font-weight: bold; text-align:right;">@((Model.TotalMargin * 100).ToString("N")) %</td>
+                            </tr>
+                        }
+                        <tr style="border-top: 2px solid currentColor;">
+                            <td><b>Sub Total</b>:</td>
+                            <td style="text-align:right; font-weight: bold;"><span>@Model.QuoteTotalAmount_WithoutTax.ToString("N") @Model.Currency</span></td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid currentColor; height: 40px; vertical-align: top;">
+                            <td><b>GST Taxable</b>:</td>
+                            <td style="text-align:right; font-weight: bold;"><span>@Model.QuoteTotalTax.ToString("N") @Model.Currency</span></td>
+                        </tr>
+                        <tr style="border-bottom: 6px double currentColor;">
+                            <td><b>Grand Total</b>:</td>
+                            <td style="font-weight: bold; text-align:right;">
+                                <span>@Model.CurrencySign @Model.QuoteTotalAmount_WithTax.ToString("N") @Model.Currency</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table style="width:100%;  border:1px solid black;  padding: 2px;" class="stylenormal" align="center">
+            <tr>
+                <td>
+                    <p style="font-size:10px;">
+                        Any request on the change of bank account details, please contact Advantech personnel via phone for clarification.<br /><br />
+                        Terms and Conditions:<br />
+                        (1) LT*: Lead time (A - 10days, B - 90% 4 wks C - 80% 8 wks V,D,T,P By case)<br />
+                        (2) If the quotation is agreeable and accepted, customer may stamp and sign on this quotation as an
+                        acceptance to purchase, which will form the basis of the sales contract, with terms/conditions binding
+                        between both parties. No cancellation of order will be allowed.<br />
+                        (3) Advantech limited warranty policy shall apply, kindly refer to
+                        http://www.advantechsg.com.sg/sg/TC/warrantypolicy.pdf <br />
+                        (4) Shipment below S$300.00 is subjected to local delivery charge of S$35.00 per trip.<br />
+                        (5) All prices, specifications and product descriptions are subjected to change without prior notice.<br />
+                        (6) Please refer to the following website for the latest revision of terms and conditions:
+                        http://www.advantechsg.com.sg/sg/TC/TC-Sales.html <br />
+                        (7) For Software License distribution product Sales are subject to additional terms.
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <table style="width:100%;" class="stylenormal" align="center">
+            <tr>
+                <td colspan="2" style="width:50%;"><b>ADVANTECH CO. SINGAPORE PTE LTD</b></td>
+                <td colspan="1"></td>
+                <td colspan="2" style="width:50%;"><b>Accepted and Confirmed by:</b></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border-bottom: 2px solid currentColor; height:50px;"></td>
+                <td colspan="1"></td>
+                <td colspan="2" style="border-bottom: 2px solid currentColor; height:50px;"></td>
+            </tr>
+            <tr>
+                <td style="width:15%;">Salesperson Name:</td>
+                <td>@Model.SalesName &nbsp;&nbsp; Tel:@Model.SalesTel</td>
+                <td style="width:2%;"></td>
+                <td style="width:25%;">Company Stamp & Signature</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Email Address:</td>
+                <td>@Model.SalesEmail</td>
+                <td style="width:2%;"></td>
+                <td>Date:</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<script>
+    $('.commentParagraph').html($('.commentParagraph').text().replace(/\r\n?|\n/g, '<br />'));
+</script>
+
+
+
+

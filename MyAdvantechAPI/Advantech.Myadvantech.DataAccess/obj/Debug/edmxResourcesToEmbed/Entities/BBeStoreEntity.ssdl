@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BBeStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="CartID" />
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoldtoID" Type="int" />
+    <Property Name="BilltoID" Type="int" />
+    <Property Name="ShiptoID" Type="int" />
+    <Property Name="TotalAmount" Type="money" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastUpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProtectionStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesDivision" Type="varchar" MaxLength="50" />
+    <Property Name="LocalCurrency" Type="nvarchar" MaxLength="50" />
+    <Property Name="LocalCurExchangeRate" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="MiniSiteID" Type="int" />
+  </EntityType>
+  <EntityType Name="CartContact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactType" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AddressID" Type="nvarchar" MaxLength="100" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttCompanyName" Type="nvarchar" MaxLength="100" />
+    <Property Name="FaxNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelExt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="1000" />
+    <Property Name="City" Type="nvarchar" MaxLength="200" />
+    <Property Name="State" Type="nvarchar" MaxLength="100" />
+    <Property Name="County" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastUpdateTime" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="LegalForm" Type="nvarchar" MaxLength="128" />
+    <Property Name="VATNumbe" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValidationStatus" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CartItem">
+    <Key>
+      <PropertyRef Name="CartID" />
+      <PropertyRef Name="ItemNo" />
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ItemNo" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BTOConfigID" Type="nvarchar" MaxLength="100" />
+    <Property Name="SProductID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Qty" Type="int" Nullable="false" />
+    <Property Name="DueDate" Type="datetime" Nullable="false" />
+    <Property Name="RequiredDate" Type="datetime" Nullable="false" />
+    <Property Name="AdjustedPrice" Type="money" Nullable="false" />
+    <Property Name="UnitPrice" Type="money" Nullable="false" />
+    <Property Name="AutoOrderFlag" Type="bit" />
+    <Property Name="AutoOrderQty" Type="int" />
+    <Property Name="SupplierDueDate" Type="datetime" />
+    <Property Name="ItemType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerMessage" Type="nvarchar" MaxLength="2000" />
+    <Property Name="PackageID" Type="int" />
+    <Property Name="AffiliateID" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeliveryPlant" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShippingMethod" Type="nvarchar" MaxLength="50" />
+    <Property Name="PromotionStrategy" Type="int" />
+    <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PromotionMessage" Type="nvarchar" MaxLength="500" />
+    <Property Name="BundleID" Type="int" />
+    <Property Name="WarrantyItem" Type="int" />
+    <Property Name="RelatedItem" Type="int" />
+    <Property Name="RelatedType" Type="int" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="CartID" />
+      <PropertyRef Name="OrderNo" />
+    </Key>
+    <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderType" Type="nvarchar" MaxLength="50" />
+    <Property Name="PurchaseNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="PurchaseOrderFile" Type="nvarchar" MaxLength="200" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="PaymentType" Type="nvarchar" MaxLength="100" />
+    <Property Name="PartialFlag" Type="char" MaxLength="1" />
+    <Property Name="CombineOrderFlag" Type="char" MaxLength="1" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeliveryPlant" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipVia" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderNote" Type="nvarchar" MaxLength="1000" />
+    <Property Name="OrderStatus" Type="nvarchar" MaxLength="1000" />
+    <Property Name="LastUpdated" Type="datetime" />
+    <Property Name="AutoOrderFlag" Type="char" MaxLength="1" />
+    <Property Name="PaymentID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResellerID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerComment" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ChannelID" Type="int" />
+    <Property Name="ChannelName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Courier" Type="nvarchar" MaxLength="100" />
+    <Property Name="CourierAccount" Type="nvarchar" MaxLength="100" />
+    <Property Name="CourierPhone" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShippingMethod" Type="nvarchar" MaxLength="500" />
+    <Property Name="ZM" Type="varchar" MaxLength="50" />
+    <Property Name="Z2" Type="varchar" MaxLength="50" />
+    <Property Name="SalesID" Type="nvarchar" MaxLength="50" />
+    <Property Name="SAPSyncBy" Type="varchar" MaxLength="50" />
+    <Property Name="SAPSyncDate" Type="datetime" />
+    <Property Name="SAPSyncStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="TDSCost" Type="money" />
+    <Property Name="ShipmentTerm" Type="nvarchar" MaxLength="50" />
+    <Property Name="EarlyShipFlag" Type="bit" />
+    <Property Name="Freight" Type="money" />
+    <Property Name="Insurance" Type="money" />
+    <Property Name="Tax" Type="money" />
+    <Property Name="TaxRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="RequiredDate" Type="datetime" />
+    <Property Name="ConfirmedDate" Type="datetime" />
+    <Property Name="ConfirmedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="TotalAmount" Type="money" />
+    <Property Name="VATAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="VATNumbe" Type="nvarchar" MaxLength="500" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Source" Type="nvarchar" MaxLength="500" />
+    <Property Name="PromoteCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalDiscount" Type="money" />
+    <Property Name="LocalCurrency" Type="nvarchar" MaxLength="50" />
+    <Property Name="LocalCurExchangeRate" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="LastUpdateBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="FreightDiscount" Type="money" />
+    <Property Name="TaxDiscount" Type="money" />
+    <Property Name="ResellerCertificate" Type="nvarchar" MaxLength="200" />
+    <Property Name="DutyAndTax" Type="money" />
+    <Property Name="TaxAndFees" Type="money" />
+    <Property Name="VATTax" Type="money" />
+    <Property Name="OtherTaxAndFees" Type="money" />
+    <Property Name="Surcharge" Type="money" />
+    <Property Name="RegistrationNumber" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OrderSyncedRecords">
+    <Key>
+      <PropertyRef Name="OrderNo" />
+      <PropertyRef Name="StoreID" />
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="OrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SalesOffice" Type="nvarchar" MaxLength="50" />
+    <Property Name="CashManagmentGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesDistrict" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="Division" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeliveryPriority" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesAssistant" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMPCODE3" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShippingCondition" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distribution_Channel" Type="nvarchar" MaxLength="50" />
+    <Property Name="EarlyShipping" Type="bit" />
+    <Property Name="PartialShipment" Type="bit" />
+    <Property Name="ReturnMessage" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="OrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CartID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StoreID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="500" />
+    <Property Name="StatusCode" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CCUser1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardHolderName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comment1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comment2" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransactionDesc" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="CCResultCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="CCPNREF" Type="nvarchar" MaxLength="50" />
+    <Property Name="CCRESPMSG" Type="nvarchar" MaxLength="100" />
+    <Property Name="CCAuthCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="CCAVSAddr" Type="nvarchar" MaxLength="10" />
+    <Property Name="CCAVSZIP" Type="nvarchar" MaxLength="10" />
+    <Property Name="CCIAVS" Type="nvarchar" MaxLength="10" />
+    <Property Name="CCPREFPSMSG" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CCPOSTFPSMSG" Type="nvarchar" MaxLength="100" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="1000" />
+    <Property Name="EncryptCardNumber" Type="varbinary" MaxLength="256" />
+    <Property Name="CardExpiredDate" Type="nvarchar" MaxLength="6" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecurityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastFourDigit" Type="int" />
+    <Property Name="TranxType" Type="nvarchar" MaxLength="100" />
+    <Property Name="OriginalTranxID" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Cart_CartContact">
+    <End Role="CartContact" Type="Self.CartContact" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CartContact">
+        <PropertyRef Name="ContactID" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="SoldtoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_CartContact1">
+    <End Role="CartContact" Type="Self.CartContact" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CartContact">
+        <PropertyRef Name="ContactID" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="BilltoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_CartContact2">
+    <End Role="CartContact" Type="Self.CartContact" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CartContact">
+        <PropertyRef Name="ContactID" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="ShiptoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CartItem_Cart">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CartItem" Type="Self.CartItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="CartID" />
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="CartItem">
+        <PropertyRef Name="CartID" />
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderMaster_CartMaster">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="CartID" />
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CartID" />
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderSyncedRecords_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderSyncedRecords" Type="Self.OrderSyncedRecords" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="StoreID" />
+        <PropertyRef Name="CartID" />
+        <PropertyRef Name="OrderNo" />
+      </Principal>
+      <Dependent Role="OrderSyncedRecords">
+        <PropertyRef Name="StoreID" />
+        <PropertyRef Name="CartID" />
+        <PropertyRef Name="OrderNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BBeStoreModelStoreContainer">
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CartContact" EntityType="Self.CartContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CartItem" EntityType="Self.CartItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderSyncedRecords" EntityType="Self.OrderSyncedRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cart_CartContact" Association="Self.FK_Cart_CartContact">
+      <End Role="CartContact" EntitySet="CartContact" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_CartContact1" Association="Self.FK_Cart_CartContact1">
+      <End Role="CartContact" EntitySet="CartContact" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_CartContact2" Association="Self.FK_Cart_CartContact2">
+      <End Role="CartContact" EntitySet="CartContact" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CartItem_Cart" Association="Self.FK_CartItem_Cart">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="CartItem" EntitySet="CartItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderMaster_CartMaster" Association="Self.FK_OrderMaster_CartMaster">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderSyncedRecords_Order" Association="Self.FK_OrderSyncedRecords_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderSyncedRecords" EntitySet="OrderSyncedRecords" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

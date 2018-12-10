@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DOCH
+</name>
+</assembly>
+<members>
+<member name="P:DOCH.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:DOCH.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:DOCH.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:DOCH.Doc.NewUID">
+	<summary>
+ Create new quotation uid, ex ERHJDSSFUW
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:DOCH.Doc.NewQuotationNo(COMM.Fixer.eDocReg,COMM.Fixer.eDocType)">
+	<summary>
+ Create new quotation no, ex AUSQxxxxxx  AJPQxxxxxx
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:DOCH.DOCHeaderExtensionLine">
+	<summary>
+	</summary>
+	<remarks>Created by Frank</remarks>
+</member><member name="T:DOCH.UserSignature">
+	<summary>
+	</summary>
+	<remarks>Create by Frank for upload user's signature</remarks>
+</member>
+</members>
+</doc>

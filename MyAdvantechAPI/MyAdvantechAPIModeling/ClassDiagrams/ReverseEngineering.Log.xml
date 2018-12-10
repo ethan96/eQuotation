@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2015-02-11T15:04:14" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '81474669-d152-4b1a-b234-fc95e252b1e2' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech' -  (Package)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech' -  (Package)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess' -  (Package)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::LineItemType' -  (Enumeration)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Order' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Part' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Medium" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product' -  (Class)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::_ERPID' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::CustomDescription' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::DeliveryGroup' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::HigherLevel' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::LineItemType' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::LineNumber' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::Load' -  (Operation)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::order' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::ParentLineNumber' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::Product' -  (Operation)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::Product::ERPID' -  (Parameter)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::Product::LineNumber' -  (Parameter)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::Product::PartNo' -  (Parameter)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::Product::Quantity' -  (Parameter)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::Product::UnitPrice' -  (Parameter)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::Quantity' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::RequireDate' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::SellingPrice' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::ShipPoint' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product::StorageLoc' -  (Property)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::System' -  (Package)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::System::DateTime' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::System::Decimal' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::System::Int16' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::System::Nullable' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'MyAdvantechAPIModeling::System::Nullable&lt;DateTime‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product to MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::LineItemType (Association)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product to MyAdvantechAPIModeling::System::Nullable&lt;DateTime‎&gt; (Association)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product to MyAdvantechAPIModeling::System::Decimal (Association)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product to MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Order (Association)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Product to MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Part (Generalization)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::Order to MyAdvantechAPIModeling::Advantech::Myadvantech::DataAccess::DocumentBase (Generalization)" />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="High" Text="(8) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-02-11T15:04:15" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>

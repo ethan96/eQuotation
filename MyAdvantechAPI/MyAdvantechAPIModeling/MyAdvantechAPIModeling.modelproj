@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f79e4969-755a-4f1f-af40-7e7a533a41d6}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>MyAdvantechAPIModeling</Name>
+    <RootNamespace>MyAdvantechAPIModeling</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="false" />
+  <ItemGroup>
+    <Content Include="ClassDiagrams\eStorePart_ModelClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ClassDiagrams\eStorePart_ModelClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ClassDiagrams\eStorePart_ModelClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ClassDiagrams\OrderClassDiagram20150211.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ClassDiagrams\OrderClassDiagram20150211.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ClassDiagrams\OrderClassDiagram20150211.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ClassDiagrams\PISModel_PartClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ClassDiagrams\PISModel_PartClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ClassDiagrams\PISModel_PartClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ClassDiagrams\SAPClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ClassDiagrams\SAPClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ClassDiagrams\SAPClassDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1518.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1519.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1518.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1519.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_1518.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1456.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1458.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1518.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1519.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SequenceDiagram\CreateSAPCustomer.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SequenceDiagram\CreateSAPCustomer.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SequenceDiagram\CreateSAPCustomer.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="SequenceDiagram\GetPrice.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SequenceDiagram\GetPrice.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SequenceDiagram\GetPrice.sequencediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\MyAdvantechAPIModeling.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="ClassDiagrams" />
+    <Folder Include="SequenceDiagram" />
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="MyAdvantechAPI.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="MyAdvantechAPI.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>MyAdvantechAPI.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="MyAdvantechAPI.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>MyAdvantechAPI.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

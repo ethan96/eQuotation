@@ -1,0 +1,185 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    /*#content {
+        display: table;
+    }*/
+
+    #pageHeader {
+        display: table-footer-group;
+    }
+
+    #pageHeader:after {
+        counter-increment: page;
+        content: counter(page);
+    }
+</style>
+
+<div id="pdfHeader">
+    <table style="width:100%; table-layout: fixed;" class="stylenormal pdfHeader" align="center" ">
+        <tbody>
+            <tr>
+                <td class="font_large" style="margin-left: 5px; font-weight:bold; width: 60%;" colspan="2">
+                    <img src="@Util.ResolveServerUrl(VirtualPathUtility.ToAbsolute("~/Images/adv-logo.jpg"),false)" alt="AdvantechLogo" width="200" />
+                    <div>Advantech Co. Singapore Pte Ltd</div>
+                    <div>6 Serangoon North Avenue 5 #03-08 East Lobby</div>
+                    <div>Singapore 554910</div>
+                    <div>PHONE (65)6442-1000 FAX (65)6442-1001</div>
+                    <div>Website:www.advantech.com</div>
+                    <div>Company Registration No.199507032R</div>
+                    <div>GST Reg. No:M2-8921878-5</div>
+                </td>
+                <td style="font-weight:bold;width: 42%;">
+                    <table>
+                        <tr></tr>
+                        <tr>
+                            <td>Quote Number</td>
+                            <td>:@Html.DisplayFor(m => m.QuoteNo)</td>
+                        </tr>
+                        <tr>
+                            <td>Version</td>
+                            <td>:@Html.DisplayFor(m => m.RevisionNo)</td>
+                        </tr>
+                        <tr>
+                            <td>Quote Date</td>
+                            <td>:@Model.QuoteDate.ToString("dd.MM.yyyy")</td>
+                        </tr>
+                        <tr>
+                            <td>Printer Date</td>
+                            <td>:@Model.PrintDate.ToString("dd.MM.yyyy")</td>
+                        </tr>
+                        <tr>
+                            <td>Quote Expiry Date</td>
+                            <td>:@Model.ExpiredDate.ToString("dd.MM.yyyy")</td>
+                        </tr>
+                        <tr>
+                            <td>Currency</td>
+                            <td>:@Html.DisplayFor(m => m.Currency)</td>
+                        </tr>
+                        <tr>
+                            <td>Payment Term</td>
+                            <td>:@Html.DisplayFor(m => m.PaymentTerm)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            @*<td>: <span id="pageHeader"> </span> of </td>*@
+                            <td>
+                                 @*<span style="color: navy; font-weight: bold">&p;</span> of <span style="font-size: 16px; color: green; font-weight: bold">&P;</span> pages*@
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%; table-layout: fixed; padding-top:20px;" class="stylenormal pdfHeader" align="center">
+        <tr>
+            <td colspan="4" style="text-align: center; ">
+                <span style="line-height: 50px; font-size: 36px; font-weight: bold; border-bottom: 2px solid currentColor;">
+                    @Html.DisplayFor(m => m.QuotationTitle)
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<table style="width:100%; table-layout: fixed;" class="stylenormal" align="center">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top;font-weight: bold; width:10%">
+                SOLD TO:
+            </td>
+            <td style="width:40%; vertical-align: top;">
+                <table>
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.SoldToPartner.NAME)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.SoldToPartner.ADDRESS)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.SoldToPartner.CITY)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.SoldToPartner.ZIPCODE) @Html.DisplayFor(m => m.SoldToPartner.COUNTRY)</td>
+                    </tr>
+                    <tr>
+                        <td>Attn: @Html.DisplayFor(m => m.SoldToPartner.ATTENTION)</td>
+                    </tr>
+                    <tr>
+                        <td>Phone : @Html.DisplayFor(m => m.SoldToPartner.TEL)</td>
+                    </tr>
+                    <tr>
+                        <td>F A X : @Html.DisplayFor(m => m.SoldToPartner.FAX)</td>
+                    </tr>
+                    <tr>
+                        <td>Customer Person :@Html.DisplayFor(m => m.AccountContactName)</td>
+                    </tr>
+                </table>
+            </td>
+            <td style="vertical-align: top;font-weight: bold; width:10%">
+                SHIP TO:
+            </td>
+            <td style="width:40%; vertical-align: top;">
+                <table>
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.ShipToPartner.NAME)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.ShipToPartner.ADDRESS)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.ShipToPartner.CITY)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.ShipToPartner.ZIPCODE) @Html.DisplayFor(m => m.ShipToPartner.COUNTRY)</td>
+                    </tr>
+                    <tr>
+                        <td>Attn: @Html.DisplayFor(m => m.ShipToPartner.ATTENTION)</td>
+                    </tr>
+                    <tr>
+                        <td>Phone : @Html.DisplayFor(m => m.ShipToPartner.TEL)</td>
+                    </tr>
+                    <tr>
+                        <td>F A X : @Html.DisplayFor(m => m.ShipToPartner.FAX)</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr style="height: 50px;">
+            <td style="line-height:10px;">
+                <span style="font-weight: bold;">Remarks:</span>
+            </td>
+            <td  colspan="4">
+                @Html.DisplayFor(m => m.Remarks)
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table style="width:100%; padding-top:50px;" align="center">
+    <tr>
+        <td></td>
+    </tr>
+</table>
+<table style="border-collapse: collapse; width:100%;" align="center">
+    <thead style="font-size: 0.85em; line-height: 20px; text-align: center;  border-bottom: 1px solid currentColor;">
+        <tr>
+            <th>CUSTOMER ID</th>
+            <th>INCOTERMS</th>
+            <th>REQ.DELIVER</th>
+            <th>CUSTOMER REF</th>
+        </tr>
+    </thead>
+    <tbody style="text-align: center; ">
+        <tr>
+            <td>@Html.DisplayFor(m => m.ERPID)</td>
+            <td>@Html.DisplayFor(m => m.Incoterms)</td>
+            <td>@Model.DeliveryDate.ToString("dd.MM.yyyy")</td>
+            <td>@Html.DisplayFor(m => m.QuoteNote)</td>
+        </tr>
+    </tbody>
+</table>
+<table style="width:100%; padding-bottom:50px;" align="center">
+    <tr>
+        <td></td>
+    </tr>
+</table>

@@ -1,0 +1,263 @@
+﻿@using WorkFlowlAPI
+@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    .quoteApproverList {
+        padding-top: 20px;
+        width: 700px;
+        margin: 0px auto;
+    }
+
+    .panel {
+        border: 1px solid #E8E8E8;
+        border-radius: 3px;
+    }
+
+    .quoteapprover_table {
+        padding: 5px;
+        border: 1px solid #E8E8E8;
+        border-radius: 3px;
+    }
+
+    .quoteapprover_table .column-name {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .panel-heading {
+        background-color: #F5F5F5;
+        padding: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        height: 45px;
+        vertical-align: middle;
+        line-height: 45px;
+    }
+
+    .quoteapprover_table tr.row-data {
+        margin-top: 5px;
+        border-top: 1pt solid #E8E8E8;
+    }
+
+    .quoteapprover_table tr.row-data > td {
+        padding-top: 1em;
+    }
+
+    /* The Modal (background) */
+    .PSM-modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    }
+
+    /* Modal Content/Box */
+    .select-PSM-modal-content {
+        background-color: #fefefe;
+        margin: 8% auto; /* 15% from the top and centered */
+        padding: 9px;
+        border: 1px solid #888;
+        width: 40%; /* Could be more or less, depending on screen size */
+        border-radius: 5px;
+        max-height: 600px;
+    }
+
+    /* The Close Button */
+    .PSM-modal-close {
+        color: #aaa;
+        float: right;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .PSM-modal-close:hover, .PSM-modal-close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #btn-selectPSM {
+        margin: 10px;
+    }
+
+    .selectPSM {
+        float:right;
+    }
+
+
+
+</style>
+
+<div class="quoteApproverList">
+    <!-- The PSM Selection Modal -->
+    <div id="select-PSM-modal" class="PSM-modal">
+        <!--PSM Selection Modal content -->
+        <div class="select-PSM-modal-content">
+            <span class="PSM-modal-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+            <p></p>
+        </div>
+    </div>
+
+
+
+    <div class="panel panel-default">
+        @if (!string.IsNullOrEmpty(Model.SalesComment))
+        {
+            <div class="stylenormal" style="text-align: left; color: #FF0000;" >
+                <b>Approval Reason :</b> @Model.SalesComment
+            </div>
+            <br />
+        }
+        @if(Model.QuoteApprovalList != null && Model.QuoteApprovalList.Count() > 0)
+        {
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                报价单 @Model.QuoteNo 簽核历程:
+                @if (Model.pagetype != null && Model.pagetype == "CheckBeforeApproval")
+                {
+                    <span class="selectPSM">
+                        <button id="btn-selectPSM" type="button" class="button"><i class="fa fa-plus" aria-hidden="true"></i> Add More PSM Approvers</button>
+                    </span>
+                }
+            </div>
+
+            <!-- Table -->
+            <table class="quoteapprover_table">
+                <tr>
+                    @if (Model.pagetype != null && Model.pagetype == "CheckBeforeApproval")
+                    {
+                    <td class="column-name" width="50px;">Action</td>
+                    }
+                    <td class="column-name" width="70px;">次序</td>
+                    <td class="column-name" width="220px;">簽核者</td>
+                    <td class="column-name">簽核类型</td>
+                    <td class="column-name">簽核状态</td>
+                    <td class="column-name">Comments</td>
+                </tr>
+                @foreach (var approval in Model.QuoteApprovalList.Where(a => !Model.HiddenApprovers.Contains(a.Approver.ToLower()) || a.Status == -1).OrderBy(a => a.LevelNum))
+                {
+                    if (approval.Status == -1 && Model.HiddenApprovers.Contains(approval.Approver.ToLower()))
+                    {
+                        var reason = String.IsNullOrEmpty(approval.RejectReason) || (approval.RejectReason != null && approval.RejectReason.Contains("MobileApprove")) ? "" : approval.RejectReason;
+                        <tr class="row-data" >
+                            <td width="70px;"></td>
+                            <td></td>
+                            <td></td>
+                            <td style="color: #FF0000;">退件</td>
+                            <td>@reason</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr class="row-data"  data-value='@approval.UID'>
+                            @if (Model.pagetype != null && Model.pagetype == "CheckBeforeApproval")
+                            {
+                                <td class="actionTd" width="50px;" style="text-align: center">
+                                    @if (approval.ApproverType == ApproverType.OptionalPSM.ToString() || @*(approval.ApproverType == ApproverType.PSM.ToString() && Model.DobulePSMList.Contains(approval.Approver))*@ approval.ApproverType == ApproverType.PSM.ToString())
+                                    {
+                                        <a class="btn-del-item" style="color:darkred" >
+                                            <i class='fa fa-times-circle fa-lg'></i>
+                                        </a>
+                                    }
+                                </td>
+                            }
+
+                            <td width="70px;">@approval.LevelNum.ToString("0.0")</td>
+                            @if (!@String.IsNullOrEmpty(approval.Approver))
+                            {
+                                    <td>@approval.Approver</td>
+                            }
+
+                            <td>@approval.ApproverType</td>
+
+                            @if (approval.Status == 1)
+                            {
+                                var reason = String.IsNullOrEmpty(approval.ApprovedReason) /*|| (approval.ApprovedReason != null && approval.ApprovedReason.Contains("MobileApprove"))*/ ? "" : approval.ApprovedReason;
+                                <td>同意</td>
+                                if (Model.ApprovedCommentIsViewable)
+                                {
+                                    <td>@reason</td>
+                                }
+                            }
+                            else if (approval.Status == -1)
+                            {
+                                var reason = String.IsNullOrEmpty(approval.RejectReason) /*|| (approval.RejectReason != null && approval.RejectReason.Contains("MobileApprove"))*/ ? "" : approval.RejectReason;
+                                <td style="color: #FF0000;">退件</td>
+                                <td>@reason</td>
+                            }
+                            else
+                            {
+                                <td>待簽核</td>
+                            }
+
+                        </tr>
+                    }
+                }
+            </table>
+        }
+        else
+        {
+            <div class="panel-heading">报价单 @Model.QuoteNo 不须簽核</div>
+        }
+    </div>
+
+
+</div>
+<script>
+    //display PSM Selection modal for Preview
+    $("#btn-selectPSM").on("click", function (e) {
+        $('.select-PSM-modal-content p').empty();
+
+        $.get("/Quotes/GetACNPSMApproversList", { psmlevelNum: '1' }
+            , function (data) {
+                $('#select-PSM-modal').css('display', 'block');
+                $('.select-PSM-modal-content p').append(data);
+
+                // When the user clicks anywhere outside of the modal, close it
+                var PSMModal = document.getElementById('select-PSM-modal');
+                window.onclick = function (event) {
+                    if (event.target == PSMModal) {
+                        $('#select-PSM-modal').css('display', 'none');
+                    }
+                }
+
+
+            });
+    });
+
+    // When the user clicks on <span> (x), close the PSM modal
+    $('.PSM-modal-close').on("click", function () {
+        $('#select-PSM-modal').css('display', 'none');
+    });
+
+    $('.btn-del-item').on("click", function () {
+        var approvalId = $(this).closest('tr').attr("data-value");
+        var postdata = JSON.stringify({ approvalId: approvalId });
+        $.ajax({
+            url: "/Quotes/RemovePSMApprovers", type: "POST",
+            data: postdata,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $('#quoteApproverList').hide().html(data).fadeIn('slow');
+                //if (redata.succeed) {
+                //    var approverId = redata.data;
+                //    $("tr").find("[data-value='" + approverId + "']").fadeTo("slow", 0.7, function () {
+                //        $(this).remove();
+                //    })
+                //    $('tr[data-value="' + approvalId + '"]').remove();               
+
+                //} else {
+                //    AlertDialog(redata.err);
+                //}
+            }
+        });
+    });
+
+
+</script>

@@ -1,0 +1,1808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="isSell">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isSellResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isSellResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCTOSProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCTOSProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isCTOSProductResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderableProductURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderableProductURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderableProductURLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isOrderableProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isOrderableProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isOrderableProductResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iseStoreProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iseStoreProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="standardProductlink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buildsystemlink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isSellBeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isSellBetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isSellBetaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCTOSProductBeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCTOSProductBetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isCTOSProductBetaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderableProductURLBeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderableProductURLBetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderableProductURLBetaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isOrderableProductBeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isOrderableProductBetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isOrderableProductBetaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iseStoreProductBeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iseStoreProductBetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="standardProductlink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buildsystemlink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="link2eStoreByCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modelNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productids" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="link2eStoreByCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="link2eStoreByCountryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="link2eStore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modelNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productids" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="link2eStoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="link2eStoreResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductPageLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductPageLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductPageLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="releaseStoreCacheProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SProductID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="releaseStoreCacheProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="releaseStoreCacheProductCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="releaseStoreCacheProductCategoryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="releaseStoreCacheStore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storeURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="releaseStoreCacheStoreResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="releaseAlleStoreCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="releaseAlleStoreCacheResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IP2Nation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserHostAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IP2NationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IP2NationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUrlByCountryAndReferenceUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="countryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="referenceUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUrlByCountryAndReferenceUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUrlByCountryAndReferenceUrlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuotations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DMF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enddate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuotationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getQuotationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuotationInfor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="quotationNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuotationInforResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getQuotationInforResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="generateSAPCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="generateSAPCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="generateSAPCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="isSellSoapIn">
+    <wsdl:part name="parameters" element="tns:isSell" />
+  </wsdl:message>
+  <wsdl:message name="isSellSoapOut">
+    <wsdl:part name="parameters" element="tns:isSellResponse" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductSoapIn">
+    <wsdl:part name="parameters" element="tns:isCTOSProduct" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductSoapOut">
+    <wsdl:part name="parameters" element="tns:isCTOSProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLSoapIn">
+    <wsdl:part name="parameters" element="tns:orderableProductURL" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLSoapOut">
+    <wsdl:part name="parameters" element="tns:orderableProductURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductSoapIn">
+    <wsdl:part name="parameters" element="tns:isOrderableProduct" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductSoapOut">
+    <wsdl:part name="parameters" element="tns:isOrderableProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="iseStoreProductSoapIn">
+    <wsdl:part name="parameters" element="tns:iseStoreProduct" />
+  </wsdl:message>
+  <wsdl:message name="iseStoreProductSoapOut">
+    <wsdl:part name="parameters" element="tns:iseStoreProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="isSellBetaSoapIn">
+    <wsdl:part name="parameters" element="tns:isSellBeta" />
+  </wsdl:message>
+  <wsdl:message name="isSellBetaSoapOut">
+    <wsdl:part name="parameters" element="tns:isSellBetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductBetaSoapIn">
+    <wsdl:part name="parameters" element="tns:isCTOSProductBeta" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductBetaSoapOut">
+    <wsdl:part name="parameters" element="tns:isCTOSProductBetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLBetaSoapIn">
+    <wsdl:part name="parameters" element="tns:orderableProductURLBeta" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLBetaSoapOut">
+    <wsdl:part name="parameters" element="tns:orderableProductURLBetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductBetaSoapIn">
+    <wsdl:part name="parameters" element="tns:isOrderableProductBeta" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductBetaSoapOut">
+    <wsdl:part name="parameters" element="tns:isOrderableProductBetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="iseStoreProductBetaSoapIn">
+    <wsdl:part name="parameters" element="tns:iseStoreProductBeta" />
+  </wsdl:message>
+  <wsdl:message name="iseStoreProductBetaSoapOut">
+    <wsdl:part name="parameters" element="tns:iseStoreProductBetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreByCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:link2eStoreByCountry" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreByCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:link2eStoreByCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreSoapIn">
+    <wsdl:part name="parameters" element="tns:link2eStore" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreSoapOut">
+    <wsdl:part name="parameters" element="tns:link2eStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductPageLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductPageLink" />
+  </wsdl:message>
+  <wsdl:message name="getProductPageLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductPageLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductSoapIn">
+    <wsdl:part name="parameters" element="tns:releaseStoreCacheProduct" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductSoapOut">
+    <wsdl:part name="parameters" element="tns:releaseStoreCacheProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:releaseStoreCacheProductCategory" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:releaseStoreCacheProductCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheStoreSoapIn">
+    <wsdl:part name="parameters" element="tns:releaseStoreCacheStore" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheStoreSoapOut">
+    <wsdl:part name="parameters" element="tns:releaseStoreCacheStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="releaseAlleStoreCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:releaseAlleStoreCache" />
+  </wsdl:message>
+  <wsdl:message name="releaseAlleStoreCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:releaseAlleStoreCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IP2NationSoapIn">
+    <wsdl:part name="parameters" element="tns:IP2Nation" />
+  </wsdl:message>
+  <wsdl:message name="IP2NationSoapOut">
+    <wsdl:part name="parameters" element="tns:IP2NationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUrlByCountryAndReferenceUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:getUrlByCountryAndReferenceUrl" />
+  </wsdl:message>
+  <wsdl:message name="getUrlByCountryAndReferenceUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:getUrlByCountryAndReferenceUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationsSoapIn">
+    <wsdl:part name="parameters" element="tns:getQuotations" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationsSoapOut">
+    <wsdl:part name="parameters" element="tns:getQuotationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationInforSoapIn">
+    <wsdl:part name="parameters" element="tns:getQuotationInfor" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationInforSoapOut">
+    <wsdl:part name="parameters" element="tns:getQuotationInforResponse" />
+  </wsdl:message>
+  <wsdl:message name="generateSAPCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:generateSAPCustomer" />
+  </wsdl:message>
+  <wsdl:message name="generateSAPCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:generateSAPCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="isSellHttpGetIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="PartNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isSellHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductHttpGetIn">
+    <wsdl:part name="PartNo" type="s:string" />
+    <wsdl:part name="storeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLHttpGetIn">
+    <wsdl:part name="PartNumber" type="s:string" />
+    <wsdl:part name="storeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductHttpGetIn">
+    <wsdl:part name="PartNumber" type="s:string" />
+    <wsdl:part name="storeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isSellBetaHttpGetIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="PartNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isSellBetaHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductBetaHttpGetIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="PartNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductBetaHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLBetaHttpGetIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="PartNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLBetaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductBetaHttpGetIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="PartNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductBetaHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreByCountryHttpGetIn">
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="modelNO" type="s:string" />
+    <wsdl:part name="productids" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreByCountryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreHttpGetIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="modelNO" type="s:string" />
+    <wsdl:part name="productids" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getProductPageLinkHttpGetIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="productid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getProductPageLinkHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductHttpGetIn">
+    <wsdl:part name="SProductID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductHttpGetOut" />
+  <wsdl:message name="releaseStoreCacheProductCategoryHttpGetIn">
+    <wsdl:part name="CategoryPath" type="s:string" />
+    <wsdl:part name="CategoryID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductCategoryHttpGetOut" />
+  <wsdl:message name="releaseStoreCacheStoreHttpGetIn">
+    <wsdl:part name="storeID" type="s:string" />
+    <wsdl:part name="storeURL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheStoreHttpGetOut" />
+  <wsdl:message name="releaseAlleStoreCacheHttpGetIn" />
+  <wsdl:message name="releaseAlleStoreCacheHttpGetOut" />
+  <wsdl:message name="IP2NationHttpGetIn">
+    <wsdl:part name="UserHostAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IP2NationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getUrlByCountryAndReferenceUrlHttpGetIn">
+    <wsdl:part name="countryName" type="s:string" />
+    <wsdl:part name="referenceUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getUrlByCountryAndReferenceUrlHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationsHttpGetIn">
+    <wsdl:part name="DMF" type="s:string" />
+    <wsdl:part name="startdate" type="s:string" />
+    <wsdl:part name="enddate" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationInforHttpGetIn">
+    <wsdl:part name="quotationNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationInforHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="generateSAPCustomerHttpGetIn">
+    <wsdl:part name="orderNo" type="s:string" />
+    <wsdl:part name="applicationId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="generateSAPCustomerHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="isSellHttpPostIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="PartNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isSellHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductHttpPostIn">
+    <wsdl:part name="PartNo" type="s:string" />
+    <wsdl:part name="storeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLHttpPostIn">
+    <wsdl:part name="PartNumber" type="s:string" />
+    <wsdl:part name="storeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductHttpPostIn">
+    <wsdl:part name="PartNumber" type="s:string" />
+    <wsdl:part name="storeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isSellBetaHttpPostIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="PartNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isSellBetaHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductBetaHttpPostIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="PartNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isCTOSProductBetaHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLBetaHttpPostIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="PartNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="orderableProductURLBetaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductBetaHttpPostIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="PartNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isOrderableProductBetaHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreByCountryHttpPostIn">
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="modelNO" type="s:string" />
+    <wsdl:part name="productids" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreByCountryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreHttpPostIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="ip" type="s:string" />
+    <wsdl:part name="modelNO" type="s:string" />
+    <wsdl:part name="productids" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="link2eStoreHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getProductPageLinkHttpPostIn">
+    <wsdl:part name="storeid" type="s:string" />
+    <wsdl:part name="productid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getProductPageLinkHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductHttpPostIn">
+    <wsdl:part name="SProductID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductHttpPostOut" />
+  <wsdl:message name="releaseStoreCacheProductCategoryHttpPostIn">
+    <wsdl:part name="CategoryPath" type="s:string" />
+    <wsdl:part name="CategoryID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheProductCategoryHttpPostOut" />
+  <wsdl:message name="releaseStoreCacheStoreHttpPostIn">
+    <wsdl:part name="storeID" type="s:string" />
+    <wsdl:part name="storeURL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseStoreCacheStoreHttpPostOut" />
+  <wsdl:message name="releaseAlleStoreCacheHttpPostIn" />
+  <wsdl:message name="releaseAlleStoreCacheHttpPostOut" />
+  <wsdl:message name="IP2NationHttpPostIn">
+    <wsdl:part name="UserHostAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IP2NationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getUrlByCountryAndReferenceUrlHttpPostIn">
+    <wsdl:part name="countryName" type="s:string" />
+    <wsdl:part name="referenceUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getUrlByCountryAndReferenceUrlHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationsHttpPostIn">
+    <wsdl:part name="DMF" type="s:string" />
+    <wsdl:part name="startdate" type="s:string" />
+    <wsdl:part name="enddate" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationInforHttpPostIn">
+    <wsdl:part name="quotationNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationInforHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="generateSAPCustomerHttpPostIn">
+    <wsdl:part name="orderNo" type="s:string" />
+    <wsdl:part name="applicationId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="generateSAPCustomerHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="eStoreWebServiceSoap">
+    <wsdl:operation name="isSell">
+      <wsdl:input message="tns:isSellSoapIn" />
+      <wsdl:output message="tns:isSellSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProduct">
+      <wsdl:input message="tns:isCTOSProductSoapIn" />
+      <wsdl:output message="tns:isCTOSProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">if return empty string means not available in eStore</wsdl:documentation>
+      <wsdl:input message="tns:orderableProductURLSoapIn" />
+      <wsdl:output message="tns:orderableProductURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProduct">
+      <wsdl:input message="tns:isOrderableProductSoapIn" />
+      <wsdl:output message="tns:isOrderableProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iseStoreProduct">
+      <wsdl:input message="tns:iseStoreProductSoapIn" />
+      <wsdl:output message="tns:iseStoreProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isSellBeta">
+      <wsdl:input message="tns:isSellBetaSoapIn" />
+      <wsdl:output message="tns:isSellBetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProductBeta">
+      <wsdl:input message="tns:isCTOSProductBetaSoapIn" />
+      <wsdl:output message="tns:isCTOSProductBetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURLBeta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">if return empty string means not available in eStore</wsdl:documentation>
+      <wsdl:input message="tns:orderableProductURLBetaSoapIn" />
+      <wsdl:output message="tns:orderableProductURLBetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProductBeta">
+      <wsdl:input message="tns:isOrderableProductBetaSoapIn" />
+      <wsdl:output message="tns:isOrderableProductBetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iseStoreProductBeta">
+      <wsdl:input message="tns:iseStoreProductBetaSoapIn" />
+      <wsdl:output message="tns:iseStoreProductBetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="link2eStoreByCountry">
+      <wsdl:input message="tns:link2eStoreByCountrySoapIn" />
+      <wsdl:output message="tns:link2eStoreByCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="link2eStore">
+      <wsdl:input message="tns:link2eStoreSoapIn" />
+      <wsdl:output message="tns:link2eStoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductPageLink">
+      <wsdl:input message="tns:getProductPageLinkSoapIn" />
+      <wsdl:output message="tns:getProductPageLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProduct">
+      <wsdl:input message="tns:releaseStoreCacheProductSoapIn" />
+      <wsdl:output message="tns:releaseStoreCacheProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProductCategory">
+      <wsdl:input message="tns:releaseStoreCacheProductCategorySoapIn" />
+      <wsdl:output message="tns:releaseStoreCacheProductCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheStore">
+      <wsdl:input message="tns:releaseStoreCacheStoreSoapIn" />
+      <wsdl:output message="tns:releaseStoreCacheStoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseAlleStoreCache">
+      <wsdl:input message="tns:releaseAlleStoreCacheSoapIn" />
+      <wsdl:output message="tns:releaseAlleStoreCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IP2Nation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Country code, if return XX, means error or internal IP</wsdl:documentation>
+      <wsdl:input message="tns:IP2NationSoapIn" />
+      <wsdl:output message="tns:IP2NationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByCountryAndReferenceUrl">
+      <wsdl:input message="tns:getUrlByCountryAndReferenceUrlSoapIn" />
+      <wsdl:output message="tns:getUrlByCountryAndReferenceUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotations">
+      <wsdl:input message="tns:getQuotationsSoapIn" />
+      <wsdl:output message="tns:getQuotationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationInfor">
+      <wsdl:input message="tns:getQuotationInforSoapIn" />
+      <wsdl:output message="tns:getQuotationInforSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="generateSAPCustomer">
+      <wsdl:input message="tns:generateSAPCustomerSoapIn" />
+      <wsdl:output message="tns:generateSAPCustomerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="eStoreWebServiceHttpGet">
+    <wsdl:operation name="isSell">
+      <wsdl:input message="tns:isSellHttpGetIn" />
+      <wsdl:output message="tns:isSellHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProduct">
+      <wsdl:input message="tns:isCTOSProductHttpGetIn" />
+      <wsdl:output message="tns:isCTOSProductHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">if return empty string means not available in eStore</wsdl:documentation>
+      <wsdl:input message="tns:orderableProductURLHttpGetIn" />
+      <wsdl:output message="tns:orderableProductURLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProduct">
+      <wsdl:input message="tns:isOrderableProductHttpGetIn" />
+      <wsdl:output message="tns:isOrderableProductHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isSellBeta">
+      <wsdl:input message="tns:isSellBetaHttpGetIn" />
+      <wsdl:output message="tns:isSellBetaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProductBeta">
+      <wsdl:input message="tns:isCTOSProductBetaHttpGetIn" />
+      <wsdl:output message="tns:isCTOSProductBetaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURLBeta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">if return empty string means not available in eStore</wsdl:documentation>
+      <wsdl:input message="tns:orderableProductURLBetaHttpGetIn" />
+      <wsdl:output message="tns:orderableProductURLBetaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProductBeta">
+      <wsdl:input message="tns:isOrderableProductBetaHttpGetIn" />
+      <wsdl:output message="tns:isOrderableProductBetaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="link2eStoreByCountry">
+      <wsdl:input message="tns:link2eStoreByCountryHttpGetIn" />
+      <wsdl:output message="tns:link2eStoreByCountryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="link2eStore">
+      <wsdl:input message="tns:link2eStoreHttpGetIn" />
+      <wsdl:output message="tns:link2eStoreHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductPageLink">
+      <wsdl:input message="tns:getProductPageLinkHttpGetIn" />
+      <wsdl:output message="tns:getProductPageLinkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProduct">
+      <wsdl:input message="tns:releaseStoreCacheProductHttpGetIn" />
+      <wsdl:output message="tns:releaseStoreCacheProductHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProductCategory">
+      <wsdl:input message="tns:releaseStoreCacheProductCategoryHttpGetIn" />
+      <wsdl:output message="tns:releaseStoreCacheProductCategoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheStore">
+      <wsdl:input message="tns:releaseStoreCacheStoreHttpGetIn" />
+      <wsdl:output message="tns:releaseStoreCacheStoreHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseAlleStoreCache">
+      <wsdl:input message="tns:releaseAlleStoreCacheHttpGetIn" />
+      <wsdl:output message="tns:releaseAlleStoreCacheHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IP2Nation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Country code, if return XX, means error or internal IP</wsdl:documentation>
+      <wsdl:input message="tns:IP2NationHttpGetIn" />
+      <wsdl:output message="tns:IP2NationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByCountryAndReferenceUrl">
+      <wsdl:input message="tns:getUrlByCountryAndReferenceUrlHttpGetIn" />
+      <wsdl:output message="tns:getUrlByCountryAndReferenceUrlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotations">
+      <wsdl:input message="tns:getQuotationsHttpGetIn" />
+      <wsdl:output message="tns:getQuotationsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationInfor">
+      <wsdl:input message="tns:getQuotationInforHttpGetIn" />
+      <wsdl:output message="tns:getQuotationInforHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="generateSAPCustomer">
+      <wsdl:input message="tns:generateSAPCustomerHttpGetIn" />
+      <wsdl:output message="tns:generateSAPCustomerHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="eStoreWebServiceHttpPost">
+    <wsdl:operation name="isSell">
+      <wsdl:input message="tns:isSellHttpPostIn" />
+      <wsdl:output message="tns:isSellHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProduct">
+      <wsdl:input message="tns:isCTOSProductHttpPostIn" />
+      <wsdl:output message="tns:isCTOSProductHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">if return empty string means not available in eStore</wsdl:documentation>
+      <wsdl:input message="tns:orderableProductURLHttpPostIn" />
+      <wsdl:output message="tns:orderableProductURLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProduct">
+      <wsdl:input message="tns:isOrderableProductHttpPostIn" />
+      <wsdl:output message="tns:isOrderableProductHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isSellBeta">
+      <wsdl:input message="tns:isSellBetaHttpPostIn" />
+      <wsdl:output message="tns:isSellBetaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProductBeta">
+      <wsdl:input message="tns:isCTOSProductBetaHttpPostIn" />
+      <wsdl:output message="tns:isCTOSProductBetaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURLBeta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">if return empty string means not available in eStore</wsdl:documentation>
+      <wsdl:input message="tns:orderableProductURLBetaHttpPostIn" />
+      <wsdl:output message="tns:orderableProductURLBetaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProductBeta">
+      <wsdl:input message="tns:isOrderableProductBetaHttpPostIn" />
+      <wsdl:output message="tns:isOrderableProductBetaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="link2eStoreByCountry">
+      <wsdl:input message="tns:link2eStoreByCountryHttpPostIn" />
+      <wsdl:output message="tns:link2eStoreByCountryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="link2eStore">
+      <wsdl:input message="tns:link2eStoreHttpPostIn" />
+      <wsdl:output message="tns:link2eStoreHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductPageLink">
+      <wsdl:input message="tns:getProductPageLinkHttpPostIn" />
+      <wsdl:output message="tns:getProductPageLinkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProduct">
+      <wsdl:input message="tns:releaseStoreCacheProductHttpPostIn" />
+      <wsdl:output message="tns:releaseStoreCacheProductHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProductCategory">
+      <wsdl:input message="tns:releaseStoreCacheProductCategoryHttpPostIn" />
+      <wsdl:output message="tns:releaseStoreCacheProductCategoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheStore">
+      <wsdl:input message="tns:releaseStoreCacheStoreHttpPostIn" />
+      <wsdl:output message="tns:releaseStoreCacheStoreHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseAlleStoreCache">
+      <wsdl:input message="tns:releaseAlleStoreCacheHttpPostIn" />
+      <wsdl:output message="tns:releaseAlleStoreCacheHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IP2Nation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Country code, if return XX, means error or internal IP</wsdl:documentation>
+      <wsdl:input message="tns:IP2NationHttpPostIn" />
+      <wsdl:output message="tns:IP2NationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByCountryAndReferenceUrl">
+      <wsdl:input message="tns:getUrlByCountryAndReferenceUrlHttpPostIn" />
+      <wsdl:output message="tns:getUrlByCountryAndReferenceUrlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotations">
+      <wsdl:input message="tns:getQuotationsHttpPostIn" />
+      <wsdl:output message="tns:getQuotationsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationInfor">
+      <wsdl:input message="tns:getQuotationInforHttpPostIn" />
+      <wsdl:output message="tns:getQuotationInforHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="generateSAPCustomer">
+      <wsdl:input message="tns:generateSAPCustomerHttpPostIn" />
+      <wsdl:output message="tns:generateSAPCustomerHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eStoreWebServiceSoap" type="tns:eStoreWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="isSell">
+      <soap:operation soapAction="http://tempuri.org/isSell" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProduct">
+      <soap:operation soapAction="http://tempuri.org/isCTOSProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURL">
+      <soap:operation soapAction="http://tempuri.org/orderableProductURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProduct">
+      <soap:operation soapAction="http://tempuri.org/isOrderableProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iseStoreProduct">
+      <soap:operation soapAction="http://tempuri.org/iseStoreProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSellBeta">
+      <soap:operation soapAction="http://tempuri.org/isSellBeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProductBeta">
+      <soap:operation soapAction="http://tempuri.org/isCTOSProductBeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURLBeta">
+      <soap:operation soapAction="http://tempuri.org/orderableProductURLBeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProductBeta">
+      <soap:operation soapAction="http://tempuri.org/isOrderableProductBeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iseStoreProductBeta">
+      <soap:operation soapAction="http://tempuri.org/iseStoreProductBeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="link2eStoreByCountry">
+      <soap:operation soapAction="http://tempuri.org/link2eStoreByCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="link2eStore">
+      <soap:operation soapAction="http://tempuri.org/link2eStore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductPageLink">
+      <soap:operation soapAction="http://tempuri.org/getProductPageLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProduct">
+      <soap:operation soapAction="http://tempuri.org/releaseStoreCacheProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProductCategory">
+      <soap:operation soapAction="http://tempuri.org/releaseStoreCacheProductCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheStore">
+      <soap:operation soapAction="http://tempuri.org/releaseStoreCacheStore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseAlleStoreCache">
+      <soap:operation soapAction="http://tempuri.org/releaseAlleStoreCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IP2Nation">
+      <soap:operation soapAction="http://tempuri.org/IP2Nation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByCountryAndReferenceUrl">
+      <soap:operation soapAction="http://tempuri.org/getUrlByCountryAndReferenceUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotations">
+      <soap:operation soapAction="http://tempuri.org/getQuotations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationInfor">
+      <soap:operation soapAction="http://tempuri.org/getQuotationInfor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateSAPCustomer">
+      <soap:operation soapAction="http://tempuri.org/generateSAPCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eStoreWebServiceSoap12" type="tns:eStoreWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="isSell">
+      <soap12:operation soapAction="http://tempuri.org/isSell" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProduct">
+      <soap12:operation soapAction="http://tempuri.org/isCTOSProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURL">
+      <soap12:operation soapAction="http://tempuri.org/orderableProductURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProduct">
+      <soap12:operation soapAction="http://tempuri.org/isOrderableProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iseStoreProduct">
+      <soap12:operation soapAction="http://tempuri.org/iseStoreProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSellBeta">
+      <soap12:operation soapAction="http://tempuri.org/isSellBeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProductBeta">
+      <soap12:operation soapAction="http://tempuri.org/isCTOSProductBeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURLBeta">
+      <soap12:operation soapAction="http://tempuri.org/orderableProductURLBeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProductBeta">
+      <soap12:operation soapAction="http://tempuri.org/isOrderableProductBeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iseStoreProductBeta">
+      <soap12:operation soapAction="http://tempuri.org/iseStoreProductBeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="link2eStoreByCountry">
+      <soap12:operation soapAction="http://tempuri.org/link2eStoreByCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="link2eStore">
+      <soap12:operation soapAction="http://tempuri.org/link2eStore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductPageLink">
+      <soap12:operation soapAction="http://tempuri.org/getProductPageLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProduct">
+      <soap12:operation soapAction="http://tempuri.org/releaseStoreCacheProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProductCategory">
+      <soap12:operation soapAction="http://tempuri.org/releaseStoreCacheProductCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheStore">
+      <soap12:operation soapAction="http://tempuri.org/releaseStoreCacheStore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseAlleStoreCache">
+      <soap12:operation soapAction="http://tempuri.org/releaseAlleStoreCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IP2Nation">
+      <soap12:operation soapAction="http://tempuri.org/IP2Nation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByCountryAndReferenceUrl">
+      <soap12:operation soapAction="http://tempuri.org/getUrlByCountryAndReferenceUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotations">
+      <soap12:operation soapAction="http://tempuri.org/getQuotations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationInfor">
+      <soap12:operation soapAction="http://tempuri.org/getQuotationInfor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateSAPCustomer">
+      <soap12:operation soapAction="http://tempuri.org/generateSAPCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eStoreWebServiceHttpGet" type="tns:eStoreWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="isSell">
+      <http:operation location="/isSell" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProduct">
+      <http:operation location="/isCTOSProduct" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURL">
+      <http:operation location="/orderableProductURL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProduct">
+      <http:operation location="/isOrderableProduct" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSellBeta">
+      <http:operation location="/isSellBeta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProductBeta">
+      <http:operation location="/isCTOSProductBeta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURLBeta">
+      <http:operation location="/orderableProductURLBeta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProductBeta">
+      <http:operation location="/isOrderableProductBeta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="link2eStoreByCountry">
+      <http:operation location="/link2eStoreByCountry" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="link2eStore">
+      <http:operation location="/link2eStore" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductPageLink">
+      <http:operation location="/getProductPageLink" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProduct">
+      <http:operation location="/releaseStoreCacheProduct" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProductCategory">
+      <http:operation location="/releaseStoreCacheProductCategory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheStore">
+      <http:operation location="/releaseStoreCacheStore" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="releaseAlleStoreCache">
+      <http:operation location="/releaseAlleStoreCache" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="IP2Nation">
+      <http:operation location="/IP2Nation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByCountryAndReferenceUrl">
+      <http:operation location="/getUrlByCountryAndReferenceUrl" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotations">
+      <http:operation location="/getQuotations" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationInfor">
+      <http:operation location="/getQuotationInfor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateSAPCustomer">
+      <http:operation location="/generateSAPCustomer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eStoreWebServiceHttpPost" type="tns:eStoreWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="isSell">
+      <http:operation location="/isSell" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProduct">
+      <http:operation location="/isCTOSProduct" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURL">
+      <http:operation location="/orderableProductURL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProduct">
+      <http:operation location="/isOrderableProduct" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSellBeta">
+      <http:operation location="/isSellBeta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCTOSProductBeta">
+      <http:operation location="/isCTOSProductBeta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderableProductURLBeta">
+      <http:operation location="/orderableProductURLBeta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isOrderableProductBeta">
+      <http:operation location="/isOrderableProductBeta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="link2eStoreByCountry">
+      <http:operation location="/link2eStoreByCountry" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="link2eStore">
+      <http:operation location="/link2eStore" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductPageLink">
+      <http:operation location="/getProductPageLink" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProduct">
+      <http:operation location="/releaseStoreCacheProduct" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheProductCategory">
+      <http:operation location="/releaseStoreCacheProductCategory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="releaseStoreCacheStore">
+      <http:operation location="/releaseStoreCacheStore" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="releaseAlleStoreCache">
+      <http:operation location="/releaseAlleStoreCache" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="IP2Nation">
+      <http:operation location="/IP2Nation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUrlByCountryAndReferenceUrl">
+      <http:operation location="/getUrlByCountryAndReferenceUrl" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotations">
+      <http:operation location="/getQuotations" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationInfor">
+      <http:operation location="/getQuotationInfor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateSAPCustomer">
+      <http:operation location="/generateSAPCustomer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eStoreWebService">
+    <wsdl:port name="eStoreWebServiceSoap" binding="tns:eStoreWebServiceSoap">
+      <soap:address location="http://buy.advantech.com/eStoreWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eStoreWebServiceSoap12" binding="tns:eStoreWebServiceSoap12">
+      <soap12:address location="http://buy.advantech.com/eStoreWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eStoreWebServiceHttpGet" binding="tns:eStoreWebServiceHttpGet">
+      <http:address location="http://buy.advantech.com/eStoreWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eStoreWebServiceHttpPost" binding="tns:eStoreWebServiceHttpPost">
+      <http:address location="http://buy.advantech.com/eStoreWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

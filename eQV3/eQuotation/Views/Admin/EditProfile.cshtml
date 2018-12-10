@@ -1,0 +1,104 @@
+﻿@model eQuotation.Models.Admin.AppUserViewModel
+
+@if (Model != null)
+{
+    using (Ajax.BeginForm("EditProfile", "Admin", null,
+        new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            OnBegin = "onEditUserBegin",
+            OnSuccess = "onEditUserSuccess"
+        }, new { @id = "frmEditUser" }))
+    {
+        <div class="modal-action">
+            <ul>
+                <li><button type="submit" class="clear"><i class="fa fa-floppy-o"></i> Save</button></li>
+                @*<li><a id="delete-edituser"><i class="fa fa-trash-o"></i> Delete</a></li>*@
+                @*<li><a id="reset-password"><i class="fa fa-key"></i> Reset Password</a></li>*@
+                <li><a id="close-edituser"><i class="fa fa-times"></i> Close</a></li>
+            </ul>
+        </div>
+        <div class="modal-content">
+            @Html.HiddenFor(mdl => mdl.User.Id, new { @id = "txtUserId" })
+            @Html.HiddenFor(mdl => mdl.User.UserName, new { @id = "txtUserName" })
+            <table class="modal-form">
+                <tr>
+                    <td class="fieldtext">User Name</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.User.UserName, new { @style = "width:90%", @readonly = "readonly",@id = "txtUserAccount" } )</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">First Name</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.User.FirstName, new { @style = "width:90%" })</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">Last Name</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.User.LastName, new { @style = "width:90%" })</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">User Email</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.User.Email, new { @style = "width:90%", @readonly = "readonly" })</td>
+                </tr>
+                @*<tr>
+                    <td class="fieldtext">Company</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.User.Company, new { @style = "width:90%" })</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">Office</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.User.Location, new { @style = "width:90%" })</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">Department</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.User.Department, new { @style = "width:90%" })</td>
+                </tr>
+                <tr>
+                    <td class="fieldtext">Business Function</td>
+                    <td>@Html.TextBoxFor(mdl => mdl.User.Position, new { @style = "width:90%" })</td>
+                </tr>*@
+            </table>
+        </div>
+    }
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("a#close-edituser").on("click", function () {
+            $.modal.close();
+        });
+
+        $("#delete-edituser").on("click", function () {
+            deleteModal("/admin/deleteprofile/" + $("#txtUserId").val(),
+            function (data) {
+                $("#wrapper-content").html(data);
+                $.modal.close();
+            });
+        });
+
+        $("#reset-password").on("click", function () {
+            $.blockUI();
+            var user = $("#txtUserId").val();
+            alert(user);
+            $.get("/home/ResetPwd/" + user, function (data) {
+                $.pushHTML(data, function () {
+                    if (data.succeed) {
+                        alert("User " + $("#txtUserName").val().toUpperCase() + " has been reseted.");
+                        $.modal.close();
+                        $("#btn-refresh").trigger("click");
+                    }
+                });
+                $.unblockUI();
+            });
+        });
+
+    });
+
+    //called on submit begin
+    function onEditUserBegin() { $.blockUI(); }
+
+    //called on return value
+    function onEditUserSuccess(data) {
+        $.pushHTML(data, function () { $.modal.close(); $("#wrapper-content").html(data); });
+        $.unblockUI();
+    }
+</script>

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckContactResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RESULT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ROW_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ERR_MSG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RESULT_A" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_COMMITTED" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RETURN_LIST">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RETURN_TABLE">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckEmployeeResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPositionResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSRInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSRInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSRInformationResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Product" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckProductResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactListunderAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactListunderAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactListunderAccountResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactPrivilege">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactPrivilegeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactPrivilegeResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountPrimarySales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountPrimarySalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountPrimarySalesResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountContactAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountContactAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountContactAdminResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSRUnderAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSRUnderAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSRUnderAccountResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitiesUnderSR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SRNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitiesUnderSRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActivitiesUnderSRResult" type="tns:RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckContactSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckContact" />
+  </wsdl:message>
+  <wsdl:message name="CheckContactSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckEmployee" />
+  </wsdl:message>
+  <wsdl:message name="CheckEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPositionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPosition" />
+  </wsdl:message>
+  <wsdl:message name="CheckPositionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSRInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSRInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetSRInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSRInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckProductSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckProduct" />
+  </wsdl:message>
+  <wsdl:message name="CheckProductSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListunderAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactListunderAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListunderAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactListunderAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactPrivilegeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactPrivilege" />
+  </wsdl:message>
+  <wsdl:message name="GetContactPrivilegeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactPrivilegeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountPrimarySalesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountPrimarySales" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountPrimarySalesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountPrimarySalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountContactAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountContactAdmin" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountContactAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountContactAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSRUnderAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSRUnderAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetSRUnderAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSRUnderAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesUnderSRSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivitiesUnderSR" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesUnderSRSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivitiesUnderSRResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSSiebelSoap">
+    <wsdl:operation name="CheckContact">
+      <wsdl:input message="tns:CheckContactSoapIn" />
+      <wsdl:output message="tns:CheckContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmployee">
+      <wsdl:input message="tns:CheckEmployeeSoapIn" />
+      <wsdl:output message="tns:CheckEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPosition">
+      <wsdl:input message="tns:CheckPositionSoapIn" />
+      <wsdl:output message="tns:CheckPositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSRInformation">
+      <wsdl:input message="tns:GetSRInformationSoapIn" />
+      <wsdl:output message="tns:GetSRInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckProduct">
+      <wsdl:input message="tns:CheckProductSoapIn" />
+      <wsdl:output message="tns:CheckProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactListunderAccount">
+      <wsdl:input message="tns:GetContactListunderAccountSoapIn" />
+      <wsdl:output message="tns:GetContactListunderAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPrivilege">
+      <wsdl:input message="tns:GetContactPrivilegeSoapIn" />
+      <wsdl:output message="tns:GetContactPrivilegeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountPrimarySales">
+      <wsdl:input message="tns:GetAccountPrimarySalesSoapIn" />
+      <wsdl:output message="tns:GetAccountPrimarySalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountContactAdmin">
+      <wsdl:input message="tns:GetAccountContactAdminSoapIn" />
+      <wsdl:output message="tns:GetAccountContactAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSRUnderAccount">
+      <wsdl:input message="tns:GetSRUnderAccountSoapIn" />
+      <wsdl:output message="tns:GetSRUnderAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesUnderSR">
+      <wsdl:input message="tns:GetActivitiesUnderSRSoapIn" />
+      <wsdl:output message="tns:GetActivitiesUnderSRSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSSiebelSoap" type="tns:WSSiebelSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckContact">
+      <soap:operation soapAction="http://tempuri.org/CheckContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmployee">
+      <soap:operation soapAction="http://tempuri.org/CheckEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPosition">
+      <soap:operation soapAction="http://tempuri.org/CheckPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSRInformation">
+      <soap:operation soapAction="http://tempuri.org/GetSRInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProduct">
+      <soap:operation soapAction="http://tempuri.org/CheckProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactListunderAccount">
+      <soap:operation soapAction="http://tempuri.org/GetContactListunderAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPrivilege">
+      <soap:operation soapAction="http://tempuri.org/GetContactPrivilege" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountPrimarySales">
+      <soap:operation soapAction="http://tempuri.org/GetAccountPrimarySales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountContactAdmin">
+      <soap:operation soapAction="http://tempuri.org/GetAccountContactAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSRUnderAccount">
+      <soap:operation soapAction="http://tempuri.org/GetSRUnderAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesUnderSR">
+      <soap:operation soapAction="http://tempuri.org/GetActivitiesUnderSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSiebelSoap12" type="tns:WSSiebelSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckContact">
+      <soap12:operation soapAction="http://tempuri.org/CheckContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmployee">
+      <soap12:operation soapAction="http://tempuri.org/CheckEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPosition">
+      <soap12:operation soapAction="http://tempuri.org/CheckPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSRInformation">
+      <soap12:operation soapAction="http://tempuri.org/GetSRInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProduct">
+      <soap12:operation soapAction="http://tempuri.org/CheckProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactListunderAccount">
+      <soap12:operation soapAction="http://tempuri.org/GetContactListunderAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPrivilege">
+      <soap12:operation soapAction="http://tempuri.org/GetContactPrivilege" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountPrimarySales">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountPrimarySales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountContactAdmin">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountContactAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSRUnderAccount">
+      <soap12:operation soapAction="http://tempuri.org/GetSRUnderAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesUnderSR">
+      <soap12:operation soapAction="http://tempuri.org/GetActivitiesUnderSR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSSiebel">
+    <wsdl:port name="WSSiebelSoap" binding="tns:WSSiebelSoap">
+      <soap:address location="http://172.20.1.43:8066/WSSiebel.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSiebelSoap12" binding="tns:WSSiebelSoap12">
+      <soap12:address location="http://172.20.1.43:8066/WSSiebel.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

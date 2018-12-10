@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="000a149f-460c-40df-9dca-2cdee7d3c874"
+  name="Advantech.MyAdvantech.Business" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="9e53226d-35db-4425-99c7-8bceb6718a4e"
+        name="OrderBusinessLogic"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <description>Call SAP BAPI to flip order</description>
+        <ownedOperationsInternal>
+          <operation
+            Id="b7488989-f737-4399-b7ae-15be449b5e87"
+            name="CreateSAPOrder"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a0166c81-c36c-493a-a72e-56fa847ca279"
+                  name="Order"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="56c9a1d0-e059-4611-80ae-3a11c0e185b6"
+            name="LoadSAPOrder"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="965af700-0015-481f-9935-274c4d8e3f1c"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="57a02995-1a2a-4192-946a-2b16c759b165"
+                      LastKnownName="Order"
+                      LastKnownLocation="Package_1458.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d47c7731-446c-4047-824b-35da16c96917"
+            name="CopySAPOrderToNewQuote"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="33d8e51d-c66f-418a-9bdb-95636e9f5877"
+        name="PartBusinessLogic"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <description>Call SAP BAPI to flip order</description>
+        <ownedOperationsInternal>
+          <operation
+            Id="df35fcac-2cb3-4ec5-ae29-1d1eab5b3967"
+            name="LoadPrice"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="07e8bd36-6210-42e1-b39b-33e127c37ab7"
+                  name="List&lt;Part&gt;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="adf5dca8-5afd-4776-86f6-16041210d422"
+            name="LoadPrice"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1f796970-1d7c-4559-bd64-dcd9ec8e700a"
+                  name="Part"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2a9f8a6a-8907-47b6-bc49-d0d3fc9fc7a2"
+        name="SAPAccountBusinessLogic"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="129a0c76-c40f-43be-8d14-3e10cc2fca40"
+            name="CreateNewAccount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

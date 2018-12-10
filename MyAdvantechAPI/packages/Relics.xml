@@ -1,0 +1,287 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Relics
+</name>
+</assembly>
+<members>
+<member name="P:Relics.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Relics.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Relics.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:Relics.SAPDALDS.ProductInDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.ProductOutDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.QueryInventory_OutputDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.ProductOut_ABRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.SimulateOutDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.ProductInRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.ProductOutRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.QueryInventory_OutputRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.ProductOut_ABRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.SimulateOutRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SAPDALDS.ProductInRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SAPDALDS.ProductOutRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SAPDALDS.QueryInventory_OutputRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SAPDALDS.ProductOut_ABRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SAPDALDS.SimulateOutRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SAPDALDS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Relics.SalesOrder.OrderHeaderDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SalesOrder.HeaderTextsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SalesOrder.PartnerFuncDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SalesOrder.CreditCardDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SalesOrder.ConditionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SalesOrder.OrderLinesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SalesOrder.SAP_BAPIPARNRDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SalesOrder.PartnerAddressesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Relics.SalesOrder.OrderHeaderRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SalesOrder.HeaderTextsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SalesOrder.PartnerFuncRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SalesOrder.CreditCardRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SalesOrder.ConditionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SalesOrder.OrderLinesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SalesOrder.SAP_BAPIPARNRRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SalesOrder.PartnerAddressesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Relics.SalesOrder.OrderHeaderRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SalesOrder.HeaderTextsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SalesOrder.PartnerFuncRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SalesOrder.CreditCardRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SalesOrder.ConditionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SalesOrder.OrderLinesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SalesOrder.SAP_BAPIPARNRRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SalesOrder.PartnerAddressesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Relics.SalesOrder">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="M:Relics.SAPDAL.QueryInventory(Relics.SAPDALDS.ProductInDataTable,System.String,Relics.SAPDALDS.QueryInventory_OutputDataTable@,System.String@)">
+	<summary>
+ Query Product Inventory
+ </summary>
+	<param name="PartNos"></param>
+	<param name="plant"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Relics.SAPDAL.QueryInventory_V2(Relics.SAPDALDS.ProductInDataTable,System.String,System.DateTime,Relics.SAPDALDS.QueryInventory_OutputDataTable@,System.String@)">
+	<summary>
+ Query Product Inventory V2
+ </summary>
+	<param name="PartNos"></param>
+	<param name="plant"></param>
+	<param name="Req_Date">format is yyyyMMdd(Ex 20120101)</param>
+	<param name="QueryResult"></param>
+	<param name="ErrorMsg"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Relics.agsWS.USTaxService.#ctor">
+	<remarks/>
+</member><member name="E:Relics.agsWS.USTaxService.getSalesTaxByZIPCompleted">
+	<remarks/>
+</member><member name="E:Relics.agsWS.USTaxService.getStateTaxInfoCompleted">
+	<remarks/>
+</member><member name="E:Relics.agsWS.USTaxService.getZIPInfoCompleted">
+	<remarks/>
+</member><member name="E:Relics.agsWS.USTaxService.getPFPCompleted">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getSalesTaxByZIP(System.String,System.Decimal@)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getSalesTaxByZIPAsync(System.String,System.Decimal)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getSalesTaxByZIPAsync(System.String,System.Decimal,System.Object)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getStateTaxInfo(System.String,System.Boolean@,System.Boolean@)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getStateTaxInfoAsync(System.String,System.Boolean,System.Boolean)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getStateTaxInfoAsync(System.String,System.Boolean,System.Boolean,System.Object)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getZIPInfo(System.String,System.String@,System.String@,System.String@,System.Boolean@,System.Boolean@)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getZIPInfoAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getZIPInfoAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getPFP(System.String,System.Boolean,System.String@)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getPFPAsync(System.String,System.Boolean,System.String)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.getPFPAsync(System.String,System.Boolean,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:Relics.agsWS.USTaxService.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:Relics.agsWS.USTaxService">
+	<remarks/>
+</member><member name="T:Relics.agsWS.getSalesTaxByZIPCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getSalesTaxByZIPCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getSalesTaxByZIPCompletedEventArgs.pDecSalesTax">
+	<remarks/>
+</member><member name="T:Relics.agsWS.getSalesTaxByZIPCompletedEventArgs">
+	<remarks/>
+</member><member name="T:Relics.agsWS.getStateTaxInfoCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getStateTaxInfoCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getStateTaxInfoCompletedEventArgs.TAX_SHIPPING_ALONE">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getStateTaxInfoCompletedEventArgs.Advan_Taxable">
+	<remarks/>
+</member><member name="T:Relics.agsWS.getStateTaxInfoCompletedEventArgs">
+	<remarks/>
+</member><member name="T:Relics.agsWS.getZIPInfoCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getZIPInfoCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getZIPInfoCompletedEventArgs.pStrStateAbb2Digit">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getZIPInfoCompletedEventArgs.pStrCountyName">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getZIPInfoCompletedEventArgs.pStrCityName">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getZIPInfoCompletedEventArgs.TAX_SHIPPING_ALONE">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getZIPInfoCompletedEventArgs.Advan_Taxable">
+	<remarks/>
+</member><member name="T:Relics.agsWS.getZIPInfoCompletedEventArgs">
+	<remarks/>
+</member><member name="T:Relics.agsWS.getPFPCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getPFPCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="P:Relics.agsWS.getPFPCompletedEventArgs.pResponse">
+	<remarks/>
+</member><member name="T:Relics.agsWS.getPFPCompletedEventArgs">
+	<remarks/>
+</member>
+</members>
+</doc>

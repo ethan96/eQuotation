@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Class="PODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="" Member="PO_Heads">
+    <Type Name="PO_Head">
+      <Column Name="Po_Number" Type="System.String" CanBeNull="false" />
+      <Column Name="Comp_Code" Type="System.String" CanBeNull="false" />
+      <Column Name="Doc_Type" Type="System.String" CanBeNull="false" />
+      <Column Name="Purch_Org" Type="System.String" CanBeNull="false" />
+      <Column Name="Purch_Group" Type="System.String" CanBeNull="false" />
+      <Column Name="Vendor_ID" Type="System.String" CanBeNull="false" />
+      <Column Name="IsTesting" Type="System.Int32" CanBeNull="false" UpdateCheck="Never" />
+      <Column Member="Currency" Type="System.String" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="" Member="PO_Items">
+    <Type Name="PO_Item">
+      <Column Name="Po_Item" Type="System.String" CanBeNull="false" />
+      <Column Name="Material" Type="System.String" CanBeNull="false" />
+      <Column Name="EMaterial" Type="System.String" CanBeNull="false" />
+      <Column Name="Plant" Type="System.String" CanBeNull="false" />
+      <Column Name="Storage_Location" Type="System.String" CanBeNull="false" />
+      <Column Name="Item_Qty" Type="System.String" CanBeNull="false" />
+      <Column Name="Net_Price" Type="System.String" CanBeNull="false" />
+      <Column Name="Preq_Name" Type="System.String" CanBeNull="false" />
+      <Column Name="Delivery_Date" Type="System.String" CanBeNull="false" />
+      <Column Name="Matl_Group" Type="System.String" CanBeNull="false" />
+      <Column Name="Acctasscat" Type="System.String" CanBeNull="false" />
+      <Column Name="Short_Text" Type="System.String" CanBeNull="false" />
+      <Column Name="Gl_Account" Type="System.String" CanBeNull="false" />
+      <Column Name="Costcenter" Type="System.String" CanBeNull="false" />
+      <Column Name="Co_Area" Type="System.String" CanBeNull="false" />
+      <Column Name="Serial_No" Type="System.String" CanBeNull="false" />
+      <Column Name="Free_Item" Type="System.String" CanBeNull="false" />
+      <Column Member="Tax_Code" Type="System.String" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

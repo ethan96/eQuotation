@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 16.5" name="Ling2Sql">
+  <DataContextMoniker Name="/Ling2SqlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cb01fd7b-b4ce-4905-acfb-5e3f7e714d69" absoluteBounds="1.5, 2, 2, 14.270489908854167">
+      <DataClassMoniker Name="/Ling2SqlDataContext/Quote_Master" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1992eb79-bbce-479f-9186-f58bc3a9dba3" absoluteBounds="1.5150000000000001, 2.46, 1.9700000000000002, 13.710489908854166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d8144d4d-6b92-45b9-9171-c70d42268a5f" absoluteBounds="6.375, 2.125, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/Ling2SqlDataContext/Quote_Master_Extension" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00dd3e8a-5682-463f-ac5b-de8c02ae5ea1" absoluteBounds="6.39, 2.585, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c69f473d-4984-45ed-9bc1-de97aaadeb2c" absoluteBounds="4, 2.25, 2, 8.1168440755208326">
+      <DataClassMoniker Name="/Ling2SqlDataContext/QuoteItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a037c88-63ff-4931-b094-bba06f2723d9" absoluteBounds="4.015, 2.71, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

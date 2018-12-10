@@ -1,0 +1,170 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EDOC.UI", "EDOC.UI.vbproj", "{96D104D7-68A1-4A92-B859-FACCEC39757C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{786931A9-97CA-4149-A4D0-22C5875FF76E} = {786931A9-97CA-4149-A4D0-22C5875FF76E}
+		{5AA950F1-C439-469E-B9F8-9C5367EF1867} = {5AA950F1-C439-469E-B9F8-9C5367EF1867}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EDOC.Common", "COMM\EDOC.Common.vbproj", "{25E69930-9DDD-46DE-8667-EDA571F6D381}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EDOC.DocumentsMain", "DOCH\EDOC.DocumentsMain.vbproj", "{786931A9-97CA-4149-A4D0-22C5875FF76E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EDOC.IBUS", "IBUS\EDOC.IBUS.vbproj", "{2EB2E027-5936-400A-A6F9-D3418EC5821E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EDOC.Profile", "PROF\EDOC.Profile.vbproj", "{5AA950F1-C439-469E-B9F8-9C5367EF1867}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EDOC.Relics", "RELI\EDOC.Relics.vbproj", "{95DD6EFA-8162-45C2-A28E-A2D9AF0F8C31}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EDOC.Patches", "PATC\EDOC.Patches.vbproj", "{3D202CEA-C422-4B3E-BC7C-DFE4475F8609}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EDOC.Ex-SystemsTools", "EXSY\EDOC.Ex-SystemsTools.vbproj", "{572AA953-C783-43D4-8990-35A9B2C116B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOnlineWall", "AOnlineWall\AOnlineWall.csproj", "{A05F8114-3583-45E4-A954-DC1416D94082}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SAPDAL", "..\SAPDAL\SAPDAL.vbproj", "{465CEF83-F14D-4783-8917-1A9B5ED8EDD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStoreServices", "eStoreServices\eStoreServices.csproj", "{6470818D-03EA-43EA-9AF1-CBD5BBBACE17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4455F5C-79AF-420F-A668-082DDE404082}"
+	ProjectSection(SolutionItems) = preProject
+		EDOC.vsmdi = EDOC.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EDOC.DBAccess", "DBAC\EDOC.DBAccess.vbproj", "{E716D035-8F24-4708-A59C-076DCA333FF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advantech.Myadvantech.Business", "..\MyAdvantechAPI\Advantech.Myadvantech.Business\Advantech.Myadvantech.Business.csproj", "{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advantech.Myadvantech.DataAccess", "..\MyAdvantechAPI\Advantech.Myadvantech.DataAccess\Advantech.Myadvantech.DataAccess.csproj", "{9FDD308C-F13D-4B90-B505-666846184259}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GPcontrolAPI", "..\GPcontrolAPI\GPcontrolAPI.vbproj", "{D23507A0-3436-42C7-942B-350A5EB2ADC0}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 16
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://myadvantechcollection.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EDOC.UI.vbproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = COMM\\EDOC.Common.vbproj
+		SccProjectName2 = COMM
+		SccLocalPath2 = COMM
+		SccProjectUniqueName3 = DOCH\\EDOC.DocumentsMain.vbproj
+		SccProjectName3 = DOCH
+		SccLocalPath3 = DOCH
+		SccProjectUniqueName4 = IBUS\\EDOC.IBUS.vbproj
+		SccProjectName4 = IBUS
+		SccLocalPath4 = IBUS
+		SccProjectUniqueName5 = PATC\\EDOC.Patches.vbproj
+		SccProjectName5 = PATC
+		SccLocalPath5 = PATC
+		SccProjectUniqueName6 = PROF\\EDOC.Profile.vbproj
+		SccProjectName6 = PROF
+		SccLocalPath6 = PROF
+		SccProjectUniqueName7 = RELI\\EDOC.Relics.vbproj
+		SccProjectName7 = RELI
+		SccLocalPath7 = RELI
+		SccProjectUniqueName8 = EXSY\\EDOC.Ex-SystemsTools.vbproj
+		SccProjectName8 = EXSY
+		SccLocalPath8 = EXSY
+		SccProjectUniqueName9 = AOnlineWall\\AOnlineWall.csproj
+		SccProjectName9 = AOnlineWall
+		SccLocalPath9 = AOnlineWall
+		SccProjectUniqueName10 = ..\\SAPDAL\\SAPDAL.vbproj
+		SccProjectName10 = ../SAPDAL
+		SccLocalPath10 = ..\\SAPDAL
+		SccProjectUniqueName11 = eStoreServices\\eStoreServices.csproj
+		SccProjectName11 = eStoreServices
+		SccLocalPath11 = eStoreServices
+		SccProjectUniqueName12 = DBAC\\EDOC.DBAccess.vbproj
+		SccProjectName12 = DBAC
+		SccLocalPath12 = DBAC
+		SccProjectUniqueName13 = ..\\MyAdvantechAPI\\Advantech.Myadvantech.Business\\Advantech.Myadvantech.Business.csproj
+		SccProjectName13 = ../MyAdvantechAPI/Advantech.Myadvantech.Business
+		SccLocalPath13 = ..\\MyAdvantechAPI\\Advantech.Myadvantech.Business
+		SccProjectUniqueName14 = ..\\MyAdvantechAPI\\Advantech.Myadvantech.DataAccess\\Advantech.Myadvantech.DataAccess.csproj
+		SccProjectName14 = ../MyAdvantechAPI/Advantech.Myadvantech.DataAccess
+		SccLocalPath14 = ..\\MyAdvantechAPI\\Advantech.Myadvantech.DataAccess
+		SccProjectUniqueName15 = ..\\GPcontrolAPI\\GPcontrolAPI.vbproj
+		SccProjectName15 = ../GPcontrolAPI
+		SccLocalPath15 = ..\\GPcontrolAPI
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96D104D7-68A1-4A92-B859-FACCEC39757C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D104D7-68A1-4A92-B859-FACCEC39757C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D104D7-68A1-4A92-B859-FACCEC39757C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D104D7-68A1-4A92-B859-FACCEC39757C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E69930-9DDD-46DE-8667-EDA571F6D381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E69930-9DDD-46DE-8667-EDA571F6D381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E69930-9DDD-46DE-8667-EDA571F6D381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E69930-9DDD-46DE-8667-EDA571F6D381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{786931A9-97CA-4149-A4D0-22C5875FF76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{786931A9-97CA-4149-A4D0-22C5875FF76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{786931A9-97CA-4149-A4D0-22C5875FF76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{786931A9-97CA-4149-A4D0-22C5875FF76E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EB2E027-5936-400A-A6F9-D3418EC5821E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB2E027-5936-400A-A6F9-D3418EC5821E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB2E027-5936-400A-A6F9-D3418EC5821E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB2E027-5936-400A-A6F9-D3418EC5821E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AA950F1-C439-469E-B9F8-9C5367EF1867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AA950F1-C439-469E-B9F8-9C5367EF1867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AA950F1-C439-469E-B9F8-9C5367EF1867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AA950F1-C439-469E-B9F8-9C5367EF1867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95DD6EFA-8162-45C2-A28E-A2D9AF0F8C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95DD6EFA-8162-45C2-A28E-A2D9AF0F8C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95DD6EFA-8162-45C2-A28E-A2D9AF0F8C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95DD6EFA-8162-45C2-A28E-A2D9AF0F8C31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D202CEA-C422-4B3E-BC7C-DFE4475F8609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D202CEA-C422-4B3E-BC7C-DFE4475F8609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D202CEA-C422-4B3E-BC7C-DFE4475F8609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D202CEA-C422-4B3E-BC7C-DFE4475F8609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572AA953-C783-43D4-8990-35A9B2C116B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572AA953-C783-43D4-8990-35A9B2C116B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572AA953-C783-43D4-8990-35A9B2C116B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572AA953-C783-43D4-8990-35A9B2C116B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05F8114-3583-45E4-A954-DC1416D94082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05F8114-3583-45E4-A954-DC1416D94082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05F8114-3583-45E4-A954-DC1416D94082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05F8114-3583-45E4-A954-DC1416D94082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{465CEF83-F14D-4783-8917-1A9B5ED8EDD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{465CEF83-F14D-4783-8917-1A9B5ED8EDD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{465CEF83-F14D-4783-8917-1A9B5ED8EDD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{465CEF83-F14D-4783-8917-1A9B5ED8EDD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6470818D-03EA-43EA-9AF1-CBD5BBBACE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6470818D-03EA-43EA-9AF1-CBD5BBBACE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6470818D-03EA-43EA-9AF1-CBD5BBBACE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6470818D-03EA-43EA-9AF1-CBD5BBBACE17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E716D035-8F24-4708-A59C-076DCA333FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E716D035-8F24-4708-A59C-076DCA333FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E716D035-8F24-4708-A59C-076DCA333FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E716D035-8F24-4708-A59C-076DCA333FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23507A0-3436-42C7-942B-350A5EB2ADC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23507A0-3436-42C7-942B-350A5EB2ADC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23507A0-3436-42C7-942B-350A5EB2ADC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23507A0-3436-42C7-942B-350A5EB2ADC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = EDOC.vsmdi
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,164 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<table width="950" border="0" cellspacing="3" cellpadding="0" align="center"
+       class="stylenormal">
+    <tr>
+        <td align="left" width="100px">
+            购买单位：
+        </td>
+        <td align="left" width="540px">
+            @Model.AccountName
+        </td>
+        <td align="left" width="130px">
+            报价日期：
+        </td>
+        <td align="right" width="180px">
+            @Model.QuoteDate.ToString("yyyy-MM-dd")
+        </td>
+    </tr>
+    <tr>
+        <td align="left">
+            发货地址：
+        </td>
+        <td align="left">
+            @Model.Address
+        </td>
+        <td align="left">
+            报价单号：
+        </td>
+        <td align="right">
+            @Model.QuoteNo
+        </td>
+    </tr>
+    <tr>
+        <td align="left">
+            联&nbsp; 系&nbsp; 人：
+        </td>
+        <td align="left">
+            @Model.AccountContactName
+        </td>
+        <td align="left">
+            REV#：
+        </td>
+        <td align="right">
+            @Model.RevisionNo
+        </td>
+    </tr>
+    <tr runat="server" id="expireddate" visible="false">
+        <td align="left">
+            电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 话：
+        </td>
+        <td align="left">
+            @Model.AccountContactTel
+        </td>
+        <td align="left">
+            有效日期：
+        </td>
+
+        @if (Model.pagetype == "ReviewQuoteApproval" && Model.ExpiredDateIsAdjustable)
+        {
+            <td align="right">@Html.TextBoxFor(mdl => mdl.ExpiredDate, "{0:yyyy-MM-dd}", new { @class = "text050", @readonly = "true" })</td>
+        }
+        else
+        {
+            <td align="right">
+                @Model.ExpiredDate.ToString("yyyy-MM-dd")
+            </td>
+        }
+    </tr>
+    <tr>
+        <td align="left">
+            邮箱地址：
+        </td>
+        <td align="left" class="stylenormaleng">
+            @Model.AccountContactEmail
+        </td>
+        <td align="left">
+            负责业务：
+        </td>
+        <td align="right">
+            @Model.SalesName
+        </td>
+    </tr>
+    <tr>
+        <td align="left"></td>
+        <td align="left"></td>
+        <td align="left">
+            业务电话：
+        </td>
+        <td align="right">
+            @Model.SalesTel
+        </td>
+    </tr>
+    <tr>
+        <td align="left"></td>
+        <td align="left"></td>
+        <td align="left">
+            业务邮箱地址：
+        </td>
+        <td align="right" class="stylenormaleng">
+            @Model.SalesEmail
+        </td>
+    </tr>
+</table>
+
+
+    @{
+        var endCustomer = Model.QuotationPartner.Where(s => s.TYPE == "EM").FirstOrDefault();
+        if (endCustomer != null)
+        {
+            var ATTENTION = endCustomer.ATTENTION ?? "";
+            var NAME = endCustomer.NAME ?? "";
+            var ADDRESS = endCustomer.ADDRESS ?? "";
+            var TEL = endCustomer.TEL ?? "";
+            <table width="950" class="EndCustomerTb stylenormal" align="center" style="border-radius: 2px;  padding: 5px;  margin-top: 20px;
+                 margin-bottom: 20px; border: 1px solid gray;">
+                <tr>
+                    <td style="font-weight:bold">
+                        终端客户资讯:
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>公司名称: </td>
+                    <td>
+                        @NAME
+                    </td>
+                    <td>联系人: </td>
+                    <td>
+                        @ATTENTION
+                    </td>
+                </tr>
+                <tr>
+                    <td>电话: </td>
+                    <td>
+                        @TEL
+                    </td>
+                    <td>地址: </td>
+                    <td>
+                        @ADDRESS
+                    </td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <table width="950" class="EndCustomerTb stylenormal" align="center" style="padding: 5px;  margin-top: 20px;
+                 margin-bottom: 20px;">
+                <tr>
+                    <td style="font-weight:bold">
+                        终端客户资讯: N/A
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        }
+    }
+
+<br />
+
+
+

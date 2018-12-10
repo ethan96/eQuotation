@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advantech.Myadvantech.DataAccess", "Advantech.Myadvantech.DataAccess\Advantech.Myadvantech.DataAccess.csproj", "{9FDD308C-F13D-4B90-B505-666846184259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advantech.Myadvantech.Business", "Advantech.Myadvantech.Business\Advantech.Myadvantech.Business.csproj", "{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advantech.PIS.Business", "Advantech.PIS.Business\Advantech.PIS.Business.csproj", "{F6A4B300-2E01-4339-85A2-FB94701005E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FDD308C-F13D-4B90-B505-666846184259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDD308C-F13D-4B90-B505-666846184259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A4B99C9-AF06-4BA4-B3D4-0958E5E717F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6A4B300-2E01-4339-85A2-FB94701005E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A4B300-2E01-4339-85A2-FB94701005E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A4B300-2E01-4339-85A2-FB94701005E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A4B300-2E01-4339-85A2-FB94701005E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://myadvantechcollection.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Advantech.Myadvantech.DataAccess\\Advantech.Myadvantech.DataAccess.csproj
+		SccProjectName1 = Advantech.Myadvantech.DataAccess
+		SccLocalPath1 = Advantech.Myadvantech.DataAccess
+		SccProjectUniqueName2 = Advantech.Myadvantech.Business\\Advantech.Myadvantech.Business.csproj
+		SccProjectName2 = Advantech.Myadvantech.Business
+		SccLocalPath2 = Advantech.Myadvantech.Business
+		SccProjectUniqueName3 = Advantech.PIS.Business\\Advantech.PIS.Business.csproj
+		SccProjectName3 = Advantech.PIS.Business
+		SccLocalPath3 = Advantech.PIS.Business
+	EndGlobalSection
+EndGlobal

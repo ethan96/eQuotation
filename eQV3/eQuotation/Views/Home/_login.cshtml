@@ -1,0 +1,61 @@
+﻿@model eQuotation.Models.Home.LoginViewModel
+<style>
+    .message-summary {
+        color:red;
+        font-weight:bold;
+        margin-left: 30px;
+        margin-bottom: 5px;
+    }
+
+    .message-block ul {
+        list-style-type: none;
+    }
+</style>
+@if (Model != null)
+{
+    <div class="login">
+        @using (Html.BeginForm("authuser", "home", new { ReturnUrl = Request.QueryString["ReturnUrl"] }, 
+            FormMethod.Post, new { @id = "form-login", @class= "userinfo"}))
+        {
+            @Html.AntiForgeryToken()
+            <h2>eQuotation</h2>
+            <h4>Quotation Management</h4>
+            <div class="content">
+                <div>
+                    <img src="~/Images/bgpart.jpg" width="140" height="130" />
+                </div>
+                <div><label>Email:</label></div>
+                <div>@Html.TextBoxFor(mdl => mdl.Email)</div>
+                <div style="margin-top:10px;"><label>Password:</label></div>
+                <div>
+                    @Html.TextBoxFor(mdl => mdl.Password, new { @type = "password" })
+                </div>
+                <div><a href="https://member.advantech.com/forgetpassword.aspx?Pass=mya&lang=en" target="_blank" rel="forgot_password" class="forgot linkform">Forgot your password?</a></div>
+            </div>
+            <div class="message-block">
+                @Html.ValidationSummary(true, "", new { @class = "message-summary" })
+            </div>
+            <div class="bottom">
+                <div class="remember">
+                    @Html.CheckBoxFor(mdl => mdl.RememberMe)
+                    <span>Keep me logged in</span>
+                </div>
+                <input type="submit" value="Login" id="submit-login"/>
+                <a href="#" rel="register" class="linkform">
+                    @*You don't have an account yet? Contact administrator.*@
+                </a>
+                <div class="clear"></div>
+            </div>      
+        }
+    </div>
+    
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#form-login").on("submit", function () { });
+    });
+
+</script>

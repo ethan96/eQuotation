@@ -1,0 +1,477 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="Advantech.Myadvantech.DataAccess.WorkFlow.ACNGPApproverFlow" sap:VirtualizedContainerService.HintSize="1202,812" mva:VisualBasic.Settings="Assembly references and imported namespaces for internal implementation"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Xml"
+ xmlns:s3="clr-namespace:System;assembly=System.Core"
+ xmlns:s4="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:s5="clr-namespace:System"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+ xmlns:st="clr-namespace:System.Text;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Flowchart sad:XamlDebuggerXmlReader.FileName="D:\ProjectRoot\MyAdvantch\MyAdvantechAPI\Advantech.Myadvantech.Business\WorkFlow\ACNGPApproverFlow.xaml" sap:VirtualizedContainerService.HintSize="1167,1020">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="Quote_Needs_GP_Approval" />
+      <Variable x:TypeArguments="x:Double" Default="0" Name="EIOT_Configuration_GP" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">510,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">540,77.5 540,100</av:PointCollection>
+        <x:Double x:Key="Width">1153</x:Double>
+        <x:Double x:Key="Height">983.5</x:Double>
+      </scg3:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID17</x:Reference>
+    </Flowchart.StartNode>
+    <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID3" sap:VirtualizedContainerService.HintSize="70,87">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <av:Point x:Key="ShapeLocation">505,186.5</av:Point>
+          <av:Size x:Key="ShapeSize">70,87</av:Size>
+          <av:PointCollection x:Key="EIOTConnector">505,251.75 420,251.75 420,320</av:PointCollection>
+          <av:PointCollection x:Key="AISCConnector">505,230 130,230 130,320</av:PointCollection>
+          <av:PointCollection x:Key="ISGConnector">575,251.75 700,251.75 700,320</av:PointCollection>
+          <av:PointCollection x:Key="IAGConnector">575,230 950,230 950,320</av:PointCollection>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <FlowStep x:Key="EIOT" x:Name="__ReferenceID4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">298.5,320</av:Point>
+            <av:Size x:Key="ShapeSize">243,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">420,380 420,410 380,410 380,426.5</av:PointCollection>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="Get Quoting Product Type" sap:VirtualizedContainerService.HintSize="243,60">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg3:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <FlowStep.Next>
+          <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID6" sap:VirtualizedContainerService.HintSize="70,87">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <av:Point x:Key="ShapeLocation">345,426.5</av:Point>
+                <av:Size x:Key="ShapeSize">70,87</av:Size>
+                <av:PointCollection x:Key="EIOTConnector">515,240 140,240 140,330</av:PointCollection>
+                <av:PointCollection x:Key="AISCConnector">532.5,283.5 532.5,313.5 410,313.5 410,330</av:PointCollection>
+                <av:PointCollection x:Key="ISGConnector">567.5,283.5 567.5,313.5 660,313.5 660,334</av:PointCollection>
+                <av:PointCollection x:Key="IAGConnector">585,240 880,240 880,324</av:PointCollection>
+                <av:PointCollection x:Key="ConfigurationConnector">415,470 548.5,470</av:PointCollection>
+                <av:PointCollection x:Key="LooseItemConnector">380,513.5 380,614</av:PointCollection>
+              </scg3:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <FlowStep x:Key="LooseItem" x:Name="__ReferenceID10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">280,614</av:Point>
+                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">380,666 380,696 632.5,696 632.5,896.5</av:PointCollection>
+                </scg3:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Flowchart DisplayName="EIOT Loose Item Flow Chart" sap:VirtualizedContainerService.HintSize="614,636">
+                <Flowchart.Variables>
+                  <Variable x:TypeArguments="x:String" Name="Account_Status" />
+                  <Variable x:TypeArguments="x:String" Name="Line_Item_Product_Line" />
+                  <Variable x:TypeArguments="x:Double" Name="Line_Item_GP" />
+                  <Variable x:TypeArguments="x:Boolean" Name="Line_Item_Below_GP" />
+                </Flowchart.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                    <av:Size x:Key="ShapeSize">60,75</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,110</av:PointCollection>
+                  </scg3:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Flowchart.StartNode>
+                  <x:Reference>__ReferenceID1</x:Reference>
+                </Flowchart.StartNode>
+                <FlowStep x:Name="__ReferenceID1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">178.5,110</av:Point>
+                      <av:Size x:Key="ShapeSize">243,60</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">300,170 300,224</av:PointCollection>
+                    </scg3:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Get Account Status" sap:VirtualizedContainerService.HintSize="243,60">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Account_Status]</OutArgument>
+                    </Assign.To>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg3:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID0">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">200,224</av:Point>
+                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                        </scg3:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ForEach x:TypeArguments="x:Int32" DisplayName="ForEach Loose Items" sap:VirtualizedContainerService.HintSize="200,52">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg3:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="x:Int32">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="item" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="265,276">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg3:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Is Line Item Below GP" sap:VirtualizedContainerService.HintSize="243,60">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[Line_Item_Below_GP]</OutArgument>
+                              </Assign.To>
+                            </Assign>
+                            <If Condition="[Line_Item_Below_GP = True]" DisplayName="Line_Item_Below_GP is True" sap:VirtualizedContainerService.HintSize="464,626">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg3:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="265,476">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg3:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="Get Line Item's GP" sap:VirtualizedContainerService.HintSize="243,60">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Double">[Line_Item_GP]</OutArgument>
+                                    </Assign.To>
+                                  </Assign>
+                                  <Assign DisplayName="Get Line Item's Product Line" sap:VirtualizedContainerService.HintSize="243,60">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[Line_Item_Product_Line]</OutArgument>
+                                    </Assign.To>
+                                  </Assign>
+                                  <Assign DisplayName="Get Line Item's GP Approvers" sap:VirtualizedContainerService.HintSize="243,60">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[Line_Item_Product_Line]</OutArgument>
+                                    </Assign.To>
+                                  </Assign>
+                                  <Switch x:TypeArguments="x:String" Expression="[Line_Item_Product_Line]" sap:VirtualizedContainerService.HintSize="243,52">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg3:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If x:Key="DTOS" Condition="[Line_Item_GP &lt; 0.09]" DisplayName="&lt; 0.09" sap:VirtualizedContainerService.HintSize="464,210">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg3:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If.Then>
+                                        <Assign DisplayName="Get Line Item's Product Line" sap:VirtualizedContainerService.HintSize="243,60">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[Line_Item_Product_Line]</OutArgument>
+                                          </Assign.To>
+                                        </Assign>
+                                      </If.Then>
+                                    </If>
+                                    <If x:Key="ESBC" Condition="[Line_Item_GP &gt; 0.1 And Line_Item_GP &lt; 0.2]" sap:VirtualizedContainerService.HintSize="464,210" />
+                                    <x:Null x:Key="AIMB" />
+                                    <x:Null x:Key="RISC/UBC" />
+                                    <x:Null x:Key="WISE-EC" />
+                                    <x:Null x:Key="Industrial Display Systerms" />
+                                    <x:Null x:Key="SQFlash" />
+                                    <x:Null x:Key="Microsoft &amp; Emb SW" />
+                                    <x:Null x:Key="SOM" />
+                                    <x:Null x:Key="Industrial DMS/ITS" />
+                                  </Switch>
+                                </Sequence>
+                              </If.Then>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ForEach>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+                <x:Reference>__ReferenceID0</x:Reference>
+              </Flowchart>
+              <FlowStep.Next>
+                <FlowDecision x:Name="__ReferenceID2" Condition="[Quote_Needs_GP_Approval]" sap:VirtualizedContainerService.HintSize="70,87">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">615,896.5</av:Point>
+                      <av:Size x:Key="ShapeSize">70,87</av:Size>
+                      <av:PointCollection x:Key="FalseConnector">685,940 770,940</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">615,940 530,940</av:PointCollection>
+                    </scg3:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <FlowDecision.True>
+                    <FlowStep x:Name="__ReferenceID13">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">330,929</av:Point>
+                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        </scg3:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Confirm Target="{x:Null}" DisplayName="Save Approver list to DB" sap:VirtualizedContainerService.HintSize="200,22">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg3:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Confirm>
+                    </FlowStep>
+                  </FlowDecision.True>
+                  <FlowDecision.False>
+                    <FlowStep x:Name="__ReferenceID12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">770,929</av:Point>
+                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        </scg3:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TerminateWorkflow sap:VirtualizedContainerService.HintSize="200,22">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg3:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </TerminateWorkflow>
+                    </FlowStep>
+                  </FlowDecision.False>
+                </FlowDecision>
+              </FlowStep.Next>
+            </FlowStep>
+            <FlowStep x:Key="Configuration" x:Name="__ReferenceID9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">548.5,440</av:Point>
+                  <av:Size x:Key="ShapeSize">243,60</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">670,500 760,500 760,516.5</av:PointCollection>
+                </scg3:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Get Configuration GP%" sap:VirtualizedContainerService.HintSize="243,60">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Double">[EIOT_Configuration_GP]</OutArgument>
+                </Assign.To>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg3:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Assign>
+              <FlowStep.Next>
+                <FlowDecision x:Name="__ReferenceID14" Condition="[Quote_Needs_GP_Approval &lt; 0.21]" sap:VirtualizedContainerService.HintSize="70,87">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">725,516.5</av:Point>
+                      <av:Size x:Key="ShapeSize">70,87</av:Size>
+                      <av:PointCollection x:Key="FalseConnector">795,560 951,560 951,826.96 667.5,826.96 667.5,896.5</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">725,560 648.5,560 648.5,650 678.5,650</av:PointCollection>
+                    </scg3:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <FlowDecision.True>
+                    <FlowStep x:Name="__ReferenceID16">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">678.5,620</av:Point>
+                          <av:Size x:Key="ShapeSize">243,60</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">800,680 800,710</av:PointCollection>
+                        </scg3:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Need GP Approval" sap:VirtualizedContainerService.HintSize="243,60">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[Quote_Needs_GP_Approval]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg3:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID15">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">678.5,710</av:Point>
+                              <av:Size x:Key="ShapeSize">243,60</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">800,770 800,800 650,800 650,896.5</av:PointCollection>
+                            </scg3:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Get AISC's Approver by Sales" sap:VirtualizedContainerService.HintSize="243,60">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg3:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                          <FlowStep.Next>
+                            <x:Reference>__ReferenceID2</x:Reference>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowDecision.True>
+                  <FlowDecision.False>
+                    <x:Reference>__ReferenceID2</x:Reference>
+                  </FlowDecision.False>
+                </FlowDecision>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowSwitch>
+        </FlowStep.Next>
+      </FlowStep>
+      <FlowStep x:Key="AISC" x:Name="__ReferenceID5">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">8.5,320</av:Point>
+            <av:Size x:Key="ShapeSize">243,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">130,380 130,400</av:PointCollection>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="Need GP Approval" sap:VirtualizedContainerService.HintSize="243,60">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Boolean">[Quote_Needs_GP_Approval]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg3:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">8.5,400</av:Point>
+                <av:Size x:Key="ShapeSize">243,60</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">130,460 130,866.5 632.5,866.5 632.5,896.5</av:PointCollection>
+              </scg3:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Get AISC's Approver by Sales" sap:VirtualizedContainerService.HintSize="243,60">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg3:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID2</x:Reference>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+      <FlowStep x:Key="IAG" x:Name="__ReferenceID8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">828.5,320</av:Point>
+            <av:Size x:Key="ShapeSize">243,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">1071.5,350 1087.5,350 1087.5,866.5 667.5,866.5 667.5,896.5</av:PointCollection>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="TBI" sap:VirtualizedContainerService.HintSize="243,60">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg3:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <FlowStep.Next>
+          <x:Reference>__ReferenceID2</x:Reference>
+        </FlowStep.Next>
+      </FlowStep>
+      <FlowStep x:Key="ISG" x:Name="__ReferenceID7">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">578.5,320</av:Point>
+            <av:Size x:Key="ShapeSize">243,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">700,380 700,410 1011,410 1011,848.96 667.5,848.96 667.5,896.5</av:PointCollection>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="TBI" sap:VirtualizedContainerService.HintSize="243,60">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg3:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <FlowStep.Next>
+          <x:Reference>__ReferenceID2</x:Reference>
+        </FlowStep.Next>
+      </FlowStep>
+    </FlowSwitch>
+    <FlowStep x:Name="__ReferenceID17">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">418.5,100</av:Point>
+          <av:Size x:Key="ShapeSize">243,60</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">540,160 540,186.5</av:PointCollection>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Get Sales Sector" sap:VirtualizedContainerService.HintSize="243,60">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID3</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
+    <x:Reference>__ReferenceID13</x:Reference>
+    <x:Reference>__ReferenceID14</x:Reference>
+    <x:Reference>__ReferenceID15</x:Reference>
+    <x:Reference>__ReferenceID16</x:Reference>
+  </Flowchart>
+</Activity>

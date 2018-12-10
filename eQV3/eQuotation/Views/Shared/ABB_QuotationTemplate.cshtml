@@ -1,0 +1,58 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+
+<style>
+    .bb-content
+    {
+        background-color:#ffffff;
+        padding: 0.5in;
+    }
+    
+</style>
+
+<div class="main-content bb-content">
+
+    @Html.Partial("ABB_QuoteHeader", @Model)
+    @Html.Partial("ABB_QuoteDetails", @Model)
+
+    <table>
+        @*<tr>
+            <td>
+                <b>Shipping Method/Condition</b>:&nbsp;&nbsp;<span>UPS 2DAY AIR</span>
+            </td>
+        </tr>*@
+        <tr style="height:30px"></tr>
+        <tr>
+            <td>
+                @if (Model.QD.Where(d => d.NCNR).Any())
+                {
+                    <span>☑ in NCNR field indicates item is non-cancellable and non-returnable except under warranty policy.</span><br />
+                }
+
+                @foreach (var p in Model.QuotationPartner)
+                {
+                    if (p.TYPE.IndexOf("BB_Extra") > -1)
+
+                    {
+                        <span>@p.NAME</span><br />
+                    }
+                }
+            </td>
+        </tr>
+    </table>
+    <div style="min-height: 50px;"></div>
+    <p style="page-break-after:always"></p>
+
+    <div style="text-align: center;">
+        <br/><br />
+        <h3>By accepting this Quotation with a corresponding order, Customer agrees to the attached terms and conditions</h3>
+        <div style="text-align: left; background-color: white;">
+            @{
+                var tc = new HtmlString(Model.QuoteTemplateInformation.RBUTermsAndCondition);
+            }
+            <span>@tc</span>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,95 @@
+﻿
+<style type="text/css">
+    .black {
+        color: #000000;
+        font-weight: bold;
+    }
+    .HeaderStyle{
+        background-color:#e3e3e3;
+
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        if ($("ul.tabnav li")) {
+            //$("ul.tabnav li:eq(3)").addClass("active");
+            $('[data-value~="PI001"]').addClass("active");
+        }
+        if ($(".tab-pane")) {
+            //$(".tab-pane:eq(3)").addClass("active");
+            $('#PI001').addClass("active");
+        }
+
+        //switch to different tab
+        $("ul.tabnav li").on("click", function () {
+
+            //display tab element
+            $("ul.tabnav li").removeClass("active");
+            $(this).addClass("active");
+
+            //change tab content
+            $(".tab-pane").removeClass("active");
+            var tabId = $(this).attr("data-value");
+            $("#" + tabId).addClass("tab-pane active");
+        });
+
+
+        getACLATP();
+    });
+
+    function getACLATP() {
+        //debugger;
+        var postData = JSON.stringify({ strPartNo: $('#hd_PartNo').val(), strORG: $('#hd_ORG').val(), strCurrency: $('#hd_Currency').val() });
+        $.ajax({
+            type: "POST",
+            url: "/Operation/GetProductATP",
+            data: postData,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (redata) {
+                //debugger;
+                if (redata.succeed) {
+                    //debugger;
+                    var result = redata.data;
+                    $('#ProductRelatedInfoFrame').empty();
+                    $('#ProductRelatedInfoFrame').html(result);
+                }
+                else {
+                    $('#ProductRelatedInfoFrame').html('Internal Error! Please Contact <a href="mailto:MyAdvantech@advantech.com">MyAdvantech Team</a> to report this issue, thank you.');
+                }
+            },
+            error: function (msg) {
+                $('#ProductRelatedInfoFrame').html('Internal Error! Please Contact <a href="mailto:MyAdvantech@advantech.com">MyAdvantech Team</a> to report this issue, thank you.');
+            }
+        });
+
+    }
+</script>
+
+<div>
+    <input type="hidden" id="hd_PartNo" value="@ViewBag.PartNo" />
+    <input type="hidden" id="hd_ORG" value="@ViewBag.ORG" />
+    <input type="hidden" id="hd_Currency" value="@ViewBag.Currency" />
+    <div>
+        <ul class="tabnav nav-tabs">
+            <li data-value="PI001">
+                <a>ATP Info.</a>
+            </li>
+            <li data-value="PI002">
+                <a>Volume Disc.</a>
+            </li>
+        </ul>
+        <div class="tab-content" style="background-color: #fff; height:251px;">
+            <div class="tab-pane" id="PI001" style="overflow:auto;">
+                <div id="ProductRelatedInfoFrame" style="height: 290px; width:890px; overflow: auto;">
+                </div>
+            </div>
+            <div class="tab-pane" id="PI002" style="overflow:auto;">
+                <div>
+                    <span></span>
+                </div>
+            </div>
+        </div>       
+    </div>              
+</div>

@@ -1,0 +1,76 @@
+﻿@using WorkFlowlAPI
+@model eQuotation.ViewModels.QuoteForm.QuoteFormViewModel
+
+<div class="titlebox topbox">
+    <h4>Approval Confirm:</h4>
+</div>
+<div style="margin:10px;">
+    <div class="actionbox">
+            <ul>
+                @if (Model.FindApproverResult == FindApproverResult.NeedApprovalForExpiredDate || Model.FindApproverResult == FindApproverResult.NeedApprovalForGP || Model.FindApproverResult == FindApproverResult.NeedApprovalForGPAndExpiredDate)
+                {
+                    <li>
+                        <button id="btn-Approval-confirm" type="submit" name="submitButton" value="ConfirmAfterCheck"><i class="fa fa-check-square-o"></i>Confirm</button>
+                    </li>
+                }
+                <li>
+                    <a id="btn-Approval-cancel"><i class="fa fa-times"></i>Cancel</a>
+                </li>
+            </ul>
+        </div>
+    <div style="margin:10px;">
+        @if (Model.FindApproverResult == FindApproverResult.GPRuleNotFound)
+        {
+            <h2 align="center" style="color: #FF0000;">GP Rule can not be found, please check the group and office setting of QuoteTo Account: @Model.QuoteToErpId</h2>
+        }
+        else
+        {
+
+            <div class="approval-quoteItem">
+                show _ABBQuoteDetailsV2..
+                @*@Html.Partial("", @Model)*@
+            </div>
+            <div id="approvalReasonReminder">
+                <h4>This quote must be approved through Approval Flow due to below issues: </h4>
+                <ul>
+                    @if (Model.FindApproverResult == FindApproverResult.NeedApprovalForGP)
+                {
+                        <li class="approvedIssue">Below GP</li>
+                    }
+                    else if (Model.FindApproverResult == FindApproverResult.NeedApprovalForExpiredDate)
+                    {
+                        <li class="approvedIssue">Expired date exceeds 90 days</li>
+                    }
+                    else if (Model.FindApproverResult == FindApproverResult.NeedApprovalForGPAndExpiredDate)
+                    {
+                        <li class="approvedIssue">Below GP</li>
+                        <li class="approvedIssue">Expired date exceeds 90 days</li>
+                    }
+                </ul>
+            </div>
+            <h4>Please provide comments for Approval Flow:</h4>
+            @Html.TextAreaFor(m => m.ApprovalReason, new { style = "height:100px;" })
+
+            <div id="quoteApproverList">
+                @Html.Partial("_ABB_QuoteApproverListV2", @Model.QuoteApproval,
+                    new ViewDataDictionary()
+                    {
+                    TemplateInfo = new System.Web.Mvc.TemplateInfo
+                    {
+                    HtmlFieldPrefix = "QuoteApproval"
+                    }
+                })
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    $("#btn-Approval-confirm").on("click", function () {
+        if ( $("#ApprovalReason").val() == "") {
+            alert('Comment for approval flow is required');
+            return false;
+        }
+    });
+
+</script>

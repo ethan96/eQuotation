@@ -1,0 +1,22 @@
+﻿@model eQuotation.Entities.AppError
+
+@if (Model != null)
+{
+    <div id="B8C08DE1-B263-4019-AC92-AA286B22281D">
+
+        <h3>@Model.Title</h3>
+        <p>@Model.Message </p>@*::: { controller = @Model.ControllerName, method = @Model.ActionName}*@
+        @if (Model.Code == 401 || Model.Code == 608)
+        {
+            <p>@Model.StackTrace</p>
+        }
+        else
+        {
+            <div class="stacktrace">@Model.StackTrace</div>
+        }
+        <p style="font-style:italic; margin-top:5px;">Request Date: @string.Format("{0:dd-MM-yyyy HH:mm:ss}", Model.Timestamp)</p>
+
+    </div>    
+}
+
+            

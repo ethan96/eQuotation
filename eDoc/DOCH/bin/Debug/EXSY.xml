@@ -1,0 +1,3760 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EXSY
+</name>
+</assembly>
+<members>
+<member name="T:EXSY.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:EXSY.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:EXSY.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:EXSY.Temp">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:EXSY.Temp.PartnerAddressesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:EXSY.Temp.PartnerAddressesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:EXSY.Temp.PartnerAddressesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:EXSY.SAPWS.B2B_AEU_WS">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.#ctor">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Billing_Detail_AEUCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Component_ComsumeCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Material_HistoryCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_NoCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_PoCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_DNCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_GUICompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Billing_From_SOCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_So_From_Billing_NoCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_ExchangeRateCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Standard_Cost_4_DigitCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Quotation_CREATECompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.ZGET_WHERE_UESD_BOM_RFCCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.ZSD_SPA_INSERTCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SOC_CreateCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.eBizAEU_GetMultiPriceCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.CreateNewCust3Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.ConvertToExCurrencyValueCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUSCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetAdvantechStockPrice_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetAdvantechStockPriceInt_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlagCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlagByTableCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlag_TEST_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetRMAStatus_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetCreditBalance_NewCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetCreditBalanceCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.eBizAEU_SAPDYNSQL_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SAP_DynSql_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTableCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTable2Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTable3_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.CustomerInquiry_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.B2BValidation_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SerialNumberInquiryCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.TrackingInfoInquiryCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Salesorder_Getlist_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Bapi_Salesorder_Getlist_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetOrderHistory_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetBackOrder_Track_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderList_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderItem_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Customer_AEU_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Next_WrokingDateCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Next_WorkingDate_ByCodeCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetAR_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetAR_Detail_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetAR_Detail_New_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetAR_SO_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMaterialStatusCost_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.AR_DueDate_Inquiry_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetCustAP_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetCustomerAP_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_NewCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_ACNCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_New_USCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_New2Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetSingleATPCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetSingleATP_NewCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_NewCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDateCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_SpecialATPCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_RDQ_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GET_CUSTOMER_COUNTRYPOSTAL_CODE_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMaterialSingleCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.Get_Material_Detail_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GET_MATERIAL_WEIGHT_VOLUME_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GET_CTOS_DOCUMENTINFO_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GET_EXCHANGE_RATECompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GET_CREDITLIMIT_USED_PERCENTAGECompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GET_ORDER_SCHEDULE_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUS_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUS_Test_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiATPCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMutiPrice_EQuoteCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiPriceCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiPriceByTableCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMPriceCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiPrice_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetPriceRFCCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetPriceRFC_oldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetVendorListCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetVendorDetailCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SO_DeleteCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SO_ChangeCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SO_GetNumberCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SO_CREATECompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlag_TESTCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_RDQCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_NadaCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_NEWCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE2Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_TESTCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.GetInvoiceCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.HelloKittyCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SapXmlAbapDynSqlCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SAPWS.B2B_AEU_WS.SapAbapDynSqlCompleted">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Billing_Detail_AEU(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Billing_Detail_AEUAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Billing_Detail_AEUAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Component_Comsume(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Component_ComsumeAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Component_ComsumeAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Material_History(System.String,System.String,System.Decimal@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Material_HistoryAsync(System.String,System.String,System.Decimal)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Material_HistoryAsync(System.String,System.String,System.Decimal,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_NoAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_NoAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_Po(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_PoAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_PoAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_DN(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_DNAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_DNAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_GUI(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_GUIAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Serial_No_By_GUIAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Billing_From_SO(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Billing_From_SOAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Billing_From_SOAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_So_From_Billing_No(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_So_From_Billing_NoAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_So_From_Billing_NoAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_ExchangeRate(System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_ExchangeRateAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_ExchangeRateAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Standard_Cost_4_Digit(System.String,System.String,System.Decimal@,System.Decimal@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Standard_Cost_4_DigitAsync(System.String,System.String,System.Decimal,System.Decimal)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Standard_Cost_4_DigitAsync(System.String,System.String,System.Decimal,System.Decimal,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Quotation_CREATE(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Quotation_CREATEAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Quotation_CREATEAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ZGET_WHERE_UESD_BOM_RFC(System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ZGET_WHERE_UESD_BOM_RFCAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ZGET_WHERE_UESD_BOM_RFCAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ZSD_SPA_INSERT(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ZSD_SPA_INSERTAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ZSD_SPA_INSERTAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SOC_Create(System.Data.DataSet,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SOC_CreateAsync(System.Data.DataSet,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SOC_CreateAsync(System.Data.DataSet,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.eBizAEU_GetMultiPrice(System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.eBizAEU_GetMultiPriceAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.eBizAEU_GetMultiPriceAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrder(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.CreateNewCust3(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.CreateNewCust3Async(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.CreateNewCust3Async(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ConvertToExCurrencyValue(System.Decimal,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ConvertToExCurrencyValueAsync(System.Decimal,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ConvertToExCurrencyValueAsync(System.Decimal,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUS(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUSAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUSAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAdvantechStockPrice_old">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAdvantechStockPrice_oldAsync">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAdvantechStockPrice_oldAsync(System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAdvantechStockPriceInt_old">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAdvantechStockPriceInt_oldAsync">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAdvantechStockPriceInt_oldAsync(System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlag(System.String,System.String@,System.Boolean@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlagAsync(System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlagAsync(System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlagByTable(System.Data.DataTable,System.String@,System.Boolean@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlagByTableAsync(System.Data.DataTable,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlagByTableAsync(System.Data.DataTable,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlag_TEST_old(System.String,System.String@,System.Boolean@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlag_TEST_oldAsync(System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlag_TEST_oldAsync(System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetRMAStatus_old(System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.Boolean@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetRMAStatus_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetRMAStatus_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCreditBalance_New(System.String@,System.String@,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCreditBalance_NewAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCreditBalance_NewAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCreditBalance(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCreditBalanceAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCreditBalanceAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.eBizAEU_SAPDYNSQL_old(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.eBizAEU_SAPDYNSQL_oldAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.eBizAEU_SAPDYNSQL_oldAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SAP_DynSql_old(System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SAP_DynSql_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SAP_DynSql_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTable(System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTableAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTableAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTable2(System.String,System.String,System.String,System.Int32,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTable2Async(System.String,System.String,System.String,System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTable2Async(System.String,System.String,System.String,System.Int32,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTable3_old(System.String,System.String,System.String,System.Int32)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTable3_oldAsync(System.String,System.String,System.String,System.Int32)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.ReadSAPTable3_oldAsync(System.String,System.String,System.String,System.Int32,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.CustomerInquiry_old(System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.CustomerInquiry_oldAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.CustomerInquiry_oldAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.B2BValidation_old(System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.B2BValidation_oldAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.B2BValidation_oldAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SerialNumberInquiry(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SerialNumberInquiryAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SerialNumberInquiryAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.TrackingInfoInquiry(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.TrackingInfoInquiryAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.TrackingInfoInquiryAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Salesorder_Getlist_old(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.Boolean@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Salesorder_Getlist_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Salesorder_Getlist_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Bapi_Salesorder_Getlist_old(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Bapi_Salesorder_Getlist_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Bapi_Salesorder_Getlist_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetOrderHistory_old(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetOrderHistory_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetOrderHistory_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrder_Track_old(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrder_Track_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrder_Track_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderList_old(System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderList_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderList_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderItem_old(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderItem_oldAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetBackOrderItem_oldAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Customer_AEU_old(System.String,System.String,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Customer_AEU_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Customer_AEU_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Next_WrokingDate(System.String@,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Next_WrokingDateAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Next_WrokingDateAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Next_WorkingDate_ByCode(System.String@,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Next_WorkingDate_ByCodeAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Next_WorkingDate_ByCodeAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_old(System.String,System.String,System.String,System.String@,System.String,System.String,System.String,System.String,System.String@,System.Boolean@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_Detail_old(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_Detail_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_Detail_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_Detail_New_old(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_Detail_New_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_Detail_New_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_SO_old(System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_SO_oldAsync(System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetAR_SO_oldAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMaterialStatusCost_old(System.String,System.String,System.String@,System.String@,System.Decimal@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMaterialStatusCost_oldAsync(System.String,System.String,System.String,System.String,System.Decimal,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMaterialStatusCost_oldAsync(System.String,System.String,System.String,System.String,System.Decimal,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.AR_DueDate_Inquiry_old(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.AR_DueDate_Inquiry_oldAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.AR_DueDate_Inquiry_oldAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCustAP_old(System.String,System.String@,System.String,System.String,System.String@,System.Boolean@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCustAP_oldAsync(System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCustAP_oldAsync(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCustomerAP_old(System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCustomerAP_oldAsync(System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetCustomerAP_oldAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_New(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_NewAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_NewAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_ACN(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_ACNAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_ACNAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_New_US(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_New_USAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_New_USAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_New2(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_New2Async(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP_New2Async(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetSingleATP(System.String,System.String,System.Decimal,System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetSingleATPAsync(System.String,System.String,System.Decimal,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetSingleATPAsync(System.String,System.String,System.Decimal,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetSingleATP_New(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal,System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetSingleATP_NewAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetSingleATP_NewAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_New(System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_NewAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_NewAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate(System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDateAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDateAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_SpecialATP(System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_SpecialATPAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_SpecialATPAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_RDQ_old(System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_RDQ_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_RDQ_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_CUSTOMER_COUNTRYPOSTAL_CODE_old(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_CUSTOMER_COUNTRYPOSTAL_CODE_oldAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_CUSTOMER_COUNTRYPOSTAL_CODE_oldAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMaterialSingle(System.String,System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMaterialSingleAsync(System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMaterialSingleAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Material_Detail_old(System.String,System.String,System.String,System.String@,System.String@,System.String@,System.String@,System.String@,System.Double@,System.Double@,System.Double@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Material_Detail_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Double,System.Double,System.Double,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.Get_Material_Detail_oldAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Double,System.Double,System.Double,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_MATERIAL_WEIGHT_VOLUME_old(System.String,System.Double@,System.Double@,System.Double@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_MATERIAL_WEIGHT_VOLUME_oldAsync(System.String,System.Double,System.Double,System.Double,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_MATERIAL_WEIGHT_VOLUME_oldAsync(System.String,System.Double,System.Double,System.Double,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_CTOS_DOCUMENTINFO_old(System.String,System.String@,System.String@,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_CTOS_DOCUMENTINFO_oldAsync(System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_CTOS_DOCUMENTINFO_oldAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_EXCHANGE_RATE(System.String,System.String,System.String@,System.Decimal@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_EXCHANGE_RATEAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_EXCHANGE_RATEAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_CREDITLIMIT_USED_PERCENTAGE(System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_CREDITLIMIT_USED_PERCENTAGEAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_CREDITLIMIT_USED_PERCENTAGEAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_ORDER_SCHEDULE_old(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_ORDER_SCHEDULE_oldAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GET_ORDER_SCHEDULE_oldAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUS_old(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUS_oldAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUS_oldAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUS_Test_old(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUS_Test_oldAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SALESORDER_GETSTATUS_Test_oldAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATP(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATPAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiATPAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMutiPrice_EQuote(System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMutiPrice_EQuoteAsync(System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMutiPrice_EQuoteAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiPrice(System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiPriceAsync(System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiPriceAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiPriceByTable(System.String,System.String,System.String,System.Data.DataSet,System.Data.DataSet@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiPriceByTableAsync(System.String,System.String,System.String,System.Data.DataSet,System.Data.DataSet)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiPriceByTableAsync(System.String,System.String,System.String,System.Data.DataSet,System.Data.DataSet,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMPrice(System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMPriceAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMPriceAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiPrice_old(System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiPrice_oldAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiPrice_oldAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetPriceRFC(System.String,System.String,System.String,System.String,System.Int32,System.Decimal@,System.Decimal@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetPriceRFCAsync(System.String,System.String,System.String,System.String,System.Int32,System.Decimal,System.Decimal)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetPriceRFCAsync(System.String,System.String,System.String,System.String,System.Int32,System.Decimal,System.Decimal,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetPriceRFC_old(System.String,System.String,System.String,System.String,System.Int32,System.Decimal@,System.Decimal@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetPriceRFC_oldAsync(System.String,System.String,System.String,System.String,System.Int32)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetPriceRFC_oldAsync(System.String,System.String,System.String,System.String,System.Int32,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetVendorList(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetVendorListAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetVendorListAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetVendorDetail(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetVendorDetailAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetVendorDetailAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_Delete(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_DeleteAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_DeleteAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_Change(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_ChangeAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_ChangeAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_GetNumber(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_GetNumberAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_GetNumberAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATEAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATEAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlag_TEST(System.String,System.String@,System.Boolean@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlag_TESTAsync(System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.UpdateSOWarrantyFlag_TESTAsync(System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_RDQ(System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_RDQAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetMultiDueDate_RDQAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_Nada(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_NadaAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_NadaAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_NEW(System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_NEWAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_NEWAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE2(System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE2Async(System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE2Async(System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_TEST(System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_TESTAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SO_CREATE_TESTAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetInvoice(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetInvoiceAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.GetInvoiceAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.HelloKitty(System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.HelloKittyAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.HelloKittyAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SapXmlAbapDynSql(System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SapXmlAbapDynSqlAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SapXmlAbapDynSqlAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SapAbapDynSql(System.String,System.String[],System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SapAbapDynSqlAsync(System.String,System.String[],System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.SapAbapDynSqlAsync(System.String,System.String[],System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SAPWS.B2B_AEU_WS.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Billing_Detail_AEUCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Billing_Detail_AEUCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Billing_Detail_AEUCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Billing_Detail_AEUCompletedEventArgs.BILLING">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Component_ComsumeCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Component_ComsumeCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Component_ComsumeCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Component_ComsumeCompletedEventArgs.comp">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Component_ComsumeCompletedEventArgs.cons">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Material_HistoryCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Material_HistoryCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_HistoryCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_HistoryCompletedEventArgs.returnMessge">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Serial_NoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Serial_NoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Serial_NoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Serial_NoCompletedEventArgs.ItemList">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Serial_No_By_PoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Serial_No_By_PoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Serial_No_By_PoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Serial_No_By_PoCompletedEventArgs.ItemList">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Serial_No_By_DNCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Serial_No_By_DNCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Serial_No_By_DNCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Serial_No_By_DNCompletedEventArgs.ItemList">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Serial_No_By_GUICompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Serial_No_By_GUICompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Serial_No_By_GUICompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Serial_No_By_GUICompletedEventArgs.ItemList">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Billing_From_SOCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Billing_From_SOCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Billing_From_SOCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Billing_From_SOCompletedEventArgs.ReturnBilling">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_So_From_Billing_NoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_So_From_Billing_NoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_So_From_Billing_NoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_So_From_Billing_NoCompletedEventArgs.ReturnBilling">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_ExchangeRateCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_ExchangeRateCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_ExchangeRateCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_ExchangeRateCompletedEventArgs.ReturnList">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Standard_Cost_4_DigitCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Standard_Cost_4_DigitCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Standard_Cost_4_DigitCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Standard_Cost_4_DigitCompletedEventArgs.stand_cost">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Standard_Cost_4_DigitCompletedEventArgs.Group_cost">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Quotation_CREATECompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Quotation_CREATECompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Quotation_CREATECompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Quotation_CREATECompletedEventArgs.Order_Status_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ZGET_WHERE_UESD_BOM_RFCCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ZGET_WHERE_UESD_BOM_RFCCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.ZGET_WHERE_UESD_BOM_RFCCompletedEventArgs.result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ZSD_SPA_INSERTCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ZSD_SPA_INSERTCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.ZSD_SPA_INSERTCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SOC_CreateCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SOC_CreateCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SOC_CreateCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SOC_CreateCompletedEventArgs.log_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.eBizAEU_GetMultiPriceCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.eBizAEU_GetMultiPriceCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.eBizAEU_GetMultiPriceCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.eBizAEU_GetMultiPriceCompletedEventArgs.strADONETXMLOut">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetBackOrderCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetBackOrderCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetBackOrderCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.CreateNewCust3CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.CreateNewCust3CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.CreateNewCust3CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.CreateNewCust3CompletedEventArgs.retResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ConvertToExCurrencyValueCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ConvertToExCurrencyValueCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.ConvertToExCurrencyValueCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SALESORDER_GETSTATUSCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SALESORDER_GETSTATUSCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SALESORDER_GETSTATUSCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SALESORDER_GETSTATUSCompletedEventArgs.Order_Status_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAdvantechStockPrice_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAdvantechStockPrice_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAdvantechStockPrice_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAdvantechStockPriceInt_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAdvantechStockPriceInt_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAdvantechStockPriceInt_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.UpdateSOWarrantyFlagCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.UpdateSOWarrantyFlagCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.UpdateSOWarrantyFlagCompletedEventArgs.status">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.UpdateSOWarrantyFlagCompletedEventArgs.retCode">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.UpdateSOWarrantyFlagByTableCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.UpdateSOWarrantyFlagByTableCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.UpdateSOWarrantyFlagByTableCompletedEventArgs.status">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.UpdateSOWarrantyFlagByTableCompletedEventArgs.retCode">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.UpdateSOWarrantyFlag_TEST_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.UpdateSOWarrantyFlag_TEST_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.UpdateSOWarrantyFlag_TEST_oldCompletedEventArgs.status">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.UpdateSOWarrantyFlag_TEST_oldCompletedEventArgs.retCode">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetRMAStatus_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetRMAStatus_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetRMAStatus_oldCompletedEventArgs.customer">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetRMAStatus_oldCompletedEventArgs.rma_no">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetRMAStatus_oldCompletedEventArgs.part_no">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetRMAStatus_oldCompletedEventArgs.order_from">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetRMAStatus_oldCompletedEventArgs.status">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetRMAStatus_oldCompletedEventArgs.Xmlresult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetRMAStatus_oldCompletedEventArgs.retCode">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetCreditBalance_NewCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetCreditBalance_NewCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCreditBalance_NewCompletedEventArgs.company_code">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCreditBalance_NewCompletedEventArgs.customer">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCreditBalance_NewCompletedEventArgs.keyDate">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCreditBalance_NewCompletedEventArgs.CreditBalance">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetCreditBalanceCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetCreditBalanceCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCreditBalanceCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.eBizAEU_SAPDYNSQL_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.eBizAEU_SAPDYNSQL_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.eBizAEU_SAPDYNSQL_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SAP_DynSql_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SAP_DynSql_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SAP_DynSql_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SAP_DynSql_oldCompletedEventArgs.SapError">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SAP_DynSql_oldCompletedEventArgs.runtimeError">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SAP_DynSql_oldCompletedEventArgs.xmlResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ReadSAPTableCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ReadSAPTableCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.ReadSAPTableCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.ReadSAPTableCompletedEventArgs.strXml">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ReadSAPTable2CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ReadSAPTable2CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.ReadSAPTable2CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.ReadSAPTable2CompletedEventArgs.strXml">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ReadSAPTable3_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.ReadSAPTable3_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.ReadSAPTable3_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.CustomerInquiry_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.CustomerInquiry_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.CustomerInquiry_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.CustomerInquiry_oldCompletedEventArgs.errMsg">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.B2BValidation_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.B2BValidation_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.B2BValidation_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.B2BValidation_oldCompletedEventArgs.errMsg">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SerialNumberInquiryCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SerialNumberInquiryCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SerialNumberInquiryCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SerialNumberInquiryCompletedEventArgs.SNXml">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.TrackingInfoInquiryCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.TrackingInfoInquiryCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.TrackingInfoInquiryCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.TrackingInfoInquiryCompletedEventArgs.TrackInfoXml">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Salesorder_Getlist_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Salesorder_Getlist_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Salesorder_Getlist_oldCompletedEventArgs.strXml">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Salesorder_Getlist_oldCompletedEventArgs.retCode">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Bapi_Salesorder_Getlist_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Bapi_Salesorder_Getlist_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Bapi_Salesorder_Getlist_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Bapi_Salesorder_Getlist_oldCompletedEventArgs.strXml">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetOrderHistory_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetOrderHistory_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetOrderHistory_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetOrderHistory_oldCompletedEventArgs.strXml">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetBackOrder_Track_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetBackOrder_Track_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetBackOrder_Track_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetBackOrder_Track_oldCompletedEventArgs.BackOrder_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetBackOrderList_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetBackOrderList_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetBackOrderList_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetBackOrderList_oldCompletedEventArgs.BackOrder_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetBackOrderItem_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetBackOrderItem_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetBackOrderItem_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetBackOrderItem_oldCompletedEventArgs.BackOrderItem_XML">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetBackOrderItem_oldCompletedEventArgs.strMsg1">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.Cus_Add">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.Cus_Gen">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.cur">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.credit_term">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.ship_via">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.company_price_type">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.ship_condition">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.parent_company_id">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.add2">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.attention">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Customer_AEU_oldCompletedEventArgs.fax_no">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Next_WrokingDateCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Next_WrokingDateCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Next_WrokingDateCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Next_WrokingDateCompletedEventArgs.iATPDate">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Next_WorkingDate_ByCodeCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Next_WorkingDate_ByCodeCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Next_WorkingDate_ByCodeCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Next_WorkingDate_ByCodeCompletedEventArgs.iATPDate">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAR_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAR_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAR_oldCompletedEventArgs.customer_id">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAR_oldCompletedEventArgs.ArResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAR_oldCompletedEventArgs.retCode">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAR_Detail_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAR_Detail_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAR_Detail_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAR_Detail_oldCompletedEventArgs.ArResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAR_Detail_New_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAR_Detail_New_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAR_Detail_New_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAR_Detail_New_oldCompletedEventArgs.ArResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAR_SO_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetAR_SO_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAR_SO_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetAR_SO_oldCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMaterialStatusCost_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMaterialStatusCost_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMaterialStatusCost_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMaterialStatusCost_oldCompletedEventArgs.MPlant">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMaterialStatusCost_oldCompletedEventArgs.MCurrency">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMaterialStatusCost_oldCompletedEventArgs.MCost">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMaterialStatusCost_oldCompletedEventArgs.MStatus">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.AR_DueDate_Inquiry_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.AR_DueDate_Inquiry_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.AR_DueDate_Inquiry_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.AR_DueDate_Inquiry_oldCompletedEventArgs.ARDueResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetCustAP_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetCustAP_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCustAP_oldCompletedEventArgs.customer_id">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCustAP_oldCompletedEventArgs.APResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCustAP_oldCompletedEventArgs.retCode">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetCustomerAP_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetCustomerAP_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCustomerAP_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetCustomerAP_oldCompletedEventArgs.APResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATP_NewCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATP_NewCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_NewCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_NewCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_NewCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATP_ACNCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATP_ACNCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_ACNCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_ACNCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_ACNCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATP_New_USCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATP_New_USCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_New_USCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_New_USCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_New_USCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATP_New2CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATP_New2CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_New2CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_New2CompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATP_New2CompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetSingleATPCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetSingleATPCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetSingleATPCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetSingleATPCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetSingleATPCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetSingleATP_NewCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetSingleATP_NewCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetSingleATP_NewCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetSingleATP_NewCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetSingleATP_NewCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDate_NewCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDate_NewCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_NewCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_NewCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_NewCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDateCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDateCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDateCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDateCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDateCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDate_SpecialATPCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDate_SpecialATPCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_SpecialATPCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_SpecialATPCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_SpecialATPCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDate_RDQ_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDate_RDQ_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_RDQ_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_RDQ_oldCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_RDQ_oldCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_CUSTOMER_COUNTRYPOSTAL_CODE_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_CUSTOMER_COUNTRYPOSTAL_CODE_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CUSTOMER_COUNTRYPOSTAL_CODE_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CUSTOMER_COUNTRYPOSTAL_CODE_oldCompletedEventArgs.country_code">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CUSTOMER_COUNTRYPOSTAL_CODE_oldCompletedEventArgs.postal_code">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMaterialSingleCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMaterialSingleCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMaterialSingleCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMaterialSingleCompletedEventArgs.Err_Log">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMaterialSingleCompletedEventArgs.ProductTb">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.p_desc">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.p_status">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.p_model_no">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.p_productline">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.p_productgroup">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.p_shipweight">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.p_netweight">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.p_cost">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.Get_Material_Detail_oldCompletedEventArgs.ErrorMsg">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_MATERIAL_WEIGHT_VOLUME_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_MATERIAL_WEIGHT_VOLUME_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_MATERIAL_WEIGHT_VOLUME_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_MATERIAL_WEIGHT_VOLUME_oldCompletedEventArgs.GrossWeight">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_MATERIAL_WEIGHT_VOLUME_oldCompletedEventArgs.NetWeight">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_MATERIAL_WEIGHT_VOLUME_oldCompletedEventArgs.Volume">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_MATERIAL_WEIGHT_VOLUME_oldCompletedEventArgs.ErrorMsg">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_CTOS_DOCUMENTINFO_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_CTOS_DOCUMENTINFO_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CTOS_DOCUMENTINFO_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CTOS_DOCUMENTINFO_oldCompletedEventArgs.DocLink">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CTOS_DOCUMENTINFO_oldCompletedEventArgs.DocLocation">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CTOS_DOCUMENTINFO_oldCompletedEventArgs.DocType">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CTOS_DOCUMENTINFO_oldCompletedEventArgs.DocXml">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_EXCHANGE_RATECompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_EXCHANGE_RATECompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_EXCHANGE_RATECompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_EXCHANGE_RATECompletedEventArgs.ExpMsg">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_EXCHANGE_RATECompletedEventArgs.exRate">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_CREDITLIMIT_USED_PERCENTAGECompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_CREDITLIMIT_USED_PERCENTAGECompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CREDITLIMIT_USED_PERCENTAGECompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_CREDITLIMIT_USED_PERCENTAGECompletedEventArgs.percentage">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_ORDER_SCHEDULE_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GET_ORDER_SCHEDULE_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_ORDER_SCHEDULE_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_ORDER_SCHEDULE_oldCompletedEventArgs.scheduleXml">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GET_ORDER_SCHEDULE_oldCompletedEventArgs.itemXml">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SALESORDER_GETSTATUS_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SALESORDER_GETSTATUS_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SALESORDER_GETSTATUS_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SALESORDER_GETSTATUS_oldCompletedEventArgs.Order_Status_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SALESORDER_GETSTATUS_Test_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SALESORDER_GETSTATUS_Test_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SALESORDER_GETSTATUS_Test_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SALESORDER_GETSTATUS_Test_oldCompletedEventArgs.Order_Status_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATPCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiATPCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATPCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATPCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiATPCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMutiPrice_EQuoteCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMutiPrice_EQuoteCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMutiPrice_EQuoteCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMutiPrice_EQuoteCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiPriceCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiPriceCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiPriceCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiPriceCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiPriceByTableCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiPriceByTableCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiPriceByTableCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiPriceByTableCompletedEventArgs.DSret">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMPriceCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMPriceCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMPriceCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMPriceCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiPrice_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiPrice_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiPrice_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiPrice_oldCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetPriceRFCCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetPriceRFCCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetPriceRFCCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetPriceRFCCompletedEventArgs.p_fltList_Price">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetPriceRFCCompletedEventArgs.p_fltUnit_Price">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetPriceRFC_oldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetPriceRFC_oldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetPriceRFC_oldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetPriceRFC_oldCompletedEventArgs.p_fltList_Price">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetPriceRFC_oldCompletedEventArgs.p_fltUnit_Price">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetVendorListCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetVendorListCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetVendorListCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetVendorListCompletedEventArgs.VendorList">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetVendorDetailCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetVendorDetailCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetVendorDetailCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetVendorDetailCompletedEventArgs.GeneralDetail">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetVendorDetailCompletedEventArgs.BankDetail">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_DeleteCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_DeleteCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_DeleteCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_DeleteCompletedEventArgs.message">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_ChangeCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_ChangeCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_ChangeCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_ChangeCompletedEventArgs.Order_Status_Xml">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_ChangeCompletedEventArgs.errMsg">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_GetNumberCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_GetNumberCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_GetNumberCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATECompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATECompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATECompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATECompletedEventArgs.Order_Status_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.UpdateSOWarrantyFlag_TESTCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.UpdateSOWarrantyFlag_TESTCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.UpdateSOWarrantyFlag_TESTCompletedEventArgs.status">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.UpdateSOWarrantyFlag_TESTCompletedEventArgs.retCode">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDate_RDQCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetMultiDueDate_RDQCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_RDQCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_RDQCompletedEventArgs.strResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetMultiDueDate_RDQCompletedEventArgs.strRemark">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATE_NadaCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATE_NadaCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATE_NadaCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATE_NadaCompletedEventArgs.Order_Status_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATE_NEWCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATE_NEWCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATE_NEWCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATE_NEWCompletedEventArgs.Order_Status_XML">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATE_NEWCompletedEventArgs.SalesOrderStatus_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATE2CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATE2CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATE2CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATE2CompletedEventArgs.Order_Status_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATE_TESTCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SO_CREATE_TESTCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATE_TESTCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SO_CREATE_TESTCompletedEventArgs.Order_Status_XML">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetInvoiceCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.GetInvoiceCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetInvoiceCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetInvoiceCompletedEventArgs.Invoice_Master_XML">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetInvoiceCompletedEventArgs.Invoice_Detail_XML">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.GetInvoiceCompletedEventArgs.strException">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.HelloKittyCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.HelloKittyCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.HelloKittyCompletedEventArgs.yourname">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.HelloKittyCompletedEventArgs.greetWord">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SapXmlAbapDynSqlCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SapXmlAbapDynSqlCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SapXmlAbapDynSqlCompletedEventArgs.xmlResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SapXmlAbapDynSqlCompletedEventArgs.errMsg">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SapAbapDynSqlCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SAPWS.SapAbapDynSqlCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SapAbapDynSqlCompletedEventArgs.xmlResult">
+<remarks/>
+</member>
+<member name="P:EXSY.SAPWS.SapAbapDynSqlCompletedEventArgs.errMsg">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.Siebel_WS">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.#ctor">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateNewContactCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateMyAdvantechProfileCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateNewContact_NewCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateSiebelActivityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateSiebelActivityWithOptyCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateActivityWithOwnerAccountContactCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateSiebelActivityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContact2Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateSourceNameCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.GetOptyDetailCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.DeleteOptyForecastCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.ImportOptyForecastCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.Import_OpportunityNewCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityStageCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityStage_ProjCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatus2Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContactCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContactIdCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusAmtCloseDateProbCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateOpportunityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateSiebelOpportunityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateNewOpportunityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateNewOpportunity4QuoteCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.Import_OpportunityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusOldCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusRevenueCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateSiebelOpportunityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateOpportunityOrgCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.ImportOpportunityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.ImportOpportunityV2Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.SubscribeENews2Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateContactNeverEmailCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.AssociateContactToAccountCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateContactDisableCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.SubscribeProductCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateContactInfoByMyAdvantechProfileCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateContactInfoByMyAdvantechProfile_NewCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateContactProfileCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.SubscribeBAACompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateAccountInfoByMyAdvantechProfileCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateAccountCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateNewAccountCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateAccountCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateAccountV2Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.GetAccountInfoCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateAccountBusinessGroupCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateSiebelSRCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunityCompleted">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunity2Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunity3Completed">
+<remarks/>
+</member>
+<member name="E:EXSY.SBWS.Siebel_WS.UpdateQuoteOwnerCompleted">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewContact(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewContactAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewContactAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateMyAdvantechProfile(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateMyAdvantechProfileAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateMyAdvantechProfileAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewContact_New(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String,System.Boolean,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewContact_NewAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String,System.Boolean,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewContact_NewAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelActivity(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelActivityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelActivityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelActivityWithOpty(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelActivityWithOptyAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelActivityWithOptyAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateActivityWithOwnerAccountContact(System.String,System.String,System.String,System.String,System.DateTime,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateActivityWithOwnerAccountContactAsync(System.String,System.String,System.String,System.String,System.DateTime,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateActivityWithOwnerAccountContactAsync(System.String,System.String,System.String,System.String,System.DateTime,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateSiebelActivity(System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateSiebelActivityAsync(System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateSiebelActivityAsync(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContact2(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContact2Async(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContact2Async(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateSourceName(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateSourceNameAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateSourceNameAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.GetOptyDetail(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.GetOptyDetailAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.GetOptyDetailAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.DeleteOptyForecast(System.String,System.Data.DataTable)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.DeleteOptyForecastAsync(System.String,System.Data.DataTable)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.DeleteOptyForecastAsync(System.String,System.Data.DataTable,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.ImportOptyForecast(System.String,System.Data.DataTable)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.ImportOptyForecastAsync(System.String,System.Data.DataTable)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.ImportOptyForecastAsync(System.String,System.Data.DataTable,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.Import_OpportunityNew(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.Import_OpportunityNewAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.Import_OpportunityNewAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatus(System.String,System.String,System.String,System.String,System.DateTime)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusAsync(System.String,System.String,System.String,System.String,System.DateTime)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusAsync(System.String,System.String,System.String,System.String,System.DateTime,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStage(System.String,System.String,System.String,System.String,System.DateTime)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStageAsync(System.String,System.String,System.String,System.String,System.DateTime)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStageAsync(System.String,System.String,System.String,System.String,System.DateTime,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStage_Proj(System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStage_ProjAsync(System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStage_ProjAsync(System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatus2(System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatus2Async(System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatus2Async(System.String,System.String,System.String,System.String,System.DateTime,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContact(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContactAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContactAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContactId(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContactIdAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityPartnerContactIdAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusAmtCloseDateProb(System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusAmtCloseDateProbAsync(System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusAmtCloseDateProbAsync(System.String,System.String,System.String,System.String,System.DateTime,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateOpportunity(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelOpportunity(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewOpportunity(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewOpportunity4Quote(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewOpportunity4QuoteAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewOpportunity4QuoteAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.Import_Opportunity(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.Import_OpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.Import_OpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunity(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusOld(System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusOldAsync(System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusOldAsync(System.String,System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusRevenue(System.String,System.String,System.Double,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusRevenueAsync(System.String,System.String,System.Double,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityStatusRevenueAsync(System.String,System.String,System.Double,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateSiebelOpportunity(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateSiebelOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateSiebelOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityOrg(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityOrgAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateOpportunityOrgAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.ImportOpportunity(System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.ImportOpportunityAsync(System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.ImportOpportunityAsync(System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.ImportOpportunityV2(System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.ImportOpportunityV2Async(System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.ImportOpportunityV2Async(System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.SubscribeENews2(System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.SubscribeENews2Async(System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.SubscribeENews2Async(System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactNeverEmail(System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactNeverEmailAsync(System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactNeverEmailAsync(System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.AssociateContactToAccount(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.AssociateContactToAccountAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.AssociateContactToAccountAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactDisable(System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactDisableAsync(System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactDisableAsync(System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.SubscribeProduct(System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.SubscribeProductAsync(System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.SubscribeProductAsync(System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactInfoByMyAdvantechProfile(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactInfoByMyAdvantechProfileAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactInfoByMyAdvantechProfileAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactInfoByMyAdvantechProfile_New(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactInfoByMyAdvantechProfile_NewAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactInfoByMyAdvantechProfile_NewAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactProfile(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactProfileAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateContactProfileAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.SubscribeBAA(System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.SubscribeBAAAsync(System.String,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.SubscribeBAAAsync(System.String,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountInfoByMyAdvantechProfile(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountInfoByMyAdvantechProfileAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountInfoByMyAdvantechProfileAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateAccount(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateAccountAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateAccountAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewAccount(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewAccountAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateNewAccountAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccount(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountV2(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountV2Async(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountV2Async(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.GetAccountInfo(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.GetAccountInfoAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.GetAccountInfoAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountBusinessGroup(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountBusinessGroupAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateAccountBusinessGroupAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelSR(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelSRAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelSRAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotation(System.String@,System.String@,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunity(System.String@,System.String@,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunityAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunity2(System.String@,System.String@,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunity2Async(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunity2Async(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunity3(System.String@,System.String@,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunity3Async(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CreateSiebelQuotationWithOpportunity3Async(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateQuoteOwner(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateQuoteOwnerAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.UpdateQuoteOwnerAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:EXSY.SBWS.Siebel_WS.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewContactCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewContactCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateNewContactCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateMyAdvantechProfileCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateMyAdvantechProfileCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateMyAdvantechProfileCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewContact_NewCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewContact_NewCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateNewContact_NewCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelActivityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelActivityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelActivityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelActivityWithOptyCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelActivityWithOptyCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelActivityWithOptyCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateActivityWithOwnerAccountContactCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateActivityWithOwnerAccountContactCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateActivityWithOwnerAccountContactCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateSiebelActivityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateSiebelActivityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateSiebelActivityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityPartnerContact2CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityPartnerContact2CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityPartnerContact2CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateSourceNameCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateSourceNameCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateSourceNameCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.GetOptyDetailCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.GetOptyDetailCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.GetOptyDetailCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.DeleteOptyForecastCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.DeleteOptyForecastCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.DeleteOptyForecastCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.ImportOptyForecastCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.ImportOptyForecastCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.ImportOptyForecastCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.Import_OpportunityNewCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.Import_OpportunityNewCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.Import_OpportunityNewCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatusCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatusCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityStatusCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStageCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStageCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityStageCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStage_ProjCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStage_ProjCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityStage_ProjCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatus2CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatus2CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityStatus2CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityPartnerContactCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityPartnerContactCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityPartnerContactCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityPartnerContactIdCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityPartnerContactIdCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityPartnerContactIdCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatusAmtCloseDateProbCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatusAmtCloseDateProbCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityStatusAmtCloseDateProbCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateOpportunityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateOpportunityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateOpportunityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelOpportunityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelOpportunityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelOpportunityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewOpportunityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewOpportunityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateNewOpportunityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewOpportunity4QuoteCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewOpportunity4QuoteCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateNewOpportunity4QuoteCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.Import_OpportunityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.Import_OpportunityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.Import_OpportunityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatusOldCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatusOldCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityStatusOldCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatusRevenueCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityStatusRevenueCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityStatusRevenueCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateSiebelOpportunityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateSiebelOpportunityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateSiebelOpportunityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityOrgCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateOpportunityOrgCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateOpportunityOrgCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.ImportOpportunityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.ImportOpportunityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.ImportOpportunityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.ImportOpportunityV2CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.ImportOpportunityV2CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.ImportOpportunityV2CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.ImportOpportunityV2CompletedEventArgs.Oppty_RowID">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.ImportOpportunityV2CompletedEventArgs.ErrorStr">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.SubscribeENews2CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.SubscribeENews2CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.SubscribeENews2CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactNeverEmailCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactNeverEmailCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateContactNeverEmailCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.AssociateContactToAccountCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.AssociateContactToAccountCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.AssociateContactToAccountCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactDisableCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactDisableCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateContactDisableCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.SubscribeProductCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.SubscribeProductCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.SubscribeProductCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactInfoByMyAdvantechProfileCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactInfoByMyAdvantechProfileCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateContactInfoByMyAdvantechProfileCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactInfoByMyAdvantechProfile_NewCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactInfoByMyAdvantechProfile_NewCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateContactInfoByMyAdvantechProfile_NewCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactProfileCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateContactProfileCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateContactProfileCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.SubscribeBAACompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.SubscribeBAACompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.SubscribeBAACompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateAccountInfoByMyAdvantechProfileCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateAccountInfoByMyAdvantechProfileCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateAccountInfoByMyAdvantechProfileCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateAccountCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateAccountCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateAccountCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateAccountCompletedEventArgs.Error_Message">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewAccountCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateNewAccountCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateNewAccountCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateNewAccountCompletedEventArgs.Error_Message">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateAccountCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateAccountCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateAccountCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateAccountV2CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateAccountV2CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateAccountV2CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.GetAccountInfoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.GetAccountInfoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.GetAccountInfoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateAccountBusinessGroupCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateAccountBusinessGroupCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateAccountBusinessGroupCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelSRCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelSRCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelSRCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelQuotationCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelQuotationCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationCompletedEventArgs.Qrow_id">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationCompletedEventArgs.Q_No">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationCompletedEventArgs.Error_Message">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelQuotationWithOpportunityCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelQuotationWithOpportunityCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunityCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunityCompletedEventArgs.Qrow_id">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunityCompletedEventArgs.Q_No">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunityCompletedEventArgs.Error_Message">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelQuotationWithOpportunity2CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelQuotationWithOpportunity2CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunity2CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunity2CompletedEventArgs.Qrow_id">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunity2CompletedEventArgs.Q_No">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunity2CompletedEventArgs.Error_Message">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelQuotationWithOpportunity3CompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.CreateSiebelQuotationWithOpportunity3CompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunity3CompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunity3CompletedEventArgs.Qrow_id">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunity3CompletedEventArgs.Q_No">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.CreateSiebelQuotationWithOpportunity3CompletedEventArgs.Error_Message">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateQuoteOwnerCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EXSY.SBWS.UpdateQuoteOwnerCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EXSY.SBWS.UpdateQuoteOwnerCompletedEventArgs.Result">
+<remarks/>
+</member>
+</members>
+</doc>

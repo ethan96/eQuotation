@@ -1,0 +1,164 @@
+﻿@model eQuotation.ViewModels.ViewDownloadForwardQuoteViewModel
+@using eQuotation.ViewModels
+@{
+    String advantechCompanyTitleDisplayMode = (Model.AdvantechCompanyTitleIsViewable) ? "inline" : "none";
+    String quoteTitleDisplayMode = (Model.QuoteTitleOptionsIsViewable) ? "inline" : "none";
+    String displayItemTypeDisplayMode = (Model.DisplayItemOptionsForBtoIsViewable) ? "inline" : "none";
+    string PdfEmailButtonMode = (Model.CanClickPdfAndEmail) ? "inline" : "none";
+}
+<div id="sendMailModal" class="sendMailModal">
+    <div class="sendMailModalContent">
+        <p></p>
+    </div>
+</div>
+<div style="margin: 10px; border: 1px solid gray; padding: 10px; border-radius: 5px;">
+    <table>
+        <tr>
+            <td style="width: 30%;">
+                <span style="display: @advantechCompanyTitleDisplayMode ;">
+                    Advantech Company Info : @Html.DropDownListFor(mdl => mdl.AdvantechCompanyTitleOrg, Model.AdvantechCompanyOptions, new { @id = "ddlAdvantechCompanyTitleOrg", @class = "form-control text090" })
+                </span>
+                <span style="display: @quoteTitleDisplayMode ;">
+                    Quotation Title: @Html.DropDownListFor(mdl => mdl.QuoteTitle, Model.QuoteTitleOptions, new { @id = "ddlQuoteTitle", @class = "form-control text090" })
+                </span>
+            </td>
+            <td>
+                <ul style="list-style-type: none; display: @displayItemTypeDisplayMode ;">
+                    <li>
+                        <input class="rbDisplayItemType" type="radio" name="displayItemType" checked="checked" value="@DisplayItemOptionsForBto.SubItemWithPrice"> Display sub-item with sub-item price
+                    </li>
+                    <li>
+                        <input class="rbDisplayItemType" type="radio" name="displayItemType"  value="@DisplayItemOptionsForBto.MainItemOnly"> Display main item only
+                    </li>
+                    <li>
+                        <input class="rbDisplayItemType" type="radio" name="displayItemType"  value="@DisplayItemOptionsForBto.SubItemWithoutPrice">  Display sub-item without sub-item price
+                    </li>
+                    <li>
+                        <input class="rbDisplayItemType" type="radio" name="displayItemType"  value="@DisplayItemOptionsForBto.SubItemWithoutPriceButShowLooseItemPrice"> Display sub-item without sub-item price but loose item price show
+                    </li>
+                </ul>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+<div style="margin: 10px;">
+    <div style="margin-bottom: 10px;">
+        <button id="btn-cust-download" type="button" class="button"  @{@((Model.CanClickPdfAndEmail) ? null : new { disabled = "disabled" })};>
+            <i class="fa fa-envelope-o"></i> Download PDF
+        </button>
+        <button id="btn-cust-mail" type="button" class="button" @{@((Model.CanClickPdfAndEmail) ? null : new { disabled = "disabled" })};>
+            <i class="fa fa-envelope-o"></i> Send Mail
+        </button>
+        @if (!Model.CanClickPdfAndEmail)
+        {
+            <span style="color:red">Below GP: You can't download PDF or send mail until quote is approved.</span>
+        }
+    </div>
+    <div id="ViewQuotationTemplate" style="overflow: auto;">
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        getQuotationTemplate();
+
+        //change quote title
+        $("#ddlQuoteTitle").on("change", function () {
+            getQuotationTemplate();
+        });
+
+        //change advantech company title
+        $("#ddlAdvantechCompanyTitleOrg").on("change", function () {
+            getQuotationTemplate();
+        });
+
+        
+
+        //change displayItem type
+        $(document).ready(function () {
+            $('input[type=radio][name=displayItemType]').change(function () {
+                $(".rbDisplayItemType").removeAttr('checked');
+                $(this).attr('checked', true);
+                getQuotationTemplate();
+            });
+        });
+
+
+
+        //downlaod
+        $("#btn-cust-download").on("click", function (e) {
+            var quoteTitle = $('#ddlQuoteTitle').val();
+            var advantechCompanyTitleOrg = $('#ddlAdvantechCompanyTitleOrg').val();
+            var displayItemType = $("input[name='displayItemType']:checked").val();
+            window.location = "/Quotes/DownloadPDFV2?QuoteId=@Model.QuoteId" + "&quoteTitle=" + quoteTitle + "&displayItemType=" + displayItemType + "&advantechCompanyTitleOrg=" + advantechCompanyTitleOrg;
+        });
+
+        $("#btn-cust-mail").on("click", function () {
+            var quoteId = "@Model.QuoteId";
+            var quoteNo = "@Model.QuoteNo";
+            var quoteTitle = $('#ddlQuoteTitle').val();
+            var advantechCompanyTitleOrg = $('#ddlAdvantechCompanyTitleOrg').val();
+            var displayItemType = $("input[name='displayItemType']:checked").val();
+            $.get("/quotes/SendEmailV2",
+                { quoteId: quoteId, quoteNo: quoteNo, quoteTitle: quoteTitle, displayItemType: displayItemType, advantechCompanyTitleOrg: advantechCompanyTitleOrg }, function (redata) {
+                    if (redata.succeed) {
+                        if (redata.data != "") {
+                            $('.sendMailModalContent p').empty();
+
+                            $('#sendMailModal').css('display', 'block');
+                            $('.sendMailModalContent p').append(redata.data);
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            var sendMailModal = document.getElementById('sendMailModal');
+                            window.onclick = function (event) {
+                                if (event.target == sendMailModal) {
+                                    $('#sendMailModal').css('display', 'none');
+                                }
+                            }
+
+                            // When the user clicks on <span> (x), close the sendMail modal
+                            $('.sendMailModalClose').on("click", function () {
+                                $('#sendMailModal').css('display', 'none');
+                            });
+                            //close
+                            $("#btn-cust-close").on("click", function () {
+                                $('#sendMailModal').css('display', 'none');
+                            });
+
+                        }
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+                });
+        });
+
+
+    });
+
+    function getQuotationTemplate() {
+        var displayItemType = $("input[name='displayItemType']:checked").val();
+        var postData = JSON.stringify({ quoteId: "@Model.QuoteId", quoteTitle: $('#ddlQuoteTitle').val(), displayItemType: displayItemType, advantechCompanyTitleOrg: $('#ddlAdvantechCompanyTitleOrg').val() });
+        $.ajax({
+            type: "POST",
+            url: "/Quotes/QuotationTemplate",
+            data: postData,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (redata) {
+                //debugger;
+                if (redata.succeed) {
+                    //debugger;
+                    var result = redata.data;
+                    $('#ViewQuotationTemplate').empty();
+                    $('#ViewQuotationTemplate').html(result);
+                }
+                else {
+                    $('#ViewQuotationTemplate').html('Internal Error!');
+                }
+            },
+            error: function (msg) {
+            }
+        });
+
+    }
+</script>

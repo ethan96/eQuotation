@@ -1,0 +1,246 @@
+﻿@model eQuotation.Models.Admin.UserProfileViewModel
+
+@*<link href="~/Scripts/datatable/jquery.dataTables.css" rel="stylesheet" />
+<link href="~/Scripts/datatable/jquery-ui-1.8.4.custom.css" rel="stylesheet" />
+<script src="~/Scripts/datatable/jquery.dataTables.min.js"></script>*@
+@{ var isAdministrator = false;}
+
+@if (Model != null)
+{
+    <div class="main-content">
+        <div class="titlebox topbox"><h4>User Permission</h4></div>
+        <div class="content">
+            <div class="userprofile">
+                <section>
+                    <div><h3>@Model.FullName</h3></div>
+                    @*<div><h4>Factory: @Model.Plant</h4></div>*@
+                    @*<div>
+                        <div>@Model.Department</div>
+                        <div>@Model.Company</div>
+                        <div>@Model.Location</div>
+                    </div>*@
+                    <div>
+                        @if (Model.RoleNames.Count() > 0)
+                        {
+                            <div><h4>Roles</h4></div>
+                            <div>
+                                <ul>
+                                    @foreach (var item in Model.RoleNames)
+                                    {
+                                        <li>
+                                            <input checked="checked" type="checkbox" disabled="disabled" />
+                                            <span>@item</span>
+                                        </li>
+
+                                        if (item.Contains("Administrator")) { isAdministrator = true; }
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                    @*<div>
+                        @Html.Partial("ChangePwd", Model.ManageUser)
+                    </div>*@
+                    <br />
+                    @if (isAdministrator)
+                    {
+                        <div>
+                            <h4>Resend approve mail to current approver: </h4>
+                        </div>
+                        <div>
+                            <input id="resendMailtxt" placeholder="Enter quote id"/>
+                            <button id="resendMailbtn">Send</button>
+                        </div><br>
+                        <div>
+                            <h4>Create new approval(if bookmark lost) and resend approve mail to current approver: </h4>
+                        </div>
+                        <div>
+                            <input id="newWFandResendMailtxt" placeholder="Enter quote id" />
+                            <button id="newWFandResendMailbtn">Send</button>
+                        </div><br>
+                        <div>
+                            <h4>Resend final approve mail: </h4>
+                        </div>
+                        <div>
+                            <input id="resendFinalMailtxt" placeholder="Enter quote id" />
+                            <button id="resendFinalMailbtn">Send</button>
+                        </div><br><br>
+
+
+
+                        <div>
+                            <h4>Update Term and Conditioin </h4>
+                        </div>
+                        <div>
+                            <input id="orgTxt" placeholder="Enter org(ex. US10)" />
+                        </div>
+                        <div>
+                            <textarea id="termConditioinTxt" placeholder="Enter term and condition" />
+                        </div>
+                        <div>                                                     
+                            <button id="updateTermConditioinBtn">Update</button>
+                        </div><br><br>
+
+                        <div>
+                            <h4>Update Final Mail Body</h4>
+                        </div>
+                        <div>
+                            <input id="updateFinalMailBodyTxt" placeholder="Enter quoteId" />
+                        </div>
+                        <div>
+                            <button id="updateFinalMailBodyBtn">Update</button>
+                        </div><br>
+                    }
+                </section>
+                <section>
+                    <table id="tblRolePermission">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Category</th>
+                                <th>Permission</th>
+                                @*<th>Parent</th>*@
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Permission)
+                            {
+                                <tr>
+                                    <td><input type="checkbox" checked="checked" disabled="disabled" /></td>
+                                    <td>@item.Category</td>
+                                    <td>@item.Id</td>
+                                    @*<td>@item.Parent</td>*@
+                                    <td style="text-align:left">@item.Description</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        //configure data-table
+        /* Init the table */
+        oTable = $('#tblRolePermission').dataTable({
+            "bLengthChange": false,
+            "bFilter": false,
+            "iDisplayLength": 1000,
+            "aoColumnDefs": [
+                { "bSortable": false, "aTargets": [0] },
+                { "bSortable": false, "aTargets": [3] }
+            ]
+        });
+
+        //Resend approval email
+        $("#resendMailbtn").on("click", function (e) {
+
+            $.get("/Quotes/ResendCurrentApprovalEmail"
+                , {
+                    quoteID: $("#resendMailtxt").val()
+
+                }, function (redata) {
+                    if (redata.succeed) { 
+                        alert("success");
+                    } else {
+
+                        alert(redata.err);
+                    }
+                });
+        });
+
+        //Create new WF and Resend approval email
+        $("#newWFandResendMailbtn").on("click", function (e) {
+
+            $.get("/Quotes/ResendCurrentApprovalEmailAndRecreateWorkflow"
+                , {
+                    quoteID: $("#newWFandResendMailtxt").val()
+
+                }, function (redata) {
+                    if (redata.succeed) { 
+                        alert("success");
+                    } else {
+
+                        alert(redata.err);
+                    }
+                });
+        });
+
+        //Resend final approval email
+        $("#resendFinalMailbtn").on("click", function (e) {
+
+            $.get("/Quotes/ResendFinalApprovalEmail"
+                , {
+                    quoteID: $("#resendFinalMailtxt").val()
+
+                }, function (redata) {
+                    if (redata.succeed) { 
+                        alert("success");
+                    } else {
+
+                        alert(redata.err);
+                    }
+                });
+        });
+
+        //Update approval final mail body
+        $("#updateFinalMailBodyBtn").on("click", function (e) {
+
+            $.get("/Quotes/UpdateFinalMailBody"
+                , {
+                    quoteID: $("#updateFinalMailBodyTxt").val()
+
+                }, function (redata) {
+                    if (redata.succeed) { // 不需要簽核則直接進入confirm action 建立Quote
+                        alert("success");
+                    } else {
+
+                        alert(redata.err);
+                    }
+                });
+        });
+
+        
+
+        //Resend final approval email
+        $("#updateTermConditioinBtn").on("click", function (e) {
+
+            //$.get("/Quotes/UpdateTermAndCondition"
+            //    , {
+            //        org: $("#orgTxt").val(),
+            //        tc: $("#termConditioinTxt").val()
+
+            //    }, function (redata) {
+            //        if (redata.succeed) { // 不需要簽核則直接進入confirm action 建立Quote
+            //            alert("success");
+            //        } else {
+
+            //            alert(redata.err);
+            //        }
+            //    });
+
+            var postdata = JSON.stringify({
+                org: $("#orgTxt").val(), tc: $("#termConditioinTxt").val()
+            });
+
+            $.ajax({
+                url: "/Quotes/UpdateTermAndCondition", type: "POST", dataType: "json", data: postdata, async: false
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+                    if (redata.succeed) {
+                        alert("success");
+                    } else {
+                        alert(redata.err);
+                    }
+                }
+            });
+        });
+
+    });
+
+</script>

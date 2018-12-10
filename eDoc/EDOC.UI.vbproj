@@ -1,0 +1,2679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{96D104D7-68A1-4A92-B859-FACCEC39757C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EDOC</RootNamespace>
+    <AssemblyName>EDOC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>EDOC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>EDOC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="App_Licenses, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\App_Licenses.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells, Version=4.6.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Pdf, Version=3.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=6.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="BAPI_SALESORDER_CREATEFROMDAT2, Version=1.0.4556.29761, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\BAPI_SALESORDER_CREATEFROMDAT2.dll</HintPath>
+    </Reference>
+    <Reference Include="BAPI_SALESORDER_SIMULATE, Version=1.0.4056.23877, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\BAPI_SALESORDER_SIMULATE.dll</HintPath>
+    </Reference>
+    <Reference Include="Change_SD_Order, Version=1.0.2166.20661, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Change_SD_Order.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DBauer.Web.UI.WebControls.DynamicControlsPlaceholder, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0cf700d027f89147">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\DBauer.Web.UI.WebControls.DynamicControlsPlaceholder.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MyAdvantechAPI\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MyAdvantechAPI\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ephtmltopdf, Version=7.0.0.0, Culture=neutral, PublicKeyToken=5b5f377bc08a4d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\ephtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Factory_Date_Conversion, Version=1.0.2162.26487, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Factory_Date_Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="GetCreditExposure, Version=1.0.4388.32257, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\GetCreditExposure.dll</HintPath>
+    </Reference>
+    <Reference Include="GET_MATERIAL_ATP, Version=1.0.2105.25561, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\GET_MATERIAL_ATP.dll</HintPath>
+    </Reference>
+    <Reference Include="Get_Price, Version=1.0.2308.25192, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Get_Price.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.3.9.1, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Editor, Version=1.10.609.1, Culture=neutral, PublicKeyToken=3758f1b5e9d8196b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\obout_Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Flyout2_NET, Version=2.0.5.1, Culture=neutral, PublicKeyToken=d6418bad3a294aff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\obout_Flyout2_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Payflow_dotNET, Version=4.3.1.0, Culture=neutral, PublicKeyToken=14aa1e8d77f2a97c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Payflow_dotNET.dll</HintPath>
+    </Reference>
+    <Reference Include="PRICE_GRADE, Version=1.0.3853.19101, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\PRICE_GRADE.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.5.0.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>packages\Quartz.2.5.0\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Quotation_Create_SAP, Version=1.0.3128.20875, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Quotation_Create_SAP.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector, Version=1.2.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\SAP.Connector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SgmlReaderDll, Version=1.8.0.28312, Culture=neutral, PublicKeyToken=46b2db9ca481831b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\SgmlReaderDll.dll</HintPath>
+    </Reference>
+    <Reference Include="SO_CREATE_COMMIT, Version=1.0.2116.28746, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\SO_CREATE_COMMIT.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="URLRewriter, Version=1.0.1495.18710, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\URLRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="wnvhtmltopdf, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b12703d35a33ff98, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\wnvhtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="ZCUSTOMER_UPDATE_SALES_AREA, Version=1.0.4497.19982, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\ZCUSTOMER_UPDATE_SALES_AREA.dll</HintPath>
+    </Reference>
+    <Reference Include="ZGET_ATP_LIMITQTY, Version=1.0.3945.16614, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\ZGET_ATP_LIMITQTY.dll</HintPath>
+    </Reference>
+    <Reference Include="ZSD_CUSTOMER_MAINTAIN_ALL, Version=1.0.4469.38906, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\ZSD_CUSTOMER_MAINTAIN_ALL.dll</HintPath>
+    </Reference>
+    <Reference Include="ZSD_UPDATE_FPLA, Version=1.0.4582.20422, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\ZSD_UPDATE_FPLA.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_EBIZAEU_PRICEINQUIRY_BR, Version=1.0.4020.23748, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Z_EBIZAEU_PRICEINQUIRY_BR.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_GET_ATP_LIMITQTY, Version=1.0.4535.29333, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Z_GET_ATP_LIMITQTY.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_READ_TEXT">
+      <HintPath>App_Code\DLL\Z_READ_TEXT.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_SD_EUPRICEINQUERY, Version=1.0.2949.25961, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Code\DLL\Z_SD_EUPRICEINQUERY.dll</HintPath>
+    </Reference>
+    <Reference Include="Z_SD_USPRICELOOKUP, Version=1.0.5534.23767, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MyAdvantechAPI\packages\Z_SD_USPRICELOOKUP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\DLL\AjaxControlToolkit.dll" />
+    <Content Include="App_Code\DLL\App_Licenses.dll" />
+    <Content Include="App_Code\DLL\Aspose.Cells.dll" />
+    <Content Include="App_Code\DLL\Aspose.Pdf.dll" />
+    <Content Include="App_Code\DLL\BAPI_SALESORDER_CREATEFROMDAT2.dll" />
+    <Content Include="App_Code\DLL\BAPI_SALESORDER_SIMULATE.dll" />
+    <Content Include="App_Code\DLL\Change_SD_Order.dll" />
+    <Content Include="App_Code\DLL\DBauer.Web.UI.WebControls.DynamicControlsPlaceholder.dll" />
+    <Content Include="App_Code\DLL\ephtmltopdf.dll" />
+    <Content Include="App_Code\DLL\Factory_Date_Conversion.dll" />
+    <Content Include="App_Code\DLL\GetCreditExposure.dll" />
+    <Content Include="App_Code\DLL\GET_MATERIAL_ATP.dll" />
+    <Content Include="App_Code\DLL\Get_Price.dll" />
+    <Content Include="App_Code\DLL\HtmlAgilityPack.dll" />
+    <Content Include="App_Code\DLL\Newtonsoft.Json.dll" />
+    <Content Include="App_Code\DLL\obout_Editor.dll" />
+    <Content Include="App_Code\DLL\obout_Flyout2_NET.dll" />
+    <Content Include="App_Code\DLL\Payflow_dotNET.dll" />
+    <Content Include="App_Code\DLL\PRICE_GRADE.dll" />
+    <Content Include="App_Code\DLL\Quotation_Create_SAP.dll" />
+    <Content Include="App_Code\DLL\SAP.Connector.dll" />
+    <Content Include="App_Code\DLL\SgmlReaderDll.dll" />
+    <Content Include="App_Code\DLL\SO_CREATE_COMMIT.dll" />
+    <Content Include="App_Code\DLL\URLRewriter.dll" />
+    <Content Include="App_Code\DLL\ZCUSTOMER_UPDATE_SALES_AREA.dll" />
+    <Content Include="App_Code\DLL\ZGET_ATP_LIMITQTY.dll" />
+    <Content Include="App_Code\DLL\ZSD_CUSTOMER_MAINTAIN_ALL.dll" />
+    <Content Include="App_Code\DLL\ZSD_UPDATE_FPLA.dll" />
+    <Content Include="App_Code\DLL\Z_EBIZAEU_PRICEINQUIRY_BR.dll" />
+    <Content Include="App_Code\DLL\Z_GET_ATP_LIMITQTY.dll" />
+    <Content Include="App_Code\DLL\Z_SD_EUPRICEINQUERY.dll" />
+    <Content Include="Ascx\AEUQuoteTemplate\Conditions.ascx" />
+    <Content Include="Ascx\AEUQuoteTemplate\images\heard.png" />
+    <Content Include="Ascx\AEUQuoteTemplate\images\Tbg1.gif" />
+    <Content Include="Ascx\AEUQuoteTemplate\QuoteDetail.ascx" />
+    <Content Include="Ascx\AEUQuoteTemplate\QuoteDetailForBTOS.ascx" />
+    <Content Include="Ascx\AEUQuoteTemplate\QuoteMaster.ascx" />
+    <Content Include="Ascx\AEUQuoteTemplate\QuoteNotes.ascx" />
+    <Content Include="Ascx\AJPConfiguratorTerms\AJPTerm1.ascx" />
+    <Content Include="Ascx\AJPConfiguratorTerms\AJPTerm2.ascx" />
+    <Content Include="Ascx\AJPConfiguratorTerms\AJPTerm3.ascx" />
+    <Content Include="Ascx\BRAOnlineQuoteTemplate.ascx" />
+    <Content Include="Ascx\CBOMCategory.ascx" />
+    <Content Include="Ascx\CheckUID.ascx" />
+    <Content Include="Ascx\CheckUIDisCanInsert2Siebel.ascx" />
+    <Content Include="Ascx\CheckUIDisVisiable.ascx" />
+    <Content Include="Ascx\CNAOnlineQuoteTemplate.ascx" />
+    <Content Include="Ascx\UCCreditInfo.ascx" />
+    <Content Include="Ascx\DisplayImageHandler.ashx" />
+    <Content Include="Ascx\Forward.ascx" />
+    <Content Include="Ascx\HierarchyConfigUI.ascx" />
+    <Content Include="Ascx\InterconQuoteTemplate.ascx" />
+    <Content Include="Ascx\JPAOnlineQuoteTemplateV3.ascx" />
+    <Content Include="Ascx\JPAOnlineQuoteTemplateV2.ascx" />
+    <Content Include="Ascx\JPAOnlineQuoteTemplateV4.ascx" />
+    <Content Include="Ascx\KRAOnlineQuoteTemplate.ascx" />
+    <Content Include="Ascx\NVCHART.ascx" />
+    <Content Include="Ascx\Order\AuthCreditResult.ascx" />
+    <Content Include="Ascx\Order\OrderAddress.ascx" />
+    <Content Include="Ascx\Order\OrderInfo.ascx" />
+    <Content Include="Ascx\Order\PartialDeliver.ascx" />
+    <Content Include="Ascx\Order\PickCalendar.ascx" />
+    <Content Include="Ascx\Order\soldtoshipto.ascx" />
+    <Content Include="Ascx\Order\USAOnlineShipBillTo.ascx" />
+    <Content Include="Ascx\PickAccount.ascx" />
+    <Content Include="Ascx\PickAddressSiebel.ascx" />
+    <Content Include="Ascx\PickAttention.ascx" />
+    <Content Include="Ascx\pickBTO.ascx" />
+    <Content Include="Ascx\PickCTOSAssemblyInstructionDoc.ascx" />
+    <Content Include="Ascx\PickProduct.ascx" />
+    <Content Include="Ascx\PickQuoteCopy.ascx" />
+    <Content Include="Ascx\PickQuoteFinished.ascx" />
+    <Content Include="Ascx\PickRole.ascx" />
+    <Content Include="Ascx\PickShipToBillToSAP.ascx" />
+    <Content Include="Ascx\PickSiebelOpportunity.ascx" />
+    <Content Include="Ascx\PickSignature.ascx" />
+    <Content Include="Ascx\ProdInvalidList.ascx" />
+    <Content Include="Ascx\QuotationViewOption.ascx" />
+    <Content Include="Ascx\quoteDetail.ascx" />
+    <Content Include="Ascx\SendeQuotationUI.ascx" />
+    <Content Include="Ascx\TWAOnlineQuoteTemplate.ascx" />
+    <Content Include="Ascx\USAENCQuoteTemplate.ascx" />
+    <Content Include="Ascx\USANAiAQuoteTemplate.ascx" />
+    <Content Include="Ascx\USAOnlineQuoteTemplate.ascx" />
+    <Content Include="Ascx\NCNRAgreement.ascx" />
+    <Content Include="Ascx\USVolumeDiscount.ascx" />
+    <Content Include="ATW\SiebelQuote.aspx" />
+    <Content Include="bin\wnvhtmltopdf.dll" />
+    <Content Include="Css\Ajax.css" />
+    <Content Include="Css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Css\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Css\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Css\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Css\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Css\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Css\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Css\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Css\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Css\images\ui-icons_888888_256x240.png" />
+    <Content Include="Css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Css\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Css\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Css\jquery-ui-1.8.5.custom.css" />
+    <Content Include="Css\jquery.autocomplete.css" />
+    <Content Include="Css\JqueryUI.css" />
+    <Content Include="Css\MainWall.css" />
+    <Content Include="Css\StyleSheet.css" />
+    <Content Include="Css\token-input-facebook.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Functions\DoApprove.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="GPControl\Agent.aspx" />
+    <Content Include="GPControl\ApprovalDef.aspx" />
+    <Content Include="GPPad\Approval.aspx" />
+    <Content Include="GPPad\MobileApprove.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="Home_MyAOnlineWall.aspx" />
+    <Content Include="Images\2010-Logo-with-Slogan.jpg" />
+    <Content Include="Images\Advantech logo.jpg" />
+    <Content Include="Images\AEUbottom.gif" />
+    <Content Include="Images\AEUheard.gif" />
+    <Content Include="Images\AEUline.gif" />
+    <Content Include="Images\AEUline2.gif" />
+    <Content Include="Images\AEUline3.gif" />
+    <Content Include="Images\AJPCompanyInfo.png" />
+    <Content Include="Images\AJPCompanyInfoV2.png" />
+    <Content Include="Images\AJPQuotationTitle.gif" />
+    <Content Include="Images\AJPQuotationTitle.jpg" />
+    <Content Include="Images\AKRStamp.png" />
+    <Content Include="Images\Approved.png" />
+    <Content Include="Images\arrow_01.jpg" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\backdis.png" />
+    <Content Include="Images\BBBG.gif" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\bg1.jpg" />
+    <Content Include="Images\bg2.jpg" />
+    <Content Include="Images\bgactive.jpg" />
+    <Content Include="Images\bgb.jpg" />
+    <Content Include="Images\bgBlue.jpg" />
+    <Content Include="Images\BGGRAY.jpg" />
+    <Content Include="Images\bggv.jpg" />
+    <Content Include="Images\bgloading.png" />
+    <Content Include="Images\Calendar_scheduleHS.png" />
+    <Content Include="Images\AJPConfirmTermJPG1.jpg" />
+    <Content Include="Images\AJPConfirmTermJPG2.jpg" />
+    <Content Include="Images\CheckList.png" />
+    <Content Include="Images\collapse.jpg" />
+    <Content Include="Images\collapse_blue.jpg" />
+    <Content Include="Images\Complete196.gif" />
+    <Content Include="Images\Config.gif" />
+    <Content Include="Images\copyimg.gif" />
+    <Content Include="Images\copyimg.jpg" />
+    <Content Include="Images\Current.png" />
+    <Content Include="Images\del.gif" />
+    <Content Include="Images\Detail.gif" />
+    <Content Include="Images\DOTLINE_Mid.gif" />
+    <Content Include="Images\download.png" />
+    <Content Include="Images\edit-2.png" />
+    <Content Include="Images\edit-cancel.png" />
+    <Content Include="Images\edit.gif" />
+    <Content Include="Images\edss_showall.gif" />
+    <Content Include="Images\emptytrash.png" />
+    <Content Include="Images\EQ_Logo.gif" />
+    <Content Include="Images\ex.gif" />
+    <Content Include="Images\excel.gif" />
+    <Content Include="Images\excelSample.jpg" />
+    <Content Include="Images\excelSample1.jpg" />
+    <Content Include="Images\expand.jpg" />
+    <Content Include="Images\expand_blue.jpg" />
+    <Content Include="Images\Fast Delivery.gif" />
+    <Content Include="Images\File.jpg" />
+    <Content Include="Images\filesave.png" />
+    <Content Include="Images\folder.png" />
+    <Content Include="Images\Go.png" />
+    <Content Include="Images\goDis.png" />
+    <Content Include="Images\header_advantech_logo.gif" />
+    <Content Include="Images\heard.jpg" />
+    <Content Include="Images\heardBB.jpg" />
+    <Content Include="Images\history.png" />
+    <Content Include="Images\historyV2.png" />
+    <Content Include="Images\Hot-orange.gif" />
+    <Content Include="Images\Indicator.gif" />
+    <Content Include="Images\JPAonlineQuoteTemplateHeaderImg.png" />
+    <Content Include="Images\jt01.gif" />
+    <Content Include="Images\loader.gif" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\LoadingRed.gif" />
+    <Content Include="Images\loginBOT.jpg" />
+    <Content Include="Images\loginMid.jpg" />
+    <Content Include="Images\loginTop.jpg" />
+    <Content Include="Images\loginTop1.jpg" />
+    <Content Include="Images\login_btn.jpg" />
+    <Content Include="Images\Logo.gif" />
+    <Content Include="Images\LogoPI.jpg" />
+    <Content Include="Images\LogoPI1.jpg" />
+    <Content Include="Images\logoUS.gif" />
+    <Content Include="Images\Logo_AonlineDocCenter.jpg" />
+    <Content Include="Images\Logo_AOnlineWall.gif" />
+    <Content Include="Images\logo_BB.png" />
+    <Content Include="Images\mail.png" />
+    <Content Include="Images\Master.gif" />
+    <Content Include="Images\openfolder.png" />
+    <Content Include="Images\pdf.gif" />
+    <Content Include="Images\pdf_icon.jpg" />
+    <Content Include="Images\Pending.png" />
+    <Content Include="Images\pickPick.gif" />
+    <Content Include="Images\pipeline.png" />
+    <Content Include="Images\pipelined_icon.png" />
+    <Content Include="Images\plus.gif" />
+    <Content Include="Images\Preview.gif" />
+    <Content Include="Images\Product.gif" />
+    <Content Include="Images\Reconfigure.png" />
+    <Content Include="Images\Recycle.png" />
+    <Content Include="Images\Rejected.png" />
+    <Content Include="Images\Rohs.jpg" />
+    <Content Include="Images\SalesMappingSample.jpg" />
+    <Content Include="Images\search.gif" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\square_blue.gif" />
+    <Content Include="Images\square_gray.gif" />
+    <Content Include="Images\pickPN.png" />
+    <Content Include="Images\tabCom0.jpg" />
+    <Content Include="Images\tabCom1.jpg" />
+    <Content Include="Images\tabSys0.jpg" />
+    <Content Include="Images\tabSys1.jpg" />
+    <Content Include="Images\TITLEBG.gif" />
+    <Content Include="Images\Vertebrae.gif" />
+    <Content Include="Images\webIE.jpg" />
+    <Content Include="Images\word_icon.png" />
+    <Content Include="Includes\ProductRelatedInfo.aspx" />
+    <Content Include="Includes\Products.aspx" />
+    <Content Include="Js\FancyBox\images\blank.gif" />
+    <Content Include="Js\FancyBox\images\fancybox_loading%402x.gif" />
+    <Content Include="Js\FancyBox\images\fancybox_loading.gif" />
+    <Content Include="Js\FancyBox\images\fancybox_overlay.png" />
+    <Content Include="Js\FancyBox\images\fancybox_sprite%402x.png" />
+    <Content Include="Js\FancyBox\images\fancybox_sprite.png" />
+    <Content Include="Js\FancyBox\jquery.fancybox.css" />
+    <Content Include="Js\FancyBox\jquery.fancybox.js" />
+    <Content Include="Js\jquery-1.2.6.js" />
+    <Content Include="Js\jquery-1.4.2.min.js" />
+    <Content Include="Js\jquery-1.9.1.js" />
+    <Content Include="Js\jquery-latest.min.js" />
+    <Content Include="Js\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Js\jquery-ui-1.8.2.custom.min.js" />
+    <Content Include="Js\jquery-ui.js" />
+    <Content Include="Js\jquery.autocomplete.min.js" />
+    <Content Include="Js\jquery.corner.js" />
+    <Content Include="Js\jquery.js" />
+    <Content Include="Js\jquery.tokeninput.js" />
+    <Content Include="Js\jquery.tokeninput_eQuote.js" />
+    <Content Include="Js\jquery.validate.js" />
+    <Content Include="Js\Jquery1.js" />
+    <Content Include="Js\JQueryEasyUI\datagrid-detailview.js" />
+    <Content Include="Js\JQueryEasyUI\easyloader.js" />
+    <Content Include="Js\JQueryEasyUI\jquery.easyui.min.js" />
+    <Content Include="Js\JQueryEasyUI\jquery.min.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-af.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-ar.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-bg.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-ca.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-cs.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-cz.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-da.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-de.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-el.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-en.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-es.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-fr.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-it.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-jp.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-nl.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-pl.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-pt_BR.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-ru.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-sv_SE.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-tr.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-zh_CN.js" />
+    <Content Include="Js\JQueryEasyUI\locale\easyui-lang-zh_TW.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.accordion.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.calendar.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.combo.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.combobox.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.combogrid.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.combotree.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.datagrid.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.datebox.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.datetimebox.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.dialog.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.draggable.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.droppable.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.form.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.layout.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.linkbutton.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.menu.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.menubutton.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.messager.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.numberbox.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.numberspinner.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.pagination.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.panel.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.parser.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.progressbar.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.propertygrid.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.resizable.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.searchbox.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.slider.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.spinner.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.splitbutton.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.tabs.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.timespinner.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.tooltip.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.tree.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.treegrid.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.validatebox.js" />
+    <Content Include="Js\JQueryEasyUI\plugins\jquery.window.js" />
+    <Content Include="Js\JQueryEasyUI\src\easyloader.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.accordion.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.calendar.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.combobox.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.datebox.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.draggable.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.droppable.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.form.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.linkbutton.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.menu.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.parser.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.progressbar.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.propertygrid.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.resizable.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.slider.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.tabs.js" />
+    <Content Include="Js\JQueryEasyUI\src\jquery.window.js" />
+    <Content Include="Js\JQueryEasyUI\themes\black\accordion.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\calendar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\combo.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\combobox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\datagrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\datebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\dialog.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\easyui.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\accordion_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\blank.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\calendar_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\combo_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\datagrid_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\datebox_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\layout_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\linkbutton_bg.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\loading.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\menu_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\messager_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\pagination_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\panel_tools.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\searchbox_button.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\slider_handle.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\spinner_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\tabs_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\tree_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\images\validatebox_warning.png" />
+    <Content Include="Js\JQueryEasyUI\themes\black\layout.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\linkbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\menu.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\menubutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\messager.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\pagination.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\panel.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\progressbar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\propertygrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\searchbox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\slider.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\spinner.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\splitbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\tabs.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\tooltip.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\tree.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\validatebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\black\window.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\accordion.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\calendar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\combo.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\combobox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\datagrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\datebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\dialog.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\easyui.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\accordion_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\blank.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\calendar_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\combo_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\datagrid_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\datebox_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\layout_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\loading.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\menu_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\messager_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\pagination_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\panel_tools.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\searchbox_button.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\slider_handle.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\spinner_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\tabs_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\tree_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\images\validatebox_warning.png" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\layout.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\linkbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\menu.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\menubutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\messager.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\pagination.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\panel.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\progressbar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\propertygrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\searchbox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\slider.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\spinner.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\splitbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\tabs.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\tooltip.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\tree.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\validatebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\bootstrap\window.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\accordion.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\calendar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\combo.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\combobox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\datagrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\datebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\dialog.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\easyui.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\accordion_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\blank.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\calendar_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\combo_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\datagrid_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\datebox_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\layout_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\linkbutton_bg.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\loading.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\menu_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\messager_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\pagination_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\panel_tools.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\searchbox_button.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\slider_handle.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\spinner_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\tabs_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\tree_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\images\validatebox_warning.png" />
+    <Content Include="Js\JQueryEasyUI\themes\default\layout.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\linkbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\menu.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\menubutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\messager.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\pagination.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\panel.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\progressbar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\propertygrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\searchbox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\slider.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\spinner.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\splitbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\tabs.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\tooltip.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\tree.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\validatebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\default\window.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\accordion.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\calendar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\combo.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\combobox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\datagrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\datebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\dialog.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\easyui.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\accordion_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\blank.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\calendar_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\combo_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\datagrid_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\layout_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\linkbutton_bg.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\loading.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\menu_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\messager_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\pagination_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\panel_tools.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\searchbox_button.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\slider_handle.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\spinner_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\tabs_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\tree_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\images\validatebox_warning.png" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\layout.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\linkbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\menu.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\menubutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\messager.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\pagination.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\panel.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\progressbar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\propertygrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\searchbox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\slider.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\spinner.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\splitbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\tabs.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\tooltip.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\tree.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\validatebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\gray\window.css" />
+    <Content Include="Js\JQueryEasyUI\themes\icon.css" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\back.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\blank.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\cancel.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\cut.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\edit_add.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\edit_remove.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\filesave.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\help.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\mini_add.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\mini_edit.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\mini_refresh.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\no.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\ok.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\pencil.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\print.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\redo.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\reload.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\search.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\sum.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\tip.png" />
+    <Content Include="Js\JQueryEasyUI\themes\icons\undo.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\accordion.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\calendar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\combo.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\combobox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\datagrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\datebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\dialog.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\easyui.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\accordion_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\blank.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\calendar_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\combo_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\datagrid_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\datebox_arrow.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\layout_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\linkbutton_bg.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\loading.gif" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\menu_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\messager_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\pagination_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\panel_tools.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\searchbox_button.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\slider_handle.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\spinner_arrows.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\tabs_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\tree_icons.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\images\validatebox_warning.png" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\layout.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\linkbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\menu.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\menubutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\messager.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\pagination.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\panel.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\progressbar.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\propertygrid.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\searchbox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\slider.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\spinner.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\splitbutton.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\tabs.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\tooltip.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\tree.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\validatebox.css" />
+    <Content Include="Js\JQueryEasyUI\themes\metro\window.css" />
+    <Content Include="Js\json2.js" />
+    <Content Include="Js\MainWall.js" />
+    <Content Include="Js\Numeral\numeral.js" />
+    <Content Include="Js\redactor.css" />
+    <Content Include="Js\redactor.js" />
+    <Content Include="Js\redactor.min.js" />
+    <Content Include="Js\SiteUtil.js" />
+    <Content Include="Lab\ATWQuoteTemplateTesting.aspx" />
+    <Content Include="Lab\Copy.aspx" />
+    <Content Include="Lab\dropdrawtest.aspx" />
+    <Content Include="Lab\ICG_Spec.aspx" />
+    <Content Include="Lab\MingTest\ProductReport.aspx" />
+    <Content Include="Lab\RyanTest.aspx" />
+    <Content Include="Lab\Opportunity_Management.aspx" />
+    <Content Include="Lab\AEUQuoteTemplateTesting.aspx" />
+    <Content Include="Lab\AJPQuoteTemplateTesting.aspx" />
+    <Content Include="Lab\PLMDB_Test.aspx" />
+    <Content Include="Includes\QuoteByMOQ.aspx" />
+    <Content Include="Lab\SiebelJob.aspx" />
+    <Content Include="Lab\TestMing.aspx" />
+    <Content Include="Lab\VersionInfo.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Order\OrderDueDate.aspx" />
+    <Content Include="Order\OrderInfo.aspx" />
+    <Content Include="Order\OrderPreview.aspx" />
+    <Content Include="Order\OrderRecover.aspx" />
+    <Content Include="Order\PI.aspx" />
+    <Content Include="Product\ModelDetailTranslation.aspx" />
+    <Content Include="Quote\AdminDefault.aspx" />
+    <Content Include="Quote\ANAiAUsageReport.aspx" />
+    <Content Include="Quote\atpAndPrice.aspx" />
+    <Content Include="Quote\BtosSearch.aspx" />
+    <Content Include="Quote\Catalog.aspx" />
+    <Content Include="Quote\CBOM_eStoreBTO_List1.aspx" />
+    <Content Include="Quote\CBOM_eStoreBTO_List3.aspx" />
+    <Content Include="Quote\CBOM_eStoreBTO_List5.aspx" />
+    <Content Include="Quote\CBOM_LIST.aspx" />
+    <Content Include="Quote\cGP.aspx" />
+    <Content Include="Quote\ChangeUser.aspx" />
+    <Content Include="Quote\chart.aspx" />
+    <Content Include="Quote\ChartOver.aspx" />
+    <Content Include="Quote\ChartOver_old.aspx" />
+    <Content Include="Quote\ChartProduct.aspx" />
+    <Content Include="Quote\CN_SPR_Configurator.aspx" />
+    <Content Include="Quote\Configurator.aspx" />
+    <Content Include="Quote\CreateNewCust.aspx" />
+    <Content Include="Quote\CreateQuotationByCopy.aspx" />
+    <Content Include="Quote\CreateQuotationByRef.aspx" />
+    <Content Include="Quote\CreditInfo.aspx" />
+    <Content Include="Quote\CustomBtos.aspx" />
+    <Content Include="Quote\CustomBTOS_ACN.aspx" />
+    <Content Include="Quote\CustomBTOS_ATW.aspx" />
+    <Content Include="Quote\EstoreCBOMCategory.aspx" />
+    <Content Include="Quote\EstoreCBOMList.aspx" />
+    <Content Include="Quote\eStoreQuote2Quote.aspx" />
+    <Content Include="Quote\ITPInquiry.aspx" />
+    <Content Include="Quote\ListPriceInquiry.aspx" />
+    <Content Include="Quote\maintainFranchise.aspx" />
+    <Content Include="Quote\MyAccountQuotation.aspx" />
+    <Content Include="Quote\MyQuotationRecord.aspx" />
+    <Content Include="Quote\myTeamsQuotation.aspx" />
+    <Content Include="Quote\Order2Quote.aspx" />
+    <Content Include="Quote\OrderFromCombinedQuotation.aspx" />
+    <Content Include="Quote\piACN.aspx" />
+    <Content Include="Quote\piAIN.aspx" />
+    <Content Include="Quote\piHtml.aspx" />
+    <Content Include="Quote\PipeLine.aspx" />
+    <Content Include="Quote\price_bylevel.aspx" />
+    <Content Include="Quote\ProductReport.aspx" />
+    <Content Include="Quote\quickConfigQuote.aspx" />
+    <Content Include="Quote\Quotation2Siebel.aspx" />
+    <Content Include="Quote\Quotation2SiebelAJP.aspx" />
+    <Content Include="Quote\QuotationDetail.aspx" />
+    <Content Include="Quote\QuotationMaster.aspx" />
+    <Content Include="Quote\QuotationPreview.aspx" />
+    <Content Include="Quote\QuotationToOrderLog.aspx" />
+    <Content Include="Quote\QuoteApproval.aspx" />
+    <Content Include="Quote\quoteByAccountOwner.aspx" />
+    <Content Include="Quote\QuoteForward.aspx" />
+    <Content Include="Quote\quoteModify.aspx" />
+    <Content Include="Ascx\QuoteReportSalesMultiSelectBlock.ascx" />
+    <Content Include="Quote\ReConfigureCTOSCheck.aspx" />
+    <Content Include="Quote\ShowQuoteDetail.aspx" />
+    <Content Include="Quote\UpdateQuotePrintFormat.aspx" />
+    <Content Include="Quote\UploadSalesMapping.aspx" />
+    <Content Include="Quote\USPriceByLevel.aspx" />
+    <Content Include="Quote\USPriceOW.aspx" />
+    <Content Include="Quote\USPriceOW_Log.aspx" />
+    <Content Include="Report\rGPControl.aspx" />
+    <Content Include="Role\RoleDef.aspx" />
+    <Content Include="Role\RoleManagement.aspx" />
+    <Content Include="Services\AJPTerms.asmx" />
+    <Content Include="Services\AutoComplete.asmx" />
+    <Content Include="Services\eQ25WS.asmx" />
+    <Content Include="Services\ForeStore.asmx" />
+    <Content Include="Services\quoteExit.asmx" />
+    <Content Include="SSO.aspx" />
+    <Content Include="SSOENTER.aspx" />
+    <Content Include="tempSyncPN.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ascx\BRAOnlineQuoteTemplate.ascx.designer.vb">
+      <DependentUpon>BRAOnlineQuoteTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\BRAOnlineQuoteTemplate.ascx.vb">
+      <DependentUpon>BRAOnlineQuoteTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\UCCreditInfo.ascx.designer.vb">
+      <DependentUpon>UCCreditInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\UCCreditInfo.ascx.vb">
+      <DependentUpon>UCCreditInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\USVolumeDiscount.ascx.designer.vb">
+      <DependentUpon>USVolumeDiscount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\USVolumeDiscount.ascx.vb">
+      <DependentUpon>USVolumeDiscount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web References\UpdateSiebelAcc\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\Ling2Sql.vb">
+      <DependentUpon>Ling2Sql.dbml</DependentUpon>
+    </Content>
+    <Compile Include="App_Code\MyA.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyA.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\MyExtension.vb" />
+    <Compile Include="App_Code\MyQuoteX.vb" />
+    <Compile Include="App_Code\MyUtil.vb" />
+    <Compile Include="App_Code\ScheduledJob.vb" />
+    <Compile Include="App_Code\UIUtil.vb" />
+    <Compile Include="App_Data\EQDS.Designer.vb">
+      <DependentUpon>EQDS.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_Data\SiebelDS.vb">
+      <DependentUpon>SiebelDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\myRs.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myRs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\Conditions.ascx.designer.vb">
+      <DependentUpon>Conditions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\Conditions.ascx.vb">
+      <DependentUpon>Conditions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\QuoteDetail.ascx.designer.vb">
+      <DependentUpon>QuoteDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\QuoteDetail.ascx.vb">
+      <DependentUpon>QuoteDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\QuoteDetailForBTOS.ascx.designer.vb">
+      <DependentUpon>QuoteDetailForBTOS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\QuoteDetailForBTOS.ascx.vb">
+      <DependentUpon>QuoteDetailForBTOS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\QuoteMaster.ascx.designer.vb">
+      <DependentUpon>QuoteMaster.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\QuoteMaster.ascx.vb">
+      <DependentUpon>QuoteMaster.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\QuoteNotes.ascx.designer.vb">
+      <DependentUpon>QuoteNotes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AEUQuoteTemplate\QuoteNotes.ascx.vb">
+      <DependentUpon>QuoteNotes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AJPConfiguratorTerms\AJPTerm1.ascx.designer.vb">
+      <DependentUpon>AJPTerm1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AJPConfiguratorTerms\AJPTerm1.ascx.vb">
+      <DependentUpon>AJPTerm1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AJPConfiguratorTerms\AJPTerm2.ascx.designer.vb">
+      <DependentUpon>AJPTerm2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AJPConfiguratorTerms\AJPTerm2.ascx.vb">
+      <DependentUpon>AJPTerm2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AJPConfiguratorTerms\AJPTerm3.ascx.designer.vb">
+      <DependentUpon>AJPTerm3.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AJPConfiguratorTerms\AJPTerm3.ascx.vb">
+      <DependentUpon>AJPTerm3.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\CNAOnlineQuoteTemplate.ascx.designer.vb">
+      <DependentUpon>CNAOnlineQuoteTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\CNAOnlineQuoteTemplate.ascx.vb">
+      <DependentUpon>CNAOnlineQuoteTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\DisplayImageHandler.ashx.vb">
+      <DependentUpon>DisplayImageHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\InterconQuoteTemplate.ascx.designer.vb">
+      <DependentUpon>InterconQuoteTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\InterconQuoteTemplate.ascx.vb">
+      <DependentUpon>InterconQuoteTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\JPAOnlineQuoteTemplateV3.ascx.designer.vb">
+      <DependentUpon>JPAOnlineQuoteTemplateV3.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\JPAOnlineQuoteTemplateV3.ascx.vb">
+      <DependentUpon>JPAOnlineQuoteTemplateV3.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\JPAOnlineQuoteTemplateV2.ascx.designer.vb">
+      <DependentUpon>JPAOnlineQuoteTemplateV2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\JPAOnlineQuoteTemplateV2.ascx.vb">
+      <DependentUpon>JPAOnlineQuoteTemplateV2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\JPAOnlineQuoteTemplateV4.ascx.designer.vb">
+      <DependentUpon>JPAOnlineQuoteTemplateV4.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\JPAOnlineQuoteTemplateV4.ascx.vb">
+      <DependentUpon>JPAOnlineQuoteTemplateV4.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\KRAOnlineQuoteTemplate.ascx.designer.vb">
+      <DependentUpon>KRAOnlineQuoteTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\KRAOnlineQuoteTemplate.ascx.vb">
+      <DependentUpon>KRAOnlineQuoteTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\Order\AuthCreditResult.ascx.designer.vb">
+      <DependentUpon>AuthCreditResult.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\Order\AuthCreditResult.ascx.vb">
+      <DependentUpon>AuthCreditResult.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\Order\OrderAddress.ascx.designer.vb">
+      <DependentUpon>OrderAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\Order\OrderAddress.ascx.vb">
+      <DependentUpon>OrderAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\Order\OrderInfo.ascx.designer.vb">
+      <DependentUpon>OrderInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\Order\OrderInfo.ascx.vb">
+      <DependentUpon>OrderInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\Order\PartialDeliver.ascx.designer.vb">
+      <DependentUpon>PartialDeliver.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\Order\PartialDeliver.ascx.vb">
+      <DependentUpon>PartialDeliver.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\Order\PickCalendar.ascx.designer.vb">
+      <DependentUpon>PickCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\Order\PickCalendar.ascx.vb">
+      <DependentUpon>PickCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\Order\soldtoshipto.ascx.designer.vb">
+      <DependentUpon>soldtoshipto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\Order\soldtoshipto.ascx.vb">
+      <DependentUpon>soldtoshipto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\Order\USAOnlineShipBillTo.ascx.designer.vb">
+      <DependentUpon>USAOnlineShipBillTo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\Order\USAOnlineShipBillTo.ascx.vb">
+      <DependentUpon>USAOnlineShipBillTo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickSignature.ascx.designer.vb">
+      <DependentUpon>PickSignature.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickSignature.ascx.vb">
+      <DependentUpon>PickSignature.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\ProdInvalidList.ascx.designer.vb">
+      <DependentUpon>ProdInvalidList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\ProdInvalidList.ascx.vb">
+      <DependentUpon>ProdInvalidList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\quoteDetail.ascx.designer.vb">
+      <DependentUpon>quoteDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\quoteDetail.ascx.vb">
+      <DependentUpon>quoteDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\TWAOnlineQuoteTemplate.ascx.designer.vb">
+      <DependentUpon>TWAOnlineQuoteTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\TWAOnlineQuoteTemplate.ascx.vb">
+      <DependentUpon>TWAOnlineQuoteTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\USAENCQuoteTemplate.ascx.designer.vb">
+      <DependentUpon>USAENCQuoteTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\USAENCQuoteTemplate.ascx.vb">
+      <DependentUpon>USAENCQuoteTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\USANAiAQuoteTemplate.ascx.designer.vb">
+      <DependentUpon>USANAiAQuoteTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\USANAiAQuoteTemplate.ascx.vb">
+      <DependentUpon>USANAiAQuoteTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\NCNRAgreement.ascx.designer.vb">
+      <DependentUpon>NCNRAgreement.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\NCNRAgreement.ascx.vb">
+      <DependentUpon>NCNRAgreement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ATW\SiebelQuote.aspx.designer.vb">
+      <DependentUpon>SiebelQuote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ATW\SiebelQuote.aspx.vb">
+      <DependentUpon>SiebelQuote.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ATW\SiebelQuoteDB.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiebelQuoteDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="GPPad\Approval.aspx.designer.vb">
+      <DependentUpon>Approval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GPPad\Approval.aspx.vb">
+      <DependentUpon>Approval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GPPad\MobileApprove.aspx.designer.vb">
+      <DependentUpon>MobileApprove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GPPad\MobileApprove.aspx.vb">
+      <DependentUpon>MobileApprove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\ProductRelatedInfo.aspx.designer.vb">
+      <DependentUpon>ProductRelatedInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\ProductRelatedInfo.aspx.vb">
+      <DependentUpon>ProductRelatedInfo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lab\AEUQuoteTemplateTesting.aspx.designer.vb">
+      <DependentUpon>AEUQuoteTemplateTesting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\AEUQuoteTemplateTesting.aspx.vb">
+      <DependentUpon>AEUQuoteTemplateTesting.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\CRMDB.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRMDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\ATWQuoteTemplateTesting.aspx.designer.vb">
+      <DependentUpon>ATWQuoteTemplateTesting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\ATWQuoteTemplateTesting.aspx.vb">
+      <DependentUpon>ATWQuoteTemplateTesting.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lab\CleanSession.aspx.designer.vb">
+      <DependentUpon>CleanSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\Products.aspx.designer.vb">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\Products.aspx.vb">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lab\Copy.aspx.designer.vb">
+      <DependentUpon>Copy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\Copy.aspx.vb">
+      <DependentUpon>Copy.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lab\dropdrawtest.aspx.designer.vb">
+      <DependentUpon>dropdrawtest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\dropdrawtest.aspx.vb">
+      <DependentUpon>dropdrawtest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lab\ICG_Spec.aspx.designer.vb">
+      <DependentUpon>ICG_Spec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\ICG_Spec.aspx.vb">
+      <DependentUpon>ICG_Spec.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lab\MingTest\ProductReport.aspx.designer.vb">
+      <DependentUpon>ProductReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\MingTest\ProductReport.aspx.vb">
+      <DependentUpon>ProductReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lab\RyanTest.aspx.designer.vb">
+      <DependentUpon>RyanTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\RyanTest.aspx.vb">
+      <DependentUpon>RyanTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lab\Opportunity_Management.aspx.designer.vb">
+      <DependentUpon>Opportunity_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\Opportunity_Management.aspx.vb">
+      <DependentUpon>Opportunity_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lab\PLMDB_Test.aspx.designer.vb">
+      <DependentUpon>PLMDB_Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\PLMDB_Test.aspx.vb">
+      <DependentUpon>PLMDB_Test.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Includes\QuoteByMOQ.aspx.designer.vb">
+      <DependentUpon>QuoteByMOQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\QuoteByMOQ.aspx.vb">
+      <DependentUpon>QuoteByMOQ.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lab\SiebelJob.aspx.designer.vb">
+      <DependentUpon>SiebelJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\SiebelJob.aspx.vb">
+      <DependentUpon>SiebelJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lab\TestMing.aspx.designer.vb">
+      <DependentUpon>TestMing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\TestMing.aspx.vb">
+      <DependentUpon>TestMing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lab\VersionInfo.aspx.designer.vb">
+      <DependentUpon>VersionInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\VersionInfo.aspx.vb">
+      <DependentUpon>VersionInfo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Ling2Sql.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ling2Sql.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OrderDueDate.aspx.designer.vb">
+      <DependentUpon>OrderDueDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OrderDueDate.aspx.vb">
+      <DependentUpon>OrderDueDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order\OrderInfo.aspx.designer.vb">
+      <DependentUpon>OrderInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OrderInfo.aspx.vb">
+      <DependentUpon>OrderInfo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Order\OrderPreview.aspx.designer.vb">
+      <DependentUpon>OrderPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OrderPreview.aspx.vb">
+      <DependentUpon>OrderPreview.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Order\OrderRecover.aspx.designer.vb">
+      <DependentUpon>OrderRecover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OrderRecover.aspx.vb">
+      <DependentUpon>OrderRecover.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Order\PI.aspx.designer.vb">
+      <DependentUpon>PI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order\PI.aspx.vb">
+      <DependentUpon>PI.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ANAiAUsageReport.aspx.designer.vb">
+      <DependentUpon>ANAiAUsageReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ANAiAUsageReport.aspx.vb">
+      <DependentUpon>ANAiAUsageReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Quote\Configurator.aspx.designer.vb">
+      <DependentUpon>Configurator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\Configurator.aspx.vb">
+      <DependentUpon>Configurator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\QuoteReportSalesMultiSelectBlock.ascx.designer.vb">
+      <DependentUpon>QuoteReportSalesMultiSelectBlock.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\QuoteReportSalesMultiSelectBlock.ascx.vb">
+      <DependentUpon>QuoteReportSalesMultiSelectBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CreateNewCust.aspx.designer.vb">
+      <DependentUpon>CreateNewCust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CreateNewCust.aspx.vb">
+      <DependentUpon>CreateNewCust.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CustomBTOS_ACN.aspx.designer.vb">
+      <DependentUpon>CustomBTOS_ACN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CustomBTOS_ACN.aspx.vb">
+      <DependentUpon>CustomBTOS_ACN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CustomBTOS_ATW.aspx.designer.vb">
+      <DependentUpon>CustomBTOS_ATW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CustomBTOS_ATW.aspx.vb">
+      <DependentUpon>CustomBTOS_ATW.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Quote\eStoreQuote2Quote.aspx.designer.vb">
+      <DependentUpon>eStoreQuote2Quote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\eStoreQuote2Quote.aspx.vb">
+      <DependentUpon>eStoreQuote2Quote.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Quote\PipeLine.aspx.designer.vb">
+      <DependentUpon>PipeLine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\PipeLine.aspx.vb">
+      <DependentUpon>PipeLine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ProductReport.aspx.designer.vb">
+      <DependentUpon>ProductReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ProductReport.aspx.vb">
+      <DependentUpon>ProductReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Quote\Quotation2SiebelAJP.aspx.designer.vb">
+      <DependentUpon>Quotation2SiebelAJP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\Quotation2SiebelAJP.aspx.vb">
+      <DependentUpon>Quotation2SiebelAJP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ReConfigureCTOSCheck.aspx.designer.vb">
+      <DependentUpon>ReConfigureCTOSCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ReConfigureCTOSCheck.aspx.vb">
+      <DependentUpon>ReConfigureCTOSCheck.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Quote\USPriceOW.aspx.designer.vb">
+      <DependentUpon>USPriceOW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\USPriceOW.aspx.vb">
+      <DependentUpon>USPriceOW.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Quote\USPriceOW_Log.aspx.designer.vb">
+      <DependentUpon>USPriceOW_Log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\USPriceOW_Log.aspx.vb">
+      <DependentUpon>USPriceOW_Log.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Services\AJPTerms.asmx.vb">
+      <DependentUpon>AJPTerms.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\eQ25WS.asmx.vb">
+      <DependentUpon>eQ25WS.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\ForeStore.asmx.vb">
+      <DependentUpon>ForeStore.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\tokenInput.ashx.vb">
+      <DependentUpon>tokenInput.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SSO.aspx.designer.vb">
+      <DependentUpon>SSO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SSO.aspx.vb">
+      <DependentUpon>SSO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User\SHOWServerV.aspx.designer.vb">
+      <DependentUpon>SHOWServerV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\SHOWServerV.aspx.vb">
+      <DependentUpon>SHOWServerV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Role.vb" />
+    <Compile Include="App_Code\Business.vb" />
+    <Compile Include="App_Code\EnumSetting.vb" />
+    <Compile Include="App_Code\Franchise.vb" />
+    <Compile Include="App_Code\GPControl.vb" />
+    <Compile Include="App_Code\MyEnum.vb" />
+    <Compile Include="App_Code\Pivot.vb" />
+    <Compile Include="App_Code\NoToolBarEditor.vb" />
+    <Compile Include="App_Code\OraDbUtil.vb" />
+    <Compile Include="App_Code\PageBase.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\SAPTools.vb" />
+    <Compile Include="App_Code\SiebelTools.vb" />
+    <Compile Include="App_Code\tbBase.vb" />
+    <Compile Include="App_Code\tbOPBase.vb" />
+    <Compile Include="App_Code\TBS.vb" />
+    <Compile Include="App_Code\Util.vb" />
+    <Compile Include="App_Data\SAPDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAPDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\SiebelDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiebelDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\CBOMCategory.ascx.designer.vb">
+      <DependentUpon>CBOMCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\CBOMCategory.ascx.vb">
+      <DependentUpon>CBOMCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\CheckUID.ascx.designer.vb">
+      <DependentUpon>CheckUID.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\CheckUID.ascx.vb">
+      <DependentUpon>CheckUID.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\CheckUIDisCanInsert2Siebel.ascx.designer.vb">
+      <DependentUpon>CheckUIDisCanInsert2Siebel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\CheckUIDisCanInsert2Siebel.ascx.vb">
+      <DependentUpon>CheckUIDisCanInsert2Siebel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\CheckUIDisVisiable.ascx.designer.vb">
+      <DependentUpon>CheckUIDisVisiable.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\CheckUIDisVisiable.ascx.vb">
+      <DependentUpon>CheckUIDisVisiable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\Forward.ascx.designer.vb">
+      <DependentUpon>Forward.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\Forward.ascx.vb">
+      <DependentUpon>Forward.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\HierarchyConfigUI.ascx.designer.vb">
+      <DependentUpon>HierarchyConfigUI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\HierarchyConfigUI.ascx.vb">
+      <DependentUpon>HierarchyConfigUI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\NVCHART.ascx.designer.vb">
+      <DependentUpon>NVCHART.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\NVCHART.ascx.vb">
+      <DependentUpon>NVCHART.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickAccount.ascx.designer.vb">
+      <DependentUpon>PickAccount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickAccount.ascx.vb">
+      <DependentUpon>PickAccount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickAddressSiebel.ascx.designer.vb">
+      <DependentUpon>PickAddressSiebel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickAddressSiebel.ascx.vb">
+      <DependentUpon>PickAddressSiebel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickAttention.ascx.designer.vb">
+      <DependentUpon>PickAttention.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickAttention.ascx.vb">
+      <DependentUpon>PickAttention.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\pickBTO.ascx.designer.vb">
+      <DependentUpon>pickBTO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\pickBTO.ascx.vb">
+      <DependentUpon>pickBTO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickCTOSAssemblyInstructionDoc.ascx.designer.vb">
+      <DependentUpon>PickCTOSAssemblyInstructionDoc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickCTOSAssemblyInstructionDoc.ascx.vb">
+      <DependentUpon>PickCTOSAssemblyInstructionDoc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickProduct.ascx.designer.vb">
+      <DependentUpon>PickProduct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickProduct.ascx.vb">
+      <DependentUpon>PickProduct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickQuoteCopy.ascx.designer.vb">
+      <DependentUpon>PickQuoteCopy.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickQuoteCopy.ascx.vb">
+      <DependentUpon>PickQuoteCopy.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickQuoteFinished.ascx.designer.vb">
+      <DependentUpon>PickQuoteFinished.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickQuoteFinished.ascx.vb">
+      <DependentUpon>PickQuoteFinished.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickRole.ascx.designer.vb">
+      <DependentUpon>PickRole.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickRole.ascx.vb">
+      <DependentUpon>PickRole.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickShipToBillToSAP.ascx.designer.vb">
+      <DependentUpon>PickShipToBillToSAP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickShipToBillToSAP.ascx.vb">
+      <DependentUpon>PickShipToBillToSAP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\PickSiebelOpportunity.ascx.designer.vb">
+      <DependentUpon>PickSiebelOpportunity.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\PickSiebelOpportunity.ascx.vb">
+      <DependentUpon>PickSiebelOpportunity.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\QuotationViewOption.ascx.designer.vb">
+      <DependentUpon>QuotationViewOption.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\QuotationViewOption.ascx.vb">
+      <DependentUpon>QuotationViewOption.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\SendeQuotationUI.ascx.designer.vb">
+      <DependentUpon>SendeQuotationUI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\SendeQuotationUI.ascx.vb">
+      <DependentUpon>SendeQuotationUI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\USAOnlineQuoteTemplate.ascx.designer.vb">
+      <DependentUpon>USAOnlineQuoteTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\USAOnlineQuoteTemplate.ascx.vb">
+      <DependentUpon>USAOnlineQuoteTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Functions\DoApprove.aspx.designer.vb">
+      <DependentUpon>DoApprove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\DoApprove.aspx.vb">
+      <DependentUpon>DoApprove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GPControl\Agent.aspx.designer.vb">
+      <DependentUpon>Agent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GPControl\Agent.aspx.vb">
+      <DependentUpon>Agent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GPControl\ApprovalDef.aspx.designer.vb">
+      <DependentUpon>ApprovalDef.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GPControl\ApprovalDef.aspx.vb">
+      <DependentUpon>ApprovalDef.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home_MyAOnlineWall.aspx.designer.vb">
+      <DependentUpon>Home_MyAOnlineWall.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home_MyAOnlineWall.aspx.vb">
+      <DependentUpon>Home_MyAOnlineWall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="myMaster.master.designer.vb">
+      <DependentUpon>myMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="myMaster.master.vb">
+      <DependentUpon>myMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ModelDetailTranslation.aspx.designer.vb">
+      <DependentUpon>ModelDetailTranslation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ModelDetailTranslation.aspx.vb">
+      <DependentUpon>ModelDetailTranslation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\AdminDefault.aspx.designer.vb">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\AdminDefault.aspx.vb">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\atpAndPrice.aspx.designer.vb">
+      <DependentUpon>atpAndPrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\atpAndPrice.aspx.vb">
+      <DependentUpon>atpAndPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\BtosSearch.aspx.designer.vb">
+      <DependentUpon>BtosSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\BtosSearch.aspx.vb">
+      <DependentUpon>BtosSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\Catalog.aspx.designer.vb">
+      <DependentUpon>Catalog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\Catalog.aspx.vb">
+      <DependentUpon>Catalog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CBOM_eStoreBTO_List1.aspx.designer.vb">
+      <DependentUpon>CBOM_eStoreBTO_List1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CBOM_eStoreBTO_List1.aspx.vb">
+      <DependentUpon>CBOM_eStoreBTO_List1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CBOM_eStoreBTO_List3.aspx.designer.vb">
+      <DependentUpon>CBOM_eStoreBTO_List3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CBOM_eStoreBTO_List3.aspx.vb">
+      <DependentUpon>CBOM_eStoreBTO_List3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CBOM_eStoreBTO_List5.aspx.designer.vb">
+      <DependentUpon>CBOM_eStoreBTO_List5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CBOM_eStoreBTO_List5.aspx.vb">
+      <DependentUpon>CBOM_eStoreBTO_List5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CBOM_LIST.aspx.designer.vb">
+      <DependentUpon>CBOM_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CBOM_LIST.aspx.vb">
+      <DependentUpon>CBOM_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\cGP.aspx.designer.vb">
+      <DependentUpon>cGP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\cGP.aspx.vb">
+      <DependentUpon>cGP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ChangeUser.aspx.designer.vb">
+      <DependentUpon>ChangeUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ChangeUser.aspx.vb">
+      <DependentUpon>ChangeUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\chart.aspx.designer.vb">
+      <DependentUpon>chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\chart.aspx.vb">
+      <DependentUpon>chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ChartOver.aspx.designer.vb">
+      <DependentUpon>ChartOver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ChartOver.aspx.vb">
+      <DependentUpon>ChartOver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ChartOver_old.aspx.designer.vb">
+      <DependentUpon>ChartOver_old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ChartOver_old.aspx.vb">
+      <DependentUpon>ChartOver_old.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ChartProduct.aspx.designer.vb">
+      <DependentUpon>ChartProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ChartProduct.aspx.vb">
+      <DependentUpon>ChartProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CN_SPR_Configurator.aspx.designer.vb">
+      <DependentUpon>CN_SPR_Configurator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CN_SPR_Configurator.aspx.vb">
+      <DependentUpon>CN_SPR_Configurator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CreateQuotationByCopy.aspx.designer.vb">
+      <DependentUpon>CreateQuotationByCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CreateQuotationByCopy.aspx.vb">
+      <DependentUpon>CreateQuotationByCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CreateQuotationByRef.aspx.designer.vb">
+      <DependentUpon>CreateQuotationByRef.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CreateQuotationByRef.aspx.vb">
+      <DependentUpon>CreateQuotationByRef.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CreditInfo.aspx.designer.vb">
+      <DependentUpon>CreditInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CreditInfo.aspx.vb">
+      <DependentUpon>CreditInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\CustomBtos.aspx.designer.vb">
+      <DependentUpon>CustomBtos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\CustomBtos.aspx.vb">
+      <DependentUpon>CustomBtos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\EstoreCBOMCategory.aspx.designer.vb">
+      <DependentUpon>EstoreCBOMCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\EstoreCBOMCategory.aspx.vb">
+      <DependentUpon>EstoreCBOMCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\EstoreCBOMList.aspx.designer.vb">
+      <DependentUpon>EstoreCBOMList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\EstoreCBOMList.aspx.vb">
+      <DependentUpon>EstoreCBOMList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ITPInquiry.aspx.designer.vb">
+      <DependentUpon>ITPInquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ITPInquiry.aspx.vb">
+      <DependentUpon>ITPInquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ListPriceInquiry.aspx.designer.vb">
+      <DependentUpon>ListPriceInquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ListPriceInquiry.aspx.vb">
+      <DependentUpon>ListPriceInquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\maintainFranchise.aspx.designer.vb">
+      <DependentUpon>maintainFranchise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\maintainFranchise.aspx.vb">
+      <DependentUpon>maintainFranchise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\MyAccountQuotation.aspx.designer.vb">
+      <DependentUpon>MyAccountQuotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\MyAccountQuotation.aspx.vb">
+      <DependentUpon>MyAccountQuotation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\MyQuotationRecord.aspx.designer.vb">
+      <DependentUpon>MyQuotationRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\MyQuotationRecord.aspx.vb">
+      <DependentUpon>MyQuotationRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\myTeamsQuotation.aspx.designer.vb">
+      <DependentUpon>myTeamsQuotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\myTeamsQuotation.aspx.vb">
+      <DependentUpon>myTeamsQuotation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\Order2Quote.aspx.designer.vb">
+      <DependentUpon>Order2Quote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\Order2Quote.aspx.vb">
+      <DependentUpon>Order2Quote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\OrderFromCombinedQuotation.aspx.designer.vb">
+      <DependentUpon>OrderFromCombinedQuotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\OrderFromCombinedQuotation.aspx.vb">
+      <DependentUpon>OrderFromCombinedQuotation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\piACN.aspx.designer.vb">
+      <DependentUpon>piACN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\piACN.aspx.vb">
+      <DependentUpon>piACN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\piAIN.aspx.designer.vb">
+      <DependentUpon>piAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\piAIN.aspx.vb">
+      <DependentUpon>piAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\piHtml.aspx.designer.vb">
+      <DependentUpon>piHtml.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\piHtml.aspx.vb">
+      <DependentUpon>piHtml.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\price_bylevel.aspx.designer.vb">
+      <DependentUpon>price_bylevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\price_bylevel.aspx.vb">
+      <DependentUpon>price_bylevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\quickConfigQuote.aspx.designer.vb">
+      <DependentUpon>quickConfigQuote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\quickConfigQuote.aspx.vb">
+      <DependentUpon>quickConfigQuote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\Quotation2Siebel.aspx.designer.vb">
+      <DependentUpon>Quotation2Siebel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\Quotation2Siebel.aspx.vb">
+      <DependentUpon>Quotation2Siebel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\QuotationDetail.aspx.designer.vb">
+      <DependentUpon>QuotationDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\QuotationDetail.aspx.vb">
+      <DependentUpon>QuotationDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\QuotationMaster.aspx.designer.vb">
+      <DependentUpon>QuotationMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\QuotationMaster.aspx.vb">
+      <DependentUpon>QuotationMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\QuotationPreview.aspx.designer.vb">
+      <DependentUpon>QuotationPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\QuotationPreview.aspx.vb">
+      <DependentUpon>QuotationPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\QuotationToOrderLog.aspx.designer.vb">
+      <DependentUpon>QuotationToOrderLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\QuotationToOrderLog.aspx.vb">
+      <DependentUpon>QuotationToOrderLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\QuoteApproval.aspx.designer.vb">
+      <DependentUpon>QuoteApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\QuoteApproval.aspx.vb">
+      <DependentUpon>QuoteApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\quoteByAccountOwner.aspx.designer.vb">
+      <DependentUpon>quoteByAccountOwner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\quoteByAccountOwner.aspx.vb">
+      <DependentUpon>quoteByAccountOwner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\QuoteForward.aspx.designer.vb">
+      <DependentUpon>QuoteForward.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\QuoteForward.aspx.vb">
+      <DependentUpon>QuoteForward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\quoteModify.aspx.designer.vb">
+      <DependentUpon>quoteModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\quoteModify.aspx.vb">
+      <DependentUpon>quoteModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\ShowQuoteDetail.aspx.designer.vb">
+      <DependentUpon>ShowQuoteDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\ShowQuoteDetail.aspx.vb">
+      <DependentUpon>ShowQuoteDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\UpdateQuotePrintFormat.aspx.designer.vb">
+      <DependentUpon>UpdateQuotePrintFormat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\UpdateQuotePrintFormat.aspx.vb">
+      <DependentUpon>UpdateQuotePrintFormat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\UploadSalesMapping.aspx.designer.vb">
+      <DependentUpon>UploadSalesMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\UploadSalesMapping.aspx.vb">
+      <DependentUpon>UploadSalesMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quote\USPriceByLevel.aspx.designer.vb">
+      <DependentUpon>USPriceByLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quote\USPriceByLevel.aspx.vb">
+      <DependentUpon>USPriceByLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\rGPControl.aspx.designer.vb">
+      <DependentUpon>rGPControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rGPControl.aspx.vb">
+      <DependentUpon>rGPControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\RoleDef.aspx.designer.vb">
+      <DependentUpon>RoleDef.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\RoleDef.aspx.vb">
+      <DependentUpon>RoleDef.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\RoleManagement.aspx.designer.vb">
+      <DependentUpon>RoleManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\RoleManagement.aspx.vb">
+      <DependentUpon>RoleManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\AutoComplete.asmx.vb">
+      <DependentUpon>AutoComplete.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\quoteExit.asmx.vb">
+      <DependentUpon>quoteExit.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SSOENTER.aspx.designer.vb">
+      <DependentUpon>SSOENTER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SSOENTER.aspx.vb">
+      <DependentUpon>SSOENTER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tempSyncPN.aspx.designer.vb">
+      <DependentUpon>tempSyncPN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tempSyncPN.aspx.vb">
+      <DependentUpon>tempSyncPN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Signature.aspx.designer.vb">
+      <DependentUpon>Signature.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Signature.aspx.vb">
+      <DependentUpon>Signature.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wall\AOnlineHomePageEdit.aspx.designer.vb">
+      <DependentUpon>AOnlineHomePageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wall\AOnlineHomePageEdit.aspx.vb">
+      <DependentUpon>AOnlineHomePageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wall\Module\CategoryTree.ascx.designer.vb">
+      <DependentUpon>CategoryTree.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Wall\Module\CategoryTree.ascx.vb">
+      <DependentUpon>CategoryTree.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wall\Module\HTMLEditor.ascx.designer.vb">
+      <DependentUpon>HTMLEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Wall\Module\HTMLEditor.ascx.vb">
+      <DependentUpon>HTMLEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wall\Module\WallContent.ascx.designer.vb">
+      <DependentUpon>WallContent.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Wall\Module\WallContent.ascx.vb">
+      <DependentUpon>WallContent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wall\Wall.Master.designer.vb">
+      <DependentUpon>Wall.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Wall\Wall.Master.vb">
+      <DependentUpon>Wall.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wall\WallHome.aspx.designer.vb">
+      <DependentUpon>WallHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wall\WallHome.aspx.vb">
+      <DependentUpon>WallHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web References\AgsWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CBOMWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\eCovWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\eStoreQuote\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MAMigrationWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAP_WS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SiebelWS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SSO\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\myRs.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>myRs.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Code\MyA.dbml.layout">
+      <DependentUpon>MyA.dbml</DependentUpon>
+    </None>
+    <None Include="App_Code\Ling2Sql.dbml.layout">
+      <DependentUpon>Ling2Sql.dbml</DependentUpon>
+    </None>
+    <None Include="App_Code\CRMDB.dbml.layout">
+      <DependentUpon>CRMDB.dbml</DependentUpon>
+    </None>
+    <None Include="ATW\SiebelQuoteDB.dbml.layout">
+      <DependentUpon>SiebelQuoteDB.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="App_Code\MyA.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MyA.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="User\Signature.aspx" />
+    <Content Include="Wall\AOnlineHomePageEdit.aspx" />
+    <Content Include="Wall\Module\CategoryTree.ascx" />
+    <Content Include="Wall\Module\HTMLEditor.ascx" />
+    <Content Include="Wall\Module\WallContent.ascx" />
+    <Content Include="Wall\Wall.Master" />
+    <None Include="App_Data\EQDS.xsc">
+      <DependentUpon>EQDS.xsd</DependentUpon>
+    </None>
+    <None Include="App_Data\EQDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EQDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Data\EQDS.xss">
+      <DependentUpon>EQDS.xsd</DependentUpon>
+    </None>
+    <None Include="ATW\SiebelQuoteDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SiebelQuoteDB.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Code\Ling2Sql.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Ling2Sql.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Code\CRMDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CRMDB.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Files\Advantech_Terms_and_Conditions.pdf" />
+    <Content Include="Files\Return_Policy.pdf" />
+    <Content Include="bin\wnvinternal.dat" />
+    <None Include="Js\JQueryEasyUI\themes\black\images\Thumbs.db" />
+    <None Include="Js\JQueryEasyUI\themes\bootstrap\images\Thumbs.db" />
+    <None Include="Js\JQueryEasyUI\themes\default\images\Thumbs.db" />
+    <None Include="Js\JQueryEasyUI\themes\gray\images\Thumbs.db" />
+    <None Include="Js\JQueryEasyUI\themes\metro\images\Thumbs.db" />
+    <None Include="My Project\PublishProfiles\eDOC.pubxml" />
+    <Content Include="SOP\SOPforATWAOnline.pptx" />
+    <Content Include="Services\tokenInput.ashx" />
+    <Content Include="SOP\2015_AKR_eQuotation SOP_Final_Iris_10.30.ppt" />
+    <Content Include="SOP\2016_eQuotation_SOP_Intercon_0630.ppt" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web References\AgsWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\AgsWS\USTaxService.wsdl" />
+    <None Include="Web References\CBOMWS\CBOMDS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <Content Include="Web References\CBOMWS\CBOMDS.xsc">
+      <DependentUpon>CBOMDS.xsd</DependentUpon>
+    </Content>
+    <None Include="Web References\CBOMWS\CBOMDS.xsd" />
+    <Content Include="Web References\CBOMWS\CBOMDS.xss">
+      <DependentUpon>CBOMDS.xsd</DependentUpon>
+    </Content>
+    <None Include="Web References\CBOMWS\MyCBOMDAL.wsdl" />
+    <None Include="Web References\CBOMWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\eCovWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\eCovWS\RESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\eCovWS\WSSiebel.wsdl" />
+    <None Include="Web References\eStoreQuote\eStoreWebService.wsdl" />
+    <None Include="Web References\eStoreQuote\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\MAMigrationWS\MAMigration.wsdl" />
+    <None Include="Web References\MAMigrationWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPWS\eBizAEU_WS.wsdl" />
+    <None Include="Web References\SAPWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAP_WS\B2B_SAP_WS.wsdl" />
+    <None Include="Web References\SAP_WS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SiebelWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SiebelWS\Siebel_WS.wsdl" />
+    <None Include="Web References\SSO\membershipwebservice.wsdl" />
+    <None Include="Web References\SSO\MEMBER_SIMPLE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SSO\OnlineRequest.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SSO\OnlineRequestV2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SSO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SSO\SSOUSER.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SSO\UserLevel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <Content Include="Web References\UpdateSiebelAcc\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <Content Include="Web References\UpdateSiebelAcc\UpdAccount_Output.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\UpdateSiebelAcc\UpdateAccount.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\SAPDS.xsc">
+      <DependentUpon>SAPDS.xsd</DependentUpon>
+    </None>
+    <None Include="App_Data\SAPDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAPDS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Data\SAPDS.xss">
+      <DependentUpon>SAPDS.xsd</DependentUpon>
+    </None>
+    <None Include="App_Data\SiebelDS.xsc">
+      <DependentUpon>SiebelDS.xsd</DependentUpon>
+    </None>
+    <None Include="App_Data\SiebelDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SiebelDS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Data\SiebelDS.xss">
+      <DependentUpon>SiebelDS.xsd</DependentUpon>
+    </None>
+    <Content Include="App_Themes\DefualtSkin\SkinFile.skin" />
+    <Content Include="Files\Aspose.Total.lic" />
+    <Content Include="Files\ITPSample.xlsx" />
+    <Content Include="Files\SalesMappingSample.xlsx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="myMaster.master" />
+    <Content Include="User\SHOWServerV.aspx" />
+    <None Include="Web References\AgsWS\USTaxService.disco" />
+    <None Include="Web References\CBOMWS\MyCBOMDAL.disco" />
+    <None Include="Web References\eCovWS\WSSiebel.disco" />
+    <None Include="Web References\eStoreQuote\eStoreWebService.disco" />
+    <None Include="Web References\MAMigrationWS\MAMigration.disco" />
+    <None Include="Web References\SAP_WS\B2B_SAP_WS.disco" />
+    <None Include="Web References\SiebelWS\Siebel_WS.disco" />
+    <None Include="Web References\SAPWS\eBizAEU_WS.disco" />
+    <None Include="Web References\SSO\membershipwebservice.disco" />
+    <Content Include="Wall\WallHome.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GPcontrolAPI\GPcontrolAPI.vbproj">
+      <Project>{d23507a0-3436-42c7-942b-350a5eb2adc0}</Project>
+      <Name>GPcontrolAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyAdvantechAPI\Advantech.Myadvantech.Business\Advantech.Myadvantech.Business.csproj">
+      <Project>{9a4b99c9-af06-4ba4-b3d4-0958e5e717f3}</Project>
+      <Name>Advantech.Myadvantech.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyAdvantechAPI\Advantech.Myadvantech.DataAccess\Advantech.Myadvantech.DataAccess.csproj">
+      <Project>{9fdd308c-f13d-4b90-b505-666846184259}</Project>
+      <Name>Advantech.Myadvantech.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAPDAL\SAPDAL.vbproj">
+      <Project>{465cef83-f14d-4783-8917-1a9b5ed8edd5}</Project>
+      <Name>SAPDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="AOnlineWall\AOnlineWall.csproj">
+      <Project>{A05F8114-3583-45E4-A954-DC1416D94082}</Project>
+      <Name>AOnlineWall</Name>
+    </ProjectReference>
+    <ProjectReference Include="COMM\EDOC.Common.vbproj">
+      <Project>{25E69930-9DDD-46DE-8667-EDA571F6D381}</Project>
+      <Name>EDOC.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="DBAC\EDOC.DBAccess.vbproj">
+      <Project>{e716d035-8f24-4708-a59c-076dca333ff2}</Project>
+      <Name>EDOC.DBAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="DOCH\EDOC.DocumentsMain.vbproj">
+      <Project>{786931A9-97CA-4149-A4D0-22C5875FF76E}</Project>
+      <Name>EDOC.DocumentsMain</Name>
+    </ProjectReference>
+    <ProjectReference Include="eStoreServices\eStoreServices.csproj">
+      <Project>{6470818D-03EA-43EA-9AF1-CBD5BBBACE17}</Project>
+      <Name>eStoreServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="EXSY\EDOC.Ex-SystemsTools.vbproj">
+      <Project>{572AA953-C783-43D4-8990-35A9B2C116B6}</Project>
+      <Name>EDOC.Ex-SystemsTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="IBUS\EDOC.IBUS.vbproj">
+      <Project>{2EB2E027-5936-400A-A6F9-D3418EC5821E}</Project>
+      <Name>EDOC.IBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="PATC\EDOC.Patches.vbproj">
+      <Project>{3D202CEA-C422-4B3E-BC7C-DFE4475F8609}</Project>
+      <Name>EDOC.Patches</Name>
+    </ProjectReference>
+    <ProjectReference Include="PROF\EDOC.Profile.vbproj">
+      <Project>{5AA950F1-C439-469E-B9F8-9C5367EF1867}</Project>
+      <Name>EDOC.Profile</Name>
+    </ProjectReference>
+    <ProjectReference Include="RELI\EDOC.Relics.vbproj">
+      <Project>{95DD6EFA-8162-45C2-A28E-A2D9AF0F8C31}</Project>
+      <Name>EDOC.Relics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\UpdateAccount.WSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UpdateSiebelAcc\</RelPath>
+      <UpdateFromURL>D:\UpdateAccount.WSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_UpdateSiebelAcc_ADVWebService_UpdAccount</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.20.1.43:8089/WSSiebel.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\eCovWS\</RelPath>
+      <UpdateFromURL>http://172.20.1.43:8089/WSSiebel.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_eCovWS_WSSiebel</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ags.advantech.com/WebService/USTaxService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AgsWS\</RelPath>
+      <UpdateFromURL>http://ags.advantech.com/WebService/USTaxService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_AgsWS_USTaxService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://buy.advantech.com/eStoreWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\eStoreQuote\</RelPath>
+      <UpdateFromURL>http://buy.advantech.com/eStoreWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_eStoreQuote_eStoreWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://member.advantech.com/membershipwebservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SSO\</RelPath>
+      <UpdateFromURL>http://member.advantech.com/membershipwebservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_SSO_MembershipWebservice</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://my.advantech.com/Services/MAMigration.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MAMigrationWS\</RelPath>
+      <UpdateFromURL>http://my.advantech.com/Services/MAMigration.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_MAMigrationWS_MAMigration</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://my.advantech.com/Services/MyCBOMDAL.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CBOMWS\</RelPath>
+      <UpdateFromURL>http://my.advantech.com/Services/MyCBOMDAL.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_CBOMWS_MyCBOMDAL</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://myadvan-global:2000/Services/Siebel_WS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SiebelWS\</RelPath>
+      <UpdateFromURL>http://myadvan-global:2000/Services/Siebel_WS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_SiebelWS_Siebel_WS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://myadvan-global:9000/B2B_SAP_WS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAP_WS\</RelPath>
+      <UpdateFromURL>http://myadvan-global:9000/B2B_SAP_WS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_SAP_WS_B2B_AEU_WS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://myadvan-global:9000/eBizAEU_WS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPWS\</RelPath>
+      <UpdateFromURL>http://myadvan-global:9000/eBizAEU_WS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDOC_SAPWS_eBizAEU_WS</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8300</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties _UserPromptedForCS6Upgrade="true" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

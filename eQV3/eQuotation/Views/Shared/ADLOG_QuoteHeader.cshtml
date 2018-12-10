@@ -1,0 +1,220 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style type="text/css">
+    .left {
+        text-align: left;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .top {
+        vertical-align: top;
+    }
+
+    .ABBtb {
+        padding: 0px 10px 0px 10px;
+    }
+
+    .ABBtb-title {
+        margin-top: 5px;
+        border: 0px solid transparent;
+        font-weight: 600;
+        font-size: 0.85em;
+    }
+
+    .ABBtb-body {
+        overflow: auto;
+        margin-bottom: 0px;
+        /*height: 230px;*/
+        width: 100%;
+    }
+
+    .ABBtb-row {
+        width: 100%;
+        margin-top: 2px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+        .ABBtb-row .itempos:hover {
+            background-color: #cecece;
+            cursor: pointer;
+        }
+
+        .ABBtb-row > div:first-child {
+            background-color: #f7f7f7;
+            padding: 5px;
+            align-self: stretch;
+            width: 100%;
+            margin-left: 5px;
+        }
+
+        .ABBtb-row > div:nth-child(2) {
+            background-color: #f7f7f7;
+            padding: 5px;
+            align-self: stretch;
+            width: 100%;
+            margin-left: 5px;
+        }
+
+        .ABBtb-row > div:nth-child(3) {
+            background-color: #f7f7f7;
+            padding: 5px;
+            align-self: stretch;
+            width: 100%;
+            margin-left: 5px;
+        }
+
+    .font_large {
+        font-size: xx-large;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+    .ABB_Partner {
+        background-color: #f7f7f7;
+        padding: 5px;
+        align-self: stretch;
+        /*width: 100%;*/
+        margin-left: 5px;
+        /*min-width: 300px;*/
+    }
+</style>
+<table  style="width:100%" class="stylenormal" align="center" table-layout: fixed;">
+    <tbody>
+        <tr>
+            <td class="font_large" style="margin-left: 5px;">
+                Quotation Number:
+                <span class="bold;">@Model.QuoteNo</span>
+                <span class="bold;">
+                    V
+                    @Model.RevisionNo
+                </span>
+            </td>
+            <td>
+                <img alt="logo" src="@Util.ResolveServerUrl(VirtualPathUtility.ToAbsolute("~/Images/adv-logo.jpg"), false)" align="right">
+            </td>
+        </tr>
+        <tr>
+            <td style="margin-top: 5px; margin-left: 5px;">
+                <span>Effective Date: @Model.QuoteDate.ToString("MM/dd/yyyy")</span>&nbsp;&nbsp;
+                <span>Expired Date: @Model.ExpiredDate.ToString("MM/dd/yyyy")</span>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="margin-top: 5px; margin-left: 5px;">
+                <span>Print Date: @Model.PrintDate.ToString("MM/dd/yyyy tt hh:mm:ss")</span>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="margin-top: 5px; margin-left: 5px;">               
+                <span>Sales Name: @Model.SalesName</span>&nbsp;&nbsp;
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="margin-top: 5px; margin-left: 5px;">
+                <span>Sales Email: @Model.SalesEmail</span>&nbsp;&nbsp;
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table style="table-layout: fixed; width: 100%;">
+                    <thead style="background-color: #999999; color:white; font-weight: 600; font-size: 0.85em; line-height: 20px; text-align: left;">
+                        <tr>
+                            <th>Bill to</th>
+                            <th>Sold to</th>
+                            <th>Ship to</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ABB_Partner">
+                                @{
+                                    var Billto = Model.QuotationPartner.Where(s => s.TYPE == "B").FirstOrDefault();
+                                    var ATTENTION = (Billto == null ? "" : (Billto.ATTENTION ?? ""));
+                                    var NAME = (Billto == null ? "" : (Billto.NAME ?? ""));
+                                    var ADDRESS = (Billto == null ? "" : (Billto.ADDRESS ?? ""));
+                                    var ADDRESS2 = (Billto == null ? "" : (Billto.STREET ?? ""));
+                                    var CITY = (Billto == null ? "" : (Billto.CITY ?? ""));
+                                    var STATE = (Billto == null ? "" : (Billto.STATE ?? ""));
+                                    var ZIPCODE = (Billto == null ? "" : (Billto.ZIPCODE ?? ""));
+                                    var COUNTRY = (Billto == null ? "" : (Billto.COUNTRY ?? ""));
+                                    var TEL = (Billto == null ? "" : (Billto.TEL ?? ""));
+                                }
+                                <ul style="list-style-type:none;">
+                                    <li>Name: @ATTENTION</li>
+                                    <li>Company Name: @NAME</li>
+                                    <li>Address: @ADDRESS</li>
+                                    <li>Address2: @ADDRESS2</li>
+                                    <li>City: @CITY</li>
+                                    <li>State: @STATE</li>
+                                    <li>ZIP: @ZIPCODE</li>
+                                    <li>Country: @COUNTRY</li>
+                                    <li>Phone: @TEL</li>
+                                </ul>
+                            </td>
+                            <td class="ABB_Partner">
+                                @{
+                                    var Soldto = Model.QuotationPartner.Where(s => s.TYPE == "SOLDTO").FirstOrDefault();
+                                    ATTENTION = (Soldto == null ? "" : (Soldto.ATTENTION ?? ""));
+                                    NAME = (Soldto == null ? "" : (Soldto.NAME ?? ""));
+                                    ADDRESS = (Soldto == null ? "" : (Soldto.ADDRESS ?? ""));
+                                    ADDRESS2 = (Soldto == null ? "" : (Soldto.STREET ?? ""));
+                                    CITY = (Soldto == null ? "" : (Soldto.CITY ?? ""));
+                                    STATE = (Soldto == null ? "" : (Soldto.STATE ?? ""));
+                                    ZIPCODE = (Soldto == null ? "" : (Soldto.ZIPCODE ?? ""));
+                                    COUNTRY = (Soldto == null ? "" : (Soldto.COUNTRY ?? ""));
+                                    TEL = (Soldto == null ? "" : (Soldto.TEL ?? ""));
+                                }
+                                <ul style="list-style-type:none;">
+                                    <li>Name: @ATTENTION</li>
+                                    <li>Company Name: @NAME</li>
+                                    <li>Address: @ADDRESS</li>
+                                    <li>Address2: @ADDRESS2</li>
+                                    <li>City: @CITY</li>
+                                    <li>State: @STATE</li>
+                                    <li>ZIP: @ZIPCODE</li>
+                                    <li>Country: @COUNTRY</li>
+                                    <li>Phone: @TEL</li>
+                                </ul>
+                            </td>
+                            <td class="ABB_Partner">
+                                @{
+                                    var Shipto = Model.QuotationPartner.Where(s => s.TYPE == "S").FirstOrDefault();
+                                    ATTENTION = (Shipto == null ? "" : (Shipto.ATTENTION ?? ""));
+                                    NAME = (Shipto == null ? "" : (Shipto.NAME ?? ""));
+                                    ADDRESS = (Shipto == null ? "" : (Shipto.ADDRESS ?? ""));
+                                    ADDRESS2 = (Shipto == null ? "" : (Shipto.STREET ?? ""));
+                                    CITY = (Shipto == null ? "" : (Shipto.CITY ?? ""));
+                                    STATE = (Shipto == null ? "" : (Shipto.STATE ?? ""));
+                                    ZIPCODE = (Shipto == null ? "" : (Shipto.ZIPCODE ?? ""));
+                                    COUNTRY = (Shipto == null ? "" : (Shipto.COUNTRY ?? ""));
+                                    TEL = (Shipto == null ? "" : (Shipto.TEL ?? ""));
+                                }
+                                <ul style="list-style-type:none;">
+                                    <li>Name: @ATTENTION</li>
+                                    <li>Company Name: @NAME</li>
+                                    <li>Address: @ADDRESS</li>
+                                    <li>Address2: @ADDRESS2</li>
+                                    <li>City: @CITY</li>
+                                    <li>State: @STATE</li>
+                                    <li>ZIP: @ZIPCODE</li>
+                                    <li>Country: @COUNTRY</li>
+                                    <li>Phone: @TEL</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

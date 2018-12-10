@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="eQuotation" Class="SiebelQuoteDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ACLSQL6\SQL2008R2;Initial Catalog=eQuotation;Persist Security Info=True;User ID=b2bsa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="eQuotationConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SiebelQuoteMaster" Member="SiebelQuoteMasters">
+    <Type Name="SiebelQuoteMaster">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuoteRowid" Type="System.String" DbType="VarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AccountRowid" Type="System.String" DbType="VarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AccountErpid" Type="System.String" DbType="VarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="OptyID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="OptyName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="OptyStage" Type="System.String" DbType="NChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="OptyAmount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreateBy" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SiebelQuoteMaster_SiebelQuoteDetail" Member="SiebelQuoteDetails" ThisKey="id" OtherKey="MasterID" Type="SiebelQuoteDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiebelQuoteDetail" Member="SiebelQuoteDetails">
+    <Type Name="SiebelQuoteDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PartNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Line_NO" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="QTY" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ItemType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="HigherLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MasterID" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SiebelQuoteMaster_SiebelQuoteDetail" Member="SiebelQuoteMaster" ThisKey="MasterID" OtherKey="id" Type="SiebelQuoteMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsdLocal1="http://www.siebel.com/xml/ADVActivityIO" xmlns:tns="http://siebel.com/CustomUI" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://siebel.com/CustomUI" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://siebel.com/CustomUI">
+      <xsd:import namespace="http://www.siebel.com/xml/ADVActivityIO" />
+      <xsd:element name="AddAction_Input">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="xsdLocal1:ACT" />
+            <xsd:element name="SOURCE" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddAction_Output">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Error_spcCode" type="xsd:string" />
+            <xsd:element name="Error_spcMessage" type="xsd:string" />
+            <xsd:element name="ROW_ID" type="xsd:string" />
+            <xsd:element name="STATUS" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siebel.com/xml/ADVActivityIO">
+      <xsd:annotation>
+        <xsd:documentation>Copyright (C) 2001-2004 Siebel Systems, Inc. All rights reserved. Siebel XSD Generation</xsd:documentation>
+      </xsd:annotation>
+      <xsd:element name="ACT" type="xsdLocal1:ACT" />
+      <xsd:complexType name="ACTTopElmt">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="ACT" type="xsdLocal1:ACT" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ACT">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="SR_ROW_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ALARM" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="SRC_ROW_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="COMMENT" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="CONTACT_EMAIL" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="DESP" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="DONE_FLAG" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="LEAD_ROW_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="OPPORTUNITY_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ORG" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="OWNER_EMAIL" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="PLANNED_START" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="CON_ROW_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="SALES_LEADS_FLAG" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="STATUS" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="ACT_TYPE" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="AddAction_Input">
+    <part name="AddAction_Input" element="tns:AddAction_Input" />
+  </message>
+  <message name="AddAction_Output">
+    <part name="AddAction_Output" element="tns:AddAction_Output" />
+  </message>
+  <portType name="ADVWebServoce-AddAction">
+    <operation name="AddAction">
+      <input message="tns:AddAction_Input" />
+      <output message="tns:AddAction_Output" />
+    </operation>
+  </portType>
+  <binding name="ADVWebServoce-AddAction" type="tns:ADVWebServoce-AddAction">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="AddAction">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:AddAction" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ADVWebServoce-AddAction">
+    <port name="ADVWebServoce-AddAction" binding="tns:ADVWebServoce-AddAction">
+      <soap:address location="http://crmap-global3/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;UserName=MTL&amp;Password=MTL02DkOSq" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,98 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+
+
+    <div class="modal-action">
+        <ul>
+            <li><a id="btn-cust-send"><i class="fa fa-envelope-o"></i> Send</a></li>
+            <li><a id="btn-cust-close"><i class="fa fa-times"></i> Close</a></li>
+        </ul>
+    </div>
+    <div class="modal-content" style="height:380px;">
+        <div>
+            <table id="tbSendEmail">
+                <tr>
+                    <td class="field100 right">Quote No :</td>
+                    <td class="w35p">
+                        @Html.TextBox("email_QuoteNo", Model.QuoteNo, new { @class = "text090" })&nbsp;
+                        <input type="hidden" id="hd_email_QuoteID" value="@Model.QuoteID" />
+                    </td>
+                    <td class="field50 right">Type  :</td>
+                    <td>
+                        <input type="radio" name="radio-1" id="radio-html" value="html">
+                        <label for="radio-html">Html</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="radio-1" id="radio-pdf" value="pdf"  checked="checked">
+                        <label for="radio-pdf">PDF</label>
+                    </td>
+                </tr>
+                 <tr>
+                     <td class="field100 right">Recipient Email:</td>
+                     <td colspan="3">
+                         @Html.TextBox("email_RecipientEmail", "", new { @class = "text090" })&nbsp;
+                     </td>
+                 </tr>
+                <tr>
+                    <td class="field100 right">Subject:</td>
+                    <td  colspan="3">
+                        @Html.TextBox("email_Subject", Model.CustomerMailSubject + " " + Model.QuoteNo, new { @class = "text090" })&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="width:100%;height:250px;">
+                        <fieldset  style="width:92%;height:240px;">
+                            <legend>Email Greeting : </legend>
+                            <textarea id="email_body" style="height:225px;"></textarea>
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+    
+        //Send Email
+        $("#btn-cust-send").on("click", function (e) {
+            
+            var R_Email = $("#email_RecipientEmail").val();
+            if (R_Email == null || R_Email == "") {
+                alert("Recipient Email不可为空白");
+                e.preventDefault();
+                return false;
+            }
+            var QuoteId = $("#hd_email_QuoteID").val();
+            var QuoteNo = $("#email_QuoteNo").val();
+            var Type = $("input[name='radio-1']:checked").val();
+            var Subject = $("#email_Subject").val();
+            var email_body = $('#email_body').val().replace(/ /g, "&nbsp;&nbsp;").replace(/\n/gi, '<br />');
+
+            $.modal.close();
+
+            var postdata = JSON.stringify({
+                QuoteId: QuoteId, QuoteNo: QuoteNo, Type: Type, R_Email: R_Email, Subject: Subject, mailbody: email_body
+            });
+            $.ajax({
+                url: "/Operation/Send", type: "POST", dataType: "json", data: postdata
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                    if (redata.succeed) {
+
+                        var result = redata.data;
+
+                      
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+                }
+            });
+        });
+
+        //close
+        $("#btn-cust-close").on("click", function () {
+            $.modal.close();
+        });
+    });
+</script>

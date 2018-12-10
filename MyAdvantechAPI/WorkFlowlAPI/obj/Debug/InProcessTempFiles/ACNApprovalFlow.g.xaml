@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wa:ACNApprovalFlow xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:amd="clr-namespace:Advantech.Myadvantech.DataAccess;assembly=Advantech.Myadvantech.DataAccess" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:local="clr-namespace:WorkFlowlAPI;assembly=WorkFlowlAPI" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:wa="clr-namespace:WorkFlowlAPI.ACNGPApproval;assembly=WorkFlowlAPI" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Advantech.Myadvantech.Business</x:String>
+      <x:String>Advantech.Myadvantech.DataAccess</x:String>
+      <x:String>System.Web</x:String>
+      <x:String>WorkFlowlAPI.ACNGPApproval</x:String>
+      <x:String>WorkFlowlAPI</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>EntityFramework</AssemblyReference>
+      <AssemblyReference>EntityFramework.SqlServer</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Activities.DurableInstancing</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.DataAnnotations</AssemblyReference>
+      <AssemblyReference>System.Configuration</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.DurableInstancing</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>Advantech.Myadvantech.Business</AssemblyReference>
+      <AssemblyReference>Advantech.Myadvantech.DataAccess</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>WorkFlowlAPI</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <wa:ACNApprovalFlow.Implementation>
+    <Flowchart>
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="scg:List(amd:WorkFlowApproval)" Name="AdditionalApprovals">
+          <Variable.Default>
+            <mca:CSharpValue x:TypeArguments="scg:List(amd:WorkFlowApproval)">null</mca:CSharpValue>
+          </Variable.Default>
+        </Variable>
+      </Flowchart.Variables>
+      <Flowchart.StartNode>
+        <FlowDecision x:Name="__ReferenceID10" DisplayName="Quote Approvals existed?">
+          <FlowDecision.Condition>
+            <mca:CSharpValue x:TypeArguments="x:Boolean">GPControlBusinessLogic.GetQuoteWaitApprovalsByQuoteId(QuoteId).Any()</mca:CSharpValue>
+          </FlowDecision.Condition>
+          <FlowDecision.True>
+            <FlowStep x:Name="__ReferenceID11">
+              <local:UpdateApprovalsWorkFlowId>
+                <local:UpdateApprovalsWorkFlowId.QuoteId>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String">QuoteId</mca:CSharpValue>
+                  </InArgument>
+                </local:UpdateApprovalsWorkFlowId.QuoteId>
+              </local:UpdateApprovalsWorkFlowId>
+              <FlowStep.Next>
+                <FlowDecision x:Name="__ReferenceID2" DisplayName="IsRejected?">
+                  <FlowDecision.Condition>
+                    <mca:CSharpValue x:TypeArguments="x:Boolean">QuoteBusinessLogic.IsRejectedByApprover(QuoteId) == true</mca:CSharpValue>
+                  </FlowDecision.Condition>
+                  <FlowDecision.True>
+                    <FlowStep x:Name="__ReferenceID6">
+                      <local:SendMail AdditionalApprovals="{x:Null}" IsCreateBookmark="False">
+                        <local:SendMail.QuoteID>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">QuoteId</mca:CSharpValue>
+                          </InArgument>
+                        </local:SendMail.QuoteID>
+                        <local:SendMail.Region>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">Region</mca:CSharpValue>
+                          </InArgument>
+                        </local:SendMail.Region>
+                      </local:SendMail>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID1">
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="local:ApprovalResult">
+                                <mca:CSharpReference x:TypeArguments="local:ApprovalResult">Result</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="local:ApprovalResult">
+                                <mca:CSharpValue x:TypeArguments="local:ApprovalResult">ApprovalResult.Finish</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowDecision.True>
+                  <FlowDecision.False>
+                    <FlowDecision x:Name="__ReferenceID4" DisplayName="Create more Approvers?">
+                      <FlowDecision.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">AdditionalApprovals != null &amp;&amp; AdditionalApprovals.Count()&gt;0</mca:CSharpValue>
+                      </FlowDecision.Condition>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID5">
+                          <Flowchart DisplayName="Create more approvers">
+                            <Flowchart.StartNode>
+                              <FlowStep x:Name="__ReferenceID0">
+                                <ForEach x:TypeArguments="amd:WorkFlowApproval" DisplayName="ForEach&lt;WorkFlowApproval&gt;">
+                                  <ForEach.Values>
+                                    <InArgument x:TypeArguments="scg:IEnumerable(amd:WorkFlowApproval)">
+                                      <mca:CSharpValue x:TypeArguments="scg:IEnumerable(amd:WorkFlowApproval)">AdditionalApprovals</mca:CSharpValue>
+                                    </InArgument>
+                                  </ForEach.Values>
+                                  <ActivityAction x:TypeArguments="amd:WorkFlowApproval">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="amd:WorkFlowApproval" Name="approval" />
+                                    </ActivityAction.Argument>
+                                    <local:CreateApprover DisplayName="CreateAdditionalApprovers">
+                                      <local:CreateApprover.Approver>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca:CSharpValue x:TypeArguments="x:String">approval.Approver</mca:CSharpValue>
+                                        </InArgument>
+                                      </local:CreateApprover.Approver>
+                                      <local:CreateApprover.ApproverType>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca:CSharpValue x:TypeArguments="x:String">approval.ApproverType</mca:CSharpValue>
+                                        </InArgument>
+                                      </local:CreateApprover.ApproverType>
+                                      <local:CreateApprover.LevelNum>
+                                        <InArgument x:TypeArguments="x:Double">
+                                          <mca:CSharpValue x:TypeArguments="x:Double">(double)approval.LevelNum</mca:CSharpValue>
+                                        </InArgument>
+                                      </local:CreateApprover.LevelNum>
+                                      <local:CreateApprover.QuoteId>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca:CSharpValue x:TypeArguments="x:String">QuoteId</mca:CSharpValue>
+                                        </InArgument>
+                                      </local:CreateApprover.QuoteId>
+                                      <local:CreateApprover.Url>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca:CSharpValue x:TypeArguments="x:String">Url</mca:CSharpValue>
+                                        </InArgument>
+                                      </local:CreateApprover.Url>
+                                      <local:CreateApprover.ViewGp>
+                                        <InArgument x:TypeArguments="x:Boolean">
+                                          <mca:CSharpValue x:TypeArguments="x:Boolean">Convert.ToBoolean(approval.ViewGP)</mca:CSharpValue>
+                                        </InArgument>
+                                      </local:CreateApprover.ViewGp>
+                                    </local:CreateApprover>
+                                  </ActivityAction>
+                                </ForEach>
+                              </FlowStep>
+                            </Flowchart.StartNode>
+                            <x:Reference>__ReferenceID0</x:Reference>
+                          </Flowchart>
+                          <FlowStep.Next>
+                            <FlowDecision x:Name="__ReferenceID3" DisplayName="All approved?">
+                              <FlowDecision.Condition>
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">QuoteBusinessLogic.IsApprovedByAllApprovers(QuoteId) == true</mca:CSharpValue>
+                              </FlowDecision.Condition>
+                              <FlowDecision.True>
+                                <FlowStep x:Name="__ReferenceID7">
+                                  <local:SendMail AdditionalApprovals="{x:Null}" IsCreateBookmark="False">
+                                    <local:SendMail.QuoteID>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <mca:CSharpValue x:TypeArguments="x:String">QuoteId</mca:CSharpValue>
+                                      </InArgument>
+                                    </local:SendMail.QuoteID>
+                                    <local:SendMail.Region>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <mca:CSharpValue x:TypeArguments="x:String">Region</mca:CSharpValue>
+                                      </InArgument>
+                                    </local:SendMail.Region>
+                                  </local:SendMail>
+                                  <FlowStep.Next>
+                                    <x:Reference>__ReferenceID1</x:Reference>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowDecision.True>
+                              <FlowDecision.False>
+                                <FlowStep x:Name="__ReferenceID8">
+                                  <local:SendMail IsCreateBookmark="True">
+                                    <local:SendMail.AdditionalApprovals>
+                                      <OutArgument x:TypeArguments="scg:List(amd:WorkFlowApproval)">
+                                        <mca:CSharpReference x:TypeArguments="scg:List(amd:WorkFlowApproval)">AdditionalApprovals</mca:CSharpReference>
+                                      </OutArgument>
+                                    </local:SendMail.AdditionalApprovals>
+                                    <local:SendMail.QuoteID>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <mca:CSharpValue x:TypeArguments="x:String">QuoteId</mca:CSharpValue>
+                                      </InArgument>
+                                    </local:SendMail.QuoteID>
+                                    <local:SendMail.Region>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <mca:CSharpValue x:TypeArguments="x:String">Region</mca:CSharpValue>
+                                      </InArgument>
+                                    </local:SendMail.Region>
+                                  </local:SendMail>
+                                  <FlowStep.Next>
+                                    <x:Reference>__ReferenceID2</x:Reference>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowDecision.False>
+                            </FlowDecision>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <x:Reference>__ReferenceID3</x:Reference>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowDecision.False>
+                </FlowDecision>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowDecision.True>
+          <FlowDecision.False>
+            <FlowStep x:Name="__ReferenceID9">
+              <local:CreateApprovals />
+              <FlowStep.Next>
+                <x:Reference>__ReferenceID2</x:Reference>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowDecision.False>
+        </FlowDecision>
+      </Flowchart.StartNode>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
+      <x:Reference>__ReferenceID9</x:Reference>
+      <x:Reference>__ReferenceID10</x:Reference>
+      <x:Reference>__ReferenceID11</x:Reference>
+      <sads:DebugSymbol.Symbol>d01EOlxNeUFkdmFudGVjaFxNeUFkdmFudGVjaEFQSVxXb3JrRmxvd2xBUElcQUNOR1BBcHByb3ZhbFxBQ05BcHByb3ZhbEZsb3cueGFtbCM+A4YCDwIBAUILQmMCAQJJC0mOAQMBkgHyAQ3yAVoDAZEBVxNXigEDAYsBfBd8nQEDAYUBtgEftgGaAQIBf80BId0BMgIBa7oBIcUBMgIBXWkZdCICAVCAARmyASUCAR1bFWYmAgEPTQ1TLwIBCM0Bb80BdQIBftABJ9ABlgECAXjVASfVAWwCAXLaASfaAWsCAWy6AY4BugGVAQIBar0BJ70BbAIBZMIBJ8IBawIBXnEfcX4CAVdsH2x3AgFRgwEfrgEpAgEeW4IBW4kBAgEcXhteYAIBFmMbY18CARBQE1BYAgEJhgElhgGTAQIBSo0BI6wBOgIBH5UBKZUBfAIBQ5oBKZoBgAECATyfASmfAW4CATWkASmkAWoCAS6pASmpAYoBAgEnkAEpkAF4AgEg</sads:DebugSymbol.Symbol>
+    </Flowchart>
+  </wa:ACNApprovalFlow.Implementation>
+</wa:ACNApprovalFlow>

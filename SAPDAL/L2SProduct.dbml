@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyAdvantechGlobal" Class="L2SProductDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ACLSTNR12;Initial Catalog=MyAdvantechGlobal;Persist Security Info=True;User ID=b2bsa" SettingsObjectName="SAPDAL.My.MySettings" SettingsPropertyName="MyAdvantechGlobalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SAP_PRODUCT" Member="SAP_PRODUCTs">
+    <Type Name="SAP_PRODUCT">
+      <Column Name="PART_NO" Type="System.String" DbType="NVarChar(54) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODEL_NO" Type="System.String" DbType="NVarChar(54) NOT NULL" CanBeNull="false" />
+      <Column Name="MATERIAL_GROUP" Type="System.String" DbType="NVarChar(27) NOT NULL" CanBeNull="false" />
+      <Column Name="DIVISION" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_HIERARCHY" Type="System.String" DbType="NVarChar(54) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_GROUP" Type="System.String" DbType="NVarChar(54) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_DIVISION" Type="System.String" DbType="NVarChar(54) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_LINE" Type="System.String" DbType="NVarChar(54) NOT NULL" CanBeNull="false" />
+      <Column Name="GENITEMCATGRP" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCT_DESC" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ROHS_FLAG" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EGROUP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EDIVISION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NET_WEIGHT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GROSS_WEIGHT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WEIGHT_UNIT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VOLUME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VOLUME_UNIT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="LAST_UPD_DATE" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="PRODUCT_TYPE" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="GIP_CODE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SIZE_DIMENSIONS" Type="System.String" DbType="NVarChar(96)" CanBeNull="true" />
+      <Column Name="SOURCE_LOCATION" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PRODUCT_FAMILY" Type="System.String" DbType="NVarChar(54)" CanBeNull="true" />
+      <Column Name="PLM_STATUS" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAP_PRODUCT_ABC" Member="SAP_PRODUCT_ABCs">
+    <Type Name="SAP_PRODUCT_ABC">
+      <Column Name="PART_NO" Type="System.String" DbType="NVarChar(54)" CanBeNull="true" />
+      <Column Name="PLANT" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="ABC_INDICATOR" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="PLANNED_DEL_TIME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GP_PROCESSING_TIME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IN_HOUSE_PRODUCTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProfitCenter" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Ctrl_Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="safety_stock" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="min_safety_stock" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="service_level" Type="System.Decimal" DbType="Decimal(8,1)" CanBeNull="true" />
+      <Column Name="MIN_LOT_SIZE" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FREIGHT_METHOD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COUNTRY_ORIGIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAP_PRODUCT_ORG" Member="SAP_PRODUCT_ORGs">
+    <Type Name="SAP_PRODUCT_ORG">
+      <Column Name="PART_NO" Type="System.String" DbType="NVarChar(54)" CanBeNull="true" />
+      <Column Name="ORG_ID" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="DIST_CHANNEL" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="B2BONLINE" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="DELIVERYPLANT" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="PRICINGGROUP" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="LAST_UPD_DATE" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="MIN_ORD_QTY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MIN_DLV_QTY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAP_PRODUCT_STATUS" Member="SAP_PRODUCT_STATUS">
+    <Type Name="SAP_PRODUCT_STATUS">
+      <Column Name="PART_NO" Type="System.String" DbType="NVarChar(54)" CanBeNull="true" />
+      <Column Name="SALES_ORG" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="DIST_CHANNEL" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="PRODUCT_STATUS" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="MIN_ORDER_QTY" Type="System.Decimal" DbType="Decimal(13,3)" CanBeNull="true" />
+      <Column Name="MIN_DLV_QTY" Type="System.Decimal" DbType="Decimal(13,3)" CanBeNull="true" />
+      <Column Name="MIN_BTO_QTY" Type="System.Decimal" DbType="Decimal(13,3)" CanBeNull="true" />
+      <Column Name="DLV_PLANT" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="MATERIAL_PRICING_GRP" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="VALID_DATE" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="ITEM_CATEGORY_GROUP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAP_PRODUCT_STATUS_ORDERABLE" Member="SAP_PRODUCT_STATUS_ORDERABLEs">
+    <Type Name="SAP_PRODUCT_STATUS_ORDERABLE">
+      <Column Name="PART_NO" Type="System.String" DbType="NVarChar(54) NOT NULL" CanBeNull="false" />
+      <Column Name="SALES_ORG" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="DIST_CHANNEL" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="PRODUCT_STATUS" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="MIN_ORDER_QTY" Type="System.Decimal" DbType="Decimal(13,3)" CanBeNull="true" />
+      <Column Name="MIN_DLV_QTY" Type="System.Decimal" DbType="Decimal(13,3)" CanBeNull="true" />
+      <Column Name="MIN_BTO_QTY" Type="System.Decimal" DbType="Decimal(13,3)" CanBeNull="true" />
+      <Column Name="DLV_PLANT" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="MATERIAL_PRICING_GRP" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="VALID_DATE" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="ITEM_CATEGORY_GROUP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

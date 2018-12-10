@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Replaclcrmdb" Class="CRMDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=CRMDB-REP;Initial Catalog=Replaclcrmdb;Persist Security Info=True;User ID=SYSMYADVANTECH" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ReplaclcrmdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.S_ORG_EXT" Member="S_ORG_EXTs">
+    <Type Name="S_ORG_EXT">
+      <Column Name="MS_IDENT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CREATED" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DCKING_NUM" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="MODIFICATION_NUM" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CONFLICT_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DISA_CLEANSE_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ENTERPRISE_FLAG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="LANG_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_REP_DNRM_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="PR_REP_MANL_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="PR_REP_SYS_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="ALIAS_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ASGN_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASGN_PH_AC" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="ASGN_PH_CC" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="ASGN_USR_EXCLD_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="ASSET_AMT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="BASE_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CMPT_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="CREATOR_LOGIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CURR_PRI_LST_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CUR_YR_BK" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="CUR_YR_BK_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CUR_YR_BL" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="CUR_YR_BL_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CUST_STAT_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DEDUP_TOKEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DESC_TEXT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DISA_ALL_MAILS_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="DIVISION" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="DIVISION_COUNT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="DOM_ULT_DUNS_NUM" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DUNS_NUM" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="EMP_COUNT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="EXCH_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXPERTISE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="FUL_CENTER_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="GLBLULT_DUNS_NUM" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="GSA_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="INTEGRATION_ID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="LOC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LOCATION_LEVEL" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MAIN_FAX_PH_NUM" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="MAIN_PH_NUM" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="OU_NUM" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="OU_NUM_1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="OU_TYPE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PAR_DUNS_NUM" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PAR_OU_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PAYMENT_TERM_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PRI_YR_BK" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="PRI_YR_BK_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PRI_YR_BL" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="PRI_YR_BL_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROCED_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="PR_ADDR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_ADDR_PER_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_AGREE_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_BL_ADDR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_BL_OU_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_BL_PER_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_CO_MSTR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_DISCNT_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_EMP_TERR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_FULFL_INVLOC_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_INDUST_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_LOGO_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_MKT_SEG_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_OU_TYPE_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_POSTN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PRI_LST_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PRTNR_OU_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_REP_ASGN_TYPE" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PR_SHIP_ADDR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_SHIP_OU_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_SHIP_PER_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_SRV_AGREE_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_SYN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_TERR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="REFERENCE_CUST_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="REGION" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="TAX_EXEMPT_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="TAX_EXEMPT_NUM" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BU_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CHNL_ANNL_SALES" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="CHNL_QTR_SALES" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="CHNL_SALES_GROWTH" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="CURR_RATE_LST_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DIVN_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="FRGHT_TERMS_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="FRGHT_TERMS_INFO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="HIST_SLS_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="HIST_SLS_EXCH_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HIST_SLS_VOL" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="PR_PAY_OU_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PRTNR_TYPE_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PRI_GRP_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PROSPECT_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PRTNR_CERT_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PRTNR_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PRTNR_ORG_INT_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PRTNR_SALES_RANK" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="PRTNR_TYPE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PRTNRSHP_START_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PTNTL_SLS_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PTNTL_SLS_EXCH_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PTNTL_SLS_VOL" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="SALES_EMP_CNT" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="SERVICE_EMP_CNT" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="SLS_DIST_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="VAT_REGN_NUM" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ACCNT_PR_CMPT_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ACTIVE_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="BO_CUST_GRP_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BO_ORDQRY_END_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BO_ORDQRY_START_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BRIEFING_LAYOUT" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CC_TXNPROC_AC_NUM" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CC_TXNPROC_VNDR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CORP_STOCK_SYMBOL" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DEDUP_DATACLNSD_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DEDUP_KEY_UPD_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DEDUP_LAST_MTCH_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DEPT_NUM" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DFLT_SHIP_PRIO_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIST_CHANNEL_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIVN_TYPE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EAI_ERROR_TEXT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAI_EXPRT_STAT_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EAI_SYNC_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EVT_HOTEL_STD_RT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="EVT_LOC_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EVT_LOC_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EXEC_SPNSR_PSTN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="FCST_ORG_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="GRWTH_STRTGY_DESC" Type="System.String" DbType="NVarChar(1001)" CanBeNull="true" />
+      <Column Name="IMPL_DESC" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="IMPL_STAGE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="INT_ORG_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_MGR_REVW_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LAST_REVW_MGR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="MAIN_EMAIL_ADDR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PAR_BU_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PAR_DIVN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PAR_ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PO_PAY_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_PAY_EXCH_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PO_PAY_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="PO_PAY_MAX_AMT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="PRTNR_PUBLISH_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PR_COMPETITOR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_CRDT_AREA_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_EAI_SLS_AREA_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_IMPLSVC_VNDR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_MGR_POSTN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_ORG_TRGT_MKT_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PRTNR_TIER_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PTSHP_MKTSEG_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_SVC_POSTN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="REFERENCE_START_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RLZD_ROI_DESC" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RPLCD_WTH_CMPT_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="RTE_TO_MKT_DESC" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SALES_ORG_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SVC_CVRG_STAT_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="TRGT_IMPL_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="X_ANNIE_PR_INDUST_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ACCNT_TYPE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PO_CRDCHK_THRSH" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="PO_CRDCHK_THRSH_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SKIP_PO_CRDCHK_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SURVEY_TYPE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="X_PRI_GRADE_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="APPROVAL_STATUS_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CONTRACT_VIS_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DB_LAST_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD_SRC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIVN_TERR_HIER_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="FUND_ELIG_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PR_CON_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_ORG_PAY_PRFL_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PRTNR_PROG_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_TERRITORY_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PREF_CARR_PRIO_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PREF_SHIP_CARR_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="S_ORG_EXT_S_OPTY" Member="S_OPTies" ThisKey="ROW_ID" OtherKey="PR_DEPT_OU_ID" Type="S_OPTY" />
+      <Association Name="S_ORG_EXT_X_S_ORG_EXT" Member="S_ORG_EXT_X" ThisKey="ROW_ID" OtherKey="ROW_ID" Type="S_ORG_EXT_X" IsForeignKey="true" />
+      <Association Name="S_BU_S_ORG_EXT" Member="S_BU" ThisKey="BU_ID" OtherKey="ROW_ID" Type="S_BU" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.S_ORG_EXT_X" Member="S_ORG_EXT_Xes">
+    <Type Name="S_ORG_EXT_X">
+      <Column Name="MS_IDENT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CREATED" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DCKING_NUM" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="MODIFICATION_NUM" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CONFLICT_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PAR_ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="ATTRIB_01" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_02" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_03" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ATTRIB_04" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ATTRIB_05" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ATTRIB_06" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ATTRIB_07" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ATTRIB_08" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="ATTRIB_09" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="ATTRIB_10" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="ATTRIB_11" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="ATTRIB_12" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_13" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_14" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_15" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_16" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_17" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_18" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_19" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_20" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_21" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_22" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_23" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_24" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_25" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_26" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_27" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_28" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_29" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_30" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_31" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_32" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_33" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_34" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_35" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_36" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_37" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_38" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_39" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_40" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_41" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_42" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_43" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_44" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_45" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_46" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_47" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ATTRIB_48" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_49" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_50" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_51" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ATTRIB_52" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ATTRIB_53" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ATTRIB_54" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_55" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ATTRIB_56" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="ATTRIB_57" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_58" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_59" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_60" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_61" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_62" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_63" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_64" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_65" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_66" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_67" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_68" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_69" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_70" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_71" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_72" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATTRIB_73" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_74" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_75" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_76" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_77" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_78" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_79" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_80" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="ATTRIB_81" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD_SRC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="S_ORG_EXT_X_S_ORG_EXT" Member="S_ORG_EXTs" ThisKey="ROW_ID" OtherKey="ROW_ID" Type="S_ORG_EXT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.S_OPTY" Member="S_OPTies">
+    <Type Name="S_OPTY">
+      <Column Name="MS_IDENT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CREATED" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DCKING_NUM" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="MODIFICATION_NUM" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CONFLICT_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ENTERPRISE_FLAG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="PR_REP_DNRM_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="PR_REP_MANL_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="PR_REP_SYS_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="ACTL_CLS_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ALIAS_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ASGN_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASGN_USR_EXCLD_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="BDGTED_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="BDGT_AMT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="BDGT_AMT_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BDGT_AMT_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BDGT_FLG_UPD_BY" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CHANNEL_TYPE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CURR_STG_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DESC_TEXT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EVAL_PERIOD" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="EVAL_START_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXCH_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FUND_STAT_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="INTEGRATION_ID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="LEAD_QUALITY_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="OPTY_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="OU_ASGN_PH_AC" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="OU_ASGN_PH_CC" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="OU_ROLE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="OU_STAT_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PAR_OPTY_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PREF_LANG_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PRIV_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="PROG_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PR_CMPT_OU_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_CON_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_CS_PATH_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_DEPT_OU_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_INT_DEPT_OU_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_MKT_SEG_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_OU_ADDR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_OU_INDUST_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PER_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_POSTN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PROD_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_QUOTE_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_REP_ASGN_TYPE" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PR_SRC_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_TERR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="REASON_WON_LOST_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="REVENUE_CLASS" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SALES_METHOD_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="STG_NAME" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="STG_START_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BU_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CMPT_STATUS_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="COMPETITION_DESC" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CUST_URGENCY_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PR_BU_DNRM_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PR_BU_MANL_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PR_BU_SYS_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="WIN_CONFIDENCE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NUM_RC_PERIODS" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="PR_OPTY_INDUST_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PROJ_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="RC_PERIOD_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SUM_CLASS_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SUM_COMMIT_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SUM_COST_AMT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="SUM_DOWNSIDE_AMT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="SUM_EFFECTIVE_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUM_MARGIN_AMT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="SUM_REVN_AMT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="SUM_REVN_ITEM_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="SUM_TYPE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SUM_UPSIDE_AMT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="SUM_WIN_PROB" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="X_PR_OPTY_BAA_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="BDGT_AVAILABLE_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CAMP_CON_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="EXEC_PRIORITY_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EXEC_PRIORITY_TS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PR_PRTNR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="REVN_SPLIT_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD_SRC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="S_ORG_EXT_S_OPTY" Member="S_ORG_EXT" ThisKey="PR_DEPT_OU_ID" OtherKey="ROW_ID" Type="S_ORG_EXT" IsForeignKey="true" />
+      <Association Name="S_POSTN_S_OPTY" Member="S_POSTN" ThisKey="PR_POSTN_ID" OtherKey="ROW_ID" Type="S_POSTN" IsForeignKey="true" />
+      <Association Name="S_USER_S_OPTY" Member="S_USER" ThisKey="CREATED_BY" OtherKey="ROW_ID" Type="S_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.S_USER" Member="S_USERs">
+    <Type Name="S_USER">
+      <Column Name="ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CREATED" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFICATION_NUM" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CONFLICT_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PAR_ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LOGIN" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_LOGIN_TS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PW_LAST_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CHALLENGE_ANSWER" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CHALLENGE_QUESTION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="COMMENTS" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CTI_ACD_USERID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CTI_PWD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EXCHNG_PROF_NAME" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="EXCHNG_PROF_PWD" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="EXCHNG_STOREID" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="EXCHNG_SYNC_TYPE" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="LOGIN_DOMAIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RPT_SRVR_PWD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NUM_NWS_ARCHV_DAYS" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="NUM_NWS_HDLNS_DISP" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD_SRC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="TRNG_CAL_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="TRNG_DL_ADMIN_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Association Name="S_USER_S_POSTN" Member="S_POSTNs" ThisKey="ROW_ID" OtherKey="PR_EMP_ID" Type="S_POSTN" />
+      <Association Name="S_USER_S_OPTY" Member="S_OPTies" ThisKey="ROW_ID" OtherKey="CREATED_BY" Type="S_OPTY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.S_POSTN" Member="S_POSTNs">
+    <Type Name="S_POSTN">
+      <Column Name="MS_IDENT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CREATED" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFICATION_NUM" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CONFLICT_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="BU_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="COMPENSATABLE_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OU_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="BL_PROD_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="BL_RT_AMT" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="DESC_TEXT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="END_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PAR_POSTN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="POSTN_TYPE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PR_EMP_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_OU_EXT_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_POSTN_ADDR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_POSTN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PROD_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_PROD_LN_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PR_TERR_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="START_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="INTEGRATION_ID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PAR_ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CMPNS_CURCY_CD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CP_PLAN_LVL_NUM" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="IN_IC_RETRORUN_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DB_LAST_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD_SRC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="S_POSTN_S_OPTY" Member="S_OPTies" ThisKey="ROW_ID" OtherKey="PR_POSTN_ID" Type="S_OPTY" />
+      <Association Name="S_USER_S_POSTN" Member="S_USER" ThisKey="PR_EMP_ID" OtherKey="ROW_ID" Type="S_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.S_STG" Member="S_STGs">
+    <Type Name="S_STG">
+      <Column Name="MS_IDENT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CREATED" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DCKING_NUM" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="MODIFICATION_NUM" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CONFLICT_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SALES_METHOD_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LANG_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="AVG_DAYS_AT_STAGE" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DESC_TEXT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MAX_DAYS_IN_STAGE" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="NEXT_STG_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OPTY_ACTIVE_FLG" Type="System.Char" DbType="NChar(1)" CanBeNull="true" />
+      <Column Name="PAR_STG_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PHASE_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="QUOTA_FACTOR" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="RCMND_WIN_PROB" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="STAGE_STATUS_CD" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="STG_ORDER" Type="System.Decimal" DbType="Decimal(22,7)" CanBeNull="true" />
+      <Column Name="MIN_REQRMNT_TEXT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="OUTCOME_TEXT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RCMD_PRACTICE_TEXT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD_SRC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.S_BU" Member="S_BUs">
+    <Type Name="S_BU">
+      <Column Name="ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CREATED" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPD_BY" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFICATION_NUM" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CONFLICT_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PAR_ROW_ID" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="BU_FLG" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ANNLRVW_ENDT_OFFST" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="ANNLRVW_STDT_OFFST" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="CURR_PRD_OBJ_NAME" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="CURR_PRD_RVW_NAME" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="DYN_HRCHY_ID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DB_LAST_UPD_SRC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="S_BU_S_ORG_EXT" Member="S_ORG_EXTs" ThisKey="ROW_ID" OtherKey="BU_ID" Type="S_ORG_EXT" />
+    </Type>
+  </Table>
+</Database>

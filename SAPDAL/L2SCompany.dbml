@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyAdvantechGlobal" Class="L2SCompanyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ACLSTNR12;Initial Catalog=MyAdvantechGlobal;Persist Security Info=True;User ID=b2bsa" SettingsObjectName="SAPDAL.My.MySettings" SettingsPropertyName="MyAdvantechGlobalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SAP_COMPANY_EMPLOYEE" Member="SAP_COMPANY_EMPLOYEEs">
+    <Type Name="SAP_COMPANY_EMPLOYEE">
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SUB_COMPANY_ID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SALES_ORG" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="PARTNER_FUNCTION" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="SALES_CODE" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAP_COMPANY_PARTNERS" Member="SAP_COMPANY_PARTNERs">
+    <Type Name="SAP_COMPANY_PARTNER">
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ORG_ID" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="DIST_CHANN" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="DIVISION" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="PARTNER_FUNCTION" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="PARENT_COMPANY_ID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="VENDOR_CREDITOR" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SALES_CODE" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="PARTNER_NUMBER" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="KNREF" Type="System.String" DbType="NVarChar(90)" CanBeNull="true" />
+      <Column Name="DEFPA" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAP_DIMCOMPANY" Member="SAP_DIMCOMPANies">
+    <Type Name="SAP_DIMCOMPANY">
+      <Column Name="UNIQUE_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ORG_ID" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="PARENTCOMPANYID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="COMPANY_NAME" Type="System.String" DbType="NVarChar(210)" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(420)" CanBeNull="true" />
+      <Column Name="FAX_NO" Type="System.String" DbType="NVarChar(93)" CanBeNull="true" />
+      <Column Name="TEL_NO" Type="System.String" DbType="NVarChar(48)" CanBeNull="true" />
+      <Column Name="COMPANY_TYPE" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="PRICE_CLASS" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="CURRENCY" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="COUNTRY" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="REGION_CODE" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="ZIP_CODE" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CITY" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ATTENTION" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="CREDIT_TERM" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="SHIP_VIA" Type="System.String" DbType="NVarChar(95)" CanBeNull="true" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(396)" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(36)" CanBeNull="true" />
+      <Column Name="COMPANY_PRICE_TYPE" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="SHIPCONDITION" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="ATTRIBUTE4" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="SALESOFFICE" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="SALESGROUP" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="AMT_INSURED" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="CREDIT_LIMIT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="CONTACT_EMAIL" Type="System.String" DbType="NVarChar(723)" CanBeNull="true" />
+      <Column Name="DELETION_FLAG" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="COUNTRY_NAME" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="SALESOFFICENAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SAP_SALESNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SAP_SALESCODE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SAP_ISNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SAP_OPNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SECTOR" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="PRIMARY_BAA" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ACCOUNT_ROW_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACCOUNT_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ACCOUNT_STATUS" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RBU" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PRIMARY_SALES_EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PRIMARY_OWNER_DIVISION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BUSINESS_GROUP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACCOUNT_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FACT2005" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FACT2006" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FACT2007" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FACT2008" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FACT2009" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FACT2010" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAST_BUY_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ORDERS_IN_PAST_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMOUNT_IN_PAST_YEAR" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ORDERS_IN_PAST_HALFYEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUST_IND" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="VM" Type="System.String" DbType="NVarChar(180)" CanBeNull="true" />
+      <Column Name="PRICE_GRP" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PRICE_LIST" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="INCO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="INCO2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PAYMENT_TERM_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PAYMENT_TERM_NAME" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAP_COMPANY_CONTACTS" Member="SAP_COMPANY_CONTACTs">
+    <Type Name="SAP_COMPANY_CONTACT">
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CONTACT_EMAIL" Type="System.String" DbType="NVarChar(723) NOT NULL" CanBeNull="false" />
+      <Column Name="FLGDEFAULT" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CONSNUMBER" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="HOME_FLAG" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SMTP_SRCH" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="PERSNUMBER" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TEL_NUMBER" Type="System.String" DbType="NVarChar(90)" CanBeNull="true" />
+      <Column Name="TELNR_LONG" Type="System.String" DbType="NVarChar(90)" CanBeNull="true" />
+      <Column Name="TELNR_CALL" Type="System.String" DbType="NVarChar(90)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAP_COMPANY_SALES_DEF" Member="SAP_COMPANY_SALES_DEFs">
+    <Type Name="SAP_COMPANY_SALES_DEF">
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SALES_ORG" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DISTR_CHAN" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DIVISION" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SALES_DISTRICT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SALES_OFFICE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SALES_GROUP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CUST_GROUP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ABC_CLASS" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CURRENCY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AUTH_GROUP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ACCT_AT_CUST" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="EXCH_RATE_TYPE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PRICE_GROUP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CUST_PRIC_PROC" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PRICE_LIST" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CUST_STATS_GRP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

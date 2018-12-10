@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getShippingRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="order" type="tns:Order" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Order">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StoreId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Shipto" type="tns:Address" />
+          <s:element minOccurs="0" maxOccurs="1" name="Billto" type="tns:Address" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Systems" type="tns:ArrayOfConfigSystem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Countrycode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zipcode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Item" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Item">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qty" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConfigSystem">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Item">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Details" type="tns:ArrayOfItem" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfConfigSystem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConfigSystem" nillable="true" type="tns:ConfigSystem" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getShippingRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getShippingRateResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShippingRates" type="tns:ArrayOfShippingRate" />
+          <s:element minOccurs="0" maxOccurs="1" name="Boxex" type="tns:ArrayOfBox" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfShippingRate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShippingRate" nillable="true" type="tns:ShippingRate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShippingRate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nmae" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:float" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBox">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Box" nillable="true" type="tns:Box" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Box">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Details" type="tns:ArrayOfItem" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getShippingRateSoapIn">
+    <wsdl:part name="parameters" element="tns:getShippingRate" />
+  </wsdl:message>
+  <wsdl:message name="getShippingRateSoapOut">
+    <wsdl:part name="parameters" element="tns:getShippingRateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="shippingrateSoap">
+    <wsdl:operation name="getShippingRate">
+      <wsdl:input message="tns:getShippingRateSoapIn" />
+      <wsdl:output message="tns:getShippingRateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="shippingrateHttpGet" />
+  <wsdl:portType name="shippingrateHttpPost" />
+  <wsdl:binding name="shippingrateSoap" type="tns:shippingrateSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getShippingRate">
+      <soap:operation soapAction="http://tempuri.org/getShippingRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="shippingrateSoap12" type="tns:shippingrateSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getShippingRate">
+      <soap12:operation soapAction="http://tempuri.org/getShippingRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="shippingrateHttpGet" type="tns:shippingrateHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="shippingrateHttpPost" type="tns:shippingrateHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="shippingrate">
+    <wsdl:port name="shippingrateSoap" binding="tns:shippingrateSoap">
+      <soap:address location="http://buy.advantech.com/services/shippingrate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="shippingrateSoap12" binding="tns:shippingrateSoap12">
+      <soap12:address location="http://buy.advantech.com/services/shippingrate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="shippingrateHttpGet" binding="tns:shippingrateHttpGet">
+      <http:address location="http://buy.advantech.com/services/shippingrate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="shippingrateHttpPost" binding="tns:shippingrateHttpPost">
+      <http:address location="http://buy.advantech.com/services/shippingrate.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="d9b7ee2b-9d86-4650-9e60-9275cd307f23" name="Frank.Chung@PC000512 2014-11-25 09:39:44" runUser="ADVANTECH\Frank.Chung" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="9484e598-a5a6-4a9a-b4a4-a5417aac554c">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Frank.Chung_PC000512 2014-11-25 09_39_44">
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\GetCreditExposure.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\bin\BAPI_SALESORDER_CHANGE.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Bapi_Quotation_Create.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\PRICE_GRADE.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\BAPI_SALESORDER_SIMULATE.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\GetMultiATP.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\BAPI_CUSTOMERQUOTATION_CHANGE.dll" />
+      <DeploymentItem filename="D:\oracle\product\11.2.0\client_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZSD_CUSTOMER_MAINTAIN_ALL.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\GET_MATERIAL_ATP.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Z_GET_ATP_LIMITQTY.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Z_SD_EUPRICEINQUERY.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\SO_CREATE_COMMIT.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Get_Price.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Change_SD_Order.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\bin\Debug\SAPDAL.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZCUSTOMER_UPDATE_SALES_AREA.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Quotation_Create_SAP.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZSD_QUOTATION_ABR.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZSD_UPDATE_FPLA.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Factory_Date_Conversion.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\SAP.Connector.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Create_Po.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\BAPI_SALESORDER_CREATEFROMDAT2.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZGET_ATP_LIMITQTY.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Z_EBIZAEU_PRICEINQUIRY_BR.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-11-25T09:39:44.8914559+08:00" queuing="2014-11-25T09:39:47.4687136+08:00" start="2014-11-25T09:39:47.5697237+08:00" finish="2014-11-25T09:40:04.9284594+08:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="PC000512" outcome="Warning" timestamp="2014-11-25T09:39:44.9184586+08:00">
+        <Text>Deployment is currently disabled. The deployment item 'SAPDAL.dll' on test 'SAPDALTestProject.SAPDALTest.GetMultiPrice_eStoreTest' was not deployed.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetMultiPrice_eStoreTest" storage="d:\advantech\myadvantech\edoc\sapdaltestproject\bin\debug\sapdaltestproject.dll" id="d9bcc237-83fb-88d4-ed17-611aeb6948d2">
+      <DeploymentItems>
+        <DeploymentItem filename="SAPDAL.dll" />
+      </DeploymentItems>
+      <Execution id="e2054dfe-5d2b-413e-b64d-fa7017f2acca" />
+      <TestMethod codeBase="D:/Advantech/MyAdvantech/eDoc/SAPDALTestProject/bin/Debug/SAPDALTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SAPDALTestProject.SAPDALTest, SAPDALTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetMultiPrice_eStoreTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="d9bcc237-83fb-88d4-ed17-611aeb6948d2" executionId="e2054dfe-5d2b-413e-b64d-fa7017f2acca" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e2054dfe-5d2b-413e-b64d-fa7017f2acca" testId="d9bcc237-83fb-88d4-ed17-611aeb6948d2" testName="GetMultiPrice_eStoreTest" computerName="PC000512" duration="00:00:15.7091526" startTime="2014-11-25T09:39:47.6527320+08:00" endTime="2014-11-25T09:40:04.8694535+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e2054dfe-5d2b-413e-b64d-fa7017f2acca">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method SAPDALTestProject.SAPDALTest.GetMultiPrice_eStoreTest threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>   at SAPDAL.SAPDAL_Accessor.GetMultiPrice_eStore(String Org, String SoldToId, String ShipToId, String Currency, String strDistChann, String strDivision, ProductInDataTable ProductIn, ProductOutDataTable&amp; ProductOut, String&amp; ErrorMessage)
+   at SAPDALTestProject.SAPDALTest.GetMultiPrice_eStoreTest() in D:\Advantech\MyAdvantech\eDoc\SAPDALTestProject\SAPDALTest.vb:line 78
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

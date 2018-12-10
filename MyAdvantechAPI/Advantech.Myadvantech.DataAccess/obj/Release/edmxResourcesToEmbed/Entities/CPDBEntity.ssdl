@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CheckPointDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ship_to_Information">
+    <Key>
+      <PropertyRef Name="SO_Number" />
+    </Key>
+    <Property Name="SO_Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ship_to_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ship_to_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="ship_to_address" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ship_to_city" Type="nvarchar" MaxLength="250" />
+    <Property Name="ship_to_country_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="ship_to_country_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="ship_to_postal_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="ship_to_stateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ship_to_telnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ship_to_faxnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ship_to_email" Type="nvarchar" MaxLength="150" />
+    <Property Name="contact_person_first" Type="nvarchar" MaxLength="100" />
+    <Property Name="contact_person_last" Type="nvarchar" MaxLength="100" />
+    <Property Name="contact_email" Type="nvarchar" MaxLength="150" />
+    <Property Name="contact_telnumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SO_DETAIL">
+    <Key>
+      <PropertyRef Name="SO" />
+      <PropertyRef Name="LINE_NO" />
+    </Key>
+    <Property Name="SO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PART_Dlv" Type="nvarchar" MaxLength="50" />
+    <Property Name="HIGHER_LEVEL" Type="nvarchar" MaxLength="50" />
+    <Property Name="LINE_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DELIVERY_GROUP" Type="nvarchar" MaxLength="50" />
+    <Property Name="PLANT" Type="nvarchar" MaxLength="50" />
+    <Property Name="MATERIAL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CUST_MATERIAL" Type="nvarchar" MaxLength="200" />
+    <Property Name="DMF_FLAG" Type="nvarchar" MaxLength="50" />
+    <Property Name="QTY" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQ_DATE" Type="nvarchar" MaxLength="50" />
+    <Property Name="PRICE" Type="nvarchar" MaxLength="50" />
+    <Property Name="CURRENCY" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipPoint" Type="nvarchar" MaxLength="50" />
+    <Property Name="StorageLoc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItCa" Type="nvarchar" MaxLength="50" />
+    <Property Name="POLineNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SO_HEADER">
+    <Key>
+      <PropertyRef Name="SO" />
+    </Key>
+    <Property Name="SO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ORDER_TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SALES_ORG" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIST_CHAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIVISION" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesOffice" Type="nvarchar" MaxLength="50" />
+    <Property Name="INCO1" Type="nvarchar" MaxLength="200" />
+    <Property Name="INCO2" Type="nvarchar" MaxLength="200" />
+    <Property Name="SHIPTO_COUNTRY" Type="nvarchar" MaxLength="50" />
+    <Property Name="TAX_CLASS" Type="nvarchar" MaxLength="50" />
+    <Property Name="TRIANGULAR_INDICATOR" Type="nvarchar" MaxLength="50" />
+    <Property Name="REQUIRE_DATE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SHIP_CONDITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="CUST_PO_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="SHIP_CUST_PO_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="PO_DATE" Type="nvarchar" MaxLength="50" />
+    <Property Name="PARTIAL_SHIPMENT" Type="nvarchar" MaxLength="50" />
+    <Property Name="EARLY_SHIP" Type="nvarchar" MaxLength="50" />
+    <Property Name="TAXDEL_CTY" Type="nvarchar" MaxLength="50" />
+    <Property Name="TAXDES_CTY" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEST_TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="PAYTERM" Type="nvarchar" MaxLength="100" />
+    <Property Name="DOC_DATE" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOC_DATESpecified" Type="nvarchar" MaxLength="50" />
+    <Property Name="DISTRICT" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ref_Doc" Type="nvarchar" MaxLength="50" />
+    <Property Name="VERSION" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SO_PARTNERFUNC">
+    <Key>
+      <PropertyRef Name="SO" />
+      <PropertyRef Name="ROLE" />
+    </Key>
+    <Property Name="SO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ROLE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NUMBER" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="CheckPointDBModelStoreContainer">
+    <EntitySet Name="Ship_to_Information" EntityType="Self.Ship_to_Information" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_DETAIL" EntityType="Self.SO_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_HEADER" EntityType="Self.SO_HEADER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_PARTNERFUNC" EntityType="Self.SO_PARTNERFUNC" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

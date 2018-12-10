@@ -1,0 +1,154 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+   /*.ABBdtb {
+        padding: 0px 10px 0px 10px;
+    }*/
+
+    .ABBdtb-title {
+        margin-top:5px;
+        border: 0px solid transparent;
+        font-weight: 600;
+        font-size: 0.85em;
+    }
+
+    .ABBdtb-row td{
+        padding: 5px;
+    }
+
+    .ABBdtb-row .itempos:hover {
+        background-color: #cecece;
+        cursor: pointer;
+    }
+
+
+    .title-item{
+        background-color: #999999;color:white;
+    }
+
+    .GP_Info {
+        color: black;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .disableGP {
+        display: none;
+    }
+
+    /*.displayGP {
+    }*/
+</style>
+@{
+    var className = "disableGP";
+    if (Model.GPIsViewable)
+    {
+        className = "displayGP";
+    }
+}
+<table class="ABBdtb" style="width:100%"  align="center">
+    <thead class="ABBdtb-title" style="text-align:center">
+        <tr class="ABBdtb-row">
+            <td style="background-color: #999999;color:white;">Item</td>
+            <td style="background-color: #999999;color:white;">Part Number</td>
+            <td style="background-color: #999999;color:white;">Description</td>
+            <td class="@className" style="background-color: #999999;color:white;">ITP</td>
+            <td style="background-color: #999999;color:white;">Quoting Price</td>
+            <td style="background-color: #999999;color:white;">Quantity</td>
+            <td style="background-color: #999999;color:white;">Sub Total</td>
+            <td class="@className" style="background-color: #999999;color:white;">Margin</td>
+
+        </tr>
+    </thead>
+    <tbody class="ABBdtb-body">
+            @foreach (var item in @Model.QD)
+            {
+                <tr class="ABBdtb-row">
+                    <td style="text-align:center;">@item.line_No</td>
+                    <td>@item.partNo</td>
+                    <td>@item.description</td>
+                    <td class="@className" style="text-align:right;"> @((item.ITP).ToString("N"))</td>
+                    <td style="text-align:right;">@Model.CurrencySign @item.newUnitPrice.ToString("N2")</td>
+                    <td style="text-align:center;">@item.qty</td>
+                    <td style="text-align:right;">@Model.CurrencySign @item.SubTotal.ToString("N2")</td>                    
+                    @if (item.GPStatus == "Normal")
+                    {
+                        <td class="@className" style="text-align:right;"> @((item.Margin).ToString("N")) %</td>
+                    }
+                    else
+                    {
+                        <td class="@className" style="text-align:right; color: #FF0000;"> @((item.Margin).ToString("N")) %</td>
+                    }
+
+                
+                </tr>
+            } 
+    </tbody>
+</table>
+
+<table  style="width:100%" class="stylenormal" align="center">
+    <tr>
+        <td style="width:60%">
+            <table style="width:100%" class="stylenormal" align="center">
+                <tr>
+                    <td>
+                        <b>Comments</b>:
+                        <textarea cols="50" rows="5" readonly="readonly">@Model.QuotationNotes</textarea>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="width:15%"></td>
+        <td style="width:25%">
+            <table style="width: 100%;">
+                <tr class="@className">
+                    <td>
+                        <b>Total Margin</b>:
+                    </td>
+                    <td style="font-weight: bold; text-align:right;">@((Model.TotalMargin * 100).ToString("N")) %</td>
+                </tr>
+                <tr>
+                    <td><b>Currency</b>:</td>
+                    <td style="text-align:right;"><span>USD</span></td>
+                </tr>
+                <tr>
+                    <td><b>Subtotal</b>:</td>
+                    <td style="text-align:right;"><span>@Model.CurrencySign @Model.QuoteTotalAmount_WithoutTax.ToString("N")</span></td>
+                </tr>
+                <tr>
+                    <td><b>Sales Tax(@((Model.tax * 100).ToString("N")) %)</b>:</td>
+                    <td style="text-align:right;"><span>@Model.CurrencySign @Model.QuoteTotalTax.ToString("N")</span></td>
+                </tr>
+                <tr>
+                    <td><b>Shipping & Handling</b>:</td>
+                    <td style="text-align:right;">@Model.CurrencySign 0.00</td>
+                </tr>
+                <tr>
+                    <td><b>Total Amount</b>:</td>
+                    <td style="font-weight: bold; color: #FF0000; text-align:right;">
+                        <span>@Model.CurrencySign @Model.QuoteTotalAmount_WithTax.ToString("N")</span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+@if (Model.pagetype != null && Model.pagetype != "CheckBeforeApproval" && !string.IsNullOrEmpty(Model.SalesComment))
+{
+    <table align="center" width="950">
+        <tr>
+            <td class="stylenormal" style="text-align: left;" width="60%">
+                @{
+                    var reason = new HtmlString(@Model.SalesComment);
+                }
+                @reason
+
+            </td>
+        </tr>
+    </table>
+}
+
+
+

@@ -1,0 +1,21 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+
+<style>
+    .bb-content
+    {
+        background-color:#ffffff;
+        padding: 0 8px 0 10px;
+    }
+    
+</style>
+
+<div class="main-content bb-content">
+
+    @Html.Partial("ADLOG_QuoteHeader", @Model)
+    @Html.Partial("ADLOG_QuoteDetails", @Model)
+    <div style="min-height: 50px;"></div>
+    <p style="page-break-after:always"></p>
+</div>
+
+
+

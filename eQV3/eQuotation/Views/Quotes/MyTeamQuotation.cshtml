@@ -1,0 +1,483 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    .left {
+        text-align: left;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .w35p {
+        width: 35%;
+    }
+
+     .disableButton {
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        $(".date_picker")
+            .each(function () {
+                $("#" + this.id).datepicker({
+                    yearRange: "2010:2030",
+                    changeMonth: true,
+                    changeYear: true
+                });
+                $("#" + this.id).datepicker("option", "dateFormat", "yy-mm-dd");
+            });
+    });
+
+    //檢查日期格式(包含閏月)
+    function ValidateDate(dtValue) {
+        //var dtRegex = new RegExp(/^[0-9]{4}[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$/);
+        var dtRegex = new RegExp(/^(\d{2}(([02468][048])|([13579][26]))\-((((0[13578])|(1[02]))\-((0[1-9])|([1-2][0-9])|(3[01])))|(((0[469])|(11))\-((0[1-9])|([1-2][0-9])|(30)))|(02\-((0[1-9])|([1-2][0-9])))))|(\d{2}(([02468][1235679])|([13579][01345789]))\-((((0[13578])|(1[02]))\-((0[1-9])|([1-2][0-9])|(3[01])))|(((0[469])|(11))\-((0[1-9])|([1-2][0-9])|(30)))|(02\-((0[1-9])|(1[0-9])|(2[0-8])))))$/);
+        return dtRegex.test(dtValue);
+    }
+
+    //檢查日期
+    function CheckDate() {
+        var check = "";
+        $(".date_picker").each(function () {
+            if ($("#" + this.id).val() != '' && !ValidateDate($("#" + this.id).val())) {
+                check = "Format of the Date is wrong.";
+                return false;//等於break
+            }
+        });
+        return check;
+    }
+
+    //只能輸入數字和小數點
+    function onKeyPressBlockNumbers(e) {
+        var key = window.event ? e.keyCode : e.which;
+        var keychar = String.fromCharCode(key);
+        reg = /[0-9]|\./;
+        return reg.test(keychar);
+    }
+</script>
+@Html.Modal("osx-send-email", "Quote Forward", "430px", "600px")
+@Html.Modal("osx-ViewForwardDownload-quote", "Quotation Overview", "500px", "1000px")
+@Html.Modal("osx-search-checkInfo", "Approval Information", "330px", "600px")
+@{
+    var buttonClassNameViewQuote = Model.ViewQuoteIsEnabled == true ? null : "disableButton";
+    var buttonClassNamePDFMail = Model.ViewQuoteIsEnabled == true ? "disableButton" : null;
+}
+<div class="main-content">
+    <div class="titlebox topbox">
+        <h4>My Team Quotation</h4>
+    </div>
+
+    <div class="actionbox">
+        <ul>
+            <li>
+                @*<a id="btn-refresh"><i class="fa fa-refresh fa-spin"></i> Refresh</a>*@
+                <a id="btn-refresh"><i class="fa fa-refresh"></i> Refresh</a>
+            </li>
+            <li>
+                <a id="new_quotation"><i class="fa fa-plus"></i> Create New Quotation</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <table id="tbCreateQuotation">
+            <tr>
+                <td class="field150 right">Quote No :</td>
+                <td class="w35p">
+                    @Html.TextBoxFor(mdl => mdl.QuoteNo, new { @class = "text090"})&nbsp;
+                </td>
+                <td class="field150 right">Description :</td>
+                <td>
+                    @Html.TextBoxFor(mdl => mdl.Description, new { @class = "text090"})&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="field150 right">Account Name :</td>
+                <td>
+                    @Html.TextBoxFor(mdl => mdl.AccountName, new { @class = "text090"})&nbsp;
+                </td>
+                <td class="field150 right">ERP ID :</td>
+                <td>
+                    @Html.TextBoxFor(mdl => mdl.ERPID, new { @class = "text090"})&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DropDownListFor(mdl => mdl.DateType, (IEnumerable<SelectListItem>)ViewBag.DateType, new { @id = "ddlDateType", @style = "width:100%"})
+                </td>
+                <td class="field200" colspan="1">
+                    From:@Html.TextBoxFor(mdl => mdl.From, new { @style = "width:100px",@class= "date_picker" })&nbsp;
+                    To:@Html.TextBoxFor(mdl => mdl.To, new { @style = "width:100px", @class = "date_picker" })&nbsp;
+                </td>
+                <td class="field150 right">Status :</td>
+                <td>
+                    @Html.DropDownListFor(mdl => mdl.Status, (IEnumerable<SelectListItem>)ViewBag.Status, new { @id = "ddlStatus", @style = "width:90%" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    &nbsp;
+                </td>
+                <td class="right" colspan="2">
+                    <button id="btn-submit" type="button" class="button"><i class="fa fa-search"></i> Search</button>&nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td class="field200" colspan="4">&nbsp;</td>
+            </tr>
+        </table>
+        <table id="tblQuotation" style="table-layout: fixed;">
+            <thead>
+                <tr>
+                    <th>Functions</th>
+                    <th>Quote No</th>
+                    <th>Description</th>
+                    <th>ERPID</th>
+                    <th>Account</th>
+                    <th>Opportunity</th>
+                    <th>Sales</th>
+                    <th>Quote Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="tb-body">
+                @foreach (var item in Model.QM)
+                {
+                    <tr>
+                        <td>
+                            @{
+                                var buttonClassName = item.Editable == true ? null : "disableButton";
+                                var buttonClassNameRevision = item.RevisionIsEnabled == true ? null : "disableButton";
+                            }
+                            <a class='quotes_edit @buttonClassName' href='javascript:void(0)' data-id='@item.quoteId'><i class='fa fa-pencil-square-o' title='Edit'></i></a>
+                            <a class='quotes_revise @buttonClassNameRevision' href='javascript:void(0)' data-id='@item.quoteId'><i class='fa fa-retweet' title='Revise'></i></a>
+
+                            <a class='quotes_copy' href='javascript:void(0)' data-id='@item.quoteId'><i class='fa fa-files-o' title='Copy'></i></a>
+                            <a class='quotes_pdf @buttonClassNamePDFMail' href='/Quotes/Download_pdf?QuoteID=@item.quoteId' data-id='@item.quoteId'><i class='fa fa-file-pdf-o' title='PDF'></i></a>
+                            <a class='quotes_email @buttonClassNamePDFMail' href='javascript:void(0)' data-id='@item.quoteId' data-no='@item.quoteNo'><i class='fa fa-envelope' title='Email'></i></a>
+                            <a class='quotes_view @buttonClassNameViewQuote' href='javascript:void(0)' data-id='@item.quoteId' data-no='@item.quoteNo'><i class='fa fa-file-text' title='View'></i></a>
+                            <a class='quotes_order' oncontextmenu="return false;" href='/Quotes/Quote2Cart?QuoteID=@item.quoteId' data-finishdate='@item.FinishDate' data-expireddate='@item.ExpiredDate' data-id='@item.quoteId' data-erpid='@item.quoteToErpId' data-status='@item.DOCSTATUS'><i class='fa fa-shopping-cart' title='Order'></i></a>
+                        </td>
+                        <td>@(item.quoteNo + " V" + item.RevisionNumber)</td>
+                        <td>@item.customId</td>
+                        <td>
+                            @{
+                                var buttonERPID = string.IsNullOrEmpty(item.quoteToErpId) == true ? null : "disableButton";
+                            }
+                            <button type='button' class='button getERPID @buttonERPID' data-id='@item.quoteId'>Get ERPID</button>
+                            @item.quoteToErpId
+                        </td>
+                        <td>@item.quoteToName</td>
+                        <td>@item.optyName</td>
+                        <td>@item.salesEmail</td>
+                        <td>@item.quoteDate</td>
+                        <td>@item.DOCSTATUS <a class='quotes_check' onclick='javascript: checkinfo(this);' data-id='@item.quoteId'><i class='fa fa-search' title='check'></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $(document).ajaxStart(function () {
+            $.blockUI();
+            $("#LOADING_STATUS").html("<i class='fa fa-cog fa-spin fa-2x'></i>");
+        });
+        $(document).ajaxStop(function () {
+            $.unblockUI();
+            $("#LOADING_STATUS").html("");
+        })
+
+        //configure data-table
+        /* Init the table */
+        oTable = $('#tblQuotation').dataTable({
+            "bJQueryUI": false,
+            "bLengthChange": false,
+            "bFilter": false,
+            "iDisplayLength": 100,
+            "sScrollY": 280,
+            "bScrollCollapse": true,
+            "bPaginate": true,
+            "aoColumnDefs": [
+                { "bSortable": false, "aTargets": [0] },
+                { "bSortable": false, "aTargets": [2] },
+                { "bSortable": false, "aTargets": [4] },
+                { "bSortable": false, "aTargets": [5] }
+            ],
+            "bAutoWidth": true,
+            "aoColumns": [
+                { sWidth: "11%" },
+                { sWidth: "11%" },
+                { sWidth: "12%" },
+                { sWidth: "10%" },
+                { sWidth: "10%" },
+                { sWidth: "11%" },
+                { sWidth: "21%" },
+                { sWidth: "7%" },
+                { sWidth: "7%" }
+            ]
+        });
+        $(".dataTables_scrollBody").height('100%');
+
+        /* Add a click handler to the rows - this could be used as a callback */
+        //$("#tblQuotation tbody").click(function (e) {
+
+        //    $(oTable.fnSettings().aoData).each(function () {
+        //        $(this.nTr).removeClass("row_selected");
+        //    });
+        //    $(e.target.parentNode).addClass("row_selected");
+        //});
+
+        //get the rows which are currently selected
+        function fnGetSelected(oTableLocal) {
+            var aReturn = new Array();
+            var aTrs = oTableLocal.fnGetNodes();
+
+            for (var i = 0; i < aTrs.length; i++) {
+                if ($(aTrs[i]).hasClass("row_selected")) {
+                    aReturn.push(aTrs[i]);
+                }
+            }
+
+            return aReturn;
+        }
+
+        clickevent();
+
+        //create new quote
+        $("#new_quotation").on("click", function (e) {
+            e.preventDefault();
+            //initContent('@Url.Action("CreateNewQuotation", "Quotes")');
+            initContent('Quotes/CreateNewQuotation');
+        });
+
+
+        //refresh content
+        $("#btn-refresh").on("click", function (e) {
+            e.preventDefault();
+            $.blockUI();
+            $.get("/Quotes/MyQuotation", function (data) {
+
+                $.unblockUI();
+            });
+        });
+
+        //Search
+        $("#btn-submit").on("click", function () {
+
+            var QuoteNo = $("#QuoteNo").val();
+            var Description = $("#Description").val();
+            var AccountName = $("#AccountName").val();
+            var ERPID = $("#ERPID").val();
+            var DateType = $("#ddlDateType").val();
+            var From = $("#From").val();
+            var To = $("#To").val();
+            var ddlStatus = parseInt($("#ddlStatus").val());
+            var postdata = JSON.stringify({
+                QuoteNo: QuoteNo, Description: Description, AccountName: AccountName, ERPID: ERPID, DateType: DateType,
+                From: From, To: To, ddlStatus: ddlStatus
+            });
+            $.ajax({
+                url: "/Quotes/getTeamQuoteList", type: "POST", dataType: "json", data: postdata
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                    if (redata.succeed) {
+
+                        var result = redata.data;
+
+                        var tb1body; var tb3body; var tb8body;
+                        //加入table一筆資料
+                        for (var i = 0; i < result.length; i++) {
+                            //tb1body = "<a class='quotes_edit' href='javascript:void(0)' data-id='" + result[i][0] + "'><i class='fa fa-pencil-square-o' title='Edit'></i></a> ";
+                            //tb1body += "<a class='quotes_del' onclick='javascript: deleteItem(this);' data-id='" + result[i][0] + "'><i class='fa fa-times' title='Delete'></i></a> ";
+                            tb1body = "<a class='quotes_edit " + (result[i][10].indexOf("NonEditable") > -1 ? "disableButton" : "") + "' href='javascript:void(0)' data-id='" + result[i][0] + "'><i class='fa fa-pencil-square-o' title='Edit'></i></a> ";
+                            tb1body = "<a class='quotes_copy' href='javascript:void(0)' data-id='" + result[i][0] + "'><i class='fa fa-files-o' title='Copy'></i></a> ";
+                            tb1body += "<a class='quotes_pdf @buttonClassNamePDFMail' href='/Quotes/Download_pdf?QuoteID=" + result[i][0] + "' data-id='" + result[i][0] + "'><i class='fa fa-file-pdf-o' title='PDF'></i></a> ";
+                            tb1body += "<a class='quotes_email @buttonClassNamePDFMail' href='javascript:void(0)' data-id='" + result[i][0] + "' data-no='" + result[i][1] + "'><i class='fa fa-envelope' title='Email'></i></a> ";
+                            tb1body += "<a class='quotes_view @buttonClassNameViewQuote' href='javascript:void(0)' data-id='" + result[i][0] + "' data-no='" + result[i][1] + "'><i class='fa fa-file-text' title='View'></i></a> ";
+                            tb1body += "<a class='quotes_order' oncontextmenu='return false;' href='/Quotes/Quote2Cart?QuoteID=" + result[i][0] + "' data-finishdate='" + result[i][9] + "' data-expireddate='" + result[i][11] + "' data-id='" + result[i][0] + "' data-erpid='" + result[i][3] + "' data-status='" + result[i][8] + "'><i class='fa fa-shopping-cart' title='Order'></i></a> ";
+
+                            tb8body = " <a class='quotes_check' onclick='javascript: checkinfo(this);' data-id='" + result[i][0] + "'><i class='fa fa-check-square-o' title='check'></i></a>";
+
+                            if (result[i][3].length == 0) {
+                                tb3body = "<button type='button' class='button getERPID' data-id='" + result[i][0] + "'>Get ERPID</button>";
+                                result[i][3] = tb3body;
+                            }
+
+                            result[i][0] = tb1body;
+                            result[i][8] += tb8body;
+
+                        }
+
+                        table = $('#tblQuotation').dataTable();
+                        oSettings = table.fnSettings();
+
+                        table.fnClearTable(this);
+                        for (var i = 0; i < result.length; i++) {
+
+                            table.oApi._fnAddData(oSettings, result[i]);
+                        }
+                        oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+                        table.fnDraw();
+                        $(".dataTables_scrollBody").height('100%');
+                        clickevent();
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+                    //$.unblockUI();
+                }
+            });
+        });
+
+    });
+
+    function checkinfo(arg) {
+        var ID = $(arg).attr("data-id");
+        $.get("/operation/checkInfo",
+           { QuoteID: ID }, function (data) {
+               $.pushHTML(data, function () {
+                   $.OSXModalInit("osx-search-checkInfo", data);
+               });
+           });
+    }
+
+
+    function deleteItem(arg) {
+        var quoteNo = $(arg).attr("data-quoteNo");
+        var result = confirm("Are you sure you want to delete " + quoteNo + " ?");
+        if (result) {
+            var ID = $(arg).attr("data-id");
+            var postdata = JSON.stringify({ QuoteID: ID });
+            $.ajax({
+                url: "/Quotes/DeleteQuotation", type: "POST", dataType: "json", data: postdata
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+                    if (redata.succeed) {
+                        $(arg).parent('td').parent('tr').remove();
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+
+                    //$.unblockUI();
+                }
+            });
+        }
+    }
+
+    function UpdateErpId(quoteId) {
+        var postdata = JSON.stringify({ QuoteID: quoteId });
+        var erpid = "";
+        $.ajax({
+            url: "Quotes/UpdateErpId",
+            async: false,
+            type: "POST",
+            dataType: "json",
+            data: postdata,
+            contentType: "application/json; charset=utf-8",
+            success: function (redata) {
+                erpid = redata.erpid;
+            }
+        });
+        return erpid;
+    }
+
+    //The click event must be load again.
+    function clickevent() {
+        $(".quotes_edit").on("click", function (e) {
+            e.preventDefault();
+            var Id = $(this).attr("data-id");
+            initContent("Quotes/CreateNewQuotation/" + Id);
+        });
+
+        $(".quotes_copy").on("click", function (e) {
+            e.preventDefault();
+            var Id = $(this).attr("data-id");
+            initContent("Quotes/CreateNewQuotation/?ID=" + Id + "&type=copy");
+        });
+
+        $(".quotes_revise").on("click", function (e) {
+            e.preventDefault();
+            var Id = $(this).attr("data-id");
+            initContent("Quotes/CreateNewQuotation/?ID=" + Id + "&type=revise");
+        });
+
+        $(".quotes_order").on("click", function (e) {
+
+            //沒有ERP ID不能轉Order
+            var erpid = $(this).attr("data-erpid");
+            if (erpid == "") {
+                e.preventDefault();
+                AlertDialog("Can't convert to order because customer's ERPID is empty, please maintain customer's ERPID in Siebel.");
+                return false;
+            }
+
+            //Status是Draft
+            var Status = $(this).attr("data-status");
+            if (Status != ("Finish")) {
+                e.preventDefault();
+                AlertDialog("Can't convert to order because quotation status is \"draft\", \"waiting for approval\" or \"rejected\".");
+                return false;
+            }
+
+            //報價單已超過效期無法轉單
+            var _expireddate = $(this).attr("data-expireddate");
+            var expireddate = new Date(_expireddate);
+            var Today = new Date();
+            if (Today - expireddate > 0) {
+                e.preventDefault();
+                AlertDialog("Can't convert to order because this quotation is past its expired date.");
+                return false;
+            }
+        });
+
+        $(".quotes_email").on("click", function () {
+            var QuoteID = $(this).attr("data-id");
+            var quoteNo = $(this).attr("data-no");
+            $.get("/quotes/SendEmail",
+                { QuoteID: QuoteID, QuoteNo: quoteNo }, function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-send-email", data);
+                });
+            });
+        });
+
+        $(".quotes_view").on("click", function () {
+            var quoteId = $(this).attr("data-id");
+            $.get("/quotes/ViewDownloadForwardQuotation",
+                { quoteId: quoteId }, function (data) {
+                    $.pushHTML(data, function () {
+                        $.OSXModalInit("osx-ViewForwardDownload-quote", data);
+                    });
+                });
+        });
+
+        $(".getERPID").on("click", function (e) {
+            e.preventDefault();
+            var quoteId = $(this).attr("data-id");
+            // Get ERPID & Update Quotation
+            erpid = UpdateErpId(quoteId);
+
+            if (erpid.length <= 0) {
+                AlertDialog("No ERPID, please maintain customer's ERPID in Siebel.");
+            } else {
+                //轉order按鈕內參數(data-erpid)要寫入ERP ID
+                //$(this).parent('td').parent('tr').children('td').find('a.quotes_order').attr("data-erpid", erpid);
+                //siblings(平行元素)、parent(父階元素)、children(子階元素)
+                $(this).parent('td').siblings('td').find('a.quotes_order').attr("data-erpid", erpid);
+                //有ERP ID就隱藏button寫入資料
+                $(this).addClass('disableButton').parent('td').append(erpid);
+            };
+        });
+
+        //設定哪個teg按下enter後會觸發哪一個按鈕的click事件
+        EnterClick('QuoteNo', 'btn-submit');
+        EnterClick('Description', 'btn-submit');
+        EnterClick('AccountName', 'btn-submit');
+        EnterClick('ERPID', 'btn-submit');
+    }
+
+</script>
+

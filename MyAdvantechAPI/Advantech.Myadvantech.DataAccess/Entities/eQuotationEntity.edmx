@@ -1,0 +1,1393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Advantech.Myadvantech.DataAccess.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACN_EQ_PSM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sector" Type="nvarchar" MaxLength="50" />
+          <Property Name="PG" Type="nvarchar" MaxLength="500" />
+          <Property Name="ProductDivision" Type="nvarchar" MaxLength="500" />
+          <Property Name="PSM" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+        </EntityType>
+        <EntityType Name="ACN_EQ_Sales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sector" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdSBU" Type="nvarchar" MaxLength="100" />
+          <Property Name="SalesEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApproverEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+        </EntityType>
+        <EntityType Name="ACN_Executive">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sector" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+        </EntityType>
+        <EntityType Name="AJP_ConfiguratorTerms">
+          <Key>
+            <PropertyRef Name="QuoteID" />
+          </Key>
+          <Property Name="QuoteID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="HW_COMUSB" Type="nvarchar" MaxLength="500" />
+          <Property Name="HW_Storage" Type="nvarchar" MaxLength="500" />
+          <Property Name="HW_SATA" Type="nvarchar" MaxLength="500" />
+          <Property Name="HW_Disk_Division" Type="nvarchar" MaxLength="500" />
+          <Property Name="HW_Cable" Type="nvarchar" MaxLength="500" />
+          <Property Name="HW_BIOS" Type="nvarchar" MaxLength="500" />
+          <Property Name="HW_OS_License" Type="nvarchar" MaxLength="500" />
+          <Property Name="HW_OS_Activation" Type="nvarchar" MaxLength="500" />
+          <Property Name="HW_Others" Type="nvarchar" MaxLength="500" />
+          <Property Name="SW_OS_Installation" Type="nvarchar" MaxLength="500" />
+          <Property Name="SW_Username" Type="nvarchar" MaxLength="500" />
+          <Property Name="SW_OS_Timezone" Type="nvarchar" MaxLength="500" />
+          <Property Name="SW_OS_Input" Type="nvarchar" MaxLength="500" />
+          <Property Name="SW_IP_Settings" Type="nvarchar" MaxLength="500" />
+          <Property Name="SW_Settings" Type="nvarchar" MaxLength="500" />
+          <Property Name="SW_Others" Type="nvarchar" MaxLength="500" />
+          <Property Name="FINAL_HWSummary" Type="nvarchar" MaxLength="500" />
+          <Property Name="FINAL_SWSummary" Type="nvarchar" MaxLength="500" />
+          <Property Name="IFS_SOP" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="EmailGreeting">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Greeting" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EQPARTNER">
+          <Key>
+            <PropertyRef Name="QUOTEID" />
+            <PropertyRef Name="TYPE" />
+          </Key>
+          <Property Name="QUOTEID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ERPID" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="300" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="3000" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ATTENTION" Type="nvarchar" MaxLength="100" />
+          <Property Name="TEL" Type="nvarchar" MaxLength="100" />
+          <Property Name="MOBILE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZIPCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="50" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="50" />
+          <Property Name="STREET" Type="nvarchar" MaxLength="50" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="10" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="50" />
+          <Property Name="STREET2" Type="nvarchar" MaxLength="50" />
+          <Property Name="FAX" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eQuotationStaging.dbo.GPBLOCK_LOGIC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GPBLOCK_LOGIC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Office_code" Type="nvarchar" MaxLength="5" />
+          <Property Name="office_name" Type="nvarchar" MaxLength="10" />
+          <Property Name="group_code" Type="nvarchar" MaxLength="5" />
+          <Property Name="group_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="gp_level" Type="float" />
+          <Property Name="approver" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="int" />
+          <Property Name="Type" Type="varchar" MaxLength="20" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="optyQuote">
+          <Key>
+            <PropertyRef Name="quoteId" />
+          </Key>
+          <Property Name="optyId" Type="varchar" MaxLength="50" />
+          <Property Name="optyName" Type="nvarchar" MaxLength="600" />
+          <Property Name="quoteId" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="optyStage" Type="varchar" MaxLength="100" />
+          <Property Name="Opty_Owner_Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="processId" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Quotation_Approval_Expiration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuoteID" Type="varchar" MaxLength="50" />
+          <Property Name="Approver" Type="varchar" MaxLength="100" />
+          <Property Name="GPlever" Type="float" />
+          <Property Name="ApprovalLevel" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="MobileApproveYes" Type="varchar" MaxLength="50" />
+          <Property Name="MobileApproveNo" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovalDate" Type="date" />
+          <Property Name="ApprovalFrom" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApprovalFlowType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="QuotationDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="quoteId" Type="nvarchar" MaxLength="30" />
+          <Property Name="line_No" Type="int" />
+          <Property Name="partNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="qty" Type="int" />
+          <Property Name="listPrice" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="unitPrice" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="newUnitPrice" Type="decimal" Precision="14" Scale="4" />
+          <Property Name="itp" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="newItp" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="RecyclingFee" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="deliveryPlant" Type="nvarchar" MaxLength="10" />
+          <Property Name="category" Type="nvarchar" MaxLength="300" />
+          <Property Name="classABC" Type="nvarchar" MaxLength="10" />
+          <Property Name="rohs" Type="int" />
+          <Property Name="ewFlag" Type="int" />
+          <Property Name="reqDate" Type="date" />
+          <Property Name="dueDate" Type="date" />
+          <Property Name="satisfyFlag" Type="int" />
+          <Property Name="canBeConfirmed" Type="int" />
+          <Property Name="custMaterial" Type="nvarchar" MaxLength="100" />
+          <Property Name="inventory" Type="int" />
+          <Property Name="oType" Type="int" />
+          <Property Name="modelNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="sprNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="HigherLevel" Type="int" />
+          <Property Name="DMF_Flag" Type="nchar" MaxLength="10" />
+          <Property Name="ItemType" Type="int" />
+          <Property Name="VirtualPartNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="DELIVERYGROUP" Type="nvarchar" MaxLength="20" />
+          <Property Name="ShipPoint" Type="nvarchar" MaxLength="50" />
+          <Property Name="StorageLoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="RECFIGID" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisplayUnitPrice" Type="nvarchar" MaxLength="10" />
+          <Property Name="DisplayQty" Type="nvarchar" MaxLength="10" />
+          <Property Name="DisplayLineNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="SequenceNo" Type="int" />
+          <Property Name="NCNR" Type="int" />
+        </EntityType>
+        <EntityType Name="QuotationDetail_Extension_ABR">
+          <Key>
+            <PropertyRef Name="quoteid" />
+            <PropertyRef Name="line_No" />
+          </Key>
+          <Property Name="quoteid" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="line_No" Type="int" Nullable="false" />
+          <Property Name="BX13" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="BX23" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="BX41" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="BX72" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="BX82" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="PartNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="BX94" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="BX95" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="BX96" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="ICVA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="IPVA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="ISIC" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="ISTS" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="BCO1" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="BPI1" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="NCM" Type="nvarchar" MaxLength="20" />
+          <Property Name="FK00" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="BX10" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="BX40" Type="decimal" Precision="12" Scale="2" />
+        </EntityType>
+        <EntityType Name="QuotationExtension">
+          <Key>
+            <PropertyRef Name="QuoteID" />
+          </Key>
+          <Property Name="QuoteID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="EmailGreeting" Type="nvarchar(max)" />
+          <Property Name="SpecialTandC" Type="ntext" />
+          <Property Name="SignatureRowID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Engineer" Type="nvarchar" MaxLength="50" />
+          <Property Name="Engineer_Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuoteSource" Type="nvarchar" MaxLength="20" />
+          <Property Name="ExpressCompany" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsShowTotal" Type="bit" />
+          <Property Name="IsShowFreight" Type="bit" />
+          <Property Name="ApprovalFlowType" Type="int" />
+          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="AuditType" Type="int" />
+          <Property Name="Warranty" Type="nvarchar" MaxLength="50" />
+          <Property Name="ABRQuoteType" Type="nchar" MaxLength="4" />
+          <Property Name="JPCustomerOffice" Type="nvarchar" MaxLength="100" />
+          <Property Name="CopyPurpose" Type="int" />
+        </EntityType>
+        <EntityType Name="QuotationExtensionNew">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuoteID" Type="nvarchar" MaxLength="30" />
+          <Property Name="GeneralRate" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="FinishDate" Type="datetime" />
+          <Property Name="Warranty" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyTitle" Type="varchar" MaxLength="10" />
+          <Property Name="NewExpiredDate" Type="date" />
+          <Property Name="BelowGP" Type="bit" />
+        </EntityType>
+        <EntityType Name="QuotationMaster">
+          <Key>
+            <PropertyRef Name="quoteId" />
+          </Key>
+          <Property Name="quoteId" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="customId" Type="nvarchar" MaxLength="300" />
+          <Property Name="quoteToRowId" Type="nvarchar" MaxLength="30" />
+          <Property Name="quoteToErpId" Type="nvarchar" MaxLength="30" />
+          <Property Name="quoteToName" Type="nvarchar" MaxLength="300" />
+          <Property Name="office" Type="nvarchar" MaxLength="30" />
+          <Property Name="currency" Type="nvarchar" MaxLength="30" />
+          <Property Name="salesEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="salesRowId" Type="nvarchar" MaxLength="50" />
+          <Property Name="directPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="attentionRowId" Type="nvarchar" MaxLength="50" />
+          <Property Name="attentionEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="bankInfo" Type="nvarchar" MaxLength="1000" />
+          <Property Name="quoteDate" Type="datetime" />
+          <Property Name="deliveryDate" Type="date" />
+          <Property Name="expiredDate" Type="date" />
+          <Property Name="shipTerm" Type="nvarchar" MaxLength="50" />
+          <Property Name="paymentTerm" Type="nvarchar" MaxLength="50" />
+          <Property Name="freight" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="insurance" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="specialCharge" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="tax" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="quoteNote" Type="nvarchar" MaxLength="3000" />
+          <Property Name="relatedInfo" Type="nvarchar(max)" />
+          <Property Name="createdBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdDate" Type="date" />
+          <Property Name="preparedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="qstatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="isShowListPrice" Type="int" />
+          <Property Name="isShowDiscount" Type="int" />
+          <Property Name="isShowDueDate" Type="int" />
+          <Property Name="isLumpSumOnly" Type="int" />
+          <Property Name="isRepeatedOrder" Type="int" />
+          <Property Name="ogroup" Type="nvarchar" MaxLength="100" />
+          <Property Name="DelDateFlag" Type="int" />
+          <Property Name="org" Type="nvarchar" MaxLength="10" />
+          <Property Name="siebelRBU" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIST_CHAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIVISION" Type="nvarchar" MaxLength="100" />
+          <Property Name="SALESGROUP" Type="nvarchar" MaxLength="100" />
+          <Property Name="SALESOFFICE" Type="nvarchar" MaxLength="100" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="50" />
+          <Property Name="PO_NO" Type="nvarchar" MaxLength="100" />
+          <Property Name="CARE_ON" Type="nvarchar" MaxLength="100" />
+          <Property Name="isExempt" Type="int" />
+          <Property Name="INCO1" Type="nvarchar" MaxLength="10" />
+          <Property Name="INCO2" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRINTOUT_FORMAT" Type="int" />
+          <Property Name="OriginalQuoteID" Type="nvarchar" MaxLength="50" />
+          <Property Name="DocReg" Type="bigint" />
+          <Property Name="DocType" Type="int" />
+          <Property Name="reqDate" Type="date" />
+          <Property Name="DOCSTATUS" Type="int" />
+          <Property Name="Partial" Type="int" />
+          <Property Name="IS_EARLYSHIP" Type="int" />
+          <Property Name="DocRealType" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastUpdatedDate" Type="date" />
+          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="PODate" Type="date" />
+          <Property Name="KEYPERSON" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMPLOYEEID" Type="nvarchar" MaxLength="50" />
+          <Property Name="isVirPartOnly" Type="int" />
+          <Property Name="SHIPCUSTPONO" Type="nvarchar" MaxLength="100" />
+          <Property Name="TAXCLASS" Type="nvarchar" MaxLength="50" />
+          <Property Name="TAXDEPCITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="TAXDSTCITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="TRIANGULARINDICATOR" Type="nvarchar" MaxLength="100" />
+          <Property Name="quoteNo" Type="nvarchar" MaxLength="30" />
+          <Property Name="Revision_Number" Type="smallint" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="QuoteApproval">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QuoteID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Approver" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GPBrief" Type="nvarchar" MaxLength="100" />
+          <Property Name="LevelNum" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="IsSendSuccessfully" Type="int" />
+          <Property Name="MobileYes" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RejectedBy" Type="nvarchar" MaxLength="500" />
+          <Property Name="RejectedDate" Type="datetime" />
+          <Property Name="RejectReason" Type="nvarchar" MaxLength="500" />
+          <Property Name="ApprovedBy" Type="nvarchar" MaxLength="500" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="ApprovedReason" Type="nvarchar" MaxLength="500" />
+          <Property Name="Mailbody" Type="nvarchar(max)" />
+          <Property Name="WorkFlowID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="200" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="quoteSiebelQuote">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="quoteId" Type="varchar" MaxLength="50" />
+          <Property Name="siebelQuoteId" Type="varchar" MaxLength="50" />
+          <Property Name="processId" Type="varchar" MaxLength="50" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RegionSectorParameter">
+          <Key>
+            <PropertyRef Name="Region" />
+            <PropertyRef Name="Sector" />
+            <PropertyRef Name="SiteParameter" />
+          </Key>
+          <Property Name="Region" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sector" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SiteParameter" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ParaDesc" Type="nvarchar" MaxLength="200" />
+          <Property Name="ParaValue" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="SiebelActive">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActiveSource" Type="nvarchar" MaxLength="20" />
+          <Property Name="ActiveType" Type="nvarchar" MaxLength="20" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="QuoteID" Type="varchar" MaxLength="50" />
+          <Property Name="OrderID" Type="nvarchar" MaxLength="30" />
+          <Property Name="OptyID" Type="varchar" MaxLength="50" />
+          <Property Name="OptyName" Type="nvarchar" MaxLength="600" />
+          <Property Name="OptyStage" Type="varchar" MaxLength="50" />
+          <Property Name="OptyOwnerEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="FailedLog" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProcessID" Type="varchar" MaxLength="50" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="250" />
+          <Property Name="Greeting" Type="nvarchar(max)" />
+          <Property Name="SendToMails" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactRowId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="WSParameters" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="SiebelWSFailedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="quoteId" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="FunctionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Parameters" Type="nvarchar" MaxLength="200" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="ErrorMessage" Type="nvarchar(max)" />
+          <Property Name="InsertTime" Type="datetime" />
+          <Property Name="IsRecall" Type="bit" />
+          <Property Name="LastRecallTime" Type="datetime" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowApproval">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Approver" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApproverType" Type="nvarchar" MaxLength="100" />
+          <Property Name="LevelNum" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="IsSendSuccessfully" Type="int" />
+          <Property Name="MobileYes" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RejectedBy" Type="nvarchar" MaxLength="500" />
+          <Property Name="RejectedDate" Type="datetime" />
+          <Property Name="RejectReason" Type="nvarchar" MaxLength="500" />
+          <Property Name="ApprovedBy" Type="nvarchar" MaxLength="500" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="ApprovedReason" Type="nvarchar" MaxLength="500" />
+          <Property Name="Mailbody" Type="nvarchar(max)" />
+          <Property Name="WorkFlowID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="200" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="ViewGP" Type="int" />
+          <Property Name="FinalMailBody" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="AdvantechMyadvantechDataAccessStoreContainer">
+          <EntitySet Name="ACN_EQ_PSM" EntityType="Self.ACN_EQ_PSM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ACN_EQ_Sales" EntityType="Self.ACN_EQ_Sales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ACN_Executive" EntityType="Self.ACN_Executive" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AJP_ConfiguratorTerms" EntityType="Self.AJP_ConfiguratorTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmailGreeting" EntityType="Self.EmailGreeting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EQPARTNER" EntityType="Self.EQPARTNER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="optyQuote" EntityType="Self.optyQuote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quotation_Approval_Expiration" EntityType="Self.Quotation_Approval_Expiration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuotationDetail" EntityType="Self.QuotationDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuotationDetail_Extension_ABR" EntityType="Self.QuotationDetail_Extension_ABR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuotationExtension" EntityType="Self.QuotationExtension" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuotationExtensionNew" EntityType="Self.QuotationExtensionNew" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuotationMaster" EntityType="Self.QuotationMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuoteApproval" EntityType="Self.QuoteApproval" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="quoteSiebelQuote" EntityType="Self.quoteSiebelQuote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegionSectorParameter" EntityType="Self.RegionSectorParameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiebelActive" EntityType="Self.SiebelActive" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiebelWSFailedLog" EntityType="Self.SiebelWSFailedLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkFlowApproval" EntityType="Self.WorkFlowApproval" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GPBLOCK_LOGIC" EntityType="Self.GPBLOCK_LOGIC" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GPBLOCK_LOGIC].[Office_code] AS [Office_code], 
+    [GPBLOCK_LOGIC].[office_name] AS [office_name], 
+    [GPBLOCK_LOGIC].[group_code] AS [group_code], 
+    [GPBLOCK_LOGIC].[group_name] AS [group_name], 
+    [GPBLOCK_LOGIC].[gp_level] AS [gp_level], 
+    [GPBLOCK_LOGIC].[approver] AS [approver], 
+    [GPBLOCK_LOGIC].[Active] AS [Active], 
+    [GPBLOCK_LOGIC].[Type] AS [Type], 
+    [GPBLOCK_LOGIC].[id] AS [id]
+    FROM [dbo].[GPBLOCK_LOGIC] AS [GPBLOCK_LOGIC]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Advantech.Myadvantech.DataAccess" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GPBLOCK_LOGIC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Office_code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="office_name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="group_code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="group_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gp_level" Type="Double" />
+          <Property Name="approver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Int32" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityContainer Name="eQEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GPBLOCK_LOGIC" EntityType="Self.GPBLOCK_LOGIC" />
+          <EntitySet Name="QuotationMaster" EntityType="Advantech.Myadvantech.DataAccess.QuotationMaster" />
+          <EntitySet Name="Quotation_Approval_Expiration" EntityType="Advantech.Myadvantech.DataAccess.Quotation_Approval_Expiration" />
+          <EntitySet Name="QuotationExtension" EntityType="Advantech.Myadvantech.DataAccess.QuotationExtension" />
+          <EntitySet Name="EmailGreeting" EntityType="Advantech.Myadvantech.DataAccess.EmailGreeting" />
+          <EntitySet Name="optyQuote" EntityType="Advantech.Myadvantech.DataAccess.optyQuote" />
+          <EntitySet Name="quoteSiebelQuote" EntityType="Advantech.Myadvantech.DataAccess.quoteSiebelQuote" />
+          <EntitySet Name="SiebelWSFailedLog" EntityType="Advantech.Myadvantech.DataAccess.SiebelWSFailedLog" />
+          <EntitySet Name="SiebelActive" EntityType="Advantech.Myadvantech.DataAccess.SiebelActive" />
+          <EntitySet Name="QuoteApproval" EntityType="Advantech.Myadvantech.DataAccess.QuoteApproval" />
+          <EntitySet Name="AJP_ConfiguratorTerms" EntityType="Advantech.Myadvantech.DataAccess.AJP_ConfiguratorTerms" />
+          <EntitySet Name="EQPARTNER" EntityType="Advantech.Myadvantech.DataAccess.EQPARTNER" />
+          <EntitySet Name="ACN_EQ_PSM" EntityType="Advantech.Myadvantech.DataAccess.ACN_EQ_PSM" />
+          <EntitySet Name="ACN_EQ_Sales" EntityType="Advantech.Myadvantech.DataAccess.ACN_EQ_Sales" />
+          <EntitySet Name="RegionSectorParameter" EntityType="Advantech.Myadvantech.DataAccess.RegionSectorParameter" />
+          <EntitySet Name="QuotationDetail" EntityType="Advantech.Myadvantech.DataAccess.QuotationDetail" />
+          <EntitySet Name="ACN_Executive" EntityType="Advantech.Myadvantech.DataAccess.ACN_Executive" />
+          <EntitySet Name="WorkFlowApproval" EntityType="Advantech.Myadvantech.DataAccess.WorkFlowApproval" />
+          <EntitySet Name="QuotationExtensionNew" EntityType="Advantech.Myadvantech.DataAccess.QuotationExtensionNew" />
+          <EntitySet Name="QuotationDetail_Extension_ABR" EntityType="Advantech.Myadvantech.DataAccess.QuotationDetail_Extension_ABR" />
+        </EntityContainer>
+        <EntityType Name="QuotationMaster">
+          <Key>
+            <PropertyRef Name="quoteId" />
+          </Key>
+          <Property Name="quoteId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="customId" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="quoteToRowId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="quoteToErpId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="quoteToName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="office" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="currency" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="salesEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salesRowId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="directPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="attentionRowId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="attentionEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="bankInfo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="quoteDate" Type="DateTime" Precision="3" />
+          <Property Name="deliveryDate" Type="DateTime" Precision="0" />
+          <Property Name="expiredDate" Type="DateTime" Precision="0" />
+          <Property Name="shipTerm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="paymentTerm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="freight" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="insurance" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="specialCharge" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="tax" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="quoteNote" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="relatedInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createdBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="0" />
+          <Property Name="preparedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isShowListPrice" Type="Int32" />
+          <Property Name="isShowDiscount" Type="Int32" />
+          <Property Name="isShowDueDate" Type="Int32" />
+          <Property Name="isLumpSumOnly" Type="Int32" />
+          <Property Name="isRepeatedOrder" Type="Int32" />
+          <Property Name="ogroup" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DelDateFlag" Type="Int32" />
+          <Property Name="org" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="siebelRBU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIST_CHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIVISION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SALESGROUP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SALESOFFICE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DISTRICT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PO_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CARE_ON" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="isExempt" Type="Int32" />
+          <Property Name="INCO1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="INCO2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRINTOUT_FORMAT" Type="Int32" />
+          <Property Name="OriginalQuoteID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DocReg" Type="Int64" />
+          <Property Name="DocType" Type="Int32" />
+          <Property Name="reqDate" Type="DateTime" Precision="0" />
+          <Property Name="DOCSTATUS" Type="Int32" />
+          <Property Name="Partial" Type="Int32" />
+          <Property Name="IS_EARLYSHIP" Type="Int32" />
+          <Property Name="DocRealType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PODate" Type="DateTime" Precision="0" />
+          <Property Name="KEYPERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMPLOYEEID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isVirPartOnly" Type="Int32" />
+          <Property Name="SHIPCUSTPONO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TAXCLASS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TAXDEPCITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TAXDSTCITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TRIANGULARINDICATOR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="quoteNo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Revision_Number" Type="Int16" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Quotation_Approval_Expiration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuoteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Approver" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GPlever" Type="Double" />
+          <Property Name="ApprovalLevel" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="MobileApproveYes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MobileApproveNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovalDate" Type="DateTime" Precision="0" />
+          <Property Name="ApprovalFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovalFlowType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QuotationExtension">
+          <Key>
+            <PropertyRef Name="QuoteID" />
+          </Key>
+          <Property Name="QuoteID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EmailGreeting" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SpecialTandC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SignatureRowID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Engineer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Engineer_Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuoteSource" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ExpressCompany" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsShowTotal" Type="Boolean" />
+          <Property Name="IsShowFreight" Type="Boolean" />
+          <Property Name="ApprovalFlowType" Type="Int32" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+          <Property Name="AuditType" Type="Int32" />
+          <Property Name="Warranty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ABRQuoteType" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="JPCustomerOffice" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CopyPurpose" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmailGreeting">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Greeting" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="optyQuote">
+          <Key>
+            <PropertyRef Name="quoteId" />
+          </Key>
+          <Property Name="optyId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="optyName" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="quoteId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="optyStage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Opty_Owner_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="processId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="quoteSiebelQuote">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="quoteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="siebelQuoteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="processId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="SiebelWSFailedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="quoteId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FunctionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Parameters" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InsertTime" Type="DateTime" Precision="3" />
+          <Property Name="IsRecall" Type="Boolean" />
+          <Property Name="LastRecallTime" Type="DateTime" Precision="3" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="SiebelActive">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActiveSource" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ActiveType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="QuoteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="OptyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OptyName" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="OptyStage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OptyOwnerEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FailedLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Greeting" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SendToMails" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactRowId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="WSParameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QuoteApproval">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuoteID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Approver" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GPBrief" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LevelNum" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="IsSendSuccessfully" Type="Int32" />
+          <Property Name="MobileYes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RejectedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RejectedDate" Type="DateTime" Precision="3" />
+          <Property Name="RejectReason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedReason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Mailbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WorkFlowID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="AJP_ConfiguratorTerms">
+          <Key>
+            <PropertyRef Name="QuoteID" />
+          </Key>
+          <Property Name="QuoteID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="HW_COMUSB" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HW_Storage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HW_SATA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HW_Disk_Division" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HW_Cable" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HW_BIOS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HW_OS_License" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HW_OS_Activation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HW_Others" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SW_OS_Installation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SW_Username" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SW_OS_Timezone" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SW_OS_Input" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SW_IP_Settings" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SW_Settings" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SW_Others" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FINAL_HWSummary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FINAL_SWSummary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IFS_SOP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EQPARTNER">
+          <Key>
+            <PropertyRef Name="QUOTEID" />
+            <PropertyRef Name="TYPE" />
+          </Key>
+          <Property Name="QUOTEID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ERPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ATTENTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MOBILE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STREET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DISTRICT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STREET2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ACN_EQ_PSM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDivision" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PSM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ACN_EQ_Sales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdSBU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SalesEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApproverEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RegionSectorParameter">
+          <Key>
+            <PropertyRef Name="Region" />
+            <PropertyRef Name="Sector" />
+            <PropertyRef Name="SiteParameter" />
+          </Key>
+          <Property Name="Region" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sector" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SiteParameter" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParaDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ParaValue" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QuotationDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="quoteId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="line_No" Type="Int32" />
+          <Property Name="partNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="qty" Type="Int32" />
+          <Property Name="listPrice" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="unitPrice" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="newUnitPrice" Type="Decimal" Precision="14" Scale="4" />
+          <Property Name="itp" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="newItp" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="RecyclingFee" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="deliveryPlant" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="category" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="classABC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="rohs" Type="Int32" />
+          <Property Name="ewFlag" Type="Int32" />
+          <Property Name="reqDate" Type="DateTime" Precision="0" />
+          <Property Name="dueDate" Type="DateTime" Precision="0" />
+          <Property Name="satisfyFlag" Type="Int32" />
+          <Property Name="canBeConfirmed" Type="Int32" />
+          <Property Name="custMaterial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="inventory" Type="Int32" />
+          <Property Name="oType" Type="Int32" />
+          <Property Name="modelNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sprNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HigherLevel" Type="Int32" />
+          <Property Name="DMF_Flag" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ItemType" Type="Int32" />
+          <Property Name="VirtualPartNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DELIVERYGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ShipPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StorageLoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RECFIGID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayUnitPrice" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayQty" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayLineNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SequenceNo" Type="Int32" />
+          <Property Name="NCNR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ACN_Executive">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WorkFlowApproval">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Approver" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApproverType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LevelNum" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="IsSendSuccessfully" Type="Int32" />
+          <Property Name="MobileYes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RejectedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RejectedDate" Type="DateTime" Precision="3" />
+          <Property Name="RejectReason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedReason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Mailbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WorkFlowID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ViewGP" Type="Int32" />
+          <Property Name="FinalMailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QuotationExtensionNew">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuoteID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="GeneralRate" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="FinishDate" Type="DateTime" Precision="3" />
+          <Property Name="Warranty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyTitle" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NewExpiredDate" Type="DateTime" Precision="0" />
+          <Property Name="BelowGP" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="QuotationDetail_Extension_ABR">
+          <Key>
+            <PropertyRef Name="quoteid" />
+            <PropertyRef Name="line_No" />
+          </Key>
+          <Property Name="quoteid" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="line_No" Type="Int32" Nullable="false" />
+          <Property Name="BX13" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="BX23" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="BX41" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="BX72" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="BX82" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="PartNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BX94" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="BX95" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="BX96" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="ICVA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="IPVA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="ISIC" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="ISTS" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="BCO1" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="BPI1" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="NCM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FK00" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="BX40" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="BX10" Type="Decimal" Precision="12" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdvantechMyadvantechDataAccessStoreContainer" CdmEntityContainer="eQEntities">
+          <EntitySetMapping Name="GPBLOCK_LOGIC">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.GPBLOCK_LOGIC">
+              <MappingFragment StoreEntitySet="GPBLOCK_LOGIC">
+                <ScalarProperty Name="Office_code" ColumnName="Office_code" />
+                <ScalarProperty Name="office_name" ColumnName="office_name" />
+                <ScalarProperty Name="group_code" ColumnName="group_code" />
+                <ScalarProperty Name="group_name" ColumnName="group_name" />
+                <ScalarProperty Name="gp_level" ColumnName="gp_level" />
+                <ScalarProperty Name="approver" ColumnName="approver" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuotationMaster">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationMaster">
+              <MappingFragment StoreEntitySet="QuotationMaster">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Revision_Number" ColumnName="Revision_Number" />
+                <ScalarProperty Name="quoteNo" ColumnName="quoteNo" />
+                <ScalarProperty Name="TRIANGULARINDICATOR" ColumnName="TRIANGULARINDICATOR" />
+                <ScalarProperty Name="TAXDSTCITY" ColumnName="TAXDSTCITY" />
+                <ScalarProperty Name="TAXDEPCITY" ColumnName="TAXDEPCITY" />
+                <ScalarProperty Name="TAXCLASS" ColumnName="TAXCLASS" />
+                <ScalarProperty Name="SHIPCUSTPONO" ColumnName="SHIPCUSTPONO" />
+                <ScalarProperty Name="isVirPartOnly" ColumnName="isVirPartOnly" />
+                <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+                <ScalarProperty Name="KEYPERSON" ColumnName="KEYPERSON" />
+                <ScalarProperty Name="PODate" ColumnName="PODate" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="DocRealType" ColumnName="DocRealType" />
+                <ScalarProperty Name="IS_EARLYSHIP" ColumnName="IS_EARLYSHIP" />
+                <ScalarProperty Name="Partial" ColumnName="Partial" />
+                <ScalarProperty Name="DOCSTATUS" ColumnName="DOCSTATUS" />
+                <ScalarProperty Name="reqDate" ColumnName="reqDate" />
+                <ScalarProperty Name="DocType" ColumnName="DocType" />
+                <ScalarProperty Name="DocReg" ColumnName="DocReg" />
+                <ScalarProperty Name="OriginalQuoteID" ColumnName="OriginalQuoteID" />
+                <ScalarProperty Name="PRINTOUT_FORMAT" ColumnName="PRINTOUT_FORMAT" />
+                <ScalarProperty Name="INCO2" ColumnName="INCO2" />
+                <ScalarProperty Name="INCO1" ColumnName="INCO1" />
+                <ScalarProperty Name="isExempt" ColumnName="isExempt" />
+                <ScalarProperty Name="CARE_ON" ColumnName="CARE_ON" />
+                <ScalarProperty Name="PO_NO" ColumnName="PO_NO" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="SALESOFFICE" ColumnName="SALESOFFICE" />
+                <ScalarProperty Name="SALESGROUP" ColumnName="SALESGROUP" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="DIST_CHAN" ColumnName="DIST_CHAN" />
+                <ScalarProperty Name="siebelRBU" ColumnName="siebelRBU" />
+                <ScalarProperty Name="org" ColumnName="org" />
+                <ScalarProperty Name="DelDateFlag" ColumnName="DelDateFlag" />
+                <ScalarProperty Name="ogroup" ColumnName="ogroup" />
+                <ScalarProperty Name="isRepeatedOrder" ColumnName="isRepeatedOrder" />
+                <ScalarProperty Name="isLumpSumOnly" ColumnName="isLumpSumOnly" />
+                <ScalarProperty Name="isShowDueDate" ColumnName="isShowDueDate" />
+                <ScalarProperty Name="isShowDiscount" ColumnName="isShowDiscount" />
+                <ScalarProperty Name="isShowListPrice" ColumnName="isShowListPrice" />
+                <ScalarProperty Name="qstatus" ColumnName="qstatus" />
+                <ScalarProperty Name="preparedBy" ColumnName="preparedBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="relatedInfo" ColumnName="relatedInfo" />
+                <ScalarProperty Name="quoteNote" ColumnName="quoteNote" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="specialCharge" ColumnName="specialCharge" />
+                <ScalarProperty Name="insurance" ColumnName="insurance" />
+                <ScalarProperty Name="freight" ColumnName="freight" />
+                <ScalarProperty Name="paymentTerm" ColumnName="paymentTerm" />
+                <ScalarProperty Name="shipTerm" ColumnName="shipTerm" />
+                <ScalarProperty Name="expiredDate" ColumnName="expiredDate" />
+                <ScalarProperty Name="deliveryDate" ColumnName="deliveryDate" />
+                <ScalarProperty Name="quoteDate" ColumnName="quoteDate" />
+                <ScalarProperty Name="bankInfo" ColumnName="bankInfo" />
+                <ScalarProperty Name="attentionEmail" ColumnName="attentionEmail" />
+                <ScalarProperty Name="attentionRowId" ColumnName="attentionRowId" />
+                <ScalarProperty Name="directPhone" ColumnName="directPhone" />
+                <ScalarProperty Name="salesRowId" ColumnName="salesRowId" />
+                <ScalarProperty Name="salesEmail" ColumnName="salesEmail" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="office" ColumnName="office" />
+                <ScalarProperty Name="quoteToName" ColumnName="quoteToName" />
+                <ScalarProperty Name="quoteToErpId" ColumnName="quoteToErpId" />
+                <ScalarProperty Name="quoteToRowId" ColumnName="quoteToRowId" />
+                <ScalarProperty Name="customId" ColumnName="customId" />
+                <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quotation_Approval_Expiration">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.Quotation_Approval_Expiration">
+              <MappingFragment StoreEntitySet="Quotation_Approval_Expiration">
+                <ScalarProperty Name="ApprovalFlowType" ColumnName="ApprovalFlowType" />
+                <ScalarProperty Name="ApprovalFrom" ColumnName="ApprovalFrom" />
+                <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+                <ScalarProperty Name="MobileApproveNo" ColumnName="MobileApproveNo" />
+                <ScalarProperty Name="MobileApproveYes" ColumnName="MobileApproveYes" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ApprovalLevel" ColumnName="ApprovalLevel" />
+                <ScalarProperty Name="GPlever" ColumnName="GPlever" />
+                <ScalarProperty Name="Approver" ColumnName="Approver" />
+                <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuotationExtension">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationExtension">
+              <MappingFragment StoreEntitySet="QuotationExtension">
+                <ScalarProperty Name="CopyPurpose" ColumnName="CopyPurpose" />
+                <ScalarProperty Name="JPCustomerOffice" ColumnName="JPCustomerOffice" />
+                <ScalarProperty Name="ABRQuoteType" ColumnName="ABRQuoteType" />
+                <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+                <ScalarProperty Name="AuditType" ColumnName="AuditType" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="ApprovalFlowType" ColumnName="ApprovalFlowType" />
+                <ScalarProperty Name="IsShowFreight" ColumnName="IsShowFreight" />
+                <ScalarProperty Name="IsShowTotal" ColumnName="IsShowTotal" />
+                <ScalarProperty Name="ExpressCompany" ColumnName="ExpressCompany" />
+                <ScalarProperty Name="QuoteSource" ColumnName="QuoteSource" />
+                <ScalarProperty Name="Engineer_Telephone" ColumnName="Engineer_Telephone" />
+                <ScalarProperty Name="Engineer" ColumnName="Engineer" />
+                <ScalarProperty Name="SignatureRowID" ColumnName="SignatureRowID" />
+                <ScalarProperty Name="SpecialTandC" ColumnName="SpecialTandC" />
+                <ScalarProperty Name="EmailGreeting" ColumnName="EmailGreeting" />
+                <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailGreeting">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.EmailGreeting">
+              <MappingFragment StoreEntitySet="EmailGreeting">
+                <ScalarProperty Name="Greeting" ColumnName="Greeting" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="optyQuote">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.optyQuote">
+              <MappingFragment StoreEntitySet="optyQuote">
+                <ScalarProperty Name="processId" ColumnName="processId" />
+                <ScalarProperty Name="Opty_Owner_Email" ColumnName="Opty_Owner_Email" />
+                <ScalarProperty Name="optyStage" ColumnName="optyStage" />
+                <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+                <ScalarProperty Name="optyName" ColumnName="optyName" />
+                <ScalarProperty Name="optyId" ColumnName="optyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="quoteSiebelQuote">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.quoteSiebelQuote">
+              <MappingFragment StoreEntitySet="quoteSiebelQuote">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="processId" ColumnName="processId" />
+                <ScalarProperty Name="siebelQuoteId" ColumnName="siebelQuoteId" />
+                <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiebelWSFailedLog">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.SiebelWSFailedLog">
+              <MappingFragment StoreEntitySet="SiebelWSFailedLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LastRecallTime" ColumnName="LastRecallTime" />
+                <ScalarProperty Name="IsRecall" ColumnName="IsRecall" />
+                <ScalarProperty Name="InsertTime" ColumnName="InsertTime" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+                <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiebelActive">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.SiebelActive">
+              <MappingFragment StoreEntitySet="SiebelActive">
+                <ScalarProperty Name="WSParameters" ColumnName="WSParameters" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ContactRowId" ColumnName="ContactRowId" />
+                <ScalarProperty Name="SendToMails" ColumnName="SendToMails" />
+                <ScalarProperty Name="Greeting" ColumnName="Greeting" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="FailedLog" ColumnName="FailedLog" />
+                <ScalarProperty Name="OptyOwnerEmail" ColumnName="OptyOwnerEmail" />
+                <ScalarProperty Name="OptyStage" ColumnName="OptyStage" />
+                <ScalarProperty Name="OptyName" ColumnName="OptyName" />
+                <ScalarProperty Name="OptyID" ColumnName="OptyID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ActiveType" ColumnName="ActiveType" />
+                <ScalarProperty Name="ActiveSource" ColumnName="ActiveSource" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuoteApproval">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuoteApproval">
+              <MappingFragment StoreEntitySet="QuoteApproval">
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="WorkFlowID" ColumnName="WorkFlowID" />
+                <ScalarProperty Name="Mailbody" ColumnName="Mailbody" />
+                <ScalarProperty Name="ApprovedReason" ColumnName="ApprovedReason" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="RejectReason" ColumnName="RejectReason" />
+                <ScalarProperty Name="RejectedDate" ColumnName="RejectedDate" />
+                <ScalarProperty Name="RejectedBy" ColumnName="RejectedBy" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="MobileYes" ColumnName="MobileYes" />
+                <ScalarProperty Name="IsSendSuccessfully" ColumnName="IsSendSuccessfully" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LevelNum" ColumnName="LevelNum" />
+                <ScalarProperty Name="GPBrief" ColumnName="GPBrief" />
+                <ScalarProperty Name="Approver" ColumnName="Approver" />
+                <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AJP_ConfiguratorTerms">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.AJP_ConfiguratorTerms">
+              <MappingFragment StoreEntitySet="AJP_ConfiguratorTerms">
+                <ScalarProperty Name="IFS_SOP" ColumnName="IFS_SOP" />
+                <ScalarProperty Name="FINAL_SWSummary" ColumnName="FINAL_SWSummary" />
+                <ScalarProperty Name="FINAL_HWSummary" ColumnName="FINAL_HWSummary" />
+                <ScalarProperty Name="SW_Others" ColumnName="SW_Others" />
+                <ScalarProperty Name="SW_Settings" ColumnName="SW_Settings" />
+                <ScalarProperty Name="SW_IP_Settings" ColumnName="SW_IP_Settings" />
+                <ScalarProperty Name="SW_OS_Input" ColumnName="SW_OS_Input" />
+                <ScalarProperty Name="SW_OS_Timezone" ColumnName="SW_OS_Timezone" />
+                <ScalarProperty Name="SW_Username" ColumnName="SW_Username" />
+                <ScalarProperty Name="SW_OS_Installation" ColumnName="SW_OS_Installation" />
+                <ScalarProperty Name="HW_Others" ColumnName="HW_Others" />
+                <ScalarProperty Name="HW_OS_Activation" ColumnName="HW_OS_Activation" />
+                <ScalarProperty Name="HW_OS_License" ColumnName="HW_OS_License" />
+                <ScalarProperty Name="HW_BIOS" ColumnName="HW_BIOS" />
+                <ScalarProperty Name="HW_Cable" ColumnName="HW_Cable" />
+                <ScalarProperty Name="HW_Disk_Division" ColumnName="HW_Disk_Division" />
+                <ScalarProperty Name="HW_SATA" ColumnName="HW_SATA" />
+                <ScalarProperty Name="HW_Storage" ColumnName="HW_Storage" />
+                <ScalarProperty Name="HW_COMUSB" ColumnName="HW_COMUSB" />
+                <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EQPARTNER">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.EQPARTNER">
+              <MappingFragment StoreEntitySet="EQPARTNER">
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="STREET2" ColumnName="STREET2" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="ATTENTION" ColumnName="ATTENTION" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ERPID" ColumnName="ERPID" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="QUOTEID" ColumnName="QUOTEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACN_EQ_PSM">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.ACN_EQ_PSM">
+              <MappingFragment StoreEntitySet="ACN_EQ_PSM">
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="PSM" ColumnName="PSM" />
+                <ScalarProperty Name="ProductDivision" ColumnName="ProductDivision" />
+                <ScalarProperty Name="PG" ColumnName="PG" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACN_EQ_Sales">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.ACN_EQ_Sales">
+              <MappingFragment StoreEntitySet="ACN_EQ_Sales">
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="ApproverEmail" ColumnName="ApproverEmail" />
+                <ScalarProperty Name="SalesEmail" ColumnName="SalesEmail" />
+                <ScalarProperty Name="IdSBU" ColumnName="IdSBU" />
+                <ScalarProperty Name="SalesCode" ColumnName="SalesCode" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegionSectorParameter">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.RegionSectorParameter">
+              <MappingFragment StoreEntitySet="RegionSectorParameter">
+                <ScalarProperty Name="ParaValue" ColumnName="ParaValue" />
+                <ScalarProperty Name="ParaDesc" ColumnName="ParaDesc" />
+                <ScalarProperty Name="SiteParameter" ColumnName="SiteParameter" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuotationDetail">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationDetail">
+              <MappingFragment StoreEntitySet="QuotationDetail">
+                <ScalarProperty Name="NCNR" ColumnName="NCNR" />
+                <ScalarProperty Name="SequenceNo" ColumnName="SequenceNo" />
+                <ScalarProperty Name="DisplayLineNo" ColumnName="DisplayLineNo" />
+                <ScalarProperty Name="DisplayQty" ColumnName="DisplayQty" />
+                <ScalarProperty Name="DisplayUnitPrice" ColumnName="DisplayUnitPrice" />
+                <ScalarProperty Name="RECFIGID" ColumnName="RECFIGID" />
+                <ScalarProperty Name="StorageLoc" ColumnName="StorageLoc" />
+                <ScalarProperty Name="ShipPoint" ColumnName="ShipPoint" />
+                <ScalarProperty Name="DELIVERYGROUP" ColumnName="DELIVERYGROUP" />
+                <ScalarProperty Name="VirtualPartNo" ColumnName="VirtualPartNo" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="DMF_Flag" ColumnName="DMF_Flag" />
+                <ScalarProperty Name="HigherLevel" ColumnName="HigherLevel" />
+                <ScalarProperty Name="sprNo" ColumnName="sprNo" />
+                <ScalarProperty Name="modelNo" ColumnName="modelNo" />
+                <ScalarProperty Name="oType" ColumnName="oType" />
+                <ScalarProperty Name="inventory" ColumnName="inventory" />
+                <ScalarProperty Name="custMaterial" ColumnName="custMaterial" />
+                <ScalarProperty Name="canBeConfirmed" ColumnName="canBeConfirmed" />
+                <ScalarProperty Name="satisfyFlag" ColumnName="satisfyFlag" />
+                <ScalarProperty Name="dueDate" ColumnName="dueDate" />
+                <ScalarProperty Name="reqDate" ColumnName="reqDate" />
+                <ScalarProperty Name="ewFlag" ColumnName="ewFlag" />
+                <ScalarProperty Name="rohs" ColumnName="rohs" />
+                <ScalarProperty Name="classABC" ColumnName="classABC" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="deliveryPlant" ColumnName="deliveryPlant" />
+                <ScalarProperty Name="RecyclingFee" ColumnName="RecyclingFee" />
+                <ScalarProperty Name="newItp" ColumnName="newItp" />
+                <ScalarProperty Name="itp" ColumnName="itp" />
+                <ScalarProperty Name="newUnitPrice" ColumnName="newUnitPrice" />
+                <ScalarProperty Name="unitPrice" ColumnName="unitPrice" />
+                <ScalarProperty Name="listPrice" ColumnName="listPrice" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="partNo" ColumnName="partNo" />
+                <ScalarProperty Name="line_No" ColumnName="line_No" />
+                <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACN_Executive">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.ACN_Executive">
+              <MappingFragment StoreEntitySet="ACN_Executive">
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkFlowApproval">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.WorkFlowApproval">
+              <MappingFragment StoreEntitySet="WorkFlowApproval">
+                <ScalarProperty Name="FinalMailBody" ColumnName="FinalMailBody" />
+                <ScalarProperty Name="ViewGP" ColumnName="ViewGP" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="WorkFlowID" ColumnName="WorkFlowID" />
+                <ScalarProperty Name="Mailbody" ColumnName="Mailbody" />
+                <ScalarProperty Name="ApprovedReason" ColumnName="ApprovedReason" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="RejectReason" ColumnName="RejectReason" />
+                <ScalarProperty Name="RejectedDate" ColumnName="RejectedDate" />
+                <ScalarProperty Name="RejectedBy" ColumnName="RejectedBy" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="MobileYes" ColumnName="MobileYes" />
+                <ScalarProperty Name="IsSendSuccessfully" ColumnName="IsSendSuccessfully" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LevelNum" ColumnName="LevelNum" />
+                <ScalarProperty Name="ApproverType" ColumnName="ApproverType" />
+                <ScalarProperty Name="Approver" ColumnName="Approver" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuotationExtensionNew">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationExtensionNew">
+              <MappingFragment StoreEntitySet="QuotationExtensionNew">
+                <ScalarProperty Name="BelowGP" ColumnName="BelowGP" />
+                <ScalarProperty Name="NewExpiredDate" ColumnName="NewExpiredDate" />
+                <ScalarProperty Name="CompanyTitle" ColumnName="CompanyTitle" />
+                <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="GeneralRate" ColumnName="GeneralRate" />
+                <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuotationDetail_Extension_ABR">
+            <EntityTypeMapping TypeName="Advantech.Myadvantech.DataAccess.QuotationDetail_Extension_ABR">
+              <MappingFragment StoreEntitySet="QuotationDetail_Extension_ABR">
+                <ScalarProperty Name="BX10" ColumnName="BX10" />
+                <ScalarProperty Name="BX40" ColumnName="BX40" />
+                <ScalarProperty Name="FK00" ColumnName="FK00" />
+                <ScalarProperty Name="NCM" ColumnName="NCM" />
+                <ScalarProperty Name="BPI1" ColumnName="BPI1" />
+                <ScalarProperty Name="BCO1" ColumnName="BCO1" />
+                <ScalarProperty Name="ISTS" ColumnName="ISTS" />
+                <ScalarProperty Name="ISIC" ColumnName="ISIC" />
+                <ScalarProperty Name="IPVA" ColumnName="IPVA" />
+                <ScalarProperty Name="ICVA" ColumnName="ICVA" />
+                <ScalarProperty Name="BX96" ColumnName="BX96" />
+                <ScalarProperty Name="BX95" ColumnName="BX95" />
+                <ScalarProperty Name="BX94" ColumnName="BX94" />
+                <ScalarProperty Name="PartNo" ColumnName="PartNo" />
+                <ScalarProperty Name="BX82" ColumnName="BX82" />
+                <ScalarProperty Name="BX72" ColumnName="BX72" />
+                <ScalarProperty Name="BX41" ColumnName="BX41" />
+                <ScalarProperty Name="BX23" ColumnName="BX23" />
+                <ScalarProperty Name="BX13" ColumnName="BX13" />
+                <ScalarProperty Name="line_No" ColumnName="line_No" />
+                <ScalarProperty Name="quoteid" ColumnName="quoteid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,76 @@
+﻿@model eQuotation.ViewModels.QuoteApprovalViewModel
+<div class="quoteApproverListV2">
+    <div class="panel panel-default">
+        @if (!string.IsNullOrEmpty(Model.ApprovalReason))
+        {
+            <div class="stylenormal" style="text-align: left; color: #FF0000; margin-left:5px;">
+                <b>Approval Reason :</b> @Model.ApprovalReason
+            </div>
+            <br />
+        }
+        @if (Model.QuoteApprovalList !=null && Model.QuoteApprovalList.Count() > 0)
+        {
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                Quotation @Model.QuoteNo approval process:
+            </div>
+
+            <!-- Table -->
+            <table class="quoteapprover_table">
+                <tr>
+                    <td class="column-name" width="70px;">Level</td>
+                    <td class="column-name" width="220px;">Approver</td>
+                    <td class="column-name">Status</td>
+                    <td class="column-name">Comments</td>
+                </tr>
+                @for(int i = 0; i < Model.QuoteApprovalList.ToList().Count; i++)  
+                {
+                    <tr class="row-data"  data-value='@Model.QuoteApprovalList[i].UID'>
+                        <td width="70px;">
+                            @Model.QuoteApprovalList[i].LevelNum.ToString("0.0")
+                        </td>
+                        <td>@Html.DisplayFor(m=> Model.QuoteApprovalList[i].Approver)</td>
+                        @if (Model.QuoteApprovalList[i].Status == 1)
+                        {
+                            var reason = String.IsNullOrEmpty(Model.QuoteApprovalList[i].ApprovedReason) || (Model.QuoteApprovalList[i].ApprovedReason != null && Model.QuoteApprovalList[i].ApprovedReason.Contains("MobileApprove")) ? "" : Model.QuoteApprovalList[i].ApprovedReason;
+                            <td>Agree</td>
+                            if (Model.ApprovedCommentIsViewable)
+                            {
+                                <td>@reason</td>
+                            }
+                        }
+                        else if (Model.QuoteApprovalList[i].Status == -1)
+                        {
+                            var reason = String.IsNullOrEmpty(Model.QuoteApprovalList[i].RejectReason) || (Model.QuoteApprovalList[i].RejectReason != null && Model.QuoteApprovalList[i].RejectReason.Contains("MobileApprove")) ? "" : Model.QuoteApprovalList[i].RejectReason;
+                            <td style="color: #FF0000;">Reject</td>
+                            <td>@reason</td>
+                        }
+                        else
+                        {
+                            <td>Waiting for approval</td>
+                        }
+                        @Html.HiddenFor(m => @Model.QuoteApprovalList[i].UID)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].TypeID)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].LevelNum)
+                        @Html.HiddenFor(m => @Model.QuoteApprovalList[i].Approver)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].ApproverType)
+                        @Html.HiddenFor(m => @Model.QuoteApprovalList[i].CreatedDate)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].LastUpdatedDate)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].MobileNo)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].MobileYes)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].Status)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].Type)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].Url)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].ViewGP)
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <div class="panel-heading">@Model.QuoteNo no need for approval</div>
+        }
+    </div>
+
+
+</div>

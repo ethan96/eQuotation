@@ -1,0 +1,40 @@
+﻿@model eQuotation.Models.Home.ManageUserViewModel
+
+@if(Model != null)
+{
+    using (Ajax.BeginForm("Manage", "Home", null,
+        new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            OnBegin = "onChangePwdBegin",
+            OnSuccess = "onChangePwdSuccess"
+        }))
+    {
+        @Html.AntiForgeryToken()
+        <div><h4>Change Password</h4></div>
+        <div class="changepwd">
+            <div>Old Password:</div>
+            <div>@Html.TextBoxFor(mdl => mdl.OldPassword, new { @type = "password" })</div>
+            <div>New Password:</div>
+            <div>@Html.TextBoxFor(mdl => mdl.NewPassword, new { @type = "password" })</div> 
+            <div>Confirm New Password:</div>
+            <div>@Html.TextBoxFor(mdl => mdl.ConfirmPassword, new { @type = "password" })</div>
+        </div>
+        <div>
+            <button type="submit" class="button icon approve">Confirm</button>
+        </div>
+    }
+}
+
+<script type="text/javascript">
+
+    function onChangePwdBegin() { $.blockUI(); }
+
+    function onChangePwdSuccess(data) {
+        $.pushHTML(data, function () {
+            window.location.reload();
+        });
+        $.unblockUI();
+    }
+
+</script>

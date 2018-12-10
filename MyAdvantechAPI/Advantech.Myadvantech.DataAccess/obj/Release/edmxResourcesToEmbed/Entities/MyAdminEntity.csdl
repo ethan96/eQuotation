@@ -1,0 +1,775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyAdminModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="MyAdminEntity" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="SA_BAPIADDR1" EntityType="MyAdminModel.SA_BAPIADDR1" />
+    <EntitySet Name="SA_BAPIADDR2" EntityType="MyAdminModel.SA_BAPIADDR2" />
+    <EntitySet Name="SA_FKNBK" EntityType="MyAdminModel.SA_FKNBK" />
+    <EntitySet Name="SA_FKNVI" EntityType="MyAdminModel.SA_FKNVI" />
+    <EntitySet Name="SA_KNA1" EntityType="MyAdminModel.SA_KNA1" />
+    <EntitySet Name="SA_KNB1" EntityType="MyAdminModel.SA_KNB1" />
+    <EntitySet Name="SA_KNVV" EntityType="MyAdminModel.SA_KNVV" />
+    <EntitySet Name="SA_Files" EntityType="MyAdminModel.SA_Files" />
+    <EntitySet Name="SA_Proposal" EntityType="MyAdminModel.SA_Proposal" />
+    <EntitySet Name="SA_APPLICATION" EntityType="MyAdminModel.SA_APPLICATION" />
+    <EntitySet Name="SA_APPLICATION2COMPANY" EntityType="MyAdminModel.SA_APPLICATION2COMPANY" />
+    <AssociationSet Name="FK_SA_APPLICATION2COMPANY_SA_APPLICATION" Association="MyAdminModel.FK_SA_APPLICATION2COMPANY_SA_APPLICATION">
+      <End Role="SA_APPLICATION" EntitySet="SA_APPLICATION" />
+      <End Role="SA_APPLICATION2COMPANY" EntitySet="SA_APPLICATION2COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SA_BAPIADDR1_SA_APPLICATION" Association="MyAdminModel.FK_SA_BAPIADDR1_SA_APPLICATION">
+      <End Role="SA_APPLICATION2COMPANY" EntitySet="SA_APPLICATION2COMPANY" />
+      <End Role="SA_BAPIADDR1" EntitySet="SA_BAPIADDR1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SA_BAPIADDR2_SA_APPLICATION" Association="MyAdminModel.FK_SA_BAPIADDR2_SA_APPLICATION">
+      <End Role="SA_APPLICATION2COMPANY" EntitySet="SA_APPLICATION2COMPANY" />
+      <End Role="SA_BAPIADDR2" EntitySet="SA_BAPIADDR2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SA_FKNBK_SA_APPLICATION" Association="MyAdminModel.FK_SA_FKNBK_SA_APPLICATION">
+      <End Role="SA_APPLICATION2COMPANY" EntitySet="SA_APPLICATION2COMPANY" />
+      <End Role="SA_FKNBK" EntitySet="SA_FKNBK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SA_FKNVI_SA_APPLICATION" Association="MyAdminModel.FK_SA_FKNVI_SA_APPLICATION">
+      <End Role="SA_APPLICATION2COMPANY" EntitySet="SA_APPLICATION2COMPANY" />
+      <End Role="SA_FKNVI" EntitySet="SA_FKNVI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SA_KNA1_SA_APPLICATION" Association="MyAdminModel.FK_SA_KNA1_SA_APPLICATION">
+      <End Role="SA_APPLICATION2COMPANY" EntitySet="SA_APPLICATION2COMPANY" />
+      <End Role="SA_KNA1" EntitySet="SA_KNA1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SA_KNB1_SA_APPLICATION" Association="MyAdminModel.FK_SA_KNB1_SA_APPLICATION">
+      <End Role="SA_APPLICATION2COMPANY" EntitySet="SA_APPLICATION2COMPANY" />
+      <End Role="SA_KNB1" EntitySet="SA_KNB1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SA_KNVV_SA_APPLICATION" Association="MyAdminModel.FK_SA_KNVV_SA_APPLICATION">
+      <End Role="SA_APPLICATION2COMPANY" EntitySet="SA_APPLICATION2COMPANY" />
+      <End Role="SA_KNVV" EntitySet="SA_KNVV" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SA_BAPIADDR1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="HeadID" Type="Int32" Nullable="false" />
+    <Property Name="Addr_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Adr_Notes" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Build_Long" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Building" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="C_O_Name" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Chckstatus" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="City_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Comm_Type" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Countryiso" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="County" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="County_Code" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Deli_Serv_Number" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Deli_Serv_Type" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Deliv_Dis" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Distrct_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="District" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dont_Use_P" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dont_Use_S" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="E_Mail" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fax_Extens" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fax_Number" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Floor" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Formofaddr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Home_City" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Homecityno" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Homepage" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="House_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="House_No2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="House_No3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Langu" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Langu_Cr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Langu_Iso" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Langucriso" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Location" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Name_2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Name_3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Name_4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pboxcit_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pcode1_Ext" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pcode2_Ext" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pcode3_Ext" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Box" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Box_Cit" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Box_Lobby" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Box_Reg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Ctryiso" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_W_O_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pobox_Ctry" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Postl_Cod1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Postl_Cod2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Postl_Cod3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Regiogroup" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Region" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Room_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Sort1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Sort2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Str_Abbr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Str_Suppl1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Str_Suppl2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Str_Suppl3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Street" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Street_Lng" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Street_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Taxjurcode" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Tel1_Ext" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Tel1_Numbr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Time_Zone" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Title" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Township" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Township_Code" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Transpzone" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Uri_Type" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SA_APPLICATION2COMPANY" Relationship="MyAdminModel.FK_SA_BAPIADDR1_SA_APPLICATION" FromRole="SA_BAPIADDR1" ToRole="SA_APPLICATION2COMPANY" />
+  </EntityType>
+  <EntityType Name="SA_BAPIADDR2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="HeadID" Type="Int32" Nullable="false" />
+    <Property Name="Addr_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Adr_Notes" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Birth_Name" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Build_Long" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Building" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="C_O_Name" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Chckstatus" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="City_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Comm_Type" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Countryiso" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="County" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="County_Code" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Deli_Serv_Number" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Deli_Serv_Type" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Deliv_Dis" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Distrct_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="District" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dont_Use_P" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dont_Use_S" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="E_Mail" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fax_Extens" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fax_Number" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Firstname" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Floor" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fullname" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fullname_X" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Home_City" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Homecityno" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Homepage" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="House_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="House_No2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="House_No3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Initials" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Langu_Cr_P" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Langu_P" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Langucpiso" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Langup_Iso" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Lastname" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Location" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Middlename" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Namcountry" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Nameformat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Nickname" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pboxcit_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pcode1_Ext" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pcode2_Ext" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pers_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Box" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Box_Cit" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Box_Lobby" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Box_Reg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_Ctryiso" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Po_W_O_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pobox_Ctry" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Postl_Cod1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Postl_Cod2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prefix1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prefix2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Regiogroup" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Region" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Room_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Secondname" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Sort1_P" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Sort2_P" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Str_Abbr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Str_Suppl1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Str_Suppl2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Str_Suppl3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Street" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Street_No" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Taxjurcode" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Tel1_Ext" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Tel1_Numbr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Time_Zone" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Title_Aca1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Title_Aca2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Title_P" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Title_Sppl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Township" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Township_Code" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Transpzone" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Uri_Type" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SA_APPLICATION2COMPANY" Relationship="MyAdminModel.FK_SA_BAPIADDR2_SA_APPLICATION" FromRole="SA_BAPIADDR2" ToRole="SA_APPLICATION2COMPANY" />
+  </EntityType>
+  <EntityType Name="SA_FKNBK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="HeadID" Type="Int32" Nullable="false" />
+    <Property Name="Bankl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bankn" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Banks" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bkont" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bkref" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bvtyp" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ebpp_Accname" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ebpp_Bvstatus" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kobis" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Koinh" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kovon" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kunnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mandt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xezer" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SA_APPLICATION2COMPANY" Relationship="MyAdminModel.FK_SA_FKNBK_SA_APPLICATION" FromRole="SA_FKNBK" ToRole="SA_APPLICATION2COMPANY" />
+  </EntityType>
+  <EntityType Name="SA_FKNVI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="HeadID" Type="Int32" Nullable="false" />
+    <Property Name="Aland" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kunnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mandt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Tatyp" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Taxkd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SA_APPLICATION2COMPANY" Relationship="MyAdminModel.FK_SA_FKNVI_SA_APPLICATION" FromRole="SA_FKNVI" ToRole="SA_APPLICATION2COMPANY" />
+  </EntityType>
+  <EntityType Name="SA_KNA1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="HeadID" Type="Int32" Nullable="false" />
+    <Property Name="Abrvw" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Adrnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Alc" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Anred" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Aufsd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bahne" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bahns" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bbbnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bbsnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Begru" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bran1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bran2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bran3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bran4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bran5" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Brsch" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bubkz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Cassd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ccc01" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ccc02" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ccc03" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ccc04" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Cfopc" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Cityc" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Civve" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Confs" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Counc" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Datlt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dear1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dear2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dear3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dear4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dear5" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dear6" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dtams" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Dtaws" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Duefl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ekont" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Erdat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ernam" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Etikg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Exabl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Faksd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fiskn" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fityp" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Gform" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Hzuor" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Inspatdebi" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Inspbydebi" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="J_1kfrepre" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="J_1kftbus" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="J_1kftind" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Jmjah" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Jmzah" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr10" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr5" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr6" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr7" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr8" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Katr9" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kdkg1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kdkg2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kdkg3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kdkg4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kdkg5" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Knazk" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Knrza" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Knurl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Konzs" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ktocd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ktokd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kukla" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kunnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Land1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Lifnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Lifsd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Locco" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Loevm" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Lzone" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mandt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mcod1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mcod2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mcod3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Milve" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Name1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Name2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Name3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Name4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Niels" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Nodel" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ort01" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ort02" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Periv" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pfach" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pfort" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pmt_Office" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psofg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psohs" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psois" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pson1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pson2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pson3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psoo1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psoo2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psoo3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psoo4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psoo5" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psost" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psotl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Psovn" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pstl2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pstlz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Regio" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Rpmkr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Sortl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Sperr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Sperz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Spras" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stcd1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stcd2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stcd3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stcd4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stcd5" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stcdt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stceg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stkza" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stkzn" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stkzu" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Stras" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Telbx" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Telf1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Telf2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Telfx" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Teltx" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Telx1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Txjcd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Txlw1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Txlw2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Umjah" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Umsa1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Umsat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Updat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Uptim" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Uwaer" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vbund" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_Dpoint" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_I_No_Lyr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_Load_Pref" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_Matpal" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_One_Mat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_One_Sort" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_Pal_Ul" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_Palhgt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_Pk_Mat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vso_R_Uld_Side" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Werks" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xcpdk" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xicms" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xknza" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xsubt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xxipi" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xzemp" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SA_APPLICATION2COMPANY" Relationship="MyAdminModel.FK_SA_KNA1_SA_APPLICATION" FromRole="SA_KNA1" ToRole="SA_APPLICATION2COMPANY" />
+  </EntityType>
+  <EntityType Name="SA_KNB1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="HeadID" Type="Int32" Nullable="false" />
+    <Property Name="Ad_Hash" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Akont" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Altkn" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Avsnd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Begru" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Blnkz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bukrs" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Busab" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Cession_Kz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Confs" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Datlz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Eikto" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ekvbd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Erdat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ernam" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fdgrv" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Frgrp" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Gmvkzd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Gricd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Gridt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Guzte" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Hbkid" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Intad" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Knrzb" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Knrze" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kultg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kunnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kverm" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Lockb" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Loevm" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mandt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mgrup" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Nodel" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Perkz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pernr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Qland" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Remit" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Sperr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Sregl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Tlfns" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Tlfxs" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Togru" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Updat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Uptim" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Urlid" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Uzawe" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Verdt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vlibb" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vrbkz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vrsdg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vrsnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vrspr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vrszl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vzskz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Wakon" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Wbrsl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Webtr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xausz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xdezv" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xedip" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xknzb" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xpore" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xverr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Xzver" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zahls" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zamib" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zamim" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zamio" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zamir" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zamiv" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zgrup" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zindt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zinrt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zsabe" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zterm" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zuawa" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zwels" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SA_APPLICATION2COMPANY" Relationship="MyAdminModel.FK_SA_KNB1_SA_APPLICATION" FromRole="SA_KNB1" ToRole="SA_APPLICATION2COMPANY" />
+  </EntityType>
+  <EntityType Name="SA_KNVV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="HeadID" Type="Int32" />
+    <Property Name="Agrel" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Antlf" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Aufsd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Autlf" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Awahr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Begru" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bev1_Emlgforts" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bev1_Emlgpfand" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Blind" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Boidt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bokre" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Bzirk" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Carrier_Notif" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Cassd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Chspl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Eikto" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Erdat" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ernam" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Faksd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Inco1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Inco2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kabss" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kalks" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kdgrp" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kkber" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Klabc" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Konda" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Ktgrd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kunnr" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kurst" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kvakz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kvawt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kvgr1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kvgr2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kvgr3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kvgr4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kvgr5" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kzazu" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Kztlf" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Lifsd" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Loevm" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Lprio" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mandt" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Megru" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Mrnkz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Perfk" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Perrl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pltyp" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Podkz" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Podtg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prat1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prat2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prat3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prat4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prat5" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prat6" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prat7" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prat8" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prat9" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prata" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Prfre" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Pvksm" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Rdoff" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Spart" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Uebtk" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Uebto" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Untto" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Versg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vkbur" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vkgrp" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vkorg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vsbed" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vsort" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vtweg" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Vwerk" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Waers" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Zterm" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SA_APPLICATION2COMPANY" Relationship="MyAdminModel.FK_SA_KNVV_SA_APPLICATION" FromRole="SA_KNVV" ToRole="SA_APPLICATION2COMPANY" />
+  </EntityType>
+  <EntityType Name="SA_Files">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="AppID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Files" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="File_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="File_Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="File_CreateBy" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="File_CreateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SA_Proposal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="MailTo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="7" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="AppID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SA_APPLICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="AplicationNO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="REQUEST_BY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REQUEST_DATE" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="COMMENT" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="APPROVED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APPROVED_DATE" Type="DateTime" Precision="7" />
+    <Property Name="REJECTED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REJECTED_DATE" Type="DateTime" Precision="7" />
+    <Property Name="LAST_UPD_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_UPD_DATE" Type="DateTime" Precision="7" />
+    <Property Name="WFInstanceID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SA_APPLICATION2COMPANY" Relationship="MyAdminModel.FK_SA_APPLICATION2COMPANY_SA_APPLICATION" FromRole="SA_APPLICATION" ToRole="SA_APPLICATION2COMPANY" />
+  </EntityType>
+  <EntityType Name="SA_APPLICATION2COMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="CompanyID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyType" Type="Int32" />
+    <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+    <Property Name="IsExistSiebel" Type="Boolean" />
+    <Property Name="AccountRowID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="IsExistSAP" Type="Boolean" />
+    <Property Name="SalesCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InsideSalesCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OPCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VerticalMarketDefinition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfficialRegistrationNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PriceGrade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DUNSNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DBPaymentIndex" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SiebelRBU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SA_APPLICATION" Relationship="MyAdminModel.FK_SA_APPLICATION2COMPANY_SA_APPLICATION" FromRole="SA_APPLICATION2COMPANY" ToRole="SA_APPLICATION" />
+    <NavigationProperty Name="SA_BAPIADDR1" Relationship="MyAdminModel.FK_SA_BAPIADDR1_SA_APPLICATION" FromRole="SA_APPLICATION2COMPANY" ToRole="SA_BAPIADDR1" />
+    <NavigationProperty Name="SA_BAPIADDR2" Relationship="MyAdminModel.FK_SA_BAPIADDR2_SA_APPLICATION" FromRole="SA_APPLICATION2COMPANY" ToRole="SA_BAPIADDR2" />
+    <NavigationProperty Name="SA_FKNBK" Relationship="MyAdminModel.FK_SA_FKNBK_SA_APPLICATION" FromRole="SA_APPLICATION2COMPANY" ToRole="SA_FKNBK" />
+    <NavigationProperty Name="SA_FKNVI" Relationship="MyAdminModel.FK_SA_FKNVI_SA_APPLICATION" FromRole="SA_APPLICATION2COMPANY" ToRole="SA_FKNVI" />
+    <NavigationProperty Name="SA_KNA1" Relationship="MyAdminModel.FK_SA_KNA1_SA_APPLICATION" FromRole="SA_APPLICATION2COMPANY" ToRole="SA_KNA1" />
+    <NavigationProperty Name="SA_KNB1" Relationship="MyAdminModel.FK_SA_KNB1_SA_APPLICATION" FromRole="SA_APPLICATION2COMPANY" ToRole="SA_KNB1" />
+    <NavigationProperty Name="SA_KNVV" Relationship="MyAdminModel.FK_SA_KNVV_SA_APPLICATION" FromRole="SA_APPLICATION2COMPANY" ToRole="SA_KNVV" />
+  </EntityType>
+  <Association Name="FK_SA_APPLICATION2COMPANY_SA_APPLICATION">
+    <End Type="MyAdminModel.SA_APPLICATION" Role="SA_APPLICATION" Multiplicity="1" />
+    <End Type="MyAdminModel.SA_APPLICATION2COMPANY" Role="SA_APPLICATION2COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SA_APPLICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SA_APPLICATION2COMPANY">
+        <PropertyRef Name="ApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SA_BAPIADDR1_SA_APPLICATION">
+    <End Type="MyAdminModel.SA_APPLICATION2COMPANY" Role="SA_APPLICATION2COMPANY" Multiplicity="1" />
+    <End Type="MyAdminModel.SA_BAPIADDR1" Role="SA_BAPIADDR1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SA_APPLICATION2COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SA_BAPIADDR1">
+        <PropertyRef Name="HeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SA_BAPIADDR2_SA_APPLICATION">
+    <End Type="MyAdminModel.SA_APPLICATION2COMPANY" Role="SA_APPLICATION2COMPANY" Multiplicity="1" />
+    <End Type="MyAdminModel.SA_BAPIADDR2" Role="SA_BAPIADDR2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SA_APPLICATION2COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SA_BAPIADDR2">
+        <PropertyRef Name="HeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SA_FKNBK_SA_APPLICATION">
+    <End Type="MyAdminModel.SA_APPLICATION2COMPANY" Role="SA_APPLICATION2COMPANY" Multiplicity="1" />
+    <End Type="MyAdminModel.SA_FKNBK" Role="SA_FKNBK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SA_APPLICATION2COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SA_FKNBK">
+        <PropertyRef Name="HeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SA_FKNVI_SA_APPLICATION">
+    <End Type="MyAdminModel.SA_APPLICATION2COMPANY" Role="SA_APPLICATION2COMPANY" Multiplicity="1" />
+    <End Type="MyAdminModel.SA_FKNVI" Role="SA_FKNVI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SA_APPLICATION2COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SA_FKNVI">
+        <PropertyRef Name="HeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SA_KNA1_SA_APPLICATION">
+    <End Type="MyAdminModel.SA_APPLICATION2COMPANY" Role="SA_APPLICATION2COMPANY" Multiplicity="1" />
+    <End Type="MyAdminModel.SA_KNA1" Role="SA_KNA1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SA_APPLICATION2COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SA_KNA1">
+        <PropertyRef Name="HeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SA_KNB1_SA_APPLICATION">
+    <End Type="MyAdminModel.SA_APPLICATION2COMPANY" Role="SA_APPLICATION2COMPANY" Multiplicity="1" />
+    <End Type="MyAdminModel.SA_KNB1" Role="SA_KNB1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SA_APPLICATION2COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SA_KNB1">
+        <PropertyRef Name="HeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SA_KNVV_SA_APPLICATION">
+    <End Type="MyAdminModel.SA_APPLICATION2COMPANY" Role="SA_APPLICATION2COMPANY" Multiplicity="0..1" />
+    <End Type="MyAdminModel.SA_KNVV" Role="SA_KNVV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SA_APPLICATION2COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SA_KNVV">
+        <PropertyRef Name="HeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,5 @@
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\bin\Debug\eStoreServices.dll.config
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\bin\Debug\eStoreServices.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\bin\Debug\eStoreServices.pdb
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\obj\Debug\eStoreServices.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\eStoreServices\obj\Debug\eStoreServices.pdb

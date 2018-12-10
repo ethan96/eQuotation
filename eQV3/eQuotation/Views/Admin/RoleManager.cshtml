@@ -1,0 +1,115 @@
+﻿@model eQuotation.Models.Admin.RoleManagerViewModel
+
+<div class="main-content">
+    <div class="titlebox topbox"><h4>Role Manager</h4></div>
+    <div class="actionbox">
+        <ul>
+            <li><a id="newRole"><i class="fa fa-plus"></i> Add Role</a></li>
+            <li><a id="editRole"><i class="fa fa-pencil-square-o"></i> Edit Role</a></li>
+            <li><a id="deleteRole"><i class="fa fa-trash-o"></i> Delete Role</a></li>
+            <li><a id="synchPermission"><i class="fa fa-refresh"></i> Synch</a></li>
+            <li><a id="savePermission"><i class="fa fa-floppy-o"></i> Save</a></li>
+        </ul>
+    </div>
+    <div class="content role-content">
+        <div>
+            <span>Role Name </span>
+            @Html.DropDownListFor(mdl => mdl.SelectedRoleId, Model.Roles, new { @id = "ddRoles", @class = "clsddRole" })
+        </div>
+        <div class="permission">@Html.Partial("Permission", Model.Permission)</div>
+    </div>
+</div>
+
+
+@Html.Modal("osx-new-role", "New Role", "290px", "400px")
+@Html.Modal("osx-edit-role", "Edit Role", "290px", "400px")
+@Html.Modal("osx-delete-role", "Delete Role", "290px", "400px")
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#ddRoles").on("change", function () {
+            var roleId = $(this).val();
+
+            if (roleId.toString().indexOf(",") > 0)
+                alert("Please select only one role.");
+            else {
+                $.get("/admin/RolePermission/" + roleId, function (data) {
+                    $.pushHTML(data, function () {
+                        $("div.permission").html(data);
+                    });
+                    $.unblockUI();
+                });
+            }
+        });
+
+        $("#synchPermission").on("click", function () {
+            $.blockUI();
+            var roleId = $("#ddRoles").val();
+
+            $.get("/admin/SynchronizePermission/" + roleId, function (data) {
+                $.pushHTML(data, function () {
+                    $("div.permission").html(data);
+                    //alert("New tasks/actions have been synchronized.");
+                });
+                $.unblockUI();
+            });
+        });
+
+        $("#savePermission").on("click", function () {
+
+            $.blockUI();
+            var roleId = $("#selectedRoleId").val();
+
+            //build Json data
+            if (oTable) {
+                var actionIds = [];
+                oTable.$("input:checkbox:checked").each(function () {
+                    actionIds.push($(this).attr("id"));
+                });
+
+                $.get("/admin/SavePermission/" + roleId + "?actionIds=" + actionIds, function (data) {
+                    $.pushHTML(data, function () {
+                        $("div.permission").html(data);
+                        alert("Permission has been updated successfully.");
+                    });
+                    $.unblockUI();
+                });
+            }
+        });
+
+        //open modal for create new role
+        $("#newRole").on("click", function () {
+            $.get("/admin/newrole", function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-new-role", data);
+                });
+            });
+        });
+
+        //open modal for edit role
+        $("#editRole").on("click", function () {
+            var roleId = $("#ddRoles").val();
+            $.get("/admin/editrole/" + roleId, function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-edit-role", data);
+                });
+            });
+        });
+
+        //open modal for delete role
+        $("#deleteRole").on("click", function () {
+            openModal("/admin/deleterole/" + $("#ddRoles").val(), "osx-delete-role");
+
+
+            //var roleId = $("#ddRoles").val();
+            //$.get("/admin/deleterole/" + roleId, function (data) {
+            //    $.pushHTML(data, function () {
+            //        $.OSXModalInit("osx-delete-role", data);
+            //    });
+            //});
+        });
+    });
+
+</script>

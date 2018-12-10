@@ -1,0 +1,738 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyAdvantechGlobalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ASG_BTOSInstruction">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LineNo" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LineNo" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="BB_CREDITCARD_ORDER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORDER_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CARD_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="CARD_TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="TRANSACTION_TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="500" />
+    <Property Name="MESSAGE" Type="nvarchar" MaxLength="1000" />
+    <Property Name="TRANSACTION_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AUTH_CODE" Type="nvarchar" MaxLength="100" />
+    <Property Name="TOTAL_AUTH_AMOUNT" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="CREATED_By" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BB_ESTORE_ORDER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORDER_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="ERPID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ORDER_STATUS" Type="nvarchar" MaxLength="100" />
+    <Property Name="PROCESS_LOG" Type="nvarchar(max)" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="UPDATED_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="cart_DETAIL_V2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cart_Id" Type="varchar" MaxLength="50" />
+    <Property Name="Line_No" Type="int" />
+    <Property Name="Part_No" Type="varchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="List_Price" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="Unit_Price" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="Itp" Type="money" />
+    <Property Name="RecyclingFee" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="Delivery_Plant" Type="varchar" MaxLength="10" />
+    <Property Name="Category" Type="varchar" MaxLength="300" />
+    <Property Name="class" Type="varchar" MaxLength="8" />
+    <Property Name="rohs" Type="int" />
+    <Property Name="Ew_Flag" Type="int" />
+    <Property Name="req_date" Type="date" />
+    <Property Name="due_date" Type="date" />
+    <Property Name="SatisfyFlag" Type="int" />
+    <Property Name="CanbeConfirmed" Type="int" />
+    <Property Name="CustMaterial" Type="nvarchar" MaxLength="200" />
+    <Property Name="inventory" Type="int" />
+    <Property Name="otype" Type="int" />
+    <Property Name="Model_No" Type="varchar" MaxLength="50" />
+    <Property Name="QUOTE_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="oUnit_Price" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="higherLevel" Type="int" />
+    <Property Name="PRODUCT_FAMILY" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Cart2OrderMaping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartID" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderID" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CARTMASTERV2">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ErpID" Type="nvarchar" MaxLength="15" />
+    <Property Name="QuoteID" Type="nvarchar" MaxLength="20" />
+    <Property Name="OpportunityID" Type="nvarchar" MaxLength="15" />
+    <Property Name="OpportunityAmount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="15" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CheckPointOrder2Cart">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ERPID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CheckPointOrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CartID" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="300" />
+    <Property Name="CreatedTime" Type="datetime" />
+    <Property Name="Creator" Type="nvarchar" MaxLength="50" />
+    <Property Name="PO_NO" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ExtendedWarrantyPartNo_V2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="EW_PartNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="EW_Month" Type="int" />
+    <Property Name="EW_Rate" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Plant" Type="nvarchar" MaxLength="10" />
+    <Property Name="SeqNO" Type="int" />
+    <Property Name="SalesGroup" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyAdvantechGlobal.dbo.FreightOption' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FreightOption">
+    <Key>
+      <PropertyRef Name="SAPCode" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="SAPCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CarrierCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EStoreServiceName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="SAPShippingCondition" Type="nvarchar" MaxLength="10" />
+    <Property Name="SAPShippingConditionText" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="HubConfiguredResult">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ParentLineNo" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Source" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentLineNo" Type="int" Nullable="false" />
+    <Property Name="Result" Type="int" />
+    <Property Name="RootID" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelectedItems" Type="nvarchar(max)" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="30" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="15" />
+    <Property Name="ReConfigData" Type="nvarchar(max)" />
+    <Property Name="CreatedTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ORDER_DETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORDER_ID" Type="varchar" MaxLength="50" />
+    <Property Name="LINE_NO" Type="int" />
+    <Property Name="PRODUCT_LINE" Type="varchar" MaxLength="10" />
+    <Property Name="PART_NO" Type="varchar" MaxLength="50" />
+    <Property Name="ORDER_LINE_TYPE" Type="varchar" MaxLength="30" />
+    <Property Name="QTY" Type="int" />
+    <Property Name="LIST_PRICE" Type="money" />
+    <Property Name="UNIT_PRICE" Type="money" />
+    <Property Name="REQUIRED_DATE" Type="datetime" />
+    <Property Name="DUE_DATE" Type="datetime" />
+    <Property Name="ERP_SITE" Type="varchar" MaxLength="50" />
+    <Property Name="ERP_LOCATION" Type="varchar" MaxLength="50" />
+    <Property Name="AUTO_ORDER_FLAG" Type="char" MaxLength="1" />
+    <Property Name="AUTO_ORDER_QTY" Type="int" />
+    <Property Name="SUPPLIER_DUE_DATE" Type="datetime" />
+    <Property Name="LINE_PARTIAL_FLAG" Type="int" />
+    <Property Name="RoHS_FLAG" Type="varchar" MaxLength="4" />
+    <Property Name="EXWARRANTY_FLAG" Type="varchar" MaxLength="5" />
+    <Property Name="CustMaterialNo" Type="nvarchar" MaxLength="300" />
+    <Property Name="DeliveryPlant" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NoATPFlag" Type="varchar" MaxLength="1" />
+    <Property Name="DMF_Flag" Type="varchar" MaxLength="50" />
+    <Property Name="OptyID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cate" Type="varchar" MaxLength="300" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="HigherLevel" Type="int" />
+    <Property Name="itp" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="ORDER_MASTER">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+      <PropertyRef Name="ORDER_NO" />
+    </Key>
+    <Property Name="ORDER_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ORDER_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ORDER_TYPE" Type="varchar" MaxLength="30" />
+    <Property Name="PO_NO" Type="nvarchar" MaxLength="100" />
+    <Property Name="PO_DATE" Type="datetime" />
+    <Property Name="SOLDTO_ID" Type="varchar" MaxLength="15" />
+    <Property Name="SHIPTO_ID" Type="varchar" MaxLength="15" />
+    <Property Name="BILLTO_ID" Type="varchar" MaxLength="15" />
+    <Property Name="SALES_ID" Type="varchar" MaxLength="8" />
+    <Property Name="ORDER_DATE" Type="datetime" />
+    <Property Name="PAYMENT_TYPE" Type="varchar" MaxLength="100" />
+    <Property Name="ATTENTION" Type="nvarchar" MaxLength="100" />
+    <Property Name="PARTIAL_FLAG" Type="char" MaxLength="1" />
+    <Property Name="COMBINE_ORDER_FLAG" Type="char" MaxLength="1" />
+    <Property Name="EARLY_SHIP_FLAG" Type="char" MaxLength="1" />
+    <Property Name="FREIGHT" Type="money" />
+    <Property Name="INSURANCE" Type="money" />
+    <Property Name="REMARK" Type="nvarchar" MaxLength="100" />
+    <Property Name="PRODUCT_SITE" Type="varchar" MaxLength="50" />
+    <Property Name="DUE_DATE" Type="datetime" />
+    <Property Name="REQUIRED_DATE" Type="datetime" />
+    <Property Name="SHIPMENT_TERM" Type="varchar" MaxLength="50" />
+    <Property Name="SHIP_VIA" Type="nvarchar" MaxLength="50" />
+    <Property Name="CURRENCY" Type="varchar" MaxLength="10" />
+    <Property Name="ORDER_NOTE" Type="nvarchar" MaxLength="3000" />
+    <Property Name="ORDER_STATUS" Type="varchar" MaxLength="30" />
+    <Property Name="TOTAL_AMOUNT" Type="money" />
+    <Property Name="TOTAL_LINE" Type="int" />
+    <Property Name="LAST_UPDATED" Type="datetime" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="CREATED_BY" Type="varchar" MaxLength="100" />
+    <Property Name="CUSTOMER_ATTENTION" Type="nvarchar" MaxLength="100" />
+    <Property Name="AUTO_ORDER_FLAG" Type="char" MaxLength="1" />
+    <Property Name="INCOTERM" Type="nvarchar" MaxLength="28" />
+    <Property Name="INCOTERM_TEXT" Type="nvarchar" MaxLength="50" />
+    <Property Name="SALES_NOTE" Type="nvarchar" MaxLength="3000" />
+    <Property Name="OP_NOTE" Type="nvarchar" MaxLength="500" />
+    <Property Name="SHIP_CONDITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="NONERoHS_ACCEPT" Type="char" MaxLength="10" />
+    <Property Name="ProjectFlag" Type="nvarchar" MaxLength="5" />
+    <Property Name="Z7Sales" Type="nvarchar" MaxLength="20" />
+    <Property Name="DefaultSalesNote" Type="nvarchar" MaxLength="1" />
+    <Property Name="prj_Note" Type="varchar" MaxLength="20" />
+    <Property Name="EARLY_SHIP" Type="nvarchar" MaxLength="2" />
+    <Property Name="ER_EMPLOYEE" Type="nvarchar" MaxLength="20" />
+    <Property Name="END_CUST" Type="nvarchar" MaxLength="20" />
+    <Property Name="KEYPERSON" Type="varchar" MaxLength="20" />
+    <Property Name="CREDIT_CARD" Type="nvarchar" MaxLength="50" />
+    <Property Name="CREDIT_CARD_EXPIRE_DATE" Type="date" />
+    <Property Name="CREDIT_CARD_VERIFY_NUMBER" Type="nvarchar" MaxLength="10" />
+    <Property Name="PAYTERM" Type="nvarchar" MaxLength="5" />
+    <Property Name="CREDIT_CARD_HOLDER" Type="nvarchar" MaxLength="100" />
+    <Property Name="CREDIT_CARD_TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="BILLINGINSTRUCTION_INFO" Type="nvarchar" MaxLength="2000" />
+    <Property Name="EMPLOYEEID" Type="nvarchar" MaxLength="20" />
+    <Property Name="DIST_CHAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIVISION" Type="nvarchar" MaxLength="100" />
+    <Property Name="SALESGROUP" Type="nvarchar" MaxLength="100" />
+    <Property Name="SALESOFFICE" Type="nvarchar" MaxLength="100" />
+    <Property Name="DISTRICT" Type="nvarchar" MaxLength="50" />
+    <Property Name="IS_EARLYSHIP" Type="int" />
+    <Property Name="isExempt" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyAdvantechGlobal.dbo.ORDER_MASTER_EXTENSION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ORDER_MASTER_EXTENSION">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+    </Key>
+    <Property Name="ORDER_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PI2CUSTOMER_FLAG" Type="int" />
+  </EntityType>
+  <EntityType Name="order_Master_ExtensionV2">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+    </Key>
+    <Property Name="ORDER_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PI2CUSTOMER_FLAG" Type="int" Nullable="false" />
+    <Property Name="OrderNoScheme" Type="int" Nullable="false" />
+    <Property Name="OrderTaxRate" Type="decimal" Precision="8" Scale="4" />
+  </EntityType>
+  <EntityType Name="ORDER_PARTNERS">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="ORDER_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ROWID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ERPID" Type="nvarchar" MaxLength="50" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="300" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="3000" />
+    <Property Name="TYPE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ATTENTION" Type="nvarchar" MaxLength="100" />
+    <Property Name="TEL" Type="nvarchar" MaxLength="100" />
+    <Property Name="MOBILE" Type="nvarchar" MaxLength="100" />
+    <Property Name="ZIPCODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="50" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="STREET" Type="nvarchar" MaxLength="50" />
+    <Property Name="STATE" Type="nvarchar" MaxLength="10" />
+    <Property Name="DISTRICT" Type="nvarchar" MaxLength="50" />
+    <Property Name="STREET2" Type="nvarchar" MaxLength="50" />
+    <Property Name="TAXJURI" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="OrderForwarderService">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FreightOption" Type="nvarchar" MaxLength="100" />
+    <Property Name="FreightChargeBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomChargeBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PRODUCT_COMPATIBILITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PART_NO1" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PART_NO2" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RELATION" Type="int" />
+    <Property Name="REASON" Type="nvarchar" MaxLength="1500" />
+    <Property Name="UPDATE_ID" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PRODUCT_DEPENDENCY">
+    <Key>
+      <PropertyRef Name="DEPENDENCY_ID" />
+    </Key>
+    <Property Name="DEPENDENCY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PART_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DEPENDENCY_PART_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ORG_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="CREATED_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="LAST_UPDATED_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="LAST_UPDATED_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SAP_COMPANY_ORG">
+    <Key>
+      <PropertyRef Name="COMPANY_ID" />
+      <PropertyRef Name="ORG_ID" />
+    </Key>
+    <Property Name="COMPANY_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ORG_ID" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="ORG_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="IS_DEFAULT" Type="bit" />
+  </EntityType>
+  <EntityType Name="SAP_COMPANY_PARTNERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="COMPANY_ID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ORG_ID" Type="nvarchar" MaxLength="12" />
+    <Property Name="DIST_CHANN" Type="nvarchar" MaxLength="6" />
+    <Property Name="DIVISION" Type="nvarchar" MaxLength="6" />
+    <Property Name="PARTNER_FUNCTION" Type="nvarchar" MaxLength="6" />
+    <Property Name="PARENT_COMPANY_ID" Type="nvarchar" MaxLength="30" />
+    <Property Name="VENDOR_CREDITOR" Type="nvarchar" MaxLength="30" />
+    <Property Name="SALES_CODE" Type="nvarchar" MaxLength="24" />
+    <Property Name="PARTNER_NUMBER" Type="nvarchar" MaxLength="30" />
+    <Property Name="KNREF" Type="nvarchar" MaxLength="90" />
+    <Property Name="DEFPA" Type="nvarchar" MaxLength="3" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SAP_DIMCOMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="UNIQUE_ID" Type="nvarchar" MaxLength="100" />
+    <Property Name="COMPANY_ID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ORG_ID" Type="nvarchar" MaxLength="12" />
+    <Property Name="PARENTCOMPANYID" Type="nvarchar" MaxLength="30" />
+    <Property Name="COMPANY_NAME" Type="nvarchar" MaxLength="210" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="420" />
+    <Property Name="FAX_NO" Type="nvarchar" MaxLength="93" />
+    <Property Name="TEL_NO" Type="nvarchar" MaxLength="48" />
+    <Property Name="COMPANY_TYPE" Type="nvarchar" MaxLength="12" />
+    <Property Name="PRICE_CLASS" Type="nvarchar" MaxLength="24" />
+    <Property Name="CURRENCY" Type="nvarchar" MaxLength="15" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="9" />
+    <Property Name="REGION_CODE" Type="nvarchar" MaxLength="9" />
+    <Property Name="ZIP_CODE" Type="nvarchar" MaxLength="30" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="120" />
+    <Property Name="ATTENTION" Type="nvarchar" MaxLength="120" />
+    <Property Name="CREDIT_TERM" Type="nvarchar" MaxLength="12" />
+    <Property Name="SHIP_VIA" Type="nvarchar" MaxLength="95" />
+    <Property Name="URL" Type="nvarchar" MaxLength="396" />
+    <Property Name="CREATEDDATE" Type="nvarchar" MaxLength="24" />
+    <Property Name="CREATED_BY" Type="nvarchar" MaxLength="36" />
+    <Property Name="COMPANY_PRICE_TYPE" Type="nvarchar" MaxLength="6" />
+    <Property Name="SHIPCONDITION" Type="nvarchar" MaxLength="6" />
+    <Property Name="ATTRIBUTE4" Type="nvarchar" MaxLength="6" />
+    <Property Name="SALESOFFICE" Type="nvarchar" MaxLength="12" />
+    <Property Name="SALESGROUP" Type="nvarchar" MaxLength="9" />
+    <Property Name="AMT_INSURED" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="CREDIT_LIMIT" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="CONTACT_EMAIL" Type="nvarchar" MaxLength="723" />
+    <Property Name="DELETION_FLAG" Type="nvarchar" MaxLength="3" />
+    <Property Name="COUNTRY_NAME" Type="nvarchar" MaxLength="45" />
+    <Property Name="SALESOFFICENAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="SAP_SALESNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="SAP_SALESCODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="SAP_ISNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="SAP_OPNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="SECTOR" Type="nvarchar" MaxLength="40" />
+    <Property Name="PRIMARY_BAA" Type="nvarchar" MaxLength="200" />
+    <Property Name="ACCOUNT_ROW_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ACCOUNT_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="ACCOUNT_STATUS" Type="nvarchar" MaxLength="30" />
+    <Property Name="RBU" Type="nvarchar" MaxLength="150" />
+    <Property Name="PRIMARY_SALES_EMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="PRIMARY_OWNER_DIVISION" Type="nvarchar" MaxLength="100" />
+    <Property Name="BUSINESS_GROUP" Type="nvarchar" MaxLength="50" />
+    <Property Name="ACCOUNT_TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="FACT2005" Type="money" />
+    <Property Name="FACT2006" Type="money" />
+    <Property Name="FACT2007" Type="money" />
+    <Property Name="FACT2008" Type="money" />
+    <Property Name="FACT2009" Type="money" />
+    <Property Name="FACT2010" Type="money" />
+    <Property Name="LAST_BUY_DATE" Type="datetime" />
+    <Property Name="ORDERS_IN_PAST_YEAR" Type="int" />
+    <Property Name="AMOUNT_IN_PAST_YEAR" Type="money" />
+    <Property Name="ORDERS_IN_PAST_HALFYEAR" Type="int" />
+    <Property Name="CUST_IND" Type="nvarchar" MaxLength="20" />
+    <Property Name="VM" Type="nvarchar" MaxLength="180" />
+    <Property Name="PRICE_GRP" Type="nvarchar" MaxLength="10" />
+    <Property Name="PRICE_LIST" Type="nvarchar" MaxLength="10" />
+    <Property Name="INCO1" Type="nvarchar" MaxLength="50" />
+    <Property Name="INCO2" Type="nvarchar" MaxLength="100" />
+    <Property Name="PAYMENT_TERM_CODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="PAYMENT_TERM_NAME" Type="nvarchar" MaxLength="300" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SAP_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="SALES_CODE" />
+      <PropertyRef Name="PERS_AREA" />
+    </Key>
+    <Property Name="SALES_CODE" Type="nvarchar" MaxLength="24" Nullable="false" />
+    <Property Name="PERS_AREA" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="EMP_GROUP" Type="nvarchar" MaxLength="3" />
+    <Property Name="SUB_EMP_GROUP" Type="nvarchar" MaxLength="6" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="180" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="9" />
+    <Property Name="SNAME" Type="nvarchar" MaxLength="90" />
+    <Property Name="ENAME" Type="nvarchar" MaxLength="120" />
+    <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="120" />
+    <Property Name="LAST_NAME" Type="nvarchar" MaxLength="120" />
+    <Property Name="FULL_NAME" Type="nvarchar" MaxLength="241" />
+    <Property Name="TEL" Type="nvarchar" MaxLength="723" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="723" />
+    <Property Name="CELLPHONE" Type="nvarchar" MaxLength="723" />
+    <Property Name="OTHERPHONE" Type="nvarchar" MaxLength="723" />
+    <Property Name="NUM_OF_CHILD" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="PAYR_AREA" Type="nvarchar" MaxLength="6" />
+    <Property Name="SALESOFFICE" Type="nvarchar" MaxLength="12" />
+    <Property Name="SALESGROUP" Type="nvarchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT">
+    <Key>
+      <PropertyRef Name="PART_NO" />
+    </Key>
+    <Property Name="PART_NO" Type="nvarchar" MaxLength="54" Nullable="false" />
+    <Property Name="MODEL_NO" Type="nvarchar" MaxLength="54" Nullable="false" />
+    <Property Name="MATERIAL_GROUP" Type="nvarchar" MaxLength="27" Nullable="false" />
+    <Property Name="DIVISION" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="PRODUCT_HIERARCHY" Type="nvarchar" MaxLength="54" Nullable="false" />
+    <Property Name="PRODUCT_GROUP" Type="nvarchar" MaxLength="54" Nullable="false" />
+    <Property Name="PRODUCT_DIVISION" Type="nvarchar" MaxLength="54" Nullable="false" />
+    <Property Name="PRODUCT_LINE" Type="nvarchar" MaxLength="54" Nullable="false" />
+    <Property Name="GENITEMCATGRP" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="PRODUCT_DESC" Type="nvarchar" MaxLength="120" />
+    <Property Name="ROHS_FLAG" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="50" />
+    <Property Name="EGROUP" Type="nvarchar" MaxLength="50" />
+    <Property Name="EDIVISION" Type="nvarchar" MaxLength="50" />
+    <Property Name="NET_WEIGHT" Type="float" />
+    <Property Name="GROSS_WEIGHT" Type="float" />
+    <Property Name="WEIGHT_UNIT" Type="nvarchar" MaxLength="50" />
+    <Property Name="VOLUME" Type="float" />
+    <Property Name="VOLUME_UNIT" Type="nvarchar" MaxLength="50" />
+    <Property Name="CREATE_DATE" Type="nvarchar" MaxLength="24" />
+    <Property Name="LAST_UPD_DATE" Type="nvarchar" MaxLength="24" />
+    <Property Name="PRODUCT_TYPE" Type="nvarchar" MaxLength="30" />
+    <Property Name="GIP_CODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="SIZE_DIMENSIONS" Type="nvarchar" MaxLength="96" />
+    <Property Name="SOURCE_LOCATION" Type="nvarchar" MaxLength="20" />
+    <Property Name="PRODUCT_FAMILY" Type="nvarchar" MaxLength="54" />
+    <Property Name="PLM_STATUS" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT_ABC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PART_NO" Type="nvarchar" MaxLength="54" />
+    <Property Name="PLANT" Type="nvarchar" MaxLength="12" />
+    <Property Name="ABC_INDICATOR" Type="nvarchar" MaxLength="6" />
+    <Property Name="PLANNED_DEL_TIME" Type="int" />
+    <Property Name="GP_PROCESSING_TIME" Type="int" />
+    <Property Name="IN_HOUSE_PRODUCTION" Type="int" />
+    <Property Name="ProfitCenter" Type="nvarchar" MaxLength="30" />
+    <Property Name="Ctrl_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="safety_stock" Type="float" />
+    <Property Name="min_safety_stock" Type="float" />
+    <Property Name="service_level" Type="numeric" Precision="8" Scale="1" />
+    <Property Name="MIN_LOT_SIZE" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FREIGHT_METHOD" Type="nvarchar" MaxLength="50" />
+    <Property Name="COUNTRY_ORIGIN" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT_ORG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PART_NO" Type="nvarchar" MaxLength="54" />
+    <Property Name="ORG_ID" Type="nvarchar" MaxLength="12" />
+    <Property Name="DIST_CHANNEL" Type="nvarchar" MaxLength="6" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="6" />
+    <Property Name="B2BONLINE" Type="nvarchar" MaxLength="3" />
+    <Property Name="DELIVERYPLANT" Type="nvarchar" MaxLength="12" />
+    <Property Name="PRICINGGROUP" Type="nvarchar" MaxLength="6" />
+    <Property Name="LAST_UPD_DATE" Type="nvarchar" MaxLength="24" />
+    <Property Name="MIN_ORD_QTY" Type="int" />
+    <Property Name="MIN_DLV_QTY" Type="int" />
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="PART_NO" Type="nvarchar" MaxLength="54" />
+    <Property Name="SALES_ORG" Type="nvarchar" MaxLength="12" />
+    <Property Name="DIST_CHANNEL" Type="nvarchar" MaxLength="6" />
+    <Property Name="PRODUCT_STATUS" Type="nvarchar" MaxLength="6" />
+    <Property Name="MIN_ORDER_QTY" Type="numeric" Precision="13" Scale="3" />
+    <Property Name="MIN_DLV_QTY" Type="numeric" Precision="13" Scale="3" />
+    <Property Name="MIN_BTO_QTY" Type="numeric" Precision="13" Scale="3" />
+    <Property Name="DLV_PLANT" Type="nvarchar" MaxLength="12" />
+    <Property Name="MATERIAL_PRICING_GRP" Type="nvarchar" MaxLength="6" />
+    <Property Name="VALID_DATE" Type="nvarchar" MaxLength="24" />
+    <Property Name="ITEM_CATEGORY_GROUP" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SAP_PRODUCT_STATUS_ORDERABLE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="PART_NO" Type="nvarchar" MaxLength="54" Nullable="false" />
+    <Property Name="SALES_ORG" Type="nvarchar" MaxLength="12" />
+    <Property Name="DIST_CHANNEL" Type="nvarchar" MaxLength="6" />
+    <Property Name="PRODUCT_STATUS" Type="nvarchar" MaxLength="6" />
+    <Property Name="MIN_ORDER_QTY" Type="numeric" Precision="13" Scale="3" />
+    <Property Name="MIN_DLV_QTY" Type="numeric" Precision="13" Scale="3" />
+    <Property Name="MIN_BTO_QTY" Type="numeric" Precision="13" Scale="3" />
+    <Property Name="DLV_PLANT" Type="nvarchar" MaxLength="12" />
+    <Property Name="MATERIAL_PRICING_GRP" Type="nvarchar" MaxLength="6" />
+    <Property Name="VALID_DATE" Type="nvarchar" MaxLength="24" />
+    <Property Name="ITEM_CATEGORY_GROUP" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SIEBEL_ACCOUNT">
+    <Key>
+      <PropertyRef Name="ROW_ID" />
+    </Key>
+    <Property Name="ROW_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ERP_ID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ACCOUNT_NAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="ACCOUNT_STATUS" Type="nvarchar" MaxLength="30" />
+    <Property Name="FAX_NUM" Type="nvarchar" MaxLength="50" />
+    <Property Name="PHONE_NUM" Type="nvarchar" MaxLength="50" />
+    <Property Name="OU_TYPE_CD" Type="nvarchar" MaxLength="50" />
+    <Property Name="URL" Type="nvarchar" MaxLength="200" />
+    <Property Name="BusinessGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="ACCOUNT_TYPE" Type="nvarchar" MaxLength="100" />
+    <Property Name="RBU" Type="nvarchar" MaxLength="150" />
+    <Property Name="PRIMARY_SALES_EMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="PARENT_ROW_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MAJORACCOUNT_FLAG" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="COMPETITOR_FLAG" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="PARTNER_FLAG" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="100" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="1000" />
+    <Property Name="STATE" Type="nvarchar" MaxLength="100" />
+    <Property Name="ZIPCODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="PROVINCE" Type="nvarchar" MaxLength="50" />
+    <Property Name="BAA" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CREATED" Type="datetime" />
+    <Property Name="LAST_UPDATED" Type="datetime" />
+    <Property Name="PriOwnerDivision" Type="nvarchar" MaxLength="200" />
+    <Property Name="PriOwnerRowId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PriOwnerPosition" Type="nvarchar" MaxLength="100" />
+    <Property Name="LOCATION" Type="nvarchar" MaxLength="100" />
+    <Property Name="ACCOUNT_TEAM" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADDRESS2" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ACCOUNT_CC_GRADE" Type="nvarchar" MaxLength="100" />
+    <Property Name="CURRENCY" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SIEBEL_CONTACT">
+    <Key>
+      <PropertyRef Name="ROW_ID" />
+    </Key>
+    <Property Name="ROW_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkPhone" Type="nvarchar" MaxLength="40" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="40" />
+    <Property Name="FaxNumber" Type="nvarchar" MaxLength="40" />
+    <Property Name="JOB_FUNCTION" Type="nvarchar" MaxLength="75" />
+    <Property Name="PAR_ROW_ID" Type="nvarchar" MaxLength="15" />
+    <Property Name="ERPID" Type="nvarchar" MaxLength="30" />
+    <Property Name="PriOrgId" Type="nvarchar" MaxLength="15" />
+    <Property Name="OrgID" Type="nvarchar" MaxLength="150" />
+    <Property Name="OwnerId" Type="nvarchar" MaxLength="15" />
+    <Property Name="CanSeeOrder" Type="nvarchar" MaxLength="1" />
+    <Property Name="Password" Type="nvarchar" MaxLength="30" />
+    <Property Name="Sales_Rep" Type="varchar" MaxLength="1" />
+    <Property Name="NeverEmail" Type="nvarchar" MaxLength="1" />
+    <Property Name="NeverCall" Type="nvarchar" MaxLength="1" />
+    <Property Name="NeverFax" Type="nvarchar" MaxLength="1" />
+    <Property Name="NeverMail" Type="nvarchar" MaxLength="1" />
+    <Property Name="JOB_TITLE" Type="nvarchar" MaxLength="75" />
+    <Property Name="EMAIL_ADDRESS" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="COMMENTS" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ACCOUNT_ROW_ID" Type="nvarchar" MaxLength="20" />
+    <Property Name="ACCOUNT" Type="nvarchar" MaxLength="100" />
+    <Property Name="ACCOUNT_TYPE" Type="nvarchar" MaxLength="30" />
+    <Property Name="ACCOUNT_STATUS" Type="nvarchar" MaxLength="30" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="30" />
+    <Property Name="Salutation" Type="nvarchar" MaxLength="15" />
+    <Property Name="EMPLOYEE_FLAG" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="ACTIVE_FLAG" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="USER_TYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="REG_SOURCE" Type="nvarchar" MaxLength="200" />
+    <Property Name="CREATED" Type="datetime" />
+    <Property Name="LAST_UPDATED" Type="datetime" />
+    <Property Name="PRIMARY_FLAG" Type="nvarchar" MaxLength="5" />
+    <Property Name="GDPR_STATUS" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyAdvantechGlobal.dbo.SIEBEL_CONTACT_PRIVILEGE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SIEBEL_CONTACT_PRIVILEGE">
+    <Key>
+      <PropertyRef Name="ROW_ID" />
+      <PropertyRef Name="PRIVILEGE" />
+    </Key>
+    <Property Name="ROW_ID" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="EMAIL_ADDRESS" Type="nvarchar" MaxLength="100" />
+    <Property Name="PRIVILEGE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="CREATED_BY" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyAdvantechGlobal.dbo.SIEBEL_CONTACT_PRIVILEGE_TEMP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SIEBEL_CONTACT_PRIVILEGE_TEMP">
+    <Key>
+      <PropertyRef Name="ROW_ID" />
+      <PropertyRef Name="PRIVILEGE" />
+      <PropertyRef Name="ACTION_TYPE" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ROW_ID" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="EMAIL_ADDRESS" Type="nvarchar" MaxLength="100" />
+    <Property Name="PRIVILEGE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ACTION_TYPE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="CREATED_BY" Type="nvarchar" MaxLength="100" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIMEZONE">
+    <Key>
+      <PropertyRef Name="ORG" />
+    </Key>
+    <Property Name="TimeZoneName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ORG" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MyAdvantechGlobalModelStoreContainer">
+    <EntitySet Name="ASG_BTOSInstruction" EntityType="Self.ASG_BTOSInstruction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BB_CREDITCARD_ORDER" EntityType="Self.BB_CREDITCARD_ORDER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BB_ESTORE_ORDER" EntityType="Self.BB_ESTORE_ORDER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cart_DETAIL_V2" EntityType="Self.cart_DETAIL_V2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cart2OrderMaping" EntityType="Self.Cart2OrderMaping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CARTMASTERV2" EntityType="Self.CARTMASTERV2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CheckPointOrder2Cart" EntityType="Self.CheckPointOrder2Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExtendedWarrantyPartNo_V2" EntityType="Self.ExtendedWarrantyPartNo_V2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HubConfiguredResult" EntityType="Self.HubConfiguredResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDER_DETAIL" EntityType="Self.ORDER_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDER_MASTER" EntityType="Self.ORDER_MASTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order_Master_ExtensionV2" EntityType="Self.order_Master_ExtensionV2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDER_PARTNERS" EntityType="Self.ORDER_PARTNERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderForwarderService" EntityType="Self.OrderForwarderService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT_COMPATIBILITY" EntityType="Self.PRODUCT_COMPATIBILITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT_DEPENDENCY" EntityType="Self.PRODUCT_DEPENDENCY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAP_COMPANY_ORG" EntityType="Self.SAP_COMPANY_ORG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAP_COMPANY_PARTNERS" EntityType="Self.SAP_COMPANY_PARTNERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAP_DIMCOMPANY" EntityType="Self.SAP_DIMCOMPANY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAP_EMPLOYEE" EntityType="Self.SAP_EMPLOYEE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAP_PRODUCT" EntityType="Self.SAP_PRODUCT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAP_PRODUCT_ABC" EntityType="Self.SAP_PRODUCT_ABC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAP_PRODUCT_ORG" EntityType="Self.SAP_PRODUCT_ORG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAP_PRODUCT_STATUS" EntityType="Self.SAP_PRODUCT_STATUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAP_PRODUCT_STATUS_ORDERABLE" EntityType="Self.SAP_PRODUCT_STATUS_ORDERABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SIEBEL_ACCOUNT" EntityType="Self.SIEBEL_ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SIEBEL_CONTACT" EntityType="Self.SIEBEL_CONTACT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIMEZONE" EntityType="Self.TIMEZONE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FreightOption" EntityType="Self.FreightOption" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FreightOption].[SAPCode] AS [SAPCode], 
+    [FreightOption].[CarrierCode] AS [CarrierCode], 
+    [FreightOption].[Description] AS [Description], 
+    [FreightOption].[EStoreServiceName] AS [EStoreServiceName], 
+    [FreightOption].[SAPShippingCondition] AS [SAPShippingCondition], 
+    [FreightOption].[SAPShippingConditionText] AS [SAPShippingConditionText]
+    FROM [dbo].[FreightOption] AS [FreightOption]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ORDER_MASTER_EXTENSION" EntityType="Self.ORDER_MASTER_EXTENSION" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ORDER_MASTER_EXTENSION].[ORDER_ID] AS [ORDER_ID], 
+    [ORDER_MASTER_EXTENSION].[PI2CUSTOMER_FLAG] AS [PI2CUSTOMER_FLAG]
+    FROM [dbo].[ORDER_MASTER_EXTENSION] AS [ORDER_MASTER_EXTENSION]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SIEBEL_CONTACT_PRIVILEGE" EntityType="Self.SIEBEL_CONTACT_PRIVILEGE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SIEBEL_CONTACT_PRIVILEGE].[ROW_ID] AS [ROW_ID], 
+    [SIEBEL_CONTACT_PRIVILEGE].[EMAIL_ADDRESS] AS [EMAIL_ADDRESS], 
+    [SIEBEL_CONTACT_PRIVILEGE].[PRIVILEGE] AS [PRIVILEGE], 
+    [SIEBEL_CONTACT_PRIVILEGE].[CREATED_DATE] AS [CREATED_DATE], 
+    [SIEBEL_CONTACT_PRIVILEGE].[CREATED_BY] AS [CREATED_BY]
+    FROM [dbo].[SIEBEL_CONTACT_PRIVILEGE] AS [SIEBEL_CONTACT_PRIVILEGE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SIEBEL_CONTACT_PRIVILEGE_TEMP" EntityType="Self.SIEBEL_CONTACT_PRIVILEGE_TEMP" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SIEBEL_CONTACT_PRIVILEGE_TEMP].[ROW_ID] AS [ROW_ID], 
+    [SIEBEL_CONTACT_PRIVILEGE_TEMP].[EMAIL_ADDRESS] AS [EMAIL_ADDRESS], 
+    [SIEBEL_CONTACT_PRIVILEGE_TEMP].[PRIVILEGE] AS [PRIVILEGE], 
+    [SIEBEL_CONTACT_PRIVILEGE_TEMP].[ACTION_TYPE] AS [ACTION_TYPE], 
+    [SIEBEL_CONTACT_PRIVILEGE_TEMP].[CREATED_BY] AS [CREATED_BY], 
+    [SIEBEL_CONTACT_PRIVILEGE_TEMP].[CREATED_DATE] AS [CREATED_DATE], 
+    [SIEBEL_CONTACT_PRIVILEGE_TEMP].[ID] AS [ID]
+    FROM [dbo].[SIEBEL_CONTACT_PRIVILEGE_TEMP] AS [SIEBEL_CONTACT_PRIVILEGE_TEMP]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

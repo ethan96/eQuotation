@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.75" name="L2SProduct">
+  <DataContextMoniker Name="/L2SProductDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1db21d20-bb71-44b4-ae12-4dd1cde417a1" absoluteBounds="6.375, 6.75, 2, 6.0015283203125005">
+      <DataClassMoniker Name="/L2SProductDataContext/SAP_PRODUCT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d81633d7-5177-4131-8844-ad068f8968d5" absoluteBounds="6.3900000000000006, 7.2100000000000009, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="49bc444c-63dc-42d9-8295-c4fe427a4f7c" absoluteBounds="1.75, 6.25, 2, 3.6939111328125005">
+      <DataClassMoniker Name="/L2SProductDataContext/SAP_PRODUCT_ABC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4120ccd0-ea39-476c-a5a2-82d6834f1233" absoluteBounds="1.7650000000000001, 6.7100000000000009, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56f0fc4e-5384-4f69-884e-b5121311f04e" absoluteBounds="0.5, 9, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/L2SProductDataContext/SAP_PRODUCT_ORG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="06dea376-3bfb-4f18-92be-cb4b692ca337" absoluteBounds="0.51500000000000012, 9.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fa82ef8-81af-482d-b8e6-5da5f6b63d87" absoluteBounds="0.5, 6.375, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/L2SProductDataContext/SAP_PRODUCT_STATUS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f148fdd7-469f-4ecd-8ed9-704023f86878" absoluteBounds="0.51500000000000012, 6.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0bcfd85c-f59b-4203-b66d-b66464dbfcf3" absoluteBounds="3.625, 11.375, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/L2SProductDataContext/SAP_PRODUCT_STATUS_ORDERABLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64baefab-1989-411d-bf9c-85354376284c" absoluteBounds="3.64, 11.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

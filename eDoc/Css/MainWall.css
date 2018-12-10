@@ -1,0 +1,133 @@
+﻿body
+{
+    font-family:arial,\5B8B\4F53,Arial Narrow,serif;
+    font-size: 12px;
+    margin: 0px;
+    width: 100%;
+}
+a{color:#000000;}
+a:hover{color: #000000;}
+a:active{color: #000000;}
+a:visited{color: #000000;}
+p{line-height: 20px;}
+h1
+{
+    color: #666;
+    letter-spacing: -2px;
+    font-weight: normal;
+    font-size: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #8fc629;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+h2{color: #333;font-size: 18px;font-weight: normal;padding: 10px;}
+input{font-size: 12px;}
+textarea {padding:2px 8px 0pt 3px;border:1px solid #CCC;font-size: 12px;color: #333333;}
+select {border:1px solid #CCC;font-size: 12px;color: #333333;background-color: #f6f0ce;}
+select option{border:1px solid #CCC;font-size: 12px;color: #333333;background-color: #f6f0ce;}
+table{border-collapse: collapse;text-align: left;}
+td{padding: 4px;/*border: solid 1px #EEEEEE;*/}
+#tableTopLink td{border: solid 1px #EEEEEE;}
+
+
+/*共用start*/
+.colorRed{ color:Red;}
+.colorWhite{color:#ffffff}
+.bold{font-weight:bold;}
+.hide{display: none;}
+.show{display:block;}
+.left{float:left;}
+.right{float:right;}
+.center{text-align:center;}
+.clear{clear:both;}
+.clearPadding{padding:0;}
+.clearPaddingTopBottom{padding-top:0;padding-bottom:0}
+.dottedBlue{border:1px dotted #9ac6ff;}
+.marginTopFirst{margin-top:-1px;}
+.marginTopThere{margin-top:-3px;}
+.fieldset fieldset{margin: 1em 1em;padding: 1em;border: 1px solid #ccc;}
+.fieldset legend{font-size: 1.1em;font-weight: 600;padding: 2px 4px 8px 4px;}
+/*共用end*/
+.gvTitle{text-align:center ;font-weight:bold ;color:#1e395b;}
+ tr.gvHeader 
+{
+    height:31px;
+    background-image: url(/Images/bggv.jpg);
+    border:1px solid #a0afc3;
+    white-space:nowrap;
+}
+
+/*GridView start*/
+table.walltable{border-collapse:collapse;color: #333;width:100%;margin:5px 0 5px 0;}
+.walltable td, th{padding:3px 5px;}
+.walltable caption {padding: 0 0 .5em 0;text-align: left;font-weight: bold;text-transform: uppercase;color: #333;background: transparent;}
+.walltable table a {color:#950000;text-decoration:none;}
+.walltable table a:link {}
+.walltable table a:visited {font-weight:normal;color:#666;text-decoration: line-through;}
+.walltable th a,.walltable th{white-space:nowrap;font-weight: bold;text-align:center; color: #1E395B;}
+.walltable .gvHeaderBlue th{background-color:#B4C0D1; color:#fff;height:25px;font-weight: bold;font-size:13px;}/*蓝色背景标题*/
+.walltable tfoot td {text-align:right}
+.walltable tr:hover {background-color:#C5C1AA;}/*#D8E4F5;color:#ffffff;*/
+.walltable .GridViewPagerBorder{color:#950000;}
+.walltable .GridViewPagerBorder td td{border:1px solid #FFD39B; color:Black; width:15px; height:15px; line-height:15px; text-align:center; }
+.walltable .GridViewPagerBorder td table{ width:auto;}
+
+.walltable td.left{text-align:left;}
+.walltable td.leftWrap{text-align:left;word-wrap: break-word;word-break:break-all;}
+.walltable td.right{text-align:right;}
+/*GridView end*/
+
+.treeContainer{overflow:hidden;}
+.treeContainer td{ padding:0 4px; overflow:hidden; word-spacing:normal;white-space: nowrap;word-break:normal;}
+.tdIcon{width:0px}
+.iconM{width:24px;}
+.iconGV{width:16px;}
+.categoryPoint{ background:url(/Images/square_gray.gif) no-repeat top left; background-position:8px 9px; padding-left:20px;}
+.containerFirst{padding:0 5px;margin-top:5px;}
+.downButton img{border:0}
+
+/*Home_MyAOnlineWall.aspx start*/
+#NewOnLineWall{margin-left:15px;width:1330px;}
+#NewOnLineWall fieldset{
+	border: 1px solid #999;
+	margin-bottom: 10px;
+}
+#NewOnLineWall fieldset legend{
+	font-weight: bold;	 margin-left:10px;
+}
+#NewOnLineWall p,#NewOnLineWall ul,#NewOnLineWall li {
+	margin: 0px;
+	padding: 0px;
+	list-style-image: none;
+	list-style-type: none;
+}
+#NewOnLineWall ul li {
+	background-image: url(/Images/square_gray.gif);
+	background-repeat: no-repeat;
+	text-indent: 18px;
+	background-position: 5px 5px;
+	line-height: 20px;
+	color: #4E4444;
+}
+#NewOnLineWall fieldset ul li a {
+	color: #4E0000;
+	text-decoration: underline;
+}
+#NewOnLineWall .fileWall{
+	width: 320px;
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	overflow:hidden;
+}
+#NewOnLineWall .fileWall ul{ margin-left:7px;}
+#NewOnLineWall .leftmargin15 {
+	margin-left: 10px;
+}
+#NewOnLineWall .blod {font-weight:bold;}
+#NewOnLineWall .blod a{ text-decoration:none;color:#4E4444;}
+/*Home_MyAOnlineWall.aspx end*/
+

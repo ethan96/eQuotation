@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyAdvantechGlobalModelStoreContainer" CdmEntityContainer="MyAdvantechGlobalEntities">
+    <EntitySetMapping Name="ORDER_DETAIL">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.ORDER_DETAIL">
+        <MappingFragment StoreEntitySet="ORDER_DETAIL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+          <ScalarProperty Name="PRODUCT_LINE" ColumnName="PRODUCT_LINE" />
+          <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+          <ScalarProperty Name="ORDER_LINE_TYPE" ColumnName="ORDER_LINE_TYPE" />
+          <ScalarProperty Name="QTY" ColumnName="QTY" />
+          <ScalarProperty Name="LIST_PRICE" ColumnName="LIST_PRICE" />
+          <ScalarProperty Name="UNIT_PRICE" ColumnName="UNIT_PRICE" />
+          <ScalarProperty Name="REQUIRED_DATE" ColumnName="REQUIRED_DATE" />
+          <ScalarProperty Name="DUE_DATE" ColumnName="DUE_DATE" />
+          <ScalarProperty Name="ERP_SITE" ColumnName="ERP_SITE" />
+          <ScalarProperty Name="ERP_LOCATION" ColumnName="ERP_LOCATION" />
+          <ScalarProperty Name="AUTO_ORDER_FLAG" ColumnName="AUTO_ORDER_FLAG" />
+          <ScalarProperty Name="AUTO_ORDER_QTY" ColumnName="AUTO_ORDER_QTY" />
+          <ScalarProperty Name="SUPPLIER_DUE_DATE" ColumnName="SUPPLIER_DUE_DATE" />
+          <ScalarProperty Name="LINE_PARTIAL_FLAG" ColumnName="LINE_PARTIAL_FLAG" />
+          <ScalarProperty Name="RoHS_FLAG" ColumnName="RoHS_FLAG" />
+          <ScalarProperty Name="EXWARRANTY_FLAG" ColumnName="EXWARRANTY_FLAG" />
+          <ScalarProperty Name="CustMaterialNo" ColumnName="CustMaterialNo" />
+          <ScalarProperty Name="DeliveryPlant" ColumnName="DeliveryPlant" />
+          <ScalarProperty Name="NoATPFlag" ColumnName="NoATPFlag" />
+          <ScalarProperty Name="DMF_Flag" ColumnName="DMF_Flag" />
+          <ScalarProperty Name="OptyID" ColumnName="OptyID" />
+          <ScalarProperty Name="Cate" ColumnName="Cate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="HigherLevel" ColumnName="HigherLevel" />
+          <ScalarProperty Name="itp" ColumnName="itp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_Master_ExtensionV2">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.order_Master_ExtensionV2">
+        <MappingFragment StoreEntitySet="order_Master_ExtensionV2">
+          <ScalarProperty Name="OrderTaxRate" ColumnName="OrderTaxRate" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="PI2CUSTOMER_FLAG" ColumnName="PI2CUSTOMER_FLAG" />
+          <ScalarProperty Name="OrderNoScheme" ColumnName="OrderNoScheme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_MASTER">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.ORDER_MASTER">
+        <MappingFragment StoreEntitySet="ORDER_MASTER">
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="ORDER_TYPE" ColumnName="ORDER_TYPE" />
+          <ScalarProperty Name="PO_NO" ColumnName="PO_NO" />
+          <ScalarProperty Name="PO_DATE" ColumnName="PO_DATE" />
+          <ScalarProperty Name="SOLDTO_ID" ColumnName="SOLDTO_ID" />
+          <ScalarProperty Name="SHIPTO_ID" ColumnName="SHIPTO_ID" />
+          <ScalarProperty Name="BILLTO_ID" ColumnName="BILLTO_ID" />
+          <ScalarProperty Name="SALES_ID" ColumnName="SALES_ID" />
+          <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
+          <ScalarProperty Name="PAYMENT_TYPE" ColumnName="PAYMENT_TYPE" />
+          <ScalarProperty Name="ATTENTION" ColumnName="ATTENTION" />
+          <ScalarProperty Name="PARTIAL_FLAG" ColumnName="PARTIAL_FLAG" />
+          <ScalarProperty Name="COMBINE_ORDER_FLAG" ColumnName="COMBINE_ORDER_FLAG" />
+          <ScalarProperty Name="EARLY_SHIP_FLAG" ColumnName="EARLY_SHIP_FLAG" />
+          <ScalarProperty Name="FREIGHT" ColumnName="FREIGHT" />
+          <ScalarProperty Name="INSURANCE" ColumnName="INSURANCE" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="PRODUCT_SITE" ColumnName="PRODUCT_SITE" />
+          <ScalarProperty Name="DUE_DATE" ColumnName="DUE_DATE" />
+          <ScalarProperty Name="REQUIRED_DATE" ColumnName="REQUIRED_DATE" />
+          <ScalarProperty Name="SHIPMENT_TERM" ColumnName="SHIPMENT_TERM" />
+          <ScalarProperty Name="SHIP_VIA" ColumnName="SHIP_VIA" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="ORDER_NOTE" ColumnName="ORDER_NOTE" />
+          <ScalarProperty Name="ORDER_STATUS" ColumnName="ORDER_STATUS" />
+          <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+          <ScalarProperty Name="TOTAL_LINE" ColumnName="TOTAL_LINE" />
+          <ScalarProperty Name="LAST_UPDATED" ColumnName="LAST_UPDATED" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CUSTOMER_ATTENTION" ColumnName="CUSTOMER_ATTENTION" />
+          <ScalarProperty Name="AUTO_ORDER_FLAG" ColumnName="AUTO_ORDER_FLAG" />
+          <ScalarProperty Name="INCOTERM" ColumnName="INCOTERM" />
+          <ScalarProperty Name="INCOTERM_TEXT" ColumnName="INCOTERM_TEXT" />
+          <ScalarProperty Name="SALES_NOTE" ColumnName="SALES_NOTE" />
+          <ScalarProperty Name="OP_NOTE" ColumnName="OP_NOTE" />
+          <ScalarProperty Name="SHIP_CONDITION" ColumnName="SHIP_CONDITION" />
+          <ScalarProperty Name="NONERoHS_ACCEPT" ColumnName="NONERoHS_ACCEPT" />
+          <ScalarProperty Name="ProjectFlag" ColumnName="ProjectFlag" />
+          <ScalarProperty Name="Z7Sales" ColumnName="Z7Sales" />
+          <ScalarProperty Name="DefaultSalesNote" ColumnName="DefaultSalesNote" />
+          <ScalarProperty Name="prj_Note" ColumnName="prj_Note" />
+          <ScalarProperty Name="EARLY_SHIP" ColumnName="EARLY_SHIP" />
+          <ScalarProperty Name="ER_EMPLOYEE" ColumnName="ER_EMPLOYEE" />
+          <ScalarProperty Name="END_CUST" ColumnName="END_CUST" />
+          <ScalarProperty Name="KEYPERSON" ColumnName="KEYPERSON" />
+          <ScalarProperty Name="CREDIT_CARD" ColumnName="CREDIT_CARD" />
+          <ScalarProperty Name="CREDIT_CARD_EXPIRE_DATE" ColumnName="CREDIT_CARD_EXPIRE_DATE" />
+          <ScalarProperty Name="CREDIT_CARD_VERIFY_NUMBER" ColumnName="CREDIT_CARD_VERIFY_NUMBER" />
+          <ScalarProperty Name="PAYTERM" ColumnName="PAYTERM" />
+          <ScalarProperty Name="CREDIT_CARD_HOLDER" ColumnName="CREDIT_CARD_HOLDER" />
+          <ScalarProperty Name="CREDIT_CARD_TYPE" ColumnName="CREDIT_CARD_TYPE" />
+          <ScalarProperty Name="BILLINGINSTRUCTION_INFO" ColumnName="BILLINGINSTRUCTION_INFO" />
+          <ScalarProperty Name="EMPLOYEEID" ColumnName="EMPLOYEEID" />
+          <ScalarProperty Name="DIST_CHAN" ColumnName="DIST_CHAN" />
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+          <ScalarProperty Name="SALESGROUP" ColumnName="SALESGROUP" />
+          <ScalarProperty Name="SALESOFFICE" ColumnName="SALESOFFICE" />
+          <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+          <ScalarProperty Name="IS_EARLYSHIP" ColumnName="IS_EARLYSHIP" />
+          <ScalarProperty Name="isExempt" ColumnName="isExempt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_MASTER_EXTENSION">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.ORDER_MASTER_EXTENSION">
+        <MappingFragment StoreEntitySet="ORDER_MASTER_EXTENSION">
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="PI2CUSTOMER_FLAG" ColumnName="PI2CUSTOMER_FLAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIMEZONE">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.TIMEZONE">
+        <MappingFragment StoreEntitySet="TIMEZONE">
+          <ScalarProperty Name="ORG" ColumnName="ORG" />
+          <ScalarProperty Name="TimeZoneName" ColumnName="TimeZoneName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCT_DEPENDENCY">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.PRODUCT_DEPENDENCY">
+        <MappingFragment StoreEntitySet="PRODUCT_DEPENDENCY">
+          <ScalarProperty Name="LAST_UPDATED_DATE" ColumnName="LAST_UPDATED_DATE" />
+          <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="DEPENDENCY_PART_NO" ColumnName="DEPENDENCY_PART_NO" />
+          <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+          <ScalarProperty Name="DEPENDENCY_ID" ColumnName="DEPENDENCY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cart2OrderMaping">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.Cart2OrderMaping">
+        <MappingFragment StoreEntitySet="Cart2OrderMaping">
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARTMASTERV2">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.CARTMASTERV2">
+        <MappingFragment StoreEntitySet="CARTMASTERV2">
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="OpportunityAmount" ColumnName="OpportunityAmount" />
+          <ScalarProperty Name="OpportunityID" ColumnName="OpportunityID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="ErpID" ColumnName="ErpID" />
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIEBEL_CONTACT">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SIEBEL_CONTACT">
+        <MappingFragment StoreEntitySet="SIEBEL_CONTACT">
+          <ScalarProperty Name="GDPR_STATUS" ColumnName="GDPR_STATUS" />
+          <ScalarProperty Name="PRIMARY_FLAG" ColumnName="PRIMARY_FLAG" />
+          <ScalarProperty Name="LAST_UPDATED" ColumnName="LAST_UPDATED" />
+          <ScalarProperty Name="CREATED" ColumnName="CREATED" />
+          <ScalarProperty Name="REG_SOURCE" ColumnName="REG_SOURCE" />
+          <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+          <ScalarProperty Name="ACTIVE_FLAG" ColumnName="ACTIVE_FLAG" />
+          <ScalarProperty Name="EMPLOYEE_FLAG" ColumnName="EMPLOYEE_FLAG" />
+          <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="ACCOUNT_STATUS" ColumnName="ACCOUNT_STATUS" />
+          <ScalarProperty Name="ACCOUNT_TYPE" ColumnName="ACCOUNT_TYPE" />
+          <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
+          <ScalarProperty Name="ACCOUNT_ROW_ID" ColumnName="ACCOUNT_ROW_ID" />
+          <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+          <ScalarProperty Name="EMAIL_ADDRESS" ColumnName="EMAIL_ADDRESS" />
+          <ScalarProperty Name="JOB_TITLE" ColumnName="JOB_TITLE" />
+          <ScalarProperty Name="NeverMail" ColumnName="NeverMail" />
+          <ScalarProperty Name="NeverFax" ColumnName="NeverFax" />
+          <ScalarProperty Name="NeverCall" ColumnName="NeverCall" />
+          <ScalarProperty Name="NeverEmail" ColumnName="NeverEmail" />
+          <ScalarProperty Name="Sales_Rep" ColumnName="Sales_Rep" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CanSeeOrder" ColumnName="CanSeeOrder" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+          <ScalarProperty Name="PriOrgId" ColumnName="PriOrgId" />
+          <ScalarProperty Name="ERPID" ColumnName="ERPID" />
+          <ScalarProperty Name="PAR_ROW_ID" ColumnName="PAR_ROW_ID" />
+          <ScalarProperty Name="JOB_FUNCTION" ColumnName="JOB_FUNCTION" />
+          <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIEBEL_CONTACT_PRIVILEGE">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SIEBEL_CONTACT_PRIVILEGE">
+        <MappingFragment StoreEntitySet="SIEBEL_CONTACT_PRIVILEGE">
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="PRIVILEGE" ColumnName="PRIVILEGE" />
+          <ScalarProperty Name="EMAIL_ADDRESS" ColumnName="EMAIL_ADDRESS" />
+          <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIEBEL_CONTACT_PRIVILEGE_TEMP">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SIEBEL_CONTACT_PRIVILEGE_TEMP">
+        <MappingFragment StoreEntitySet="SIEBEL_CONTACT_PRIVILEGE_TEMP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="ACTION_TYPE" ColumnName="ACTION_TYPE" />
+          <ScalarProperty Name="PRIVILEGE" ColumnName="PRIVILEGE" />
+          <ScalarProperty Name="EMAIL_ADDRESS" ColumnName="EMAIL_ADDRESS" />
+          <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAP_PRODUCT">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SAP_PRODUCT">
+        <MappingFragment StoreEntitySet="SAP_PRODUCT">
+          <ScalarProperty Name="PLM_STATUS" ColumnName="PLM_STATUS" />
+          <ScalarProperty Name="PRODUCT_FAMILY" ColumnName="PRODUCT_FAMILY" />
+          <ScalarProperty Name="SOURCE_LOCATION" ColumnName="SOURCE_LOCATION" />
+          <ScalarProperty Name="SIZE_DIMENSIONS" ColumnName="SIZE_DIMENSIONS" />
+          <ScalarProperty Name="GIP_CODE" ColumnName="GIP_CODE" />
+          <ScalarProperty Name="PRODUCT_TYPE" ColumnName="PRODUCT_TYPE" />
+          <ScalarProperty Name="LAST_UPD_DATE" ColumnName="LAST_UPD_DATE" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="VOLUME_UNIT" ColumnName="VOLUME_UNIT" />
+          <ScalarProperty Name="VOLUME" ColumnName="VOLUME" />
+          <ScalarProperty Name="WEIGHT_UNIT" ColumnName="WEIGHT_UNIT" />
+          <ScalarProperty Name="GROSS_WEIGHT" ColumnName="GROSS_WEIGHT" />
+          <ScalarProperty Name="NET_WEIGHT" ColumnName="NET_WEIGHT" />
+          <ScalarProperty Name="EDIVISION" ColumnName="EDIVISION" />
+          <ScalarProperty Name="EGROUP" ColumnName="EGROUP" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ROHS_FLAG" ColumnName="ROHS_FLAG" />
+          <ScalarProperty Name="PRODUCT_DESC" ColumnName="PRODUCT_DESC" />
+          <ScalarProperty Name="GENITEMCATGRP" ColumnName="GENITEMCATGRP" />
+          <ScalarProperty Name="PRODUCT_LINE" ColumnName="PRODUCT_LINE" />
+          <ScalarProperty Name="PRODUCT_DIVISION" ColumnName="PRODUCT_DIVISION" />
+          <ScalarProperty Name="PRODUCT_GROUP" ColumnName="PRODUCT_GROUP" />
+          <ScalarProperty Name="PRODUCT_HIERARCHY" ColumnName="PRODUCT_HIERARCHY" />
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+          <ScalarProperty Name="MATERIAL_GROUP" ColumnName="MATERIAL_GROUP" />
+          <ScalarProperty Name="MODEL_NO" ColumnName="MODEL_NO" />
+          <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAP_PRODUCT_ORG">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SAP_PRODUCT_ORG">
+        <MappingFragment StoreEntitySet="SAP_PRODUCT_ORG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MIN_DLV_QTY" ColumnName="MIN_DLV_QTY" />
+          <ScalarProperty Name="MIN_ORD_QTY" ColumnName="MIN_ORD_QTY" />
+          <ScalarProperty Name="LAST_UPD_DATE" ColumnName="LAST_UPD_DATE" />
+          <ScalarProperty Name="PRICINGGROUP" ColumnName="PRICINGGROUP" />
+          <ScalarProperty Name="DELIVERYPLANT" ColumnName="DELIVERYPLANT" />
+          <ScalarProperty Name="B2BONLINE" ColumnName="B2BONLINE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="DIST_CHANNEL" ColumnName="DIST_CHANNEL" />
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIEBEL_ACCOUNT">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SIEBEL_ACCOUNT">
+        <MappingFragment StoreEntitySet="SIEBEL_ACCOUNT">
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="ACCOUNT_CC_GRADE" ColumnName="ACCOUNT_CC_GRADE" />
+          <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+          <ScalarProperty Name="ACCOUNT_TEAM" ColumnName="ACCOUNT_TEAM" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="PriOwnerPosition" ColumnName="PriOwnerPosition" />
+          <ScalarProperty Name="PriOwnerRowId" ColumnName="PriOwnerRowId" />
+          <ScalarProperty Name="PriOwnerDivision" ColumnName="PriOwnerDivision" />
+          <ScalarProperty Name="LAST_UPDATED" ColumnName="LAST_UPDATED" />
+          <ScalarProperty Name="CREATED" ColumnName="CREATED" />
+          <ScalarProperty Name="BAA" ColumnName="BAA" />
+          <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+          <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="PARTNER_FLAG" ColumnName="PARTNER_FLAG" />
+          <ScalarProperty Name="COMPETITOR_FLAG" ColumnName="COMPETITOR_FLAG" />
+          <ScalarProperty Name="MAJORACCOUNT_FLAG" ColumnName="MAJORACCOUNT_FLAG" />
+          <ScalarProperty Name="PARENT_ROW_ID" ColumnName="PARENT_ROW_ID" />
+          <ScalarProperty Name="PRIMARY_SALES_EMAIL" ColumnName="PRIMARY_SALES_EMAIL" />
+          <ScalarProperty Name="RBU" ColumnName="RBU" />
+          <ScalarProperty Name="ACCOUNT_TYPE" ColumnName="ACCOUNT_TYPE" />
+          <ScalarProperty Name="BusinessGroup" ColumnName="BusinessGroup" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="OU_TYPE_CD" ColumnName="OU_TYPE_CD" />
+          <ScalarProperty Name="PHONE_NUM" ColumnName="PHONE_NUM" />
+          <ScalarProperty Name="FAX_NUM" ColumnName="FAX_NUM" />
+          <ScalarProperty Name="ACCOUNT_STATUS" ColumnName="ACCOUNT_STATUS" />
+          <ScalarProperty Name="ACCOUNT_NAME" ColumnName="ACCOUNT_NAME" />
+          <ScalarProperty Name="ERP_ID" ColumnName="ERP_ID" />
+          <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cart_DETAIL_V2">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.cart_DETAIL_V2">
+        <MappingFragment StoreEntitySet="cart_DETAIL_V2">
+          <ScalarProperty Name="PRODUCT_FAMILY" ColumnName="PRODUCT_FAMILY" />
+          <ScalarProperty Name="higherLevel" ColumnName="higherLevel" />
+          <ScalarProperty Name="oUnit_Price" ColumnName="oUnit_Price" />
+          <ScalarProperty Name="QUOTE_ID" ColumnName="QUOTE_ID" />
+          <ScalarProperty Name="Model_No" ColumnName="Model_No" />
+          <ScalarProperty Name="otype" ColumnName="otype" />
+          <ScalarProperty Name="inventory" ColumnName="inventory" />
+          <ScalarProperty Name="CustMaterial" ColumnName="CustMaterial" />
+          <ScalarProperty Name="CanbeConfirmed" ColumnName="CanbeConfirmed" />
+          <ScalarProperty Name="SatisfyFlag" ColumnName="SatisfyFlag" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="req_date" ColumnName="req_date" />
+          <ScalarProperty Name="Ew_Flag" ColumnName="Ew_Flag" />
+          <ScalarProperty Name="rohs" ColumnName="rohs" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Delivery_Plant" ColumnName="Delivery_Plant" />
+          <ScalarProperty Name="RecyclingFee" ColumnName="RecyclingFee" />
+          <ScalarProperty Name="Itp" ColumnName="Itp" />
+          <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+          <ScalarProperty Name="List_Price" ColumnName="List_Price" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Part_No" ColumnName="Part_No" />
+          <ScalarProperty Name="Line_No" ColumnName="Line_No" />
+          <ScalarProperty Name="Cart_Id" ColumnName="Cart_Id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CheckPointOrder2Cart">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.CheckPointOrder2Cart">
+        <MappingFragment StoreEntitySet="CheckPointOrder2Cart">
+          <ScalarProperty Name="PO_NO" ColumnName="PO_NO" />
+          <ScalarProperty Name="Creator" ColumnName="Creator" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+          <ScalarProperty Name="CheckPointOrderNo" ColumnName="CheckPointOrderNo" />
+          <ScalarProperty Name="ERPID" ColumnName="ERPID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAP_PRODUCT_ABC">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SAP_PRODUCT_ABC">
+        <MappingFragment StoreEntitySet="SAP_PRODUCT_ABC">
+          <ScalarProperty Name="COUNTRY_ORIGIN" ColumnName="COUNTRY_ORIGIN" />
+          <ScalarProperty Name="FREIGHT_METHOD" ColumnName="FREIGHT_METHOD" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MIN_LOT_SIZE" ColumnName="MIN_LOT_SIZE" />
+          <ScalarProperty Name="service_level" ColumnName="service_level" />
+          <ScalarProperty Name="min_safety_stock" ColumnName="min_safety_stock" />
+          <ScalarProperty Name="safety_stock" ColumnName="safety_stock" />
+          <ScalarProperty Name="Ctrl_Code" ColumnName="Ctrl_Code" />
+          <ScalarProperty Name="ProfitCenter" ColumnName="ProfitCenter" />
+          <ScalarProperty Name="IN_HOUSE_PRODUCTION" ColumnName="IN_HOUSE_PRODUCTION" />
+          <ScalarProperty Name="GP_PROCESSING_TIME" ColumnName="GP_PROCESSING_TIME" />
+          <ScalarProperty Name="PLANNED_DEL_TIME" ColumnName="PLANNED_DEL_TIME" />
+          <ScalarProperty Name="ABC_INDICATOR" ColumnName="ABC_INDICATOR" />
+          <ScalarProperty Name="PLANT" ColumnName="PLANT" />
+          <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAP_EMPLOYEE">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SAP_EMPLOYEE">
+        <MappingFragment StoreEntitySet="SAP_EMPLOYEE">
+          <ScalarProperty Name="SALESGROUP" ColumnName="SALESGROUP" />
+          <ScalarProperty Name="SALESOFFICE" ColumnName="SALESOFFICE" />
+          <ScalarProperty Name="PAYR_AREA" ColumnName="PAYR_AREA" />
+          <ScalarProperty Name="NUM_OF_CHILD" ColumnName="NUM_OF_CHILD" />
+          <ScalarProperty Name="OTHERPHONE" ColumnName="OTHERPHONE" />
+          <ScalarProperty Name="CELLPHONE" ColumnName="CELLPHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="SNAME" ColumnName="SNAME" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="SUB_EMP_GROUP" ColumnName="SUB_EMP_GROUP" />
+          <ScalarProperty Name="EMP_GROUP" ColumnName="EMP_GROUP" />
+          <ScalarProperty Name="PERS_AREA" ColumnName="PERS_AREA" />
+          <ScalarProperty Name="SALES_CODE" ColumnName="SALES_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAP_DIMCOMPANY">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SAP_DIMCOMPANY">
+        <MappingFragment StoreEntitySet="SAP_DIMCOMPANY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PAYMENT_TERM_NAME" ColumnName="PAYMENT_TERM_NAME" />
+          <ScalarProperty Name="PAYMENT_TERM_CODE" ColumnName="PAYMENT_TERM_CODE" />
+          <ScalarProperty Name="INCO2" ColumnName="INCO2" />
+          <ScalarProperty Name="INCO1" ColumnName="INCO1" />
+          <ScalarProperty Name="PRICE_LIST" ColumnName="PRICE_LIST" />
+          <ScalarProperty Name="PRICE_GRP" ColumnName="PRICE_GRP" />
+          <ScalarProperty Name="VM" ColumnName="VM" />
+          <ScalarProperty Name="CUST_IND" ColumnName="CUST_IND" />
+          <ScalarProperty Name="ORDERS_IN_PAST_HALFYEAR" ColumnName="ORDERS_IN_PAST_HALFYEAR" />
+          <ScalarProperty Name="AMOUNT_IN_PAST_YEAR" ColumnName="AMOUNT_IN_PAST_YEAR" />
+          <ScalarProperty Name="ORDERS_IN_PAST_YEAR" ColumnName="ORDERS_IN_PAST_YEAR" />
+          <ScalarProperty Name="LAST_BUY_DATE" ColumnName="LAST_BUY_DATE" />
+          <ScalarProperty Name="FACT2010" ColumnName="FACT2010" />
+          <ScalarProperty Name="FACT2009" ColumnName="FACT2009" />
+          <ScalarProperty Name="FACT2008" ColumnName="FACT2008" />
+          <ScalarProperty Name="FACT2007" ColumnName="FACT2007" />
+          <ScalarProperty Name="FACT2006" ColumnName="FACT2006" />
+          <ScalarProperty Name="FACT2005" ColumnName="FACT2005" />
+          <ScalarProperty Name="ACCOUNT_TYPE" ColumnName="ACCOUNT_TYPE" />
+          <ScalarProperty Name="BUSINESS_GROUP" ColumnName="BUSINESS_GROUP" />
+          <ScalarProperty Name="PRIMARY_OWNER_DIVISION" ColumnName="PRIMARY_OWNER_DIVISION" />
+          <ScalarProperty Name="PRIMARY_SALES_EMAIL" ColumnName="PRIMARY_SALES_EMAIL" />
+          <ScalarProperty Name="RBU" ColumnName="RBU" />
+          <ScalarProperty Name="ACCOUNT_STATUS" ColumnName="ACCOUNT_STATUS" />
+          <ScalarProperty Name="ACCOUNT_NAME" ColumnName="ACCOUNT_NAME" />
+          <ScalarProperty Name="ACCOUNT_ROW_ID" ColumnName="ACCOUNT_ROW_ID" />
+          <ScalarProperty Name="PRIMARY_BAA" ColumnName="PRIMARY_BAA" />
+          <ScalarProperty Name="SECTOR" ColumnName="SECTOR" />
+          <ScalarProperty Name="SAP_OPNAME" ColumnName="SAP_OPNAME" />
+          <ScalarProperty Name="SAP_ISNAME" ColumnName="SAP_ISNAME" />
+          <ScalarProperty Name="SAP_SALESCODE" ColumnName="SAP_SALESCODE" />
+          <ScalarProperty Name="SAP_SALESNAME" ColumnName="SAP_SALESNAME" />
+          <ScalarProperty Name="SALESOFFICENAME" ColumnName="SALESOFFICENAME" />
+          <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+          <ScalarProperty Name="DELETION_FLAG" ColumnName="DELETION_FLAG" />
+          <ScalarProperty Name="CONTACT_EMAIL" ColumnName="CONTACT_EMAIL" />
+          <ScalarProperty Name="CREDIT_LIMIT" ColumnName="CREDIT_LIMIT" />
+          <ScalarProperty Name="AMT_INSURED" ColumnName="AMT_INSURED" />
+          <ScalarProperty Name="SALESGROUP" ColumnName="SALESGROUP" />
+          <ScalarProperty Name="SALESOFFICE" ColumnName="SALESOFFICE" />
+          <ScalarProperty Name="ATTRIBUTE4" ColumnName="ATTRIBUTE4" />
+          <ScalarProperty Name="SHIPCONDITION" ColumnName="SHIPCONDITION" />
+          <ScalarProperty Name="COMPANY_PRICE_TYPE" ColumnName="COMPANY_PRICE_TYPE" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="SHIP_VIA" ColumnName="SHIP_VIA" />
+          <ScalarProperty Name="CREDIT_TERM" ColumnName="CREDIT_TERM" />
+          <ScalarProperty Name="ATTENTION" ColumnName="ATTENTION" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="ZIP_CODE" ColumnName="ZIP_CODE" />
+          <ScalarProperty Name="REGION_CODE" ColumnName="REGION_CODE" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="PRICE_CLASS" ColumnName="PRICE_CLASS" />
+          <ScalarProperty Name="COMPANY_TYPE" ColumnName="COMPANY_TYPE" />
+          <ScalarProperty Name="TEL_NO" ColumnName="TEL_NO" />
+          <ScalarProperty Name="FAX_NO" ColumnName="FAX_NO" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="COMPANY_NAME" ColumnName="COMPANY_NAME" />
+          <ScalarProperty Name="PARENTCOMPANYID" ColumnName="PARENTCOMPANYID" />
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="UNIQUE_ID" ColumnName="UNIQUE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAP_COMPANY_PARTNERS">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SAP_COMPANY_PARTNERS">
+        <MappingFragment StoreEntitySet="SAP_COMPANY_PARTNERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DEFPA" ColumnName="DEFPA" />
+          <ScalarProperty Name="KNREF" ColumnName="KNREF" />
+          <ScalarProperty Name="PARTNER_NUMBER" ColumnName="PARTNER_NUMBER" />
+          <ScalarProperty Name="SALES_CODE" ColumnName="SALES_CODE" />
+          <ScalarProperty Name="VENDOR_CREDITOR" ColumnName="VENDOR_CREDITOR" />
+          <ScalarProperty Name="PARENT_COMPANY_ID" ColumnName="PARENT_COMPANY_ID" />
+          <ScalarProperty Name="PARTNER_FUNCTION" ColumnName="PARTNER_FUNCTION" />
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+          <ScalarProperty Name="DIST_CHANN" ColumnName="DIST_CHANN" />
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCT_COMPATIBILITY">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.PRODUCT_COMPATIBILITY">
+        <MappingFragment StoreEntitySet="PRODUCT_COMPATIBILITY">
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_ID" ColumnName="UPDATE_ID" />
+          <ScalarProperty Name="REASON" ColumnName="REASON" />
+          <ScalarProperty Name="RELATION" ColumnName="RELATION" />
+          <ScalarProperty Name="PART_NO2" ColumnName="PART_NO2" />
+          <ScalarProperty Name="PART_NO1" ColumnName="PART_NO1" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAP_PRODUCT_STATUS">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SAP_PRODUCT_STATUS">
+        <MappingFragment StoreEntitySet="SAP_PRODUCT_STATUS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ITEM_CATEGORY_GROUP" ColumnName="ITEM_CATEGORY_GROUP" />
+          <ScalarProperty Name="VALID_DATE" ColumnName="VALID_DATE" />
+          <ScalarProperty Name="MATERIAL_PRICING_GRP" ColumnName="MATERIAL_PRICING_GRP" />
+          <ScalarProperty Name="DLV_PLANT" ColumnName="DLV_PLANT" />
+          <ScalarProperty Name="MIN_BTO_QTY" ColumnName="MIN_BTO_QTY" />
+          <ScalarProperty Name="MIN_DLV_QTY" ColumnName="MIN_DLV_QTY" />
+          <ScalarProperty Name="MIN_ORDER_QTY" ColumnName="MIN_ORDER_QTY" />
+          <ScalarProperty Name="PRODUCT_STATUS" ColumnName="PRODUCT_STATUS" />
+          <ScalarProperty Name="DIST_CHANNEL" ColumnName="DIST_CHANNEL" />
+          <ScalarProperty Name="SALES_ORG" ColumnName="SALES_ORG" />
+          <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAP_PRODUCT_STATUS_ORDERABLE">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SAP_PRODUCT_STATUS_ORDERABLE">
+        <MappingFragment StoreEntitySet="SAP_PRODUCT_STATUS_ORDERABLE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ITEM_CATEGORY_GROUP" ColumnName="ITEM_CATEGORY_GROUP" />
+          <ScalarProperty Name="VALID_DATE" ColumnName="VALID_DATE" />
+          <ScalarProperty Name="MATERIAL_PRICING_GRP" ColumnName="MATERIAL_PRICING_GRP" />
+          <ScalarProperty Name="DLV_PLANT" ColumnName="DLV_PLANT" />
+          <ScalarProperty Name="MIN_BTO_QTY" ColumnName="MIN_BTO_QTY" />
+          <ScalarProperty Name="MIN_DLV_QTY" ColumnName="MIN_DLV_QTY" />
+          <ScalarProperty Name="MIN_ORDER_QTY" ColumnName="MIN_ORDER_QTY" />
+          <ScalarProperty Name="PRODUCT_STATUS" ColumnName="PRODUCT_STATUS" />
+          <ScalarProperty Name="DIST_CHANNEL" ColumnName="DIST_CHANNEL" />
+          <ScalarProperty Name="SALES_ORG" ColumnName="SALES_ORG" />
+          <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderForwarderServices">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.OrderForwarderService">
+        <MappingFragment StoreEntitySet="OrderForwarderService">
+          <ScalarProperty Name="CustomChargeBy" ColumnName="CustomChargeBy" />
+          <ScalarProperty Name="FreightChargeBy" ColumnName="FreightChargeBy" />
+          <ScalarProperty Name="FreightOption" ColumnName="FreightOption" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_PARTNERS">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.ORDER_PARTNERS">
+        <MappingFragment StoreEntitySet="ORDER_PARTNERS">
+          <ScalarProperty Name="TAXJURI" ColumnName="TAXJURI" />
+          <ScalarProperty Name="STREET2" ColumnName="STREET2" />
+          <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="ATTENTION" ColumnName="ATTENTION" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ERPID" ColumnName="ERPID" />
+          <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BB_ESTORE_ORDER">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.BB_ESTORE_ORDER">
+        <MappingFragment StoreEntitySet="BB_ESTORE_ORDER">
+          <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="PROCESS_LOG" ColumnName="PROCESS_LOG" />
+          <ScalarProperty Name="ORDER_STATUS" ColumnName="ORDER_STATUS" />
+          <ScalarProperty Name="ERPID" ColumnName="ERPID" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FreightOptions">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.FreightOption">
+        <MappingFragment StoreEntitySet="FreightOption">
+          <ScalarProperty Name="SAPShippingConditionText" ColumnName="SAPShippingConditionText" />
+          <ScalarProperty Name="SAPShippingCondition" ColumnName="SAPShippingCondition" />
+          <ScalarProperty Name="EStoreServiceName" ColumnName="EStoreServiceName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CarrierCode" ColumnName="CarrierCode" />
+          <ScalarProperty Name="SAPCode" ColumnName="SAPCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BB_CREDITCARD_ORDER">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.BB_CREDITCARD_ORDER">
+        <MappingFragment StoreEntitySet="BB_CREDITCARD_ORDER">
+          <ScalarProperty Name="CREATED_By" ColumnName="CREATED_By" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="TOTAL_AUTH_AMOUNT" ColumnName="TOTAL_AUTH_AMOUNT" />
+          <ScalarProperty Name="AUTH_CODE" ColumnName="AUTH_CODE" />
+          <ScalarProperty Name="TRANSACTION_ID" ColumnName="TRANSACTION_ID" />
+          <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="TRANSACTION_TYPE" ColumnName="TRANSACTION_TYPE" />
+          <ScalarProperty Name="CARD_TYPE" ColumnName="CARD_TYPE" />
+          <ScalarProperty Name="CARD_NO" ColumnName="CARD_NO" />
+          <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAP_COMPANY_ORG">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.SAP_COMPANY_ORG">
+        <MappingFragment StoreEntitySet="SAP_COMPANY_ORG">
+          <ScalarProperty Name="IS_DEFAULT" ColumnName="IS_DEFAULT" />
+          <ScalarProperty Name="ORG_NAME" ColumnName="ORG_NAME" />
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HubConfiguredResults">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.HubConfiguredResult">
+        <MappingFragment StoreEntitySet="HubConfiguredResult">
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="ReConfigData" ColumnName="ReConfigData" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SelectedItems" ColumnName="SelectedItems" />
+          <ScalarProperty Name="RootID" ColumnName="RootID" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="ParentLineNo" ColumnName="ParentLineNo" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASG_BTOSInstruction">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.ASG_BTOSInstruction">
+        <MappingFragment StoreEntitySet="ASG_BTOSInstruction">
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="LineNo" ColumnName="LineNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExtendedWarrantyPartNo_V2">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.ExtendedWarrantyPartNo_V2">
+        <MappingFragment StoreEntitySet="ExtendedWarrantyPartNo_V2">
+          <ScalarProperty Name="SalesGroup" ColumnName="SalesGroup" />
+          <ScalarProperty Name="SeqNO" ColumnName="SeqNO" />
+          <ScalarProperty Name="Plant" ColumnName="Plant" />
+          <ScalarProperty Name="EW_Rate" ColumnName="EW_Rate" />
+          <ScalarProperty Name="EW_Month" ColumnName="EW_Month" />
+          <ScalarProperty Name="EW_PartNO" ColumnName="EW_PartNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

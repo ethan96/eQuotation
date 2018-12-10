@@ -1,0 +1,223 @@
+﻿@model eQuotation.ViewModels.QuoteApprovalViewModel
+@using WorkFlowlAPI
+<style>
+    /* The Modal (background) */
+    .PSM-modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .select-PSM-modal-content {
+        background-color: #fefefe;
+        margin: 8% auto; /* 15% from the top and centered */
+        padding: 9px;
+        border: 1px solid #888;
+        width: 40%; /* Could be more or less, depending on screen size */
+        border-radius: 5px;
+        max-height: 600px;
+    }
+
+    /* The Close Button */
+    .PSM-modal-close {
+        color: #aaa;
+        float: right;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+        .PSM-modal-close:hover, .PSM-modal-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    #btn-selectPSM {
+        margin: 10px;
+    }
+
+    .selectPSM {
+        float: right;
+    }
+</style>
+<div class="quoteApproverListV2">
+    <!-- The PSM Selection Modal -->
+    <div id="select-PSM-modal" class="PSM-modal">
+        <!--PSM Selection Modal content -->
+        <div class="select-PSM-modal-content">
+            <span class="PSM-modal-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+            <p></p>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        @if (!string.IsNullOrEmpty(Model.ApprovalReason))
+        {
+            <div class="stylenormal" style="text-align: left; color: #FF0000; margin-left:5px;">
+                <b>Approval Reason :</b> @Model.ApprovalReason
+            </div>
+            <br />
+        }
+        @if (Model.QuoteApprovalList !=null && Model.QuoteApprovalList.Count() > 0)
+        {
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                报价单 @Model.QuoteNo 簽核历程:
+                @if (Model.IsCheckBeforeApproval)
+                {
+                    <span class="selectPSM">
+                        <button id="btn-selectPSM" type="button" class="button"><i class="fa fa-plus" aria-hidden="true"></i> Add More PSM Approvers</button>
+                    </span>
+                }
+            </div>
+
+            <!-- Table -->
+            <table class="quoteapprover_table">
+                <tr>
+                    @if (Model.IsCheckBeforeApproval)
+                    {
+                        <td class="column-name" width="50px;">Action</td>
+                    }
+                    <td class="column-name" width="70px;">次序</td>
+                    <td class="column-name" width="220px;">簽核者</td>
+                    <td class="column-name">簽核类型</td>
+                    <td class="column-name">簽核状态</td>
+                    <td class="column-name">Comments</td>
+                </tr>
+                @for (int i = 0; i < Model.QuoteApprovalList.Count; i++)
+                {
+                    <tr class="row-data" data-value='@Model.QuoteApprovalList[i].UID'>
+                        @if (Model.QuoteApprovalList[i].Status == -1 && Model.HiddenApprovers.Contains(Model.QuoteApprovalList[i].Approver.ToLower()))
+                        {
+                            var reason = String.IsNullOrEmpty(Model.QuoteApprovalList[i].RejectReason) || (Model.QuoteApprovalList[i].RejectReason != null && Model.QuoteApprovalList[i].RejectReason.Contains("MobileApprove")) ? "" : Model.QuoteApprovalList[i].RejectReason;
+
+                            <td width="70px;"></td>
+                            <td></td>
+                            <td></td>
+                            <td style="color: #FF0000;">退件</td>
+                            <td>@reason</td>
+
+                        }
+                        else if (!Model.HiddenApprovers.Contains(Model.QuoteApprovalList[i].Approver.ToLower()))
+                        {
+
+                            if (Model.IsCheckBeforeApproval)
+                            {
+                                <td class="actionTd" width="50px;" style="text-align: center">
+                                    @if (((Model.QuoteApprovalList[i].ApproverType == ApproverType.OptionalPSM.ToString() || Model.QuoteApprovalList[i].ApproverType == ApproverType.PSM.ToString()) && Model.QuoteApprovalList[i].LevelNum > 2) || (Model.QuoteApprovalList[i].ApproverType == ApproverType.OptionalPSM.ToString()  && Model.QuoteApprovalList[i].LevelNum < 2))// Don't allow delete PSM in AISC, so constrain levelnum >2
+                                    {
+                                        <a class="btn-del-item" style="color:darkred">
+                                            <i class='fa fa-times-circle fa-lg'></i>
+                                        </a>
+                                    }
+                                </td>
+                            }
+                            <td width="70px;">
+                                @Model.QuoteApprovalList[i].LevelNum.ToString("0.0")
+                            </td>
+                            <td>@Html.DisplayFor(m => Model.QuoteApprovalList[i].Approver)</td>
+
+                            <td>@Html.DisplayFor(m => Model.QuoteApprovalList[i].ApproverType)</td>
+                            if (Model.QuoteApprovalList[i].Status == 1)
+                            {
+                                var reason = String.IsNullOrEmpty(Model.QuoteApprovalList[i].ApprovedReason) || (Model.QuoteApprovalList[i].ApprovedReason != null && Model.QuoteApprovalList[i].ApprovedReason.Contains("MobileApprove")) ? "" : Model.QuoteApprovalList[i].ApprovedReason;
+                                <td>同意</td>
+                                if (Model.ApprovedCommentIsViewable)
+                                {
+                                    <td>@reason</td>
+                                }
+                            }
+                            else if (Model.QuoteApprovalList[i].Status == -1)
+                            {
+                                var reason = String.IsNullOrEmpty(Model.QuoteApprovalList[i].RejectReason) || (Model.QuoteApprovalList[i].RejectReason != null && Model.QuoteApprovalList[i].RejectReason.Contains("MobileApprove")) ? "" : Model.QuoteApprovalList[i].RejectReason;
+                                <td style="color: #FF0000;">退件</td>
+                                <td>@reason</td>
+                            }
+                            else
+                            {
+                                <td>Waiting for approval</td>
+                            }
+
+
+                        }
+                        @Html.HiddenFor(m => @Model.QuoteApprovalList[i].UID)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].TypeID)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].LevelNum)
+                        @Html.HiddenFor(m => @Model.QuoteApprovalList[i].Approver)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].ApproverType)
+                        @Html.HiddenFor(m => @Model.QuoteApprovalList[i].CreatedDate)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].LastUpdatedDate)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].MobileNo)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].MobileYes)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].Status)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].Type)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].Url)
+                        @Html.HiddenFor(m => Model.QuoteApprovalList[i].ViewGP)
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <div class="panel-heading">报价单 @Model.QuoteNo 不须簽核</div>
+        }
+    </div>
+
+
+</div>
+<script>
+    //display PSM Selection modal for Preview
+    $("#btn-selectPSM").on("click", function (e) {
+        $('.select-PSM-modal-content p').empty();
+        $.ajax({
+            url: "/Quotes/GetACNPSMApproversListV2",
+            type: 'POST',
+            data: $("form").serialize(),
+            success: function (data) {
+                $('#select-PSM-modal').css('display', 'block');
+                $('.select-PSM-modal-content p').append(data);
+
+                // When the user clicks anywhere outside of the modal, close it
+                var PSMModal = document.getElementById('select-PSM-modal');
+                window.onclick = function (event) {
+                    if (event.target == PSMModal) {
+                        $('#select-PSM-modal').css('display', 'none');
+                    }
+                }
+            }
+        });
+    });
+
+    // When the user clicks on <span> (x), close the PSM modal
+    $('.PSM-modal-close').on("click", function () {
+        $('#select-PSM-modal').css('display', 'none');
+    });
+
+    $('.btn-del-item').on("click", function () {
+        //$(this).closest('tr').remove();
+        var approverId = $(this).closest('tr').attr("data-value");
+        $.ajax({
+            url: "/Quotes/RemovePSMApproversV2",
+            type: 'POST',
+            data: $("form").serialize() + "&approverId=" + approverId,
+            dataType: "json",
+            success: function (redata) {
+                if (redata.succeed != null && redata.succeed) {
+                    $('#quoteApproverList').hide().html(redata.data).fadeIn('slow');
+
+                } else {
+                    AlertDialog("Error: " + redata.err);
+                }
+            }
+        });
+    });
+
+
+</script>

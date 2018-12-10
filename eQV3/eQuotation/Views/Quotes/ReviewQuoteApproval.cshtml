@@ -1,0 +1,310 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+.quote-approval-title 
+{
+    text-align:center;
+    padding:10px;
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+.quote-approval-header {
+    padding-left:20px;
+    padding-right:20px;
+}
+
+
+.content {
+    padding-left:50px;
+    padding-right:50px;
+}
+
+
+.quote-approval-image {
+    text-align:center;
+}
+
+.quote-approval-salesComment{
+
+}
+
+.stylenormal {
+    color: black;
+    font-size: 13.0pt;
+    text-decoration: none;
+    font-family: Microsoft JhengHei,Arial;
+    text-align: left;
+}
+
+.stylenormaleng {
+    color: black;
+    font-size: 12.0pt;
+    text-decoration: none;
+    font-family: Arial;
+    text-align: left;
+}
+
+
+.note {
+    padding-top: 50px;
+    padding-right: 18px;
+    padding-bottom: 10px;
+    padding-left: 18px;
+    font-family: Helvetica;
+    font-size: 16px;
+    text-align: left;
+}
+
+.approvalComment {
+    margin-top: 10px;
+}
+
+
+</style>
+@{
+    var approveID = "";
+    if (Model.Approval != null) { approveID = Model.Approval.UID; }
+}
+
+@using (Ajax.BeginForm("ReviewQuoteApproval", "Quotes", new { approveID = approveID},
+    new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        OnBegin = "onSubmitApplicationBegin",
+        OnSuccess = "onSubmitApplicationSuccess"
+    }))
+{
+    <div class="main-content quote-approval">
+        @if (@Model.pagetype == "ReviewQuoteApproval")
+        {
+            <div class="titlebox topbox">
+                <h4>Review Quote Detail. QutoeNo: @Model.QuoteNo</h4>
+            </div>
+            <div class="actionbox" style="min-height: 90px; text-align:center;">
+                <ul>
+                    <li style="font-size:18px;"><button id="approveBtn" type="submit" name="submitButton" value="Approve"><i class="fa fa-check-square-o"></i>Approve</button></li>
+                    <li style="font-size:18px;"><button id="rejectBtn" type="submit" name="submitButton" value="Reject"><i class="fa fa-times"></i>Reject</button></li>
+                </ul>
+                @Html.TextAreaFor(m => m.ApprovalComment, new { @class = "form-control approvalComment", @placeholder = "Enter your comments here..." })
+            </div>
+            @Html.Modal("osx-SPRNO", "special ITP", "80px", "400px")
+        }
+
+        <div class="content">
+            @*@if (Model.AdditionalApproversOption != null && @Model.pagetype == "ReviewQuoteApproval")
+            {
+            <div class="quote-add-approver">
+                <div>需增加以下簽核者以确认稅率:</div>
+                @Html.DropDownListFor(m=>m.AdditionalApprover, Model.AdditionalApproversOption, "Select Approver", new { @class = "form-control" })
+
+            </div>
+            }*@
+
+            <div class="quote-approval-image">
+                <img alt="logo" src="@Util.ResolveServerUrl(VirtualPathUtility.ToAbsolute("~/Images/logo.gif"), false)">
+            </div>
+            <div class="quote-approval-title">
+                <h1>eQuotation Approval request for @Model.QuoteNo</h1>
+            </div>
+            <div class="quote-approval-header">
+                @Html.Partial("_QuoteHeader", @Model)
+            </div>
+            <div class="quote-approval-detail" id="quote-approval-detail">
+                @Html.Partial("_QuoteDetails", @Model)
+            </div>
+
+        </div>
+
+
+    </div>
+}
+
+
+<script type="text/javascript">
+
+    function onSubmitApplicationBegin()
+    {
+        $.blockUI();
+    }
+
+    function onSubmitApplicationSuccess(data) {
+        $.pushHTML(data, function () {
+            $.modal.close(); $("#wrapper-content").html(data);
+        });
+        $.unblockUI();
+    }
+
+    var currentExpiredDate;
+    var currentSPRs = [];
+    $(document).ready(function () {
+        bindEvent();
+        currentExpiredDate = $('#ExpiredDate').val();
+        
+
+        $('.itemSPRNo span').each(function () {
+            currentSPRs.push($(this).text());
+        });
+
+        $('#approveBtn').click(function () {
+            //按下approve 如果有修改效期則加上comment
+            if (currentExpiredDate != $('#ExpiredDate').val()) {
+                var addExpireDateComment = " (Change expired date to " + $('#ExpiredDate').val() + ")";
+                $('#ApprovalComment').val($('#ApprovalComment').val() + addExpireDateComment);
+
+            }
+
+            //按下approve 如果有apply SPR則加上comment
+            var SPRComment = "";
+            var isApplySpr = false;
+            $('.itemSPRNo span').each(function (index) {
+                if(currentSPRs[index] != $(this).text())
+                {
+                    SPRComment += "line" + (index + 1) + ":" + $(this).text() + ". ";
+                    isApplySpr = true;
+                }
+            });
+
+            if (isApplySpr) {
+                var addSPRComment = " (Apply SPR - " + SPRComment + ")";
+                $('#ApprovalComment').val($('#ApprovalComment').val() + addSPRComment);
+
+            }
+        });
+
+    });
+
+    function bindEvent() {
+        $('#GeneralRate').change(function (e) {//有修改時
+            updateGeneralRate();
+        });
+
+        //$('.adjustTax').click(function () {
+        //    if ($('.adjustTax').text() == "取消") {
+        //        $('.taxNumber').show()
+        //        $('.taxTxtbox').css('display', 'none');
+        //        $('.adjustTax').text("稅率调整");
+        //    }
+        //    else {
+        //        $('.taxNumber').hide()
+        //        $('.taxTxtbox').css('display', 'inline-block');
+        //        $('.adjustTax').text("取消");
+        //    }
+        //});
+    }
+
+
+    function updateGeneralRate() {
+        var postdata = JSON.stringify({
+            newTax: $('#GeneralRate').val() / 100,
+            approveID: '@approveID'
+        });
+        //$.ajax({
+        //    url: "/Quotes/updateTax", type: "POST", dataType: "json", data: postdata
+        //    , contentType: "application/json; charset=utf-8", success: function (redata) {
+        //        if (redata.succeed) {
+        //            var result = redata.data;
+        //            alert(result);
+        //            updateproductDetail(result);
+
+        //        } else {
+        //            alerAlertDialogt(redata.err);
+        //        }
+        //    }
+        //});
+        //$.blockUI();
+        $.ajax({
+            url: "/Quotes/updateGeneralRate",
+            type: "POST",
+            data: { newRate: $('#GeneralRate').val(), approveID: '@approveID' },
+            success: function (data)
+            {
+                $.pushHTML(data, function () {
+                    $(".quote-approval-detail").html(data);
+                    bindEvent();
+                });
+                //bindEvent();
+            }
+        })
+        //.done(function (partialViewResult) {
+        //    //$(".quote-approval-detail").html(partialViewResult);
+        //    alert(partialViewResult);
+        //    $.pushHTML(partialViewResul, function () {
+
+        //    });
+        //    //$.unblockUI();
+        //    //$.modal.close(); $("#wrapper-content").html(partialViewResul);
+        //    bindEvent();
+        //});
+
+    }
+
+
+
+
+    // Date Picker for expiration date change
+    $("#ExpiredDate").datepicker({
+        dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        changeYear: true,
+        minDate: "@Model.QuoteDate.AddDays(7).ToString("yyyy-MM-dd")",
+        maxDate: "@Model.ACNMaxNewExpiredDate.ToString("yyyy-MM-dd")",
+
+        onSelect: function (date, instance) {
+
+            $.ajax
+            ({
+                type: "Post",
+                url: "/Quotes/updateExpiredDate",
+                @*data: "{'newExpiredDate':'" + date + "', 'currentExpiredDate':'" + @Model.ExpiredDate + "'}",*@
+                data: "newExpiredDate=" + date + "&currentExpiredDate=" + currentExpiredDate,
+                success: function (redata) {
+                    if (redata.succeed) {
+                    }
+                    else {
+                        alert(redata.err);
+                        $('#ExpiredDate').val('@Model.ExpiredDate.ToString("yyyy-MM-dd")');
+                    }
+                }
+            });
+        }
+
+    });
+
+
+    //Apply SPR
+    function SPRNO(arg) {
+        var lineno = $(arg).attr("data-value");
+        $.get("/operation/SPRNO",
+            { LineNo: parseInt(lineno) }, function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-SPRNO", data);
+                });
+            });
+    }
+
+    // After apply SPR, change quote datail
+    function setproductDetail(result) {
+        for (var i = 0; i < result.length; i++) {
+            result[i].SPRNO;
+            result[i].line_No
+        }
+        if (result != null && result.length>0)
+        {
+            $.ajax
+            ({
+                type: "Post",
+                url: "/Quotes/GetQuoteDetailView",
+                data: { approveID: '@approveID' },
+                success: function (redata) {
+                    $.pushHTML(redata, function () {
+                        $(".quote-approval-detail").html(redata);
+                        bindEvent();
+                    });
+                }
+            });
+
+        }
+    }
+
+
+</script>

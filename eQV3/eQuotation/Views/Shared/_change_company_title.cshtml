@@ -1,0 +1,54 @@
+﻿@*@model List<Advantech.Mes.Ctos.Data.Customer>*@
+
+
+    @*<div class="modal-action">
+        <ul>
+            <li><a id="btn-cust-select"><i class="fa fa-check"></i> Pick</a></li>
+            <li><a id="btn-cust-close"><i class="fa fa-times"></i> Close</a></li>
+        </ul>
+    </div>*@
+    <div class="modal-content" style="height:50px;">
+        <div>
+            <table id="tbCompany">
+                <tr>
+                    <td class="right">Status :</td>
+                    <td>
+                        @Html.DropDownList("ddlCompany",(IEnumerable<SelectListItem>)ViewBag.Company)&nbsp;
+                        <br /><span id="sp_error" style="color:red;"></span>
+                    </td>
+                    <td class="right">
+                        <button id="btn-update" type="button" class="button"><i class="fa fa-arrow-circle-right"></i> update</button>&nbsp;
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#sp_error").text('');
+        //update
+        $("#btn-update").on("click", function () {
+            var Company = $("#ddlCompany").val();
+            var postdata = JSON.stringify({
+                Company: Company
+            });
+            $.ajax({
+                url: "/Operation/updateQuotationFormat", type: "POST", dataType: "json", data: postdata
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+                    if (redata.succeed) {
+                        //var result = redata.data;
+                       
+                        save(false);
+                        $.modal.close();
+                    } else {
+                        $("#sp_error").text("变更公司别错误!");
+                    }
+                }
+            });
+        });
+    });
+
+</script>

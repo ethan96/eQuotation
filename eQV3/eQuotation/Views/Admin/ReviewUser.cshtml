@@ -1,0 +1,41 @@
+﻿@model eQuotation.Entities.AppUser
+
+@if(Model != null)
+{
+    <div class="modal-content">
+        <table>
+            <tr>
+                <td class="fieldtext">User Name</td>
+                <td>@Html.TextBoxFor(mdl => mdl.UserName, new { @readonly = "readonly", @style = "width:100%" })</td>
+            </tr>
+            <tr>
+                <td class="fieldtext">First Name</td>
+                <td>@Html.TextBoxFor(mdl => mdl.FirstName, new { @readonly = "readonly", @style = "width:100%" })</td>
+            </tr>
+            <tr>
+                <td class="fieldtext">Last Name</td>
+                <td>@Html.TextBoxFor(mdl => mdl.LastName, new { @readonly = "readonly", @style = "width:100%" })</td>
+            </tr>
+            <tr>
+                <td class="fieldtext">Email</td>
+                <td>@Html.TextBoxFor(mdl => mdl.Email, new { @readonly = "readonly", @style = "width:100%" })</td>
+            </tr>
+            <tr>
+                <td class="fieldtext">Company</td>
+                <td>@Html.TextBoxFor(mdl => mdl.Company, new { @readonly = "readonly", @style = "width:100%" })</td>
+            </tr>
+            <tr>
+                <td class="fieldtext">Office</td>
+                <td>@Html.TextBoxFor(mdl => mdl.Location, new { @readonly = "readonly", @style = "width:100%" })</td>
+            </tr>
+            <tr>
+                <td class="fieldtext">Department</td>
+                <td>@Html.TextBoxFor(mdl => mdl.Department, new { @readonly = "readonly", @style = "width:100%" })</td>
+            </tr>
+            <tr>
+                <td class="fieldtext">Position</td>
+                <td>@Html.TextBoxFor(mdl => mdl.Position, new { @readonly = "readonly", @style = "width:100%" })</td>
+            </tr>
+        </table>
+    </div>
+}

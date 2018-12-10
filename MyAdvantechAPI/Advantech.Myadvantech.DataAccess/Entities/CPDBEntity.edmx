@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CheckPointDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ship_to_Information">
+          <Key>
+            <PropertyRef Name="SO_Number" />
+          </Key>
+          <Property Name="SO_Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ship_to_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ship_to_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="ship_to_address" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ship_to_city" Type="nvarchar" MaxLength="250" />
+          <Property Name="ship_to_country_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="ship_to_country_code" Type="nvarchar" MaxLength="50" />
+          <Property Name="ship_to_postal_code" Type="nvarchar" MaxLength="50" />
+          <Property Name="ship_to_stateName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ship_to_telnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ship_to_faxnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ship_to_email" Type="nvarchar" MaxLength="150" />
+          <Property Name="contact_person_first" Type="nvarchar" MaxLength="100" />
+          <Property Name="contact_person_last" Type="nvarchar" MaxLength="100" />
+          <Property Name="contact_email" Type="nvarchar" MaxLength="150" />
+          <Property Name="contact_telnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="version" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SO_DETAIL">
+          <Key>
+            <PropertyRef Name="SO" />
+            <PropertyRef Name="LINE_NO" />
+          </Key>
+          <Property Name="SO" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PART_Dlv" Type="nvarchar" MaxLength="50" />
+          <Property Name="HIGHER_LEVEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="LINE_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DELIVERY_GROUP" Type="nvarchar" MaxLength="50" />
+          <Property Name="PLANT" Type="nvarchar" MaxLength="50" />
+          <Property Name="MATERIAL" Type="nvarchar" MaxLength="50" />
+          <Property Name="CUST_MATERIAL" Type="nvarchar" MaxLength="200" />
+          <Property Name="DMF_FLAG" Type="nvarchar" MaxLength="50" />
+          <Property Name="QTY" Type="nvarchar" MaxLength="50" />
+          <Property Name="REQ_DATE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRICE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CURRENCY" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShipPoint" Type="nvarchar" MaxLength="50" />
+          <Property Name="StorageLoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItCa" Type="nvarchar" MaxLength="50" />
+          <Property Name="POLineNo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SO_HEADER">
+          <Key>
+            <PropertyRef Name="SO" />
+          </Key>
+          <Property Name="SO" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ORDER_TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="SALES_ORG" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIST_CHAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIVISION" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesOffice" Type="nvarchar" MaxLength="50" />
+          <Property Name="INCO1" Type="nvarchar" MaxLength="200" />
+          <Property Name="INCO2" Type="nvarchar" MaxLength="200" />
+          <Property Name="SHIPTO_COUNTRY" Type="nvarchar" MaxLength="50" />
+          <Property Name="TAX_CLASS" Type="nvarchar" MaxLength="50" />
+          <Property Name="TRIANGULAR_INDICATOR" Type="nvarchar" MaxLength="50" />
+          <Property Name="REQUIRE_DATE" Type="nvarchar" MaxLength="50" />
+          <Property Name="SHIP_CONDITION" Type="nvarchar" MaxLength="50" />
+          <Property Name="CUST_PO_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="SHIP_CUST_PO_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="PO_DATE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PARTIAL_SHIPMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="EARLY_SHIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="TAXDEL_CTY" Type="nvarchar" MaxLength="50" />
+          <Property Name="TAXDES_CTY" Type="nvarchar" MaxLength="50" />
+          <Property Name="DEST_TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PAYTERM" Type="nvarchar" MaxLength="100" />
+          <Property Name="DOC_DATE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOC_DATESpecified" Type="nvarchar" MaxLength="50" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ref_Doc" Type="nvarchar" MaxLength="50" />
+          <Property Name="VERSION" Type="nvarchar" MaxLength="50" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SO_PARTNERFUNC">
+          <Key>
+            <PropertyRef Name="SO" />
+            <PropertyRef Name="ROLE" />
+          </Key>
+          <Property Name="SO" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ROLE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NUMBER" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="CheckPointDBModelStoreContainer">
+          <EntitySet Name="Ship_to_Information" EntityType="Self.Ship_to_Information" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SO_DETAIL" EntityType="Self.SO_DETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SO_HEADER" EntityType="Self.SO_HEADER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SO_PARTNERFUNC" EntityType="Self.SO_PARTNERFUNC" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CheckPointDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SO_HEADER">
+          <Key>
+            <PropertyRef Name="SO" />
+          </Key>
+          <Property Name="SO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ORDER_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SALES_ORG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIST_CHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIVISION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INCO1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="INCO2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SHIPTO_COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TAX_CLASS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TRIANGULAR_INDICATOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REQUIRE_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SHIP_CONDITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CUST_PO_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SHIP_CUST_PO_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PO_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PARTIAL_SHIPMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EARLY_SHIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TAXDEL_CTY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TAXDES_CTY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DEST_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PAYTERM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DOC_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOC_DATESpecified" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DISTRICT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ref_Doc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VERSION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="CheckPointDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SO_HEADER" EntityType="Self.SO_HEADER" />
+          <EntitySet Name="SO_DETAIL" EntityType="CheckPointDBModel.SO_DETAIL" />
+          <EntitySet Name="SO_PARTNERFUNC" EntityType="CheckPointDBModel.SO_PARTNERFUNC" />
+          <EntitySet Name="Ship_to_Information" EntityType="CheckPointDBModel.Ship_to_Information" />
+        </EntityContainer>
+        <EntityType Name="SO_DETAIL">
+          <Key>
+            <PropertyRef Name="SO" />
+            <PropertyRef Name="LINE_NO" />
+          </Key>
+          <Property Name="SO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PART_Dlv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HIGHER_LEVEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LINE_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DELIVERY_GROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PLANT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MATERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CUST_MATERIAL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DMF_FLAG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QTY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REQ_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CURRENCY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShipPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StorageLoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItCa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="POLineNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SO_PARTNERFUNC">
+          <Key>
+            <PropertyRef Name="SO" />
+            <PropertyRef Name="ROLE" />
+          </Key>
+          <Property Name="SO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ship_to_Information">
+          <Key>
+            <PropertyRef Name="SO_Number" />
+          </Key>
+          <Property Name="SO_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_city" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_country_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_country_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_postal_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_stateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_telnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_faxnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ship_to_email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="contact_person_first" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="contact_person_last" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="contact_email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="contact_telnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="version" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CheckPointDBModelStoreContainer" CdmEntityContainer="CheckPointDBEntities1">
+          <EntitySetMapping Name="SO_HEADER">
+            <EntityTypeMapping TypeName="CheckPointDBModel.SO_HEADER">
+              <MappingFragment StoreEntitySet="SO_HEADER">
+                <ScalarProperty Name="SO" ColumnName="SO" />
+                <ScalarProperty Name="ORDER_TYPE" ColumnName="ORDER_TYPE" />
+                <ScalarProperty Name="SALES_ORG" ColumnName="SALES_ORG" />
+                <ScalarProperty Name="DIST_CHAN" ColumnName="DIST_CHAN" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="SalesGroup" ColumnName="SalesGroup" />
+                <ScalarProperty Name="SalesOffice" ColumnName="SalesOffice" />
+                <ScalarProperty Name="INCO1" ColumnName="INCO1" />
+                <ScalarProperty Name="INCO2" ColumnName="INCO2" />
+                <ScalarProperty Name="SHIPTO_COUNTRY" ColumnName="SHIPTO_COUNTRY" />
+                <ScalarProperty Name="TAX_CLASS" ColumnName="TAX_CLASS" />
+                <ScalarProperty Name="TRIANGULAR_INDICATOR" ColumnName="TRIANGULAR_INDICATOR" />
+                <ScalarProperty Name="REQUIRE_DATE" ColumnName="REQUIRE_DATE" />
+                <ScalarProperty Name="SHIP_CONDITION" ColumnName="SHIP_CONDITION" />
+                <ScalarProperty Name="CUST_PO_NO" ColumnName="CUST_PO_NO" />
+                <ScalarProperty Name="SHIP_CUST_PO_NO" ColumnName="SHIP_CUST_PO_NO" />
+                <ScalarProperty Name="PO_DATE" ColumnName="PO_DATE" />
+                <ScalarProperty Name="PARTIAL_SHIPMENT" ColumnName="PARTIAL_SHIPMENT" />
+                <ScalarProperty Name="EARLY_SHIP" ColumnName="EARLY_SHIP" />
+                <ScalarProperty Name="TAXDEL_CTY" ColumnName="TAXDEL_CTY" />
+                <ScalarProperty Name="TAXDES_CTY" ColumnName="TAXDES_CTY" />
+                <ScalarProperty Name="DEST_TYPE" ColumnName="DEST_TYPE" />
+                <ScalarProperty Name="PAYTERM" ColumnName="PAYTERM" />
+                <ScalarProperty Name="DOC_DATE" ColumnName="DOC_DATE" />
+                <ScalarProperty Name="DOC_DATESpecified" ColumnName="DOC_DATESpecified" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="Ref_Doc" ColumnName="Ref_Doc" />
+                <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SO_DETAIL">
+            <EntityTypeMapping TypeName="CheckPointDBModel.SO_DETAIL">
+              <MappingFragment StoreEntitySet="SO_DETAIL">
+                <ScalarProperty Name="POLineNo" ColumnName="POLineNo" />
+                <ScalarProperty Name="ItCa" ColumnName="ItCa" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StorageLoc" ColumnName="StorageLoc" />
+                <ScalarProperty Name="ShipPoint" ColumnName="ShipPoint" />
+                <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="REQ_DATE" ColumnName="REQ_DATE" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="DMF_FLAG" ColumnName="DMF_FLAG" />
+                <ScalarProperty Name="CUST_MATERIAL" ColumnName="CUST_MATERIAL" />
+                <ScalarProperty Name="MATERIAL" ColumnName="MATERIAL" />
+                <ScalarProperty Name="PLANT" ColumnName="PLANT" />
+                <ScalarProperty Name="DELIVERY_GROUP" ColumnName="DELIVERY_GROUP" />
+                <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+                <ScalarProperty Name="HIGHER_LEVEL" ColumnName="HIGHER_LEVEL" />
+                <ScalarProperty Name="PART_Dlv" ColumnName="PART_Dlv" />
+                <ScalarProperty Name="SO" ColumnName="SO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SO_PARTNERFUNC">
+            <EntityTypeMapping TypeName="CheckPointDBModel.SO_PARTNERFUNC">
+              <MappingFragment StoreEntitySet="SO_PARTNERFUNC">
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+                <ScalarProperty Name="SO" ColumnName="SO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ship_to_Information">
+            <EntityTypeMapping TypeName="CheckPointDBModel.Ship_to_Information">
+              <MappingFragment StoreEntitySet="Ship_to_Information">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="contact_telnumber" ColumnName="contact_telnumber" />
+                <ScalarProperty Name="contact_email" ColumnName="contact_email" />
+                <ScalarProperty Name="contact_person_last" ColumnName="contact_person_last" />
+                <ScalarProperty Name="contact_person_first" ColumnName="contact_person_first" />
+                <ScalarProperty Name="ship_to_email" ColumnName="ship_to_email" />
+                <ScalarProperty Name="ship_to_faxnumber" ColumnName="ship_to_faxnumber" />
+                <ScalarProperty Name="ship_to_telnumber" ColumnName="ship_to_telnumber" />
+                <ScalarProperty Name="ship_to_stateName" ColumnName="ship_to_stateName" />
+                <ScalarProperty Name="ship_to_postal_code" ColumnName="ship_to_postal_code" />
+                <ScalarProperty Name="ship_to_country_code" ColumnName="ship_to_country_code" />
+                <ScalarProperty Name="ship_to_country_name" ColumnName="ship_to_country_name" />
+                <ScalarProperty Name="ship_to_city" ColumnName="ship_to_city" />
+                <ScalarProperty Name="ship_to_address" ColumnName="ship_to_address" />
+                <ScalarProperty Name="ship_to_name" ColumnName="ship_to_name" />
+                <ScalarProperty Name="ship_to_id" ColumnName="ship_to_id" />
+                <ScalarProperty Name="SO_Number" ColumnName="SO_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

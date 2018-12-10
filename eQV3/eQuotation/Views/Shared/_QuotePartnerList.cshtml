@@ -1,0 +1,190 @@
+﻿    <div class="modal-content" style="height:380px;">
+        <div>
+            <table>
+                <tr>
+                    <td class="field100 right">Account Name :</td>
+                    <td class="w35p">
+                        <input class="text090" id="txtName" />&nbsp;
+                    </td>
+                    <td class="field100 right">ERP ID :</td>
+                    <td>
+                        <input class="text090" id="txtERPID" />&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        &nbsp;
+                    </td>
+                    <td class="right" colspan="2">
+                        <button id="btn-sapsearch" type="button" class="button"><i class="fa fa-search"></i> Search</button>&nbsp;
+                        <input type="hidden" id="hd_type" value="@ViewBag.type" />
+                        <input type="hidden" id="hd_SoldtoID" value="@ViewBag.SoldtoID" />
+                        <input type="hidden" id="hd_Org" value="@ViewBag.Org" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field200" colspan="4">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table id="tblSAPAccountList">
+                <thead>
+                    <tr>
+                        <th style="width:20%">ID</th>
+                        <th style="width:25%">Name</th>
+                        <th style="width:30%">Address</th>
+                        <th style="width:20%">Attention</th>
+                        <th style="width:1%">SoldtoID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+<script  type="text/javascript">
+
+    $(document).ready(function () {
+       
+        //initiate datatable instance
+    oTable = $("#tblSAPAccountList").dataTable({
+            "bJQueryUI": false,
+            "bLengthChange": false,
+            "bFilter": false,
+            "iDisplayLength": 100,
+            "bAutoWidth": false,
+            "sScrollX": "99%",
+            "sScrollXInner": "99%",
+            "sScrollY": "220px",
+            "bScrollCollapse": true,
+            "bPaginate": false,
+            "aoColumnDefs": [
+                { "bSortable": false, "aTargets": [0] },
+                { "bVisible": false, "aTargets": [4] }
+            ]
+        });
+        $(".dataTable").width('100%');
+        $(".dataTables_scrollHeadInner").width('100%');
+        $(".dataTables_scrollBody").height('100%');
+
+
+        clickevent();
+
+        //Search
+    $("#btn-sapsearch").on("click", function () {
+            
+            $.blockUI();
+            var type = $("#hd_type").val();
+            var soldtoID = $("#hd_SoldtoID").val();
+            
+            var org = $("#hd_Org").val();
+            var accountName = $("#txtName").val();
+            var erpId = $("#txtERPID").val();
+            var postdata = JSON.stringify({
+                soldtoID: soldtoID, accountName: accountName, erpId: erpId, type: type, org: org
+            });
+            $.ajax({
+                url: "/Operation/getQuotePartnerList", type: "POST", dataType: "json", data: postdata
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+                   
+                    if (redata.succeed) {
+
+                        var result = redata.data;
+
+                        var tbbody;
+                        //加入ERPID到第一欄當選取，真正的ERPID在第二欄(隱藏)
+                        for (var i = 0; i < result.length; i++) {
+                            tbbody = "<a class='select-SAPAccount' href='javascript:void(0)'>" + result[i][0] + " </a> ";
+                            result[i][0] = tbbody;
+                        }
+                        table = $("#tblSAPAccountList").dataTable();
+                        oSettings = table.fnSettings();
+
+                        table.fnClearTable(this);
+                        for (var i = 0; i < result.length; i++) {
+
+                            table.oApi._fnAddData(oSettings, result[i]);
+                        }
+                        oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+                        table.fnDraw();
+                        $(".dataTables_scrollBody").height('100%');
+                        clickevent();
+                    } else {
+                        alert(redata.err);
+                    }
+                    $.unblockUI();
+                }
+            });
+        });
+    });
+
+    //The click event must be load again.
+    function clickevent() {
+
+        $(".select-SAPAccount").on("click", function () {
+            var rowIndex = table.fnGetPosition($(this).closest('tr')[0]);
+            
+            var erpId = $(this).text();
+            var accountName = table.fnGetData(rowIndex)[1];
+            var soldtoId = table.fnGetData(rowIndex)[4];
+            var postdata = JSON.stringify({
+                soldtoId: soldtoId, AccountRowID: "", accountName: accountName, org: $("#hd_Org").val(),
+                erpId: erpId, type: $("#hd_type").val(), currency: "", country: ""
+            });
+
+
+            $.ajax({
+                url: "/Operation/GetQuotePartners", type: "POST", dataType: "json", data: postdata
+               , contentType: "application/json; charset=utf-8", success: function (redata) {
+
+                   if (redata.succeed) {
+                       
+                       var result = redata.data;
+                       if (result) {
+                           if (result.S) {
+                               $("#txtName-S").val(result.S.Name);
+                               $("#txtERPID-S").val(result.S.ERPID);
+                               $("#txtAddress-S").val(result.S.Address);
+                               $("#txtCity-S").val(result.S.City);
+                               $("#txtState-S").val(result.S.State);
+                               $("#txtZipcode-S").val(result.S.Zipcode);
+                               $("#txtCountry-S").val(result.S.Country);
+                               $("#txtAttention-S").val(result.S.Attention);
+                               $("#txtTel-S").val(result.S.Tel);
+                           }
+                           if (result.B) {
+                               $("#txtName-B").val(result.B.Name);
+                               $("#txtERPID-B").val(result.B.ERPID);
+                               $("#txtAddress-B").val(result.B.Address);
+                               $("#txtCity-B").val(result.B.City);
+                               $("#txtState-B").val(result.B.State);
+                               $("#txtZipcode-B").val(result.B.Zipcode);
+                               $("#txtCountry-B").val(result.B.Country);
+                               $("#txtAttention-B").val(result.B.Attention);
+                               $("#txtTel-B").val(result.B.Tel);
+                           }
+                           if (result.EM) {
+                               $("#txtName-EM").val(result.EM.Name);
+                               $("#txtERPID-EM").val(result.EM.ERPID);
+                               $("#txtAddress-EM").val(result.EM.Address);
+                               $("#txtCity-EM").val(result.EM.City);
+                               $("#txtState-EM").val(result.EM.State);
+                               $("#txtZipcode-EM").val(result.EM.Zipcode);
+                               $("#txtCountry-EM").val(result.EM.Country);
+                               $("#ddlCountry-EM").val(result.EM.Country);
+                               $("#txtAttention-EM").val(result.EM.Attention);
+                               $("#txtTel-EM").val(result.EM.Tel);
+                           }
+                       }
+                   } else {
+                       alert(redata.err);
+                   }
+                   $.unblockUI();
+               }
+            });
+            $.modal.close();
+        });
+    }
+</script>

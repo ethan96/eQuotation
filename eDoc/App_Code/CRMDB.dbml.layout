@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 20.375" name="CRMDB">
+  <DataContextMoniker Name="/CRMDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ffefa38f-28ed-4a57-84b1-fff32f0340ea" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/CRMDBDataContext/S_ORG_EXT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf0d3c66-6214-40f1-9770-bde16b0fdcbf" absoluteBounds="0.515, 0.96, 1.9700000000000002, 36.978963216145829" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ad740b5-fc59-43d9-99bf-702fe2b184d4" absoluteBounds="0.5, 1.375, 2, 18.693422851562502">
+      <DataClassMoniker Name="/CRMDBDataContext/S_ORG_EXT_X" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1bad0d44-e5d1-4a4c-ae27-c0587053dd01" absoluteBounds="0.515, 1.835, 1.9700000000000002, 18.1334228515625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="612fc793-921f-4976-86ad-dd44cfa68334" isExpanded="false" absoluteBounds="3.125, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/CRMDBDataContext/S_OPTY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="887e3611-8dd2-4ada-8873-903033d424a9" absoluteBounds="3.14, 0.96, 1.9700000000000002, 18.518025716145832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 1.375); (1.5 : 0.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CRMDBDataContext/S_ORG_EXT_X/S_ORG_EXT_X_S_ORG_EXT" />
+      <nodes>
+        <classShapeMoniker Id="4ad740b5-fc59-43d9-99bf-702fe2b184d4" />
+        <classShapeMoniker Id="ffefa38f-28ed-4a57-84b1-fff32f0340ea" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 0.725); (3.125 : 0.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CRMDBDataContext/S_ORG_EXT/S_ORG_EXT_S_OPTY" />
+      <nodes>
+        <classShapeMoniker Id="ffefa38f-28ed-4a57-84b1-fff32f0340ea" />
+        <classShapeMoniker Id="612fc793-921f-4976-86ad-dd44cfa68334" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9a9fae33-d67e-46e7-bb4b-552e56755a6b" isExpanded="false" absoluteBounds="6, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/CRMDBDataContext/S_USER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3f4163f-b2d2-43a3-a803-b50afd5e4423" absoluteBounds="6.0150000000000006, 0.96, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="69c2b608-8478-4e3c-841a-535eecda732f" isExpanded="false" absoluteBounds="6, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/CRMDBDataContext/S_POSTN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ce3b9e1-8b8d-4409-afe4-648b89daf73e" absoluteBounds="6.015, 1.96, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a5dac471-1316-49d1-9a87-98392c170ee7" absoluteBounds="8.5, 0.5, 2, 6.3861311848958326">
+      <DataClassMoniker Name="/CRMDBDataContext/S_STG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e2e5c11a-6a26-4f0d-839a-b1ae4bd25329" absoluteBounds="8.515, 0.96, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4f5757e1-7949-48a4-91e7-9a15323859f1" absoluteBounds="3, 1.375, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/CRMDBDataContext/S_BU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c92d3361-7806-4984-b859-ecfbb15a51c0" absoluteBounds="3.015, 1.835, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 1.375); (2.5 : 0.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CRMDBDataContext/S_BU/S_BU_S_ORG_EXT" />
+      <nodes>
+        <classShapeMoniker Id="4f5757e1-7949-48a4-91e7-9a15323859f1" />
+        <classShapeMoniker Id="ffefa38f-28ed-4a57-84b1-fff32f0340ea" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 1.5); (5.125 : 0.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CRMDBDataContext/S_POSTN/S_POSTN_S_OPTY" />
+      <nodes>
+        <classShapeMoniker Id="69c2b608-8478-4e3c-841a-535eecda732f" />
+        <classShapeMoniker Id="612fc793-921f-4976-86ad-dd44cfa68334" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.0312525 : 0.95); (7.0312525 : 1.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CRMDBDataContext/S_USER/S_USER_S_POSTN" />
+      <nodes>
+        <classShapeMoniker Id="9a9fae33-d67e-46e7-bb4b-552e56755a6b" />
+        <classShapeMoniker Id="69c2b608-8478-4e3c-841a-535eecda732f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 0.6937475); (5.125 : 0.6937475)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CRMDBDataContext/S_USER/S_USER_S_OPTY" />
+      <nodes>
+        <classShapeMoniker Id="9a9fae33-d67e-46e7-bb4b-552e56755a6b" />
+        <classShapeMoniker Id="612fc793-921f-4976-86ad-dd44cfa68334" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

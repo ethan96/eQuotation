@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Advantech.Myadvantech.DataAccess.ACN_EQ_PSM>
+
+@{
+    Layout = null;
+}
+
+
+<div class="main-content">
+    <div class="titlebox topbox">
+        <h4>PSM Approvers</h4>
+    </div>
+
+    <div class="actionbox">
+        <ul>
+            <li>
+                <a id="btn-refresh"><i class="fa fa-refresh"></i> Refresh</a>
+            </li>
+            <li>
+                <a id="new_approver_settings"><i class="fa fa-plus"></i> Create New Approver Settings</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="tab-content">
+            <table id="tblApprovers" class="table table-striped table-bordered table-condensed" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>PG</th>
+                        <th>Product Division</th>
+                        <th>PSM</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr data-psm-id=@item.Id>
+                            <td>
+                                <a class='js-edit' data-psm-id=@item.Id><i class='fa fa-pencil-square-o'></i></a><a class='js-delete' data-psm-id=@item.Id><i class='fa fa-times'></i></a>
+                            </td>
+                            <td>@item.PG</td>
+                            <td>@item.ProductDivision</td>
+                            <td>@item.PSM</td>
+                            <td>@item.Level</td>                                                        
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+
+@Html.Modal("osx-approver-form", "PSM Approver Settings", "400px", "500px")
+
+<script>
+    $(document).ready(function () {
+        $('#tblApprovers').DataTable({
+                "aoColumns": [
+                    {
+                        'sWidth': "5%"
+                    },
+                    { 'sWidth': "25%" },
+                    { 'sWidth': "25%" },
+                    { 'sWidth': "45%" },
+                    { 'sWidth': "5%"}
+                ],
+                'iDisplayLength' : 100,
+                "order": [[1, 'asc']]
+        });
+
+
+
+        $("#tblApprovers").on("click", ".js-delete", function () {
+            var id = $(this).attr("data-psm-id");
+            if(confirm("Are you sure you want to delete this PSM approver settings?") == true) {
+                    $.ajax({
+                        url: "/Approvers/DeletePSMApprovers/" + id,
+                        method: "POST",
+                        success: function (redata) {
+                            if (redata.succeed) {
+                                $('#tblApprovers tr[data-psm-id="' + id + '"]').fadeOut(400, function () {
+                                    $(this).remove();
+                                })
+
+                            } else {
+                                    AlertDialog(redata.err);
+                            }
+                        }
+                    });
+            };
+        });
+
+        //display modal window to create new approver settings
+        $("#new_approver_settings").on("click", function () {
+            openModal("/approvers/NewPSMApprovers", "osx-approver-form");
+        });
+
+        //display modal window to edit approver settings
+        $("#tblApprovers").on("click", ".js-edit", function () {
+            var id = $(this).attr("data-psm-id");
+            openModal("/approvers/EditPSMApprovers/" + id, "osx-approver-form");
+        });
+
+
+
+    });
+</script>

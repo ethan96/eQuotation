@@ -1,0 +1,10 @@
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\bin\Debug\COMM.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\bin\Debug\COMM.pdb
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\bin\Debug\COMM.xml
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\bin\Debug\SgmlReaderDll.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Debug\COMM.Resources.resources
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Debug\EDOC.Common.vbproj.GenerateResource.Cache
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Debug\COMM.dll
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Debug\COMM.xml
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Debug\COMM.pdb
+D:\MyAdvantechProject\MyAdvantechGit\eDoc\COMM\obj\Debug\EDOC.Common.vbprojResolveAssemblyReference.cache

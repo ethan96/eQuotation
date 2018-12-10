@@ -1,0 +1,177 @@
+﻿@model eQuotation.Models.Quotes.QuotesViewModel
+<style>
+    .left {
+        text-align: left;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .w35p {
+        width: 35%;
+    }
+
+    .disable {
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).ajaxStart(function () {
+            $.blockUI();
+            $("#LOADING_STATUS").html("<i class='fa fa-cog fa-spin fa-2x'></i>");
+        });
+        $(document).ajaxStop(function () {
+            $.unblockUI();
+            $("#LOADING_STATUS").html("");
+        })
+
+        oTable = $('#tblMyQuoteApproval').dataTable({
+            "bJQueryUI": false,
+            "bLengthChange": false,
+            "bFilter": false,
+            "iDisplayLength": 100,
+            "sScrollY": 280,
+            "bScrollCollapse": true,
+            "bPaginate": true,
+            "aoColumnDefs": [
+                { "bSortable": false, "aTargets": [6] },
+                { "bSortable": false, "aTargets": [7] }
+            ]
+        });
+        $(".dataTables_scrollBody").height('100%');
+
+        //Search
+        $("#btn-submit").on("click", function () {
+            var QuoteNo = $("#QuoteNo").val();
+            var Description = $("#Description").val();
+            var AccountName = $("#AccountName").val();
+            var ERPID = $("#ERPID").val();
+            var WaitforMe = $("#WaitforMe").is(":checked");
+
+            var postdata = JSON.stringify({
+                QuoteNo: QuoteNo, Description: Description, AccountName: AccountName, ERPID: ERPID, WaitforMe: WaitforMe
+            });
+            $.ajax({
+                url: "/Quotes/getApprovalList", type: "POST", dataType: "json", data: postdata
+                , contentType: "application/json; charset=utf-8", success: function (redata) {
+                    if (redata.succeed) {
+                        var result = redata.data;
+                        var tb1body;
+                        //加入table一筆資料
+                        for (var i = 0; i < result.length; i++) {
+
+                            tb1body = " <a class='approval_view' onclick='javascript: checkinfo(this);' data-id='" + result[i][8] + "'><i class='fa fa-search' title='view'></i></a>";
+                            tb1body += " <a class='approval' onclick='javascript:approval(this);' data-id='" + result[i][7] + "'><i class='fa fa-pencil-square-o' title='approval'></i></a>";
+
+                            result[i][7] = tb1body;
+                        }
+
+                        table = $('#tblMyQuoteApproval').dataTable();
+                        oSettings = table.fnSettings();
+
+                        table.fnClearTable(this);
+                        for (var i = 0; i < result.length; i++) {
+                            table.oApi._fnAddData(oSettings, result[i]);
+                        }
+                        oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+                        table.fnDraw();
+                        $(".dataTables_scrollBody").height('100%');
+                        clickevent();
+                    } else {
+                        AlertDialog(redata.err);
+                    }
+                    //$.unblockUI();
+                }
+            });
+        });
+    });
+
+    function checkinfo(arg) {
+        var ID = $(arg).attr("data-id");
+        $.get("/operation/checkInfo",
+           { QuoteID: ID }, function (data) {
+               $.pushHTML(data, function () {
+                   $.OSXModalInit("osx-search-checkInfo", data);
+               });
+           });
+    }
+
+    function approval(arg) {
+        var UID = $(arg).attr("data-id");
+        initContent('Quotes/ReviewQuoteApproval/?approveId=' + UID);
+    }
+</script>
+
+@Html.Modal("osx-search-checkInfo", "Approval Information", "330px", "700px")
+<div class="main-content">
+    <div class="titlebox topbox">
+        <h4>My Quote Approval</h4>
+    </div>
+    <div class="content">
+        <table id="tbMyQuoteApproval">
+            <tr>
+                <td class="field150 right">Quote No :</td>
+                <td class="w35p">
+                    @Html.TextBoxFor(mdl => mdl.QuoteNo, new { @class = "text090" })&nbsp;
+                </td>
+                <td class="field150 right">Description :</td>
+                <td>
+                    @Html.TextBoxFor(mdl => mdl.Description, new { @class = "text090" })&nbsp;
+                </td>
+                <td>
+                    @Html.CheckBox("WaitforMe", true)&nbsp;Waiting for my approval
+                </td>
+            </tr>
+            <tr>
+                <td class="field150 right">Account Name :</td>
+                <td>
+                    @Html.TextBoxFor(mdl => mdl.AccountName, new { @class = "text090" })&nbsp;
+                </td>
+                <td class="field150 right">ERP ID :</td>
+                <td>
+                    @Html.TextBoxFor(mdl => mdl.ERPID, new { @class = "text090" })&nbsp;
+                </td>
+                <td>
+                    <button id="btn-submit" type="button" class="button"><i class="fa fa-search"></i> Search</button>&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="field200" colspan="4">&nbsp;</td>
+            </tr>
+        </table>
+        <table id="tblMyQuoteApproval">
+            <thead>
+                <tr>
+                    <th style="width:15%">Quote No</th>
+                    <th style="width:25%">Description</th>
+                    <th style="width:10%">ERPID</th>
+                    <th style="width:15%">Account</th>
+                    <th style="width:10%">Sales</th>
+                    <th style="width:10%">Quote Date</th>
+                    <th style="width:10%">Status</th>
+                    <th style="width:5%">Functions</th>
+                </tr>
+            </thead>
+            <tbody id="tb-body">
+                @foreach (var item in Model.QA)
+                {
+                    <tr>
+                        <td>@item.quoteNo</td>
+                        <td>@item.customId</td>
+                        <td>@item.quoteToErpId</td>
+                        <td>@item.quoteToName</td>
+                        <td>@item.salesEmail</td>
+                        <td>@item.quoteDate</td>
+                        <td>@item.DOCSTATUS</td>
+                        <td>
+                            <a class='approval_view' onclick='javascript: checkinfo(this);' data-id='@item.quoteId'><i class='fa fa-search' title='view'></i></a>
+                            <a class='approval' onclick='javascript:approval(this);' data-id='@item.UID'><i class='fa fa-pencil-square-o' title='approval'></i></a>
+                        </td>
+                    </tr>
+                  }
+            </tbody>
+        </table>
+    </div>
+</div>

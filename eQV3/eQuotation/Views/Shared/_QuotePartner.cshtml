@@ -1,0 +1,187 @@
+﻿@model Advantech.Myadvantech.DataAccess.EQPARTNER
+@using eQuotation.Utility.Helpers
+
+<style>
+    .disableButton {
+        display: none;
+    }
+</style>
+
+   <h3>
+    @{
+        var str = ViewData["type"].ToString();
+        if (str == "SOLDTO")
+        {
+            @:Sold-to
+        }
+        else if (str == "S")
+        {
+            @:Ship-to
+        }
+        else if (str == "B")
+        {
+            @:Bill-to
+        }
+        else if (str == "EM")
+        {
+            @:End-Customer
+        }
+
+        var dt = Advantech.Myadvantech.DataAccess.SAPDAL.GetSAPCountryList();
+        var countryListItem = SelectListItemsFromDt.SAPCountrySelectListItem(dt);
+    }
+    </h3>
+
+
+@{
+    var className = "disableButton";
+    if (str == "EM")
+    {
+        className = null;
+    }
+}
+@Html.HiddenFor(m=>m.QUOTEID)
+@Html.HiddenFor(m => m.TYPE)
+<table id="tableAddress-@ViewData["type"]" style="width:100%;background-color: #fafafa">
+    <tbody>
+        <tr>
+            <td class="field50 right">Name:</td>
+            <td>
+                @*<input class="text090" type="text" id="txtName-@ViewData["type"]" readonly="readonly">*@
+                @Html.TextBoxFor(mdl => mdl.NAME, new { @id = "txtName-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })
+                <a class="pick-@ViewData["type"]" data-type="@ViewData["type"]"><i class="fa fa-external-link"></i></a>             
+            </td>
+        </tr>
+        <tr>
+            <td class="field50 right">ERP ID:</td>
+            <td>
+                @Html.TextBoxFor(mdl => mdl.ERPID, new {@id= "txtERPID-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })
+                <a class="remove-@ViewData["type"] @className" data-type="@ViewData["type"]"><i class="fa fa-times"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <td class="field50 right">Address:</td>
+            <td>
+                @Html.TextBoxFor(mdl => mdl.ADDRESS, new { @id = "txtAddress-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })
+                @*<input class="text090" type="text" id="txtAddress-@ViewData["type"]" readonly="readonly">*@
+            </td>
+        </tr>
+        <tr>
+            <td class="field50 right">Address2:</td>
+            <td>
+                @Html.TextBoxFor(mdl => mdl.STREET, new { @id = "txtAddress2-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table style="width:100%">
+                    <tbody>
+                        <tr align="center">
+                            <td>City</td>
+                            <td>State</td>
+                            <td>Zipcode</td>
+                            <td>Country</td>
+                        </tr>
+                        <tr align="center">
+                            <td align="center">
+                                @Html.TextBoxFor(mdl => mdl.CITY, new { @id = "txtCity-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })
+                            </td>
+                            <td align="center">
+                                @Html.TextBoxFor(mdl => mdl.STATE, new { @id = "txtState-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })
+                            </td>
+                            <td align="center">
+                                @Html.TextBoxFor(mdl => mdl.ZIPCODE, new { @id = "txtZipcode-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })
+                            </td>
+                            <td align="center">
+                                @*@Html.TextBoxFor(mdl => mdl.COUNTRY, new { @id = "txtCountry-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })*@
+                                @Html.DropDownList("" + @ViewData["type"], countryListItem, new { @id = "ddlCountry-" + @ViewData["type"] , @disabled = "disabled", @style = "background-color:#EBEBE4;" })
+                                @Html.HiddenFor(mdl => mdl.COUNTRY, new { @id = "txtCountry-" + @ViewData["type"] })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="field50 right">
+                Attention:
+            </td>
+            <td>
+                @Html.TextBoxFor(mdl => mdl.ATTENTION, new { @id = "txtAttention-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })
+            </td>
+        </tr>   
+        <tr>
+            <td class="field50 right">
+                Tel:
+            </td>
+            <td>
+                @Html.TextBoxFor(mdl => mdl.TEL, new { @id = "txtTel-" + @ViewData["type"], @class = "text090", @readonly = "readonly" })
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    $(function () {
+        var type = @Html.Raw(Json.Encode(this.ViewData["type"]));
+        var editable =@Html.Raw(Json.Encode(this.ViewData["editable"]));
+        if(editable !=null && editable == "true")
+        {
+            $("#tableAddress-" + type).find("input").not("#txtERPID-" + type).removeAttr('readonly');
+            $("#tableAddress-" + type).find("select").prop("disabled", false);
+            $("#tableAddress-" + type).find("select").css({"backgroundColor":"white"});
+        }
+
+        //important!! set country to ddlcountry by txtCountryvalue for data binding
+        $('#ddlCountry-@ViewData["type"]').val($('#txtCountry-@ViewData["type"]').val());
+    });
+
+    //  important!! change txtcountry value when ddlcountry is changed for data binding
+    $('#ddlCountry-@ViewData["type"]').on('change', function(){
+        $('#txtCountry-@ViewData["type"]').val($(this).val());
+    });
+
+
+    $(".pick-@ViewData["type"]").on("click", function () {
+
+        $.blockUI();
+        var type = $(this).attr("data-type");
+        var SoldtoID = $('#ERPID').val();
+        var org = "";
+        if(typeof SoldtoID == 'undefined')// for new version
+        {
+            SoldtoID =  $('#txtErpId').val();
+            org = $('#ddlOrg').val();
+        }
+        if (SoldtoID != "") {
+            $.blockUI();
+            $.get("/operation/SearchShipBill?type=" + type + "&SoldtoID=" + SoldtoID + "&org=" + org, function (data) {
+                $.pushHTML(data, function () {
+                    $.OSXModalInit("osx-search-ShipBillTo", data);
+                });
+                //Modal_event();
+                $.unblockUI();
+
+            });
+        } else {
+            alert('Please pick a ERP ID!');
+            $.unblockUI();
+        }
+    });
+
+    //Remove Partner by type
+    $(".remove-@ViewData["type"]").on("click", function () {
+        var partnerType = $(this).attr("data-type");
+        $("#txtName-" + partnerType).val('');
+        $("#txtERPID-" + partnerType).val('');
+        $("#txtAddress-" + partnerType).val('');
+        $("#txtCity-" + partnerType).val('');
+        $("#txtState-" + partnerType).val('');
+        $("#txtZipcode-" + partnerType).val('');
+        $("#txtCountry-" + partnerType).val('');
+        $("#ddlCountry-" + partnerType).val('');
+        $("#txtAttention-" + partnerType).val('');
+        $("#txtTel-" + partnerType).val('');
+
+    });
+</script>

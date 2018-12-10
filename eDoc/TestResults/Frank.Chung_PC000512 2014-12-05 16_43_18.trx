@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="25d8c871-cc4e-4a47-8fa5-7de014889439" name="Frank.Chung@PC000512 2014-12-05 16:43:18" runUser="ADVANTECH\Frank.Chung" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="9484e598-a5a6-4a9a-b4a4-a5417aac554c">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Frank.Chung_PC000512 2014-12-05 16_43_18">
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\App_Licenses.dll" />
+      <DeploymentItem filename="D:\oracle\product\11.2.0\client_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\HtmlAgilityPack.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\SgmlReaderDll.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\AjaxControlToolkit.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\PROF\bin\Debug\PROF.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\bin\BAPI_SALESORDER_CHANGE.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\obout_Flyout2_NET.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\bin\wnvhtmltopdf.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\AOnlineWall\bin\Debug\AOnlineWall.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Z_EBIZAEU_PRICEINQUIRY_BR.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\GET_MATERIAL_ATP.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\obout_Editor.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Quotation_Create_SAP.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Z_SD_EUPRICEINQUERY.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\Newtonsoft.Json.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\EXSY\bin\Debug\EXSY.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZSD_CUSTOMER_MAINTAIN_ALL.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\IBUS\bin\Debug\IBUS.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\Payflow_dotNET.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\ephtmltopdf.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\BAPI_SALESORDER_SIMULATE.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Bapi_Quotation_Create.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZCUSTOMER_UPDATE_SALES_AREA.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Factory_Date_Conversion.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\SAP.Connector.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\BAPI_SALESORDER_CREATEFROMDAT2.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZGET_ATP_LIMITQTY.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\COMM\bin\Debug\COMM.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Change_SD_Order.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\Aspose.Cells.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\Aspose.Pdf.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\RELI\bin\Debug\Relics.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Create_Po.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\PRICE_GRADE.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZSD_QUOTATION_ABR.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\GetMultiATP.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\PATC\bin\Debug\PATC.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\ZSD_UPDATE_FPLA.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\BAPI_CUSTOMERQUOTATION_CHANGE.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\SO_CREATE_COMMIT.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Z_GET_ATP_LIMITQTY.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\Z_READ_TEXT.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\GetCreditExposure.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\bin\Debug\SAPDAL.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\DOCH\bin\Debug\DOCH.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\eStoreServices\bin\Debug\eStoreServices.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\DBauer.Web.UI.WebControls.DynamicControlsPlaceholder.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\SAPDAL\Bin\Get_Price.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\App_Code\DLL\URLRewriter.dll" />
+      <DeploymentItem filename="D:\Advantech\MyAdvantech\eDoc\bin\EDOC.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-12-05T16:43:18.8950620+08:00" queuing="2014-12-05T16:43:22.6014326+08:00" start="2014-12-05T16:43:22.7214446+08:00" finish="2014-12-05T16:43:27.2518976+08:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="isNeedGPControlTest" storage="d:\advantech\myadvantech\edoc\sapdaltestproject\bin\debug\sapdaltestproject.dll" id="0fdb9433-5be0-db05-215f-1e56a14e6d2d">
+      <Execution id="293125d2-902f-4700-a43e-8c6e498c56fc" />
+      <TestMethod codeBase="D:/Advantech/MyAdvantech/eDoc/SAPDALTestProject/bin/Debug/SAPDALTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SAPDALTestProject.BusinessTest, SAPDALTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="isNeedGPControlTest" />
+      <AspNet webSiteUrl="http://localhost:8300/">
+        <Host pathToWebApp="D:\Advantech\MyAdvantech\eDoc" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0fdb9433-5be0-db05-215f-1e56a14e6d2d" executionId="293125d2-902f-4700-a43e-8c6e498c56fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="293125d2-902f-4700-a43e-8c6e498c56fc" testId="0fdb9433-5be0-db05-215f-1e56a14e6d2d" testName="isNeedGPControlTest" computerName="PC000512" duration="00:00:00.0174317" startTime="2014-12-05T16:43:23.8205545+08:00" endTime="2014-12-05T16:43:27.1948919+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="293125d2-902f-4700-a43e-8c6e498c56fc">
+    </UnitTestResult>
+  </Results>
+</TestRun>

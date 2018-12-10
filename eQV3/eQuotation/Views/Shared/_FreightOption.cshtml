@@ -1,0 +1,77 @@
+﻿
+@model Advantech.Myadvantech.Business.ShippingResult
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btn-update").on("click", function (e) {
+            e.preventDefault();
+
+            var postdata = JSON.stringify({ SPRNO: $("#txtSPRNO").val(), LineNo: parseInt($('#hd_LineNo').val()) });
+            $.ajax({
+                url: "/operation/updateSPRNO", type: "POST", dataType: "json", data: postdata
+               , contentType: "application/json; charset=utf-8", success: function (redata) {
+                   if (redata.succeed) {
+                       var result = redata.data;
+                       setproductDetail(result);
+                   } else {
+                       AlertDialog(redata.err);
+                   }
+               }
+            });
+            $.modal.close();
+
+
+        });
+
+        $("#shippingMethodsTbt td").click(function () {
+            var deliveryType = "";
+            var deliveryValue = "";
+            var freightCost = "";
+            var selectRow = $(this).closest("tr");
+
+            deliveryType = selectRow.attr("dtype");
+            deliveryValue = selectRow.attr("dvalue");
+            freightCost = selectRow.attr("fvalue");
+            SetBBFreight(deliveryType, deliveryValue, freightCost);
+            $.fancybox.close();
+        });
+
+
+    });
+
+    function SetBBFreight(DeliveryType, DeliveryValue, Cost) {
+        $("#<%=Me.txtFinalFreightOption.ClientID%>").val(DeliveryType);
+        $("#<%=Me.txtFinalFreightOptionValue.ClientID%>").val(DeliveryValue);
+        $("#<%=Me.txtBBFreight.ClientID%>").val(Cost);
+    }
+</script>
+
+<div class="modal-content">
+    <div>
+        <text class="totalWeight">Total weight: @Model.Weight.ToString() pounds.</text>
+        <table id="shippingMethodsTb">
+            <thead>
+                <tr>
+                    <th>ShippingMethod</th>
+                    <th>Cost</th>
+                    <th>Message</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+            @foreach (var m in Model.ShippingMethods)
+            {
+                <tr dtype='@m.MethodName' dvalue='@m.MethodValue' fvalue='@m.ShippingCost'>
+                    <td>@m.MethodName</td>
+                    <td>
+                        @m.DisplayShippingCost
+                    </td>
+                    <td>
+                        @m.ErrorMessage
+                    </td>
+                </tr>
+            }
+            </tbody>
+
+        </table>
+    </div>
+</div>

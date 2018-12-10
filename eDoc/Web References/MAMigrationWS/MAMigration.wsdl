@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="MyAdvantechGlobal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="MyAdvantechGlobal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="MyAdvantechGlobal">
+      <s:element name="CATALOG_Edit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="act" type="tns:CBOMActions" />
+            <s:element minOccurs="0" maxOccurs="1" name="CataID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CataName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CataDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImgName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="CBOMActions">
+        <s:restriction base="s:string">
+          <s:enumeration value="ADD" />
+          <s:enumeration value="UPDATE" />
+          <s:enumeration value="DELETE" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CATALOG_EditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CATALOG_EditResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CBOM_Edit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="act" type="tns:CBOMActions" />
+            <s:element minOccurs="0" maxOccurs="1" name="CatId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CatType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentCatId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CatDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExtDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SeqNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfigRule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NotExpandCat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowHide" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CBOM_EditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CBOM_EditResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPartNoFromSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPartNoFromSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncPartNoFromSAPResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncCompanyIdFromSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncCompanyIdFromSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncCompanyIdFromSAPResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloKiity">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloKiityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloKiityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CATALOG_EditSoapIn">
+    <wsdl:part name="parameters" element="tns:CATALOG_Edit" />
+  </wsdl:message>
+  <wsdl:message name="CATALOG_EditSoapOut">
+    <wsdl:part name="parameters" element="tns:CATALOG_EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="CBOM_EditSoapIn">
+    <wsdl:part name="parameters" element="tns:CBOM_Edit" />
+  </wsdl:message>
+  <wsdl:message name="CBOM_EditSoapOut">
+    <wsdl:part name="parameters" element="tns:CBOM_EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncPartNoFromSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncPartNoFromSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncPartNoFromSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncPartNoFromSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncCompanyIdFromSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncCompanyIdFromSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncCompanyIdFromSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncCompanyIdFromSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloKiitySoapIn">
+    <wsdl:part name="parameters" element="tns:HelloKiity" />
+  </wsdl:message>
+  <wsdl:message name="HelloKiitySoapOut">
+    <wsdl:part name="parameters" element="tns:HelloKiityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MAMigrationSoap">
+    <wsdl:operation name="CATALOG_Edit">
+      <wsdl:input message="tns:CATALOG_EditSoapIn" />
+      <wsdl:output message="tns:CATALOG_EditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CBOM_Edit">
+      <wsdl:input message="tns:CBOM_EditSoapIn" />
+      <wsdl:output message="tns:CBOM_EditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncPartNoFromSAP">
+      <wsdl:input message="tns:SyncPartNoFromSAPSoapIn" />
+      <wsdl:output message="tns:SyncPartNoFromSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncCompanyIdFromSAP">
+      <wsdl:input message="tns:SyncCompanyIdFromSAPSoapIn" />
+      <wsdl:output message="tns:SyncCompanyIdFromSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloKiity">
+      <wsdl:input message="tns:HelloKiitySoapIn" />
+      <wsdl:output message="tns:HelloKiitySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MAMigrationSoap" type="tns:MAMigrationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CATALOG_Edit">
+      <soap:operation soapAction="MyAdvantechGlobal/CATALOG_Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CBOM_Edit">
+      <soap:operation soapAction="MyAdvantechGlobal/CBOM_Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPartNoFromSAP">
+      <soap:operation soapAction="MyAdvantechGlobal/SyncPartNoFromSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncCompanyIdFromSAP">
+      <soap:operation soapAction="MyAdvantechGlobal/SyncCompanyIdFromSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloKiity">
+      <soap:operation soapAction="MyAdvantechGlobal/HelloKiity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MAMigrationSoap12" type="tns:MAMigrationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CATALOG_Edit">
+      <soap12:operation soapAction="MyAdvantechGlobal/CATALOG_Edit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CBOM_Edit">
+      <soap12:operation soapAction="MyAdvantechGlobal/CBOM_Edit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPartNoFromSAP">
+      <soap12:operation soapAction="MyAdvantechGlobal/SyncPartNoFromSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncCompanyIdFromSAP">
+      <soap12:operation soapAction="MyAdvantechGlobal/SyncCompanyIdFromSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloKiity">
+      <soap12:operation soapAction="MyAdvantechGlobal/HelloKiity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MAMigration">
+    <wsdl:port name="MAMigrationSoap" binding="tns:MAMigrationSoap">
+      <soap:address location="http://my.advantech.com/Services/MAMigration.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MAMigrationSoap12" binding="tns:MAMigrationSoap12">
+      <soap12:address location="http://my.advantech.com/Services/MAMigration.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

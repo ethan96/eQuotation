@@ -1,0 +1,82 @@
+﻿<style>
+    .popup {
+            background-color: #fff;
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: 0 0 25px 5px #999;
+            color: #111;
+            min-width: 50px;
+            padding: 25px;
+            position: absolute;
+            z-index: 9999;
+            opacity: 1;
+        }
+
+    .popup div {
+        color: #2b91af;
+        font: bold 100% 'Petrona',sans;
+    }
+
+    .btn.b-close {
+        background-color: #2b91af;
+        color: #fff;
+        border-radius: 7px 7px 7px 7px;
+        box-shadow: none;
+        padding: 0 6px 2px;
+        font: bold 131% sans-serif;
+        right: -7px;
+        top: -7px;
+        margin: 0;
+        position: absolute;
+    }
+
+    .btn.b-close:hover { /*hover 是在控制當滑鼠移至某元件時，某元件該如何反應*/
+        box-shadow: 2px 2px 19px black;
+        -o-box-shadow: 2px 2px 19px black;
+        -webkit-box-shadow: 2px 2px 19px black;
+        -moz-box-shadow: 2px 2px 19px black;
+        opacity: 0.8;
+        filter: alpha(opacity=80);
+    }
+</style>
+
+<script type="text/javascript">
+    //自動調整畫布的大小
+    $(window).resize(function () {
+        $('#AlertDialog').css({
+            top: $(window).height() / 3 - 50,
+            left: $(window).width() / 3 - 50
+        });
+    }).trigger('resize');
+    $(function () {
+        //自定義AlertDialog的關閉按鈕
+        $("#b-close").click(function () {
+            $('#AlertDialog').hide();
+        });
+    });
+
+    //alert顯示文字，預設5秒後關閉
+    function AlertDialog(str, second, callback) {
+        $("#AlertDialog div").html('');
+        $("#AlertDialog div").html(str);
+
+        $('#AlertDialog').css({//位置
+            top: $(window).height() / 3 - 50,
+            left: $(window).width() / 3 - 50
+        });
+
+        //設定自動關閉
+        second = second || 5000;//如果為空就帶預設值5秒
+        $('#AlertDialog').fadeIn("slow");//淡入顯示
+        setTimeout("$('#AlertDialog').fadeOut('slow')", second);
+
+        if (callback && typeof (callback) === "function") {
+            setTimeout(function () { callback(); }, second);
+        }
+    }
+    
+</script>
+
+<div id="AlertDialog" class="popup" style="display: none">
+    <a href="#" id="b-close"><span class="btn b-close"><span>X</span></span></a>
+    <div></div>
+</div>

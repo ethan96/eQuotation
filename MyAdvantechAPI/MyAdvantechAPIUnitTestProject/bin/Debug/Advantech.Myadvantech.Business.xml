@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Advantech.Myadvantech.Business</name>
+    </assembly>
+    <members>
+        <member name="T:Advantech.Myadvantech.Business.OrderBusinessLogic">
+            <summary>
+            Order business layer
+            </summary>
+        </member>
+        <member name="T:Advantech.Myadvantech.Business.PartBusinessLogic">
+            <summary>
+            Part business layer
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPartWithCompleteModelInformation(System.String)">
+            <summary>
+            Get part instance that including related model, and load basic model information
+            The other model's attributes will be loaded when the attribute is called
+            </summary>
+            <param name="PartNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.PartBusinessLogic.GetPartWithBasicModelInformation(System.String)">
+            <summary>
+            Get part instance that including related models, and load complete model information
+            </summary>
+            <param name="PartNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.Business.QuoteBusinessLogic">
+            <summary>
+            Quote business layer
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.LogQuote2Order(System.String,System.String,System.String@)">
+            <summary>
+            插入Quote转Order记录
+            </summary>
+            <param name="OrderID">订单ID</param>
+            <param name="QuoteID">QuoteID</param>
+            <param name="Msg">返回信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.IsPartIn30ValidDaysLimitation(System.String[])">
+            <summary>
+            判断arrary中的Part是否有特殊指定产品
+            </summary>
+            <param name="products"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.QuoteBusinessLogic.IsPTradePart(System.String)">
+            <summary>
+            判断时候是Ptrade Part
+            </summary>
+            <param name="PartNo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Advantech.Myadvantech.Business.SiebelBusinessLogic">
+            <summary>
+            Processing SiebelActive business logic
+            </summary>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.GetNewSiebelActive">
+            <summary>
+            Get new SiebelActive entity object function
+            </summary>
+            <returns>New SiebelActive</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.CreateSiebelActiveOpty(Advantech.Myadvantech.DataAccess.SiebelActive,System.String@)">
+            <summary>
+            Create SiebelActive about Opportunity
+            </summary>
+            <param name="active">SiebelActive</param>
+            <param name="errorMsg">Error Message</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Advantech.Myadvantech.Business.SiebelBusinessLogic.CreateSiebelActiveQuote(Advantech.Myadvantech.DataAccess.SiebelActive,System.String@)">
+            <summary>
+            Create SiebelActive about Qoute
+            </summary>
+            <param name="active">SiebelActive</param>
+            <param name="errorMsg">Error Message</param>
+            <returns>bool</returns>
+        </member>
+    </members>
+</doc>

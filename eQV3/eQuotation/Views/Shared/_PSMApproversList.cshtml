@@ -1,0 +1,146 @@
+﻿@model eQuotation.Models.Quotes.PSMApproverViewModel
+
+<style>
+    .PSMApprovallistTb thead tr {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .PSMApprovallistTb th, .PSMApprovallistTb td {
+        padding: 5px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .PSMApprovallistTb tbody tr:hover {background-color: #f5f5f5}
+
+
+
+    .PSMApprovallistTb {
+
+        table-layout: fixed;
+        border-collapse: collapse;
+
+    }
+
+     .PSMApprovallistTb td:nth-child(1), .PSMApprovallistTb th:nth-child(1) { min-width: 60px; }
+     /*.PSMApprovallistTb td:nth-child(2), .PSMApprovallistTb th:nth-child(2) { min-width: 60px; }
+     .PSMApprovallistTb td:nth-child(3), .PSMApprovallistTb th:nth-child(3) { min-width: 250px; }*/
+     .PSMApprovallistTb td:nth-child(2), .PSMApprovallistTb th:nth-child(2) { min-width: 200px; }
+     .PSMApprovallistTb td:nth-child(3), .PSMApprovallistTb th:nth-child(3) { width: 330px; }
+
+    /*.PSMApprovallistTb th { text-decoration: underline; }*/
+
+
+    .PSMApprovallistTb  thead {
+        background-color:  #02478A;
+        color:  #FDFDFD;
+
+    }
+
+    .PSMApprovallistTb  thead tr {
+        display: block;
+        position: relative;
+    }
+
+    .PSMApprovallistTb  tbody {
+        display: block;
+        overflow: auto;
+        width: 100%;
+        height: 300px;
+
+    }
+
+    .PSMApprovallistTb   tbody  tr: nth-child(even) {
+        background-color: #DDD;
+    }
+
+    .add-search-PSM {
+        margin-bottom: 10px;
+        margin-right: 35px;
+        margin-top: 10px;
+    
+    }
+
+    .add-search-PSM input {
+        float: right;
+    }
+
+    mark {
+      background: orange;
+      color: inherit;
+      padding: 0;
+   
+</style>
+
+
+<div class="container">
+
+@using (Ajax.BeginForm("AddPSMApprovers", "Quotes",
+                new AjaxOptions()
+                {
+                    HttpMethod = "POST",
+                    OnBegin = "onSubmitApplicationBegin",
+                    OnSuccess = "onSubmitApplicationSuccess"
+                }))
+{
+
+    <div class="add-search-PSM">
+        <button id="btn-newPSM" type="submit" class="button"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+        <input type="text" name="searchKeyword" class="form-control input-sm" placeholder="Search PSM...">
+    </div>
+
+    <table class="PSMApprovallistTb">
+        <thead>
+            <tr>
+                <td>Select</td>
+                <td>Product Division</td>
+                <td>PSM List</td>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.ProductDivisionGroups.Count; i++)
+            {
+                <tr>
+                    <td>@Html.CheckBoxFor(m => m.ProductDivisionGroups[i].Selected)</td>
+                    <td>@Html.DisplayFor(m => m.ProductDivisionGroups[i].Name)</td>
+                    <td>
+                        @foreach (var psmGroup in Model.ProductDivisionGroups[i].PSMs.GroupBy(p=>p.Level).OrderBy(g=>g.Key))
+                        {
+                            <sapn>@psmGroup.Key.@string.Join(",", psmGroup.Select(g=>g.PSMName))  </sapn>
+                        }
+                    </td>
+                    @Html.HiddenFor(m => m.ProductDivisionGroups[i].Name)
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
+</div>
+
+
+<script>
+    function onSubmitApplicationBegin() { }
+
+    function onSubmitApplicationSuccess(data) {
+        $('#quoteApproverList').hide().html(data).fadeIn('slow');
+    }
+
+    $(function () {
+        var $input = $("input[name='searchKeyword']"),
+        $context = $(".PSMApprovallistTb tbody tr");
+        $input.on("input", function () {
+            var term = $(this).val();
+            $context.show().unmark();
+            if (term) {
+                $context.mark(term, {
+                    done: function () {
+                        $context.not(":has(mark)").hide();
+                    }
+                });
+            }
+        });
+    });
+</script>
+

@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Advantech.Myadvantech.DataAccess" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GPBLOCK_LOGIC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Office_code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="office_name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="group_code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="group_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gp_level" Type="Double" />
+    <Property Name="approver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="eQEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GPBLOCK_LOGIC" EntityType="Self.GPBLOCK_LOGIC" />
+    <EntitySet Name="QuotationMaster" EntityType="Advantech.Myadvantech.DataAccess.QuotationMaster" />
+    <EntitySet Name="Quotation_Approval_Expiration" EntityType="Advantech.Myadvantech.DataAccess.Quotation_Approval_Expiration" />
+    <EntitySet Name="QuotationExtension" EntityType="Advantech.Myadvantech.DataAccess.QuotationExtension" />
+    <EntitySet Name="EmailGreeting" EntityType="Advantech.Myadvantech.DataAccess.EmailGreeting" />
+    <EntitySet Name="optyQuote" EntityType="Advantech.Myadvantech.DataAccess.optyQuote" />
+    <EntitySet Name="quoteSiebelQuote" EntityType="Advantech.Myadvantech.DataAccess.quoteSiebelQuote" />
+    <EntitySet Name="SiebelWSFailedLog" EntityType="Advantech.Myadvantech.DataAccess.SiebelWSFailedLog" />
+    <EntitySet Name="SiebelActive" EntityType="Advantech.Myadvantech.DataAccess.SiebelActive" />
+    <EntitySet Name="QuoteApproval" EntityType="Advantech.Myadvantech.DataAccess.QuoteApproval" />
+    <EntitySet Name="AJP_ConfiguratorTerms" EntityType="Advantech.Myadvantech.DataAccess.AJP_ConfiguratorTerms" />
+    <EntitySet Name="EQPARTNER" EntityType="Advantech.Myadvantech.DataAccess.EQPARTNER" />
+    <EntitySet Name="ACN_EQ_PSM" EntityType="Advantech.Myadvantech.DataAccess.ACN_EQ_PSM" />
+    <EntitySet Name="ACN_EQ_Sales" EntityType="Advantech.Myadvantech.DataAccess.ACN_EQ_Sales" />
+    <EntitySet Name="RegionSectorParameter" EntityType="Advantech.Myadvantech.DataAccess.RegionSectorParameter" />
+    <EntitySet Name="QuotationDetail" EntityType="Advantech.Myadvantech.DataAccess.QuotationDetail" />
+    <EntitySet Name="ACN_Executive" EntityType="Advantech.Myadvantech.DataAccess.ACN_Executive" />
+    <EntitySet Name="WorkFlowApproval" EntityType="Advantech.Myadvantech.DataAccess.WorkFlowApproval" />
+    <EntitySet Name="QuotationExtensionNew" EntityType="Advantech.Myadvantech.DataAccess.QuotationExtensionNew" />
+    <EntitySet Name="QuotationDetail_Extension_ABR" EntityType="Advantech.Myadvantech.DataAccess.QuotationDetail_Extension_ABR" />
+  </EntityContainer>
+  <EntityType Name="QuotationMaster">
+    <Key>
+      <PropertyRef Name="quoteId" />
+    </Key>
+    <Property Name="quoteId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="customId" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="quoteToRowId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="quoteToErpId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="quoteToName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="office" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="currency" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="salesEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salesRowId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="directPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="attentionRowId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="attentionEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="bankInfo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="quoteDate" Type="DateTime" Precision="3" />
+    <Property Name="deliveryDate" Type="DateTime" Precision="0" />
+    <Property Name="expiredDate" Type="DateTime" Precision="0" />
+    <Property Name="shipTerm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="paymentTerm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="freight" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="insurance" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="specialCharge" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="tax" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="quoteNote" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="relatedInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="createdBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="preparedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isShowListPrice" Type="Int32" />
+    <Property Name="isShowDiscount" Type="Int32" />
+    <Property Name="isShowDueDate" Type="Int32" />
+    <Property Name="isLumpSumOnly" Type="Int32" />
+    <Property Name="isRepeatedOrder" Type="Int32" />
+    <Property Name="ogroup" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DelDateFlag" Type="Int32" />
+    <Property Name="org" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="siebelRBU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIST_CHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIVISION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SALESGROUP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SALESOFFICE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DISTRICT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PO_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CARE_ON" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="isExempt" Type="Int32" />
+    <Property Name="INCO1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="INCO2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRINTOUT_FORMAT" Type="Int32" />
+    <Property Name="OriginalQuoteID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DocReg" Type="Int64" />
+    <Property Name="DocType" Type="Int32" />
+    <Property Name="reqDate" Type="DateTime" Precision="0" />
+    <Property Name="DOCSTATUS" Type="Int32" />
+    <Property Name="Partial" Type="Int32" />
+    <Property Name="IS_EARLYSHIP" Type="Int32" />
+    <Property Name="DocRealType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Precision="0" />
+    <Property Name="LastUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PODate" Type="DateTime" Precision="0" />
+    <Property Name="KEYPERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMPLOYEEID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isVirPartOnly" Type="Int32" />
+    <Property Name="SHIPCUSTPONO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TAXCLASS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TAXDEPCITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TAXDSTCITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TRIANGULARINDICATOR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="quoteNo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Revision_Number" Type="Int16" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Quotation_Approval_Expiration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Approver" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GPlever" Type="Double" />
+    <Property Name="ApprovalLevel" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="MobileApproveYes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobileApproveNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovalDate" Type="DateTime" Precision="0" />
+    <Property Name="ApprovalFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovalFlowType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="QuotationExtension">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Name="QuoteID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="EmailGreeting" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialTandC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SignatureRowID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Engineer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Engineer_Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QuoteSource" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ExpressCompany" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsShowTotal" Type="Boolean" />
+    <Property Name="IsShowFreight" Type="Boolean" />
+    <Property Name="ApprovalFlowType" Type="Int32" />
+    <Property Name="LastUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="AuditType" Type="Int32" />
+    <Property Name="Warranty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ABRQuoteType" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="JPCustomerOffice" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CopyPurpose" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmailGreeting">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Greeting" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="optyQuote">
+    <Key>
+      <PropertyRef Name="quoteId" />
+    </Key>
+    <Property Name="optyId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="optyName" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+    <Property Name="quoteId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="optyStage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Opty_Owner_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="processId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="quoteSiebelQuote">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="quoteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="siebelQuoteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="processId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SiebelWSFailedLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="quoteId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FunctionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Parameters" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InsertTime" Type="DateTime" Precision="3" />
+    <Property Name="IsRecall" Type="Boolean" />
+    <Property Name="LastRecallTime" Type="DateTime" Precision="3" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SiebelActive">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActiveSource" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ActiveType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuoteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="OptyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OptyName" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+    <Property Name="OptyStage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OptyOwnerEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FailedLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProcessID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Greeting" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SendToMails" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ContactRowId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="WSParameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="QuoteApproval">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QuoteID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Approver" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GPBrief" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LevelNum" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="IsSendSuccessfully" Type="Int32" />
+    <Property Name="MobileYes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RejectedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="RejectedDate" Type="DateTime" Precision="3" />
+    <Property Name="RejectReason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedReason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Mailbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WorkFlowID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="AJP_ConfiguratorTerms">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Name="QuoteID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="HW_COMUSB" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HW_Storage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HW_SATA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HW_Disk_Division" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HW_Cable" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HW_BIOS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HW_OS_License" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HW_OS_Activation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HW_Others" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SW_OS_Installation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SW_Username" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SW_OS_Timezone" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SW_OS_Input" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SW_IP_Settings" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SW_Settings" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SW_Others" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FINAL_HWSummary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FINAL_SWSummary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IFS_SOP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EQPARTNER">
+    <Key>
+      <PropertyRef Name="QUOTEID" />
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="QUOTEID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROWID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ERPID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="TYPE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ATTENTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MOBILE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ZIPCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STREET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DISTRICT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STREET2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ACN_EQ_PSM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDivision" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PSM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ACN_EQ_Sales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SalesCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdSBU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SalesEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApproverEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RegionSectorParameter">
+    <Key>
+      <PropertyRef Name="Region" />
+      <PropertyRef Name="Sector" />
+      <PropertyRef Name="SiteParameter" />
+    </Key>
+    <Property Name="Region" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sector" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SiteParameter" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ParaDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ParaValue" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="QuotationDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="quoteId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="line_No" Type="Int32" />
+    <Property Name="partNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="qty" Type="Int32" />
+    <Property Name="listPrice" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="unitPrice" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="newUnitPrice" Type="Decimal" Precision="14" Scale="4" />
+    <Property Name="itp" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="newItp" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="RecyclingFee" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="deliveryPlant" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="classABC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="rohs" Type="Int32" />
+    <Property Name="ewFlag" Type="Int32" />
+    <Property Name="reqDate" Type="DateTime" Precision="0" />
+    <Property Name="dueDate" Type="DateTime" Precision="0" />
+    <Property Name="satisfyFlag" Type="Int32" />
+    <Property Name="canBeConfirmed" Type="Int32" />
+    <Property Name="custMaterial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="inventory" Type="Int32" />
+    <Property Name="oType" Type="Int32" />
+    <Property Name="modelNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sprNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HigherLevel" Type="Int32" />
+    <Property Name="DMF_Flag" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ItemType" Type="Int32" />
+    <Property Name="VirtualPartNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DELIVERYGROUP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ShipPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StorageLoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RECFIGID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayUnitPrice" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayQty" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayLineNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SequenceNo" Type="Int32" />
+    <Property Name="NCNR" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ACN_Executive">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WorkFlowApproval">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TypeID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Approver" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApproverType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LevelNum" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="IsSendSuccessfully" Type="Int32" />
+    <Property Name="MobileYes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RejectedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="RejectedDate" Type="DateTime" Precision="3" />
+    <Property Name="RejectReason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedReason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Mailbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WorkFlowID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ViewGP" Type="Int32" />
+    <Property Name="FinalMailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="QuotationExtensionNew">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="GeneralRate" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="FinishDate" Type="DateTime" Precision="3" />
+    <Property Name="Warranty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyTitle" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NewExpiredDate" Type="DateTime" Precision="0" />
+    <Property Name="BelowGP" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="QuotationDetail_Extension_ABR">
+    <Key>
+      <PropertyRef Name="quoteid" />
+      <PropertyRef Name="line_No" />
+    </Key>
+    <Property Name="quoteid" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="line_No" Type="Int32" Nullable="false" />
+    <Property Name="BX13" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BX23" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BX41" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BX72" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BX82" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="PartNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BX94" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BX95" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BX96" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="ICVA" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="IPVA" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="ISIC" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="ISTS" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="BCO1" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="BPI1" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="NCM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FK00" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BX40" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="BX10" Type="Decimal" Precision="12" Scale="2" />
+  </EntityType>
+</Schema>

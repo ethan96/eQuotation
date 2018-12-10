@@ -1,0 +1,56 @@
+﻿@model eQuotation.Models.Admin.UserRoleViewModel
+
+
+@if(Model != null)
+{
+    <div class="modal-action">
+        <ul>
+            <li><a id="save-editrole"><i class="fa fa-floppy-o"></i> Save</a></li>
+            <li><a id="close-editrole"><i class="fa fa-times"></i> Close</a></li>
+        </ul>
+    </div>
+
+    <div class="modal-content">
+        @Html.HiddenFor(mdl => mdl.UserId, new { @id = "userId" })
+        <div><h3>@Html.DisplayFor(mdl => mdl.FullName)</h3></div>
+        <div>You can assign roles to the selected user</div>
+        <div class="user-role">
+            @foreach (var item in Model.RoleList)
+            {
+                <div>
+                    <input type="checkbox" checked="@item.Value" id="@item.Key.Name" />
+                    <span>@item.Key.Name</span>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("a#save-editrole").on("click", function () {
+
+            //get user name
+            var userId = $("#userId").val();
+
+            //get the selected roles
+            var roleIds = [];
+            $(".user-role input:checkbox:checked").each(function () {
+                roleIds.push($(this).attr("id"));
+            });
+
+            $.post("/admin/EditUserRole/" + userId, "roleIds=" + roleIds, function (data, status, req) {
+                $.pushHTML(data, function () {
+                    alert("Roles have been assigned successfully.");
+                });
+                $.unblockUI();
+            });
+        });
+
+        $("a#close-editrole").on("click", function () {
+            $.modal.close();
+        });
+    });
+
+</script>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://member.advantech.com/membershipwebservice.asmx?wsdl" filename="membershipwebservice.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://member.advantech.com/membershipwebservice.asmx?disco" filename="membershipwebservice.disco" />
+  </Results>
+</DiscoveryClientResultsFile>
