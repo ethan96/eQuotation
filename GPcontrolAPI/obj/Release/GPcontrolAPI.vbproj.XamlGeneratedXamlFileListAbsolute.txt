@@ -1,0 +1,2 @@
+obj\Release\GPcontrol.g.xaml
+obj\Release\GPcontrolAPI_GPcontrol_BeforeInitializeComponentHelper.txt

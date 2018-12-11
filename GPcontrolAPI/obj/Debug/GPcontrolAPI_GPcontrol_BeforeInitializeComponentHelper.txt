@@ -1,0 +1,2 @@
+GPcontrol.g.xaml
+GPcontrolAPI.XamlStaticHelperNamespace._XamlStaticHelper

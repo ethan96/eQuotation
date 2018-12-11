@@ -240,36 +240,36 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._LabelTotal1">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._LbTotal_BX41_1">
 <summary>
-LabelTotal1 control.
+LbTotal_BX41_1 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._LabelTotal2">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._LbTotal_BX41_2">
 <summary>
-LabelTotal2 control.
+LbTotal_BX41_2 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._LabelTotal3">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._LbTotal_BX95_1">
 <summary>
-LabelTotal3 control.
+LbTotal_BX95_1 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._LabelTotal4">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._LbTotal_FK00_1">
 <summary>
-LabelTotal4 control.
+LbTotal_FK00_1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -285,9 +285,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._LabelTotal6">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._LbTotal_BK10_1">
 <summary>
-LabelTotal6 control.
+LbTotal_BK10_1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -303,45 +303,45 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._LabelTotal8">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._LbTotal_BX40_1">
 <summary>
-LabelTotal8 control.
+LbTotal_BX40_1 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._Label1">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._lbQuotationType">
 <summary>
-Label1 control.
+lbQuotationType control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._Label2">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._lbIncoterm1">
 <summary>
-Label2 control.
+lbIncoterm1 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._Label3">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._lbPayment">
 <summary>
-Label3 control.
+lbPayment control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.BRAOnlineQuoteTemplate._Label4">
+<member name="F:EDOC.BRAOnlineQuoteTemplate._lbDeliveryDate">
 <summary>
-Label4 control.
+lbDeliveryDate control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2543,6 +2543,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:EDOC.InterconQuoteTemplate._lbBeneficiary">
+<summary>
+lbBeneficiary control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:EDOC.InterconQuoteTemplate._Table_ExternalNote">
 <summary>
 Table_ExternalNote control.
@@ -4340,9 +4349,63 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:EDOC.TWAOnlineQuoteTemplate._tdAdvantechHeader1">
+<summary>
+tdAdvantechHeader1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:EDOC.TWAOnlineQuoteTemplate._Label_AdvantechName">
 <summary>
 Label_AdvantechName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:EDOC.TWAOnlineQuoteTemplate._lbQuotationTitle1">
+<summary>
+lbQuotationTitle1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:EDOC.TWAOnlineQuoteTemplate._tdAdvantechHeader2">
+<summary>
+tdAdvantechHeader2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:EDOC.TWAOnlineQuoteTemplate._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:EDOC.TWAOnlineQuoteTemplate._Label2">
+<summary>
+Label2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:EDOC.TWAOnlineQuoteTemplate._lbQuotationTitle2">
+<summary>
+lbQuotationTitle2 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -4415,15 +4478,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:EDOC.TWAOnlineQuoteTemplate._td2EnglishVersion">
 <summary>
 td2EnglishVersion control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:EDOC.TWAOnlineQuoteTemplate._LabelQuotationTitle">
-<summary>
-LabelQuotationTitle control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -8774,290 +8828,290 @@ To modify move field declaration from designer file to code-behind file.
 </member>
 <member name="F:EDOC.CreateNewCust._form1">
 <summary>
-form1 控件。
+form1 control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpCustAccGroup">
 <summary>
-drpCustAccGroup 控件。
+drpCustAccGroup control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtCustID">
 <summary>
-txtCustID 控件。
+txtCustID control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._RequiredFieldValidator1">
 <summary>
-RequiredFieldValidator1 控件。
+RequiredFieldValidator1 control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtSalesOrg">
 <summary>
-txtSalesOrg 控件。
+txtSalesOrg control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpDistChannel">
 <summary>
-drpDistChannel 控件。
+drpDistChannel control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpDivision">
 <summary>
-drpDivision 控件。
+drpDivision control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtName">
 <summary>
-txtName 控件。
+txtName control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._RequiredFieldValidator2">
 <summary>
-RequiredFieldValidator2 控件。
+RequiredFieldValidator2 control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtStreet">
 <summary>
-txtStreet 控件。
+txtStreet control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._RequiredFieldValidator3">
 <summary>
-RequiredFieldValidator3 控件。
+RequiredFieldValidator3 control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtCity">
 <summary>
-txtCity 控件。
+txtCity control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._RequiredFieldValidator4">
 <summary>
-RequiredFieldValidator4 控件。
+RequiredFieldValidator4 control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpRegion">
 <summary>
-drpRegion 控件。
+drpRegion control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtPostalCode">
 <summary>
-txtPostalCode 控件。
+txtPostalCode control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._RequiredFieldValidator5">
 <summary>
-RequiredFieldValidator5 控件。
+RequiredFieldValidator5 control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpCountry">
 <summary>
-drpCountry 控件。
+drpCountry control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtJurisdiction">
 <summary>
-txtJurisdiction 控件。
+txtJurisdiction control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtPhone">
 <summary>
-txtPhone 控件。
+txtPhone control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtEmail">
 <summary>
-txtEmail 控件。
+txtEmail control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-</remarks>
-</member>
-<member name="F:EDOC.CreateNewCust._txtVAT">
-<summary>
-txtVAT 控件。
-</summary>
-<remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpSalesDistrict">
 <summary>
-drpSalesDistrict 控件。
+drpSalesDistrict control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpSalesOffice">
 <summary>
-drpSalesOffice 控件。
+drpSalesOffice control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpSalesGroup">
 <summary>
-drpSalesGroup 控件。
+drpSalesGroup control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtCurrency">
 <summary>
-txtCurrency 控件。
+txtCurrency control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpShipCondition">
 <summary>
-drpShipCondition 控件。
+drpShipCondition control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpIncoterm">
 <summary>
-drpIncoterm 控件。
+drpIncoterm control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._txtIncoterms2">
 <summary>
-txtIncoterms2 控件。
+txtIncoterms2 control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpPaymentTerm">
 <summary>
-drpPaymentTerm 控件。
+drpPaymentTerm control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._drpTaxExempt">
 <summary>
-drpTaxExempt 控件。
+drpTaxExempt control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:EDOC.CreateNewCust._txtVAT">
+<summary>
+txtVAT control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._btnSubmit">
 <summary>
-btnSubmit 控件。
+btnSubmit control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CreateNewCust._lbMsg">
 <summary>
-lbMsg 控件。
+lbMsg control.
 </summary>
 <remarks>
-自动生成的字段。
-若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:EDOC.CustomBTOS_ACN._Tree1">
@@ -23053,18 +23107,36 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.rGPControl._txtYear">
+<member name="F:EDOC.rGPControl._txtStartDate">
 <summary>
-txtYear control.
+txtStartDate control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:EDOC.rGPControl._ft3">
+<member name="F:EDOC.rGPControl._FilteredTextBoxExtender1">
 <summary>
-ft3 control.
+FilteredTextBoxExtender1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:EDOC.rGPControl._txtEndDate">
+<summary>
+txtEndDate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:EDOC.rGPControl._FilteredTextBoxExtender2">
+<summary>
+FilteredTextBoxExtender2 control.
 </summary>
 <remarks>
 Auto-generated field.

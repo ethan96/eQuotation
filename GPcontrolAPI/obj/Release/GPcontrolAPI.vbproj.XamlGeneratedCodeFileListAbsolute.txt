@@ -1,0 +1,4 @@
+obj\Release\_GPcontrolAPI.g.vb
+obj\Release\GPcontrol.g.vb
+obj\Release\_GPcontrol_BeforeInitializeComponentHelper.vb
+D:\MyAdvantechProject\MyAdvantechGit\GPcontrolAPI\obj\Release\_GPcontrol_CompiledExpressionRoot.vb

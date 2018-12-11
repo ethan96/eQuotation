@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GPcontrolAPI
+</name>
+</assembly>
+<members>
+<member name="M:GPcontrolAPI.GPcontrol.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>
